@@ -33,6 +33,10 @@ Repository นี้เก็บโค้ด เอกสาร และผล�
 - [MCP HTTP smoke client](scripts/smoke_http.py) · [ตรวจ migration จากรุ่นจริงเดิม](scripts/verify_migration.py)
 - [โมเดล embedding ที่ pin รุ่นไว้](src/research_rag_mcp/model_manifest.json) · [ดาวน์โหลดและตรวจ hash](scripts/download_model.py) · [ระบบจัดการเอกสาร/chunks](src/research_rag_mcp/documents.py) · [semantic encoder](src/research_rag_mcp/semantic.py)
 
+## บันทึก Q&A
+
+- [Tools ที่สอดคล้องกับ Claim–Evidence–Gap–Research Question — 20 กันยายน 2026](Q&A/2026-09-20-230651-tools-claim-evidence-gap-research-question.md)
+
 ## รันด้วย container
 
 สำหรับการติดตั้งใหม่ ให้ clone repository นี้ก่อน:
