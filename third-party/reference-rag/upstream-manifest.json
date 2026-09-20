@@ -1,0 +1,287 @@
+{
+  "repository": "https://github.com/aekanun2020/fixed-2026-rag-mcp-server-streamablehttp",
+  "commit": "5e5373a7a0919201b44f5aa78edad069a09974db",
+  "license_declaration": "README.md declares MIT; no standalone LICENSE, NOTICE or copyright notice exists in this commit. Preserve the declaration without inventing an author or license notice.",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "3f8a86b07fb964847ee65828a77c9259e73778a9959107d643a685243d0326c4",
+      "imported": false
+    },
+    {
+      "path": ".env.example",
+      "sha256": "83dc6c6e0d2d813e9270515804a8dfa88c6a3b7f499bd2710653a653758c134b",
+      "imported": false
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e9ba59ec120b780e3003fb34169f773c6c7becd2e82e0a144de68486d05c957c",
+      "imported": false
+    },
+    {
+      "path": "ADD_CONTEXT_GUIDE.md",
+      "sha256": "962a883e53ee156ac734c9e75651ae99498be95b47af1d5df9d6fa5c6db6e06c",
+      "imported": false
+    },
+    {
+      "path": "BACKUP_INFO.md",
+      "sha256": "3685aae00744ea5bd5464cd4a7a731065f988ef77f3cc08f9f7abedec20537b0",
+      "imported": false
+    },
+    {
+      "path": "CLIENT_MODIFICATIONS_SUMMARY.md",
+      "sha256": "300a76728aa4bd0f1704e0457ab80f69afb75944ec18d4a96d4985e165365edb",
+      "imported": false
+    },
+    {
+      "path": "CURL_TESTING_GUIDE.md",
+      "sha256": "c0d483ad77ad007776917a48ee433e12c228760a80fc3122340d001dcd0db2b3",
+      "imported": false
+    },
+    {
+      "path": "DOCUMENTS_TO_SEND.md",
+      "sha256": "70eb062334091e5991496a1922b837c9c0d96d92d77f2616728218f2808280e8",
+      "imported": false
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "1f1091f25373e69108259c1cb5f5a77a38023a8a09d7307aac038032ce932371",
+      "imported": false
+    },
+    {
+      "path": "GIT_STATUS_SUMMARY.md",
+      "sha256": "331432e18f4c68eb50920b7d771ef6823a1b39283da4c9e045e62f4766889638",
+      "imported": false
+    },
+    {
+      "path": "HYBRID_SEARCH_CONFIG.md",
+      "sha256": "68c1b2b339dcccbf9f258f316f4db5380b42489552e3915c3cae03a65c848ba4",
+      "imported": false
+    },
+    {
+      "path": "MCP_CLIENT_INTEGRATION_GUIDE.md",
+      "sha256": "d31c16c0fae0a8d63efe9e2392276b9fa7f8f71906e88e7a50cbe3d4c473aaa9",
+      "imported": false
+    },
+    {
+      "path": "OLLAMA_SETUP.md",
+      "sha256": "2ef8f3f3b91717fc42029270fbc0b60c96a3dbd718639bd52825b25a40c1e20b",
+      "imported": false
+    },
+    {
+      "path": "README.md",
+      "sha256": "262d2766aa06738d470a7823230c5445dd72d65b3d5cf4c1606c7344fa04efea",
+      "imported": false
+    },
+    {
+      "path": "TESTING_GUIDE.md",
+      "sha256": "0415a0eddc088c5843726ced87ce479c3847d6d796b85d1988789a47950b3b9e",
+      "imported": false
+    },
+    {
+      "path": "TEST_RESULTS_SUMMARY.md",
+      "sha256": "c1ea477b2c0aa57711871fcb222f170adfe637cd0a2c859f6b744d84c46d0dbf",
+      "imported": false
+    },
+    {
+      "path": "WEB_UI_TESTING_GUIDE.md",
+      "sha256": "a4c140d6fe4fc3b38e0ad09b1d368e1bd8ab97d5c8f697ab5a237930738314f1",
+      "imported": false
+    },
+    {
+      "path": "app/__init__.py",
+      "sha256": "5d075b5c766a97997ed4ad5e3276130ab068050d97a6bb5ee6c6da54abe56e6b",
+      "imported": false
+    },
+    {
+      "path": "app/mcp_server.py",
+      "sha256": "eb5cdfa1dfad20fd8a6045d7469ac2a384530ae8d96a533732578d25438c5ca3",
+      "imported": false
+    },
+    {
+      "path": "app/rag_services.py",
+      "sha256": "c82ae0cdd4eecae1b4db0426a74eccb1b97d61d4845b5d1b541ff0f467689043",
+      "imported": false
+    },
+    {
+      "path": "claude_desktop_config.json",
+      "sha256": "1e130180cbb7d1fd75f1398bab3fb6a77865cc3e4d4cd56f971159626844f6bd",
+      "imported": false
+    },
+    {
+      "path": "customerservice-policy.md",
+      "sha256": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+      "imported": false
+    },
+    {
+      "path": "docker-compose.yml",
+      "sha256": "887525b505c07283f7a141e5889583969e7965ce21097732acd9fdccdcb65dd7",
+      "imported": false
+    },
+    {
+      "path": "dti-calculation-guide.md",
+      "sha256": "317373209f9bf123d8065c988bf9f8cdb58b4c6143bf798cc2f77ea35c5f292b",
+      "imported": false
+    },
+    {
+      "path": "job_announcement.md",
+      "sha256": "4e353a9f4aa0df937adc751cb10ddd426bbdd491ce3ea2abe3ddb7e371db035b",
+      "imported": false
+    },
+    {
+      "path": "loan-analysis-summary.md",
+      "sha256": "9b1cbbe8cbcecce43663a085e1bd124be351eae3500ec10ac2cd734ddbefdd36",
+      "imported": false
+    },
+    {
+      "path": "main.py",
+      "sha256": "0049073631c4f5c115574d9db2e253ca292bf93f57941682adf3f20ef6df47e8",
+      "imported": false
+    },
+    {
+      "path": "ollama-entrypoint.sh",
+      "sha256": "044087e79f1aec9d543ed9845011aab5035ca02fb9fdeee489d5d86af6941558",
+      "imported": false
+    },
+    {
+      "path": "pyragdoc/__init__.py",
+      "sha256": "10daa9a513b49b57f6e2550732faca320ae46d62e22d16114f72709c353f861d",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/config.py",
+      "sha256": "125988f3817b2f8d6a0f367c4640597c7bc4ffcaac947939653ab3efaeb86396",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/__init__.py",
+      "sha256": "02fab91a5f9fcefbb45e0a7292916422452650741520a1c2cdbb60fe06ec7f20",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/bm25.py",
+      "sha256": "0546b546f52ef51c3e4299985ae8ad7de2b0e5cdb5880c8f03b4e61fcebebbe6",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/embedding.py",
+      "sha256": "3de743a77248afde072e3513a1fc859575280f07b484eff88547c603fcec418c",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/processors/__init__.py",
+      "sha256": "d6d9c048e47336611c81a6e9441bfc1ac11335ea809465b2b50b8daa8ad5a7f1",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/processors/base.py",
+      "sha256": "9ba2b50595f55b62081cec681366af66f24bf3d3861c2f238bbaa338b9466830",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/processors/pdf.py",
+      "sha256": "14099475a94fa2681555e11a4de449d67c32fdcd967fc0e29e15f321f3e43b0d",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/processors/text.py",
+      "sha256": "b84a3d8d06f9005099f3d375dbdfe73e2c396be55c4149a48cc66d9be906bbc2",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/rrf.py",
+      "sha256": "c897ac84b45122477dce0022c2808409f5df3f572727c7e1807688ccccc08009",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/search.py",
+      "sha256": "91c725f5a57556d6beb0692e8616aaac7c3854ece418d75d01fb473286bb395a",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/core/storage.py",
+      "sha256": "eef64f0ee39df29fa07a863bc712ac322a9076ebf788b759136939981721fe82",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/models/__init__.py",
+      "sha256": "a06e4084342f50535fcecd2e53acfad1238179698d7b42374648d130b9a86cd7",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/models/documents.py",
+      "sha256": "db3e01fc01d4ec626d3976d412b8dd7370feb74dc3871cfa868c5a2c751625bb",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/utils/__init__.py",
+      "sha256": "844973f843ea63e55580ff31490e1a69e724cd49f4c4b017dfdc962a035e4f34",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/utils/errors.py",
+      "sha256": "03d7f8a6491797d24cc8efb4ae06b950d06413d9700d878b6e2301e81f7d2602",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/utils/logging.py",
+      "sha256": "32cb5bdf02ac68e1f5e1f7207cc49719c96e8aaf637cd4b928ca4f3e12f3e35b",
+      "imported": true
+    },
+    {
+      "path": "pyragdoc/utils/thai_tokenizer.py",
+      "sha256": "fac9f700d35264b04a4f0f6738e5ed294faf27af9d20f22e7cd0ab1f662a7278",
+      "imported": true
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "a7afb62bdf015de58e75c6836c5a72737215491728db9b9d0da7bfb4e66de033",
+      "imported": false
+    },
+    {
+      "path": "start_docker.bat",
+      "sha256": "bb7450c2b5a7b2cd901588126a4fb888a42e30f4c79341b073976c840be55249",
+      "imported": false
+    },
+    {
+      "path": "start_docker.sh",
+      "sha256": "2bd15da604821f230dc4e88fff0c7521ee3c6420fe688fa0bce110791cd664df",
+      "imported": false
+    },
+    {
+      "path": "test_all_tools.py",
+      "sha256": "ff4853b9f1a5616d888223c56562f6cf11309bd9f99cc5dc84769f39529b493d",
+      "imported": false
+    },
+    {
+      "path": "test_captures/01_all_tools_e2e.png",
+      "sha256": "3e32bde470634e9e6c8da4c4d0f6db38fbcd1f2bf2a3f40bbecaac54fcf64897",
+      "imported": false
+    },
+    {
+      "path": "test_captures/02_protocol_raw.png",
+      "sha256": "86a74c3178ff6dbab3bdad99944aac466316b8b089e7c4722d05363a22fecdf0",
+      "imported": false
+    },
+    {
+      "path": "test_captures/03_docker_run.png",
+      "sha256": "cf1fdc67a9bc366f269c5d0e5d1e959f94d330708c2a92b2396eb6a573a020f7",
+      "imported": false
+    },
+    {
+      "path": "test_captures/04_v3docs_ingest_search.png",
+      "sha256": "5f378798a51677b521a4ec197a7e055d936a8d11fd3b4186c49abdc16d7d6c51",
+      "imported": false
+    },
+    {
+      "path": "test_captures/05_hybrid_dense_sparse.png",
+      "sha256": "b02447dea855049f29550718dcee23d7da0510a9e31e89d0d3c98bf0aede8203",
+      "imported": false
+    },
+    {
+      "path": "test_captures/TEST_REPORT.md",
+      "sha256": "451085ec87968f4e93f15d7084fc923bfc2d5fc77633fcce279820aa8cdfdbe5",
+      "imported": false
+    }
+  ]
+}

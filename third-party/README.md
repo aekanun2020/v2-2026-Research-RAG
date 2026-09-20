@@ -2,7 +2,7 @@
 
 For the Docker deployment, see [pinned base images, build tool and original notices](container/README.md).
 
-Original implementation is authored for the user's eight-stage research requirements. No application code or skill text from external research projects is copied, translated, forked or used as a template. The sibling `tts_research` package is not a dependency.
+The eight-stage research workflow was authored for this project. The Qdrant migration now adapts application code from the [explicitly selected RAG upstream](reference-rag/README.md), with hashes and license declaration captured before integration. The sibling `tts_research` package is not a dependency.
 
 Direct distributions, inspected before implementing the server:
 

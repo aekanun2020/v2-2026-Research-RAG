@@ -14,6 +14,8 @@ Repository นี้เก็บโค้ด เอกสาร และผล�
 
 ## เอกสารและซอร์ส
 
+- [กำลังย้ายเป็น Qdrant/Ollama และนำ SQLite ออก](docs/qdrant-migration.md) · [ที่มาของฐานที่ผู้ใช้เลือก](third-party/reference-rag/README.md)
+
 - [Repository และขอบเขตไฟล์ที่เผยแพร่](docs/repository-export.md) · [SHA-256 ของไฟล์ต้นทางและไฟล์ที่ส่งขึ้น Git](docs/repository-export-manifest.json)
 
 - [ปรับคุณภาพ semantic search ภาษาไทย: คำถาม ผลจริง และข้อจำกัด](docs/retrieval-quality-2026-09-20.md) · [คำถามทั้งหมด](docs/quality-cases-2026-09-20.json) · [MCP regression client](scripts/verify_retrieval_mcp.py)
