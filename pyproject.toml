@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "codex-research-rag-mcp"
+version = "0.2.4"
+description = "Evidence-grounded research lifecycle tools over MCP Streamable HTTP"
+requires-python = ">=3.11"
+dependencies = ["mcp==2.2.0", "pypdf==6.18.1", "uvicorn==0.52.4", "numpy==2.3.5", "onnxruntime==1.30.0", "tokenizers==0.23.2"]
+
+[project.scripts]
+research-rag = "research_rag_mcp.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/research_rag_mcp"]

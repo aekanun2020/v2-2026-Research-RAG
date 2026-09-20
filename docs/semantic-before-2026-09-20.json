@@ -1,0 +1,9 @@
+{
+  "query": "การประมาณค่าแบบเบย์สำหรับข้อมูลที่มีโครงสร้างหลายระดับ",
+  "method": "BM25 with English/Unicode words and Thai character 2/3-grams",
+  "hits": 0,
+  "status": "insufficient_retrieved_evidence",
+  "source": "tests/evidence/brms.pdf",
+  "semantic_mode_available": false,
+  "chunk_management_tools_available": false
+}

@@ -1,0 +1,13 @@
+*
+!pyproject.toml
+!uv.lock
+!src/
+!src/**
+!scripts/
+!scripts/smoke_http.py
+!scripts/download_model.py
+!scripts/download_reranker.py
+!third-party/
+!third-party/**
+**/__pycache__/
+**/*.pyc

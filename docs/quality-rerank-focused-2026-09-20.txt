@@ -1,0 +1,43 @@
+{"id": "T04", "seconds": 7.27, "hits": 3, "top_source_matches": false, "top_score": 0.45901086571545485}
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/scripts/verify_retrieval_mcp.py", line 102, in <module>
+  |     asyncio.run(main())
+  |   File "/Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 195, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "/Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/scripts/verify_retrieval_mcp.py", line 44, in main
+  |     async with streamable_http_client(args.url, http_client=http) as streams:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/.venv/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 736, in streamable_http_client
+  |     anyio.create_task_group() as tg,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/.venv/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 753, in streamable_http_client
+    |     yield read_stream, write_stream
+    |   File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/scripts/verify_retrieval_mcp.py", line 45, in main
+    |     async with ClientSession(*streams, read_timeout_seconds=600) as session:
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/.venv/lib/python3.12/site-packages/mcp/client/session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/scripts/verify_retrieval_mcp.py", line 86, in main
+      |     raise AssertionError('Expected source is not first: '+case['id'])
+      | AssertionError: Expected source is not first: T04
+      +------------------------------------

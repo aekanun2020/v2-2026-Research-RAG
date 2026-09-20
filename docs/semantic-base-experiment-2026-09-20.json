@@ -1,0 +1,178 @@
+[
+  {
+    "query": "การประมาณค่าแบบเบย์สำหรับข้อมูลที่มีโครงสร้างหลายระดับ",
+    "model": {
+      "model_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "license": "MIT (upstream model-card declaration)",
+      "dimensions": 768,
+      "files": {
+        "README.md": "9d129cb0b912b55c7b5378f976a9c35ae4796c80466b659ad63930d8ca090fca",
+        "onnx/tokenizer.json": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+        "onnx/model.onnx": "84a4d426f7e87a6bf5bf195f0bae2c4a7d15f675b23ca96f42fab8326d7a77aa"
+      }
+    },
+    "corpus": "same preserved real brms chunks; diagnostic, not full application integration",
+    "hits": [
+      {
+        "id": "19be560a75dbf01841bcb052b56956392f1027d004b647b58d99c588e10eef5d",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 25,
+        "start": 0,
+        "end": 1143,
+        "text": "26 brms: Bayesian Multilevel Models Using Stan in R\nMetropolis N, Rosenbluth AW, Rosenbluth MN, Teller AH, Teller E (1953). “Equation of\nState Calculations by Fast Computing Machines.”Journal of Chemical Physics, 21(6),\n1087–1092.doi:10.1063/1.1699114.\nNatarajan R, Kass RE (2000). “Reference Bayesian Methods for Generalized Linear Mixed\nModels.”Journal of the American Statistical Association, 95(449), 227–237.doi:10.1080/\n01621459.2000.10473916.\nNeal RM (2003). “Slice Sampling.”The Annals of Statistics, 31(3), 705–741.doi:10.1214/\naos/1056562461.\nNeal RM (2011). “MCMC Using Hamiltonian Dynamics.” In S Brooks, A Gelman, GL Jones,\nXL Meng (eds.),Handbook of Markov Chain Monte Carlo. Chapman & Hall/CRC.doi:\n10.1201/b10905-6.\nPinheiro J, Bates D (2000).Mixed-Eﬀects Models inS and S-PLUS. Springer-Verlag. doi:\n10.1007/b98882.\nPinheiro J, Bates D, DebRoy S, Sarkar D,R Core Team (2017).nlme: Linear and Nonlinear\nMixed Eﬀects Models. R package version 3.1-131, URLhttps://CRAN.R-project.org/\npackage=nlme.\nPlummerM(2008). “PenalizedLossFunctionsforBayesianModelComparison.” Biostatistics,\n9(3), 523–539.doi:10.1093/biostatistics/kxm049.\n",
+        "score": 0.824408233165741
+      },
+      {
+        "id": "ec7b73960cea059e3762632af9bb60c194916b9f413cfc01e7e786052204fb10",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 0,
+        "start": 0,
+        "end": 1188,
+        "text": "JSS\n Journal of Statistical Software\nAugust 2017, Volume 80, Issue 1. doi:10.18637/jss.v080.i01\nbrms: An R Package for Bayesian Multilevel Models\nUsing Stan\nPaul-Christian Bürkner\nUniversity of Münster\nAbstract\nThe brms package implements Bayesian multilevel models inR using the probabilis-\ntic programming language Stan. A wide range of distributions and link functions are\nsupported, allowing users to ﬁt – among others – linear, robust linear, binomial, Pois-\nson, survival, ordinal, zero-inﬂated, hurdle, and even non-linear models all in a multilevel\ncontext. Further modeling options include autocorrelation of the response variable, user\ndeﬁned covariance structures, censored data, as well as meta-analytic standard errors.\nPrior speciﬁcations are ﬂexible and explicitly encourage users to apply prior distributions\nthat actually reﬂect their beliefs. In addition, model ﬁt can easily be assessed and com-\npared with the Watanabe-Akaike information criterion and leave-one-out cross-validation.\nKeywords: Bayesian inference, multilevel model, ordinal data, MCMC,Stan, R.\n1. Introduction\nMultilevel models (MLMs) oﬀer a great ﬂexibility for researchers across sciences (Brown and\n",
+        "score": 0.8217705488204956
+      },
+      {
+        "id": "51355a751ca0e52b6c881d801927ad88717c3e70564b51dc48e171240ebfc40c",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 19,
+        "start": 0,
+        "end": 1142,
+        "text": "20 brms: Bayesian Multilevel Models Using Stan in R\nbrms lme4 MCMCglmm\nSupported model types:\nLinear models yes yes yes\nRobust linear models yes no no\nBinomial models yes yes yes\nCategorical models yes no yes\nMultinomial models no no yes\nCount data models yes yes yes\nSurvival models yes 1 yes yes\nOrdinal models various no cumulative\nZero-inﬂated and hurdle models yes no yes\nGeneralized additive models yes no no\nNon-linear models yes no no\nAdditional modeling options:\nVariable link functions various various no\nWeights yes yes no\nOﬀset yes yes using priors\nMultivariate responses limited no yes\nAutocorrelation eﬀects yes no no\nCategory-speciﬁc eﬀects yes no no\nStandard errors for meta-analysis yes no yes\nCensored data yes no yes\nTruncated data yes no no\nCustomized covariances yes no yes\nMissing value imputation no no no\nBayesian speciﬁcs:\nParallelization yes – no\nPopulation-level priors ﬂexible – 3 normal\nGroup-level priors normal – 3 normal\nCovariance priors ﬂexible – 3 restricted4\nOther:\nEstimator HMC, NUTS ML, REML MH, Gibbs 2\nInformation criterion WAIC, LOO AIC, BIC DIC\nC++ compiler required yes no no\nModularized no yes no\n",
+        "score": 0.8205249309539795
+      }
+    ]
+  },
+  {
+    "query": "How can knowledge about parameters be incorporated before analysing observations?",
+    "model": {
+      "model_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "license": "MIT (upstream model-card declaration)",
+      "dimensions": 768,
+      "files": {
+        "README.md": "9d129cb0b912b55c7b5378f976a9c35ae4796c80466b659ad63930d8ca090fca",
+        "onnx/tokenizer.json": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+        "onnx/model.onnx": "84a4d426f7e87a6bf5bf195f0bae2c4a7d15f675b23ca96f42fab8326d7a77aa"
+      }
+    },
+    "corpus": "same preserved real brms chunks; diagnostic, not full application integration",
+    "hits": [
+      {
+        "id": "788342dc43430ed809847749d66c1d5174d8b2cafe7f6a8d0888bfe662fc15b0",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 1,
+        "start": 989,
+        "end": 2183,
+        "text": "ling (Damien, Wake-\nﬁeld, and Walker 1999; Neal 2003). One of the main problems of these algorithms is their\nrather slow convergence for high-dimensional models with correlated parameters (Neal 2011;\nHoﬀman and Gelman 2014; Gelman, Carlin, Stern, and Rubin 2003). Furthermore, Gibbs\nsampling requires priors to be conjugate to the likelihood of parameters in order to work\neﬃciently (Gelmanet al. 2003), thus reducing the freedom of the researcher in choosing a\nprior that reﬂects his or her beliefs. In contrast,Stan implements Hamiltonian Monte Carlo\n(Duane, Kennedy, Pendleton, and Roweth 1987; Neal 2011) and its extension, the No-U-Turn\nSampler (NUTS) (Hoﬀman and Gelman 2014). These algorithms converge much more quickly\nespecially for high-dimensional models regardless of whether the priors are conjugate or not\n(Hoﬀman and Gelman 2014).\nSimilar to software packages likeWinBUGS, Stan comes with its own programming language,\nallowing for great modeling ﬂexibility (cf.,Stan Development Team 2017b; Carpenteret al.\n2017). Many researchers may still hesitate to use Stan directly, as every model has to be\nwritten, debuggedandpossiblyalsooptimized. Thismaybeatime-consuminganderrorprone\n",
+        "score": 0.8139282464981079
+      },
+      {
+        "id": "8fd42f02e76710f0b3e67de5352e3945625bdaee123aded84eea167513ea32a2",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 7,
+        "start": 2880,
+        "end": 3680,
+        "text": "trast tolme4, the|| operator in brms splits up the design matrix computed fromcoefs instead of\ndecomposing coefs in its terms. This implies that columns of the design matrix originating from the same\nfactor are also assumed to be uncorrelated, whereaslme4 estimates the correlations in this case. For a way\nto achieve brms-like behavior with lme4, see the mixed function of the afex package by Singmann, Bolker,\nWestfall, and Aust (2017).\n5When factors are used as predictors, parameter names will depend on the factor levels. To get\nan overview of all parameters and parameter classes for which priors can be speciﬁed, use function\nget_prior. For the present example, get_prior(time | cens(censored) ˜ age * sex + disease + (1 +\nage | patient), data = kidney, family = lognormal()) does the desired.",
+        "score": 0.8115257024765015
+      },
+      {
+        "id": "2ec2c2b31c906250f3f72fdd0b4fb5e5c7ab4fbc008c1b017e3603f228bfeed6",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 4,
+        "start": 916,
+        "end": 2098,
+        "text": "ples but takes\nmore time per sample than other algorithms typically applied. Another drawback of HMC is\nthe need to pre-specify at least two parameters, which are both critical for the performance of\nHMC. The NUTS sampler allows setting these parameters automatically thus eliminating the\nneed for any hand-tuning, while still being at least as eﬃcient as a well tuned HMC (Hoﬀman\nand Gelman 2014). For more details on the sampling algorithms applied inStan, see theStan\nuser’s manual (Stan Development Team 2017b) as well as Hoﬀman and Gelman (2014).\nIn addition to the estimation of model parameters,brms allows drawing samples from the\nposterior predictive distribution as well as from the pointwise log-likelihood. Both can be used\nto assess model ﬁt. The former allows a comparison between the actual responsey and the\nresponse ˆy predicted by the model. The pointwise log-likelihood can be used, among others, to\ncalculate the Watanabe-Akaike information criterion (WAIC) proposed by Watanabe (2010)\nand leave-one-out cross-validation (LOO; Gelfand, Dey, and Chang 1992; Vehtari, Gelman,\nand Gabry 2015; see also Ionides 2008) both allowing to compare diﬀerent models applied\n",
+        "score": 0.802478551864624
+      }
+    ]
+  },
+  {
+    "query": "How are observations grouped within schools represented?",
+    "model": {
+      "model_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "license": "MIT (upstream model-card declaration)",
+      "dimensions": 768,
+      "files": {
+        "README.md": "9d129cb0b912b55c7b5378f976a9c35ae4796c80466b659ad63930d8ca090fca",
+        "onnx/tokenizer.json": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+        "onnx/model.onnx": "84a4d426f7e87a6bf5bf195f0bae2c4a7d15f675b23ca96f42fab8326d7a77aa"
+      }
+    },
+    "corpus": "same preserved real brms chunks; diagnostic, not full application integration",
+    "hits": [
+      {
+        "id": "da2e7482beb403b9027df727a11baaedd49c13200add1ebdaeaeae869f17badc",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 17,
+        "start": 990,
+        "end": 2170,
+        "text": "mparison between packages\nOver the years, many R packages have been developed that implement MLMs, each being\nmore or less general in their supported models. Comparing all of them tobrms would be too\nextensive and barely helpful for the purpose of the present paper. Accordingly, we concentrate\non a comparison with four packages. These arelme4 (Bates et al. 2015) and MCMCglmm\n(Hadﬁeld2010), whicharepossiblythemostgeneralandwidely applied RpackagesforMLMs,\nas well asrstanarm (Gabry and Goodrich 2017) andrethinking (McElreath 2016), which are\nboth based on Stan. As opposed to the other packages, rethinking was primarily written\nfor teaching purposes and requires the user to specify the full model explicitly using its own\nsimpliﬁedBUGS-like syntax thus helping users to better understand the models that are\nﬁtted to their data.\nRegarding model families, all ﬁve packages support the most common types such as linear\nand binomial models as well as Poisson models for count data. Currently,brms and MCM-\nCglmm provide more ﬂexibility when modeling categorical and ordinal data. In addition,\nbrms supports robust linear regression using Student’s distribution.MCMCglmm allows\n",
+        "score": 0.7773950099945068
+      },
+      {
+        "id": "d2bb5d29fd5f65184ac30addcff7ca7f6f4159ffde6e14b70f4efa49f1ff8e7c",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 14,
+        "start": 2853,
+        "end": 3162,
+        "text": "ons known to us are the packagesordinal (Christensen 2015) andVGAM (Yee 2010). The former\nsupports only cumulative models but with diﬀerent modeling option for the thresholds. The latter supports all\nfour ordinal families also implemented inbrms as well as category-speciﬁc eﬀects but no group-speciﬁc eﬀects.",
+        "score": 0.7771947383880615
+      },
+      {
+        "id": "30ffd1082fe92efe7f96c615121cf3e2ec9fe1b40c3bd6ad7f85db392f1f9da8",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 8,
+        "start": 973,
+        "end": 2145,
+        "text": "t al.(2009, 2010).\nEach group-level eﬀect of each grouping factor has a standard deviation parameter, which\nis restricted to be non-negative and, by default, has a half Student-t prior with 3 degrees\nof freedom and a scale parameter that is minimally10. For non-ordinal models, brms tries\nto evaluate if the scale is large enough to be considered only weakly informative for the\nmodel at hand by comparing it with the standard deviation of the response after applying\nthe link function. If this is not the case, it will increase the scale based on the aforemen-\ntioned standard deviation.7 Stan implicitly deﬁnes a half Student-t prior by using a Student-t\nprior on a restricted parameter (Stan Development Team 2017b). For other reasonable pri-\nors on standard deviations see Gelman (2006). Inbrms, standard deviation parameters are\nnamed assd_<group>_<coef> so thatsd_patient_Intercept and sd_patient_age are the\nparameter names in the example. If desired, it is possible to set a diﬀerent prior on each pa-\nrameter, but statements such asset_prior(\"student_t(3,0,5)\", class = \"sd\", group\n= \"patient\") or evenset_prior(\"student_t(3,0,5)\", class = \"sd\") may also be used\n",
+        "score": 0.7699780464172363
+      }
+    ]
+  },
+  {
+    "query": "นักเรียนอยู่ในชั้นเรียนและโรงเรียนเดียวกันวิเคราะห์อย่างไร",
+    "model": {
+      "model_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "license": "MIT (upstream model-card declaration)",
+      "dimensions": 768,
+      "files": {
+        "README.md": "9d129cb0b912b55c7b5378f976a9c35ae4796c80466b659ad63930d8ca090fca",
+        "onnx/tokenizer.json": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+        "onnx/model.onnx": "84a4d426f7e87a6bf5bf195f0bae2c4a7d15f675b23ca96f42fab8326d7a77aa"
+      }
+    },
+    "corpus": "same preserved real brms chunks; diagnostic, not full application integration",
+    "hits": [
+      {
+        "id": "da2e7482beb403b9027df727a11baaedd49c13200add1ebdaeaeae869f17badc",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 17,
+        "start": 990,
+        "end": 2170,
+        "text": "mparison between packages\nOver the years, many R packages have been developed that implement MLMs, each being\nmore or less general in their supported models. Comparing all of them tobrms would be too\nextensive and barely helpful for the purpose of the present paper. Accordingly, we concentrate\non a comparison with four packages. These arelme4 (Bates et al. 2015) and MCMCglmm\n(Hadﬁeld2010), whicharepossiblythemostgeneralandwidely applied RpackagesforMLMs,\nas well asrstanarm (Gabry and Goodrich 2017) andrethinking (McElreath 2016), which are\nboth based on Stan. As opposed to the other packages, rethinking was primarily written\nfor teaching purposes and requires the user to specify the full model explicitly using its own\nsimpliﬁedBUGS-like syntax thus helping users to better understand the models that are\nﬁtted to their data.\nRegarding model families, all ﬁve packages support the most common types such as linear\nand binomial models as well as Poisson models for count data. Currently,brms and MCM-\nCglmm provide more ﬂexibility when modeling categorical and ordinal data. In addition,\nbrms supports robust linear regression using Student’s distribution.MCMCglmm allows\n",
+        "score": 0.7729735970497131
+      },
+      {
+        "id": "30ffd1082fe92efe7f96c615121cf3e2ec9fe1b40c3bd6ad7f85db392f1f9da8",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 8,
+        "start": 973,
+        "end": 2145,
+        "text": "t al.(2009, 2010).\nEach group-level eﬀect of each grouping factor has a standard deviation parameter, which\nis restricted to be non-negative and, by default, has a half Student-t prior with 3 degrees\nof freedom and a scale parameter that is minimally10. For non-ordinal models, brms tries\nto evaluate if the scale is large enough to be considered only weakly informative for the\nmodel at hand by comparing it with the standard deviation of the response after applying\nthe link function. If this is not the case, it will increase the scale based on the aforemen-\ntioned standard deviation.7 Stan implicitly deﬁnes a half Student-t prior by using a Student-t\nprior on a restricted parameter (Stan Development Team 2017b). For other reasonable pri-\nors on standard deviations see Gelman (2006). Inbrms, standard deviation parameters are\nnamed assd_<group>_<coef> so thatsd_patient_Intercept and sd_patient_age are the\nparameter names in the example. If desired, it is possible to set a diﬀerent prior on each pa-\nrameter, but statements such asset_prior(\"student_t(3,0,5)\", class = \"sd\", group\n= \"patient\") or evenset_prior(\"student_t(3,0,5)\", class = \"sd\") may also be used\n",
+        "score": 0.7727850675582886
+      },
+      {
+        "id": "3cb176b0cd86ba68561f07a9849a32f74691651f30c2a369afe854880940d612",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 25,
+        "start": 943,
+        "end": 2112,
+        "text": "ackage version 3.1-131, URLhttps://CRAN.R-project.org/\npackage=nlme.\nPlummerM(2008). “PenalizedLossFunctionsforBayesianModelComparison.” Biostatistics,\n9(3), 523–539.doi:10.1093/biostatistics/kxm049.\nPlummer M (2013). JAGS: Just Another Gibs Sampler . URL http://mcmc-jags.\nsourceforge.net/.\nR Core Team (2016).Rtools Software, Version 3.4. R Foundation for Statistical Computing,\nVienna, Austria. URLhttps://CRAN.R-project.org/bin/windows/Rtools/.\nR Core Team (2017).R: A Language and Environment for Statistical Computing. R Founda-\ntion for Statistical Computing, Vienna, Austria. URLhttps://www.R-project.org/.\nSamejima F (1969). “Estimation of Latent Ability Using a Response Pattern of Graded\nScores.”Psychometrika, 34(Supplement 1), 1–97.doi:10.1007/bf03372160.\nSingmann H, Bolker B, Westfall J, Aust F (2017).afex: Analysis of Factorial Experiments.\nR package version 0.18-0, URLhttps://CRAN.R-project.org/package=afex.\nSpiegelhalter D, Thomas A, Best N, Lunn D (2003).WinBUGS Version 1.4 User Manual.\nMRC Biostatistics Unit, Cambridge. URLhttp://www.mrc-bsu.cam.ac.uk/bugs.\nSpiegelhalter D, Thomas A, Best N, Lunn D (2007).OpenBUGS User Manual, Version 3.0.2.\n",
+        "score": 0.771500825881958
+      }
+    ]
+  }
+]

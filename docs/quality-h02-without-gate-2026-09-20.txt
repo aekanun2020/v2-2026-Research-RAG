@@ -1,0 +1,1 @@
+{"id": "H02", "seconds": 0.05, "hits": 3, "top_source_matches": true, "top_score": 0.8930044877363016}

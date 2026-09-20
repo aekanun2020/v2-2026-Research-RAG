@@ -1,0 +1,5 @@
+{
+  "case": "Retry original schema-1 import key with identical public arguments after migration",
+  "before": "Idempotency key already used with different input",
+  "current_revision": 2
+}

@@ -1,0 +1,6 @@
+{
+  "case": "Identical original import replay after schema migration",
+  "original_response_preserved": true,
+  "revision_unchanged": 2,
+  "fix": "Omitted optional document_id remains absent from the canonical mutation payload, preserving the original request fingerprint"
+}

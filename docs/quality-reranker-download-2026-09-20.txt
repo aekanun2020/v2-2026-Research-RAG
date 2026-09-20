@@ -1,0 +1,6 @@
+Reranker: onnx-community/gte-multilingual-reranker-base ee64367e35a2db0da46bb6497e13a18f8bd585cb CPU only
+Downloaded and verified: README.md
+Downloaded and verified: config.json
+Downloaded and verified: tokenizer_config.json
+Downloaded and verified: onnx/model_int8.onnx
+Downloaded and verified: tokenizer.json

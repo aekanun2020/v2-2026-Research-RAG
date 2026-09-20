@@ -1,0 +1,2559 @@
+{
+  "recorded_as": "Preserved results of the preceding completed evaluation, not a new run",
+  "evaluation_date": "2026-09-20",
+  "assessor": {
+    "assessor": "Codex",
+    "new_assessment": true,
+    "scope": "12 fixed Thai queries, semantic top-3, no source filter, role literature",
+    "rubric": {
+      "direct": "Passage directly addresses a substantive part of the question; not a guarantee of a complete answer.",
+      "partial": "Related context or correct topic, but misses the requested core explanation.",
+      "irrelevant": "Does not provide evidence for the question."
+    },
+    "grades": [
+      {
+        "id": "T01",
+        "labels": [
+          "direct",
+          "direct",
+          "direct"
+        ],
+        "reasons": [
+          "Soft targets averaged across ensemble predictions train a small model.",
+          "Explicit large/ensemble model to small model transfer through class probabilities.",
+          "Distillation with softened targets and temperature."
+        ]
+      },
+      {
+        "id": "T02",
+        "labels": [
+          "partial",
+          "partial",
+          "irrelevant"
+        ],
+        "reasons": [
+          "Correct paper but regret-bound proof fragment, not the requested moment-estimation method.",
+          "Adam update equation appears within a proof, without a clear first/second-moment explanation.",
+          "Handwriting network hidden-layer and window derivatives, not adaptive optimization."
+        ]
+      },
+      {
+        "id": "T03",
+        "labels": [
+          "direct",
+          "direct",
+          "direct"
+        ],
+        "reasons": [
+          "SQL execution rewards are explicitly defined.",
+          "NL-to-SQL generation and reinforcement-learning execution rewards.",
+          "Abstract explicitly connects NL questions, SQL, and execution rewards."
+        ]
+      },
+      {
+        "id": "T04",
+        "labels": [
+          "irrelevant",
+          "irrelevant",
+          "irrelevant"
+        ],
+        "reasons": [
+          "Updating word2vec during training is not making a token representation depend on its sentence context.",
+          "Translation performance comparison and unknown words, not context-dependent word representations.",
+          "Translation length and vocabulary limitations, not ELMo-style word representations."
+        ]
+      },
+      {
+        "id": "T05",
+        "labels": [
+          "direct",
+          "irrelevant",
+          "irrelevant"
+        ],
+        "reasons": [
+          "Relative-position representations replace absolute position encodings in self-attention.",
+          "Training costs and evaluation do not address relative positions.",
+          "Temporal attention penalizes repeated attention; it does not encode distance between words."
+        ]
+      },
+      {
+        "id": "T06",
+        "labels": [
+          "partial",
+          "direct",
+          "direct"
+        ],
+        "reasons": [
+          "Network bandwidth and expert load imbalance are related concerns, not the core sparse-selection explanation.",
+          "Sparse gating and expert-layer structure explicitly increase capacity.",
+          "Trainable gating selects a sparse combination of experts for each example."
+        ]
+      },
+      {
+        "id": "T07",
+        "labels": [
+          "direct",
+          "irrelevant",
+          "direct"
+        ],
+        "reasons": [
+          "Connects next-step prediction to handwriting generation, but text conditioning falls just beyond the chunk.",
+          "Adam regret-bound proof does not concern handwriting.",
+          "Predicts pen coordinates and end-of-stroke markers one point at a time; text conditioning is not explained here."
+        ]
+      },
+      {
+        "id": "T08",
+        "labels": [
+          "direct",
+          "direct",
+          "direct"
+        ],
+        "reasons": [
+          "States the fixed-length bottleneck explanation explicitly as a hypothesis.",
+          "Reports worsening with length and unknown words.",
+          "Qualitative translation examples show degradation with long sentences."
+        ]
+      },
+      {
+        "id": "T09",
+        "labels": [
+          "partial",
+          "irrelevant",
+          "irrelevant"
+        ],
+        "reasons": [
+          "Correct paper and generic contributions, but not the rare-word or hierarchical attention methods requested.",
+          "Handwriting synthesis conclusion does not answer summarization.",
+          "MT vocabulary and sentence-length limitations do not provide the requested summarization mechanisms."
+        ]
+      },
+      {
+        "id": "T10",
+        "labels": [
+          "direct",
+          "partial",
+          "direct"
+        ],
+        "reasons": [
+          "Separable temporal convolution and efficient video classification.",
+          "Feature gating and optical flow relate to video recognition but do not explain separating spatial and temporal filters.",
+          "Explicit spatial/temporal filter decomposition and computational efficiency."
+        ]
+      },
+      {
+        "id": "N01",
+        "labels": [
+          "irrelevant",
+          "irrelevant",
+          "irrelevant"
+        ],
+        "reasons": [
+          "An albedo Wikipedia sample in an RNN paper does not explain plate tectonics or volcanoes.",
+          "Generated-Wikipedia figure caption is not geology evidence.",
+          "Adam regret-bound proof is unrelated."
+        ]
+      },
+      {
+        "id": "N02",
+        "labels": [
+          "irrelevant",
+          "irrelevant",
+          "irrelevant"
+        ],
+        "reasons": [
+          "Adam proof does not describe comet orbits.",
+          "Handwriting mixture-density derivatives are unrelated.",
+          "Handwriting RNN update equations are unrelated."
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "T01",
+      "query": "ถ่ายทอดความรู้จากโมเดลหลายตัวไปยังโมเดลขนาดเล็กตัวเดียวได้อย่างไร",
+      "expected_filename": "arxiv-1503.02531.pdf"
+    },
+    {
+      "id": "T02",
+      "query": "ปรับอัตราการเรียนรู้แยกสำหรับแต่ละพารามิเตอร์โดยใช้ค่าเฉลี่ยของความชันและความชันกำลังสองได้อย่างไร",
+      "expected_filename": "arxiv-1412.6980.pdf"
+    },
+    {
+      "id": "T03",
+      "query": "แปลงคำถามภาษาคนให้เป็นคำสั่งค้นข้อมูลในตารางโดยใช้ผลการรันคำสั่งเป็นรางวัลได้อย่างไร",
+      "expected_filename": "arxiv-1709.00103.pdf"
+    },
+    {
+      "id": "T04",
+      "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+      "expected_filename": "arxiv-1802.05365.pdf"
+    },
+    {
+      "id": "T05",
+      "query": "ใช้ระยะห่างระหว่างคำแทนการระบุตำแหน่งแบบตายตัวในกลไกความสนใจได้อย่างไร",
+      "expected_filename": "arxiv-1803.02155.pdf"
+    },
+    {
+      "id": "T06",
+      "query": "เพิ่มความจุของโครงข่ายโดยเลือกใช้ผู้เชี่ยวชาญเพียงบางตัวสำหรับข้อมูลแต่ละตัวอย่างได้อย่างไร",
+      "expected_filename": "arxiv-1701.06538.pdf"
+    },
+    {
+      "id": "T07",
+      "query": "สร้างลายมือเขียนจากข้อความโดยให้โครงข่ายเรียนรู้การทำนายจุดถัดไปได้อย่างไร",
+      "expected_filename": "arxiv-1308.0850.pdf"
+    },
+    {
+      "id": "T08",
+      "query": "เหตุใดคุณภาพการแปลด้วยตัวเข้ารหัสและตัวถอดรหัสจึงลดลงเมื่อประโยคยาวหรือมีคำที่ไม่รู้จัก",
+      "expected_filename": "arxiv-1409.1259.pdf"
+    },
+    {
+      "id": "T09",
+      "query": "สรุปข้อความแบบเขียนใหม่จะจัดการคำหายากและโครงสร้างระดับคำกับประโยคได้อย่างไร",
+      "expected_filename": "arxiv-1602.06023.pdf"
+    },
+    {
+      "id": "T10",
+      "query": "จำแนกวิดีโอให้เร็วขึ้นโดยแยกการเรียนรู้ข้อมูลเชิงพื้นที่กับเชิงเวลาได้อย่างไร",
+      "expected_filename": "arxiv-1712.04851.pdf"
+    },
+    {
+      "id": "N01",
+      "query": "อะไรเป็นสาเหตุให้แผ่นเปลือกโลกเคลื่อนที่และเกิดภูเขาไฟ",
+      "expected_filename": null
+    },
+    {
+      "id": "N02",
+      "query": "คำนวณวงโคจรของดาวหางรอบดวงอาทิตย์ได้อย่างไร",
+      "expected_filename": null
+    }
+  ],
+  "results": [
+    {
+      "id": "T01",
+      "retrieval": {
+        "query": "ถ่ายทอดความรู้จากโมเดลหลายตัวไปยังโมเดลขนาดเล็กตัวเดียวได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "9f129381bc6020678899da2acc8df7162c6331acfad50c1498c05b8adade31f4",
+            "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+            "page_index": 1,
+            "start": 1892,
+            "end": 3071,
+            "text": "e\nsmall model. For this transfer stage, we could use the same tr aining set or a separate “transfer” set.\nWhen the cumbersome model is a large ensemble of simpler mode ls, we can use an arithmetic or\ngeometric mean of their individual predictive distributions as the soft targets. When the soft targets\nhave high entropy, they provide much more information per training case than hard targets and much\nless variance in the gradient between training cases, so thesmall model can often be trained on much\nless data than the original cumbersome model and using a much higher learning rate.\nFor tasks like MNIST in which the cumbersome model almost alw ays produces the correct answer\nwith very high conﬁdence, much of the information about the l earned function resides in the ratios\nof very small probabilities in the soft targets. For example , one version of a 2 may be given a\nprobability of 10−6 of being a 3 and 10−9 of being a 7 whereas for another version it may be the\nother way around. This is valuable information that deﬁnes a rich similarity structure over the data\n(i. e. it says which 2’s look like 3’s and which look like 7’s) but it has very little inﬂuence on the\n",
+            "chunk_set_id": "cs-1e8718b0e8cf4cd8b9f6f8f32183940f",
+            "document_id": "doc-0abe82af46944077afd5529514b5307a",
+            "source_version": 1,
+            "text_revision_id": "text-0f3f2fd1c95ec52d819a435ab142f6f03ec1207a0a0e019d136f3e231d379298",
+            "title": "Distilling the Knowledge in a Neural Network",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1503.02531.pdf",
+            "role": "literature",
+            "page_label": "2",
+            "score": 0.81924057,
+            "semantic_score": 0.819241,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+              "page_index": 1,
+              "start": 1892,
+              "end": 3071,
+              "quote": "e\nsmall model. For this transfer stage, we could use the same tr aining set or a separate “transfer” set.\nWhen the cumbersome model is a large ensemble of simpler mode ls, we can use an arithmetic or\ngeometric mean of their individual predictive distributions as the soft targets. When the soft targets\nhave high entropy, they provide much more information per training case than hard targets and much\nless variance in the gradient between training cases, so thesmall model can often be trained on much\nless data than the original cumbersome model and using a much higher learning rate.\nFor tasks like MNIST in which the cumbersome model almost alw ays produces the correct answer\nwith very high conﬁdence, much of the information about the l earned function resides in the ratios\nof very small probabilities in the soft targets. For example , one version of a 2 may be given a\nprobability of 10−6 of being a 3 and 10−9 of being a 7 whereas for another version it may be the\nother way around. This is valuable information that deﬁnes a rich similarity structure over the data\n(i. e. it says which 2’s look like 3’s and which look like 7’s) but it has very little inﬂuence on the\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "3a3286f3ab031c1a893bcb59ed067458157e14359c5c45f988919b15efe1bdf5",
+            "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+            "page_index": 1,
+            "start": 944,
+            "end": 2092,
+            "text": "\non the training data when the real objective is to generalize well to new data. It would clearly\nbe better to train models to generalize well, but this requir es information about the correct way to\ngeneralize and this information is not normally available. When we are distilling the knowledge\nfrom a large model into a small one, however, we can train the small model to generalize in the same\nway as the large model. If the cumbersome model generalizes w ell because, for example, it is the\naverage of a large ensemble of different models, a small model trained to generalize in the same way\nwill typically do much better on test data than a small model that is trained in the normal way on the\nsame training set as was used to train the ensemble.\nAn obvious way to transfer the generalization ability of the cumbersome model to a small model is\nto use the class probabilities produced by the cumbersome mo del as “soft targets” for training the\nsmall model. For this transfer stage, we could use the same tr aining set or a separate “transfer” set.\nWhen the cumbersome model is a large ensemble of simpler mode ls, we can use an arithmetic or\n",
+            "chunk_set_id": "cs-1e8718b0e8cf4cd8b9f6f8f32183940f",
+            "document_id": "doc-0abe82af46944077afd5529514b5307a",
+            "source_version": 1,
+            "text_revision_id": "text-0f3f2fd1c95ec52d819a435ab142f6f03ec1207a0a0e019d136f3e231d379298",
+            "title": "Distilling the Knowledge in a Neural Network",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1503.02531.pdf",
+            "role": "literature",
+            "page_label": "2",
+            "score": 0.81872463,
+            "semantic_score": 0.818725,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+              "page_index": 1,
+              "start": 944,
+              "end": 2092,
+              "quote": "\non the training data when the real objective is to generalize well to new data. It would clearly\nbe better to train models to generalize well, but this requir es information about the correct way to\ngeneralize and this information is not normally available. When we are distilling the knowledge\nfrom a large model into a small one, however, we can train the small model to generalize in the same\nway as the large model. If the cumbersome model generalizes w ell because, for example, it is the\naverage of a large ensemble of different models, a small model trained to generalize in the same way\nwill typically do much better on test data than a small model that is trained in the normal way on the\nsame training set as was used to train the ensemble.\nAn obvious way to transfer the generalization ability of the cumbersome model to a small model is\nto use the class probabilities produced by the cumbersome mo del as “soft targets” for training the\nsmall model. For this transfer stage, we could use the same tr aining set or a separate “transfer” set.\nWhen the cumbersome model is a large ensemble of simpler mode ls, we can use an arithmetic or\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "2c5689124c49e3a19206b552eb2173479402b36dc6a075a6bc5193f21b183b25",
+            "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+            "page_index": 1,
+            "start": 2871,
+            "end": 3992,
+            "text": "r way around. This is valuable information that deﬁnes a rich similarity structure over the data\n(i. e. it says which 2’s look like 3’s and which look like 7’s) but it has very little inﬂuence on the\ncross-entropy cost function during the transfer stage beca use the probabilities are so close to zero.\nCaruana and his collaborators circumvent this problem by us ing the logits (the inputs to the ﬁnal\nsoftmax) rather than the probabilities produced by the soft max as the targets for learning the small\nmodel and they minimize the squared difference between the l ogits produced by the cumbersome\nmodel and the logits produced by the small model. Our more gen eral solution, called “distillation”,\nis to raise the temperature of the ﬁnal softmax until the cumbersome model produces a suitably soft\nset of targets. We then use the same high temperature when training the small model to match these\nsoft targets. We show later that matching the logits of the cu mbersome model is actually a special\ncase of distillation.\nThe transfer set that is used to train the small model could co nsist entirely of unlabeled data [1]\n",
+            "chunk_set_id": "cs-1e8718b0e8cf4cd8b9f6f8f32183940f",
+            "document_id": "doc-0abe82af46944077afd5529514b5307a",
+            "source_version": 1,
+            "text_revision_id": "text-0f3f2fd1c95ec52d819a435ab142f6f03ec1207a0a0e019d136f3e231d379298",
+            "title": "Distilling the Knowledge in a Neural Network",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1503.02531.pdf",
+            "role": "literature",
+            "page_label": "2",
+            "score": 0.8164919,
+            "semantic_score": 0.816492,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+              "page_index": 1,
+              "start": 2871,
+              "end": 3992,
+              "quote": "r way around. This is valuable information that deﬁnes a rich similarity structure over the data\n(i. e. it says which 2’s look like 3’s and which look like 7’s) but it has very little inﬂuence on the\ncross-entropy cost function during the transfer stage beca use the probabilities are so close to zero.\nCaruana and his collaborators circumvent this problem by us ing the logits (the inputs to the ﬁnal\nsoftmax) rather than the probabilities produced by the soft max as the targets for learning the small\nmodel and they minimize the squared difference between the l ogits produced by the cumbersome\nmodel and the logits produced by the small model. Our more gen eral solution, called “distillation”,\nis to raise the temperature of the ﬁnal softmax until the cumbersome model produces a suitably soft\nset of targets. We then use the same high temperature when training the small model to match these\nsoft targets. We show later that matching the logits of the cu mbersome model is actually a special\ncase of distillation.\nThe transfer set that is used to train the small model could co nsist entirely of unlabeled data [1]\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "T02",
+      "retrieval": {
+        "query": "ปรับอัตราการเรียนรู้แยกสำหรับแต่ละพารามิเตอร์โดยใช้ค่าเฉลี่ยของความชันและความชันกำลังสองได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "34a5e150054ca25cf824cd782ae0f2857d392a6099d2bafb4c02b7c278cf1908",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 13,
+            "start": 994,
+            "end": 1820,
+            "text": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+            "chunk_set_id": "cs-f84d0cef44124f7cb2007b4d14664bd8",
+            "document_id": "doc-ae3f1f04beba488a98ec6c855ade7a7c",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "14",
+            "score": 0.82922292,
+            "semantic_score": 0.829223,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 13,
+              "start": 994,
+              "end": 1820,
+              "quote": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "867dab97dc3af1989bf049f69e4a43ce2ca7dd70fd75fa2e6e3500e6ca2d416a",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 13,
+            "start": 0,
+            "end": 1194,
+            "text": "Published as a conference paper at ICLR 2015\n‖θm−θn‖∞≤ D∞ for anym,n∈{ 1,...,T}, andβ1,β2∈ [0, 1) satisfy β2\n1√β2\n< 1. Let αt = α√\nt\nandβ1,t =β1λt−1,λ∈ (0, 1). Adam achieves the following guarantee, for allT≥ 1.\nR(T )≤ D2\n2α(1−β1)\nd∑\ni=1\n√\nTˆvT,i+ α(β1 + 1)G∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2+\nd∑\ni=1\nD2\n∞G∞\n√1−β2\n2α(1−β1)(1−λ)2\nProof. Using Lemma 10.2, we have,\nft(θt)−ft(θ∗)≤gT\nt (θt−θ∗) =\nd∑\ni=1\ngt,i(θt,i−θ∗\n,i)\nFrom the update rules presented in algorithm 1,\nθt+1 =θt−αtˆmt/\n√\nˆvt\n=θt− αt\n1−βt\n1\n(β1,t√ˆvt\nmt−1 + (1−β1,t)√ˆvt\ngt\n)\nWe focus on theith dimension of the parameter vector θt∈ Rd. Subtract the scalar θ∗\n,i and square\nboth sides of the above update rule, we have,\n(θt+1,i−θ∗\n,i)2 =(θt,i−θ∗\n,i)2− 2αt\n1−βt\n1\n( β1,t√\nˆvt,i\nmt−1,i + (1− β1,t)√\nˆvt,i\ngt,i)(θt,i−θ∗\n,i) +α2\nt ( ˆmt,i√\nˆvt,i\n)2\nWe can rearrange the above equation and use Young’s inequality,ab≤a2/2 +b2/2. Also, it can be\nshown that\n√\nˆvt,i =\n√∑t\nj=1(1−β2)βt−j\n2 g2\nj,i/\n√\n1−βt\n2≤‖g1:t,i‖2 andβ1,t≤β1. Then\ngt,i(θt,i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n",
+            "chunk_set_id": "cs-f84d0cef44124f7cb2007b4d14664bd8",
+            "document_id": "doc-ae3f1f04beba488a98ec6c855ade7a7c",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "14",
+            "score": 0.82582283,
+            "semantic_score": 0.825823,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 13,
+              "start": 0,
+              "end": 1194,
+              "quote": "Published as a conference paper at ICLR 2015\n‖θm−θn‖∞≤ D∞ for anym,n∈{ 1,...,T}, andβ1,β2∈ [0, 1) satisfy β2\n1√β2\n< 1. Let αt = α√\nt\nandβ1,t =β1λt−1,λ∈ (0, 1). Adam achieves the following guarantee, for allT≥ 1.\nR(T )≤ D2\n2α(1−β1)\nd∑\ni=1\n√\nTˆvT,i+ α(β1 + 1)G∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2+\nd∑\ni=1\nD2\n∞G∞\n√1−β2\n2α(1−β1)(1−λ)2\nProof. Using Lemma 10.2, we have,\nft(θt)−ft(θ∗)≤gT\nt (θt−θ∗) =\nd∑\ni=1\ngt,i(θt,i−θ∗\n,i)\nFrom the update rules presented in algorithm 1,\nθt+1 =θt−αtˆmt/\n√\nˆvt\n=θt− αt\n1−βt\n1\n(β1,t√ˆvt\nmt−1 + (1−β1,t)√ˆvt\ngt\n)\nWe focus on theith dimension of the parameter vector θt∈ Rd. Subtract the scalar θ∗\n,i and square\nboth sides of the above update rule, we have,\n(θt+1,i−θ∗\n,i)2 =(θt,i−θ∗\n,i)2− 2αt\n1−βt\n1\n( β1,t√\nˆvt,i\nmt−1,i + (1− β1,t)√\nˆvt,i\ngt,i)(θt,i−θ∗\n,i) +α2\nt ( ˆmt,i√\nˆvt,i\n)2\nWe can rearrange the above equation and use Young’s inequality,ab≤a2/2 +b2/2. Also, it can be\nshown that\n√\nˆvt,i =\n√∑t\nj=1(1−β2)βt−j\n2 g2\nj,i/\n√\n1−βt\n2≤‖g1:t,i‖2 andβ1,t≤β1. Then\ngt,i(θt,i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "4aa4a8ccc483dff91e72b4b6e9204d3885863eec75554335c9f09406ca5aac15",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "page_index": 28,
+            "start": 0,
+            "end": 1194,
+            "text": "The wt vectors are passed to the second and third hidden layers at time t,\nand the ﬁrst hidden layer at timet+1 (to avoid creating a cycle in the processing\ngraph). The update equations for the hidden layers are\nh1\nt =H\n(\nWih1xt +Wh1h1h1\nt−1 +Wwh1wt−1 +b1\nh\n)\n(52)\nhn\nt =H\n(\nWihnxt +Whn−1hnhn−1\nt +Whnhnhn\nt−1 +Wwhnwt +bn\nh\n)\n(53)\nThe equations for the output layer remain unchanged from Eqs. (17) to (22).\nThe sequence loss is\nL(x) =− log Pr(x|c) (54)\nwhere\nPr(x|c) =\nT∏\nt=1\nPr (xt+1|yt) (55)\nNote that yt is now a function of c as well as x1:t.\nThe loss derivatives with respect to the outputs ˆet, ˆπt, ˆµt, ˆσt, ˆρt remain un-\nchanged from Eqs. (27), (30) and (31). Given the loss derivative ∂L(x)\n∂wt\nwith\nrespect to the size W window vector wt, obtained by backpropagating the out-\nput derivatives through the computation graph in Fig. 12, the derivatives with\nrespect to the window parameters are as follows:\nϵ(k,t,u )\ndef\n= αk\nt exp\n(\n−βk\nt\n(\nκk\nt−u\n)2) W∑\nj=1\n∂L(x)\n∂w j\nt\ncj\nu (56)\n∂L(x)\n∂ ˆαk\nt\n=\nU∑\nu=1\nϵ(k,t,u ) (57)\n∂L(x)\n∂ ˆβk\nt\n=−βk\nt\nU∑\nu=1\nϵ(k,t,u )(κk\nt−u)2 (58)\n∂L(x)\n∂κk\nt\n= ∂L(x)\n∂κk\nt+1\n+ 2βk\nt\nU∑\nu=1\nϵ(k,t,u )(u−κk\nt ) (59)\n∂L(x)\n∂ˆκk\nt\n= exp\n(\nˆκk\nt\n)∂L(x)\n∂κk\nt\n(60)\n",
+            "chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+            "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+            "source_version": 1,
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "title": "Generating Sequences With Recurrent Neural Networks",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "page_label": "29",
+            "score": 0.82098407,
+            "semantic_score": 0.820984,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+              "page_index": 28,
+              "start": 0,
+              "end": 1194,
+              "quote": "The wt vectors are passed to the second and third hidden layers at time t,\nand the ﬁrst hidden layer at timet+1 (to avoid creating a cycle in the processing\ngraph). The update equations for the hidden layers are\nh1\nt =H\n(\nWih1xt +Wh1h1h1\nt−1 +Wwh1wt−1 +b1\nh\n)\n(52)\nhn\nt =H\n(\nWihnxt +Whn−1hnhn−1\nt +Whnhnhn\nt−1 +Wwhnwt +bn\nh\n)\n(53)\nThe equations for the output layer remain unchanged from Eqs. (17) to (22).\nThe sequence loss is\nL(x) =− log Pr(x|c) (54)\nwhere\nPr(x|c) =\nT∏\nt=1\nPr (xt+1|yt) (55)\nNote that yt is now a function of c as well as x1:t.\nThe loss derivatives with respect to the outputs ˆet, ˆπt, ˆµt, ˆσt, ˆρt remain un-\nchanged from Eqs. (27), (30) and (31). Given the loss derivative ∂L(x)\n∂wt\nwith\nrespect to the size W window vector wt, obtained by backpropagating the out-\nput derivatives through the computation graph in Fig. 12, the derivatives with\nrespect to the window parameters are as follows:\nϵ(k,t,u )\ndef\n= αk\nt exp\n(\n−βk\nt\n(\nκk\nt−u\n)2) W∑\nj=1\n∂L(x)\n∂w j\nt\ncj\nu (56)\n∂L(x)\n∂ ˆαk\nt\n=\nU∑\nu=1\nϵ(k,t,u ) (57)\n∂L(x)\n∂ ˆβk\nt\n=−βk\nt\nU∑\nu=1\nϵ(k,t,u )(κk\nt−u)2 (58)\n∂L(x)\n∂κk\nt\n= ∂L(x)\n∂κk\nt+1\n+ 2βk\nt\nU∑\nu=1\nϵ(k,t,u )(u−κk\nt ) (59)\n∂L(x)\n∂ˆκk\nt\n= exp\n(\nˆκk\nt\n)∂L(x)\n∂κk\nt\n(60)\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "T03",
+      "retrieval": {
+        "query": "แปลงคำถามภาษาคนให้เป็นคำสั่งค้นข้อมูลในตารางโดยใช้ผลการรันคำสั่งเป็นรางวัลได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "6bcabedcf85696b74a36fd2ed87f303eee497fd6456eb16975e3e524f6c18c47",
+            "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+            "page_index": 3,
+            "start": 2939,
+            "end": 3720,
+            "text": "arn a policy to directly optimize the expected correctness of the execution result (Equation 7).\nInstead of teacher forcing at each step of query generation, we sample from the output distribution to\nobtain the next token. At the end of the generation procedure, we execute the generated SQL query\nagainst the database to obtain a reward. Let y = [y1,y 2,...,y T ] denote the sequence of generated\ntokens in the WHERE clause. Let q (y) denote the query generated by the model and qg denote the\nground truth query corresponding to the question. We deﬁne the rewardR (q (y),q g) as\nR (q (y),q g) =\n\n\n\n−2, ifq (y) is not a valid SQL query\n−1, ifq (y) is a valid SQL query and executes to an incorrect result\n+1, ifq (y) is a valid SQL query and executes to the correct result\n(7)\n4",
+            "chunk_set_id": "cs-c66e35f1496f4fca9c232ddcf8d8a77a",
+            "document_id": "doc-eef531036ca64de4a6a35f2b9029480b",
+            "source_version": 1,
+            "text_revision_id": "text-81065ac1f01b999e9cb9276c953f19c07b9fbe3da5186a0a47ae06963e0b45de",
+            "title": "Seq2SQL: Generating Structured Queries from Natural Language using Reinforcement Learning",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1709.00103.pdf",
+            "role": "literature",
+            "page_label": "4",
+            "score": 0.82343835,
+            "semantic_score": 0.823438,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+              "page_index": 3,
+              "start": 2939,
+              "end": 3720,
+              "quote": "arn a policy to directly optimize the expected correctness of the execution result (Equation 7).\nInstead of teacher forcing at each step of query generation, we sample from the output distribution to\nobtain the next token. At the end of the generation procedure, we execute the generated SQL query\nagainst the database to obtain a reward. Let y = [y1,y 2,...,y T ] denote the sequence of generated\ntokens in the WHERE clause. Let q (y) denote the query generated by the model and qg denote the\nground truth query corresponding to the question. We deﬁne the rewardR (q (y),q g) as\nR (q (y),q g) =\n\n\n\n−2, ifq (y) is not a valid SQL query\n−1, ifq (y) is a valid SQL query and executes to an incorrect result\n+1, ifq (y) is a valid SQL query and executes to the correct result\n(7)\n4",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "471a34ff3cdc3864e69aa6ddec8b2407fe69d53403594a641ef8d884e692cc2b",
+            "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+            "page_index": 0,
+            "start": 1939,
+            "end": 3060,
+            "text": "through the use of natural language (Androutsopoulos et al., 1995). We investigate one\nparticular aspect of NLI applied to relational databases: translating natural language questions to\nSQL queries.\nOur main contributions in this work are two-fold. First, we introduce Seq2SQL, a deep neural\nnetwork for translating natural language questions to corresponding SQL queries. Seq2SQL, shown\nin Figure 1, consists of three components that leverage the structure of SQL to prune the output\nspace of generated queries. Moreover, it uses policy-based reinforcement learning (RL) to generate\nthe conditions of the query, which are unsuitable for optimization using cross entropy loss due\nto their unordered nature. We train Seq2SQL using a mixed objective, combining cross entropy\nlosses and RL rewards from in-the-loop query execution on a database. These characteristics allow\nSeq2SQL to achieve state-of-the-art results on query generation.\nNext, we release WikiSQL, a corpus of 80654 hand-annotated instances of natural language ques-\ntions, SQL queries, and SQL tables extracted from 24241 HTML tables from Wikipedia. Wik-\n",
+            "chunk_set_id": "cs-c66e35f1496f4fca9c232ddcf8d8a77a",
+            "document_id": "doc-eef531036ca64de4a6a35f2b9029480b",
+            "source_version": 1,
+            "text_revision_id": "text-81065ac1f01b999e9cb9276c953f19c07b9fbe3da5186a0a47ae06963e0b45de",
+            "title": "Seq2SQL: Generating Structured Queries from Natural Language using Reinforcement Learning",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1709.00103.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.81455898,
+            "semantic_score": 0.814559,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+              "page_index": 0,
+              "start": 1939,
+              "end": 3060,
+              "quote": "through the use of natural language (Androutsopoulos et al., 1995). We investigate one\nparticular aspect of NLI applied to relational databases: translating natural language questions to\nSQL queries.\nOur main contributions in this work are two-fold. First, we introduce Seq2SQL, a deep neural\nnetwork for translating natural language questions to corresponding SQL queries. Seq2SQL, shown\nin Figure 1, consists of three components that leverage the structure of SQL to prune the output\nspace of generated queries. Moreover, it uses policy-based reinforcement learning (RL) to generate\nthe conditions of the query, which are unsuitable for optimization using cross entropy loss due\nto their unordered nature. We train Seq2SQL using a mixed objective, combining cross entropy\nlosses and RL rewards from in-the-loop query execution on a database. These characteristics allow\nSeq2SQL to achieve state-of-the-art results on query generation.\nNext, we release WikiSQL, a corpus of 80654 hand-annotated instances of natural language ques-\ntions, SQL queries, and SQL tables extracted from 24241 HTML tables from Wikipedia. Wik-\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "08fb1cd65f147954dc7fc9d5e67d2da9604784fdccaf8eb8336fbb70c2d6415b",
+            "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+            "page_index": 0,
+            "start": 0,
+            "end": 1177,
+            "text": "SEQ2SQL: G ENERATING STRUCTURED QUERIES\nFROM NATURAL LANGUAGE USING REINFORCEMENT\nLEARNING\nVictor Zhong, Caiming Xiong, Richard Socher\nSalesforce Research\nPalo Alto, CA\n{vzhong,cxiong,rsocher}@salesforce.com\nABSTRACT\nRelational databases store a signiﬁcant amount of the worlds data. However, ac-\ncessing this data currently requires users to understand a query language such as\nSQL. We propose Seq2SQL, a deep neural network for translating natural lan-\nguage questions to corresponding SQL queries. Our model uses rewards from in-\nthe-loop query execution over the database to learn a policy to generate the query,\nwhich contains unordered parts that are less suitable for optimization via cross en-\ntropy loss. Moreover, Seq2SQL leverages the structure of SQL to prune the space\nof generated queries and signiﬁcantly simplify the generation problem. In addition\nto the model, we release WikiSQL, a dataset of 80654 hand-annotated examples\nof questions and SQL queries distributed across 24241 tables from Wikipedia that\nis an order of magnitude larger than comparable datasets. By applying policy-\nbased reinforcement learning with a query execution environment to WikiSQL,\n",
+            "chunk_set_id": "cs-c66e35f1496f4fca9c232ddcf8d8a77a",
+            "document_id": "doc-eef531036ca64de4a6a35f2b9029480b",
+            "source_version": 1,
+            "text_revision_id": "text-81065ac1f01b999e9cb9276c953f19c07b9fbe3da5186a0a47ae06963e0b45de",
+            "title": "Seq2SQL: Generating Structured Queries from Natural Language using Reinforcement Learning",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1709.00103.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.81078327,
+            "semantic_score": 0.810783,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+              "page_index": 0,
+              "start": 0,
+              "end": 1177,
+              "quote": "SEQ2SQL: G ENERATING STRUCTURED QUERIES\nFROM NATURAL LANGUAGE USING REINFORCEMENT\nLEARNING\nVictor Zhong, Caiming Xiong, Richard Socher\nSalesforce Research\nPalo Alto, CA\n{vzhong,cxiong,rsocher}@salesforce.com\nABSTRACT\nRelational databases store a signiﬁcant amount of the worlds data. However, ac-\ncessing this data currently requires users to understand a query language such as\nSQL. We propose Seq2SQL, a deep neural network for translating natural lan-\nguage questions to corresponding SQL queries. Our model uses rewards from in-\nthe-loop query execution over the database to learn a policy to generate the query,\nwhich contains unordered parts that are less suitable for optimization via cross en-\ntropy loss. Moreover, Seq2SQL leverages the structure of SQL to prune the space\nof generated queries and signiﬁcantly simplify the generation problem. In addition\nto the model, we release WikiSQL, a dataset of 80654 hand-annotated examples\nof questions and SQL queries distributed across 24241 tables from Wikipedia that\nis an order of magnitude larger than comparable datasets. By applying policy-\nbased reinforcement learning with a query execution environment to WikiSQL,\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "T04",
+      "retrieval": {
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "1c1c20677d4ce4796e3f9a2271d2f821557911bd86e9dd0a6a55428cfe691778",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 4,
+            "start": 2880,
+            "end": 4063,
+            "text": "and test examples, but we created a randomly sam-\npled subset of 2000 examples each for validation\nand testing purposes, on which we report our per-\nformance. Further, we also acquired the exact test\nsample used in Rush et al. (2015) to make precise\ncomparison of our models with theirs. We also\nmade small modiﬁcations to the script to extract\nnot only the tokenized words, but also system-\ngenerated parts-of-speech and named-entity tags.\nTraining: For all the models we discuss below, we\nused 200 dimensional word2vec vectors (Mikolov\net al., 2013) trained on the same corpus to initial-\nize the model embeddings, but we allowed them\nto be updated during training. The hidden state di-\nmension of the encoder and decoder was ﬁxed at\n400 in all our experiments. When we used only\nthe ﬁrst sentence of the document as the source,\nas done in Rush et al. (2015), the encoder vocabu-\nlary size was 119,505 and that of the decoder stood\nat 68,885. We used Adadelta (Zeiler, 2012) for\ntraining, with an initial learning rate of 0.001. We\nused a batch-size of 50 and randomly shufﬂed the\ntraining data at every epoch, while sorting every\n10 batches according to their lengths to speed up\n",
+            "chunk_set_id": "cs-bfc8eba882dc4415b84eff9981a6ed03",
+            "document_id": "doc-35e40190e1d64f8cb750ee57ed9829cc",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "5",
+            "score": 0.80110443,
+            "semantic_score": 0.801104,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 4,
+              "start": 2880,
+              "end": 4063,
+              "quote": "and test examples, but we created a randomly sam-\npled subset of 2000 examples each for validation\nand testing purposes, on which we report our per-\nformance. Further, we also acquired the exact test\nsample used in Rush et al. (2015) to make precise\ncomparison of our models with theirs. We also\nmade small modiﬁcations to the script to extract\nnot only the tokenized words, but also system-\ngenerated parts-of-speech and named-entity tags.\nTraining: For all the models we discuss below, we\nused 200 dimensional word2vec vectors (Mikolov\net al., 2013) trained on the same corpus to initial-\nize the model embeddings, but we allowed them\nto be updated during training. The hidden state di-\nmension of the encoder and decoder was ﬁxed at\n400 in all our experiments. When we used only\nthe ﬁrst sentence of the document as the source,\nas done in Rush et al. (2015), the encoder vocabu-\nlary size was 119,505 and that of the decoder stood\nat 68,885. We used Adadelta (Zeiler, 2012) for\ntraining, with an initial learning rate of 0.001. We\nused a batch-size of 50 and randomly shufﬂed the\ntraining data at every epoch, while sorting every\n10 batches according to their lengths to speed up\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "769366dce8d86b84bb8e9c70b29924f1e274e5665c1f78166a0b36ea6a0f967e",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "page_index": 4,
+            "start": 1959,
+            "end": 3133,
+            "text": "rease the size\nof vocabularies used by the neural machine trans-\nlation system in the future. Although we only\npresent the result with the RNNenc, we observed\nsimilar behavior for the grConv as well.\nIn Table 1 (a), we present the translation perfor-\nmances obtained using the two models along with\nthe baseline phrase-based SMT system. 4 Clearly\n4We used Moses as a baseline, trained with additional\nthe phrase-based SMT system still shows the su-\nperior performance over the proposed purely neu-\nral machine translation system, but we can see that\nunder certain conditions (no unknown words in\nboth source and reference sentences), the differ-\nence diminishes quite signiﬁcantly. Furthermore,\nif we consider only short sentences (10–20 words\nper sentence), the difference further decreases (see\nTable 1 (b).\nFurthermore, it is possible to use the neural ma-\nchine translation models together with the existing\nphrase-based system, which was found recently in\n(Cho et al., 2014; Sutskever et al., 2014) to im-\nprove the overall translation performance (see Ta-\nble 1 (a)).\nThis analysis suggests that that the current neu-\nral translation approach has its weakness in han-\n",
+            "chunk_set_id": "cs-bce3e67f3c654d5f848c34ba5f5da267",
+            "document_id": "doc-786e7470ebcb404db3da713bc6a1213f",
+            "source_version": 1,
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "page_label": "5",
+            "score": 0.80039048,
+            "semantic_score": 0.80039,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+              "page_index": 4,
+              "start": 1959,
+              "end": 3133,
+              "quote": "rease the size\nof vocabularies used by the neural machine trans-\nlation system in the future. Although we only\npresent the result with the RNNenc, we observed\nsimilar behavior for the grConv as well.\nIn Table 1 (a), we present the translation perfor-\nmances obtained using the two models along with\nthe baseline phrase-based SMT system. 4 Clearly\n4We used Moses as a baseline, trained with additional\nthe phrase-based SMT system still shows the su-\nperior performance over the proposed purely neu-\nral machine translation system, but we can see that\nunder certain conditions (no unknown words in\nboth source and reference sentences), the differ-\nence diminishes quite signiﬁcantly. Furthermore,\nif we consider only short sentences (10–20 words\nper sentence), the difference further decreases (see\nTable 1 (b).\nFurthermore, it is possible to use the neural ma-\nchine translation models together with the existing\nphrase-based system, which was found recently in\n(Cho et al., 2014; Sutskever et al., 2014) to im-\nprove the overall translation performance (see Ta-\nble 1 (a)).\nThis analysis suggests that that the current neu-\nral translation approach has its weakness in han-\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "9f9dae468176d8f58e20caa06a6b15bf85c409566306e6d3c0c6a34adce26dbe",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "page_index": 7,
+            "start": 995,
+            "end": 2151,
+            "text": "ks.\nWe focused on evaluating an encoder–decoder ap-\nproach, proposed recently in (Kalchbrenner and\nBlunsom, 2013; Cho et al., 2014; Sutskever et al.,\n2014), on the task of sentence-to-sentence trans-\nlation. Among many possible encoder–decoder\nmodels we speciﬁcally chose two models that dif-\nfer in the choice of the encoder; (1) RNN with\ngated hidden units and (2) the newly proposed\ngated recursive convolutional neural network.\nAfter training those two models on pairs of\nEnglish and French sentences, we analyzed their\nperformance using BLEU scores with respect to\nthe lengths of sentences and the existence of un-\nknown/rare words in sentences. Our analysis re-\nvealed that the performance of the neural machine\ntranslation suffers signiﬁcantly from the length of\nsentences. However, qualitatively, we found that\nthe both models are able to generate correct trans-\nlations very well.\nThese analyses suggest a number of future re-\nsearch directions in machine translation purely\nbased on neural networks.\nFirstly, it is important to ﬁnd a way to scale up\ntraining a neural network both in terms of com-\nputation and memory so that much larger vocabu-\n",
+            "chunk_set_id": "cs-bce3e67f3c654d5f848c34ba5f5da267",
+            "document_id": "doc-786e7470ebcb404db3da713bc6a1213f",
+            "source_version": 1,
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "page_label": "8",
+            "score": 0.79802495,
+            "semantic_score": 0.798025,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+              "page_index": 7,
+              "start": 995,
+              "end": 2151,
+              "quote": "ks.\nWe focused on evaluating an encoder–decoder ap-\nproach, proposed recently in (Kalchbrenner and\nBlunsom, 2013; Cho et al., 2014; Sutskever et al.,\n2014), on the task of sentence-to-sentence trans-\nlation. Among many possible encoder–decoder\nmodels we speciﬁcally chose two models that dif-\nfer in the choice of the encoder; (1) RNN with\ngated hidden units and (2) the newly proposed\ngated recursive convolutional neural network.\nAfter training those two models on pairs of\nEnglish and French sentences, we analyzed their\nperformance using BLEU scores with respect to\nthe lengths of sentences and the existence of un-\nknown/rare words in sentences. Our analysis re-\nvealed that the performance of the neural machine\ntranslation suffers signiﬁcantly from the length of\nsentences. However, qualitatively, we found that\nthe both models are able to generate correct trans-\nlations very well.\nThese analyses suggest a number of future re-\nsearch directions in machine translation purely\nbased on neural networks.\nFirstly, it is important to ﬁnd a way to scale up\ntraining a neural network both in terms of com-\nputation and memory so that much larger vocabu-\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "T05",
+      "retrieval": {
+        "query": "ใช้ระยะห่างระหว่างคำแทนการระบุตำแหน่งแบบตายตัวในกลไกความสนใจได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "c2b332eb2dcd44f54e1ff013f3cfd27ae151ee53e56215ce88d071ba43fe5889",
+            "source_id": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+            "page_index": 0,
+            "start": 2918,
+            "end": 3688,
+            "text": "t to sequence ordering.\nAttention-based models have therefore used posi-\ntion encodings or biased attention weights based\non distance (Parikh et al., 2016).\nIn this work we present an efﬁcient way of\nincorporating relative position representations in\nthe self-attention mechanism of the Transformer.\nEven when entirely replacing its absolute position\nencodings, we demonstrate signiﬁcant improve-\nments in translation quality on two machine trans-\nlation tasks.\nOur approach can be cast as a special case of ex-\ntending the self-attention mechanism of the Trans-\nformer to considering arbitrary relations between\nany two elements of the input, a direction we plan\nto explore in future work on modeling labeled, di-\nrected graphs.\narXiv:1803.02155v2  [cs.CL]  12 Apr 2018",
+            "chunk_set_id": "cs-3a7c57bab16c4e62b99f30d0a7ff943f",
+            "document_id": "doc-1e9f2f9b5de04e2db03cb193a48d83cf",
+            "source_version": 1,
+            "text_revision_id": "text-97469548672248c1ad2bd64e36acd543c1271dbfc91550f8b15656ff246e4226",
+            "title": "Self-Attention with Relative Position Representations",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1803.02155.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.83063626,
+            "semantic_score": 0.830636,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+              "page_index": 0,
+              "start": 2918,
+              "end": 3688,
+              "quote": "t to sequence ordering.\nAttention-based models have therefore used posi-\ntion encodings or biased attention weights based\non distance (Parikh et al., 2016).\nIn this work we present an efﬁcient way of\nincorporating relative position representations in\nthe self-attention mechanism of the Transformer.\nEven when entirely replacing its absolute position\nencodings, we demonstrate signiﬁcant improve-\nments in translation quality on two machine trans-\nlation tasks.\nOur approach can be cast as a special case of ex-\ntending the self-attention mechanism of the Trans-\nformer to considering arbitrary relations between\nany two elements of the input, a direction we plan\nto explore in future work on modeling labeled, di-\nrected graphs.\narXiv:1803.02155v2  [cs.CL]  12 Apr 2018",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "5e8997a60c5da36d28d711280ff8401d56f28188ceaf72f6b5b5e73be07a8aa6",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 7,
+            "start": 1919,
+            "end": 3076,
+            "text": "at\n200. We also created explicit pointers in the train-\ning data by matching only the anonymized entity-\nids between source and target on similar lines as\nwe did for the OOV words in Gigaword corpus.\nComputational costs: We used a single Tesla K-\n40 GPU to train our models on this dataset as well.\nWhile the ﬂat models ( words-lvt2k and words-\nlvt2k-ptr) took under 5 hours per epoch, the hier-\narchical attention model was very expensive, con-\nsuming nearly 12.5 hours per epoch. Convergence\nof all models is also slower on this dataset com-\npared to Gigaword, taking nearly 35 epochs for\nall models. Thus, the wall-clock time for train-\ning until convergence is about 7 days for the ﬂat\nmodels, but nearly 18 days for the hierarchical at-\ntention model. Decoding is also slower as well,\nwith a throughput of 2 examples per second for\nﬂat models and 1.5 examples per second for the\nhierarchical attention model, when run on a single\nGPU with a batch size of 1.\nEvaluation: We evaluated our models using the\nfull-length Rouge F1 metric that we employed for\nthe Gigaword corpus, but with one notable differ-\nence: in both system and gold summaries, we con-\n",
+            "chunk_set_id": "cs-bfc8eba882dc4415b84eff9981a6ed03",
+            "document_id": "doc-35e40190e1d64f8cb750ee57ed9829cc",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "8",
+            "score": 0.82062882,
+            "semantic_score": 0.820629,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 7,
+              "start": 1919,
+              "end": 3076,
+              "quote": "at\n200. We also created explicit pointers in the train-\ning data by matching only the anonymized entity-\nids between source and target on similar lines as\nwe did for the OOV words in Gigaword corpus.\nComputational costs: We used a single Tesla K-\n40 GPU to train our models on this dataset as well.\nWhile the ﬂat models ( words-lvt2k and words-\nlvt2k-ptr) took under 5 hours per epoch, the hier-\narchical attention model was very expensive, con-\nsuming nearly 12.5 hours per epoch. Convergence\nof all models is also slower on this dataset com-\npared to Gigaword, taking nearly 35 epochs for\nall models. Thus, the wall-clock time for train-\ning until convergence is about 7 days for the ﬂat\nmodels, but nearly 18 days for the hierarchical at-\ntention model. Decoding is also slower as well,\nwith a throughput of 2 examples per second for\nﬂat models and 1.5 examples per second for the\nhierarchical attention model, when run on a single\nGPU with a batch size of 1.\nEvaluation: We evaluated our models using the\nfull-length Rouge F1 metric that we employed for\nthe Gigaword corpus, but with one notable differ-\nence: in both system and gold summaries, we con-\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "c688ac79b01d62f96cf12a29909aec5876055da5d00f6bc1767cd48d0fa1c040",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 9,
+            "start": 0,
+            "end": 1166,
+            "text": "following simple equations:\nβt =\nt−1∑\nk=1\nα′\nk; αt∝ α′\nt\nβt\n(1)\nwhere α′\nt is the unnormalized attention-weights\nvector at the tth time-step of the decoder. In\nother words, the temporal attention model down-\nweights the attention weights at the current time\nstep if the past attention weights are high on the\nsame part of the document.\nUsing this strategy, the temporal attention\nmodel improves performance signiﬁcantly over\nboth the baseline model as well as the hierarchical\nattention model. We have also noticed that there\nare fewer repetitions of summay highlights pro-\nduced by this model as shown in the example in\nTable 4.\nThese results, although preliminary, should\nserve as a good baseline for future researchers to\ncompare their models against.\n5 Qualitative Analysis\nTable 5 presents a few high quality and poor qual-\nity output on the validation set from feats-lvt2k-\n2sent, one of our best performing models. Even\nwhen the model differs from the target summary,\nits summaries tend to be very meaningful and rel-\nevant, a phenomenon not captured by word/phrase\nmatching evaluation metrics such as Rouge. On\nthe other hand, the model sometimes ‘misinter-\n",
+            "chunk_set_id": "cs-bfc8eba882dc4415b84eff9981a6ed03",
+            "document_id": "doc-35e40190e1d64f8cb750ee57ed9829cc",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "10",
+            "score": 0.82013196,
+            "semantic_score": 0.820132,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 9,
+              "start": 0,
+              "end": 1166,
+              "quote": "following simple equations:\nβt =\nt−1∑\nk=1\nα′\nk; αt∝ α′\nt\nβt\n(1)\nwhere α′\nt is the unnormalized attention-weights\nvector at the tth time-step of the decoder. In\nother words, the temporal attention model down-\nweights the attention weights at the current time\nstep if the past attention weights are high on the\nsame part of the document.\nUsing this strategy, the temporal attention\nmodel improves performance signiﬁcantly over\nboth the baseline model as well as the hierarchical\nattention model. We have also noticed that there\nare fewer repetitions of summay highlights pro-\nduced by this model as shown in the example in\nTable 4.\nThese results, although preliminary, should\nserve as a good baseline for future researchers to\ncompare their models against.\n5 Qualitative Analysis\nTable 5 presents a few high quality and poor qual-\nity output on the validation set from feats-lvt2k-\n2sent, one of our best performing models. Even\nwhen the model differs from the target summary,\nits summaries tend to be very meaningful and rel-\nevant, a phenomenon not captured by word/phrase\nmatching evaluation metrics such as Rouge. On\nthe other hand, the model sometimes ‘misinter-\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "T06",
+      "retrieval": {
+        "query": "เพิ่มความจุของโครงข่ายโดยเลือกใช้ผู้เชี่ยวชาญเพียงบางตัวสำหรับข้อมูลแต่ละตัวอย่างได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "8e6281e34b9e20415aeeb9abbfcd7f0c7b62d856de4927ae4c6dcb5969be0ac4",
+            "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+            "page_index": 4,
+            "start": 1901,
+            "end": 3050,
+            "text": "ion involves sending the inputs and outputs of the experts across the network. To maintain com-\nputational efﬁciency, the ratio of an expert’s computation to the size of its input and output must ex-\nceed the ratio of computational to network capacity of the computing device. For GPUs, this may be\nthousands to one. In our experiments, we use experts with one hidden layer containing thousands of\nRELU-activated units. Since the weight matrices in the expert have sizesinput_size×hidden_size\nandhidden_size×output_size, the ratio of computation to input and output is equal to the size of\nthe hidden layer. Conveniently, we can increase computational efﬁciency simply by using a larger\nhidden layer, or more hidden layers.\n4 B ALANCING EXPERT UTILIZATION\nWe have observed that the gating network tends to converge to a state where it always produces\nlarge weights for the same few experts. This imbalance is self-reinforcing, as the favored experts\nare trained more rapidly and thus are selected even more by the gating network. Eigen et al. (2013)\ndescribe the same phenomenon, and use a hard constraint at the beginning of training to avoid this\n",
+            "chunk_set_id": "cs-f2483d94dae1440da81795b679cee592",
+            "document_id": "doc-e558dbafb9ba4e268c6ec309dcd87345",
+            "source_version": 1,
+            "text_revision_id": "text-12b9cc887a876d3747cd83d27da5aab301952e3c868248eab556f44003b9a4b3",
+            "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1701.06538.pdf",
+            "role": "literature",
+            "page_label": "5",
+            "score": 0.82122445,
+            "semantic_score": 0.821224,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+              "page_index": 4,
+              "start": 1901,
+              "end": 3050,
+              "quote": "ion involves sending the inputs and outputs of the experts across the network. To maintain com-\nputational efﬁciency, the ratio of an expert’s computation to the size of its input and output must ex-\nceed the ratio of computational to network capacity of the computing device. For GPUs, this may be\nthousands to one. In our experiments, we use experts with one hidden layer containing thousands of\nRELU-activated units. Since the weight matrices in the expert have sizesinput_size×hidden_size\nandhidden_size×output_size, the ratio of computation to input and output is equal to the size of\nthe hidden layer. Conveniently, we can increase computational efﬁciency simply by using a larger\nhidden layer, or more hidden layers.\n4 B ALANCING EXPERT UTILIZATION\nWe have observed that the gating network tends to converge to a state where it always produces\nlarge weights for the same few experts. This imbalance is self-reinforcing, as the favored experts\nare trained more rapidly and thus are selected even more by the gating network. Eigen et al. (2013)\ndescribe the same phenomenon, and use a hard constraint at the beginning of training to avoid this\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "d62fe5fa624eac7f313a63c9081f54f50148ef499947304f94b7f66af1590543",
+            "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+            "page_index": 2,
+            "start": 1870,
+            "end": 3001,
+            "text": "may contain many sub-problems each requiring different experts. They also allude in their\nconclusion to the potential to introduce sparsity, turning MoEs into a vehicle for computational\ncomputation.\nOur work builds on this use of MoEs as a general purpose neural network component. While Eigen\net al. (2013) uses two stacked MoEs allowing for two sets of gating decisions, our convolutional\napplication of the MoE allows for different gating decisions at each position in the text. We also\nrealize sparse gating and demonstrate its use as a practical way to massively increase model capacity.\n2 T HE STRUCTURE OF THE MIXTURE -OF-EXPERTS LAYER\nThe Mixture-of-Experts (MoE) layer consists of a set of n “expert networks\" E1,··· ,En, and a\n“gating network\" G whose output is a sparse n-dimensional vector. Figure 1 shows an overview\nof the MoE module. The experts are themselves neural networks, each with their own parameters.\nAlthough in principle we only require that the experts accept the same sized inputs and produce the\nsame-sized outputs, in our initial investigations in this paper, we restrict ourselves to the case where\n",
+            "chunk_set_id": "cs-f2483d94dae1440da81795b679cee592",
+            "document_id": "doc-e558dbafb9ba4e268c6ec309dcd87345",
+            "source_version": 1,
+            "text_revision_id": "text-12b9cc887a876d3747cd83d27da5aab301952e3c868248eab556f44003b9a4b3",
+            "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1701.06538.pdf",
+            "role": "literature",
+            "page_label": "3",
+            "score": 0.81939089,
+            "semantic_score": 0.819391,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+              "page_index": 2,
+              "start": 1870,
+              "end": 3001,
+              "quote": "may contain many sub-problems each requiring different experts. They also allude in their\nconclusion to the potential to introduce sparsity, turning MoEs into a vehicle for computational\ncomputation.\nOur work builds on this use of MoEs as a general purpose neural network component. While Eigen\net al. (2013) uses two stacked MoEs allowing for two sets of gating decisions, our convolutional\napplication of the MoE allows for different gating decisions at each position in the text. We also\nrealize sparse gating and demonstrate its use as a practical way to massively increase model capacity.\n2 T HE STRUCTURE OF THE MIXTURE -OF-EXPERTS LAYER\nThe Mixture-of-Experts (MoE) layer consists of a set of n “expert networks\" E1,··· ,En, and a\n“gating network\" G whose output is a sparse n-dimensional vector. Figure 1 shows an overview\nof the MoE module. The experts are themselves neural networks, each with their own parameters.\nAlthough in principle we only require that the experts accept the same sized inputs and produce the\nsame-sized outputs, in our initial investigations in this paper, we restrict ourselves to the case where\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "bc6ed0988eed80730279a8d58eccee98303c157d1d43a1d18031883302bd75a0",
+            "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+            "page_index": 0,
+            "start": 985,
+            "end": 2095,
+            "text": "nal efﬁciency on modern GPU clusters. We in-\ntroduce a Sparsely-Gated Mixture-of-Experts layer (MoE), consisting of up to\nthousands of feed-forward sub-networks. A trainable gating network determines\na sparse combination of these experts to use for each example. We apply the MoE\nto the tasks of language modeling and machine translation, where model capacity\nis critical for absorbing the vast quantities of knowledge available in the training\ncorpora. We present model architectures in which a MoE with up to 137 billion\nparameters is applied convolutionally between stacked LSTM layers. On large\nlanguage modeling and machine translation benchmarks, these models achieve\nsigniﬁcantly better results than state-of-the-art at lower computational cost.\n1 I NTRODUCTION AND RELATED WORK\n1.1 C ONDITIONAL COMPUTATION\nExploiting scale in both training data and model size has been central to the success of deep learn-\ning. When datasets are sufﬁciently large, increasing the capacity (number of parameters) of neural\nnetworks can give much better prediction accuracy. This has been shown in domains such as text\n",
+            "chunk_set_id": "cs-f2483d94dae1440da81795b679cee592",
+            "document_id": "doc-e558dbafb9ba4e268c6ec309dcd87345",
+            "source_version": 1,
+            "text_revision_id": "text-12b9cc887a876d3747cd83d27da5aab301952e3c868248eab556f44003b9a4b3",
+            "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1701.06538.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.81822371,
+            "semantic_score": 0.818224,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+              "page_index": 0,
+              "start": 985,
+              "end": 2095,
+              "quote": "nal efﬁciency on modern GPU clusters. We in-\ntroduce a Sparsely-Gated Mixture-of-Experts layer (MoE), consisting of up to\nthousands of feed-forward sub-networks. A trainable gating network determines\na sparse combination of these experts to use for each example. We apply the MoE\nto the tasks of language modeling and machine translation, where model capacity\nis critical for absorbing the vast quantities of knowledge available in the training\ncorpora. We present model architectures in which a MoE with up to 137 billion\nparameters is applied convolutionally between stacked LSTM layers. On large\nlanguage modeling and machine translation benchmarks, these models achieve\nsigniﬁcantly better results than state-of-the-art at lower computational cost.\n1 I NTRODUCTION AND RELATED WORK\n1.1 C ONDITIONAL COMPUTATION\nExploiting scale in both training data and model size has been central to the success of deep learn-\ning. When datasets are sufﬁciently large, increasing the capacity (number of parameters) of neural\nnetworks can give much better prediction accuracy. This has been shown in domains such as text\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "T07",
+      "retrieval": {
+        "query": "สร้างลายมือเขียนจากข้อความโดยให้โครงข่ายเรียนรู้การทำนายจุดถัดไปได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "8ff5c31f68138d93e1c0dc15cb97c46f3cf034d6efbb5dc9b6eb0a17eece1cb7",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "page_index": 1,
+            "start": 1907,
+            "end": 3050,
+            "text": "s\npaper is to demonstrate that LSTM can use its memory to generate complex,\nrealistic sequences containing long-range structure.\nSection 2 deﬁnes a ‘deep’ RNN composed of stacked LSTM layers, and ex-\nplains how it can be trained for next-step prediction and hence sequence gener-\nation. Section 3 applies the prediction network to text from the Penn Treebank\nand Hutter Prize Wikipedia datasets. The network’s performance is compet-\nitive with state-of-the-art language models, and it works almost as well when\npredicting one character at a time as when predicting one word at a time. The\nhighlight of the section is a generated sample of Wikipedia text, which showcases\nthe network’s ability to model long-range dependencies. Section 4 demonstrates\nhow the prediction network can be applied to real-valued data through the use\nof a mixture density output layer, and provides experimental results on the IAM\nOnline Handwriting Database. It also presents generated handwriting samples\nproving the network’s ability to learn letters and short words direct from pen\ntraces, and to model global features of handwriting style. Section 5 introduces\n",
+            "chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+            "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+            "source_version": 1,
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "title": "Generating Sequences With Recurrent Neural Networks",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "page_label": "2",
+            "score": 0.82006323,
+            "semantic_score": 0.820063,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+              "page_index": 1,
+              "start": 1907,
+              "end": 3050,
+              "quote": "s\npaper is to demonstrate that LSTM can use its memory to generate complex,\nrealistic sequences containing long-range structure.\nSection 2 deﬁnes a ‘deep’ RNN composed of stacked LSTM layers, and ex-\nplains how it can be trained for next-step prediction and hence sequence gener-\nation. Section 3 applies the prediction network to text from the Penn Treebank\nand Hutter Prize Wikipedia datasets. The network’s performance is compet-\nitive with state-of-the-art language models, and it works almost as well when\npredicting one character at a time as when predicting one word at a time. The\nhighlight of the section is a generated sample of Wikipedia text, which showcases\nthe network’s ability to model long-range dependencies. Section 4 demonstrates\nhow the prediction network can be applied to real-valued data through the use\nof a mixture density output layer, and provides experimental results on the IAM\nOnline Handwriting Database. It also presents generated handwriting samples\nproving the network’s ability to learn letters and short words direct from pen\ntraces, and to model global features of handwriting style. Section 5 introduces\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "34a5e150054ca25cf824cd782ae0f2857d392a6099d2bafb4c02b7c278cf1908",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 13,
+            "start": 994,
+            "end": 1820,
+            "text": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+            "chunk_set_id": "cs-f84d0cef44124f7cb2007b4d14664bd8",
+            "document_id": "doc-ae3f1f04beba488a98ec6c855ade7a7c",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "14",
+            "score": 0.81675565,
+            "semantic_score": 0.816756,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 13,
+              "start": 994,
+              "end": 1820,
+              "quote": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "c9945e33f8bb29671a1156933f7f499049c24176c4a62d11701e09f01a795648",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "page_index": 17,
+            "start": 993,
+            "end": 2128,
+            "text": "o-ordinates and the points in the sequence when\nthe pen is lifted oﬀ the whiteboard. Recording errors in the x,y data was\ncorrected by interpolating to ﬁll in for missing readings, and removing steps\nwhose length exceeded a certain threshold. Beyond that, no preprocessing was\nused and the network was trained to predict the x,y co-ordinates and the end-\nof-stroke markers one point at a time. This contrasts with most approaches to\nhandwriting recognition and synthesis, which rely on sophisticated preprocessing\nand feature-extraction techniques. We eschewed such techniques because they\ntend to reduce the variation in the data (e.g. by normalising the character size,\nslant, skew and so-on) which we wanted the network to model. Predicting the\npen traces one point at a time gives the network maximum ﬂexibility to invent\nnovel handwriting, but also requires a lot of memory, with the average letter\noccupying more than 25 timesteps and the average line occupying around 700.\nPredicting delayed strokes (such as dots for ‘i’s or crosses for ‘t’s that are added\nafter the rest of the word has been written) is especially demanding.\n",
+            "chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+            "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+            "source_version": 1,
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "title": "Generating Sequences With Recurrent Neural Networks",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "page_label": "18",
+            "score": 0.81341279,
+            "semantic_score": 0.813413,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+              "page_index": 17,
+              "start": 993,
+              "end": 2128,
+              "quote": "o-ordinates and the points in the sequence when\nthe pen is lifted oﬀ the whiteboard. Recording errors in the x,y data was\ncorrected by interpolating to ﬁll in for missing readings, and removing steps\nwhose length exceeded a certain threshold. Beyond that, no preprocessing was\nused and the network was trained to predict the x,y co-ordinates and the end-\nof-stroke markers one point at a time. This contrasts with most approaches to\nhandwriting recognition and synthesis, which rely on sophisticated preprocessing\nand feature-extraction techniques. We eschewed such techniques because they\ntend to reduce the variation in the data (e.g. by normalising the character size,\nslant, skew and so-on) which we wanted the network to model. Predicting the\npen traces one point at a time gives the network maximum ﬂexibility to invent\nnovel handwriting, but also requires a lot of memory, with the average letter\noccupying more than 25 timesteps and the average line occupying around 700.\nPredicting delayed strokes (such as dots for ‘i’s or crosses for ‘t’s that are added\nafter the rest of the word has been written) is especially demanding.\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "T08",
+      "retrieval": {
+        "query": "เหตุใดคุณภาพการแปลด้วยตัวเข้ารหัสและตัวถอดรหัสจึงลดลงเมื่อประโยคยาวหรือมีคำที่ไม่รู้จัก",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "165b95ee34cce5b1346a9a7e3e342f6e53595b0c20af05c6fa14eb73d12e6296",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "page_index": 4,
+            "start": 2933,
+            "end": 3900,
+            "text": "2014; Sutskever et al., 2014) to im-\nprove the overall translation performance (see Ta-\nble 1 (a)).\nThis analysis suggests that that the current neu-\nral translation approach has its weakness in han-\ndling long sentences. The most obvious explana-\ntory hypothesis is that the ﬁxed-length vector rep-\nresentation does not have enough capacity to en-\ncode a long sentence with complicated structure\nand meaning. In order to encode a variable-length\nsequence, a neural network may “sacriﬁce” some\nof the important topics in the input sentence in or-\nder to remember others.\nThis is in stark contrast to the conventional\nphrase-based machine translation system (Koehn\net al., 2003). As we can see from Fig. 5, the\nconventional system trained on the same dataset\n(with additional monolingual data for the language\nmodel) tends to get a higher BLEU score on longer\nsentences.\nIn fact, if we limit the lengths of both the source\nmonolingual data for a 4-gram language model.",
+            "chunk_set_id": "cs-bce3e67f3c654d5f848c34ba5f5da267",
+            "document_id": "doc-786e7470ebcb404db3da713bc6a1213f",
+            "source_version": 1,
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "page_label": "5",
+            "score": 0.84382313,
+            "semantic_score": 0.843823,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+              "page_index": 4,
+              "start": 2933,
+              "end": 3900,
+              "quote": "2014; Sutskever et al., 2014) to im-\nprove the overall translation performance (see Ta-\nble 1 (a)).\nThis analysis suggests that that the current neu-\nral translation approach has its weakness in han-\ndling long sentences. The most obvious explana-\ntory hypothesis is that the ﬁxed-length vector rep-\nresentation does not have enough capacity to en-\ncode a long sentence with complicated structure\nand meaning. In order to encode a variable-length\nsequence, a neural network may “sacriﬁce” some\nof the important topics in the input sentence in or-\nder to remember others.\nThis is in stark contrast to the conventional\nphrase-based machine translation system (Koehn\net al., 2003). As we can see from Fig. 5, the\nconventional system trained on the same dataset\n(with additional monolingual data for the language\nmodel) tends to get a higher BLEU score on longer\nsentences.\nIn fact, if we limit the lengths of both the source\nmonolingual data for a 4-gram language model.",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "cfcb06b28efc9a2adfb275a79850a7fe27470492f35061d1d5a8bb6f2dc39462",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "page_index": 4,
+            "start": 962,
+            "end": 2159,
+            "text": "th of\nthe translation. This prevents the RNN decoder\nfrom favoring shorter translations, behavior which\nwas observed earlier in, e.g., (Graves, 2013).\n5 Results and Analysis\n5.1 Quantitative Analysis\nIn this paper, we are interested in the properties\nof the neural machine translation models. Specif-\nically, the translation quality with respect to the\nlength of source and/or target sentences and with\nrespect to the number of words unknown to the\nmodel in each source/target sentence.\nFirst, we look at how the BLEU score, reﬂect-\ning the translation performance, changes with re-\nspect to the length of the sentences (see Fig. 4 (a)–\n(b)). Clearly, both models perform relatively well\non short sentences, but suffer signiﬁcantly as the\nlength of the sentences increases.\nWe observe a similar trend with the number of\nunknown words, in Fig. 4 (c). As expected, the\nperformance degrades rapidly as the number of\nunknown words increases. This suggests that it\nwill be an important challenge to increase the size\nof vocabularies used by the neural machine trans-\nlation system in the future. Although we only\npresent the result with the RNNenc, we observed\nsimilar behavior for the grConv as well.\n",
+            "chunk_set_id": "cs-bce3e67f3c654d5f848c34ba5f5da267",
+            "document_id": "doc-786e7470ebcb404db3da713bc6a1213f",
+            "source_version": 1,
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "page_label": "5",
+            "score": 0.84081054,
+            "semantic_score": 0.840811,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+              "page_index": 4,
+              "start": 962,
+              "end": 2159,
+              "quote": "th of\nthe translation. This prevents the RNN decoder\nfrom favoring shorter translations, behavior which\nwas observed earlier in, e.g., (Graves, 2013).\n5 Results and Analysis\n5.1 Quantitative Analysis\nIn this paper, we are interested in the properties\nof the neural machine translation models. Specif-\nically, the translation quality with respect to the\nlength of source and/or target sentences and with\nrespect to the number of words unknown to the\nmodel in each source/target sentence.\nFirst, we look at how the BLEU score, reﬂect-\ning the translation performance, changes with re-\nspect to the length of the sentences (see Fig. 4 (a)–\n(b)). Clearly, both models perform relatively well\non short sentences, but suffer signiﬁcantly as the\nlength of the sentences increases.\nWe observe a similar trend with the number of\nunknown words, in Fig. 4 (c). As expected, the\nperformance degrades rapidly as the number of\nunknown words increases. This suggests that it\nwill be an important challenge to increase the size\nof vocabularies used by the neural machine trans-\nlation system in the future. Although we only\npresent the result with the RNNenc, we observed\nsimilar behavior for the grConv as well.\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "c307e4ddbf3f66a0d6e0efa23f3d915ad593f965028804293deaf26bae7aff80",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "page_index": 6,
+            "start": 989,
+            "end": 2154,
+            "text": "an-\ndard metric for evaluating the performance of a\nmachine translation system, it is not the perfect\nmetric (see, e.g., (Song et al., 2013; Liu et al.,\n2011)). Hence, here we present some of the ac-\ntual translations generated from the two models,\nRNNenc and grConv.\nIn Table. 2 (a)–(b), we show the translations of\nsome randomly selected sentences from the de-\nvelopment and test sets. We chose the ones that\nhave no unknown words. (a) lists long sentences\n(longer than 30 words), and (b) short sentences\n(shorter than 10 words). We can see that, despite\nthe difference in the BLEU scores, all three mod-\nels (RNNenc, grConv and Moses) do a decent job\nat translating, especially, short sentences. When\nthe source sentences are long, however, we no-\ntice the performance degradation of the neural ma-\nchine translation models.\nAdditionally, we present here what type of\nstructure the proposed gated recursive convolu-\ntional network learns to represent. With a sample\nsentence “Obama is the President of the United\nStates”, we present the parsing structure learned\nby the grConv encoder and the generated transla-\ntions, in Fig. 6. The ﬁgure suggests that the gr-\n",
+            "chunk_set_id": "cs-bce3e67f3c654d5f848c34ba5f5da267",
+            "document_id": "doc-786e7470ebcb404db3da713bc6a1213f",
+            "source_version": 1,
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "page_label": "7",
+            "score": 0.83718705,
+            "semantic_score": 0.837187,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+              "page_index": 6,
+              "start": 989,
+              "end": 2154,
+              "quote": "an-\ndard metric for evaluating the performance of a\nmachine translation system, it is not the perfect\nmetric (see, e.g., (Song et al., 2013; Liu et al.,\n2011)). Hence, here we present some of the ac-\ntual translations generated from the two models,\nRNNenc and grConv.\nIn Table. 2 (a)–(b), we show the translations of\nsome randomly selected sentences from the de-\nvelopment and test sets. We chose the ones that\nhave no unknown words. (a) lists long sentences\n(longer than 30 words), and (b) short sentences\n(shorter than 10 words). We can see that, despite\nthe difference in the BLEU scores, all three mod-\nels (RNNenc, grConv and Moses) do a decent job\nat translating, especially, short sentences. When\nthe source sentences are long, however, we no-\ntice the performance degradation of the neural ma-\nchine translation models.\nAdditionally, we present here what type of\nstructure the proposed gated recursive convolu-\ntional network learns to represent. With a sample\nsentence “Obama is the President of the United\nStates”, we present the parsing structure learned\nby the grConv encoder and the generated transla-\ntions, in Fig. 6. The ﬁgure suggests that the gr-\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "T09",
+      "retrieval": {
+        "query": "สรุปข้อความแบบเขียนใหม่จะจัดการคำหายากและโครงสร้างระดับคำกับประโยคได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "e1241bb174b8114989c3d6eb6de251874fd772b20b071f3ba745483f08325f18",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 0,
+            "start": 2931,
+            "end": 3834,
+            "text": "ss obvious.\nWe make the following main contributions in\nthis work: (i) We apply the off-the-shelf atten-\ntional encoder-decoder RNN that was originally\ndeveloped for machine translation to summariza-\ntion, and show that it already outperforms state-\nof-the-art systems on two different English cor-\npora. (ii) Motivated by concrete problems in sum-\nmarization that are not sufﬁciently addressed by\nthe machine translation based model, we propose\nnovel models and show that they provide addi-\ntional improvement in performance. (iii) We pro-\npose a new dataset for the task of abstractive sum-\nmarization of a document into multiple sentences\nand establish benchmarks.\nThe rest of the paper is organized as follows.\nIn Section 2, we describe each speciﬁc problem\nin abstractive summarization that we aim to solve,\nand present a novel model that addresses it. Sec-\narXiv:1602.06023v5  [cs.CL]  26 Aug 2016",
+            "chunk_set_id": "cs-bfc8eba882dc4415b84eff9981a6ed03",
+            "document_id": "doc-35e40190e1d64f8cb750ee57ed9829cc",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.81158519,
+            "semantic_score": 0.811585,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 0,
+              "start": 2931,
+              "end": 3834,
+              "quote": "ss obvious.\nWe make the following main contributions in\nthis work: (i) We apply the off-the-shelf atten-\ntional encoder-decoder RNN that was originally\ndeveloped for machine translation to summariza-\ntion, and show that it already outperforms state-\nof-the-art systems on two different English cor-\npora. (ii) Motivated by concrete problems in sum-\nmarization that are not sufﬁciently addressed by\nthe machine translation based model, we propose\nnovel models and show that they provide addi-\ntional improvement in performance. (iii) We pro-\npose a new dataset for the task of abstractive sum-\nmarization of a document into multiple sentences\nand establish benchmarks.\nThe rest of the paper is organized as follows.\nIn Section 2, we describe each speciﬁc problem\nin abstractive summarization that we aim to solve,\nand present a novel model that addresses it. Sec-\narXiv:1602.06023v5  [cs.CL]  26 Aug 2016",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "fde5a3263bceea2dd83e622def2695aff23059fb3fe1b39a4fd6a7b3e14a92bb",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "page_index": 33,
+            "start": 1971,
+            "end": 2862,
+            "text": " allows a recurrent network to condition\nits predictions on an auxiliary annotation sequence, and used this approach to\nsynthesise diverse and realistic samples of online handwriting. Furthermore, it\nhas shown how these samples can be biased towards greater legibility, and how\nthey can be modelled on the style of a particular writer.\nSeveral directions for future work suggest themselves. One is the applica-\ntion of the network to speech synthesis, which is likely to be more challenging\nthan handwriting synthesis due to the greater dimensionality of the data points.\nAnother is to gain a better insight into the internal representation of the data,\nand to use this to manipulate the sample distribution directly. It would also\nbe interesting to develop a mechanism to automatically extract high-level an-\nnotations from sequence data. In the case of handwriting, this could allow for\n34",
+            "chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+            "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+            "source_version": 1,
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "title": "Generating Sequences With Recurrent Neural Networks",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "page_label": "34",
+            "score": 0.81145203,
+            "semantic_score": 0.811452,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+              "page_index": 33,
+              "start": 1971,
+              "end": 2862,
+              "quote": " allows a recurrent network to condition\nits predictions on an auxiliary annotation sequence, and used this approach to\nsynthesise diverse and realistic samples of online handwriting. Furthermore, it\nhas shown how these samples can be biased towards greater legibility, and how\nthey can be modelled on the style of a particular writer.\nSeveral directions for future work suggest themselves. One is the applica-\ntion of the network to speech synthesis, which is likely to be more challenging\nthan handwriting synthesis due to the greater dimensionality of the data points.\nAnother is to gain a better insight into the internal representation of the data,\nand to use this to manipulate the sample distribution directly. It would also\nbe interesting to develop a mechanism to automatically extract high-level an-\nnotations from sequence data. In the case of handwriting, this could allow for\n34",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "9f9dae468176d8f58e20caa06a6b15bf85c409566306e6d3c0c6a34adce26dbe",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "page_index": 7,
+            "start": 995,
+            "end": 2151,
+            "text": "ks.\nWe focused on evaluating an encoder–decoder ap-\nproach, proposed recently in (Kalchbrenner and\nBlunsom, 2013; Cho et al., 2014; Sutskever et al.,\n2014), on the task of sentence-to-sentence trans-\nlation. Among many possible encoder–decoder\nmodels we speciﬁcally chose two models that dif-\nfer in the choice of the encoder; (1) RNN with\ngated hidden units and (2) the newly proposed\ngated recursive convolutional neural network.\nAfter training those two models on pairs of\nEnglish and French sentences, we analyzed their\nperformance using BLEU scores with respect to\nthe lengths of sentences and the existence of un-\nknown/rare words in sentences. Our analysis re-\nvealed that the performance of the neural machine\ntranslation suffers signiﬁcantly from the length of\nsentences. However, qualitatively, we found that\nthe both models are able to generate correct trans-\nlations very well.\nThese analyses suggest a number of future re-\nsearch directions in machine translation purely\nbased on neural networks.\nFirstly, it is important to ﬁnd a way to scale up\ntraining a neural network both in terms of com-\nputation and memory so that much larger vocabu-\n",
+            "chunk_set_id": "cs-bce3e67f3c654d5f848c34ba5f5da267",
+            "document_id": "doc-786e7470ebcb404db3da713bc6a1213f",
+            "source_version": 1,
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "page_label": "8",
+            "score": 0.80702287,
+            "semantic_score": 0.807023,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+              "page_index": 7,
+              "start": 995,
+              "end": 2151,
+              "quote": "ks.\nWe focused on evaluating an encoder–decoder ap-\nproach, proposed recently in (Kalchbrenner and\nBlunsom, 2013; Cho et al., 2014; Sutskever et al.,\n2014), on the task of sentence-to-sentence trans-\nlation. Among many possible encoder–decoder\nmodels we speciﬁcally chose two models that dif-\nfer in the choice of the encoder; (1) RNN with\ngated hidden units and (2) the newly proposed\ngated recursive convolutional neural network.\nAfter training those two models on pairs of\nEnglish and French sentences, we analyzed their\nperformance using BLEU scores with respect to\nthe lengths of sentences and the existence of un-\nknown/rare words in sentences. Our analysis re-\nvealed that the performance of the neural machine\ntranslation suffers signiﬁcantly from the length of\nsentences. However, qualitatively, we found that\nthe both models are able to generate correct trans-\nlations very well.\nThese analyses suggest a number of future re-\nsearch directions in machine translation purely\nbased on neural networks.\nFirstly, it is important to ﬁnd a way to scale up\ntraining a neural network both in terms of com-\nputation and memory so that much larger vocabu-\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "T10",
+      "retrieval": {
+        "query": "จำแนกวิดีโอให้เร็วขึ้นโดยแยกการเรียนรู้ข้อมูลเชิงพื้นที่กับเชิงเวลาได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "2245db793e4dbb2a3562ccd23ec2f883951103bfa188f7929308795cb1306488",
+            "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+            "page_index": 3,
+            "start": 0,
+            "end": 1194,
+            "text": "4 Saining Xie et al.\nwise separable convolutions used in [12,13,14], except that we apply the idea to the\ntemporal dimension instead of the feature dimension. This idea has been used in a vari-\nety of recent papers, including [11] (who call it “R(2+1)D”), [15] (who call it “Pseudo-\n3D network”), [16] (who call it “factorized spatio-temporal convolutional networks”),\netc. We use the same method, but combine it with both top-heavy and bottom-heavy\ndesigns, which is a combination that leads to a very efﬁcient video classiﬁcation sys-\ntem. We show that the gains from separable convolution are complementary to the gains\nfrom using a top-heavy design (see Section 4.4).\nAn efﬁcient way to improve accuracy is to use feature gating, which captures depen-\ndencies between feature channels with a simple but effective multiplicative transforma-\ntion. This can be viewed as an efﬁcient approximation to second-order pooling as shown\nin [17]. Feature gating has been used for many tasks, such as machine translation [18],\nVQA [19], reinforcement learning [20], image classiﬁcation [21,22], and action recog-\nnition [23]. We consider a variant of the above techniques in which we place the feature\n",
+            "chunk_set_id": "cs-4231c78c73114abb8db38f897dab508c",
+            "document_id": "doc-e60a7e4fe77c414c9881c3b2f4c67b5f",
+            "source_version": 1,
+            "text_revision_id": "text-0e56886829f9252816c020ac256f9282667383d2650b52ab4dfd34af0a5c10c1",
+            "title": "Rethinking Spatiotemporal Feature Learning: Speed-Accuracy Trade-offs in Video Classification",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1712.04851.pdf",
+            "role": "literature",
+            "page_label": "4",
+            "score": 0.83645713,
+            "semantic_score": 0.836457,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+              "page_index": 3,
+              "start": 0,
+              "end": 1194,
+              "quote": "4 Saining Xie et al.\nwise separable convolutions used in [12,13,14], except that we apply the idea to the\ntemporal dimension instead of the feature dimension. This idea has been used in a vari-\nety of recent papers, including [11] (who call it “R(2+1)D”), [15] (who call it “Pseudo-\n3D network”), [16] (who call it “factorized spatio-temporal convolutional networks”),\netc. We use the same method, but combine it with both top-heavy and bottom-heavy\ndesigns, which is a combination that leads to a very efﬁcient video classiﬁcation sys-\ntem. We show that the gains from separable convolution are complementary to the gains\nfrom using a top-heavy design (see Section 4.4).\nAn efﬁcient way to improve accuracy is to use feature gating, which captures depen-\ndencies between feature channels with a simple but effective multiplicative transforma-\ntion. This can be viewed as an efﬁcient approximation to second-order pooling as shown\nin [17]. Feature gating has been used for many tasks, such as machine translation [18],\nVQA [19], reinforcement learning [20], image classiﬁcation [21,22], and action recog-\nnition [23]. We consider a variant of the above techniques in which we place the feature\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "efd3c979a6b0dab367c9963807221f5ef04533d58b006866e0a70cad873806fb",
+            "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+            "page_index": 3,
+            "start": 994,
+            "end": 2184,
+            "text": "achine translation [18],\nVQA [19], reinforcement learning [20], image classiﬁcation [21,22], and action recog-\nnition [23]. We consider a variant of the above techniques in which we place the feature\ngating module after each of the temporal convolutions in an S3D network, and show\nthat this results in substantial gains in accuracy (see Section 4.6).\nAnother way to improve accuracy (at somewhat higher cost) is to use precom-\nputed optical ﬂow features. This idea was successfully used in [24], who proposed a\ntwo-stream architecture where one CNN stream handles raw RGB input, and the other\nhandles precomputed optical ﬂow. Since then, many video classiﬁcation methods fol-\nlow the same multi-stream 2D CNN design, and have made improvements in terms of\nnew representations [25,26], different backbone architecture [27,28,29,17], fusion of\nthe streams [30,31,32,33] and exploiting richer temporal structures [34,35,36]. We will\nstudy the beneﬁts of using optical ﬂow in Section 5.1.\n3 Experiment Setup\n3.1 Datasets\nIn this paper, we consider two large video action classiﬁcation datasets. The ﬁrst one\nis Kinetics [6], which is a large dataset collected from YouTube, containing 400 ac-\n",
+            "chunk_set_id": "cs-4231c78c73114abb8db38f897dab508c",
+            "document_id": "doc-e60a7e4fe77c414c9881c3b2f4c67b5f",
+            "source_version": 1,
+            "text_revision_id": "text-0e56886829f9252816c020ac256f9282667383d2650b52ab4dfd34af0a5c10c1",
+            "title": "Rethinking Spatiotemporal Feature Learning: Speed-Accuracy Trade-offs in Video Classification",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1712.04851.pdf",
+            "role": "literature",
+            "page_label": "4",
+            "score": 0.83214462,
+            "semantic_score": 0.832145,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+              "page_index": 3,
+              "start": 994,
+              "end": 2184,
+              "quote": "achine translation [18],\nVQA [19], reinforcement learning [20], image classiﬁcation [21,22], and action recog-\nnition [23]. We consider a variant of the above techniques in which we place the feature\ngating module after each of the temporal convolutions in an S3D network, and show\nthat this results in substantial gains in accuracy (see Section 4.6).\nAnother way to improve accuracy (at somewhat higher cost) is to use precom-\nputed optical ﬂow features. This idea was successfully used in [24], who proposed a\ntwo-stream architecture where one CNN stream handles raw RGB input, and the other\nhandles precomputed optical ﬂow. Since then, many video classiﬁcation methods fol-\nlow the same multi-stream 2D CNN design, and have made improvements in terms of\nnew representations [25,26], different backbone architecture [27,28,29,17], fusion of\nthe streams [30,31,32,33] and exploiting richer temporal structures [34,35,36]. We will\nstudy the beneﬁts of using optical ﬂow in Section 5.1.\n3 Experiment Setup\n3.1 Datasets\nIn this paper, we consider two large video action classiﬁcation datasets. The ﬁrst one\nis Kinetics [6], which is a large dataset collected from YouTube, containing 400 ac-\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "18881c57446284936d421af07264812e32dd5bb95bc631fa835293032362f088",
+            "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+            "page_index": 2,
+            "start": 0,
+            "end": 1196,
+            "text": "Rethinking Spatiotemporal Feature Learning 3\nwhich are smaller than the low level feature maps due to spatial pooling. However, we\nalso ﬁnd that Top-Heavy-I3D models are often more accurate, which is surprising since\nthey ignore low-level motion cues.\nTo answer the second question (about separating space and time), we consider re-\nplacing 3D convolutions with spatial and temporal separable 3D convolutions, i.e., we\nreplace ﬁlters of the formkt×k×k by 1×k×k followed bykt× 1× 1, wherekt is\nthe width of the ﬁlter in time, andk is the height/width of the ﬁlter in space. We call the\nresulting model S3D, which stands for “separable 3D CNN”. S3D obviously has many\nfewer parameters than models that use standard 3D convolution, and it is more compu-\ntationally efﬁcient. Surprisingly, we also show that it also has better accuracy than the\noriginal I3D model.\nFinally, to answer the third question (about putting things together for an efﬁcient\nand accurate video classiﬁcation system), we combine what we have learned in answer-\ning the above two questions with a spatio-temporal gating mechanism to design a new\nmodel architecture which we call S3D-G. We show that this model gives signiﬁcant\n",
+            "chunk_set_id": "cs-4231c78c73114abb8db38f897dab508c",
+            "document_id": "doc-e60a7e4fe77c414c9881c3b2f4c67b5f",
+            "source_version": 1,
+            "text_revision_id": "text-0e56886829f9252816c020ac256f9282667383d2650b52ab4dfd34af0a5c10c1",
+            "title": "Rethinking Spatiotemporal Feature Learning: Speed-Accuracy Trade-offs in Video Classification",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1712.04851.pdf",
+            "role": "literature",
+            "page_label": "3",
+            "score": 0.83203566,
+            "semantic_score": 0.832036,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+              "page_index": 2,
+              "start": 0,
+              "end": 1196,
+              "quote": "Rethinking Spatiotemporal Feature Learning 3\nwhich are smaller than the low level feature maps due to spatial pooling. However, we\nalso ﬁnd that Top-Heavy-I3D models are often more accurate, which is surprising since\nthey ignore low-level motion cues.\nTo answer the second question (about separating space and time), we consider re-\nplacing 3D convolutions with spatial and temporal separable 3D convolutions, i.e., we\nreplace ﬁlters of the formkt×k×k by 1×k×k followed bykt× 1× 1, wherekt is\nthe width of the ﬁlter in time, andk is the height/width of the ﬁlter in space. We call the\nresulting model S3D, which stands for “separable 3D CNN”. S3D obviously has many\nfewer parameters than models that use standard 3D convolution, and it is more compu-\ntationally efﬁcient. Surprisingly, we also show that it also has better accuracy than the\noriginal I3D model.\nFinally, to answer the third question (about putting things together for an efﬁcient\nand accurate video classiﬁcation system), we combine what we have learned in answer-\ning the above two questions with a spatio-temporal gating mechanism to design a new\nmodel architecture which we call S3D-G. We show that this model gives signiﬁcant\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "N01",
+      "retrieval": {
+        "query": "อะไรเป็นสาเหตุให้แผ่นเปลือกโลกเคลื่อนที่และเกิดภูเขาไฟ",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "2dbe399843d80b1b7c3fc8a944cdf7ccee420a31360027951e25e1dcf88bb6c5",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "page_index": 11,
+            "start": 3850,
+            "end": 5022,
+            "text": " has a low albedo.  The average albed\no of [[Earth]] is about 30% whereas the albedo of the [[Moon]] is about 7%. In a\nstronomy, the albedo of satellites and asteroids can be used to infer surface co\nmposition, most notably ice content.    [[Enceladus_(moon)|Enceladus]], a moon o\nf Saturn, has the highest known albedo of any body in the solar system, with 99%\n of EM radiation reflected.                                                     \n                                                                                \nHuman activities have changed the albedo (via forest clearance and farming, for \nexample) of various areas around the globe. However, quantification of this effe\nct is difficult on the global scale: it is not clear whether the changes have te\nnded to increase or decrease [[global warming]].                                \n                                                                                \nThe &quot;classical&quot; example of albedo effect is the snow-temperature feedb\nack. If a snow covered area warms and the snow melts, the albedo decreases, more\n sunlight is absorbed, and the temperature tends to increase. The converse is tr\n",
+            "chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+            "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+            "source_version": 1,
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "title": "Generating Sequences With Recurrent Neural Networks",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "page_label": "12",
+            "score": 0.78972179,
+            "semantic_score": 0.789722,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+              "page_index": 11,
+              "start": 3850,
+              "end": 5022,
+              "quote": " has a low albedo.  The average albed\no of [[Earth]] is about 30% whereas the albedo of the [[Moon]] is about 7%. In a\nstronomy, the albedo of satellites and asteroids can be used to infer surface co\nmposition, most notably ice content.    [[Enceladus_(moon)|Enceladus]], a moon o\nf Saturn, has the highest known albedo of any body in the solar system, with 99%\n of EM radiation reflected.                                                     \n                                                                                \nHuman activities have changed the albedo (via forest clearance and farming, for \nexample) of various areas around the globe. However, quantification of this effe\nct is difficult on the global scale: it is not clear whether the changes have te\nnded to increase or decrease [[global warming]].                                \n                                                                                \nThe &quot;classical&quot; example of albedo effect is the snow-temperature feedb\nack. If a snow covered area warms and the snow melts, the albedo decreases, more\n sunlight is absorbed, and the temperature tends to increase. The converse is tr\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "fba67de5ae8c117b3420db3a1439e9cdee0f3543af8f0d29174447ff074793dc",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "page_index": 13,
+            "start": 4822,
+            "end": 5060,
+            "text": "                                     \n                                                                                \n== See also ==                                                                  \nFigure 5: Generated Wikipedia data.\n14",
+            "chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+            "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+            "source_version": 1,
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "title": "Generating Sequences With Recurrent Neural Networks",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "page_label": "14",
+            "score": 0.78880352,
+            "semantic_score": 0.788804,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+              "page_index": 13,
+              "start": 4822,
+              "end": 5060,
+              "quote": "                                     \n                                                                                \n== See also ==                                                                  \nFigure 5: Generated Wikipedia data.\n14",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "34a5e150054ca25cf824cd782ae0f2857d392a6099d2bafb4c02b7c278cf1908",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 13,
+            "start": 994,
+            "end": 1820,
+            "text": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+            "chunk_set_id": "cs-f84d0cef44124f7cb2007b4d14664bd8",
+            "document_id": "doc-ae3f1f04beba488a98ec6c855ade7a7c",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "14",
+            "score": 0.78865361,
+            "semantic_score": 0.788654,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 13,
+              "start": 994,
+              "end": 1820,
+              "quote": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    },
+    {
+      "id": "N02",
+      "retrieval": {
+        "query": "คำนวณวงโคจรของดาวหางรอบดวงอาทิตย์ได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "34a5e150054ca25cf824cd782ae0f2857d392a6099d2bafb4c02b7c278cf1908",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 13,
+            "start": 994,
+            "end": 1820,
+            "text": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+            "chunk_set_id": "cs-f84d0cef44124f7cb2007b4d14664bd8",
+            "document_id": "doc-ae3f1f04beba488a98ec6c855ade7a7c",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "14",
+            "score": 0.80970716,
+            "semantic_score": 0.809707,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 13,
+              "start": 994,
+              "end": 1820,
+              "quote": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "74f92035dc699faac2d80a7ea6124b946e6fba643f641369ecfc949f7247f7aa",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "page_index": 20,
+            "start": 0,
+            "end": 1133,
+            "text": "This can be substituted into Eq. (6) to determine the sequence loss (up to\na constant that depends only on the quantisation of the data and does not\ninﬂuence network training):\nL(x) =\nT∑\nt=1\n− log\n\n∑\nj\nπj\ntN (xt+1|µj\nt,σ j\nt,ρ j\nt)\n\n−\n{\nloget if (xt+1)3 = 1\nlog(1−et) otherwise\n(26)\nThe derivative of the loss with respect to the end-of-stroke outputs is straight-\nforward:\n∂L(x)\n∂ˆet\n= (xt+1)3−et (27)\nThe derivatives with respect to the mixture density outputs can be found by\nﬁrst deﬁning the component responsibilitiesγj\nt :\nˆγj\nt =πj\ntN (xt+1|µj\nt,σ j\nt,ρ j\nt) (28)\nγj\nt = ˆγj\nt∑M\nj′=1 ˆγj′\nt\n(29)\nThen observing that\n∂L(x)\n∂ˆπj\nt\n=πj\nt−γj\nt (30)\n∂L(x)\n∂(ˆµj\nt, ˆσj\nt, ˆρj\nt)\n=−γj\nt\n∂ logN (xt+1|µj\nt,σ j\nt,ρ j\nt)\n∂(ˆµj\nt, ˆσj\nt, ˆρj\nt)\n(31)\nwhere\n∂ logN (x|µ,σ,ρ )\n∂ˆµ1\n= C\nσ1\n(x1−µ1\nσ1\n− ρ(x2−µ2)\nσ2\n)\n(32)\n∂ logN (x|µ,σ,ρ )\n∂ˆµ2\n= C\nσ2\n(x2−µ2\nσ2\n− ρ(x1−µ1)\nσ1\n)\n(33)\n∂ logN (x|µ,σ,ρ )\n∂ˆσ1\n= C(x1−µ1)\nσ1\n(x1−µ1\nσ1\n− ρ(x2−µ2)\nσ2\n)\n− 1 (34)\n∂ logN (x|µ,σ,ρ )\n∂ˆσ2\n= C(x2−µ2)\nσ2\n(x2−µ2\nσ2\n− ρ(x1−µ1)\nσ1\n)\n− 1 (35)\n∂ logN (x|µ,σ,ρ )\n∂ ˆρ = (x1−µ1)(x2−µ2)\nσ1σ2\n+ρ (1−CZ ) (36)\nwith Z deﬁned as in Eq. (25) and\nC = 1\n1−ρ2 (37)\n",
+            "chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+            "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+            "source_version": 1,
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "title": "Generating Sequences With Recurrent Neural Networks",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "page_label": "21",
+            "score": 0.80499524,
+            "semantic_score": 0.804995,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+              "page_index": 20,
+              "start": 0,
+              "end": 1133,
+              "quote": "This can be substituted into Eq. (6) to determine the sequence loss (up to\na constant that depends only on the quantisation of the data and does not\ninﬂuence network training):\nL(x) =\nT∑\nt=1\n− log\n\n∑\nj\nπj\ntN (xt+1|µj\nt,σ j\nt,ρ j\nt)\n\n−\n{\nloget if (xt+1)3 = 1\nlog(1−et) otherwise\n(26)\nThe derivative of the loss with respect to the end-of-stroke outputs is straight-\nforward:\n∂L(x)\n∂ˆet\n= (xt+1)3−et (27)\nThe derivatives with respect to the mixture density outputs can be found by\nﬁrst deﬁning the component responsibilitiesγj\nt :\nˆγj\nt =πj\ntN (xt+1|µj\nt,σ j\nt,ρ j\nt) (28)\nγj\nt = ˆγj\nt∑M\nj′=1 ˆγj′\nt\n(29)\nThen observing that\n∂L(x)\n∂ˆπj\nt\n=πj\nt−γj\nt (30)\n∂L(x)\n∂(ˆµj\nt, ˆσj\nt, ˆρj\nt)\n=−γj\nt\n∂ logN (xt+1|µj\nt,σ j\nt,ρ j\nt)\n∂(ˆµj\nt, ˆσj\nt, ˆρj\nt)\n(31)\nwhere\n∂ logN (x|µ,σ,ρ )\n∂ˆµ1\n= C\nσ1\n(x1−µ1\nσ1\n− ρ(x2−µ2)\nσ2\n)\n(32)\n∂ logN (x|µ,σ,ρ )\n∂ˆµ2\n= C\nσ2\n(x2−µ2\nσ2\n− ρ(x1−µ1)\nσ1\n)\n(33)\n∂ logN (x|µ,σ,ρ )\n∂ˆσ1\n= C(x1−µ1)\nσ1\n(x1−µ1\nσ1\n− ρ(x2−µ2)\nσ2\n)\n− 1 (34)\n∂ logN (x|µ,σ,ρ )\n∂ˆσ2\n= C(x2−µ2)\nσ2\n(x2−µ2\nσ2\n− ρ(x1−µ1)\nσ1\n)\n− 1 (35)\n∂ logN (x|µ,σ,ρ )\n∂ ˆρ = (x1−µ1)(x2−µ2)\nσ1σ2\n+ρ (1−CZ ) (36)\nwith Z deﬁned as in Eq. (25) and\nC = 1\n1−ρ2 (37)\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "4aa4a8ccc483dff91e72b4b6e9204d3885863eec75554335c9f09406ca5aac15",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "page_index": 28,
+            "start": 0,
+            "end": 1194,
+            "text": "The wt vectors are passed to the second and third hidden layers at time t,\nand the ﬁrst hidden layer at timet+1 (to avoid creating a cycle in the processing\ngraph). The update equations for the hidden layers are\nh1\nt =H\n(\nWih1xt +Wh1h1h1\nt−1 +Wwh1wt−1 +b1\nh\n)\n(52)\nhn\nt =H\n(\nWihnxt +Whn−1hnhn−1\nt +Whnhnhn\nt−1 +Wwhnwt +bn\nh\n)\n(53)\nThe equations for the output layer remain unchanged from Eqs. (17) to (22).\nThe sequence loss is\nL(x) =− log Pr(x|c) (54)\nwhere\nPr(x|c) =\nT∏\nt=1\nPr (xt+1|yt) (55)\nNote that yt is now a function of c as well as x1:t.\nThe loss derivatives with respect to the outputs ˆet, ˆπt, ˆµt, ˆσt, ˆρt remain un-\nchanged from Eqs. (27), (30) and (31). Given the loss derivative ∂L(x)\n∂wt\nwith\nrespect to the size W window vector wt, obtained by backpropagating the out-\nput derivatives through the computation graph in Fig. 12, the derivatives with\nrespect to the window parameters are as follows:\nϵ(k,t,u )\ndef\n= αk\nt exp\n(\n−βk\nt\n(\nκk\nt−u\n)2) W∑\nj=1\n∂L(x)\n∂w j\nt\ncj\nu (56)\n∂L(x)\n∂ ˆαk\nt\n=\nU∑\nu=1\nϵ(k,t,u ) (57)\n∂L(x)\n∂ ˆβk\nt\n=−βk\nt\nU∑\nu=1\nϵ(k,t,u )(κk\nt−u)2 (58)\n∂L(x)\n∂κk\nt\n= ∂L(x)\n∂κk\nt+1\n+ 2βk\nt\nU∑\nu=1\nϵ(k,t,u )(u−κk\nt ) (59)\n∂L(x)\n∂ˆκk\nt\n= exp\n(\nˆκk\nt\n)∂L(x)\n∂κk\nt\n(60)\n",
+            "chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+            "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+            "source_version": 1,
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "title": "Generating Sequences With Recurrent Neural Networks",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "page_label": "29",
+            "score": 0.80268395,
+            "semantic_score": 0.802684,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+              "page_index": 28,
+              "start": 0,
+              "end": 1194,
+              "quote": "The wt vectors are passed to the second and third hidden layers at time t,\nand the ﬁrst hidden layer at timet+1 (to avoid creating a cycle in the processing\ngraph). The update equations for the hidden layers are\nh1\nt =H\n(\nWih1xt +Wh1h1h1\nt−1 +Wwh1wt−1 +b1\nh\n)\n(52)\nhn\nt =H\n(\nWihnxt +Whn−1hnhn−1\nt +Whnhnhn\nt−1 +Wwhnwt +bn\nh\n)\n(53)\nThe equations for the output layer remain unchanged from Eqs. (17) to (22).\nThe sequence loss is\nL(x) =− log Pr(x|c) (54)\nwhere\nPr(x|c) =\nT∏\nt=1\nPr (xt+1|yt) (55)\nNote that yt is now a function of c as well as x1:t.\nThe loss derivatives with respect to the outputs ˆet, ˆπt, ˆµt, ˆσt, ˆρt remain un-\nchanged from Eqs. (27), (30) and (31). Given the loss derivative ∂L(x)\n∂wt\nwith\nrespect to the size W window vector wt, obtained by backpropagating the out-\nput derivatives through the computation graph in Fig. 12, the derivatives with\nrespect to the window parameters are as follows:\nϵ(k,t,u )\ndef\n= αk\nt exp\n(\n−βk\nt\n(\nκk\nt−u\n)2) W∑\nj=1\n∂L(x)\n∂w j\nt\ncj\nu (56)\n∂L(x)\n∂ ˆαk\nt\n=\nU∑\nu=1\nϵ(k,t,u ) (57)\n∂L(x)\n∂ ˆβk\nt\n=−βk\nt\nU∑\nu=1\nϵ(k,t,u )(κk\nt−u)2 (58)\n∂L(x)\n∂κk\nt\n= ∂L(x)\n∂κk\nt+1\n+ 2βk\nt\nU∑\nu=1\nϵ(k,t,u )(u−κk\nt ) (59)\n∂L(x)\n∂ˆκk\nt\n= exp\n(\nˆκk\nt\n)∂L(x)\n∂κk\nt\n(60)\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      }
+    }
+  ],
+  "span_checks": [
+    {
+      "case_id": "T01",
+      "rank": 1,
+      "chunk_id": "9f129381bc6020678899da2acc8df7162c6331acfad50c1498c05b8adade31f4",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T01",
+      "rank": 2,
+      "chunk_id": "3a3286f3ab031c1a893bcb59ed067458157e14359c5c45f988919b15efe1bdf5",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T01",
+      "rank": 3,
+      "chunk_id": "2c5689124c49e3a19206b552eb2173479402b36dc6a075a6bc5193f21b183b25",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T02",
+      "rank": 1,
+      "chunk_id": "34a5e150054ca25cf824cd782ae0f2857d392a6099d2bafb4c02b7c278cf1908",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T02",
+      "rank": 2,
+      "chunk_id": "867dab97dc3af1989bf049f69e4a43ce2ca7dd70fd75fa2e6e3500e6ca2d416a",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T02",
+      "rank": 3,
+      "chunk_id": "4aa4a8ccc483dff91e72b4b6e9204d3885863eec75554335c9f09406ca5aac15",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T03",
+      "rank": 1,
+      "chunk_id": "6bcabedcf85696b74a36fd2ed87f303eee497fd6456eb16975e3e524f6c18c47",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T03",
+      "rank": 2,
+      "chunk_id": "471a34ff3cdc3864e69aa6ddec8b2407fe69d53403594a641ef8d884e692cc2b",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T03",
+      "rank": 3,
+      "chunk_id": "08fb1cd65f147954dc7fc9d5e67d2da9604784fdccaf8eb8336fbb70c2d6415b",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T04",
+      "rank": 1,
+      "chunk_id": "1c1c20677d4ce4796e3f9a2271d2f821557911bd86e9dd0a6a55428cfe691778",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T04",
+      "rank": 2,
+      "chunk_id": "769366dce8d86b84bb8e9c70b29924f1e274e5665c1f78166a0b36ea6a0f967e",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T04",
+      "rank": 3,
+      "chunk_id": "9f9dae468176d8f58e20caa06a6b15bf85c409566306e6d3c0c6a34adce26dbe",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T05",
+      "rank": 1,
+      "chunk_id": "c2b332eb2dcd44f54e1ff013f3cfd27ae151ee53e56215ce88d071ba43fe5889",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T05",
+      "rank": 2,
+      "chunk_id": "5e8997a60c5da36d28d711280ff8401d56f28188ceaf72f6b5b5e73be07a8aa6",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T05",
+      "rank": 3,
+      "chunk_id": "c688ac79b01d62f96cf12a29909aec5876055da5d00f6bc1767cd48d0fa1c040",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T06",
+      "rank": 1,
+      "chunk_id": "8e6281e34b9e20415aeeb9abbfcd7f0c7b62d856de4927ae4c6dcb5969be0ac4",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T06",
+      "rank": 2,
+      "chunk_id": "d62fe5fa624eac7f313a63c9081f54f50148ef499947304f94b7f66af1590543",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T06",
+      "rank": 3,
+      "chunk_id": "bc6ed0988eed80730279a8d58eccee98303c157d1d43a1d18031883302bd75a0",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T07",
+      "rank": 1,
+      "chunk_id": "8ff5c31f68138d93e1c0dc15cb97c46f3cf034d6efbb5dc9b6eb0a17eece1cb7",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T07",
+      "rank": 2,
+      "chunk_id": "34a5e150054ca25cf824cd782ae0f2857d392a6099d2bafb4c02b7c278cf1908",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T07",
+      "rank": 3,
+      "chunk_id": "c9945e33f8bb29671a1156933f7f499049c24176c4a62d11701e09f01a795648",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T08",
+      "rank": 1,
+      "chunk_id": "165b95ee34cce5b1346a9a7e3e342f6e53595b0c20af05c6fa14eb73d12e6296",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T08",
+      "rank": 2,
+      "chunk_id": "cfcb06b28efc9a2adfb275a79850a7fe27470492f35061d1d5a8bb6f2dc39462",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T08",
+      "rank": 3,
+      "chunk_id": "c307e4ddbf3f66a0d6e0efa23f3d915ad593f965028804293deaf26bae7aff80",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T09",
+      "rank": 1,
+      "chunk_id": "e1241bb174b8114989c3d6eb6de251874fd772b20b071f3ba745483f08325f18",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T09",
+      "rank": 2,
+      "chunk_id": "fde5a3263bceea2dd83e622def2695aff23059fb3fe1b39a4fd6a7b3e14a92bb",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T09",
+      "rank": 3,
+      "chunk_id": "9f9dae468176d8f58e20caa06a6b15bf85c409566306e6d3c0c6a34adce26dbe",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T10",
+      "rank": 1,
+      "chunk_id": "2245db793e4dbb2a3562ccd23ec2f883951103bfa188f7929308795cb1306488",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T10",
+      "rank": 2,
+      "chunk_id": "efd3c979a6b0dab367c9963807221f5ef04533d58b006866e0a70cad873806fb",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "T10",
+      "rank": 3,
+      "chunk_id": "18881c57446284936d421af07264812e32dd5bb95bc631fa835293032362f088",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "N01",
+      "rank": 1,
+      "chunk_id": "2dbe399843d80b1b7c3fc8a944cdf7ccee420a31360027951e25e1dcf88bb6c5",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "N01",
+      "rank": 2,
+      "chunk_id": "fba67de5ae8c117b3420db3a1439e9cdee0f3543af8f0d29174447ff074793dc",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "N01",
+      "rank": 3,
+      "chunk_id": "34a5e150054ca25cf824cd782ae0f2857d392a6099d2bafb4c02b7c278cf1908",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "N02",
+      "rank": 1,
+      "chunk_id": "34a5e150054ca25cf824cd782ae0f2857d392a6099d2bafb4c02b7c278cf1908",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "N02",
+      "rank": 2,
+      "chunk_id": "74f92035dc699faac2d80a7ea6124b946e6fba643f641369ecfc949f7247f7aa",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    },
+    {
+      "case_id": "N02",
+      "rank": 3,
+      "chunk_id": "4aa4a8ccc483dff91e72b4b6e9204d3885863eec75554335c9f09406ca5aac15",
+      "identity": true,
+      "citation_identity": true,
+      "valid_offsets": true,
+      "exact_match": true
+    }
+  ],
+  "catalog_checks": [
+    {
+      "case_id": "T01",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1503.02531.pdf",
+      "file": "sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a/original.pdf"
+    },
+    {
+      "case_id": "T01",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1503.02531.pdf",
+      "file": "sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a/original.pdf"
+    },
+    {
+      "case_id": "T01",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1503.02531.pdf",
+      "file": "sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a/original.pdf"
+    },
+    {
+      "case_id": "T02",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1412.6980.pdf",
+      "file": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31/original.pdf"
+    },
+    {
+      "case_id": "T02",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1412.6980.pdf",
+      "file": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31/original.pdf"
+    },
+    {
+      "case_id": "T02",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1308.0850.pdf",
+      "file": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf"
+    },
+    {
+      "case_id": "T03",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1709.00103.pdf",
+      "file": "sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1/original.pdf"
+    },
+    {
+      "case_id": "T03",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1709.00103.pdf",
+      "file": "sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1/original.pdf"
+    },
+    {
+      "case_id": "T03",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1709.00103.pdf",
+      "file": "sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1/original.pdf"
+    },
+    {
+      "case_id": "T04",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1602.06023.pdf",
+      "file": "sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d/original.pdf"
+    },
+    {
+      "case_id": "T04",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1409.1259.pdf",
+      "file": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf"
+    },
+    {
+      "case_id": "T04",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1409.1259.pdf",
+      "file": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf"
+    },
+    {
+      "case_id": "T05",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1803.02155.pdf",
+      "file": "sources/8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b/original.pdf"
+    },
+    {
+      "case_id": "T05",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1602.06023.pdf",
+      "file": "sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d/original.pdf"
+    },
+    {
+      "case_id": "T05",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1602.06023.pdf",
+      "file": "sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d/original.pdf"
+    },
+    {
+      "case_id": "T06",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1701.06538.pdf",
+      "file": "sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e/original.pdf"
+    },
+    {
+      "case_id": "T06",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1701.06538.pdf",
+      "file": "sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e/original.pdf"
+    },
+    {
+      "case_id": "T06",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1701.06538.pdf",
+      "file": "sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e/original.pdf"
+    },
+    {
+      "case_id": "T07",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1308.0850.pdf",
+      "file": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf"
+    },
+    {
+      "case_id": "T07",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1412.6980.pdf",
+      "file": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31/original.pdf"
+    },
+    {
+      "case_id": "T07",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1308.0850.pdf",
+      "file": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf"
+    },
+    {
+      "case_id": "T08",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1409.1259.pdf",
+      "file": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf"
+    },
+    {
+      "case_id": "T08",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1409.1259.pdf",
+      "file": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf"
+    },
+    {
+      "case_id": "T08",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1409.1259.pdf",
+      "file": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf"
+    },
+    {
+      "case_id": "T09",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1602.06023.pdf",
+      "file": "sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d/original.pdf"
+    },
+    {
+      "case_id": "T09",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1308.0850.pdf",
+      "file": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf"
+    },
+    {
+      "case_id": "T09",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1409.1259.pdf",
+      "file": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf"
+    },
+    {
+      "case_id": "T10",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1712.04851.pdf",
+      "file": "sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90/original.pdf"
+    },
+    {
+      "case_id": "T10",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1712.04851.pdf",
+      "file": "sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90/original.pdf"
+    },
+    {
+      "case_id": "T10",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1712.04851.pdf",
+      "file": "sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90/original.pdf"
+    },
+    {
+      "case_id": "N01",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1308.0850.pdf",
+      "file": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf"
+    },
+    {
+      "case_id": "N01",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1308.0850.pdf",
+      "file": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf"
+    },
+    {
+      "case_id": "N01",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1412.6980.pdf",
+      "file": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31/original.pdf"
+    },
+    {
+      "case_id": "N02",
+      "rank": 1,
+      "pass": true,
+      "filename": "arxiv-1412.6980.pdf",
+      "file": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31/original.pdf"
+    },
+    {
+      "case_id": "N02",
+      "rank": 2,
+      "pass": true,
+      "filename": "arxiv-1308.0850.pdf",
+      "file": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf"
+    },
+    {
+      "case_id": "N02",
+      "rank": 3,
+      "pass": true,
+      "filename": "arxiv-1308.0850.pdf",
+      "file": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf"
+    }
+  ],
+  "corpus": {
+    "total": 10,
+    "offset": 0,
+    "documents": [
+      {
+        "document_id": "doc-08190c7de4ee49ffb1da7f1d30ee404b",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-79c3e2b5286a41ecae3a087aaac64101",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Deep contextualized word representations",
+              "year": null
+            },
+            "document_id": "doc-08190c7de4ee49ffb1da7f1d30ee404b",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632/original.pdf",
+            "filename": "arxiv-1802.05365.pdf",
+            "imported_at": "2026-09-20T13:08:27.831105+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1802.05365.pdf",
+            "role": "literature",
+            "sha256": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-48b851c426d9622d6e01e651e797e8ea1a4ad9017d9c50c2b55044cd1215611e",
+            "text_sha256": "8e3ac9476c687bb23080d4af848a8dda0a3e1501a812bc1dca88556ad9a3f2b2",
+            "page_count": 15,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-79c3e2b5286a41ecae3a087aaac64101",
+                "created_at": "2026-09-20T13:08:27.831915+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+                "text_revision_id": "text-48b851c426d9622d6e01e651e797e8ea1a4ad9017d9c50c2b55044cd1215611e",
+                "active": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "document_id": "doc-0abe82af46944077afd5529514b5307a",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-1e8718b0e8cf4cd8b9f6f8f32183940f",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Distilling the Knowledge in a Neural Network",
+              "year": null
+            },
+            "document_id": "doc-0abe82af46944077afd5529514b5307a",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a/original.pdf",
+            "filename": "arxiv-1503.02531.pdf",
+            "imported_at": "2026-09-20T13:06:24.983654+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1503.02531.pdf",
+            "role": "literature",
+            "sha256": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+            "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-0f3f2fd1c95ec52d819a435ab142f6f03ec1207a0a0e019d136f3e231d379298",
+            "text_sha256": "81112c01524945cb9c24fe520f6e71814c9efe16280d477fc3526ace1999029b",
+            "page_count": 9,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-1e8718b0e8cf4cd8b9f6f8f32183940f",
+                "created_at": "2026-09-20T13:06:24.984245+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+                "text_revision_id": "text-0f3f2fd1c95ec52d819a435ab142f6f03ec1207a0a0e019d136f3e231d379298",
+                "active": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "document_id": "doc-1e9f2f9b5de04e2db03cb193a48d83cf",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-3a7c57bab16c4e62b99f30d0a7ff943f",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Self-Attention with Relative Position Representations",
+              "year": null
+            },
+            "document_id": "doc-1e9f2f9b5de04e2db03cb193a48d83cf",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b/original.pdf",
+            "filename": "arxiv-1803.02155.pdf",
+            "imported_at": "2026-09-20T13:08:53.494855+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1803.02155.pdf",
+            "role": "literature",
+            "sha256": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+            "source_id": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-97469548672248c1ad2bd64e36acd543c1271dbfc91550f8b15656ff246e4226",
+            "text_sha256": "064ff2e4eb9d50f535bb23133213e9a187093957e87e58d259c56a8bd749b9f3",
+            "page_count": 5,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-3a7c57bab16c4e62b99f30d0a7ff943f",
+                "created_at": "2026-09-20T13:08:53.495421+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+                "text_revision_id": "text-97469548672248c1ad2bd64e36acd543c1271dbfc91550f8b15656ff246e4226",
+                "active": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "document_id": "doc-35e40190e1d64f8cb750ee57ed9829cc",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-bfc8eba882dc4415b84eff9981a6ed03",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+              "year": null
+            },
+            "document_id": "doc-35e40190e1d64f8cb750ee57ed9829cc",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d/original.pdf",
+            "filename": "arxiv-1602.06023.pdf",
+            "imported_at": "2026-09-20T13:06:45.349456+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "sha256": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "text_sha256": "a26f426734d70b558ce6fb7eb4628b78c1cd7c81d989c41ab8534cb829f9f9e3",
+            "page_count": 12,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-bfc8eba882dc4415b84eff9981a6ed03",
+                "created_at": "2026-09-20T13:06:45.350164+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+                "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+                "active": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "document_id": "doc-786e7470ebcb404db3da713bc6a1213f",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-bce3e67f3c654d5f848c34ba5f5da267",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+              "year": null
+            },
+            "document_id": "doc-786e7470ebcb404db3da713bc6a1213f",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf",
+            "filename": "arxiv-1409.1259.pdf",
+            "imported_at": "2026-09-20T13:05:39.355131+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "sha256": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "text_sha256": "a28c8a7a439f84f00632da358db9ee96c27e1caeee1f027c1aa3e866e9436c75",
+            "page_count": 9,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-bce3e67f3c654d5f848c34ba5f5da267",
+                "created_at": "2026-09-20T13:05:39.355663+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+                "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+                "active": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Generating Sequences With Recurrent Neural Networks",
+              "year": null
+            },
+            "document_id": "doc-9128e148a08545b181e2bcf12e01b628",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf",
+            "filename": "arxiv-1308.0850.pdf",
+            "imported_at": "2026-09-20T13:04:58.136685+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "sha256": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "text_sha256": "ecd1a09def88cd46ca2f61b88d0d73137413918d5a1da11dcc6b509b8e4207a8",
+            "page_count": 43,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-f42cbff38ea644a6ae3eb4135e8ce258",
+                "created_at": "2026-09-20T13:04:58.138297+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+                "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+                "active": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "document_id": "doc-ae3f1f04beba488a98ec6c855ade7a7c",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-f84d0cef44124f7cb2007b4d14664bd8",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Adam: A Method for Stochastic Optimization",
+              "year": null
+            },
+            "document_id": "doc-ae3f1f04beba488a98ec6c855ade7a7c",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31/original.pdf",
+            "filename": "arxiv-1412.6980.pdf",
+            "imported_at": "2026-09-20T13:05:57.008172+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "text_sha256": "7ec90064aa92dc3631eb69490a761a48ec5e7a41faf98c5b52c16f32e14cb140",
+            "page_count": 15,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-f84d0cef44124f7cb2007b4d14664bd8",
+                "created_at": "2026-09-20T13:05:57.008720+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+                "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+                "active": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "document_id": "doc-e558dbafb9ba4e268c6ec309dcd87345",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-f2483d94dae1440da81795b679cee592",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+              "year": null
+            },
+            "document_id": "doc-e558dbafb9ba4e268c6ec309dcd87345",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e/original.pdf",
+            "filename": "arxiv-1701.06538.pdf",
+            "imported_at": "2026-09-20T13:07:07.598659+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1701.06538.pdf",
+            "role": "literature",
+            "sha256": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+            "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-12b9cc887a876d3747cd83d27da5aab301952e3c868248eab556f44003b9a4b3",
+            "text_sha256": "dd6dcf5c855946af9787cd1410f0a246bb854fd5a391601c563ef177d45a0dee",
+            "page_count": 19,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-f2483d94dae1440da81795b679cee592",
+                "created_at": "2026-09-20T13:07:07.599379+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+                "text_revision_id": "text-12b9cc887a876d3747cd83d27da5aab301952e3c868248eab556f44003b9a4b3",
+                "active": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "document_id": "doc-e60a7e4fe77c414c9881c3b2f4c67b5f",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-4231c78c73114abb8db38f897dab508c",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Rethinking Spatiotemporal Feature Learning: Speed-Accuracy Trade-offs in Video Classification",
+              "year": null
+            },
+            "document_id": "doc-e60a7e4fe77c414c9881c3b2f4c67b5f",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90/original.pdf",
+            "filename": "arxiv-1712.04851.pdf",
+            "imported_at": "2026-09-20T13:08:00.295750+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1712.04851.pdf",
+            "role": "literature",
+            "sha256": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+            "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-0e56886829f9252816c020ac256f9282667383d2650b52ab4dfd34af0a5c10c1",
+            "text_sha256": "4fdd989d3eaa66e739fdbfd2f8ecdad407aedf998910225b7ff596535f05b667",
+            "page_count": 17,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-4231c78c73114abb8db38f897dab508c",
+                "created_at": "2026-09-20T13:08:00.296413+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+                "text_revision_id": "text-0e56886829f9252816c020ac256f9282667383d2650b52ab4dfd34af0a5c10c1",
+                "active": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "document_id": "doc-eef531036ca64de4a6a35f2b9029480b",
+        "latest_source_version": 1,
+        "versions": [
+          {
+            "active_chunk_set_id": "cs-c66e35f1496f4fca9c232ddcf8d8a77a",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Seq2SQL: Generating Structured Queries from Natural Language using Reinforcement Learning",
+              "year": null
+            },
+            "document_id": "doc-eef531036ca64de4a6a35f2b9029480b",
+            "extraction": {
+              "engine": "pypdf",
+              "version": "6.18.1"
+            },
+            "file": "sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1/original.pdf",
+            "filename": "arxiv-1709.00103.pdf",
+            "imported_at": "2026-09-20T13:07:39.022466+00:00",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1709.00103.pdf",
+            "role": "literature",
+            "sha256": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+            "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-81065ac1f01b999e9cb9276c953f19c07b9fbe3da5186a0a47ae06963e0b45de",
+            "text_sha256": "b029228dc307ae555eb13de2d2f4ab5a061e829975eb7c7f9c71ddbf84232ece",
+            "page_count": 12,
+            "chunk_sets": [
+              {
+                "chunk_set_id": "cs-c66e35f1496f4fca9c232ddcf8d8a77a",
+                "created_at": "2026-09-20T13:07:39.023071+00:00",
+                "method": "page-character-newline-v1",
+                "overlap": 200,
+                "size": 1200,
+                "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+                "text_revision_id": "text-81065ac1f01b999e9cb9276c953f19c07b9fbe3da5186a0a47ae06963e0b45de",
+                "active": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "revision": 10
+}

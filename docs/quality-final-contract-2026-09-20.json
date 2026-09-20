@@ -1,0 +1,18 @@
+{
+  "endpoint": "http://127.0.0.1:18877/mcp",
+  "checks": [
+    "initialize and tools/list: 33 actual tools",
+    "explicit rerank=false reproduces preserved E5 baseline exactly",
+    "source filter, minimum candidate budget, and exact original spans",
+    "retrieval chunk ID resolves through read_chunk and get_chunk_context",
+    "role boundary excludes literature from own results",
+    "explicit lexical mode retains lexical behavior",
+    "explicit pairwise score threshold returns empty with no fallback",
+    "explicit min_document_score=0 reveals rejected candidates for inspection",
+    "10 invalid retrieval requests return MCP tool errors",
+    "all checks preserve complete workspace status"
+  ],
+  "status": "passed; deterministic integration checks, not semantic grading",
+  "protocol": "real MCP Streamable HTTP; no direct retrieval calls",
+  "version": "0.2.4"
+}

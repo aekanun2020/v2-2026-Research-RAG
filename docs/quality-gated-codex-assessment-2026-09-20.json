@@ -1,0 +1,126 @@
+{
+  "assessor": "Codex",
+  "assessment_status": "historical gated candidate; rejected after held-out H02",
+  "evidence": "quality-container-evaluation-2026-09-20.json",
+  "rubric": {
+    "direct": "Passage directly addresses a substantive part of the question; not a guarantee of a complete answer.",
+    "partial": "Related context or correct topic, but misses the requested core explanation.",
+    "irrelevant": "Does not provide evidence for the question."
+  },
+  "cases": [
+    {
+      "id": "T01",
+      "labels": [
+        "partial",
+        "direct",
+        "direct"
+      ],
+      "reason": "Rank 1 states transfer is possible but is cut off before explaining it; rank 2 describes distillation and rank 3 explains training on soft targets. Top 1 regresses from the original baseline."
+    },
+    {
+      "id": "T02",
+      "labels": [
+        "direct",
+        "partial",
+        "partial"
+      ],
+      "reason": "Rank 1 explicitly links per-parameter adaptive rates to first/second gradient moments. Rank 2 discusses parameter averaging; rank 3 is a convergence-bound fragment rather than the update explanation."
+    },
+    {
+      "id": "T03",
+      "labels": [
+        "direct",
+        "direct",
+        "direct"
+      ],
+      "reason": "All three passages explicitly connect natural-language-to-SQL generation with reinforcement rewards from query execution."
+    },
+    {
+      "id": "T04",
+      "labels": [
+        "direct",
+        "partial",
+        "direct"
+      ],
+      "reason": "Rank 1 explains sentence-dependent biLM representations and learned layer combinations; rank 2 is related-work context; rank 3 directly describes polysemy/contextualized representations."
+    },
+    {
+      "id": "T05",
+      "labels": [
+        "direct",
+        "partial",
+        "direct"
+      ],
+      "reason": "Ranks 1 and 3 explicitly replace absolute encodings with relative positions/distances in self-attention; rank 2 mainly explains why position information is needed."
+    },
+    {
+      "id": "T06",
+      "labels": [
+        "direct",
+        "direct",
+        "partial"
+      ],
+      "reason": "Rank 1 explains choosing k of n experts per example and the resulting batch tradeoff; rank 2 explicitly skips zero-gated experts to save computation; rank 3 discusses training assignment/generalist specialists rather than the requested sparse-capacity mechanism."
+    },
+    {
+      "id": "T07",
+      "labels": [
+        "direct",
+        "direct",
+        "direct"
+      ],
+      "reason": "Rank 1 gives text-conditioned alignment/soft-window synthesis; rank 2 explains predicting pen coordinates and stroke markers one point at a time; rank 3 connects next-step RNN prediction to handwriting generation."
+    },
+    {
+      "id": "T08",
+      "labels": [
+        "direct",
+        "partial",
+        "partial"
+      ],
+      "reason": "Rank 1 gives the fixed-length bottleneck/capacity hypothesis for long sentences. Ranks 2 and 3 report degradation trends and evaluation context without that core explanatory mechanism."
+    },
+    {
+      "id": "T09",
+      "labels": [
+        "direct",
+        "partial",
+        "partial"
+      ],
+      "reason": "Rank 1 explains hierarchical attention: word weights rescaled by sentence weights, directly addressing the word/sentence part. Rank 2 gives a pointer-output caption and general conclusion; rank 3 is a general contribution list. Rare-word handling is not fully explained by this top-three set."
+    },
+    {
+      "id": "T10",
+      "labels": [
+        "direct",
+        "partial",
+        "direct"
+      ],
+      "reason": "Rank 1 describes cheaper convolutions and separable spatial/temporal design; rank 2 is a truncated abstract before the mechanism; rank 3 gives the actual factorization and computation advantage."
+    },
+    {
+      "id": "N01",
+      "labels": [],
+      "reason": "No retrieved hits for plate tectonics/volcanoes; control passed."
+    },
+    {
+      "id": "N02",
+      "labels": [],
+      "reason": "No retrieved hits for comet orbits; document gate excludes the mathematical false positives observed before."
+    },
+    {
+      "id": "H01",
+      "labels": [
+        "partial",
+        "direct",
+        "partial"
+      ],
+      "reason": "The leading abstract states ensemble compression/distillation and deployment benefits without explaining the training process. Rank 2 describes training a large model then distilling into a small deployable model; rank 3 is the cut-off transfer statement."
+    },
+    {
+      "id": "H02",
+      "labels": [],
+      "reason": "False negative: Adam is indexed and has first-page score 0.0014672253, but the default 0.002 gate removed every candidate. The gate does not generalize to this paraphrase."
+    }
+  ]
+}

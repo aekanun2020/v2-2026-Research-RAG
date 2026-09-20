@@ -1,0 +1,15 @@
+{
+  "model_id": "onnx-community/gte-multilingual-reranker-base",
+  "revision": "ee64367e35a2db0da46bb6497e13a18f8bd585cb",
+  "original_model_id": "Alibaba-NLP/gte-multilingual-reranker-base",
+  "original_revision_observed": "8215cf04918ba6f7b6a62bb44238ce2953d8831c",
+  "conversion_note": "ONNX conversion publisher identifies original model but does not pin its training-weight commit; this is the inspected original revision, not a claimed conversion source commit.",
+  "license": "Apache-2.0 (original publisher model-card declaration)",
+  "files": {
+    "README.md": "353082419cd793b1cb32f28829f706c936f07a72a2c61a8ce273201895fa2097",
+    "config.json": "dfa5713436ecb4616eaa576795c8d3efd1f03122031a1ad4973d0b6b7e7edfd3",
+    "tokenizer_config.json": "6f00514620aff01ba8b7291b2394e98daca5be264cb743805232d9ae27494b2a",
+    "onnx/model_int8.onnx": "ccf51dba7f8aa9205753761cfaa68c55f741792501463a3bf25d7e5bcdac7c35",
+    "tokenizer.json": "3ffb37461c391f096759f4a9bbbc329da0f36952f88bab061fcf84940c022e98"
+  }
+}

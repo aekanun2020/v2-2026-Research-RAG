@@ -1,0 +1,6 @@
+Reranker: onnx-community/bge-reranker-v2-m3-ONNX 6f5ff65298512715a1e669753bc754d2bc8f367b CPU only
+Downloaded and verified: README.md
+Downloaded and verified: config.json
+Downloaded and verified: tokenizer_config.json
+Downloaded and verified: onnx/model_int8.onnx
+Downloaded and verified: tokenizer.json

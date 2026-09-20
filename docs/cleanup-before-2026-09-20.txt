@@ -1,0 +1,22 @@
+2026-09-20 20:45:18.649 python[90821:1413012] 2026-09-20 20:45:18.649734 [W:onnxruntime:Default, telemetry.cc:800 operator()] Failed to persist telemetry device ID; using an in-memory identifier
+test_index_clear_rebuild_restore_and_retry_over_http (test_cleanup.CleanupHTTPIntegration.test_index_clear_rebuild_restore_and_retry_over_http) ... Executing <Task finished name='Task-1' coro=<HTTPIntegration.asyncSetUp() done, defined at /Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/tests/test_http.py:26> exception=PermissionError(1, 'Operation not permitted') created at /Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py:100> took 0.575 seconds
+ERROR
+
+======================================================================
+ERROR: test_index_clear_rebuild_restore_and_retry_over_http (test_cleanup.CleanupHTTPIntegration.test_index_clear_rebuild_restore_and_retry_over_http)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/tests/test_http.py", line 31, in asyncSetUp
+    sock.bind(('127.0.0.1', 0))
+PermissionError: [Errno 1] Operation not permitted
+
+----------------------------------------------------------------------
+Ran 1 test in 0.578s
+
+FAILED (errors=1)

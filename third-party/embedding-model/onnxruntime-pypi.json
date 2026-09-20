@@ -1,0 +1,645 @@
+{
+  "info": {
+    "author": "Microsoft Corporation",
+    "author_email": "onnxruntime@microsoft.com",
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: MIT License",
+      "Operating System :: MacOS",
+      "Operating System :: Microsoft :: Windows",
+      "Operating System :: POSIX :: Linux",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14",
+      "Topic :: Scientific/Engineering",
+      "Topic :: Scientific/Engineering :: Artificial Intelligence",
+      "Topic :: Scientific/Engineering :: Mathematics",
+      "Topic :: Software Development",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Software Development :: Libraries :: Python Modules"
+    ],
+    "description": "ONNX Runtime\n============\n\nONNX Runtime is a performance-focused scoring engine for Open Neural Network Exchange (ONNX) models.\nFor more information on ONNX Runtime, please see `aka.ms/onnxruntime <https://aka.ms/onnxruntime/>`_ or the `Github project <https://github.com/microsoft/onnxruntime/>`_.\n\n\nChanges\n-------\n\n1.30.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.30.0\n\n1.29.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.29.0\n\n1.28.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.28.0\n\n1.27.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.27.0\n\n1.26.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.26.0\n\n1.25.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.25.0\n\n1.24.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.24.0\n\n1.23.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.23.0\n\n1.22.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.22.0\n\n1.21.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.21.0\n\n1.20.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.20.0\n\n1.19.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.19.0\n\n1.18.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.18.0\n\n1.17.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.17.0\n\n1.16.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.16.0\n\n1.15.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.15.0\n\n1.14.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.14.0\n\n1.13.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.13.0\n\n1.12.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.12.0\n\n1.11.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.11.0\n\n1.10.0\n^^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.10.0\n\n1.9.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.9.0\n\n1.8.2\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.8.2\n\n1.8.1\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.8.1\n\n1.8.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.8.0\n\n1.7.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.7.0\n\n1.6.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.6.0\n\n1.5.3\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.5.3\n\n1.5.2\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.5.2\n\n1.5.1\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.5.1\n\n\n1.4.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.4.0\n\n1.3.1\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.3.1\n\n1.3.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.3.0\n\n1.2.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.2.0\n\n1.1.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.1.0\n\n1.0.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v1.0.0\n\n0.5.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v0.5.0\n\n0.4.0\n^^^^^\n\nRelease Notes : https://github.com/Microsoft/onnxruntime/releases/tag/v0.4.0\n",
+    "description_content_type": null,
+    "docs_url": null,
+    "download_url": "https://github.com/microsoft/onnxruntime/tags",
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "dynamic": null,
+    "home_page": "https://onnxruntime.ai",
+    "keywords": "onnx machine learning",
+    "license": "MIT License",
+    "license_expression": null,
+    "license_files": null,
+    "maintainer": null,
+    "maintainer_email": null,
+    "name": "onnxruntime",
+    "package_url": "https://pypi.org/project/onnxruntime/",
+    "platform": null,
+    "project_url": "https://pypi.org/project/onnxruntime/",
+    "project_urls": {
+      "Download": "https://github.com/microsoft/onnxruntime/tags",
+      "Homepage": "https://onnxruntime.ai"
+    },
+    "provides_extra": null,
+    "release_url": "https://pypi.org/project/onnxruntime/1.30.0/",
+    "requires_dist": [
+      "flatbuffers",
+      "numpy>=1.21.6",
+      "packaging",
+      "protobuf>=4.25.8",
+      "sympy; extra == \"symbolic\"",
+      "ml_dtypes; extra == \"quantization\""
+    ],
+    "requires_python": ">=3.11",
+    "summary": "ONNX Runtime is a runtime accelerator for Machine Learning models",
+    "version": "1.30.0",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "urls": [
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "73b6e2fa6dfc8c3cd19639d452c3120fb0e02f5176b4e24ecabb24b5362be725",
+        "md5": "fd3e283867b09986378064bcd1208fbb",
+        "sha256": "f36c87ec504f4f328e968ee322e4ba9682abe66280b3425625afcbed5333fed7"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp311-cp311-macosx_14_0_arm64.whl",
+      "has_sig": false,
+      "md5_digest": "fd3e283867b09986378064bcd1208fbb",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21533037,
+      "upload_time": "2026-09-10T16:31:03",
+      "upload_time_iso_8601": "2026-09-10T16:31:03.582908Z",
+      "url": "https://files.pythonhosted.org/packages/73/b6/e2fa6dfc8c3cd19639d452c3120fb0e02f5176b4e24ecabb24b5362be725/onnxruntime-1.30.0-cp311-cp311-macosx_14_0_arm64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "4f1a4d197d2676a866f6239cd2d06a95b6db40d47dc29d5bec9fb1493a13dd94",
+        "md5": "981029bddb9fdd3be966669c76773f5f",
+        "sha256": "bac3aee7b40acd805659fd81a2acd6096312d5b0f014c97ddfe75fb4c1644627"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp311-cp311-manylinux_2_28_aarch64.whl",
+      "has_sig": false,
+      "md5_digest": "981029bddb9fdd3be966669c76773f5f",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21332697,
+      "upload_time": "2026-09-10T16:31:08",
+      "upload_time_iso_8601": "2026-09-10T16:31:08.118784Z",
+      "url": "https://files.pythonhosted.org/packages/4f/1a/4d197d2676a866f6239cd2d06a95b6db40d47dc29d5bec9fb1493a13dd94/onnxruntime-1.30.0-cp311-cp311-manylinux_2_28_aarch64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "4f2e4c96278a99140d0307ccda6fd51e6e9d1ca7c9f6fdd1fa96ff375acfc713",
+        "md5": "862ce50d1cd1a77b4d5bc3a8b3042bc0",
+        "sha256": "fd54b314ea385bcecac69ab431f020ba503e3878dad4ebb645fec5a24b041242"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp311-cp311-manylinux_2_28_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "862ce50d1cd1a77b4d5bc3a8b3042bc0",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 23561046,
+      "upload_time": "2026-09-10T16:31:11",
+      "upload_time_iso_8601": "2026-09-10T16:31:11.494916Z",
+      "url": "https://files.pythonhosted.org/packages/4f/2e/4c96278a99140d0307ccda6fd51e6e9d1ca7c9f6fdd1fa96ff375acfc713/onnxruntime-1.30.0-cp311-cp311-manylinux_2_28_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "3f79aefa7e4d6aec73c7af714b4bba9be1c69edbd8a1017e3f59b4d54dc18a68"
+      },
+      "digests": {
+        "blake2b_256": "6668b8aaade8c1883f569228f4b57201cce922bb7d4af6f977d619520a733430",
+        "md5": "07ec5981285c987678c5093a56a9c949",
+        "sha256": "0edd0145a6e3fce8a1276491dc784d615e3c58bcb952c9b4e5c876d5c6a12ad7"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp311-cp311-win_amd64.whl",
+      "has_sig": false,
+      "md5_digest": "07ec5981285c987678c5093a56a9c949",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 14309136,
+      "upload_time": "2026-09-10T16:31:14",
+      "upload_time_iso_8601": "2026-09-10T16:31:14.181340Z",
+      "url": "https://files.pythonhosted.org/packages/66/68/b8aaade8c1883f569228f4b57201cce922bb7d4af6f977d619520a733430/onnxruntime-1.30.0-cp311-cp311-win_amd64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "3f79aefa7e4d6aec73c7af714b4bba9be1c69edbd8a1017e3f59b4d54dc18a68"
+      },
+      "digests": {
+        "blake2b_256": "96f1fbda6fb08ac4db6c5c6f7c3e128e4d8fb398b52fe2fc3282c45cadedd18b",
+        "md5": "8e50e61a8ad933df52cda9e978275bfe",
+        "sha256": "16506cfa5d218850f2b46e0edce1b952121f2f84f8e0074dafe15f4787f0c8fb"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp311-cp311-win_arm64.whl",
+      "has_sig": false,
+      "md5_digest": "8e50e61a8ad933df52cda9e978275bfe",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 14167408,
+      "upload_time": "2026-09-10T16:31:16",
+      "upload_time_iso_8601": "2026-09-10T16:31:16.505359Z",
+      "url": "https://files.pythonhosted.org/packages/96/f1/fbda6fb08ac4db6c5c6f7c3e128e4d8fb398b52fe2fc3282c45cadedd18b/onnxruntime-1.30.0-cp311-cp311-win_arm64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "316f48169f2e62b405bff5053cbd1d73fb5ce41ef7ecd13bb3bfcc191e689b8a",
+        "md5": "1163e92e39f197c0f9ba186a7cc6efc2",
+        "sha256": "001ed726c9bd5e2bc92faade7d37d889e9606a350b7d5529f0227df2e3bb57fd"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp312-cp312-macosx_14_0_arm64.whl",
+      "has_sig": false,
+      "md5_digest": "1163e92e39f197c0f9ba186a7cc6efc2",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21544867,
+      "upload_time": "2026-09-10T16:31:19",
+      "upload_time_iso_8601": "2026-09-10T16:31:19.876686Z",
+      "url": "https://files.pythonhosted.org/packages/31/6f/48169f2e62b405bff5053cbd1d73fb5ce41ef7ecd13bb3bfcc191e689b8a/onnxruntime-1.30.0-cp312-cp312-macosx_14_0_arm64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "16bdcbc5b8f91963689fdd622f463508c01d0aa95d3f944747b1e0b1eb2160b8",
+        "md5": "3eed2a79eec3edb092f8ea2f7a2494ad",
+        "sha256": "6c32a000d5139a38ba9349030b0032e3331acb559d596b22738d9d2b343a2b83"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_aarch64.whl",
+      "has_sig": false,
+      "md5_digest": "3eed2a79eec3edb092f8ea2f7a2494ad",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21345202,
+      "upload_time": "2026-09-10T16:31:23",
+      "upload_time_iso_8601": "2026-09-10T16:31:23.361439Z",
+      "url": "https://files.pythonhosted.org/packages/16/bd/cbc5b8f91963689fdd622f463508c01d0aa95d3f944747b1e0b1eb2160b8/onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_aarch64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "3435e7f862dbacbc99fadd9b14a614e49c99bf0f35fd9927a82f096e3de33531",
+        "md5": "ab643b1cd61c6145100cb63d74e01521",
+        "sha256": "fa688e7891a6aa206636fe7372e27ee75fd17713289f6b4fc7b190e0a7de9328"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "ab643b1cd61c6145100cb63d74e01521",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 23585654,
+      "upload_time": "2026-09-10T16:31:26",
+      "upload_time_iso_8601": "2026-09-10T16:31:26.650479Z",
+      "url": "https://files.pythonhosted.org/packages/34/35/e7f862dbacbc99fadd9b14a614e49c99bf0f35fd9927a82f096e3de33531/onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "3f79aefa7e4d6aec73c7af714b4bba9be1c69edbd8a1017e3f59b4d54dc18a68"
+      },
+      "digests": {
+        "blake2b_256": "a6130f1699f6de549c9324bc9112a2a85b14c517904cd11b562a654643b755a1",
+        "md5": "2cf14e3cfdb6fe60f422af224c869458",
+        "sha256": "f3501472571f1b1eee50e017851e7929f5ea37312d2d8c2494a19e8fc58b4a38"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp312-cp312-win_amd64.whl",
+      "has_sig": false,
+      "md5_digest": "2cf14e3cfdb6fe60f422af224c869458",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 14311470,
+      "upload_time": "2026-09-10T16:31:31",
+      "upload_time_iso_8601": "2026-09-10T16:31:31.273341Z",
+      "url": "https://files.pythonhosted.org/packages/a6/13/0f1699f6de549c9324bc9112a2a85b14c517904cd11b562a654643b755a1/onnxruntime-1.30.0-cp312-cp312-win_amd64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "3f79aefa7e4d6aec73c7af714b4bba9be1c69edbd8a1017e3f59b4d54dc18a68"
+      },
+      "digests": {
+        "blake2b_256": "a21702b13e5f51461f0453b18ab854e2d0bc1b6ec353241b05a2ee6b79e35d87",
+        "md5": "c452b607d097518f99f1fd5128d85635",
+        "sha256": "dc4c706f1935ebb62356e6a095b047859badd854482c40560888e95c328ed262"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp312-cp312-win_arm64.whl",
+      "has_sig": false,
+      "md5_digest": "c452b607d097518f99f1fd5128d85635",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 14175072,
+      "upload_time": "2026-09-10T16:31:34",
+      "upload_time_iso_8601": "2026-09-10T16:31:34.541603Z",
+      "url": "https://files.pythonhosted.org/packages/a2/17/02b13e5f51461f0453b18ab854e2d0bc1b6ec353241b05a2ee6b79e35d87/onnxruntime-1.30.0-cp312-cp312-win_arm64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "f075508454c5d01f31641dabc597fe559594c931a520a2673031179319d0afd8",
+        "md5": "a3ed36740118a16ea2cdc1209df377f7",
+        "sha256": "05e4fc41711d1f4abd19a9124b5be7a65a506cb2670a7f14b16162ef13c58134"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp313-cp313-macosx_14_0_arm64.whl",
+      "has_sig": false,
+      "md5_digest": "a3ed36740118a16ea2cdc1209df377f7",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21544990,
+      "upload_time": "2026-09-10T16:31:37",
+      "upload_time_iso_8601": "2026-09-10T16:31:37.685240Z",
+      "url": "https://files.pythonhosted.org/packages/f0/75/508454c5d01f31641dabc597fe559594c931a520a2673031179319d0afd8/onnxruntime-1.30.0-cp313-cp313-macosx_14_0_arm64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "8906e603c71f43f4fe3fd156a053af79cbed6e27a2c649f0988a67d97fedd39f",
+        "md5": "7fd542a3958640304ec53b0b92af49b7",
+        "sha256": "5327cf6aa15a02bad805fac8bd6882a62571e8b72f6f2938a8f37e6bd1966ce9"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp313-cp313-manylinux_2_28_aarch64.whl",
+      "has_sig": false,
+      "md5_digest": "7fd542a3958640304ec53b0b92af49b7",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21344996,
+      "upload_time": "2026-09-10T16:31:40",
+      "upload_time_iso_8601": "2026-09-10T16:31:40.915627Z",
+      "url": "https://files.pythonhosted.org/packages/89/06/e603c71f43f4fe3fd156a053af79cbed6e27a2c649f0988a67d97fedd39f/onnxruntime-1.30.0-cp313-cp313-manylinux_2_28_aarch64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "f1a1ede48ab5dc54907a2999362777f541e132639fb06628ded1932058aa8a36",
+        "md5": "5b724c90804760a7f8eeebc14c1aa41c",
+        "sha256": "86f940afc801ea9681a4da8af84fbe95e1d9ea7d80903952cc1bfad54faad38f"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp313-cp313-manylinux_2_28_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "5b724c90804760a7f8eeebc14c1aa41c",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 23585560,
+      "upload_time": "2026-09-10T16:31:44",
+      "upload_time_iso_8601": "2026-09-10T16:31:44.941570Z",
+      "url": "https://files.pythonhosted.org/packages/f1/a1/ede48ab5dc54907a2999362777f541e132639fb06628ded1932058aa8a36/onnxruntime-1.30.0-cp313-cp313-manylinux_2_28_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "920a284fd6fe701c9a8aff39dbc119c37582ca40e9cff1ea05425a7cc8606a02",
+        "md5": "64eaeb7afc1f762f35f1607701702a77",
+        "sha256": "e5224ba2b00284cb1c48b3edcd303c109245d66df9ec1b861858fd6de672a38e"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp313-cp313t-manylinux_2_28_aarch64.whl",
+      "has_sig": false,
+      "md5_digest": "64eaeb7afc1f762f35f1607701702a77",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21349453,
+      "upload_time": "2026-09-10T16:31:53",
+      "upload_time_iso_8601": "2026-09-10T16:31:53.898606Z",
+      "url": "https://files.pythonhosted.org/packages/92/0a/284fd6fe701c9a8aff39dbc119c37582ca40e9cff1ea05425a7cc8606a02/onnxruntime-1.30.0-cp313-cp313t-manylinux_2_28_aarch64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "d6724f4466f8fa1ec267a9ef5e2f3bd175c203d3da0facbdf4049dc93abbe91c",
+        "md5": "ff1ff07f390463014a39be702dd7882e",
+        "sha256": "3f9e002417f1e3bbb31ed43dafa4f22ca1b2b68832244fdee192fcaa1ae19bca"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp313-cp313t-manylinux_2_28_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "ff1ff07f390463014a39be702dd7882e",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 23579837,
+      "upload_time": "2026-09-10T16:31:56",
+      "upload_time_iso_8601": "2026-09-10T16:31:56.820553Z",
+      "url": "https://files.pythonhosted.org/packages/d6/72/4f4466f8fa1ec267a9ef5e2f3bd175c203d3da0facbdf4049dc93abbe91c/onnxruntime-1.30.0-cp313-cp313t-manylinux_2_28_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "3f79aefa7e4d6aec73c7af714b4bba9be1c69edbd8a1017e3f59b4d54dc18a68"
+      },
+      "digests": {
+        "blake2b_256": "3cddc57c529dbc6dd55eca24b12cfbeab1b6a690de72083824eca689085f55b0",
+        "md5": "f653152ae55569870ce9f2bc8d8a64fd",
+        "sha256": "4b63041bd623a9a9ac5e353948436c6fa7f43edd12d6b4a4ebc340bca959ba93"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp313-cp313-win_amd64.whl",
+      "has_sig": false,
+      "md5_digest": "f653152ae55569870ce9f2bc8d8a64fd",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 14311378,
+      "upload_time": "2026-09-10T16:31:48",
+      "upload_time_iso_8601": "2026-09-10T16:31:48.034672Z",
+      "url": "https://files.pythonhosted.org/packages/3c/dd/c57c529dbc6dd55eca24b12cfbeab1b6a690de72083824eca689085f55b0/onnxruntime-1.30.0-cp313-cp313-win_amd64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "3f79aefa7e4d6aec73c7af714b4bba9be1c69edbd8a1017e3f59b4d54dc18a68"
+      },
+      "digests": {
+        "blake2b_256": "112fef00b45b911e7f2115273a24ed1b43e73c8c6c9ec17f9bfa13f8492581f8",
+        "md5": "e10d549eb490fb77bb5e4b8056abfc15",
+        "sha256": "c389b6887fc95e0fcb80e89b156bc2cb18e662c29df55e9326fe64140e7d7b4f"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp313-cp313-win_arm64.whl",
+      "has_sig": false,
+      "md5_digest": "e10d549eb490fb77bb5e4b8056abfc15",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 14175134,
+      "upload_time": "2026-09-10T16:31:50",
+      "upload_time_iso_8601": "2026-09-10T16:31:50.799499Z",
+      "url": "https://files.pythonhosted.org/packages/11/2f/ef00b45b911e7f2115273a24ed1b43e73c8c6c9ec17f9bfa13f8492581f8/onnxruntime-1.30.0-cp313-cp313-win_arm64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "6a0305c9a9234688757d2876ddecf80bba908561ee11debf125bc1a427ae6f48",
+        "md5": "07b5adfbdedaae8561649a0b27a30c95",
+        "sha256": "8b6169c16a48429890d2f4a0c774ebf54dfe9066a998514aad0518a16d398547"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp314-cp314-macosx_14_0_arm64.whl",
+      "has_sig": false,
+      "md5_digest": "07b5adfbdedaae8561649a0b27a30c95",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21545313,
+      "upload_time": "2026-09-10T16:31:59",
+      "upload_time_iso_8601": "2026-09-10T16:31:59.654226Z",
+      "url": "https://files.pythonhosted.org/packages/6a/03/05c9a9234688757d2876ddecf80bba908561ee11debf125bc1a427ae6f48/onnxruntime-1.30.0-cp314-cp314-macosx_14_0_arm64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "c6bc1069e58b24779ba9d2fd479db5ecb3a15a6f49b585107c898819c0789558",
+        "md5": "2020ee4c0000b455fea399e5cf86d554",
+        "sha256": "d2184fddb6798136e7c478244391ca82443f5c757f59f15bb9e5ad2da5e03175"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp314-cp314-manylinux_2_28_aarch64.whl",
+      "has_sig": false,
+      "md5_digest": "2020ee4c0000b455fea399e5cf86d554",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21346830,
+      "upload_time": "2026-09-10T16:32:02",
+      "upload_time_iso_8601": "2026-09-10T16:32:02.275954Z",
+      "url": "https://files.pythonhosted.org/packages/c6/bc/1069e58b24779ba9d2fd479db5ecb3a15a6f49b585107c898819c0789558/onnxruntime-1.30.0-cp314-cp314-manylinux_2_28_aarch64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "f1388138eed225c5bc6ddfc05879ecac7dacc63c34b9b6f99be72839c1f6dc49",
+        "md5": "139abb27c71810611047a33b3b5f4193",
+        "sha256": "8b611d24db2954545ce6bd9acd4670183cb368e4642450de7a9ab6474eb374ec"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp314-cp314-manylinux_2_28_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "139abb27c71810611047a33b3b5f4193",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 23586333,
+      "upload_time": "2026-09-10T16:32:04",
+      "upload_time_iso_8601": "2026-09-10T16:32:04.996781Z",
+      "url": "https://files.pythonhosted.org/packages/f1/38/8138eed225c5bc6ddfc05879ecac7dacc63c34b9b6f99be72839c1f6dc49/onnxruntime-1.30.0-cp314-cp314-manylinux_2_28_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "240aec0a9d656e39b43887c378a5388b20c3b1e1ee43bded84580b0936466694",
+        "md5": "f94207aaf748a810f0eb7e8e0559c4ad",
+        "sha256": "265de607ba6f9814264e1d5d413fa7069d70f48e3049b5e460b3b04bdfcef294"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp314-cp314t-manylinux_2_28_aarch64.whl",
+      "has_sig": false,
+      "md5_digest": "f94207aaf748a810f0eb7e8e0559c4ad",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 21348433,
+      "upload_time": "2026-09-10T16:32:12",
+      "upload_time_iso_8601": "2026-09-10T16:32:12.772764Z",
+      "url": "https://files.pythonhosted.org/packages/24/0a/ec0a9d656e39b43887c378a5388b20c3b1e1ee43bded84580b0936466694/onnxruntime-1.30.0-cp314-cp314t-manylinux_2_28_aarch64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec"
+      },
+      "digests": {
+        "blake2b_256": "91f040f74b7c00077e1e25627067ed98a70df1fef5c0e21b82849190d312554e",
+        "md5": "340195a3243d212cd6fc6fe825ad5773",
+        "sha256": "67ad7f03433b6462c627d0f555dece80e6a26bc71e8542ced35cebd32142d1b7"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp314-cp314t-manylinux_2_28_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "340195a3243d212cd6fc6fe825ad5773",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 23579340,
+      "upload_time": "2026-09-10T16:32:15",
+      "upload_time_iso_8601": "2026-09-10T16:32:15.532123Z",
+      "url": "https://files.pythonhosted.org/packages/91/f0/40f74b7c00077e1e25627067ed98a70df1fef5c0e21b82849190d312554e/onnxruntime-1.30.0-cp314-cp314t-manylinux_2_28_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "3f79aefa7e4d6aec73c7af714b4bba9be1c69edbd8a1017e3f59b4d54dc18a68"
+      },
+      "digests": {
+        "blake2b_256": "4d0a748b86000fbf9518b5dfc5bdc1b924eeaca976203740fd9d30649e568ee6",
+        "md5": "38a19a2f2bbc4320581964d659ede48d",
+        "sha256": "3bdd1752a8502ac1a7ccc6e878d16db6943df574d54ed7f01058a6806ae05be4"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp314-cp314-win_amd64.whl",
+      "has_sig": false,
+      "md5_digest": "38a19a2f2bbc4320581964d659ede48d",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 14675319,
+      "upload_time": "2026-09-10T16:32:07",
+      "upload_time_iso_8601": "2026-09-10T16:32:07.500868Z",
+      "url": "https://files.pythonhosted.org/packages/4d/0a/748b86000fbf9518b5dfc5bdc1b924eeaca976203740fd9d30649e568ee6/onnxruntime-1.30.0-cp314-cp314-win_amd64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "3f79aefa7e4d6aec73c7af714b4bba9be1c69edbd8a1017e3f59b4d54dc18a68"
+      },
+      "digests": {
+        "blake2b_256": "2fdbdb8e4c0cf6f70f1311060560630fd21763648e01dfbba5195a2592c052ef",
+        "md5": "9031748daf63143fb4c44d126dbbb1a7",
+        "sha256": "83d543843cbd352cfa9996a6c7b92f8a480f114a18f95ff2a1acaf6921e85b6d"
+      },
+      "downloads": -1,
+      "filename": "onnxruntime-1.30.0-cp314-cp314-win_arm64.whl",
+      "has_sig": false,
+      "md5_digest": "9031748daf63143fb4c44d126dbbb1a7",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.11",
+      "size": 14569360,
+      "upload_time": "2026-09-10T16:32:09",
+      "upload_time_iso_8601": "2026-09-10T16:32:09.896679Z",
+      "url": "https://files.pythonhosted.org/packages/2f/db/db8e4c0cf6f70f1311060560630fd21763648e01dfbba5195a2592c052ef/onnxruntime-1.30.0-cp314-cp314-win_arm64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ]
+}

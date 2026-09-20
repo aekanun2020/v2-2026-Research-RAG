@@ -1,0 +1,54 @@
+name: codex-research-rag
+
+x-runtime: &runtime
+  image: codex-research-rag-mcp:0.2.4
+  user: "${RAG_UID:-1000}:${RAG_GID:-1000}"
+  restart: unless-stopped
+  init: true
+  read_only: true
+  tmpfs:
+    - /tmp
+  cap_drop:
+    - ALL
+  security_opt:
+    - no-new-privileges:true
+  volumes:
+    - type: bind
+      source: ./.data
+      target: /data
+  logging:
+    driver: json-file
+    options:
+      max-size: 5m
+      max-file: "2"
+
+services:
+  mcp:
+    <<: *runtime
+    build:
+      context: .
+      target: runtime
+    command: [serve, --host, 0.0.0.0, --port, "${RAG_MCP_PORT:-8776}"]
+    ports:
+      - "127.0.0.1:${RAG_MCP_PORT:-8776}:${RAG_MCP_PORT:-8776}"
+    healthcheck:
+      test: [CMD, python, /app/scripts/smoke_http.py, --workspace, /data, --url, "http://127.0.0.1:${RAG_MCP_PORT:-8776}/mcp"]
+      interval: 60s
+      timeout: 15s
+      start_period: 10s
+      retries: 3
+
+  review:
+    <<: *runtime
+    command: [review, --host, 0.0.0.0, --port, "${RAG_REVIEW_PORT:-8777}"]
+    ports:
+      - "127.0.0.1:${RAG_REVIEW_PORT:-8777}:${RAG_REVIEW_PORT:-8777}"
+    depends_on:
+      mcp:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, python, -c, "import socket; socket.create_connection(('127.0.0.1', ${RAG_REVIEW_PORT:-8777}), timeout=5).close()"]
+      interval: 60s
+      timeout: 10s
+      start_period: 5s
+      retries: 3

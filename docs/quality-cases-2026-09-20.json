@@ -1,0 +1,142 @@
+[
+  {
+    "id": "T01",
+    "query": "ถ่ายทอดความรู้จากโมเดลหลายตัวไปยังโมเดลขนาดเล็กตัวเดียวได้อย่างไร",
+    "expected_filename": "arxiv-1503.02531.pdf",
+    "split": "regression",
+    "expected_source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a"
+  },
+  {
+    "id": "T02",
+    "query": "ปรับอัตราการเรียนรู้แยกสำหรับแต่ละพารามิเตอร์โดยใช้ค่าเฉลี่ยของความชันและความชันกำลังสองได้อย่างไร",
+    "expected_filename": "arxiv-1412.6980.pdf",
+    "split": "regression",
+    "expected_source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+  },
+  {
+    "id": "T03",
+    "query": "แปลงคำถามภาษาคนให้เป็นคำสั่งค้นข้อมูลในตารางโดยใช้ผลการรันคำสั่งเป็นรางวัลได้อย่างไร",
+    "expected_filename": "arxiv-1709.00103.pdf",
+    "split": "regression",
+    "expected_source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1"
+  },
+  {
+    "id": "T04",
+    "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+    "expected_filename": "arxiv-1802.05365.pdf",
+    "split": "regression",
+    "expected_source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+  },
+  {
+    "id": "T05",
+    "query": "ใช้ระยะห่างระหว่างคำแทนการระบุตำแหน่งแบบตายตัวในกลไกความสนใจได้อย่างไร",
+    "expected_filename": "arxiv-1803.02155.pdf",
+    "split": "regression",
+    "expected_source_id": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b"
+  },
+  {
+    "id": "T06",
+    "query": "เพิ่มความจุของโครงข่ายโดยเลือกใช้ผู้เชี่ยวชาญเพียงบางตัวสำหรับข้อมูลแต่ละตัวอย่างได้อย่างไร",
+    "expected_filename": "arxiv-1701.06538.pdf",
+    "split": "regression",
+    "expected_source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e"
+  },
+  {
+    "id": "T07",
+    "query": "สร้างลายมือเขียนจากข้อความโดยให้โครงข่ายเรียนรู้การทำนายจุดถัดไปได้อย่างไร",
+    "expected_filename": "arxiv-1308.0850.pdf",
+    "split": "regression",
+    "expected_source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01"
+  },
+  {
+    "id": "T08",
+    "query": "เหตุใดคุณภาพการแปลด้วยตัวเข้ารหัสและตัวถอดรหัสจึงลดลงเมื่อประโยคยาวหรือมีคำที่ไม่รู้จัก",
+    "expected_filename": "arxiv-1409.1259.pdf",
+    "split": "regression",
+    "expected_source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528"
+  },
+  {
+    "id": "T09",
+    "query": "สรุปข้อความแบบเขียนใหม่จะจัดการคำหายากและโครงสร้างระดับคำกับประโยคได้อย่างไร",
+    "expected_filename": "arxiv-1602.06023.pdf",
+    "split": "regression",
+    "expected_source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d"
+  },
+  {
+    "id": "T10",
+    "query": "จำแนกวิดีโอให้เร็วขึ้นโดยแยกการเรียนรู้ข้อมูลเชิงพื้นที่กับเชิงเวลาได้อย่างไร",
+    "expected_filename": "arxiv-1712.04851.pdf",
+    "split": "regression",
+    "expected_source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90"
+  },
+  {
+    "id": "N01",
+    "query": "อะไรเป็นสาเหตุให้แผ่นเปลือกโลกเคลื่อนที่และเกิดภูเขาไฟ",
+    "expected_filename": null,
+    "split": "regression",
+    "expected_source_id": null
+  },
+  {
+    "id": "N02",
+    "query": "คำนวณวงโคจรของดาวหางรอบดวงอาทิตย์ได้อย่างไร",
+    "expected_filename": null,
+    "split": "regression",
+    "expected_source_id": null
+  },
+  {
+    "id": "H01",
+    "query": "จะบีบอัดความรู้ของระบบทำนายหลายตัวให้ใช้โมเดลเล็กเพียงตัวเดียวตอนใช้งานได้อย่างไร",
+    "expected_filename": "arxiv-1503.02531.pdf",
+    "split": "held_out",
+    "expected_source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a"
+  },
+  {
+    "id": "H02",
+    "query": "การใช้โมเมนต์อันดับหนึ่งและอันดับสองของเกรเดียนต์ช่วยปรับขนาดก้าวในการเรียนรู้ได้อย่างไร",
+    "expected_filename": "arxiv-1412.6980.pdf",
+    "split": "held_out",
+    "expected_source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+  },
+  {
+    "id": "H03",
+    "query": "ถ้าคำหนึ่งมีหลายความหมาย จะสร้างตัวแทนของคำนั้นให้สะท้อนคำที่อยู่รอบข้างได้อย่างไร",
+    "expected_filename": "arxiv-1802.05365.pdf",
+    "split": "held_out",
+    "expected_source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+  },
+  {
+    "id": "H04",
+    "query": "การเลือกเปิดใช้ผู้เชี่ยวชาญแค่บางส่วนช่วยขยายจำนวนพารามิเตอร์โดยไม่เพิ่มงานคำนวณตามสัดส่วนได้อย่างไร",
+    "expected_filename": "arxiv-1701.06538.pdf",
+    "split": "held_out",
+    "expected_source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e"
+  },
+  {
+    "id": "H05",
+    "query": "โมเดลสร้างลายมือสามารถใช้ข้อความที่ต้องการเขียนเป็นเงื่อนไขของการทำนายตำแหน่งปากกาได้อย่างไร",
+    "expected_filename": "arxiv-1308.0850.pdf",
+    "split": "held_out",
+    "expected_source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01"
+  },
+  {
+    "id": "H06",
+    "query": "ระบบสรุปบทความจะดึงคำที่ไม่เคยพบตอนฝึกจากต้นฉบับมาใส่ในบทสรุปได้อย่างไร",
+    "expected_filename": "arxiv-1602.06023.pdf",
+    "split": "held_out",
+    "expected_source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d"
+  },
+  {
+    "id": "HN01",
+    "query": "เหตุใดน้ำทะเลจึงขึ้นลงตามตำแหน่งของดวงจันทร์",
+    "expected_filename": null,
+    "split": "held_out",
+    "expected_source_id": null
+  },
+  {
+    "id": "HN02",
+    "query": "หินอัคนีและหินตะกอนเกิดจากกระบวนการที่แตกต่างกันอย่างไร",
+    "expected_filename": null,
+    "split": "held_out",
+    "expected_source_id": null
+  }
+]

@@ -1,0 +1,8 @@
+test_workspace_scope_dependency_guard_preview_and_invalid_requests (test_cleanup.CleanupHTTPIntegration.test_workspace_scope_dependency_guard_preview_and_invalid_requests) ... Executing <Task pending name='Task-1' coro=<HTTPIntegration.asyncSetUp() running at /Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(12, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:181] created at /Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py:100> took 0.569 seconds
+Executing <Task finished name='Task-71' coro=<HTTPIntegration.asyncTearDown() done, defined at /Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-mcp/tests/test_http.py:51> result=None created at /Users/grizzlymacbookpro/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py:100> took 0.175 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.183s
+
+OK

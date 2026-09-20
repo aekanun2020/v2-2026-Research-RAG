@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-09-20T03:25:50.226268+00:00",
+  "image": "sha256:2eb281b12c84a4009d2e2080fdb66203e0d0591a5e6cb089fccf29e10a2604c5",
+  "containers": [
+    {
+      "name": "codex-research-rag-mcp-1",
+      "health": "healthy"
+    },
+    {
+      "name": "codex-research-rag-review-1",
+      "health": "healthy"
+    }
+  ],
+  "production_database_unchanged": true,
+  "bearer_token_preserved": true,
+  "source_modules_match": 10,
+  "other_local_containers_unchanged": 17,
+  "review_get": 200,
+  "review_decision_submitted": false
+}

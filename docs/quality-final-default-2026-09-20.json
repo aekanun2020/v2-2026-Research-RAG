@@ -1,0 +1,297 @@
+{
+  "started_at": "2026-09-20T15:37:01.936230+00:00",
+  "endpoint": "http://127.0.0.1:18877/mcp",
+  "protocol": "real MCP Streamable HTTP, official SDK",
+  "semantic_assessor": "not assessed by this script",
+  "cases": [
+    {
+      "case": {
+        "id": "H02",
+        "query": "การใช้โมเมนต์อันดับหนึ่งและอันดับสองของเกรเดียนต์ช่วยปรับขนาดก้าวในการเรียนรู้ได้อย่างไร",
+        "expected_filename": "arxiv-1412.6980.pdf",
+        "split": "held_out",
+        "expected_source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      },
+      "arguments": {
+        "query": "การใช้โมเมนต์อันดับหนึ่งและอันดับสองของเกรเดียนต์ช่วยปรับขนาดก้าวในการเรียนรู้ได้อย่างไร",
+        "mode": "semantic",
+        "limit": 3,
+        "roles": [
+          "literature"
+        ]
+      },
+      "response": {
+        "query": "การใช้โมเมนต์อันดับหนึ่งและอันดับสองของเกรเดียนต์ช่วยปรับขนาดก้าวในการเรียนรู้ได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity; BGE pairwise reranking with first-page relevance diagnostics",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "reranking": {
+          "enabled": true,
+          "model": {
+            "model_id": "onnx-community/bge-reranker-v2-m3-ONNX",
+            "original_model_id": "BAAI/bge-reranker-v2-m3",
+            "model_revision": "6f5ff65298512715a1e669753bc754d2bc8f367b",
+            "fingerprint": "4348295bfed7916115db7a5112f4b45de5f5d10b9f527e32bcea795c3e3751e5",
+            "recipe": "query-passage-pair:512-only-second-stride64:max-window-logit:sigmoid:int8:first-page-document-score:v1",
+            "provider": "CPUExecutionProvider",
+            "external_inference": false,
+            "assets_present": true
+          },
+          "candidate_limit": 50,
+          "candidates_scored": 50,
+          "min_score": null,
+          "rejected_candidates": 0,
+          "document_gate": {
+            "enabled": false,
+            "min_score": 0,
+            "basis": "original extracted first page; max score across token windows",
+            "scores_by_source": {
+              "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31": 0.0014672252668188064,
+              "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e": 0.001251925955279652,
+              "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90": 0.0008862958049300516,
+              "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d": 0.00023917459532387173,
+              "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b": 0.00043547070715702855,
+              "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632": 0.0002795076397231342,
+              "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a": 0.00139706474256,
+              "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01": 0.00029433686803914834
+            }
+          },
+          "score_meaning": "Sigmoid of pairwise ranking logit; not calibrated answer confidence"
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "abea57dafe3bba309a137871d73667973f18650688c7f4f7ab216a176c48fbb1",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 0,
+            "start": 2899,
+            "end": 4091,
+            "text": "zation methods are ill-suited, and discussion in this paper will be\nrestricted to ﬁrst-order methods.\nWe propose Adam, a method for efﬁcient stochastic optimization that only requires ﬁrst-order gra-\ndients with little memory requirement. The method computes individual adaptive learning rates for\ndifferent parameters from estimates of ﬁrst and second moments of the gradients; the name Adam\nis derived from adaptive moment estimation. Our method is designed to combine the advantages\nof two recently popular methods: AdaGrad (Duchi et al., 2011), which works well with sparse gra-\ndients, and RMSProp (Tieleman & Hinton, 2012), which works well in on-line and non-stationary\nsettings; important connections to these and other stochastic optimization methods are clariﬁed in\nsection 5. Some of Adam’s advantages are that the magnitudes of parameter updates are invariant to\nrescaling of the gradient, its stepsizes are approximately bounded by the stepsize hyperparameter,\nit does not require a stationary objective, it works with sparse gradients, and it naturally performs a\nform of step size annealing.\n∗Equal contribution. Author ordering determined by coin ﬂip over a Google Hangout.\n1\n",
+            "chunk_set_id": "cs-d85e19b88683441bbff1d1b722ab2b7a",
+            "document_id": "doc-9a5a10be317e4f948dab1218a8354abb",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.8930044877363016,
+            "semantic_score": 0.804857,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": 2.121804714202881,
+            "rerank_score": 0.8930044877363016,
+            "rerank_windows": 1,
+            "retrieval_score": 0.8048569,
+            "first_stage_rank": 6,
+            "document_score": 0.0014672252668188064,
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 0,
+              "start": 2899,
+              "end": 4091,
+              "quote": "zation methods are ill-suited, and discussion in this paper will be\nrestricted to ﬁrst-order methods.\nWe propose Adam, a method for efﬁcient stochastic optimization that only requires ﬁrst-order gra-\ndients with little memory requirement. The method computes individual adaptive learning rates for\ndifferent parameters from estimates of ﬁrst and second moments of the gradients; the name Adam\nis derived from adaptive moment estimation. Our method is designed to combine the advantages\nof two recently popular methods: AdaGrad (Duchi et al., 2011), which works well with sparse gra-\ndients, and RMSProp (Tieleman & Hinton, 2012), which works well in on-line and non-stationary\nsettings; important connections to these and other stochastic optimization methods are clariﬁed in\nsection 5. Some of Adam’s advantages are that the magnitudes of parameter updates are invariant to\nrescaling of the gradient, its stepsizes are approximately bounded by the stepsize hyperparameter,\nit does not require a stationary objective, it works with sparse gradients, and it naturally performs a\nform of step size annealing.\n∗Equal contribution. Author ordering determined by coin ﬂip over a Google Hangout.\n1\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "855d77dbf8b35d4d8734553c5883238051cfee53b1c4e2de33d462138f5ff619",
+            "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+            "page_index": 15,
+            "start": 1881,
+            "end": 3016,
+            "text": "tively.\nTraining: Models are trained on a cluster of 32 Tesla K40 GPUs, except for the last two models,\nwhich are trained on clusters of 64 and 128 GPUs so as to have enough memory for all the param-\neters. For all models, training batch sizes are approximately 2.5 million words. Models are trained\nonce-through over about 100 billion words.\nWe implement several memory optimizations in order to ﬁt up to 1 billion parameters per GPU.\nFirst, we do not store the activations of the hidden layers of the experts, but instead recompute them\non the backwards pass. Secondly, we modify the optimizer on the expert parameters to require less\nauxiliary storage:\nThe Adam optimizer (Kingma & Ba, 2015) keeps ﬁrst and second moment estimates of the per-\nparameter gradients. This triples the required memory. To avoid keeping a ﬁrst-moment estimator,\nwe set β1 = 0. To reduce the size of the second moment estimator, we replace it with a factored\napproximation. For a matrix of parameters, instead of maintaining a full matrix of second-moment\nestimators, we maintain vectors of row-wise and column-wise averages of that matrix. At each step,\n",
+            "chunk_set_id": "cs-ec6f301a89854d0fbb5bb2e294a66da3",
+            "document_id": "doc-6512001644ea4409a3f732b612909db0",
+            "source_version": 1,
+            "text_revision_id": "text-12b9cc887a876d3747cd83d27da5aab301952e3c868248eab556f44003b9a4b3",
+            "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1701.06538.pdf",
+            "role": "literature",
+            "page_label": "16",
+            "score": 0.24056606713872755,
+            "semantic_score": 0.800153,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -1.14957857131958,
+            "rerank_score": 0.24056606713872755,
+            "rerank_windows": 1,
+            "retrieval_score": 0.8001526,
+            "first_stage_rank": 11,
+            "document_score": 0.001251925955279652,
+            "citation": {
+              "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+              "page_index": 15,
+              "start": 1881,
+              "end": 3016,
+              "quote": "tively.\nTraining: Models are trained on a cluster of 32 Tesla K40 GPUs, except for the last two models,\nwhich are trained on clusters of 64 and 128 GPUs so as to have enough memory for all the param-\neters. For all models, training batch sizes are approximately 2.5 million words. Models are trained\nonce-through over about 100 billion words.\nWe implement several memory optimizations in order to ﬁt up to 1 billion parameters per GPU.\nFirst, we do not store the activations of the hidden layers of the experts, but instead recompute them\non the backwards pass. Secondly, we modify the optimizer on the expert parameters to require less\nauxiliary storage:\nThe Adam optimizer (Kingma & Ba, 2015) keeps ﬁrst and second moment estimates of the per-\nparameter gradients. This triples the required memory. To avoid keeping a ﬁrst-moment estimator,\nwe set β1 = 0. To reduce the size of the second moment estimator, we replace it with a factored\napproximation. For a matrix of parameters, instead of maintaining a full matrix of second-moment\nestimators, we maintain vectors of row-wise and column-wise averages of that matrix. At each step,\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "62ef511a246e964c2abd415a4be3c23b47a3cb1b7599f79e91c17df0a5688564",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 6,
+            "start": 1000,
+            "end": 2099,
+            "text": " 45 epochs. CIFAR-10 with c64-c64-c128-1000 architecture.\ndropout noise is applied to the input layer and fully connected layer. The minibatch size is also set\nto 128 similar to previous experiments.\nInterestingly, although both Adam and Adagrad make rapid progress lowering the cost in the initial\nstage of the training, shown in Figure 3 (left), Adam and SGD eventually converge considerably\nfaster than Adagrad for CNNs shown in Figure 3 (right). We notice the second moment estimateˆvt\nvanishes to zeros after a few epochs and is dominated by the ϵ in algorithm 1. The second moment\nestimate is therefore a poor approximation to the geometry of the cost function in CNNs comparing\nto fully connected network from Section 6.2. Whereas, reducing the minibatch variance through\nthe ﬁrst moment is more important in CNNs and contributes to the speed-up. As a result, Adagrad\nconverges much slower than others in this particular experiment. Though Adam shows marginal\nimprovement over SGD with momentum, it adapts learning rate scale for different layers instead of\nhand picking manually as in SGD.\n7",
+            "chunk_set_id": "cs-d85e19b88683441bbff1d1b722ab2b7a",
+            "document_id": "doc-9a5a10be317e4f948dab1218a8354abb",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "7",
+            "score": 0.13595923395372803,
+            "semantic_score": 0.79399,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -1.8492648601531982,
+            "rerank_score": 0.13595923395372803,
+            "rerank_windows": 1,
+            "retrieval_score": 0.79399002,
+            "first_stage_rank": 32,
+            "document_score": 0.0014672252668188064,
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 6,
+              "start": 1000,
+              "end": 2099,
+              "quote": " 45 epochs. CIFAR-10 with c64-c64-c128-1000 architecture.\ndropout noise is applied to the input layer and fully connected layer. The minibatch size is also set\nto 128 similar to previous experiments.\nInterestingly, although both Adam and Adagrad make rapid progress lowering the cost in the initial\nstage of the training, shown in Figure 3 (left), Adam and SGD eventually converge considerably\nfaster than Adagrad for CNNs shown in Figure 3 (right). We notice the second moment estimateˆvt\nvanishes to zeros after a few epochs and is dominated by the ϵ in algorithm 1. The second moment\nestimate is therefore a poor approximation to the geometry of the cost function in CNNs comparing\nto fully connected network from Section 6.2. Whereas, reducing the minibatch variance through\nthe ﬁrst moment is more important in CNNs and contributes to the speed-up. As a result, Adagrad\nconverges much slower than others in this particular experiment. Though Adam shows marginal\nimprovement over SGD with momentum, it adapts learning rate scale for different layers instead of\nhand picking manually as in SGD.\n7",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Candidates are not verified support; unrelated questions can return hits. Scores are not calibrated confidence. No score filter is enabled by default: first-page thresholds produced false negatives in testing. Inspect original evidence. No completeness or novelty claim."
+      },
+      "latency_seconds": 43.75957897799526,
+      "span_checks": [
+        {
+          "chunk_id": "abea57dafe3bba309a137871d73667973f18650688c7f4f7ab216a176c48fbb1",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "855d77dbf8b35d4d8734553c5883238051cfee53b1c4e2de33d462138f5ff619",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "62ef511a246e964c2abd415a4be3c23b47a3cb1b7599f79e91c17df0a5688564",
+          "exact_span": true
+        }
+      ],
+      "top_source_matches": true
+    }
+  ],
+  "status": "passed deterministic checks; relevance requires Codex assessment",
+  "server_version": "0.2.4",
+  "tool_schemas": {
+    "retrieve_evidence": {
+      "properties": {
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "roles": {
+          "anyOf": [
+            {
+              "items": {
+                "enum": [
+                  "literature",
+                  "protocol",
+                  "data",
+                  "results",
+                  "project_note",
+                  "journal_guidelines"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Roles"
+        },
+        "source_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Ids"
+        },
+        "limit": {
+          "default": 8,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "mode": {
+          "default": "hybrid",
+          "enum": [
+            "lexical",
+            "semantic",
+            "hybrid"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "rerank": {
+          "default": true,
+          "title": "Rerank",
+          "type": "boolean"
+        },
+        "candidate_limit": {
+          "default": 50,
+          "title": "Candidate Limit",
+          "type": "integer"
+        },
+        "min_rerank_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Rerank Score"
+        },
+        "min_document_score": {
+          "default": 0,
+          "title": "Min Document Score",
+          "type": "number"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object",
+      "title": "retrieve_evidenceArguments"
+    }
+  },
+  "revision_before": 24,
+  "revision_after": 24,
+  "workspace_unchanged": true
+}

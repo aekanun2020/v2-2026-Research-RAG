@@ -1,0 +1,739 @@
+{
+  "assessor": "Codex",
+  "assessment_status": "complete: improved original topical retrieval; H06 and automatic abstention remain unresolved",
+  "evidence": "quality-final-candidates-2026-09-20.json",
+  "rubric": {
+    "direct": "Passage directly addresses a substantive part of the question; not a guarantee of a complete answer.",
+    "partial": "Related context or correct topic, but misses the requested core explanation.",
+    "irrelevant": "Does not provide evidence for the question."
+  },
+  "method": "Codex inspected the passages this session. Judgments of unchanged passages are retained only after exact chunk-ID/text comparison; changed passages are inspected again. No external judge.",
+  "holdout_note": "H01 and H02 were seen during rejection of the automatic gate. H03-H06 and HN01-HN02 remained unqueried until the no-filter policy was frozen; do not call all six topical questions an untouched final holdout.",
+  "cases": [
+    {
+      "id": "T01",
+      "labels": [
+        "partial",
+        "direct",
+        "direct"
+      ],
+      "reason": "Rank 1 states transfer is possible but is cut off before explaining it; rank 2 describes distillation and rank 3 explains training on soft targets. Top 1 regresses from the original baseline.",
+      "evidence": [
+        {
+          "chunk_id": "6e4671882d78adb1ae657efab94768d2d4d87de65bfbe41609326f8161bf445a",
+          "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+          "page_index": 0,
+          "start": 2866,
+          "end": 3489,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "d6d41b59972027cd4785405dd4e3fb79e5ca3115d84082f671d8cd12bce49ded",
+          "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+          "page_index": 0,
+          "start": 1942,
+          "end": 3066,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "15371d5c96282fd5038f96a6423bf069e2af491f95e3d8d8496f10b29a5b8d8b",
+          "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+          "page_index": 1,
+          "start": 944,
+          "end": 2092,
+          "judgment": "direct"
+        }
+      ]
+    },
+    {
+      "id": "T02",
+      "labels": [
+        "direct",
+        "irrelevant",
+        "partial"
+      ],
+      "reason": "Rank 1 directly explains adaptive rates using both gradient moments. Rank 2 only reports using Adam in an ELMo experiment, without its mechanism. Rank 3 discusses averaging parameter values rather than the requested gradient-moment update.",
+      "evidence": [
+        {
+          "chunk_id": "abea57dafe3bba309a137871d73667973f18650688c7f4f7ab216a176c48fbb1",
+          "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+          "page_index": 0,
+          "start": 2899,
+          "end": 4091,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "87615bbdf435ff8663b59a85ddfe19eac152e0ffc2f4800fceca86d531b1d4c1",
+          "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+          "page_index": 11,
+          "start": 1946,
+          "end": 3105,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "6f77ccf76be745bbe215d90db9c96b079d1e36055e84b2be653187aa662bc872",
+          "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+          "page_index": 8,
+          "start": 1938,
+          "end": 2621,
+          "judgment": "partial"
+        }
+      ]
+    },
+    {
+      "id": "T03",
+      "labels": [
+        "direct",
+        "direct",
+        "direct"
+      ],
+      "reason": "All three passages explicitly connect natural-language-to-SQL generation with reinforcement rewards from query execution.",
+      "evidence": [
+        {
+          "chunk_id": "7478e7e861f7f69f4764f270a53f399184906631b04bc5525787fb00e11c4e8f",
+          "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+          "page_index": 0,
+          "start": 1939,
+          "end": 3060,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "b43ee5eeabe8c7bfb0910e5097197835f541b2eccc3f6b2ad6b41460e18cf118",
+          "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+          "page_index": 1,
+          "start": 908,
+          "end": 2095,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "4d5bac1973d76c1a4a56704c67c0c3083c196b1869b58c1eb9d6f488b548566e",
+          "source_id": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+          "page_index": 0,
+          "start": 0,
+          "end": 1177,
+          "judgment": "direct"
+        }
+      ]
+    },
+    {
+      "id": "T04",
+      "labels": [
+        "direct",
+        "partial",
+        "irrelevant"
+      ],
+      "reason": "Rank 1 directly explains contextual biLM vectors. Rank 2 provides related context; rank 3 concerns pointer/generator summarization, not contextual word representations.",
+      "evidence": [
+        {
+          "chunk_id": "ce116b10f396af0d4f4f1cecf50c48dadf3d74eac4d77d8f0246de3f4fb24619",
+          "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+          "page_index": 0,
+          "start": 1967,
+          "end": 3158,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "8f470c33249c5296211afc3f62a8eb34ab18f606031f88ea2c52ece109525afa",
+          "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+          "page_index": 1,
+          "start": 0,
+          "end": 1169,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "1aa72dffb63cd6747ead01e3667aa9a08e8228eef0be81af0c0b0c41ba37740f",
+          "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+          "page_index": 2,
+          "start": 0,
+          "end": 1200,
+          "judgment": "irrelevant"
+        }
+      ]
+    },
+    {
+      "id": "T05",
+      "labels": [
+        "direct",
+        "partial",
+        "direct"
+      ],
+      "reason": "Ranks 1 and 3 explicitly replace absolute encodings with relative positions/distances in self-attention; rank 2 mainly explains why position information is needed.",
+      "evidence": [
+        {
+          "chunk_id": "2332f5b313e4fedbbb205ee6a8f03c42fed4c3e7aea9155f0de3a4d9c7a3eb51",
+          "source_id": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+          "page_index": 0,
+          "start": 2918,
+          "end": 3688,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "eeaee1d209438ccd309e70b56359116022c1f1747cd7982aca6c813f36304fac",
+          "source_id": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+          "page_index": 0,
+          "start": 1960,
+          "end": 3118,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "cfa383c239b5f27e8b8d0394b6e155dbde152388c4bc13a2beb7db1405661ef0",
+          "source_id": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+          "page_index": 0,
+          "start": 0,
+          "end": 1182,
+          "judgment": "direct"
+        }
+      ]
+    },
+    {
+      "id": "T06",
+      "labels": [
+        "direct",
+        "direct",
+        "partial"
+      ],
+      "reason": "Rank 1 explains choosing k of n experts per example and the resulting batch tradeoff; rank 2 explicitly skips zero-gated experts to save computation; rank 3 discusses training assignment/generalist specialists rather than the requested sparse-capacity mechanism.",
+      "evidence": [
+        {
+          "chunk_id": "fc517c50265a3dcd873574a9677bfdbbb335a75641ee5a2287ec70c4a2af83a6",
+          "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+          "page_index": 3,
+          "start": 1873,
+          "end": 3071,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "8b902f6f80b3f2e420878b4c90eb069c49a70fe84549776530a481b27c8205f8",
+          "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+          "page_index": 2,
+          "start": 2801,
+          "end": 3936,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "b7f875db992da06171ef3fe551cdf55e6ef9b143b741afa2a9b25fbb1cdc5750",
+          "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+          "page_index": 7,
+          "start": 1856,
+          "end": 3020,
+          "judgment": "partial"
+        }
+      ]
+    },
+    {
+      "id": "T07",
+      "labels": [
+        "direct",
+        "direct",
+        "direct"
+      ],
+      "reason": "Rank 1 gives text-conditioned alignment/soft-window synthesis; rank 2 explains predicting pen coordinates and stroke markers one point at a time; rank 3 connects next-step RNN prediction to handwriting generation.",
+      "evidence": [
+        {
+          "chunk_id": "0c13a679fec3c720deeb16bef8c7a181414db3b14639020ab34a3aaa7a4b0f5a",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 25,
+          "start": 0,
+          "end": 1141,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "156fe468951afe3e9793f17ce495c40670374c9953b48d6e13905543e8f8f5cb",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 17,
+          "start": 993,
+          "end": 2128,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "b8ffae5fb228068d7109e38474f6e10c552628181ff85793e00517fdb3f8f6a1",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 1,
+          "start": 1907,
+          "end": 3050,
+          "judgment": "direct"
+        }
+      ]
+    },
+    {
+      "id": "T08",
+      "labels": [
+        "direct",
+        "partial",
+        "partial"
+      ],
+      "reason": "Rank 1 gives the fixed-length bottleneck/capacity hypothesis for long sentences. Ranks 2 and 3 report degradation trends and evaluation context without that core explanatory mechanism.",
+      "evidence": [
+        {
+          "chunk_id": "fe033102ba782e0f42e3904187aabe303ef738ce1903c6302c8d657a62eb08e2",
+          "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+          "page_index": 4,
+          "start": 2933,
+          "end": 3900,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "0289b9e8ef3d1b97d9e829fffb7617f6fa85adfd0e9521a6e1116c82477df0de",
+          "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+          "page_index": 7,
+          "start": 995,
+          "end": 2151,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "c8cb3d08475027df97e7f8d5af6c5c4e9335666f251e1f5cbd9b57bad009b526",
+          "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+          "page_index": 4,
+          "start": 962,
+          "end": 2159,
+          "judgment": "partial"
+        }
+      ]
+    },
+    {
+      "id": "T09",
+      "labels": [
+        "direct",
+        "partial",
+        "partial"
+      ],
+      "reason": "Rank 1 explains hierarchical attention: word weights rescaled by sentence weights, directly addressing the word/sentence part. Rank 2 gives a pointer-output caption and general conclusion; rank 3 is a general contribution list. Rare-word handling is not fully explained by this top-three set.",
+      "evidence": [
+        {
+          "chunk_id": "4e43d605f3a562d4e16318ef31bb828ce849d26f0df59e49c74867803d302c07",
+          "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+          "page_index": 3,
+          "start": 997,
+          "end": 2193,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "256317771cb98483d23e8c4d677735a1c08cef095045c469e8e56ba439b45beb",
+          "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+          "page_index": 10,
+          "start": 0,
+          "end": 1188,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "d1ee69ac6a8b8055ae57661b614185fe4bd048e2314c45ea23ff5951464332cc",
+          "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+          "page_index": 0,
+          "start": 2931,
+          "end": 3834,
+          "judgment": "partial"
+        }
+      ]
+    },
+    {
+      "id": "T10",
+      "labels": [
+        "direct",
+        "partial",
+        "direct"
+      ],
+      "reason": "Rank 1 describes cheaper convolutions and separable spatial/temporal design; rank 2 is a truncated abstract before the mechanism; rank 3 gives the actual factorization and computation advantage.",
+      "evidence": [
+        {
+          "chunk_id": "8fead8b387fa4620a5eedb93d2a7322e6ec8b5f38157a818c0f34be098b4da02",
+          "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+          "page_index": 0,
+          "start": 961,
+          "end": 2081,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "7fa5ec23510bad793f20599e74f600b67e6128925fc2c0cfe88a5646f97de65f",
+          "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+          "page_index": 0,
+          "start": 0,
+          "end": 1161,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "c5916b420c89545259a0c54580a220b5311182a19a262c4163d00c34fb035941",
+          "source_id": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+          "page_index": 2,
+          "start": 0,
+          "end": 1196,
+          "judgment": "direct"
+        }
+      ]
+    },
+    {
+      "id": "N01",
+      "labels": [
+        "irrelevant",
+        "irrelevant",
+        "irrelevant"
+      ],
+      "reason": "All three are albedo/climate sample passages in the sequence-generation paper, not evidence about plate motion or volcanoes. No reliable automatic abstention is claimed.",
+      "evidence": [
+        {
+          "chunk_id": "8cfcffbb30af001f7b9ab874410f9c2b413caac3375be5413bc8c8b32e526cef",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 12,
+          "start": 934,
+          "end": 2106,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "819703fabb3f503ac0d857e96b834ad3daa93df0b352bb866c82c5ed17f2fdcb",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 12,
+          "start": 0,
+          "end": 1134,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "bac11b41d5d3191f7ecaf96c504319898f2a29ba1f64ddd1b89843af5ee97fa9",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 11,
+          "start": 3850,
+          "end": 5022,
+          "judgment": "irrelevant"
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "labels": [
+        "irrelevant",
+        "irrelevant",
+        "irrelevant"
+      ],
+      "reason": "The returned optimizer proofs and recurrent-network equations do not explain comet orbits. This negative control remains a retrieval limitation.",
+      "evidence": [
+        {
+          "chunk_id": "e17af9d7bd305f538bac9fd19f5f98dc320ea835585d5d747cb1c13fcc9e7c4b",
+          "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+          "page_index": 13,
+          "start": 994,
+          "end": 1820,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "747d18ac8f265af843edaac56d634a8b7793595fa717f2f6a49b66c9aeafd70b",
+          "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+          "page_index": 12,
+          "start": 0,
+          "end": 1196,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "7e0a5b5e32a573fe20c7d0ad092e8a166402e7d13f0d05bc0032eb198f9dc54a",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 28,
+          "start": 0,
+          "end": 1194,
+          "judgment": "irrelevant"
+        }
+      ]
+    },
+    {
+      "id": "H01",
+      "labels": [
+        "partial",
+        "direct",
+        "partial"
+      ],
+      "reason": "The leading abstract states ensemble compression/distillation and deployment benefits without explaining the training process. Rank 2 describes training a large model then distilling into a small deployable model; rank 3 is the cut-off transfer statement.",
+      "evidence": [
+        {
+          "chunk_id": "932f83e4d2e3ef01311d5d2337697da82585602f6438bd3762677d97c9fa776e",
+          "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+          "page_index": 0,
+          "start": 0,
+          "end": 1156,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "d6d41b59972027cd4785405dd4e3fb79e5ca3115d84082f671d8cd12bce49ded",
+          "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+          "page_index": 0,
+          "start": 1942,
+          "end": 3066,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "6e4671882d78adb1ae657efab94768d2d4d87de65bfbe41609326f8161bf445a",
+          "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+          "page_index": 0,
+          "start": 2866,
+          "end": 3489,
+          "judgment": "partial"
+        }
+      ]
+    },
+    {
+      "id": "H02",
+      "labels": [
+        "direct",
+        "partial",
+        "direct"
+      ],
+      "reason": "With filtering disabled, rank 1 explains first/second gradient moments and per-parameter adaptive rates; rank 2 discusses Adam memory optimizations; rank 3 explains the different contributions of moment estimates and learning-rate scale.",
+      "evidence": [
+        {
+          "chunk_id": "abea57dafe3bba309a137871d73667973f18650688c7f4f7ab216a176c48fbb1",
+          "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+          "page_index": 0,
+          "start": 2899,
+          "end": 4091,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "855d77dbf8b35d4d8734553c5883238051cfee53b1c4e2de33d462138f5ff619",
+          "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+          "page_index": 15,
+          "start": 1881,
+          "end": 3016,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "62ef511a246e964c2abd415a4be3c23b47a3cb1b7599f79e91c17df0a5688564",
+          "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+          "page_index": 6,
+          "start": 1000,
+          "end": 2099,
+          "judgment": "direct"
+        }
+      ]
+    },
+    {
+      "id": "H03",
+      "labels": [
+        "direct",
+        "direct",
+        "direct"
+      ],
+      "reason": "Rank 1 uses polysemous play to explain contextual disambiguation; rank 2 describes biLM sense representations; rank 3 explicitly makes each token vector a function of the whole sentence.",
+      "evidence": [
+        {
+          "chunk_id": "a0c23f6586234c7292c246ff12fde094c8b5a90c637f177a931c6288cc2e4417",
+          "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+          "page_index": 6,
+          "start": 957,
+          "end": 2143,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "ee6025e28497e6225da02acc6ab7eef78cb5e9b99efa34ff2a4166628555f886",
+          "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+          "page_index": 6,
+          "start": 2909,
+          "end": 3540,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "4096f09d1f85bb799b2c5b302840599406101a98da8ec64437c76601e00c8b57",
+          "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+          "page_index": 0,
+          "start": 993,
+          "end": 2167,
+          "judgment": "direct"
+        }
+      ]
+    },
+    {
+      "id": "H04",
+      "labels": [
+        "direct",
+        "direct",
+        "direct"
+      ],
+      "reason": "The first figure caption describes sparse selection of two experts; the second connects sparse gating to capacity/computation tradeoffs; the third states per-example sparse expert use with large capacity.",
+      "evidence": [
+        {
+          "chunk_id": "f5096bbfce1e97e1b6c08ab81eb46b91b901c54917248fb7bf9136b5f7d7b11d",
+          "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+          "page_index": 1,
+          "start": 0,
+          "end": 1200,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "5d0f2c21ce6d7003ba76fef4ecb478a5515c7ee14eb495500e6e75978e90a12c",
+          "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+          "page_index": 1,
+          "start": 1915,
+          "end": 2967,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "fefa461afef7bab00e76cb11dbfc79774c650f8be43b264ac1959faee491e67c",
+          "source_id": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+          "page_index": 0,
+          "start": 985,
+          "end": 2095,
+          "judgment": "direct"
+        }
+      ]
+    },
+    {
+      "id": "H05",
+      "labels": [
+        "direct",
+        "partial",
+        "partial"
+      ],
+      "reason": "Rank 1 directly introduces prediction conditioned on a character annotation sequence and identifies the text/pen alignment problem; it is conceptual support, not the full soft-window implementation. Ranks 2 and 3 describe unconditional point prediction/data rather than text conditioning.",
+      "evidence": [
+        {
+          "chunk_id": "b8d0a75c108fa1fcfb06a35e8c1ce9d1fa238cf98579d09a1d181a191101beca",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 23,
+          "start": 994,
+          "end": 2177,
+          "judgment": "direct"
+        },
+        {
+          "chunk_id": "156fe468951afe3e9793f17ce495c40670374c9953b48d6e13905543e8f8f5cb",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 17,
+          "start": 993,
+          "end": 2128,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "c579690595d9841f1fc3cd4b274c5b7ccc973069e7830d506d0168fef967d2d3",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 17,
+          "start": 0,
+          "end": 1193,
+          "judgment": "partial"
+        }
+      ]
+    },
+    {
+      "id": "H06",
+      "labels": [
+        "partial",
+        "irrelevant",
+        "irrelevant"
+      ],
+      "reason": "Failure: the right paper is returned, but rank 1 is related work, rank 2 training configuration and rank 3 dataset construction. None explains copying unseen words with a pointer. Matching the expected paper is not a relevance pass.",
+      "evidence": [
+        {
+          "chunk_id": "73db7b828a170b067e0d4d6522f9c7166781a4f8f8578b9af355e1e2c6ee9267",
+          "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+          "page_index": 3,
+          "start": 1993,
+          "end": 3161,
+          "judgment": "partial"
+        },
+        {
+          "chunk_id": "7bc5fa651e759434870fdcce8311ceabd80fbe6ba77d752d23c0cd3bfc8fb22a",
+          "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+          "page_index": 4,
+          "start": 2880,
+          "end": 4063,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "34e6a2a35658576e141f029ff8290ccfd255d7d5ad3aabf1f9901e63de040acf",
+          "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+          "page_index": 6,
+          "start": 2935,
+          "end": 4113,
+          "judgment": "irrelevant"
+        }
+      ]
+    },
+    {
+      "id": "HN01",
+      "labels": [
+        "irrelevant",
+        "irrelevant",
+        "irrelevant"
+      ],
+      "reason": "Albedo, reflectivity and climate samples do not explain lunar tides. Out-of-corpus retrieval remains unreliable.",
+      "evidence": [
+        {
+          "chunk_id": "b73ba77a8a0f23365afdd75127aee7c62f495ac80beaf3570edfa26bd61c7f9a",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 11,
+          "start": 2878,
+          "end": 4050,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "bac11b41d5d3191f7ecaf96c504319898f2a29ba1f64ddd1b89843af5ee97fa9",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 11,
+          "start": 3850,
+          "end": 5022,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "8cfcffbb30af001f7b9ab874410f9c2b413caac3375be5413bc8c8b32e526cef",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 12,
+          "start": 934,
+          "end": 2106,
+          "judgment": "irrelevant"
+        }
+      ]
+    },
+    {
+      "id": "HN02",
+      "labels": [
+        "irrelevant",
+        "irrelevant",
+        "irrelevant"
+      ],
+      "reason": "Distillation, generated sample prose and Adam proofs provide no evidence about igneous versus sedimentary rock formation.",
+      "evidence": [
+        {
+          "chunk_id": "e91af52db896e7b0010ce707e02003e879f6e5e0d6866a09a996ece1697c3507",
+          "source_id": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+          "page_index": 1,
+          "start": 2871,
+          "end": 3992,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "d954b628483d345853c93d0390efec620986af196cedf39128a24b1693b514cf",
+          "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+          "page_index": 13,
+          "start": 3850,
+          "end": 5022,
+          "judgment": "irrelevant"
+        },
+        {
+          "chunk_id": "747d18ac8f265af843edaac56d634a8b7793595fa717f2f6a49b66c9aeafd70b",
+          "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+          "page_index": 12,
+          "start": 0,
+          "end": 1196,
+          "judgment": "irrelevant"
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "original_topical": {
+      "questions": 10,
+      "top1_direct": 9,
+      "top3_any_direct": 10
+    },
+    "all_six_additional_paraphrases_not_an_untouched_final_holdout": {
+      "questions": 6,
+      "top1_direct": 4,
+      "top3_any_direct": 5
+    },
+    "untouched_final_topical": {
+      "questions": 4,
+      "top1_direct": 3,
+      "top3_any_direct": 3
+    },
+    "negative_controls": {
+      "questions": 4,
+      "irrelevant_results_returned": 4
+    },
+    "exact_original_spans": {
+      "checked": 60,
+      "matched": 60
+    }
+  }
+}

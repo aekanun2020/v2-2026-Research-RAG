@@ -1,0 +1,190 @@
+{
+  "_id": "66be87222eb58fbc98db1d13",
+  "id": "onnx-community/gte-multilingual-reranker-base",
+  "private": false,
+  "pipeline_tag": "text-classification",
+  "library_name": "transformers.js",
+  "tags": [
+    "transformers.js",
+    "onnx",
+    "new",
+    "text-classification",
+    "custom_code",
+    "base_model:Alibaba-NLP/gte-multilingual-reranker-base",
+    "base_model:quantized:Alibaba-NLP/gte-multilingual-reranker-base",
+    "region:us"
+  ],
+  "downloads": 1842,
+  "likes": 9,
+  "modelId": "onnx-community/gte-multilingual-reranker-base",
+  "author": "onnx-community",
+  "sha": "ee64367e35a2db0da46bb6497e13a18f8bd585cb",
+  "lastModified": "2024-10-08T13:53:56.000Z",
+  "gated": false,
+  "disabled": false,
+  "mask_token": "<mask>",
+  "widgetData": [
+    {
+      "text": "I like you. I love you"
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "NewForSequenceClassification"
+    ],
+    "auto_map": {
+      "AutoConfig": "Alibaba-NLP/new-impl--configuration.NewConfig",
+      "AutoModel": "Alibaba-NLP/new-impl--modeling.NewModel",
+      "AutoModelForMaskedLM": "Alibaba-NLP/new-impl--modeling.NewForMaskedLM",
+      "AutoModelForMultipleChoice": "Alibaba-NLP/new-impl--modeling.NewForMultipleChoice",
+      "AutoModelForQuestionAnswering": "Alibaba-NLP/new-impl--modeling.NewForQuestionAnswering",
+      "AutoModelForSequenceClassification": "Alibaba-NLP/new-impl--modeling.NewForSequenceClassification",
+      "AutoModelForTokenClassification": "Alibaba-NLP/new-impl--modeling.NewForTokenClassification"
+    },
+    "model_type": "new",
+    "tokenizer_config": {
+      "bos_token": "<s>",
+      "cls_token": "<s>",
+      "eos_token": "</s>",
+      "mask_token": "<mask>",
+      "pad_token": "<pad>",
+      "sep_token": "</s>",
+      "unk_token": "<unk>"
+    }
+  },
+  "cardData": {
+    "base_model": "Alibaba-NLP/gte-multilingual-reranker-base",
+    "library_name": "transformers.js"
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForSequenceClassification",
+    "custom_class": "Alibaba-NLP/new-impl--modeling.NewForSequenceClassification",
+    "pipeline_tag": "text-classification"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+      "size": 1570
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "93a6b79313c1b114ee04687da74e69d1635b0403",
+      "size": 577
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "7cfcfe51fbb4a1cc4e019d5b5513f67525275c81",
+      "size": 1578
+    },
+    {
+      "rfilename": "onnx/model.onnx",
+      "blobId": "c2374e64436987d1341f5390f49f6c95a50dccd9",
+      "size": 1257814850,
+      "lfs": {
+        "sha256": "4712afa6eed2ba8c3f00bf5b90f37fa2c58e60f4f22cf37763d4a48f523ffcc9",
+        "size": 1257814850,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "onnx/model_bnb4.onnx",
+      "blobId": "864e454f2ab6aaff0ad623429ac4e9e29d2b47a9",
+      "size": 868538541,
+      "lfs": {
+        "sha256": "fc410a8ff394f597b653f30c54d9b1cb74e0f0337922544101bd144271cfe2f9",
+        "size": 868538541,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "onnx/model_fp16.onnx",
+      "blobId": "91a2005f3afa442e2afd50e74f6b02c56b94b405",
+      "size": 629118152,
+      "lfs": {
+        "sha256": "baba50ee1c61dfc47601ca54518d325eab03560fd06c4b45685cc4ecc4514df4",
+        "size": 629118152,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "onnx/model_int8.onnx",
+      "blobId": "387f33bcd19cc5e7a26a21b346af78d1ebc176c6",
+      "size": 340858200,
+      "lfs": {
+        "sha256": "ccf51dba7f8aa9205753761cfaa68c55f741792501463a3bf25d7e5bcdac7c35",
+        "size": 340858200,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "onnx/model_q4.onnx",
+      "blobId": "d724a6f631bed1a0828118cd4dd5ef117554acaa",
+      "size": 875616045,
+      "lfs": {
+        "sha256": "49d20e45df2058fae9677f3366775ebbbe4b2cb9b15b37e3872a55d8ac72c6b4",
+        "size": 875616045,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "onnx/model_q4f16.onnx",
+      "blobId": "aee4e1b5fe02d4d099839db503e2a816c6a65bc8",
+      "size": 466333899,
+      "lfs": {
+        "sha256": "d24aacb414ccd10944c00622eb2d36c7f90019a8c8bdb882c320dc20f746abec",
+        "size": 466333899,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "onnx/model_quantized.onnx",
+      "blobId": "387f33bcd19cc5e7a26a21b346af78d1ebc176c6",
+      "size": 340858200,
+      "lfs": {
+        "sha256": "ccf51dba7f8aa9205753761cfaa68c55f741792501463a3bf25d7e5bcdac7c35",
+        "size": 340858200,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "onnx/model_uint8.onnx",
+      "blobId": "2ce78d3accb3f390448dcd129b617bc675b52399",
+      "size": 340858200,
+      "lfs": {
+        "sha256": "42593339249e2d0c3e3e0a28fe12c0b099d78ebc594e6d710db00d941580063f",
+        "size": 340858200,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "quantize_config.json",
+      "blobId": "bd1417f4b4b38847d50369ade653049bfa1b5ecd",
+      "size": 283
+    },
+    {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "b1879d702821e753ffe4245048eee415d54a9385",
+      "size": 964
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "1c132e7a6afc8b1cb1270a91012d67daba090653",
+      "size": 17082999,
+      "lfs": {
+        "sha256": "3ffb37461c391f096759f4a9bbbc329da0f36952f88bab061fcf84940c022e98",
+        "size": 17082999,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "ddf5350d3f7b2c0bf20ee2b10e3349dd6d8291bd",
+      "size": 1340
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2024-08-15T22:54:26.000Z",
+  "usedStorage": 4796220886
+}

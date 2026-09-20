@@ -1,0 +1,6 @@
+{"id": "T02", "seconds": 15.5, "hits": 3, "top_source_matches": true, "top_score": 0.2554036182854084}
+{"id": "T06", "seconds": 13.8, "hits": 3, "top_source_matches": true, "top_score": 0.8075996441562608}
+{"id": "T07", "seconds": 15.8, "hits": 3, "top_source_matches": true, "top_score": 0.7574736423684044}
+{"id": "T09", "seconds": 11.95, "hits": 3, "top_source_matches": true, "top_score": 0.056354686945261294}
+{"id": "N01", "seconds": 14.33, "hits": 3, "top_source_matches": false, "top_score": 0.0008669779255528513}
+{"id": "N02", "seconds": 13.86, "hits": 3, "top_source_matches": false, "top_score": 0.15631843608996368}

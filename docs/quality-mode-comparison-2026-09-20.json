@@ -1,0 +1,85 @@
+{
+  "cases": [
+    {
+      "id": "T01",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "T02",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "T03",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "T04",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "T05",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "T06",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "T07",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "T08",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "T09",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "T10",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "N01",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "N02",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "H01",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "H02",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "H03",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "H04",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "H05",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "H06",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "HN01",
+      "same_order_and_exact_spans": true
+    },
+    {
+      "id": "HN02",
+      "same_order_and_exact_spans": true
+    }
+  ],
+  "all_equal": true
+}

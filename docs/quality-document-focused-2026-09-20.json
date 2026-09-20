@@ -1,0 +1,451 @@
+{
+  "started_at": "2026-09-20T15:14:44.748012+00:00",
+  "endpoint": "http://127.0.0.1:18776/mcp",
+  "protocol": "real MCP Streamable HTTP, official SDK",
+  "semantic_assessor": "not assessed by this script",
+  "cases": [
+    {
+      "case": {
+        "id": "T04",
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "expected_filename": "arxiv-1802.05365.pdf",
+        "split": "regression",
+        "expected_source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+      },
+      "arguments": {
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "mode": "semantic",
+        "limit": 3,
+        "roles": [
+          "literature"
+        ]
+      },
+      "response": {
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "reranking": {
+          "enabled": true,
+          "model": {
+            "model_id": "onnx-community/bge-reranker-v2-m3-ONNX",
+            "original_model_id": "BAAI/bge-reranker-v2-m3",
+            "model_revision": "6f5ff65298512715a1e669753bc754d2bc8f367b",
+            "fingerprint": "7a163994372502e165888ce0fe75d6497887a2af4c78d622b165e7dc5d97cec4",
+            "recipe": "query-passage-pair:512-only-second-stride64:max-window-logit:sigmoid:int8:v1",
+            "provider": "CPUExecutionProvider",
+            "external_inference": false,
+            "assets_present": true
+          },
+          "candidate_limit": 50,
+          "candidates_scored": 50,
+          "min_score": null,
+          "rejected_candidates": 0,
+          "score_meaning": "Sigmoid of pairwise ranking logit; not calibrated answer confidence"
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "ce116b10f396af0d4f4f1cecf50c48dadf3d74eac4d77d8f0246de3f4fb24619",
+            "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "page_index": 0,
+            "start": 1967,
+            "end": 3158,
+            "text": "type embeddings in that each token is assigned a\nrepresentation that is a function of the entire input\nsentence. We use vectors derived from a bidirec-\ntional LSTM that is trained with a coupled lan-\nguage model (LM) objective on a large text cor-\npus. For this reason, we call them ELMo (Em-\nbeddings from Language Models) representations.\nUnlike previous approaches for learning contextu-\nalized word vectors (Peters et al., 2017; McCann\net al., 2017), ELMo representations are deep, in\nthe sense that they are a function of all of the in-\nternal layers of the biLM. More speciﬁcally, we\nlearn a linear combination of the vectors stacked\nabove each input word for each end task, which\nmarkedly improves performance over just using\nthe top LSTM layer.\nCombining the internal states in this manner al-\nlows for very rich word representations. Using in-\ntrinsic evaluations, we show that the higher-level\nLSTM states capture context-dependent aspects\nof word meaning (e.g., they can be used with-\nout modiﬁcation to perform well on supervised\nword sense disambiguation tasks) while lower-\nlevel states model aspects of syntax (e.g., they can\nbe used to do part-of-speech tagging). Simultane-\n",
+            "chunk_set_id": "cs-1a8afa66fa2e4b1787f21414fd903f34",
+            "document_id": "doc-e631981baf164207a7f5e7317c3c99d9",
+            "source_version": 1,
+            "text_revision_id": "text-48b851c426d9622d6e01e651e797e8ea1a4ad9017d9c50c2b55044cd1215611e",
+            "title": "Deep contextualized word representations",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1802.05365.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.11610818009139935,
+            "semantic_score": 0.795696,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -2.0298123359680176,
+            "rerank_score": 0.11610818009139935,
+            "rerank_windows": 1,
+            "retrieval_score": 0.79569638,
+            "first_stage_rank": 6,
+            "document_score": 0.007571090628997473,
+            "citation": {
+              "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+              "page_index": 0,
+              "start": 1967,
+              "end": 3158,
+              "quote": "type embeddings in that each token is assigned a\nrepresentation that is a function of the entire input\nsentence. We use vectors derived from a bidirec-\ntional LSTM that is trained with a coupled lan-\nguage model (LM) objective on a large text cor-\npus. For this reason, we call them ELMo (Em-\nbeddings from Language Models) representations.\nUnlike previous approaches for learning contextu-\nalized word vectors (Peters et al., 2017; McCann\net al., 2017), ELMo representations are deep, in\nthe sense that they are a function of all of the in-\nternal layers of the biLM. More speciﬁcally, we\nlearn a linear combination of the vectors stacked\nabove each input word for each end task, which\nmarkedly improves performance over just using\nthe top LSTM layer.\nCombining the internal states in this manner al-\nlows for very rich word representations. Using in-\ntrinsic evaluations, we show that the higher-level\nLSTM states capture context-dependent aspects\nof word meaning (e.g., they can be used with-\nout modiﬁcation to perform well on supervised\nword sense disambiguation tasks) while lower-\nlevel states model aspects of syntax (e.g., they can\nbe used to do part-of-speech tagging). Simultane-\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "8f470c33249c5296211afc3f62a8eb34ab18f606031f88ea2c52ece109525afa",
+            "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "page_index": 1,
+            "start": 0,
+            "end": 1169,
+            "text": "those derived from just the top layer of an LSTM.\nOur trained models and code are publicly avail-\nable, and we expect that ELMo will provide simi-\nlar gains for many other NLP problems.1\n2 Related work\nDue to their ability to capture syntactic and se-\nmantic information of words from large scale un-\nlabeled text, pretrained word vectors (Turian et al.,\n2010; Mikolov et al., 2013; Pennington et al.,\n2014) are a standard component of most state-of-\nthe-art NLP architectures, including for question\nanswering (Liu et al., 2017), textual entailment\n(Chen et al., 2017) and semantic role labeling\n(He et al., 2017). However, these approaches for\nlearning word vectors only allow a single context-\nindependent representation for each word.\nPreviously proposed methods overcome some\nof the shortcomings of traditional word vectors\nby either enriching them with subword informa-\ntion (e.g., Wieting et al., 2016; Bojanowski et al.,\n2017) or learning separate vectors for each word\nsense (e.g., Neelakantan et al., 2014). Our ap-\nproach also beneﬁts from subword units through\nthe use of character convolutions, and we seam-\nlessly incorporate multi-sense information into\n",
+            "chunk_set_id": "cs-1a8afa66fa2e4b1787f21414fd903f34",
+            "document_id": "doc-e631981baf164207a7f5e7317c3c99d9",
+            "source_version": 1,
+            "text_revision_id": "text-48b851c426d9622d6e01e651e797e8ea1a4ad9017d9c50c2b55044cd1215611e",
+            "title": "Deep contextualized word representations",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1802.05365.pdf",
+            "role": "literature",
+            "page_label": "2",
+            "score": 0.0942076036385063,
+            "semantic_score": 0.786266,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -2.2633092403411865,
+            "rerank_score": 0.0942076036385063,
+            "rerank_windows": 1,
+            "retrieval_score": 0.78626561,
+            "first_stage_rank": 26,
+            "document_score": 0.007571090628997473,
+            "citation": {
+              "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+              "page_index": 1,
+              "start": 0,
+              "end": 1169,
+              "quote": "those derived from just the top layer of an LSTM.\nOur trained models and code are publicly avail-\nable, and we expect that ELMo will provide simi-\nlar gains for many other NLP problems.1\n2 Related work\nDue to their ability to capture syntactic and se-\nmantic information of words from large scale un-\nlabeled text, pretrained word vectors (Turian et al.,\n2010; Mikolov et al., 2013; Pennington et al.,\n2014) are a standard component of most state-of-\nthe-art NLP architectures, including for question\nanswering (Liu et al., 2017), textual entailment\n(Chen et al., 2017) and semantic role labeling\n(He et al., 2017). However, these approaches for\nlearning word vectors only allow a single context-\nindependent representation for each word.\nPreviously proposed methods overcome some\nof the shortcomings of traditional word vectors\nby either enriching them with subword informa-\ntion (e.g., Wieting et al., 2016; Bojanowski et al.,\n2017) or learning separate vectors for each word\nsense (e.g., Neelakantan et al., 2014). Our ap-\nproach also beneﬁts from subword units through\nthe use of character convolutions, and we seam-\nlessly incorporate multi-sense information into\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "be108cfe8b5c6c3f33f1132c924bf2e87b5b22b74b9c9765798c0269d8297d28",
+            "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "page_index": 0,
+            "start": 0,
+            "end": 1193,
+            "text": "Deep contextualized word representations\nMatthew E. Peters†, Mark Neumann†, Mohit Iyyer†, Matt Gardner†,\n{matthewp,markn,mohiti,mattg}@allenai.org\nChristopher Clark∗, Kenton Lee∗, Luke Zettlemoyer†∗\n{csquared,kentonl,lsz}@cs.washington.edu\n†Allen Institute for Artiﬁcial Intelligence\n∗Paul G. Allen School of Computer Science & Engineering, University of Washington\nAbstract\nWe introduce a new type of deep contextual-\nized word representation that models both (1)\ncomplex characteristics of word use (e.g., syn-\ntax and semantics), and (2) how these uses\nvary across linguistic contexts (i.e., to model\npolysemy). Our word vectors are learned func-\ntions of the internal states of a deep bidirec-\ntional language model (biLM), which is pre-\ntrained on a large text corpus. We show that\nthese representations can be easily added to\nexisting models and signiﬁcantly improve the\nstate of the art across six challenging NLP\nproblems, including question answering, tex-\ntual entailment and sentiment analysis. We\nalso present an analysis showing that exposing\nthe deep internals of the pre-trained network is\ncrucial, allowing downstream models to mix\ndifferent types of semi-supervision signals.\n",
+            "chunk_set_id": "cs-1a8afa66fa2e4b1787f21414fd903f34",
+            "document_id": "doc-e631981baf164207a7f5e7317c3c99d9",
+            "source_version": 1,
+            "text_revision_id": "text-48b851c426d9622d6e01e651e797e8ea1a4ad9017d9c50c2b55044cd1215611e",
+            "title": "Deep contextualized word representations",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1802.05365.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.04647013604699491,
+            "semantic_score": 0.78177,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -3.0213608741760254,
+            "rerank_score": 0.04647013604699491,
+            "rerank_windows": 1,
+            "retrieval_score": 0.78177011,
+            "first_stage_rank": 49,
+            "document_score": 0.007571090628997473,
+            "citation": {
+              "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+              "page_index": 0,
+              "start": 0,
+              "end": 1193,
+              "quote": "Deep contextualized word representations\nMatthew E. Peters†, Mark Neumann†, Mohit Iyyer†, Matt Gardner†,\n{matthewp,markn,mohiti,mattg}@allenai.org\nChristopher Clark∗, Kenton Lee∗, Luke Zettlemoyer†∗\n{csquared,kentonl,lsz}@cs.washington.edu\n†Allen Institute for Artiﬁcial Intelligence\n∗Paul G. Allen School of Computer Science & Engineering, University of Washington\nAbstract\nWe introduce a new type of deep contextual-\nized word representation that models both (1)\ncomplex characteristics of word use (e.g., syn-\ntax and semantics), and (2) how these uses\nvary across linguistic contexts (i.e., to model\npolysemy). Our word vectors are learned func-\ntions of the internal states of a deep bidirec-\ntional language model (biLM), which is pre-\ntrained on a large text corpus. We show that\nthese representations can be easily added to\nexisting models and signiﬁcantly improve the\nstate of the art across six challenging NLP\nproblems, including question answering, tex-\ntual entailment and sentiment analysis. We\nalso present an analysis showing that exposing\nthe deep internals of the pre-trained network is\ncrucial, allowing downstream models to mix\ndifferent types of semi-supervision signals.\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      },
+      "latency_seconds": 19.920231333002448,
+      "span_checks": [
+        {
+          "chunk_id": "ce116b10f396af0d4f4f1cecf50c48dadf3d74eac4d77d8f0246de3f4fb24619",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "8f470c33249c5296211afc3f62a8eb34ab18f606031f88ea2c52ece109525afa",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "be108cfe8b5c6c3f33f1132c924bf2e87b5b22b74b9c9765798c0269d8297d28",
+          "exact_span": true
+        }
+      ],
+      "top_source_matches": true
+    },
+    {
+      "case": {
+        "id": "N02",
+        "query": "คำนวณวงโคจรของดาวหางรอบดวงอาทิตย์ได้อย่างไร",
+        "expected_filename": null,
+        "split": "regression",
+        "expected_source_id": null
+      },
+      "arguments": {
+        "query": "คำนวณวงโคจรของดาวหางรอบดวงอาทิตย์ได้อย่างไร",
+        "mode": "semantic",
+        "limit": 3,
+        "roles": [
+          "literature"
+        ]
+      },
+      "response": {
+        "query": "คำนวณวงโคจรของดาวหางรอบดวงอาทิตย์ได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "reranking": {
+          "enabled": true,
+          "model": {
+            "model_id": "onnx-community/bge-reranker-v2-m3-ONNX",
+            "original_model_id": "BAAI/bge-reranker-v2-m3",
+            "model_revision": "6f5ff65298512715a1e669753bc754d2bc8f367b",
+            "fingerprint": "7a163994372502e165888ce0fe75d6497887a2af4c78d622b165e7dc5d97cec4",
+            "recipe": "query-passage-pair:512-only-second-stride64:max-window-logit:sigmoid:int8:v1",
+            "provider": "CPUExecutionProvider",
+            "external_inference": false,
+            "assets_present": true
+          },
+          "candidate_limit": 50,
+          "candidates_scored": 50,
+          "min_score": null,
+          "rejected_candidates": 0,
+          "score_meaning": "Sigmoid of pairwise ranking logit; not calibrated answer confidence"
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "e17af9d7bd305f538bac9fd19f5f98dc320ea835585d5d747cb1c13fcc9e7c4b",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 13,
+            "start": 994,
+            "end": 1820,
+            "text": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+            "chunk_set_id": "cs-d85e19b88683441bbff1d1b722ab2b7a",
+            "document_id": "doc-9a5a10be317e4f948dab1218a8354abb",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "14",
+            "score": 0.15631843608996368,
+            "semantic_score": 0.809707,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -1.6858799457550049,
+            "rerank_score": 0.15631843608996368,
+            "rerank_windows": 2,
+            "retrieval_score": 0.80970705,
+            "first_stage_rank": 1,
+            "document_score": 0.0008332803156279088,
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 13,
+              "start": 994,
+              "end": 1820,
+              "quote": "i−θ∗\n,i) =(1−βt\n1)\n√\nˆvt,i\n2αt(1−β1,t)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)\n+ β1,t\n(1−β1,t)\nˆv\n1\n4\nt−1,i\n√αt−1\n(θ∗\n,i−θt,i)√αt−1\nmt−1,i\nˆv\n1\n4\nt−1,i\n+ αt(1−βt\n1)\n√\nˆvt,i\n2(1−β1,t) ( ˆmt,i√\nˆvt,i\n)2\n≤ 1\n2αt(1−β1)\n(\n(θt,i−θ∗\n,t)2− (θt+1,i−θ∗\n,i)2\n)√\nˆvt,i + β1,t\n2αt−1(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt−1,i\n+ β1αt−1\n2(1−β1)\nm2\nt−1,i√\nˆvt−1,i\n+ αt\n2(1−β1)\nˆm2\nt,i√\nˆvt,i\nWe apply Lemma 10.4 to the above inequality and derive the regret bound by summing across all\nthe dimensions for i∈ 1,...,d in the upper bound of ft(θt)−ft(θ∗) and the sequence of convex\nfunctions fort∈ 1,...,T :\nR(T )≤\nd∑\ni=1\n1\n2α1(1−β1)(θ1,i−θ∗\n,i)2√\nˆv1,i +\nd∑\ni=1\nT∑\nt=2\n1\n2(1−β1)(θt,i−θ∗\n,i)2(\n√\nˆvt,i\nαt\n−\n√\nˆvt−1,i\nαt−1\n)\n+ β1αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2 + αG∞\n(1−β1)√1−β2(1−γ)2\nd∑\ni=1\n‖g1:T,i‖2\n+\nd∑\ni=1\nT∑\nt=1\nβ1,t\n2αt(1−β1,t)(θ∗\n,i−θt,i)2√\nˆvt,i\n14",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "7e0a5b5e32a573fe20c7d0ad092e8a166402e7d13f0d05bc0032eb198f9dc54a",
+            "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "page_index": 28,
+            "start": 0,
+            "end": 1194,
+            "text": "The wt vectors are passed to the second and third hidden layers at time t,\nand the ﬁrst hidden layer at timet+1 (to avoid creating a cycle in the processing\ngraph). The update equations for the hidden layers are\nh1\nt =H\n(\nWih1xt +Wh1h1h1\nt−1 +Wwh1wt−1 +b1\nh\n)\n(52)\nhn\nt =H\n(\nWihnxt +Whn−1hnhn−1\nt +Whnhnhn\nt−1 +Wwhnwt +bn\nh\n)\n(53)\nThe equations for the output layer remain unchanged from Eqs. (17) to (22).\nThe sequence loss is\nL(x) =− log Pr(x|c) (54)\nwhere\nPr(x|c) =\nT∏\nt=1\nPr (xt+1|yt) (55)\nNote that yt is now a function of c as well as x1:t.\nThe loss derivatives with respect to the outputs ˆet, ˆπt, ˆµt, ˆσt, ˆρt remain un-\nchanged from Eqs. (27), (30) and (31). Given the loss derivative ∂L(x)\n∂wt\nwith\nrespect to the size W window vector wt, obtained by backpropagating the out-\nput derivatives through the computation graph in Fig. 12, the derivatives with\nrespect to the window parameters are as follows:\nϵ(k,t,u )\ndef\n= αk\nt exp\n(\n−βk\nt\n(\nκk\nt−u\n)2) W∑\nj=1\n∂L(x)\n∂w j\nt\ncj\nu (56)\n∂L(x)\n∂ ˆαk\nt\n=\nU∑\nu=1\nϵ(k,t,u ) (57)\n∂L(x)\n∂ ˆβk\nt\n=−βk\nt\nU∑\nu=1\nϵ(k,t,u )(κk\nt−u)2 (58)\n∂L(x)\n∂κk\nt\n= ∂L(x)\n∂κk\nt+1\n+ 2βk\nt\nU∑\nu=1\nϵ(k,t,u )(u−κk\nt ) (59)\n∂L(x)\n∂ˆκk\nt\n= exp\n(\nˆκk\nt\n)∂L(x)\n∂κk\nt\n(60)\n",
+            "chunk_set_id": "cs-bb153da58b2040e7b64e76985da3a923",
+            "document_id": "doc-7ff7b20b95ae4ff68c9c9c16d26ca409",
+            "source_version": 1,
+            "text_revision_id": "text-21dcd4eb0b6f740987db832d890a2451a6853b4d537a6028abcb2e6dd1350f8e",
+            "title": "Generating Sequences With Recurrent Neural Networks",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1308.0850.pdf",
+            "role": "literature",
+            "page_label": "29",
+            "score": 0.14603977080823416,
+            "semantic_score": 0.802684,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -1.7660056352615356,
+            "rerank_score": 0.14603977080823416,
+            "rerank_windows": 2,
+            "retrieval_score": 0.80268395,
+            "first_stage_rank": 3,
+            "document_score": 0.0002182349804472118,
+            "citation": {
+              "source_id": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+              "page_index": 28,
+              "start": 0,
+              "end": 1194,
+              "quote": "The wt vectors are passed to the second and third hidden layers at time t,\nand the ﬁrst hidden layer at timet+1 (to avoid creating a cycle in the processing\ngraph). The update equations for the hidden layers are\nh1\nt =H\n(\nWih1xt +Wh1h1h1\nt−1 +Wwh1wt−1 +b1\nh\n)\n(52)\nhn\nt =H\n(\nWihnxt +Whn−1hnhn−1\nt +Whnhnhn\nt−1 +Wwhnwt +bn\nh\n)\n(53)\nThe equations for the output layer remain unchanged from Eqs. (17) to (22).\nThe sequence loss is\nL(x) =− log Pr(x|c) (54)\nwhere\nPr(x|c) =\nT∏\nt=1\nPr (xt+1|yt) (55)\nNote that yt is now a function of c as well as x1:t.\nThe loss derivatives with respect to the outputs ˆet, ˆπt, ˆµt, ˆσt, ˆρt remain un-\nchanged from Eqs. (27), (30) and (31). Given the loss derivative ∂L(x)\n∂wt\nwith\nrespect to the size W window vector wt, obtained by backpropagating the out-\nput derivatives through the computation graph in Fig. 12, the derivatives with\nrespect to the window parameters are as follows:\nϵ(k,t,u )\ndef\n= αk\nt exp\n(\n−βk\nt\n(\nκk\nt−u\n)2) W∑\nj=1\n∂L(x)\n∂w j\nt\ncj\nu (56)\n∂L(x)\n∂ ˆαk\nt\n=\nU∑\nu=1\nϵ(k,t,u ) (57)\n∂L(x)\n∂ ˆβk\nt\n=−βk\nt\nU∑\nu=1\nϵ(k,t,u )(κk\nt−u)2 (58)\n∂L(x)\n∂κk\nt\n= ∂L(x)\n∂κk\nt+1\n+ 2βk\nt\nU∑\nu=1\nϵ(k,t,u )(u−κk\nt ) (59)\n∂L(x)\n∂ˆκk\nt\n= exp\n(\nˆκk\nt\n)∂L(x)\n∂κk\nt\n(60)\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "747d18ac8f265af843edaac56d634a8b7793595fa717f2f6a49b66c9aeafd70b",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 12,
+            "start": 0,
+            "end": 1196,
+            "text": "Published as a conference paper at ICLR 2015\nLemma 10.4. Letγ ≜ β2\n1√β2\n. Forβ1,β2∈ [0, 1) that satisfy β2\n1√β2\n< 1 and boundedgt,‖gt‖2≤G,\n‖gt‖∞≤G∞, the following inequality holds\nT∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n≤ 2\n1−γ\n1√1−β2\n‖g1:T,i‖2\nProof. Under the assumption,\n√\n1−βt\n2\n(1−βt\n1)2 ≤ 1\n(1−β1)2 . We can expand the last term in the summation\nusing the update rules in Algorithm 1,\nT∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n=\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+\n√\n1−βT\n2\n(1−βT\n1 )2\n(∑T\nk=1(1−β1)βT−k\n1 gk,i)2\n√\nT∑T\nj=1(1−β2)βT−j\n2 g2\nj,i\n≤\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+\n√\n1−βT\n2\n(1−βT\n1 )2\nT∑\nk=1\nT ((1−β1)βT−k\n1 gk,i)2\n√\nT∑T\nj=1(1−β2)βT−j\n2 g2\nj,i\n≤\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+\n√\n1−βT\n2\n(1−βT\n1 )2\nT∑\nk=1\nT ((1−β1)βT−k\n1 gk,i)2\n√\nT (1−β2)βT−k\n2 g2\nk,i\n≤\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+\n√\n1−βT\n2\n(1−βT\n1 )2\n(1−β1)2\n√\nT (1−β2)\nT∑\nk=1\nT\n( β2\n1√β2\n)T−k\n‖gk,i‖2\n≤\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+ T√\nT (1−β2)\nT∑\nk=1\nγT−k‖gk,i‖2\nSimilarly, we can upper bound the rest of the terms in the summation.\nT∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n≤\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT−t∑\nj=0\ntγj\n≤\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT∑\nj=0\ntγj\nForγ <1, using the upper bound on the arithmetic-geometric series,∑\nttγt < 1\n(1−γ)2 :\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT∑\nj=0\ntγj≤ 1\n(1−γ)2√1−β2\nT∑\nt=1\n‖gt,i‖2√\nt\n",
+            "chunk_set_id": "cs-d85e19b88683441bbff1d1b722ab2b7a",
+            "document_id": "doc-9a5a10be317e4f948dab1218a8354abb",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "13",
+            "score": 0.103551906300282,
+            "semantic_score": 0.798219,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -2.158367395401001,
+            "rerank_score": 0.103551906300282,
+            "rerank_windows": 2,
+            "retrieval_score": 0.79821926,
+            "first_stage_rank": 5,
+            "document_score": 0.0008332803156279088,
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 12,
+              "start": 0,
+              "end": 1196,
+              "quote": "Published as a conference paper at ICLR 2015\nLemma 10.4. Letγ ≜ β2\n1√β2\n. Forβ1,β2∈ [0, 1) that satisfy β2\n1√β2\n< 1 and boundedgt,‖gt‖2≤G,\n‖gt‖∞≤G∞, the following inequality holds\nT∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n≤ 2\n1−γ\n1√1−β2\n‖g1:T,i‖2\nProof. Under the assumption,\n√\n1−βt\n2\n(1−βt\n1)2 ≤ 1\n(1−β1)2 . We can expand the last term in the summation\nusing the update rules in Algorithm 1,\nT∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n=\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+\n√\n1−βT\n2\n(1−βT\n1 )2\n(∑T\nk=1(1−β1)βT−k\n1 gk,i)2\n√\nT∑T\nj=1(1−β2)βT−j\n2 g2\nj,i\n≤\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+\n√\n1−βT\n2\n(1−βT\n1 )2\nT∑\nk=1\nT ((1−β1)βT−k\n1 gk,i)2\n√\nT∑T\nj=1(1−β2)βT−j\n2 g2\nj,i\n≤\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+\n√\n1−βT\n2\n(1−βT\n1 )2\nT∑\nk=1\nT ((1−β1)βT−k\n1 gk,i)2\n√\nT (1−β2)βT−k\n2 g2\nk,i\n≤\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+\n√\n1−βT\n2\n(1−βT\n1 )2\n(1−β1)2\n√\nT (1−β2)\nT∑\nk=1\nT\n( β2\n1√β2\n)T−k\n‖gk,i‖2\n≤\nT−1∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n+ T√\nT (1−β2)\nT∑\nk=1\nγT−k‖gk,i‖2\nSimilarly, we can upper bound the rest of the terms in the summation.\nT∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n≤\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT−t∑\nj=0\ntγj\n≤\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT∑\nj=0\ntγj\nForγ <1, using the upper bound on the arithmetic-geometric series,∑\nttγt < 1\n(1−γ)2 :\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT∑\nj=0\ntγj≤ 1\n(1−γ)2√1−β2\nT∑\nt=1\n‖gt,i‖2√\nt\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      },
+      "latency_seconds": 20.834344375005458,
+      "span_checks": [
+        {
+          "chunk_id": "e17af9d7bd305f538bac9fd19f5f98dc320ea835585d5d747cb1c13fcc9e7c4b",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "7e0a5b5e32a573fe20c7d0ad092e8a166402e7d13f0d05bc0032eb198f9dc54a",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "747d18ac8f265af843edaac56d634a8b7793595fa717f2f6a49b66c9aeafd70b",
+          "exact_span": true
+        }
+      ],
+      "top_source_matches": false
+    }
+  ],
+  "status": "passed deterministic checks; relevance requires Codex assessment",
+  "server_version": "0.2.4",
+  "tool_schemas": {
+    "retrieve_evidence": {
+      "properties": {
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "roles": {
+          "anyOf": [
+            {
+              "items": {
+                "enum": [
+                  "literature",
+                  "protocol",
+                  "data",
+                  "results",
+                  "project_note",
+                  "journal_guidelines"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Roles"
+        },
+        "source_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Ids"
+        },
+        "limit": {
+          "default": 8,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "mode": {
+          "default": "hybrid",
+          "enum": [
+            "lexical",
+            "semantic",
+            "hybrid"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "rerank": {
+          "default": true,
+          "title": "Rerank",
+          "type": "boolean"
+        },
+        "candidate_limit": {
+          "default": 50,
+          "title": "Candidate Limit",
+          "type": "integer"
+        },
+        "min_rerank_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Rerank Score"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object",
+      "title": "retrieve_evidenceArguments"
+    }
+  },
+  "revision_before": 24,
+  "revision_after": 24,
+  "workspace_unchanged": true
+}

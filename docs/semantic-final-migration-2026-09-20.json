@@ -1,0 +1,26 @@
+{
+  "before_schema": 1,
+  "after_schema": 3,
+  "original_chunk_ids_preserved": 77,
+  "citations_preserved": 8,
+  "legacy_retry_response_preserved": true,
+  "index": {
+    "model": {
+      "model_id": "intfloat/multilingual-e5-base",
+      "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+      "dimensions": 768,
+      "provider": "CPUExecutionProvider",
+      "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+      "assets_present": true,
+      "external_inference": false
+    },
+    "total_chunks": 77,
+    "indexed_chunks": 77,
+    "pending_or_invalid_chunks": 0,
+    "storage": "SQLite float32 vectors; exact CPU cosine scan",
+    "default_mode": "hybrid",
+    "ready": true
+  },
+  "original_thai_query_recovers_abstract_top3": true
+}

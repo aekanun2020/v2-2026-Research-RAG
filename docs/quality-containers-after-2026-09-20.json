@@ -1,0 +1,179 @@
+{
+  "verified_at": "2026-09-20T15:42:43.844088+00:00",
+  "containers": [
+    {
+      "id": "a8ab7aed77ffd5e75fe6cb19abe388bab73d8548a7940e066150df5bfb13c356",
+      "name": "codex-research-rag-review-1",
+      "image": "sha256:46994bcdb92d186c3a5f0fa41d67b252fb1da57c419a3e6bb704e1849fddc085",
+      "image_tag": "codex-research-rag-mcp:0.2.4",
+      "state": "running",
+      "started_at": "2026-09-20T15:41:33.139373555Z",
+      "health": "healthy"
+    },
+    {
+      "id": "025fa59c7f7334f3c87a2671b907836b61d8ca7ad4ca3f81b25382575112315e",
+      "name": "codex-research-rag-mcp-1",
+      "image": "sha256:46994bcdb92d186c3a5f0fa41d67b252fb1da57c419a3e6bb704e1849fddc085",
+      "image_tag": "codex-research-rag-mcp:0.2.4",
+      "state": "running",
+      "started_at": "2026-09-20T15:41:27.075352843Z",
+      "health": "healthy"
+    },
+    {
+      "id": "1d1783d92d0ec712919d822380f07469a1b6af0ab4ae3ca235b94aadfc43979f",
+      "name": "spark-standalone-spark-hdfs-mcp-1",
+      "image": "sha256:1c5a07b80905b3578981a01769564bc174016c57f983e77b63be55a6af683f3d",
+      "image_tag": "spark-standalone-spark-hdfs-mcp",
+      "state": "exited",
+      "started_at": "2026-09-08T08:00:04.787233805Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "c324dd50a96343963e9397cb513899e473f0da4e701bd10039aba3843d48daef",
+      "name": "policy-as-code-lab4c-remote-repeat-mcp-server-1",
+      "image": "sha256:7a390ac6d1ddeec23062a1eabdc62ac2d685510e3ef19a4020d630d5c3bd89c2",
+      "image_tag": "policy-as-code-lab4c-remote-repeat-mcp-server",
+      "state": "exited",
+      "started_at": "2026-09-03T15:42:19.67076147Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "f9432ae4782fe2226f2fb757c1ab41720ccdf58eff0f7456cbdd81a79f199385",
+      "name": "policy-as-code-lab4c-remote-repeat-mongodb-1",
+      "image": "sha256:02a0cc7939f5ed38f30f9bc714ef5f682d49baf9350c54acf302ce833087fe8a",
+      "image_tag": "mongo:8.0",
+      "state": "exited",
+      "started_at": "2026-09-03T15:42:15.192322718Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "9ece5374be2953aec95d6949000bbc6c59876820a3a405d60bc028fad69e6433",
+      "name": "policy-as-code-lab4c-remote-repeat-opa-1",
+      "image": "sha256:39daf255ae7f25d81103f03a0c18308a50b7b5bb67907bed6166f70e24a970ff",
+      "image_tag": "openpolicyagent/opa:1.20.1",
+      "state": "exited",
+      "started_at": "2026-09-03T15:42:15.27130076Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "cc191b24ab6412e3bbdde7426d0c45e5d757c2d2f47ecc5046b78237f6b03b32",
+      "name": "rag-mcp-servicedesk",
+      "image": "sha256:e1136e59c20a9ff639f8e98fdfb762598f991d5f2e8f8adf9c751c04ab21778a",
+      "image_tag": "rag-mcp-servicedesk:local",
+      "state": "exited",
+      "started_at": "2026-09-03T15:42:19.743535721Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "4d5f5d19139035e8f3e5f2561556a133e2bddf60f890046230755a32ccc637e0",
+      "name": "spark-standalone-security-log-skills-mcp-1",
+      "image": "sha256:371a2e1bd0f84b52e71eb53d436dbe18dbc4a5f43966f59b22f4ab0720c9fc09",
+      "image_tag": "spark-standalone-security-log-skills-mcp",
+      "state": "exited",
+      "started_at": "2026-09-08T06:24:47.233749089Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "4764bae4ddaf75d04837e6edbf672f8881ffc7aad196a68a5476bde8c73ad365",
+      "name": "rag-mcp-servicedesk-qdrant",
+      "image": "sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286",
+      "image_tag": "qdrant/qdrant:v1.18.3",
+      "state": "exited",
+      "started_at": "2026-09-03T15:42:15.34828751Z",
+      "health": null
+    },
+    {
+      "id": "895f0161f6c4f6433ac8d2328098e55f29122cd99d34a95fddc92e2c11c2a0c4",
+      "name": "rag-mcp-servicedesk-ollama",
+      "image": "sha256:1685741456770df6e3cceb2a945a5f75e020f658d1701509668d6f4688f1dd3f",
+      "image_tag": "ollama/ollama:latest",
+      "state": "exited",
+      "started_at": "2026-09-03T15:42:15.443474677Z",
+      "health": null
+    },
+    {
+      "id": "be5648061e07c405ce9331e30c6910ef6a8fa8e083aefe8206d11109776c9ac5",
+      "name": "spark-standalone-spark-worker-1-1",
+      "image": "sha256:702d82ecea50c6f8344d3df753ba26f05ffd9d1d052e180fed9c3d6c04f77730",
+      "image_tag": "apache/spark:3.5.6-scala2.12-java17-python3-ubuntu",
+      "state": "exited",
+      "started_at": "2026-09-08T06:25:04.099063416Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "4a3eb9460345f8551613e9f5fc6a708c88b440f1c93dfc378640932a060701b6",
+      "name": "spark-standalone-spark-worker-2-1",
+      "image": "sha256:702d82ecea50c6f8344d3df753ba26f05ffd9d1d052e180fed9c3d6c04f77730",
+      "image_tag": "apache/spark:3.5.6-scala2.12-java17-python3-ubuntu",
+      "state": "exited",
+      "started_at": "2026-09-08T06:25:04.097631958Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "b696c4f6ccffb9ffbebd9329ddfe5bd26a57d62a8f3d7eabf3d6991dcc8b3f94",
+      "name": "spark-standalone-spark-master-1",
+      "image": "sha256:702d82ecea50c6f8344d3df753ba26f05ffd9d1d052e180fed9c3d6c04f77730",
+      "image_tag": "apache/spark:3.5.6-scala2.12-java17-python3-ubuntu",
+      "state": "exited",
+      "started_at": "2026-09-08T06:24:58.478209511Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "56ff2fc6bd6bd0a4772905272db7ac6f4cab690c30d9dfda37de61f141fc987a",
+      "name": "spark-standalone-datanode-1-1",
+      "image": "sha256:127774dadab40ce84df7ac668a7a8c99945688b3fe336f1388f4477ca33e1529",
+      "image_tag": "apache/hadoop:3.4.3",
+      "state": "exited",
+      "started_at": "2026-09-09T06:29:43.833522463Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "11ee61af7e1308c0ceac44165225112cbfbcc31c51d246b99ad0c1d3bfebba7b",
+      "name": "spark-standalone-datanode-2-1",
+      "image": "sha256:127774dadab40ce84df7ac668a7a8c99945688b3fe336f1388f4477ca33e1529",
+      "image_tag": "apache/hadoop:3.4.3",
+      "state": "exited",
+      "started_at": "2026-09-11T04:36:52.780123343Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "7336b902aaf37c4e6817a20bc09d4658636ecc95058e66a9f857bcd218c3925d",
+      "name": "spark-standalone-namenode-1",
+      "image": "sha256:127774dadab40ce84df7ac668a7a8c99945688b3fe336f1388f4477ca33e1529",
+      "image_tag": "apache/hadoop:3.4.3",
+      "state": "exited",
+      "started_at": "2026-09-08T06:24:47.243312006Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "03364c495523588e1abb99846148b96a749b5457578fce7aa4f29ede1b3eae1f",
+      "name": "mssql-mcp-streamable-http",
+      "image": "sha256:79457e9ac6e298b89298e6f7ad97699c89c726b5c89d91a67400c7eea0ee6270",
+      "image_tag": "fixed-2026-mssql-mcp-server-streamablehttp-mcp-server",
+      "state": "exited",
+      "started_at": "2026-08-18T13:12:34.076328342Z",
+      "health": "unhealthy"
+    },
+    {
+      "id": "3d5dc064b349294a383ff71ef5c06dbd2d05534ee2fdb9bcaf2bf1a9c26b5f58",
+      "name": "elegant_hofstadter",
+      "image": "sha256:40d1807209bbd80a9e365e2a79e88390bab167515547891652efe5246db59f23",
+      "image_tag": "langflowai/langflow:1.7.3",
+      "state": "exited",
+      "started_at": "2026-08-12T11:09:46.771562882Z",
+      "health": null
+    },
+    {
+      "id": "76fdae7ee7bd662ae1c9ab9b45df00b47968cf8f1116678f9df4fa22580607f0",
+      "name": "sql_server",
+      "image": "sha256:0ec7739e1c5ec2f57861facbe1f2b74f1d3e147c7c97edf91eeea920c5944d9c",
+      "image_tag": "mcr.microsoft.com/mssql/server:2022-latest",
+      "state": "exited",
+      "started_at": "2026-08-29T12:31:14.195874381Z",
+      "health": null
+    }
+  ],
+  "unrelated_unchanged": true,
+  "unrelated_count": 17,
+  "temporary_containers_remaining": []
+}

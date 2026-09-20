@@ -1,0 +1,49 @@
+test_manuscript_identity_across_revisions_review_export_and_restore (test_http.HTTPIntegration.test_manuscript_identity_across_revisions_review_export_and_restore) ... Executing <Task pending name='Task-1' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(7, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.650 seconds
+ERROR
+Executing <Task finished name='Task-31' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.183 seconds
+
+======================================================================
+ERROR: test_manuscript_identity_across_revisions_review_export_and_restore (test_http.HTTPIntegration.test_manuscript_identity_across_revisions_review_export_and_restore)
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/usr/local/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "/app/tests/test_http.py", line 133, in test_manuscript_identity_across_revisions_review_export_and_restore
+  |     async with streamable_http_client(self.url, http_client=http) as streams:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/usr/local/lib/python3.12/contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "/app/.venv/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 736, in streamable_http_client
+  |     anyio.create_task_group() as tg,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/app/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "/app/.venv/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 753, in streamable_http_client
+    |     yield read_stream, write_stream
+    |   File "/app/tests/test_http.py", line 134, in test_manuscript_identity_across_revisions_review_export_and_restore
+    |     async with ClientSession(*streams) as session:
+    |                ^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/app/.venv/lib/python3.12/site-packages/mcp/client/session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/app/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "/app/tests/test_http.py", line 157, in test_manuscript_identity_across_revisions_review_export_and_restore
+      |     self.assertIn(f'Manuscript ID: {identifier}', original_bytes.decode())
+      | AssertionError: 'Manuscript ID: c176fa70fb344b2bb4769fb7668465c3' not found in '# Unresolved manuscript identity protocol record\n\nExport: draft; artifact version 1; workspace revision 3.\n\n## title\n\nScientific content has not been assessed in this protocol test.\n\nEvidence: [1], page index 0, characters 0–1188\n\n## abstract\n\nScientific content has not been assessed in this protocol test.\n\nEvidence: [1], page index 0, characters 0–1188\n\n## introduction\n\nScientific content has not been assessed in this protocol test.\n\nEvidence: [1], page index 0, characters 0–1188\n\n## methods\n\nScientific content has not been assessed in this protocol test.\n\nEvidence: [1], page index 0, characters 0–1188\n\n## results\n\nScientific content has not been assessed in this protocol test.\n\nEvidence: [1], page index 0, characters 0–1188\n\n## discussion\n\nScientific content has not been assessed in this protocol test.\n\nEvidence: [1], page index 0, characters 0–1188\n\n## conclusion\n\nScientific content has not been assessed in this protocol test.\n\nEvidence: [1], page index 0, characters 0–1188\n\n## Limitations\n\n- Identity verification only; not a completed scientific manuscript.\n\n## References\n\n1. Author metadata not supplied. (Year not supplied). brms: An R Package for Bayesian Multilevel Models Using Stan. https://doi.org/10.18637/jss.v080.i01\n'
+      +------------------------------------
+
+----------------------------------------------------------------------
+Ran 1 test in 2.572s
+
+FAILED (errors=1)

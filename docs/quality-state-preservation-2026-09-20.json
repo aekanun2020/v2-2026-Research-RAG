@@ -1,0 +1,16 @@
+{
+  "server_version": "0.2.4",
+  "tool_count": 33,
+  "workspace_revision": 24,
+  "source_count": 10,
+  "inbox_count": 221,
+  "inbox": {
+    "files": 221,
+    "bytes": 806172536,
+    "sha256": "7176550ba685da103b8ef588fab177fb995ebbc8c2844ae5d59e285017ccc0c7"
+  },
+  "inbox_hashes_unchanged": true,
+  "index_unchanged": true,
+  "total_indexed_chunks": 618,
+  "cleanup_executed": false
+}

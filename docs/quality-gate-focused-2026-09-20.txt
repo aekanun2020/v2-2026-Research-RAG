@@ -1,0 +1,3 @@
+{"id": "T04", "seconds": 19.53, "hits": 3, "top_source_matches": true, "top_score": 0.11610818009139935}
+{"id": "N01", "seconds": 19.48, "hits": 0, "top_source_matches": false, "top_score": null}
+{"id": "N02", "seconds": 19.77, "hits": 0, "top_source_matches": false, "top_score": null}

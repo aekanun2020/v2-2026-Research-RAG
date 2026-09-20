@@ -1,0 +1,15 @@
+{
+  "model_id": "onnx-community/bge-reranker-v2-m3-ONNX",
+  "revision": "6f5ff65298512715a1e669753bc754d2bc8f367b",
+  "original_model_id": "BAAI/bge-reranker-v2-m3",
+  "original_revision_observed": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+  "conversion_note": "ONNX conversion publisher identifies original model but does not pin its training-weight commit; this is the inspected original revision, not a claimed conversion source commit.",
+  "license": "Apache-2.0 (publisher model-card declaration)",
+  "files": {
+    "README.md": "8540f1da639aec1141c936552f63b6860ba8a30fb99f27878ef80d46ed07e81e",
+    "config.json": "122e922dcfed6503c8721e6fe1daf090340c3d95ca7f3aa3a72730b321a51cfd",
+    "tokenizer_config.json": "b87c8703482b0300d3da30e201519aa641f6a450f5eb5bf1e624afbf70c74d80",
+    "onnx/model_int8.onnx": "912fc1215c2dbff6499700534bd8d31253af01573861abbfc43afd1fab6cce5d",
+    "tokenizer.json": "8bf8afbfd11306bd872018c53bfdf2e160a56f8edbcf49933324404791c148d3"
+  }
+}

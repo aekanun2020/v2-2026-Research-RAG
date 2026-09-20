@@ -1,0 +1,12 @@
+[0;93m2026-09-20 12:45:40.026234045 [W:onnxruntime:Default, telemetry.cc:800 operator()] Failed to persist telemetry device ID; using an in-memory identifier[m
+test_preview_before_import_over_actual_http (test_inbox.InboxHTTPIntegration.test_preview_before_import_over_actual_http) ... Executing <Task pending name='Task-1' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(8, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.716 seconds
+Executing <Task finished name='Task-31' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.284 seconds
+ok
+test_preview_pagination_and_inbox_boundary (test_inbox.InboxHTTPIntegration.test_preview_pagination_and_inbox_boundary) ... Executing <Task pending name='Task-34' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(8, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.724 seconds
+Executing <Task finished name='Task-96' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.236 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 34.900s
+
+OK

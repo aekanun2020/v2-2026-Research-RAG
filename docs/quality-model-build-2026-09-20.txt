@@ -1,0 +1,50 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.01kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#2 DONE 2.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 228B done
+#3 DONE 0.0s
+
+#4 [reranking_model 1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#4 resolve docker.io/library/python:3.12-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e done
+#4 DONE 0.0s
+
+#5 [reranking_model 2/5] WORKDIR /download
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 3.00kB done
+#6 DONE 0.0s
+
+#7 [reranking_model 3/5] COPY scripts/download_reranker.py ./download_reranker.py
+#7 DONE 0.0s
+
+#8 [reranking_model 4/5] COPY src/research_rag_mcp/reranker_manifest.json ./reranker_manifest.json
+#8 DONE 0.0s
+
+#9 [reranking_model 5/5] RUN python download_reranker.py /models/bge-reranker-v2-m3-ONNX --manifest /download/reranker_manifest.json
+#9 0.226 Reranker: onnx-community/bge-reranker-v2-m3-ONNX 6f5ff65298512715a1e669753bc754d2bc8f367b CPU only
+#9 0.595 Downloaded and verified: README.md
+#9 0.934 Downloaded and verified: config.json
+#9 1.266 Downloaded and verified: tokenizer_config.json
+#9 10.97 Downloaded and verified: onnx/model_int8.onnx
+#9 12.68 Downloaded and verified: tokenizer.json
+#9 DONE 13.0s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 9.1s done
+#10 exporting manifest sha256:cb8ec265a0008ec3089f77ba617d8b57b4d47e2d1d49e03de3e07acf88336cc5 done
+#10 exporting config sha256:3ac6031dd53aca655506b6fc1083079c6a6078ec42dc90b19ef8682ee970751a done
+#10 exporting attestation manifest sha256:5995bd72f59f3318f873587429111ad8fce3fda29aa0dda27a5deb19abd68743 done
+#10 exporting manifest list sha256:2862fe185ef99493591ebd3e848544e32c2b4312ed49a96de48e8607e6ce22a7 done
+#10 naming to docker.io/library/codex-research-rag-reranker-build:0.2.4 done
+#10 unpacking to docker.io/library/codex-research-rag-reranker-build:0.2.4
+#10 unpacking to docker.io/library/codex-research-rag-reranker-build:0.2.4 2.4s done
+#10 DONE 11.6s

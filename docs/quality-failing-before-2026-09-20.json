@@ -1,0 +1,218 @@
+{
+  "started_at": "2026-09-20T15:03:07.930519+00:00",
+  "endpoint": "http://127.0.0.1:8776/mcp",
+  "protocol": "real MCP Streamable HTTP, official SDK",
+  "semantic_assessor": "not assessed by this script",
+  "cases": [
+    {
+      "case": {
+        "id": "T04",
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "expected_filename": "arxiv-1802.05365.pdf",
+        "split": "regression",
+        "expected_source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+      },
+      "arguments": {
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "mode": "semantic",
+        "limit": 3,
+        "roles": [
+          "literature"
+        ]
+      },
+      "response": {
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "7bc5fa651e759434870fdcce8311ceabd80fbe6ba77d752d23c0cd3bfc8fb22a",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 4,
+            "start": 2880,
+            "end": 4063,
+            "text": "and test examples, but we created a randomly sam-\npled subset of 2000 examples each for validation\nand testing purposes, on which we report our per-\nformance. Further, we also acquired the exact test\nsample used in Rush et al. (2015) to make precise\ncomparison of our models with theirs. We also\nmade small modiﬁcations to the script to extract\nnot only the tokenized words, but also system-\ngenerated parts-of-speech and named-entity tags.\nTraining: For all the models we discuss below, we\nused 200 dimensional word2vec vectors (Mikolov\net al., 2013) trained on the same corpus to initial-\nize the model embeddings, but we allowed them\nto be updated during training. The hidden state di-\nmension of the encoder and decoder was ﬁxed at\n400 in all our experiments. When we used only\nthe ﬁrst sentence of the document as the source,\nas done in Rush et al. (2015), the encoder vocabu-\nlary size was 119,505 and that of the decoder stood\nat 68,885. We used Adadelta (Zeiler, 2012) for\ntraining, with an initial learning rate of 0.001. We\nused a batch-size of 50 and randomly shufﬂed the\ntraining data at every epoch, while sorting every\n10 batches according to their lengths to speed up\n",
+            "chunk_set_id": "cs-1c8faf5bad9e4c32a5ef7b967b30b6ba",
+            "document_id": "doc-75c2d26ffaf3442db15279a4ae8fc713",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "5",
+            "score": 0.80110443,
+            "semantic_score": 0.801104,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 4,
+              "start": 2880,
+              "end": 4063,
+              "quote": "and test examples, but we created a randomly sam-\npled subset of 2000 examples each for validation\nand testing purposes, on which we report our per-\nformance. Further, we also acquired the exact test\nsample used in Rush et al. (2015) to make precise\ncomparison of our models with theirs. We also\nmade small modiﬁcations to the script to extract\nnot only the tokenized words, but also system-\ngenerated parts-of-speech and named-entity tags.\nTraining: For all the models we discuss below, we\nused 200 dimensional word2vec vectors (Mikolov\net al., 2013) trained on the same corpus to initial-\nize the model embeddings, but we allowed them\nto be updated during training. The hidden state di-\nmension of the encoder and decoder was ﬁxed at\n400 in all our experiments. When we used only\nthe ﬁrst sentence of the document as the source,\nas done in Rush et al. (2015), the encoder vocabu-\nlary size was 119,505 and that of the decoder stood\nat 68,885. We used Adadelta (Zeiler, 2012) for\ntraining, with an initial learning rate of 0.001. We\nused a batch-size of 50 and randomly shufﬂed the\ntraining data at every epoch, while sorting every\n10 batches according to their lengths to speed up\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "efcbd43aab5fc682c22070058c11af4e5f4f0599ba350dda483c82a0399a4e7b",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "page_index": 4,
+            "start": 1959,
+            "end": 3133,
+            "text": "rease the size\nof vocabularies used by the neural machine trans-\nlation system in the future. Although we only\npresent the result with the RNNenc, we observed\nsimilar behavior for the grConv as well.\nIn Table 1 (a), we present the translation perfor-\nmances obtained using the two models along with\nthe baseline phrase-based SMT system. 4 Clearly\n4We used Moses as a baseline, trained with additional\nthe phrase-based SMT system still shows the su-\nperior performance over the proposed purely neu-\nral machine translation system, but we can see that\nunder certain conditions (no unknown words in\nboth source and reference sentences), the differ-\nence diminishes quite signiﬁcantly. Furthermore,\nif we consider only short sentences (10–20 words\nper sentence), the difference further decreases (see\nTable 1 (b).\nFurthermore, it is possible to use the neural ma-\nchine translation models together with the existing\nphrase-based system, which was found recently in\n(Cho et al., 2014; Sutskever et al., 2014) to im-\nprove the overall translation performance (see Ta-\nble 1 (a)).\nThis analysis suggests that that the current neu-\nral translation approach has its weakness in han-\n",
+            "chunk_set_id": "cs-303c9f296a964ea8bc27b9c0f393f82d",
+            "document_id": "doc-a8d484ed38764970887099327f4fa096",
+            "source_version": 1,
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "page_label": "5",
+            "score": 0.80039048,
+            "semantic_score": 0.80039,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+              "page_index": 4,
+              "start": 1959,
+              "end": 3133,
+              "quote": "rease the size\nof vocabularies used by the neural machine trans-\nlation system in the future. Although we only\npresent the result with the RNNenc, we observed\nsimilar behavior for the grConv as well.\nIn Table 1 (a), we present the translation perfor-\nmances obtained using the two models along with\nthe baseline phrase-based SMT system. 4 Clearly\n4We used Moses as a baseline, trained with additional\nthe phrase-based SMT system still shows the su-\nperior performance over the proposed purely neu-\nral machine translation system, but we can see that\nunder certain conditions (no unknown words in\nboth source and reference sentences), the differ-\nence diminishes quite signiﬁcantly. Furthermore,\nif we consider only short sentences (10–20 words\nper sentence), the difference further decreases (see\nTable 1 (b).\nFurthermore, it is possible to use the neural ma-\nchine translation models together with the existing\nphrase-based system, which was found recently in\n(Cho et al., 2014; Sutskever et al., 2014) to im-\nprove the overall translation performance (see Ta-\nble 1 (a)).\nThis analysis suggests that that the current neu-\nral translation approach has its weakness in han-\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "0289b9e8ef3d1b97d9e829fffb7617f6fa85adfd0e9521a6e1116c82477df0de",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "page_index": 7,
+            "start": 995,
+            "end": 2151,
+            "text": "ks.\nWe focused on evaluating an encoder–decoder ap-\nproach, proposed recently in (Kalchbrenner and\nBlunsom, 2013; Cho et al., 2014; Sutskever et al.,\n2014), on the task of sentence-to-sentence trans-\nlation. Among many possible encoder–decoder\nmodels we speciﬁcally chose two models that dif-\nfer in the choice of the encoder; (1) RNN with\ngated hidden units and (2) the newly proposed\ngated recursive convolutional neural network.\nAfter training those two models on pairs of\nEnglish and French sentences, we analyzed their\nperformance using BLEU scores with respect to\nthe lengths of sentences and the existence of un-\nknown/rare words in sentences. Our analysis re-\nvealed that the performance of the neural machine\ntranslation suffers signiﬁcantly from the length of\nsentences. However, qualitatively, we found that\nthe both models are able to generate correct trans-\nlations very well.\nThese analyses suggest a number of future re-\nsearch directions in machine translation purely\nbased on neural networks.\nFirstly, it is important to ﬁnd a way to scale up\ntraining a neural network both in terms of com-\nputation and memory so that much larger vocabu-\n",
+            "chunk_set_id": "cs-303c9f296a964ea8bc27b9c0f393f82d",
+            "document_id": "doc-a8d484ed38764970887099327f4fa096",
+            "source_version": 1,
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "page_label": "8",
+            "score": 0.79802495,
+            "semantic_score": 0.798025,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "citation": {
+              "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+              "page_index": 7,
+              "start": 995,
+              "end": 2151,
+              "quote": "ks.\nWe focused on evaluating an encoder–decoder ap-\nproach, proposed recently in (Kalchbrenner and\nBlunsom, 2013; Cho et al., 2014; Sutskever et al.,\n2014), on the task of sentence-to-sentence trans-\nlation. Among many possible encoder–decoder\nmodels we speciﬁcally chose two models that dif-\nfer in the choice of the encoder; (1) RNN with\ngated hidden units and (2) the newly proposed\ngated recursive convolutional neural network.\nAfter training those two models on pairs of\nEnglish and French sentences, we analyzed their\nperformance using BLEU scores with respect to\nthe lengths of sentences and the existence of un-\nknown/rare words in sentences. Our analysis re-\nvealed that the performance of the neural machine\ntranslation suffers signiﬁcantly from the length of\nsentences. However, qualitatively, we found that\nthe both models are able to generate correct trans-\nlations very well.\nThese analyses suggest a number of future re-\nsearch directions in machine translation purely\nbased on neural networks.\nFirstly, it is important to ﬁnd a way to scale up\ntraining a neural network both in terms of com-\nputation and memory so that much larger vocabu-\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      },
+      "latency_seconds": 0.05873037499259226,
+      "span_checks": [
+        {
+          "chunk_id": "7bc5fa651e759434870fdcce8311ceabd80fbe6ba77d752d23c0cd3bfc8fb22a",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "efcbd43aab5fc682c22070058c11af4e5f4f0599ba350dda483c82a0399a4e7b",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "0289b9e8ef3d1b97d9e829fffb7617f6fa85adfd0e9521a6e1116c82477df0de",
+          "exact_span": true
+        }
+      ],
+      "top_source_matches": false
+    }
+  ],
+  "status": "failed",
+  "server_version": "0.2.3",
+  "tool_schemas": {
+    "retrieve_evidence": {
+      "properties": {
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "roles": {
+          "anyOf": [
+            {
+              "items": {
+                "enum": [
+                  "literature",
+                  "protocol",
+                  "data",
+                  "results",
+                  "project_note",
+                  "journal_guidelines"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Roles"
+        },
+        "source_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Ids"
+        },
+        "limit": {
+          "default": 8,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "mode": {
+          "default": "hybrid",
+          "enum": [
+            "lexical",
+            "semantic",
+            "hybrid"
+          ],
+          "title": "Mode",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object",
+      "title": "retrieve_evidenceArguments"
+    }
+  },
+  "revision_before": 24,
+  "error": "ExceptionGroup('unhandled errors in a TaskGroup', [ExceptionGroup('unhandled errors in a TaskGroup', [AssertionError('Expected source is not first: T04')])])"
+}

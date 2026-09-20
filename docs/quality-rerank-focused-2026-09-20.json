@@ -1,0 +1,273 @@
+{
+  "started_at": "2026-09-20T15:04:34.358091+00:00",
+  "endpoint": "http://127.0.0.1:18776/mcp",
+  "protocol": "real MCP Streamable HTTP, official SDK",
+  "semantic_assessor": "not assessed by this script",
+  "cases": [
+    {
+      "case": {
+        "id": "T04",
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "expected_filename": "arxiv-1802.05365.pdf",
+        "split": "regression",
+        "expected_source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+      },
+      "arguments": {
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "mode": "semantic",
+        "limit": 3,
+        "roles": [
+          "literature"
+        ]
+      },
+      "response": {
+        "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "reranking": {
+          "enabled": true,
+          "model": {
+            "model_id": "onnx-community/gte-multilingual-reranker-base",
+            "original_model_id": "Alibaba-NLP/gte-multilingual-reranker-base",
+            "model_revision": "ee64367e35a2db0da46bb6497e13a18f8bd585cb",
+            "fingerprint": "f3ad1c69bc956dc5e4537410a4b0ff65feac1cb0741fb6d308e50d18c7b6a1ce",
+            "recipe": "query-passage-pair:512-only-second-stride64:max-window-logit:sigmoid:int8:v1",
+            "provider": "CPUExecutionProvider",
+            "external_inference": false,
+            "assets_present": true
+          },
+          "candidate_limit": 50,
+          "candidates_scored": 50,
+          "min_score": null,
+          "rejected_candidates": 0,
+          "score_meaning": "Sigmoid of pairwise ranking logit; not calibrated answer confidence"
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "1551f40a96f74fb32651139b2ee2aadb5f9e514f6de19a916458c6bffe8faac6",
+            "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "page_index": 0,
+            "start": 990,
+            "end": 2159,
+            "text": "of the sentence\nand the number of unknown words in-\ncrease. Furthermore, we ﬁnd that the pro-\nposed gated recursive convolutional net-\nwork learns a grammatical structure of a\nsentence automatically.\n1 Introduction\nA new approach for statistical machine transla-\ntion based purely on neural networks has recently\nbeen proposed (Kalchbrenner and Blunsom, 2013;\nSutskever et al., 2014). This new approach, which\nwe refer to as neural machine translation , is in-\nspired by the recent trend of deep representational\nlearning. All the neural network models used in\n(Kalchbrenner and Blunsom, 2013; Sutskever et\nal., 2014; Cho et al., 2014) consist of an encoder\nand a decoder. The encoder extracts a ﬁxed-length\nvector representation from a variable-length input\nsentence, and from this representation the decoder\n∗ Research done while visiting Universit´e de Montr´eal\ngenerates a correct, variable-length target transla-\ntion.\nThe emergence of the neural machine transla-\ntion is highly signiﬁcant, both practically and the-\noretically. Neural machine translation models re-\nquire only a fraction of the memory needed by\ntraditional statistical machine translation (SMT)\n",
+            "chunk_set_id": "cs-303c9f296a964ea8bc27b9c0f393f82d",
+            "document_id": "doc-a8d484ed38764970887099327f4fa096",
+            "source_version": 1,
+            "text_revision_id": "text-e4b6049c149bcbbf5dae9be55e481891e898c8513ec84ca9d7035dbe5204d37e",
+            "title": "On the Properties of Neural Machine Translation: Encoder–Decoder Approaches",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1409.1259.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.45901086571545485,
+            "semantic_score": 0.782107,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -0.1643253117799759,
+            "rerank_score": 0.45901086571545485,
+            "rerank_windows": 1,
+            "retrieval_score": 0.78210741,
+            "first_stage_rank": 48,
+            "citation": {
+              "source_id": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+              "page_index": 0,
+              "start": 990,
+              "end": 2159,
+              "quote": "of the sentence\nand the number of unknown words in-\ncrease. Furthermore, we ﬁnd that the pro-\nposed gated recursive convolutional net-\nwork learns a grammatical structure of a\nsentence automatically.\n1 Introduction\nA new approach for statistical machine transla-\ntion based purely on neural networks has recently\nbeen proposed (Kalchbrenner and Blunsom, 2013;\nSutskever et al., 2014). This new approach, which\nwe refer to as neural machine translation , is in-\nspired by the recent trend of deep representational\nlearning. All the neural network models used in\n(Kalchbrenner and Blunsom, 2013; Sutskever et\nal., 2014; Cho et al., 2014) consist of an encoder\nand a decoder. The encoder extracts a ﬁxed-length\nvector representation from a variable-length input\nsentence, and from this representation the decoder\n∗ Research done while visiting Universit´e de Montr´eal\ngenerates a correct, variable-length target transla-\ntion.\nThe emergence of the neural machine transla-\ntion is highly signiﬁcant, both practically and the-\noretically. Neural machine translation models re-\nquire only a fraction of the memory needed by\ntraditional statistical machine translation (SMT)\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "7bc5fa651e759434870fdcce8311ceabd80fbe6ba77d752d23c0cd3bfc8fb22a",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 4,
+            "start": 2880,
+            "end": 4063,
+            "text": "and test examples, but we created a randomly sam-\npled subset of 2000 examples each for validation\nand testing purposes, on which we report our per-\nformance. Further, we also acquired the exact test\nsample used in Rush et al. (2015) to make precise\ncomparison of our models with theirs. We also\nmade small modiﬁcations to the script to extract\nnot only the tokenized words, but also system-\ngenerated parts-of-speech and named-entity tags.\nTraining: For all the models we discuss below, we\nused 200 dimensional word2vec vectors (Mikolov\net al., 2013) trained on the same corpus to initial-\nize the model embeddings, but we allowed them\nto be updated during training. The hidden state di-\nmension of the encoder and decoder was ﬁxed at\n400 in all our experiments. When we used only\nthe ﬁrst sentence of the document as the source,\nas done in Rush et al. (2015), the encoder vocabu-\nlary size was 119,505 and that of the decoder stood\nat 68,885. We used Adadelta (Zeiler, 2012) for\ntraining, with an initial learning rate of 0.001. We\nused a batch-size of 50 and randomly shufﬂed the\ntraining data at every epoch, while sorting every\n10 batches according to their lengths to speed up\n",
+            "chunk_set_id": "cs-1c8faf5bad9e4c32a5ef7b967b30b6ba",
+            "document_id": "doc-75c2d26ffaf3442db15279a4ae8fc713",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "5",
+            "score": 0.4459846244024024,
+            "semantic_score": 0.801105,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -0.21690796315670013,
+            "rerank_score": 0.4459846244024024,
+            "rerank_windows": 1,
+            "retrieval_score": 0.80110455,
+            "first_stage_rank": 1,
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 4,
+              "start": 2880,
+              "end": 4063,
+              "quote": "and test examples, but we created a randomly sam-\npled subset of 2000 examples each for validation\nand testing purposes, on which we report our per-\nformance. Further, we also acquired the exact test\nsample used in Rush et al. (2015) to make precise\ncomparison of our models with theirs. We also\nmade small modiﬁcations to the script to extract\nnot only the tokenized words, but also system-\ngenerated parts-of-speech and named-entity tags.\nTraining: For all the models we discuss below, we\nused 200 dimensional word2vec vectors (Mikolov\net al., 2013) trained on the same corpus to initial-\nize the model embeddings, but we allowed them\nto be updated during training. The hidden state di-\nmension of the encoder and decoder was ﬁxed at\n400 in all our experiments. When we used only\nthe ﬁrst sentence of the document as the source,\nas done in Rush et al. (2015), the encoder vocabu-\nlary size was 119,505 and that of the decoder stood\nat 68,885. We used Adadelta (Zeiler, 2012) for\ntraining, with an initial learning rate of 0.001. We\nused a batch-size of 50 and randomly shufﬂed the\ntraining data at every epoch, while sorting every\n10 batches according to their lengths to speed up\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "cb386b3fb197b59e894afe7b22de3c45435f2926e0514aa01e67257a8d48fa7f",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 5,
+            "start": 3895,
+            "end": 4724,
+            "text": "sample\ncreated by Rush et al. (2015), as displayed in the\nbottom part of Table 1. We also trained another\nsystem which we call words-lvt5k-1sent which\nhas a larger LVT vocabulary size of 5k, but also\nhas much larger source and target vocabularies of\n400K and 200K respectively.\nThe reason we did not evaluate our best vali-\ndation models here is that this test set consisted of\nonly 1 sentence from the source document, and did\nnot include NLP annotations, which are needed\nin our best models. The table shows that, despite\nthis fact, our model outperforms the ABS+ model\nof Rush et al. (2015) with statistical signiﬁcance.\nIn addition, our models exhibit better abstractive\nability as shown by thesrc. copy rate metric in the\nlast column of the table. Further, our larger model\nwords-lvt5k-1sent outperforms the state-of-the-art",
+            "chunk_set_id": "cs-1c8faf5bad9e4c32a5ef7b967b30b6ba",
+            "document_id": "doc-75c2d26ffaf3442db15279a4ae8fc713",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "6",
+            "score": 0.42340843330259564,
+            "semantic_score": 0.787776,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -0.30879688262939453,
+            "rerank_score": 0.42340843330259564,
+            "rerank_windows": 1,
+            "retrieval_score": 0.78777647,
+            "first_stage_rank": 17,
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 5,
+              "start": 3895,
+              "end": 4724,
+              "quote": "sample\ncreated by Rush et al. (2015), as displayed in the\nbottom part of Table 1. We also trained another\nsystem which we call words-lvt5k-1sent which\nhas a larger LVT vocabulary size of 5k, but also\nhas much larger source and target vocabularies of\n400K and 200K respectively.\nThe reason we did not evaluate our best vali-\ndation models here is that this test set consisted of\nonly 1 sentence from the source document, and did\nnot include NLP annotations, which are needed\nin our best models. The table shows that, despite\nthis fact, our model outperforms the ABS+ model\nof Rush et al. (2015) with statistical signiﬁcance.\nIn addition, our models exhibit better abstractive\nability as shown by thesrc. copy rate metric in the\nlast column of the table. Further, our larger model\nwords-lvt5k-1sent outperforms the state-of-the-art",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+      },
+      "latency_seconds": 7.269505375006702,
+      "span_checks": [
+        {
+          "chunk_id": "1551f40a96f74fb32651139b2ee2aadb5f9e514f6de19a916458c6bffe8faac6",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "7bc5fa651e759434870fdcce8311ceabd80fbe6ba77d752d23c0cd3bfc8fb22a",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "cb386b3fb197b59e894afe7b22de3c45435f2926e0514aa01e67257a8d48fa7f",
+          "exact_span": true
+        }
+      ],
+      "top_source_matches": false
+    }
+  ],
+  "status": "failed",
+  "server_version": "0.2.4",
+  "tool_schemas": {
+    "retrieve_evidence": {
+      "properties": {
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "roles": {
+          "anyOf": [
+            {
+              "items": {
+                "enum": [
+                  "literature",
+                  "protocol",
+                  "data",
+                  "results",
+                  "project_note",
+                  "journal_guidelines"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Roles"
+        },
+        "source_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Ids"
+        },
+        "limit": {
+          "default": 8,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "mode": {
+          "default": "hybrid",
+          "enum": [
+            "lexical",
+            "semantic",
+            "hybrid"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "rerank": {
+          "default": true,
+          "title": "Rerank",
+          "type": "boolean"
+        },
+        "candidate_limit": {
+          "default": 50,
+          "title": "Candidate Limit",
+          "type": "integer"
+        },
+        "min_rerank_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Rerank Score"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object",
+      "title": "retrieve_evidenceArguments"
+    }
+  },
+  "revision_before": 24,
+  "error": "ExceptionGroup('unhandled errors in a TaskGroup', [ExceptionGroup('unhandled errors in a TaskGroup', [AssertionError('Expected source is not first: T04')])])"
+}

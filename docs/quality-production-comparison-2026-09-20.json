@@ -1,0 +1,25 @@
+{
+  "version": "0.2.4",
+  "default_min_document_score": 0,
+  "checks": [
+    {
+      "id": "T04",
+      "same_evidence_as_container_candidate": true,
+      "default_gate_disabled": true,
+      "latency_seconds": 37.80990962499345
+    },
+    {
+      "id": "N02",
+      "same_evidence_as_container_candidate": true,
+      "default_gate_disabled": true,
+      "latency_seconds": 39.3812130419974
+    },
+    {
+      "id": "H02",
+      "same_evidence_as_container_candidate": true,
+      "default_gate_disabled": true,
+      "latency_seconds": 40.18711716700636
+    }
+  ],
+  "unchanged_revision": 24
+}

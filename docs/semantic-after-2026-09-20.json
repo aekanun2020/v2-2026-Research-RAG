@@ -1,0 +1,93 @@
+{
+  "query": "การประมาณค่าแบบเบย์สำหรับข้อมูลที่มีโครงสร้างหลายระดับ",
+  "mode": "semantic",
+  "method": "Local multilingual E5 embeddings; exact cosine similarity",
+  "embedding_model": {
+    "model_id": "intfloat/multilingual-e5-small",
+    "model_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "fingerprint": "379076278e0cdf895f344029c2d7bff7c3565c0f4d29d8cdd07d7d4680eab82e",
+    "dimensions": 384,
+    "provider": "CPUExecutionProvider",
+    "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+    "assets_present": true,
+    "external_inference": false
+  },
+  "corpus_sources": 1,
+  "corpus_chunks": 77,
+  "hits": [
+    {
+      "id": "5829c6a255fce8b78bcc44c47a122d28a22cea15e5d724235435a452a114da71",
+      "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+      "page_index": 6,
+      "start": 1889,
+      "end": 2660,
+      "text": "e internal function\nthat handles censored data, andcensored is the variable that contains information on the\ncensoring. Other available functions in this context areweights and disp to allow diﬀerent\nsorts of weighting,se to specify known standard errors primarily for meta-analysis,trunc to\ndeﬁne truncation boundaries,trials for binomial models3, and cat to specify the number\nof categories for ordinal models.\nEverything on the right side of~ speciﬁes predictors. Here, the syntax exactly matches that\nof lme4. For both, population-level and group-level terms, the+ is used to separate diﬀerent\n3In functions such asglm or glmer, the binomial response is typically passed ascbind(success, failure).\nIn brms, the equivalent syntax issuccess | trials(success + failure).",
+      "title": "brms: An R Package for Bayesian Multilevel Models Using Stan",
+      "origin": "https://doi.org/10.18637/jss.v080.i01",
+      "role": "literature",
+      "page_label": "7",
+      "score": 0.83056605,
+      "semantic_score": 0.830566,
+      "lexical_score": 0,
+      "matched_terms": [],
+      "citation": {
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 6,
+        "start": 1889,
+        "end": 2660,
+        "quote": "e internal function\nthat handles censored data, andcensored is the variable that contains information on the\ncensoring. Other available functions in this context areweights and disp to allow diﬀerent\nsorts of weighting,se to specify known standard errors primarily for meta-analysis,trunc to\ndeﬁne truncation boundaries,trials for binomial models3, and cat to specify the number\nof categories for ordinal models.\nEverything on the right side of~ speciﬁes predictors. Here, the syntax exactly matches that\nof lme4. For both, population-level and group-level terms, the+ is used to separate diﬀerent\n3In functions such asglm or glmer, the binomial response is typically passed ascbind(success, failure).\nIn brms, the equivalent syntax issuccess | trials(success + failure).",
+        "relation": "context"
+      }
+    },
+    {
+      "id": "fc66b860e3a5279e5471a411e6ff709bfe20d0eb1de2c76b0cffff8bb1ce3305",
+      "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+      "page_index": 24,
+      "start": 1906,
+      "end": 2538,
+      "text": "doi:10.1016/j.jmva.2009.04.008.\nLunn DJ, Thomas A, Best N, Spiegelhalter D (2000). “WinBUGS – A Bayesian Modelling\nFramework: Concepts, Structure, and Extensibility.” Statistics and Computing, 10(4),\n325–337.doi:10.1023/a:1008929526011.\nMasters GN (1982). “A Rasch Model for Partial Credit Scoring.”Psychometrika, 47(2),\n149–174.doi:10.1007/bf02296272.\nMcElreath R (2016).rethinking: Statistical Rethinking Course and Book Package. R package\nversion 1.59, URLhttps://github.com/rmcelreath/rethinking.\nMcGilchrist CA, Aisbett CW (1991). “Regression with Frailty in Survival Analysis.”Biomet-\nrics, 47(2), 461–466.doi:10.2307/2532138.",
+      "title": "brms: An R Package for Bayesian Multilevel Models Using Stan",
+      "origin": "https://doi.org/10.18637/jss.v080.i01",
+      "role": "literature",
+      "page_label": "25",
+      "score": 0.82987964,
+      "semantic_score": 0.82988,
+      "lexical_score": 0,
+      "matched_terms": [],
+      "citation": {
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 24,
+        "start": 1906,
+        "end": 2538,
+        "quote": "doi:10.1016/j.jmva.2009.04.008.\nLunn DJ, Thomas A, Best N, Spiegelhalter D (2000). “WinBUGS – A Bayesian Modelling\nFramework: Concepts, Structure, and Extensibility.” Statistics and Computing, 10(4),\n325–337.doi:10.1023/a:1008929526011.\nMasters GN (1982). “A Rasch Model for Partial Credit Scoring.”Psychometrika, 47(2),\n149–174.doi:10.1007/bf02296272.\nMcElreath R (2016).rethinking: Statistical Rethinking Course and Book Package. R package\nversion 1.59, URLhttps://github.com/rmcelreath/rethinking.\nMcGilchrist CA, Aisbett CW (1991). “Regression with Frailty in Survival Analysis.”Biomet-\nrics, 47(2), 461–466.doi:10.2307/2532138.",
+        "relation": "context"
+      }
+    },
+    {
+      "id": "fec87a6ed0184bbc7a261e33c7d623ca5edf46e24705722a097cadb4632fa21c",
+      "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+      "page_index": 24,
+      "start": 939,
+      "end": 2106,
+      "text": "e Carlo Sampling Methods Using Markov Chains and Their\nApplications.”Biometrika, 57(1), 97–109.doi:10.2307/2334940.\nHoﬀman MD, Gelman A (2014). “The No-U-Turn Sampler: Adaptively Setting Path Lengths\nin Hamiltonian Monte Carlo.”Journal of Machine Learning Research, 15(1), 1593–1623.\nIonides EL (2008). “Truncated Importance Sampling.”Journal of Computational and Graph-\nical Statistics, 17(2), 295–311.doi:10.1198/106186008x320456.\nJuárez MA, Steel MF (2010). “Model-Based Clustering of Non-Gaussian Panel Data Based\non Skew-t Distributions.”Journal of Business & Economic Statistics, 28(1), 52–66.doi:\n10.1198/jbes.2009.07145.\nKassRE,NatarajanR(2006). “ADefaultConjugatePriorforVarianceComponentsinGener-\nalized Linear Mixed Models.”Bayesian Analysis, 1(3), 535–542.doi:10.1214/06-ba117b.\nLewandowski D, Kurowicka D, Joe H (2009). “Generating Random Correlation Matrices\nBased on Vines and Extended Onion Method.”Journal of Multivariate Analysis, 100(9),\n1989–2001.doi:10.1016/j.jmva.2009.04.008.\nLunn DJ, Thomas A, Best N, Spiegelhalter D (2000). “WinBUGS – A Bayesian Modelling\nFramework: Concepts, Structure, and Extensibility.” Statistics and Computing, 10(4),\n",
+      "title": "brms: An R Package for Bayesian Multilevel Models Using Stan",
+      "origin": "https://doi.org/10.18637/jss.v080.i01",
+      "role": "literature",
+      "page_label": "25",
+      "score": 0.82521659,
+      "semantic_score": 0.825217,
+      "lexical_score": 0,
+      "matched_terms": [],
+      "citation": {
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 24,
+        "start": 939,
+        "end": 2106,
+        "quote": "e Carlo Sampling Methods Using Markov Chains and Their\nApplications.”Biometrika, 57(1), 97–109.doi:10.2307/2334940.\nHoﬀman MD, Gelman A (2014). “The No-U-Turn Sampler: Adaptively Setting Path Lengths\nin Hamiltonian Monte Carlo.”Journal of Machine Learning Research, 15(1), 1593–1623.\nIonides EL (2008). “Truncated Importance Sampling.”Journal of Computational and Graph-\nical Statistics, 17(2), 295–311.doi:10.1198/106186008x320456.\nJuárez MA, Steel MF (2010). “Model-Based Clustering of Non-Gaussian Panel Data Based\non Skew-t Distributions.”Journal of Business & Economic Statistics, 28(1), 52–66.doi:\n10.1198/jbes.2009.07145.\nKassRE,NatarajanR(2006). “ADefaultConjugatePriorforVarianceComponentsinGener-\nalized Linear Mixed Models.”Bayesian Analysis, 1(3), 535–542.doi:10.1214/06-ba117b.\nLewandowski D, Kurowicka D, Joe H (2009). “Generating Random Correlation Matrices\nBased on Vines and Extended Onion Method.”Journal of Multivariate Analysis, 100(9),\n1989–2001.doi:10.1016/j.jmva.2009.04.008.\nLunn DJ, Thomas A, Best N, Spiegelhalter D (2000). “WinBUGS – A Bayesian Modelling\nFramework: Concepts, Structure, and Extensibility.” Statistics and Computing, 10(4),\n",
+        "relation": "context"
+      }
+    }
+  ],
+  "status": "evidence_retrieved",
+  "limitation": "Top-k relevance scores are not confidence or proof of support. Semantic search can return unrelated passages; inspect original evidence. No completeness or novelty claim."
+}

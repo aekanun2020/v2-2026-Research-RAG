@@ -1,0 +1,59 @@
+{
+  "unrelated_containers_before": [
+    "03364c495523\tmssql-mcp-streamable-http\tfixed-2026-mssql-mcp-server-streamablehttp-mcp-server\texited",
+    "11ee61af7e13\tspark-standalone-datanode-2-1\tapache/hadoop:3.4.3\texited",
+    "1d1783d92d0e\tspark-standalone-spark-hdfs-mcp-1\tspark-standalone-spark-hdfs-mcp\texited",
+    "3d5dc064b349\telegant_hofstadter\tlangflowai/langflow:1.7.3\texited",
+    "4764bae4ddaf\trag-mcp-servicedesk-qdrant\tqdrant/qdrant:v1.18.3\texited",
+    "4a3eb9460345\tspark-standalone-spark-worker-2-1\tapache/spark:3.5.6-scala2.12-java17-python3-ubuntu\texited",
+    "4d5f5d191390\tspark-standalone-security-log-skills-mcp-1\tspark-standalone-security-log-skills-mcp\texited",
+    "56ff2fc6bd6b\tspark-standalone-datanode-1-1\tapache/hadoop:3.4.3\texited",
+    "7336b902aaf3\tspark-standalone-namenode-1\tapache/hadoop:3.4.3\texited",
+    "76fdae7ee7bd\tsql_server\tmcr.microsoft.com/mssql/server:2022-latest\texited",
+    "895f0161f6c4\trag-mcp-servicedesk-ollama\tollama/ollama:latest\texited",
+    "9ece5374be29\tpolicy-as-code-lab4c-remote-repeat-opa-1\topenpolicyagent/opa:1.20.1\texited",
+    "b696c4f6ccff\tspark-standalone-spark-master-1\tapache/spark:3.5.6-scala2.12-java17-python3-ubuntu\texited",
+    "be5648061e07\tspark-standalone-spark-worker-1-1\tapache/spark:3.5.6-scala2.12-java17-python3-ubuntu\texited",
+    "c324dd50a963\tpolicy-as-code-lab4c-remote-repeat-mcp-server-1\tpolicy-as-code-lab4c-remote-repeat-mcp-server\texited",
+    "cc191b24ab64\trag-mcp-servicedesk\trag-mcp-servicedesk:local\texited",
+    "f9432ae4782f\tpolicy-as-code-lab4c-remote-repeat-mongodb-1\tmongo:8.0\texited"
+  ],
+  "unrelated_containers_after": [
+    "03364c495523\tmssql-mcp-streamable-http\tfixed-2026-mssql-mcp-server-streamablehttp-mcp-server\texited",
+    "11ee61af7e13\tspark-standalone-datanode-2-1\tapache/hadoop:3.4.3\texited",
+    "1d1783d92d0e\tspark-standalone-spark-hdfs-mcp-1\tspark-standalone-spark-hdfs-mcp\texited",
+    "3d5dc064b349\telegant_hofstadter\tlangflowai/langflow:1.7.3\texited",
+    "4764bae4ddaf\trag-mcp-servicedesk-qdrant\tqdrant/qdrant:v1.18.3\texited",
+    "4a3eb9460345\tspark-standalone-spark-worker-2-1\tapache/spark:3.5.6-scala2.12-java17-python3-ubuntu\texited",
+    "4d5f5d191390\tspark-standalone-security-log-skills-mcp-1\tspark-standalone-security-log-skills-mcp\texited",
+    "56ff2fc6bd6b\tspark-standalone-datanode-1-1\tapache/hadoop:3.4.3\texited",
+    "7336b902aaf3\tspark-standalone-namenode-1\tapache/hadoop:3.4.3\texited",
+    "76fdae7ee7bd\tsql_server\tmcr.microsoft.com/mssql/server:2022-latest\texited",
+    "895f0161f6c4\trag-mcp-servicedesk-ollama\tollama/ollama:latest\texited",
+    "9ece5374be29\tpolicy-as-code-lab4c-remote-repeat-opa-1\topenpolicyagent/opa:1.20.1\texited",
+    "b696c4f6ccff\tspark-standalone-spark-master-1\tapache/spark:3.5.6-scala2.12-java17-python3-ubuntu\texited",
+    "be5648061e07\tspark-standalone-spark-worker-1-1\tapache/spark:3.5.6-scala2.12-java17-python3-ubuntu\texited",
+    "c324dd50a963\tpolicy-as-code-lab4c-remote-repeat-mcp-server-1\tpolicy-as-code-lab4c-remote-repeat-mcp-server\texited",
+    "cc191b24ab64\trag-mcp-servicedesk\trag-mcp-servicedesk:local\texited",
+    "f9432ae4782f\tpolicy-as-code-lab4c-remote-repeat-mongodb-1\tmongo:8.0\texited"
+  ],
+  "unrelated_containers_unchanged": true,
+  "count": 17,
+  "backup": {
+    "directory": "/data/backups/ca9b398d18464783bbac95d69cc9c207",
+    "sources": 10,
+    "excludes": [
+      "inbox",
+      "exports",
+      "HTTP token"
+    ]
+  },
+  "native_status": {
+    "revision": 10,
+    "source_count": 10,
+    "indexed_chunks": 547,
+    "inbox": 221
+  },
+  "sources_unchanged": true,
+  "native_catalog_has_new_tools": false
+}

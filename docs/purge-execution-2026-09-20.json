@@ -1,0 +1,138 @@
+{
+  "endpoint": "http://127.0.0.1:8776/mcp",
+  "transport": "actual MCP Streamable HTTP via official Python SDK ClientSession.tools/call; not native task catalog",
+  "authorization": "User explicitly requested all RAG data deleted except inbox originals, and adjustment of the cleanup tool.",
+  "tool": "cleanup_workspace",
+  "arguments": {
+    "scope": "all_except_inbox",
+    "plan_hash": "8f654856582f3beb9d4ac53a3d15661d0b043d92919c4fd9faae8a1c23377564",
+    "expected_revision": 10,
+    "idempotency_key": "user-authorized-purge-94850f6fe1a142c69430817f3ed209cf"
+  },
+  "started_at": "2026-09-20T14:19:02.486180+00:00",
+  "status": "completed",
+  "receipt": {
+    "revision": 11,
+    "result": {
+      "operation": "cleanup_workspace",
+      "scope": "all_except_inbox",
+      "deleted": {
+        "artifacts": 0,
+        "chunk_metadata": 547,
+        "chunk_sets": 10,
+        "chunks": 547,
+        "documents": 10,
+        "embeddings": 547,
+        "events": 10,
+        "requests": 10,
+        "searches": 0,
+        "versions": 0
+      },
+      "backup": null,
+      "source_files_retained": 0,
+      "inbox": {
+        "bytes": 806172536,
+        "files": 221,
+        "sha256": "7176550ba685da103b8ef588fab177fb995ebbc8c2844ae5d59e285017ccc0c7"
+      },
+      "preserves": [
+        "all inbox files",
+        "server authentication token",
+        "database schema and cleanup receipt"
+      ],
+      "next_step": "import_document",
+      "quality_improvement_claimed": false,
+      "status": "completed",
+      "database_cleared": true,
+      "filesystem_complete": true,
+      "inbox_unchanged": true,
+      "deleted_files": 27,
+      "deleted_bytes": 24079596
+    }
+  },
+  "received_at": "2026-09-20T14:19:04.277601+00:00",
+  "verification": {
+    "all_research_records_empty": true,
+    "all_data_files_outside_inbox_removed": true,
+    "all_inbox_hashes_unchanged": true,
+    "no_new_backup": true,
+    "exact_retry_same_receipt": true,
+    "after_plan": {
+      "scope": "all_except_inbox",
+      "revision": 11,
+      "workspace": "/data",
+      "delete_counts": {
+        "embeddings": 0,
+        "chunk_metadata": 0,
+        "chunk_sets": 0,
+        "chunks": 0,
+        "documents": 0,
+        "versions": 0,
+        "artifacts": 0,
+        "searches": 0,
+        "events": 0,
+        "requests": 1
+      },
+      "clears_project": true,
+      "retires_mutation_receipts": 0,
+      "source_ids": [],
+      "artifact_ids": [],
+      "source_files_retained": 0,
+      "preserves": [
+        "all inbox files",
+        "server authentication token",
+        "database schema and cleanup receipt"
+      ],
+      "backup_required": false,
+      "can_execute": true,
+      "blockers": [],
+      "limitation": "Permanently deletes all workspace research records and data files outside inbox, including source copies, exports, backups and import-runs. No new backup. Server code/configuration and external model assets are outside this data workspace. Not forensic secure erasure. A partial filesystem failure remains resumable and blocks new writes.",
+      "filesystem": {
+        "entries": [
+          {
+            "path": "backups",
+            "kind": "directory"
+          },
+          {
+            "path": "exports",
+            "kind": "directory"
+          },
+          {
+            "path": "sources",
+            "kind": "directory"
+          }
+        ],
+        "files": 0,
+        "bytes": 0,
+        "sha256": "3085e035658a8ca8148a81d3815320b30b67c8d7417045fc556936e725543ac4"
+      },
+      "inbox": {
+        "files": 221,
+        "bytes": 806172536,
+        "sha256": "7176550ba685da103b8ef588fab177fb995ebbc8c2844ae5d59e285017ccc0c7"
+      },
+      "plan_hash": "65da69420c40b4d7d05cf49e92d242bb408f8668ef6d53e33564998ce9fbf970"
+    },
+    "revision": 11,
+    "source_count": 0,
+    "inbox_count": 221,
+    "search_index": {
+      "model": {
+        "model_id": "intfloat/multilingual-e5-base",
+        "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+        "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+        "dimensions": 768,
+        "provider": "CPUExecutionProvider",
+        "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+        "assets_present": true,
+        "external_inference": false
+      },
+      "total_chunks": 0,
+      "indexed_chunks": 0,
+      "pending_or_invalid_chunks": 0,
+      "storage": "SQLite float32 vectors; exact CPU cosine scan",
+      "default_mode": "hybrid",
+      "ready": true
+    }
+  }
+}

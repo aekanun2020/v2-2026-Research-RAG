@@ -1,0 +1,18 @@
+[0;93m2026-09-20 13:49:59.587360303 [W:onnxruntime:Default, telemetry.cc:800 operator()] Failed to persist telemetry device ID; using an in-memory identifier[m
+test_backup_failure_leaves_live_state_unchanged (test_cleanup.CleanupHTTPIntegration.test_backup_failure_leaves_live_state_unchanged) ... Executing <Task pending name='Task-1' coro=<HTTPIntegration.asyncSetUp() running at /test/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(8, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.721 seconds
+Executing <Task finished name='Task-35' coro=<HTTPIntegration.asyncTearDown() done, defined at /test/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.180 seconds
+ok
+test_documents_clear_preserves_originals_and_allows_real_reimport (test_cleanup.CleanupHTTPIntegration.test_documents_clear_preserves_originals_and_allows_real_reimport) ... Executing <Task pending name='Task-38' coro=<HTTPIntegration.asyncSetUp() running at /test/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(8, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.757 seconds
+Executing <Task finished name='Task-92' coro=<HTTPIntegration.asyncTearDown() done, defined at /test/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.177 seconds
+ok
+test_index_clear_rebuild_restore_and_retry_over_http (test_cleanup.CleanupHTTPIntegration.test_index_clear_rebuild_restore_and_retry_over_http) ... Executing <Task pending name='Task-95' coro=<HTTPIntegration.asyncSetUp() running at /test/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(8, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.738 seconds
+Executing <Task finished name='Task-157' coro=<HTTPIntegration.asyncTearDown() done, defined at /test/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.231 seconds
+ok
+test_workspace_scope_dependency_guard_preview_and_invalid_requests (test_cleanup.CleanupHTTPIntegration.test_workspace_scope_dependency_guard_preview_and_invalid_requests) ... Executing <Task pending name='Task-160' coro=<HTTPIntegration.asyncSetUp() running at /test/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(8, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.682 seconds
+Executing <Task finished name='Task-230' coro=<HTTPIntegration.asyncTearDown() done, defined at /test/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.233 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 42.730s
+
+OK

@@ -1,0 +1,14 @@
+[0;93m2026-09-20 05:41:12.032930257 [W:onnxruntime:Default, telemetry.cc:800 operator()] Failed to persist telemetry device ID; using an in-memory identifier[m
+test_manuscript_identity_across_revisions_review_export_and_restore (test_http.HTTPIntegration.test_manuscript_identity_across_revisions_review_export_and_restore) ... Executing <Task pending name='Task-1' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(8, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.647 seconds
+[0;93m2026-09-20 05:41:23.189534305 [W:onnxruntime:Default, telemetry.cc:800 operator()] Failed to persist telemetry device ID; using an in-memory identifier[m
+Executing <Task pending name='Task-2' coro=<HTTPIntegration.test_manuscript_identity_across_revisions_review_export_and_restore() running at /app/tests/test_http.py:234> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.558 seconds
+Executing <Task finished name='Task-59' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.179 seconds
+ok
+test_real_streamable_http_all_eight_stages_and_resume (test_http.HTTPIntegration.test_real_streamable_http_all_eight_stages_and_resume) ... Executing <Task pending name='Task-62' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(8, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.651 seconds
+Executing <Task finished name='Task-236' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.234 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 22.671s
+
+OK

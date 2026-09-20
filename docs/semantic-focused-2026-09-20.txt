@@ -1,0 +1,17 @@
+[0;93m2026-09-20 05:35:49.201379969 [W:onnxruntime:Default, telemetry.cc:800 operator()] Failed to persist telemetry device ID; using an in-memory identifier[m
+Embedding model validated: intfloat/multilingual-e5-small@614241f622f53c4eeff9890bdc4f31cfecc418b3; provider=CPUExecutionProvider
+test_backup_restores_identity_and_semantic_index (test_documents.DocumentIntegration.test_backup_restores_identity_and_semantic_index) ... ok
+test_document_versions_and_explicit_historical_search (test_documents.DocumentIntegration.test_document_versions_and_explicit_historical_search) ... ok
+test_exclusion_filters_search_and_flags_manuscript (test_documents.DocumentIntegration.test_exclusion_filters_search_and_flags_manuscript) ... ok
+test_identity_context_integrity_and_coverage (test_documents.DocumentIntegration.test_identity_context_integrity_and_coverage) ... ok
+test_invalid_mutations_are_atomic_and_idempotent (test_documents.DocumentIntegration.test_invalid_mutations_are_atomic_and_idempotent) ... ok
+test_rechunk_preserves_citations_ids_history_and_switches_search (test_documents.DocumentIntegration.test_rechunk_preserves_citations_ids_history_and_switches_search) ... ok
+test_vector_corruption_errors_and_explicit_rebuild (test_documents.DocumentIntegration.test_vector_corruption_errors_and_explicit_rebuild) ... ok
+test_semantic_and_chunk_tools_over_actual_http (test_http.HTTPIntegration.test_semantic_and_chunk_tools_over_actual_http) ... Executing <Task pending name='Task-1' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(8, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.643 seconds
+Executing <Task finished name='Task-115' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.175 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 42.079s
+
+OK

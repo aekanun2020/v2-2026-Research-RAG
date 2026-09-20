@@ -1,0 +1,12 @@
+{"id": "T01", "seconds": 18.13, "hits": 3, "top_source_matches": true, "top_score": 0.988326987570161}
+{"id": "T02", "seconds": 20.57, "hits": 3, "top_source_matches": true, "top_score": 0.2554036182854084}
+{"id": "T03", "seconds": 20.48, "hits": 3, "top_source_matches": true, "top_score": 0.09859977564066795}
+{"id": "T04", "seconds": 0.02, "hits": 3, "top_source_matches": true, "top_score": 0.11610818009139935}
+{"id": "T05", "seconds": 20.9, "hits": 3, "top_source_matches": true, "top_score": 0.4272277198225837}
+{"id": "T06", "seconds": 18.83, "hits": 3, "top_source_matches": true, "top_score": 0.8075996441562608}
+{"id": "T07", "seconds": 21.64, "hits": 3, "top_source_matches": true, "top_score": 0.7574736423684044}
+{"id": "T08", "seconds": 15.76, "hits": 3, "top_source_matches": true, "top_score": 0.9021646120639305}
+{"id": "T09", "seconds": 17.2, "hits": 3, "top_source_matches": true, "top_score": 0.056354686945261294}
+{"id": "T10", "seconds": 16.05, "hits": 3, "top_source_matches": true, "top_score": 0.680581587066234}
+{"id": "N01", "seconds": 19.55, "hits": 3, "top_source_matches": false, "top_score": 0.0008669779255528513}
+{"id": "N02", "seconds": 0.02, "hits": 3, "top_source_matches": false, "top_score": 0.15631843608996368}

@@ -1,0 +1,28 @@
+{
+  "verified_via": "native mcp__research_rag__workspace_status after official-SDK MCP cleanup tool call",
+  "revision": 11,
+  "source_count": 0,
+  "artifact_count": 0,
+  "inbox_count": 221,
+  "project": null,
+  "searches": [],
+  "pending_cleanup": null,
+  "search_index": {
+    "model": {
+      "model_id": "intfloat/multilingual-e5-base",
+      "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+      "dimensions": 768,
+      "provider": "CPUExecutionProvider",
+      "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+      "assets_present": true,
+      "external_inference": false
+    },
+    "total_chunks": 0,
+    "indexed_chunks": 0,
+    "pending_or_invalid_chunks": 0,
+    "storage": "SQLite float32 vectors; exact CPU cosine scan",
+    "default_mode": "hybrid",
+    "ready": true
+  }
+}

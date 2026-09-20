@@ -1,0 +1,28 @@
+{
+  "real_original_runtime": "codex-research-rag-mcp:0.1.0",
+  "before_schema": 1,
+  "after_schema": 3,
+  "preserved_chunk_ids": 77,
+  "exact_citations_preserved": 8,
+  "pending_index_error": "Semantic index missing or stale; call rebuild_search_index for the affected source",
+  "explicit_rebuild_passed": true,
+  "identity": "doc-34825a29f74c42c0be612392171cb581",
+  "index": {
+    "model": {
+      "model_id": "intfloat/multilingual-e5-small",
+      "model_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "fingerprint": "379076278e0cdf895f344029c2d7bff7c3565c0f4d29d8cdd07d7d4680eab82e",
+      "dimensions": 384,
+      "provider": "CPUExecutionProvider",
+      "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+      "assets_present": true,
+      "external_inference": false
+    },
+    "total_chunks": 77,
+    "indexed_chunks": 77,
+    "pending_or_invalid_chunks": 0,
+    "storage": "SQLite float32 vectors; exact CPU cosine scan",
+    "default_mode": "hybrid",
+    "ready": true
+  }
+}

@@ -1,0 +1,369 @@
+{
+  "verified_at": "2026-09-20T15:32:39.092516+00:00",
+  "endpoint": "http://127.0.0.1:8776/mcp",
+  "protocol_version": "2025-11-25",
+  "server_version": "0.2.3",
+  "tool_count": 33,
+  "tools": [
+    "workspace_status",
+    "preview_inbox_document",
+    "start_project",
+    "import_document",
+    "search_literature",
+    "retrieve_evidence",
+    "read_source_page",
+    "list_documents",
+    "list_chunks",
+    "read_chunk",
+    "get_chunk_context",
+    "inspect_document_chunks",
+    "rechunk_document",
+    "activate_chunk_set",
+    "set_chunk_status",
+    "find_evidence_usage",
+    "search_index_status",
+    "rebuild_search_index",
+    "explore_topics",
+    "map_research_gaps",
+    "formulate_question",
+    "design_study",
+    "track_execution",
+    "interpret_results",
+    "summarize_dataset",
+    "draft_manuscript",
+    "prepare_submission",
+    "save_artifact",
+    "read_artifact",
+    "export_manuscript",
+    "backup_workspace",
+    "preview_workspace_cleanup",
+    "cleanup_workspace"
+  ],
+  "workspace_unchanged": true,
+  "cleanup_executed": false,
+  "workspace_revision": 24,
+  "source_count": 10,
+  "inbox_count": 221,
+  "search_index": {
+    "model": {
+      "model_id": "intfloat/multilingual-e5-base",
+      "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+      "dimensions": 768,
+      "provider": "CPUExecutionProvider",
+      "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+      "assets_present": true,
+      "external_inference": false
+    },
+    "total_chunks": 618,
+    "indexed_chunks": 618,
+    "pending_or_invalid_chunks": 0,
+    "storage": "SQLite float32 vectors; exact CPU cosine scan",
+    "default_mode": "hybrid",
+    "ready": true
+  },
+  "plans": [
+    {
+      "scope": "search_index",
+      "revision": 24,
+      "workspace": "/data",
+      "delete_counts": {
+        "embeddings": 618,
+        "chunk_metadata": 0,
+        "chunk_sets": 0,
+        "chunks": 0,
+        "documents": 0,
+        "versions": 0,
+        "artifacts": 0,
+        "searches": 0,
+        "events": 0
+      },
+      "clears_project": false,
+      "retires_mutation_receipts": 13,
+      "source_ids": [
+        "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+        "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+        "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+        "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+        "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+        "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+        "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+        "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+        "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      ],
+      "artifact_ids": [],
+      "source_files_retained": 10,
+      "preserves": [
+        "inbox files",
+        "imported original files in sources/",
+        "exports",
+        "existing backups",
+        "authentication tokens",
+        "embedding model files"
+      ],
+      "backup_required": true,
+      "can_execute": true,
+      "blockers": [],
+      "limitation": "Clears database records only. Original files are retained; this is not secure erasure. Index cleanup requires rebuild_search_index before semantic/hybrid retrieval. Cleanup by itself does not improve semantic relevance.",
+      "plan_hash": "0d432cb7f6d900ff8b47db02341c30d2152c5369f0f7db931271b9c631892e51"
+    },
+    {
+      "scope": "documents",
+      "revision": 24,
+      "workspace": "/data",
+      "delete_counts": {
+        "embeddings": 618,
+        "chunk_metadata": 618,
+        "chunk_sets": 11,
+        "chunks": 618,
+        "documents": 10,
+        "versions": 0,
+        "artifacts": 0,
+        "searches": 0,
+        "events": 0
+      },
+      "clears_project": false,
+      "retires_mutation_receipts": 13,
+      "source_ids": [
+        "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+        "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+        "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+        "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+        "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+        "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+        "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+        "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+        "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      ],
+      "artifact_ids": [],
+      "source_files_retained": 10,
+      "preserves": [
+        "inbox files",
+        "imported original files in sources/",
+        "exports",
+        "existing backups",
+        "authentication tokens",
+        "embedding model files"
+      ],
+      "backup_required": true,
+      "can_execute": true,
+      "blockers": [],
+      "limitation": "Clears database records only. Original files are retained; this is not secure erasure. Index cleanup requires rebuild_search_index before semantic/hybrid retrieval. Cleanup by itself does not improve semantic relevance.",
+      "plan_hash": "c6e1ab106f3fc2e28880c7b692d22143410b0539851bfa8e672e844230d7fd82"
+    },
+    {
+      "scope": "workspace",
+      "revision": 24,
+      "workspace": "/data",
+      "delete_counts": {
+        "embeddings": 618,
+        "chunk_metadata": 618,
+        "chunk_sets": 11,
+        "chunks": 618,
+        "documents": 10,
+        "versions": 0,
+        "artifacts": 0,
+        "searches": 0,
+        "events": 13
+      },
+      "clears_project": true,
+      "retires_mutation_receipts": 13,
+      "source_ids": [
+        "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+        "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+        "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+        "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+        "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+        "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+        "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+        "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+        "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      ],
+      "artifact_ids": [],
+      "source_files_retained": 10,
+      "preserves": [
+        "inbox files",
+        "imported original files in sources/",
+        "exports",
+        "existing backups",
+        "authentication tokens",
+        "embedding model files"
+      ],
+      "backup_required": true,
+      "can_execute": true,
+      "blockers": [],
+      "limitation": "Clears database records only. Original files are retained; this is not secure erasure. Index cleanup requires rebuild_search_index before semantic/hybrid retrieval. Cleanup by itself does not improve semantic relevance.",
+      "plan_hash": "bab0046482592f3df2dbdc5c49bb114e690a01515faa2ee95ad8d847f697ed33"
+    },
+    {
+      "scope": "all_except_inbox",
+      "revision": 24,
+      "workspace": "/data",
+      "delete_counts": {
+        "embeddings": 618,
+        "chunk_metadata": 618,
+        "chunk_sets": 11,
+        "chunks": 618,
+        "documents": 10,
+        "versions": 0,
+        "artifacts": 0,
+        "searches": 0,
+        "events": 13,
+        "requests": 14
+      },
+      "clears_project": true,
+      "retires_mutation_receipts": 0,
+      "source_ids": [
+        "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+        "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+        "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+        "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+        "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+        "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+        "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+        "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+        "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      ],
+      "artifact_ids": [],
+      "source_files_retained": 0,
+      "preserves": [
+        "all inbox files",
+        "server authentication token",
+        "database schema and cleanup receipt"
+      ],
+      "backup_required": false,
+      "can_execute": true,
+      "blockers": [],
+      "limitation": "Permanently deletes all workspace research records and data files outside inbox, including source copies, exports, backups and import-runs. No new backup. Server code/configuration and external model assets are outside this data workspace. Not forensic secure erasure. A partial filesystem failure remains resumable and blocks new writes.",
+      "filesystem": {
+        "entries": [
+          {
+            "path": "backups",
+            "kind": "directory"
+          },
+          {
+            "path": "exports",
+            "kind": "directory"
+          },
+          {
+            "path": "sources",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf",
+            "kind": "file",
+            "bytes": 364541,
+            "sha256": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528"
+          },
+          {
+            "path": "sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e/original.pdf",
+            "kind": "file",
+            "bytes": 544288,
+            "sha256": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e"
+          },
+          {
+            "path": "sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90/original.pdf",
+            "kind": "file",
+            "bytes": 2891435,
+            "sha256": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90"
+          },
+          {
+            "path": "sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1/original.pdf",
+            "kind": "file",
+            "bytes": 454000,
+            "sha256": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1"
+          },
+          {
+            "path": "sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a/original.pdf",
+            "kind": "file",
+            "bytes": 106630,
+            "sha256": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a"
+          },
+          {
+            "path": "sources/8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b/original.pdf",
+            "kind": "file",
+            "bytes": 235373,
+            "sha256": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b"
+          },
+          {
+            "path": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf",
+            "kind": "file",
+            "bytes": 3506302,
+            "sha256": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01"
+          },
+          {
+            "path": "sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632/original.pdf",
+            "kind": "file",
+            "bytes": 425880,
+            "sha256": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+          },
+          {
+            "path": "sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d/original.pdf",
+            "kind": "file",
+            "bytes": 391109,
+            "sha256": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d"
+          },
+          {
+            "path": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31/original.pdf",
+            "kind": "file",
+            "bytes": 584641,
+            "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+          }
+        ],
+        "files": 10,
+        "bytes": 9504199,
+        "sha256": "17352db6ff780c7900f597b16a10990e6fa41fe0ae357f085604f9f71b5f4d90"
+      },
+      "inbox": {
+        "files": 221,
+        "bytes": 806172536,
+        "sha256": "7176550ba685da103b8ef588fab177fb995ebbc8c2844ae5d59e285017ccc0c7"
+      },
+      "plan_hash": "3cff85363dfdfed55656f74d53ed39d094827e0cc09fde3088dd9caf92f5c052"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "verified_at": "2026-09-20T06:00:59.479260+00:00",
+  "endpoint": "http://127.0.0.1:8776/mcp",
+  "protocol": "2025-11-25",
+  "tool_count": 30,
+  "tools": [
+    "workspace_status",
+    "start_project",
+    "import_document",
+    "search_literature",
+    "retrieve_evidence",
+    "read_source_page",
+    "list_documents",
+    "list_chunks",
+    "read_chunk",
+    "get_chunk_context",
+    "inspect_document_chunks",
+    "rechunk_document",
+    "activate_chunk_set",
+    "set_chunk_status",
+    "find_evidence_usage",
+    "search_index_status",
+    "rebuild_search_index",
+    "explore_topics",
+    "map_research_gaps",
+    "formulate_question",
+    "design_study",
+    "track_execution",
+    "interpret_results",
+    "summarize_dataset",
+    "draft_manuscript",
+    "prepare_submission",
+    "save_artifact",
+    "read_artifact",
+    "export_manuscript",
+    "backup_workspace"
+  ],
+  "schema_before": 1,
+  "schema_after": 3,
+  "workspace_revision": 0,
+  "documents": 0,
+  "search_index": {
+    "model": {
+      "model_id": "intfloat/multilingual-e5-base",
+      "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+      "dimensions": 768,
+      "provider": "CPUExecutionProvider",
+      "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+      "assets_present": true,
+      "external_inference": false
+    },
+    "total_chunks": 0,
+    "indexed_chunks": 0,
+    "pending_or_invalid_chunks": 0,
+    "storage": "SQLite float32 vectors; exact CPU cosine scan",
+    "default_mode": "hybrid",
+    "ready": true
+  },
+  "semantic_call": {
+    "arguments": {
+      "query": "Bayesian multilevel models",
+      "mode": "semantic"
+    },
+    "hits": 0,
+    "note": "Production workspace is empty. Nonempty semantic retrieval was tested using real PDF in isolated container tests."
+  },
+  "containers": [
+    {
+      "name": "codex-research-rag-mcp-1",
+      "id": "6dd653212e9f916606974f6682e475902464e3eb86d0c9f81cddaf414cd6aa07",
+      "image_id": "sha256:56bcca357c5df8f85408e9912731888c09be35e5997959a9bd191610462900aa",
+      "health": "healthy",
+      "ports": {
+        "8776/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8776"
+          }
+        ]
+      },
+      "read_only_rootfs": true,
+      "user": "501:20"
+    },
+    {
+      "name": "codex-research-rag-review-1",
+      "id": "442e27423900a8491968cf15699f6fec54f4777a8bffe188b5de30c4b4130813",
+      "image_id": "sha256:56bcca357c5df8f85408e9912731888c09be35e5997959a9bd191610462900aa",
+      "health": "healthy",
+      "ports": {
+        "8777/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8777"
+          }
+        ]
+      },
+      "read_only_rootfs": true,
+      "user": "501:20"
+    }
+  ],
+  "unrelated_containers_unchanged": 17,
+  "bearer_preserved": true,
+  "logical_records_preserved": true,
+  "backup": {
+    "directory": "/data/backups/badf25526ec444d194e80634d256a3cb",
+    "sources": 0,
+    "excludes": [
+      "inbox",
+      "exports",
+      "HTTP token"
+    ]
+  },
+  "review_http_status": 200,
+  "access_checks": {
+    "missing_bearer": 401,
+    "foreign_origin": 403,
+    "foreign_host": 421
+  },
+  "external_inference": false
+}

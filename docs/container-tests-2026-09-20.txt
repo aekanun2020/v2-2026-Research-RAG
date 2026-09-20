@@ -1,0 +1,31 @@
+test_http_authentication_origin_and_host (test_http.HTTPIntegration.test_http_authentication_origin_and_host) ... Executing <Task pending name='Task-1' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(7, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.635 seconds
+Executing <Task finished name='Task-3' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.227 seconds
+ok
+test_live_crossref_over_real_mcp (test_http.HTTPIntegration.test_live_crossref_over_real_mcp) ... Executing <Task pending name='Task-6' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(7, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.654 seconds
+Executing <Task finished name='Task-24' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.228 seconds
+ok
+test_real_streamable_http_all_eight_stages_and_resume (test_http.HTTPIntegration.test_real_streamable_http_all_eight_stages_and_resume) ... Executing <Task pending name='Task-27' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(7, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.665 seconds
+Executing <Task finished name='Task-201' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.177 seconds
+ok
+test_actual_review_and_reviewed_export (test_http.HumanReviewIntegration.test_actual_review_and_reviewed_export) ... ok
+test_same_server_direct_stdio (test_http.StdioIntegration.test_same_server_direct_stdio) ... ok
+test_backup_restore_preserves_sources_artifacts_and_search_index (test_store.EvidenceTests.test_backup_restore_preserves_sources_artifacts_and_search_index) ... ok
+test_dependency_review_withdrawal_invalidates_acceptance (test_store.EvidenceTests.test_dependency_review_withdrawal_invalidates_acceptance) ... ok
+test_dependency_revisions_and_cycles (test_store.EvidenceTests.test_dependency_revisions_and_cycles) ... ok
+test_evidence_and_result_roles_enforced (test_store.EvidenceTests.test_evidence_and_result_roles_enforced) ... ok
+test_idempotency_revision_and_history (test_store.EvidenceTests.test_idempotency_revision_and_history) ... ok
+test_literature_matrix_retains_actual_citations_and_unknowns (test_store.EvidenceTests.test_literature_matrix_retains_actual_citations_and_unknowns) ... ok
+test_literature_note_rejects_project_material_as_study (test_store.EvidenceTests.test_literature_note_rejects_project_material_as_study) ... ok
+test_real_csv_summary (test_store.EvidenceTests.test_real_csv_summary) ... ok
+test_real_pdf_ranked_retrieval_and_exact_spans (test_store.EvidenceTests.test_real_pdf_ranked_retrieval_and_exact_spans) ... ok
+test_reject_invalid_citation_and_foreign_import (test_store.EvidenceTests.test_reject_invalid_citation_and_foreign_import) ... ok
+test_restore_rejects_absolute_manifest_paths (test_store.EvidenceTests.test_restore_rejects_absolute_manifest_paths) ... ok
+test_seven_contexts_and_submission_blockers (test_store.EvidenceTests.test_seven_contexts_and_submission_blockers) ... ok
+test_tampering_blocks_retrieval_and_export (test_store.EvidenceTests.test_tampering_blocks_retrieval_and_export) ... ok
+test_thai_search_from_real_readme (test_store.EvidenceTests.test_thai_search_from_real_readme) ... ok
+test_whitespace_is_not_evidence (test_store.EvidenceTests.test_whitespace_is_not_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 32.932s
+
+OK

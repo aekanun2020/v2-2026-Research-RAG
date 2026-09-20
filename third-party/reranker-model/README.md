@@ -1,0 +1,13 @@
+# Rejected GTE experiment — not bundled for runtime
+
+This model failed the original T04 retrieval regression and was rejected. The [experiment result](../../docs/quality-rerank-focused-2026-09-20.json) is preserved. The provenance below describes that experiment only; the active reranker is documented [separately](../bge-reranker-model/README.md).
+
+# Local CPU reranker provenance
+
+The original model is [Alibaba-NLP/gte-multilingual-reranker-base](https://huggingface.co/Alibaba-NLP/gte-multilingual-reranker-base/tree/8215cf04918ba6f7b6a62bb44238ce2953d8831c). Its inspected revision, original [model card](original-README.md), [configuration](original-config.json), [tokenizer configuration](original-tokenizer_config.json) and [file metadata](original-metadata.json) were recorded before integration. Its model card declares Apache-2.0; the [full Apache License 2.0](LICENSE-2.0.txt) is preserved from the Apache Software Foundation.
+
+Runtime artifacts come directly from the ONNX conversion publisher, [onnx-community/gte-multilingual-reranker-base](https://huggingface.co/onnx-community/gte-multilingual-reranker-base/tree/ee64367e35a2db0da46bb6497e13a18f8bd585cb), pinned at that exact revision. Its [card](onnx-README.md) identifies the original Alibaba model; [metadata](onnx-metadata.json), [config](onnx-config.json) and [tokenizer config](onnx-tokenizer_config.json) are retained. The converter does not identify the exact original weight commit used for conversion; the inspected original revision above is not claimed to be that source commit. The ONNX assets are a third-party conversion, not an original Alibaba ONNX release.
+
+[Manifest](manifest.json) records every consumed artifact path and SHA-256. The int8 ONNX weights and tokenizer are used unchanged. No original or converter Python implementation is copied or executed; configuration auto_map/remote-code entries are not used. The experimental runtime used the local ONNX Runtime CPU provider; the current runtime uses the replacement model. There is no external inference or model API. Reranker scores order retrieval candidates; Codex separately assesses answer relevance and evidence correctness.
+
+The [downloader](../../scripts/download_reranker.py) verifies hashes and fails on mismatch. Model assets remain ignored under .models and are not included in the final container. No integration commit exists yet; this is uncommitted development. Original files are retained verbatim, and our implementation changes are separate in Git.

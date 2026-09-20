@@ -1,0 +1,56 @@
+{"id": "T01", "seconds": 36.21, "hits": 3, "top_source_matches": true, "top_score": 0.9881622786732114}
+{"id": "T02", "seconds": 0.05, "hits": 3, "top_source_matches": true, "top_score": 0.3978337912271129}
+{"id": "T03", "seconds": 40.83, "hits": 3, "top_source_matches": true, "top_score": 0.08750773804371442}
+{"id": "T04", "seconds": 35.59, "hits": 3, "top_source_matches": true, "top_score": 0.16133470557809737}
+{"id": "T05", "seconds": 40.52, "hits": 3, "top_source_matches": true, "top_score": 0.3843483681470325}
+{"id": "T06", "seconds": 37.69, "hits": 3, "top_source_matches": true, "top_score": 0.7189594796139408}
+{"id": "T07", "seconds": 45.88, "hits": 3, "top_source_matches": true, "top_score": 0.7615776077924022}
+{"id": "T08", "seconds": 33.01, "hits": 3, "top_source_matches": true, "top_score": 0.91320026157889}
+{"id": "T09", "seconds": 0.05, "hits": 3, "top_source_matches": true, "top_score": 0.02975049198773859}
+{"id": "T10", "seconds": 34.38, "hits": 3, "top_source_matches": true, "top_score": 0.6657984450122081}
+{"id": "N01", "seconds": 42.01, "hits": 0, "top_source_matches": false, "top_score": null}
+{"id": "N02", "seconds": 40.74, "hits": 0, "top_source_matches": false, "top_score": null}
+{"id": "H01", "seconds": 41.35, "hits": 3, "top_source_matches": true, "top_score": 0.7973895530830675}
+{"id": "H02", "seconds": 42.3, "hits": 0, "top_source_matches": false, "top_score": null}
+  + Exception Group Traceback (most recent call last):
+  |   File "/checks/verify_retrieval_mcp.py", line 102, in <module>
+  |     asyncio.run(main())
+  |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 195, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/usr/local/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "/checks/verify_retrieval_mcp.py", line 44, in main
+  |     async with streamable_http_client(args.url, http_client=http) as streams:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/usr/local/lib/python3.12/contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "/app/.venv/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 736, in streamable_http_client
+  |     anyio.create_task_group() as tg,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/app/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "/app/.venv/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 753, in streamable_http_client
+    |     yield read_stream, write_stream
+    |   File "/checks/verify_retrieval_mcp.py", line 45, in main
+    |     async with ClientSession(*streams, read_timeout_seconds=600) as session:
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/app/.venv/lib/python3.12/site-packages/mcp/client/session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/app/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "/checks/verify_retrieval_mcp.py", line 86, in main
+      |     raise AssertionError('Expected source is not first: '+case['id'])
+      | AssertionError: Expected source is not first: H02
+      +------------------------------------

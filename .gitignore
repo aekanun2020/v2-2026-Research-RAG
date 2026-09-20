@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.egg-info/
+dist/
+.data/
+.coverage
+.env
+.models/
+:memory:.ses
+
+# Research files and credentials stay on the local machine.
+.DS_Store
+.env.*
+!.env.example
+*.pdf
+*.sqlite*
+*.db
+*.db-*
+*.onnx
+*.safetensors
+*.pem
+*.key
+.http-token
+.review-token
+inbox/
+backups/
+exports/

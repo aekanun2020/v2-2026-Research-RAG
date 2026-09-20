@@ -1,0 +1,28 @@
+INFO:     Started server process [97235]
+INFO:     Waiting for application startup.
+StreamableHTTP session manager started
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18776 (Press CTRL+C to quit)
+INFO:     127.0.0.1:55291 - "POST /mcp HTTP/1.1" 200 OK
+Terminating session: None
+INFO:     127.0.0.1:55292 - "POST /mcp HTTP/1.1" 202 Accepted
+Terminating session: None
+INFO:     127.0.0.1:55293 - "POST /mcp HTTP/1.1" 200 OK
+Terminating session: None
+INFO:     127.0.0.1:55294 - "POST /mcp HTTP/1.1" 200 OK
+Terminating session: None
+INFO:     127.0.0.1:55295 - "POST /mcp HTTP/1.1" 200 OK
+Embedding model validated: intfloat/multilingual-e5-base@d128750597153bb5987e10b1c3493a34e5a4502a; provider=CPUExecutionProvider
+Reranker validated: onnx-community/gte-multilingual-reranker-base@ee64367e35a2db0da46bb6497e13a18f8bd585cb; CPUExecutionProvider
+Terminating session: None
+INFO:     127.0.0.1:55298 - "POST /mcp HTTP/1.1" 200 OK
+Terminating session: None
+INFO:     127.0.0.1:55299 - "POST /mcp HTTP/1.1" 200 OK
+Terminating session: None
+INFO:     127.0.0.1:55300 - "POST /mcp HTTP/1.1" 200 OK
+Terminating session: None
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+StreamableHTTP session manager shutting down
+INFO:     Application shutdown complete.
+INFO:     Finished server process [97235]

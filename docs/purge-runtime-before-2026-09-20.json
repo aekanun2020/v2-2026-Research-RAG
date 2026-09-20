@@ -1,0 +1,535 @@
+{
+  "verified_at": "2026-09-20T14:18:16.621506+00:00",
+  "endpoint": "http://127.0.0.1:8776/mcp",
+  "protocol_version": "2025-11-25",
+  "server_version": "0.2.3",
+  "tool_count": 33,
+  "tools": [
+    "workspace_status",
+    "preview_inbox_document",
+    "start_project",
+    "import_document",
+    "search_literature",
+    "retrieve_evidence",
+    "read_source_page",
+    "list_documents",
+    "list_chunks",
+    "read_chunk",
+    "get_chunk_context",
+    "inspect_document_chunks",
+    "rechunk_document",
+    "activate_chunk_set",
+    "set_chunk_status",
+    "find_evidence_usage",
+    "search_index_status",
+    "rebuild_search_index",
+    "explore_topics",
+    "map_research_gaps",
+    "formulate_question",
+    "design_study",
+    "track_execution",
+    "interpret_results",
+    "summarize_dataset",
+    "draft_manuscript",
+    "prepare_submission",
+    "save_artifact",
+    "read_artifact",
+    "export_manuscript",
+    "backup_workspace",
+    "preview_workspace_cleanup",
+    "cleanup_workspace"
+  ],
+  "workspace_unchanged": true,
+  "cleanup_executed": false,
+  "workspace_revision": 10,
+  "source_count": 10,
+  "inbox_count": 221,
+  "search_index": {
+    "model": {
+      "model_id": "intfloat/multilingual-e5-base",
+      "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+      "dimensions": 768,
+      "provider": "CPUExecutionProvider",
+      "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+      "assets_present": true,
+      "external_inference": false
+    },
+    "total_chunks": 547,
+    "indexed_chunks": 547,
+    "pending_or_invalid_chunks": 0,
+    "storage": "SQLite float32 vectors; exact CPU cosine scan",
+    "default_mode": "hybrid",
+    "ready": true
+  },
+  "plans": [
+    {
+      "scope": "search_index",
+      "revision": 10,
+      "workspace": "/data",
+      "delete_counts": {
+        "embeddings": 547,
+        "chunk_metadata": 0,
+        "chunk_sets": 0,
+        "chunks": 0,
+        "documents": 0,
+        "versions": 0,
+        "artifacts": 0,
+        "searches": 0,
+        "events": 0
+      },
+      "clears_project": false,
+      "retires_mutation_receipts": 10,
+      "source_ids": [
+        "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+        "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+        "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+        "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+        "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+        "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+        "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+        "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+        "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      ],
+      "artifact_ids": [],
+      "source_files_retained": 10,
+      "preserves": [
+        "inbox files",
+        "imported original files in sources/",
+        "exports",
+        "existing backups",
+        "authentication tokens",
+        "embedding model files"
+      ],
+      "backup_required": true,
+      "can_execute": true,
+      "blockers": [],
+      "limitation": "Clears database records only. Original files are retained; this is not secure erasure. Index cleanup requires rebuild_search_index before semantic/hybrid retrieval. Cleanup by itself does not improve semantic relevance.",
+      "plan_hash": "52a47540e25374e74e79d11dec5a50190dbc9cead71cbaac096d3f861a60585b"
+    },
+    {
+      "scope": "documents",
+      "revision": 10,
+      "workspace": "/data",
+      "delete_counts": {
+        "embeddings": 547,
+        "chunk_metadata": 547,
+        "chunk_sets": 10,
+        "chunks": 547,
+        "documents": 10,
+        "versions": 0,
+        "artifacts": 0,
+        "searches": 0,
+        "events": 0
+      },
+      "clears_project": false,
+      "retires_mutation_receipts": 10,
+      "source_ids": [
+        "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+        "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+        "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+        "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+        "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+        "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+        "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+        "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+        "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      ],
+      "artifact_ids": [],
+      "source_files_retained": 10,
+      "preserves": [
+        "inbox files",
+        "imported original files in sources/",
+        "exports",
+        "existing backups",
+        "authentication tokens",
+        "embedding model files"
+      ],
+      "backup_required": true,
+      "can_execute": true,
+      "blockers": [],
+      "limitation": "Clears database records only. Original files are retained; this is not secure erasure. Index cleanup requires rebuild_search_index before semantic/hybrid retrieval. Cleanup by itself does not improve semantic relevance.",
+      "plan_hash": "4c82087d01ee18f7fa7e3f7d910573ecc7ebd97eb022adc827fe4bd53bb1e792"
+    },
+    {
+      "scope": "workspace",
+      "revision": 10,
+      "workspace": "/data",
+      "delete_counts": {
+        "embeddings": 547,
+        "chunk_metadata": 547,
+        "chunk_sets": 10,
+        "chunks": 547,
+        "documents": 10,
+        "versions": 0,
+        "artifacts": 0,
+        "searches": 0,
+        "events": 10
+      },
+      "clears_project": true,
+      "retires_mutation_receipts": 10,
+      "source_ids": [
+        "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+        "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+        "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+        "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+        "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+        "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+        "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+        "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+        "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      ],
+      "artifact_ids": [],
+      "source_files_retained": 10,
+      "preserves": [
+        "inbox files",
+        "imported original files in sources/",
+        "exports",
+        "existing backups",
+        "authentication tokens",
+        "embedding model files"
+      ],
+      "backup_required": true,
+      "can_execute": true,
+      "blockers": [],
+      "limitation": "Clears database records only. Original files are retained; this is not secure erasure. Index cleanup requires rebuild_search_index before semantic/hybrid retrieval. Cleanup by itself does not improve semantic relevance.",
+      "plan_hash": "18e72c4acc3980d0fa362f779df3349c2caa687fd14ef32b14b995b4fe46d4bc"
+    },
+    {
+      "scope": "all_except_inbox",
+      "revision": 10,
+      "workspace": "/data",
+      "delete_counts": {
+        "embeddings": 547,
+        "chunk_metadata": 547,
+        "chunk_sets": 10,
+        "chunks": 547,
+        "documents": 10,
+        "versions": 0,
+        "artifacts": 0,
+        "searches": 0,
+        "events": 10,
+        "requests": 10
+      },
+      "clears_project": true,
+      "retires_mutation_receipts": 0,
+      "source_ids": [
+        "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+        "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+        "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+        "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+        "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+        "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+        "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+        "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+        "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      ],
+      "artifact_ids": [],
+      "source_files_retained": 0,
+      "preserves": [
+        "all inbox files",
+        "server authentication token",
+        "database schema and cleanup receipt"
+      ],
+      "backup_required": false,
+      "can_execute": true,
+      "blockers": [],
+      "limitation": "Permanently deletes all workspace research records and data files outside inbox, including source copies, exports, backups and import-runs. No new backup. Server code/configuration and external model assets are outside this data workspace. Not forensic secure erasure. A partial filesystem failure remains resumable and blocks new writes.",
+      "filesystem": {
+        "entries": [
+          {
+            "path": "backups",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/45c9ba081c9e48e78b2bfcfcb31110c2",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/45c9ba081c9e48e78b2bfcfcb31110c2/manifest.json",
+            "kind": "file",
+            "bytes": 88,
+            "sha256": "12ba18032a32f245bb1015823462f25beeda7047ba6d56203338030bf5db55e7"
+          },
+          {
+            "path": "backups/45c9ba081c9e48e78b2bfcfcb31110c2/research.sqlite",
+            "kind": "file",
+            "bytes": 98304,
+            "sha256": "92802e373de0046e8ac92a4693a5722ec52ceeff5d14188555c43988a4ea686a"
+          },
+          {
+            "path": "backups/badf25526ec444d194e80634d256a3cb",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/badf25526ec444d194e80634d256a3cb/manifest.json",
+            "kind": "file",
+            "bytes": 88,
+            "sha256": "cf156c400d2c6c3ad0772ba5986fcb1c6cf7d7144fe8716de3107a532c981c83"
+          },
+          {
+            "path": "backups/badf25526ec444d194e80634d256a3cb/research.sqlite",
+            "kind": "file",
+            "bytes": 65536,
+            "sha256": "6eddd343e23b269fee3b4a4d7a2a1ca232a4baa2254dc7d0cec574e7d15178de"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/manifest.json",
+            "kind": "file",
+            "bytes": 1658,
+            "sha256": "1633b26c1173f1a903a11d4949ca14084434bd441b2a1f5d5e4668f158cb475f"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/research.sqlite",
+            "kind": "file",
+            "bytes": 3969024,
+            "sha256": "2b6aecd50a708678eee7e459d0fd499996511cd0c0138876e240a8ed4fdafe6e"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf",
+            "kind": "file",
+            "bytes": 364541,
+            "sha256": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e/original.pdf",
+            "kind": "file",
+            "bytes": 544288,
+            "sha256": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90/original.pdf",
+            "kind": "file",
+            "bytes": 2891435,
+            "sha256": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1/original.pdf",
+            "kind": "file",
+            "bytes": 454000,
+            "sha256": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a/original.pdf",
+            "kind": "file",
+            "bytes": 106630,
+            "sha256": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b/original.pdf",
+            "kind": "file",
+            "bytes": 235373,
+            "sha256": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf",
+            "kind": "file",
+            "bytes": 3506302,
+            "sha256": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632/original.pdf",
+            "kind": "file",
+            "bytes": 425880,
+            "sha256": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d/original.pdf",
+            "kind": "file",
+            "bytes": 391109,
+            "sha256": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "kind": "directory"
+          },
+          {
+            "path": "backups/ca9b398d18464783bbac95d69cc9c207/sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31/original.pdf",
+            "kind": "file",
+            "bytes": 584641,
+            "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+          },
+          {
+            "path": "exports",
+            "kind": "directory"
+          },
+          {
+            "path": "import-runs",
+            "kind": "directory"
+          },
+          {
+            "path": "import-runs/20260920T122717Z-cited",
+            "kind": "directory"
+          },
+          {
+            "path": "import-runs/20260920T122717Z-cited/preflight.json",
+            "kind": "file",
+            "bytes": 936500,
+            "sha256": "dddca0619798efa1e4a0414a776c987879b0a6b96d3f5d3198df9d672f5284e4"
+          },
+          {
+            "path": "sources",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528/original.pdf",
+            "kind": "file",
+            "bytes": 364541,
+            "sha256": "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528"
+          },
+          {
+            "path": "sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e/original.pdf",
+            "kind": "file",
+            "bytes": 544288,
+            "sha256": "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e"
+          },
+          {
+            "path": "sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90/original.pdf",
+            "kind": "file",
+            "bytes": 2891435,
+            "sha256": "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90"
+          },
+          {
+            "path": "sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1/original.pdf",
+            "kind": "file",
+            "bytes": 454000,
+            "sha256": "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1"
+          },
+          {
+            "path": "sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a/original.pdf",
+            "kind": "file",
+            "bytes": 106630,
+            "sha256": "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a"
+          },
+          {
+            "path": "sources/8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b/original.pdf",
+            "kind": "file",
+            "bytes": 235373,
+            "sha256": "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b"
+          },
+          {
+            "path": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01/original.pdf",
+            "kind": "file",
+            "bytes": 3506302,
+            "sha256": "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01"
+          },
+          {
+            "path": "sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632/original.pdf",
+            "kind": "file",
+            "bytes": 425880,
+            "sha256": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+          },
+          {
+            "path": "sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d/original.pdf",
+            "kind": "file",
+            "bytes": 391109,
+            "sha256": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d"
+          },
+          {
+            "path": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "kind": "directory"
+          },
+          {
+            "path": "sources/eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31/original.pdf",
+            "kind": "file",
+            "bytes": 584641,
+            "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+          }
+        ],
+        "files": 27,
+        "bytes": 24079596,
+        "sha256": "63af90fb7fa3da0e4beee23a4fa446076fc67c321c379bf15c8a79ba5fa74786"
+      },
+      "inbox": {
+        "files": 221,
+        "bytes": 806172536,
+        "sha256": "7176550ba685da103b8ef588fab177fb995ebbc8c2844ae5d59e285017ccc0c7"
+      },
+      "plan_hash": "8f654856582f3beb9d4ac53a3d15661d0b043d92919c4fd9faae8a1c23377564"
+    }
+  ]
+}

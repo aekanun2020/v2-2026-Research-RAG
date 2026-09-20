@@ -1,0 +1,64 @@
+{
+  "source": "actual pre-0.2.3 production backup ca9b398d18464783bbac95d69cc9c207, mounted read-only",
+  "before": {
+    "schema": 3,
+    "table_hashes": {
+      "artifacts": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "chunk_metadata": "862a0da46b781224ac15529cc11d5017ee30f281bc9d5950bba9e51778ce5bb2",
+      "chunk_sets": "f58f0b8675d5ba8ac674c7e51f14cfd0b25e8e21c36647832b2449b106205dea",
+      "chunks": "eade9e474fa913e09574f7d07f65e6b3de49a9afc5e1786c2e0eeb5d1b20dec0",
+      "documents": "1c76249b865d31e76e522a7280700be980799a536c1517b9994b979c73985564",
+      "embeddings": "5d52ed9488348e19b50f2c449e9939b2be8221b0d3860e93b9e787c7535a4e5b",
+      "events": "5bb912bde5726a8dae61b5122d489100239f8327b83407d03deb7730a3b9d9fa",
+      "meta": "8d4aac6c4f21b294a85bc682b8974ac40e8f9cd8413643b6a794bfe1af67f417",
+      "requests": "429467def84c7af34d3e68472553de7270fd56547e7e4f65d749b2b03c75ac39",
+      "searches": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "versions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "table_counts": {
+      "artifacts": 0,
+      "chunk_metadata": 547,
+      "chunk_sets": 10,
+      "chunks": 547,
+      "documents": 10,
+      "embeddings": 547,
+      "events": 10,
+      "meta": 1,
+      "requests": 10,
+      "searches": 0,
+      "versions": 0
+    }
+  },
+  "after": {
+    "schema": 4,
+    "table_hashes": {
+      "artifacts": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "chunk_metadata": "862a0da46b781224ac15529cc11d5017ee30f281bc9d5950bba9e51778ce5bb2",
+      "chunk_sets": "f58f0b8675d5ba8ac674c7e51f14cfd0b25e8e21c36647832b2449b106205dea",
+      "chunks": "eade9e474fa913e09574f7d07f65e6b3de49a9afc5e1786c2e0eeb5d1b20dec0",
+      "documents": "1c76249b865d31e76e522a7280700be980799a536c1517b9994b979c73985564",
+      "embeddings": "5d52ed9488348e19b50f2c449e9939b2be8221b0d3860e93b9e787c7535a4e5b",
+      "events": "5bb912bde5726a8dae61b5122d489100239f8327b83407d03deb7730a3b9d9fa",
+      "meta": "8d4aac6c4f21b294a85bc682b8974ac40e8f9cd8413643b6a794bfe1af67f417",
+      "requests": "429467def84c7af34d3e68472553de7270fd56547e7e4f65d749b2b03c75ac39",
+      "searches": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "versions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "table_counts": {
+      "artifacts": 0,
+      "chunk_metadata": 547,
+      "chunk_sets": 10,
+      "chunks": 547,
+      "documents": 10,
+      "embeddings": 547,
+      "events": 10,
+      "meta": 1,
+      "requests": 10,
+      "searches": 0,
+      "versions": 0
+    }
+  },
+  "all_existing_rows_preserved": true,
+  "revision": 10,
+  "production_modified": false
+}

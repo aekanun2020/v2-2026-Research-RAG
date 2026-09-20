@@ -1,0 +1,66 @@
+{
+  "verified_at": "2026-09-20T12:47:21.832265+00:00",
+  "services": [
+    {
+      "name": "codex-research-rag-mcp-1",
+      "image": "codex-research-rag-mcp:0.2.1",
+      "image_id": "sha256:cfe4dcbb73f228392fa2f9900a482c59383d1239e6041320fd60d9437b20faee",
+      "container_id": "c5aaf369ca734c0ed976b44a8ecb9b27a167ed18128ab0afb0c715cf15b01cc5",
+      "state": "running",
+      "health": "healthy",
+      "mcp_healthcheck": {
+        "endpoint": "http://127.0.0.1:8776/mcp",
+        "initialize": true,
+        "protocol_version": "2025-11-25",
+        "tool_count": 31,
+        "tools": [
+          "workspace_status",
+          "preview_inbox_document",
+          "start_project",
+          "import_document",
+          "search_literature",
+          "retrieve_evidence",
+          "read_source_page",
+          "list_documents",
+          "list_chunks",
+          "read_chunk",
+          "get_chunk_context",
+          "inspect_document_chunks",
+          "rechunk_document",
+          "activate_chunk_set",
+          "set_chunk_status",
+          "find_evidence_usage",
+          "search_index_status",
+          "rebuild_search_index",
+          "explore_topics",
+          "map_research_gaps",
+          "formulate_question",
+          "design_study",
+          "track_execution",
+          "interpret_results",
+          "summarize_dataset",
+          "draft_manuscript",
+          "prepare_submission",
+          "save_artifact",
+          "read_artifact",
+          "export_manuscript",
+          "backup_workspace"
+        ],
+        "workspace_revision": 0,
+        "external_model_calls": false
+      }
+    },
+    {
+      "name": "codex-research-rag-review-1",
+      "image": "codex-research-rag-mcp:0.2.1",
+      "image_id": "sha256:cfe4dcbb73f228392fa2f9900a482c59383d1239e6041320fd60d9437b20faee",
+      "container_id": "ffde1e882d005f2084488e07269bb8de3ebbfe21f5e4d10dfbee902564be9854",
+      "state": "running",
+      "health": "healthy"
+    }
+  ],
+  "unrelated_containers_preserved": true,
+  "unrelated_container_count": 17,
+  "before_backup": "/data/backups/45c9ba081c9e48e78b2bfcfcb31110c2",
+  "user_papers_imported_by_deployment": 0
+}

@@ -1,0 +1,82 @@
+{
+  "assessor": "Codex; no external judge",
+  "experiments": [
+    {
+      "id": "gte-int8-rerank",
+      "change": "Rerank existing E5 top 50 with gte-multilingual-reranker-base; same corpus and chunks; no score filter",
+      "original_case": "T04",
+      "before": "Expected source absent from top 3; direct passage rank 6",
+      "after": "Top 3 from machine translation and summarization; none explains contextual word representations",
+      "judgments": [
+        "irrelevant",
+        "irrelevant",
+        "irrelevant"
+      ],
+      "decision": "rejected; candidate server stopped; never deployed",
+      "evidence": "quality-rerank-focused-2026-09-20.json",
+      "inspection": "Pair format matches original model card and pinned tokenizer post-processor. No schema or non-finite-output error. No demonstrated quality improvement; do not stack another ranking change on this model."
+    },
+    {
+      "id": "bge-int8-rerank",
+      "change": "Replace only reranker model with pinned BGE int8; same E5 top 50, token-pair recipe, corpus and chunks; no filter",
+      "original_case": "T04",
+      "before": "GTE top 3 all irrelevant; original E5 direct passage rank 6",
+      "after": "Direct contextual word representation explanation from ELMo page 1 now rank 1; original rank 6",
+      "judgments": [
+        "direct",
+        "partial",
+        "direct"
+      ],
+      "decision": "BGE reranking improves recovery: direct passages now present for T02/T04/T09; retain for further testing. Original 12-case outputs preserved. Negative N02 remains false positive.",
+      "evidence": "quality-bge-focused-2026-09-20.json"
+    },
+    {
+      "id": "title-context",
+      "symptom": "N02 comet orbit query ranks Adam page 14 math proof at 0.156318; above direct T04 (0.116108) and T09 (0.056355). One score threshold cannot separate them.",
+      "before_evidence": "quality-bge-regression-2026-09-20.json",
+      "trace": "reranking.rerank passes row text only; verified paper title is available but discarded from the scoring input. False-positive hits are mathematical extracts lacking topic context.",
+      "hypothesis": "Providing actual paper title with passage may reduce domain ambiguity; this is an experiment, not a proven explanation of model internals.",
+      "one_change": "Prepend Document title and Passage labels to reranker input; preserve original text, source IDs, citations, E5 candidates and model.",
+      "acceptance": "N02 maximum score falls below 0.01; T04 remains directly relevant top 1. Then rerun related/full regression before selecting a filter.",
+      "decision": "Rejected: N02 score increased to 0.253308 and T04 direct explanation fell from first to second; revert title prefix.",
+      "after_evidence": "quality-title-focused-2026-09-20.json"
+    },
+    {
+      "id": "document-overview-score",
+      "symptom": "Out-of-domain comet query receives high pairwise scores on extracted mathematical fragments. Title prefix failed and was reverted.",
+      "before_evidence": "quality-bge-regression-2026-09-20.json",
+      "hypothesis": "Score original first-page text once per candidate source as an independent document-topic gate; no generated summary or source/query-specific rule.",
+      "one_change": "Add first-page relevance score to MCP retrieval results; do not yet change passage scores/ranking or filter.",
+      "acceptance": "Original N02 maximum document score must be below every topical top-hit document score in regression set, then choose a conservative threshold before held-out evaluation.",
+      "decision": "Observed separation on all regression top-hit document scores. Proceed to gate experiment; original N02 must return empty through MCP before further testing.",
+      "after_evidence": "quality-document-calibration-2026-09-20.json"
+    },
+    {
+      "id": "document-gate",
+      "one_change": "Filter reranked candidates if original first-page score < 0.002; leave chunk scores/order unchanged. No pairwise score filter by default.",
+      "calibration": "Among recorded regression top-3 hits, largest negative-control document score=0.0008332803156279088; smallest target-document score=0.007571090628997473. Candidate-wide scores will be exposed and original controls rerun.",
+      "threshold": 0.002,
+      "held_out_status": "not yet queried; freeze this threshold before any held-out run",
+      "acceptance": "N02 and N01 empty; T04 same direct first passage; all topical questions retain direct evidence in top 3; then untouched held-out queries.",
+      "decision": "Rejected as default after held-out H02 false negative. Do not tune threshold on held-out data. Restore unfiltered reranking as default; any score filter must be explicitly selected.",
+      "after_evidence": "quality-container-evaluation-2026-09-20.json",
+      "counterexample": "H02 Adam first-page score 0.0014672253 was rejected by 0.002. N02 negative maximum score 0.0015655027 is higher, so a single document cutoff cannot separate them."
+    },
+    {
+      "id": "workflow-client-timeout",
+      "symptom": "Installed-container all-eight-stage MCP test timed out during import_document at tests/test_http.py:85. Semantic/chunk MCP test already passed.",
+      "evidence": "quality-container-workflow-before-2026-09-20.txt",
+      "root_cause": "MCP ClientSession used read_timeout_seconds=30 while the underlying HTTP client already allowed read=300. CPU import exceeded the shorter request timeout; traceback originates in SDK REQUEST_TIMEOUT, not a server validation error.",
+      "one_change": "Change only that workflow test client request timeout from 30 to 300, aligning with its existing HTTP read budget. Keep real import/server/models/assertions unchanged.",
+      "validation": "Rerun the exact failed all-eight-stage MCP integration before any further client changes.",
+      "result": "Exact workflow rerun passed, 1 case in 61.706 seconds; server unchanged."
+    },
+    {
+      "id": "withdraw-default-gate",
+      "one_change": "Restore min_document_score=0 as default. Keep BGE model, candidate selection, chunk scores and first-page diagnostic scores identical. No new threshold is fitted.",
+      "evidence": "quality-h02-without-gate-2026-09-20.json",
+      "result": "H02 immediately recovered direct Adam explanation at rank 1 through MCP. Final-image default (no override) separately passed in quality-final-default-2026-09-20.json.",
+      "remaining_limitation": "Out-of-corpus queries return irrelevant candidates. Optional numeric filters are explicit controls only, not a proven abstention policy."
+    }
+  ]
+}

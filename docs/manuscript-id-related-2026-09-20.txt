@@ -1,0 +1,9 @@
+test_actual_review_and_reviewed_export (test_http.HumanReviewIntegration.test_actual_review_and_reviewed_export) ... ok
+test_real_streamable_http_all_eight_stages_and_resume (test_http.HTTPIntegration.test_real_streamable_http_all_eight_stages_and_resume) ... Executing <Task pending name='Task-1' coro=<HTTPIntegration.asyncSetUp() running at /app/tests/test_http.py:42> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(7, handle=<Handle BaseS...events.py:317>)(), Task.task_wakeup()] created at /usr/local/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /usr/local/lib/python3.12/asyncio/base_events.py:181] created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.637 seconds
+Executing <Task finished name='Task-175' coro=<HTTPIntegration.asyncTearDown() done, defined at /app/tests/test_http.py:51> result=None created at /usr/local/lib/python3.12/asyncio/runners.py:100> took 0.127 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 4.649s
+
+OK

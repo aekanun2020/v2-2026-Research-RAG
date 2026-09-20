@@ -1,0 +1,68 @@
+[
+  {
+    "query": "การประมาณค่าแบบเบย์สำหรับข้อมูลที่มีโครงสร้างหลายระดับ",
+    "changed_variable": "NFKC normalization of passage embedding input only; original citations unchanged",
+    "hits": [
+      {
+        "id": "5829c6a255fce8b78bcc44c47a122d28a22cea15e5d724235435a452a114da71",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 6,
+        "start": 1889,
+        "end": 2660,
+        "text": "e internal function\nthat handles censored data, andcensored is the variable that contains information on the\ncensoring. Other available functions in this context areweights and disp to allow diﬀerent\nsorts of weighting,se to specify known standard errors primarily for meta-analysis,trunc to\ndeﬁne truncation boundaries,trials for binomial models3, and cat to specify the number\nof categories for ordinal models.\nEverything on the right side of~ speciﬁes predictors. Here, the syntax exactly matches that\nof lme4. For both, population-level and group-level terms, the+ is used to separate diﬀerent\n3In functions such asglm or glmer, the binomial response is typically passed ascbind(success, failure).\nIn brms, the equivalent syntax issuccess | trials(success + failure).",
+        "score": 0.8305660486221313
+      },
+      {
+        "id": "fc66b860e3a5279e5471a411e6ff709bfe20d0eb1de2c76b0cffff8bb1ce3305",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 24,
+        "start": 1906,
+        "end": 2538,
+        "text": "doi:10.1016/j.jmva.2009.04.008.\nLunn DJ, Thomas A, Best N, Spiegelhalter D (2000). “WinBUGS – A Bayesian Modelling\nFramework: Concepts, Structure, and Extensibility.” Statistics and Computing, 10(4),\n325–337.doi:10.1023/a:1008929526011.\nMasters GN (1982). “A Rasch Model for Partial Credit Scoring.”Psychometrika, 47(2),\n149–174.doi:10.1007/bf02296272.\nMcElreath R (2016).rethinking: Statistical Rethinking Course and Book Package. R package\nversion 1.59, URLhttps://github.com/rmcelreath/rethinking.\nMcGilchrist CA, Aisbett CW (1991). “Regression with Frailty in Survival Analysis.”Biomet-\nrics, 47(2), 461–466.doi:10.2307/2532138.",
+        "score": 0.829879641532898
+      },
+      {
+        "id": "fec87a6ed0184bbc7a261e33c7d623ca5edf46e24705722a097cadb4632fa21c",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 24,
+        "start": 939,
+        "end": 2106,
+        "text": "e Carlo Sampling Methods Using Markov Chains and Their\nApplications.”Biometrika, 57(1), 97–109.doi:10.2307/2334940.\nHoﬀman MD, Gelman A (2014). “The No-U-Turn Sampler: Adaptively Setting Path Lengths\nin Hamiltonian Monte Carlo.”Journal of Machine Learning Research, 15(1), 1593–1623.\nIonides EL (2008). “Truncated Importance Sampling.”Journal of Computational and Graph-\nical Statistics, 17(2), 295–311.doi:10.1198/106186008x320456.\nJuárez MA, Steel MF (2010). “Model-Based Clustering of Non-Gaussian Panel Data Based\non Skew-t Distributions.”Journal of Business & Economic Statistics, 28(1), 52–66.doi:\n10.1198/jbes.2009.07145.\nKassRE,NatarajanR(2006). “ADefaultConjugatePriorforVarianceComponentsinGener-\nalized Linear Mixed Models.”Bayesian Analysis, 1(3), 535–542.doi:10.1214/06-ba117b.\nLewandowski D, Kurowicka D, Joe H (2009). “Generating Random Correlation Matrices\nBased on Vines and Extended Onion Method.”Journal of Multivariate Analysis, 100(9),\n1989–2001.doi:10.1016/j.jmva.2009.04.008.\nLunn DJ, Thomas A, Best N, Spiegelhalter D (2000). “WinBUGS – A Bayesian Modelling\nFramework: Concepts, Structure, and Extensibility.” Statistics and Computing, 10(4),\n",
+        "score": 0.8252165913581848
+      }
+    ]
+  },
+  {
+    "query": "How are observations grouped within schools represented?",
+    "changed_variable": "NFKC normalization of passage embedding input only; original citations unchanged",
+    "hits": [
+      {
+        "id": "30ffd1082fe92efe7f96c615121cf3e2ec9fe1b40c3bd6ad7f85db392f1f9da8",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 8,
+        "start": 973,
+        "end": 2145,
+        "text": "t al.(2009, 2010).\nEach group-level eﬀect of each grouping factor has a standard deviation parameter, which\nis restricted to be non-negative and, by default, has a half Student-t prior with 3 degrees\nof freedom and a scale parameter that is minimally10. For non-ordinal models, brms tries\nto evaluate if the scale is large enough to be considered only weakly informative for the\nmodel at hand by comparing it with the standard deviation of the response after applying\nthe link function. If this is not the case, it will increase the scale based on the aforemen-\ntioned standard deviation.7 Stan implicitly deﬁnes a half Student-t prior by using a Student-t\nprior on a restricted parameter (Stan Development Team 2017b). For other reasonable pri-\nors on standard deviations see Gelman (2006). Inbrms, standard deviation parameters are\nnamed assd_<group>_<coef> so thatsd_patient_Intercept and sd_patient_age are the\nparameter names in the example. If desired, it is possible to set a diﬀerent prior on each pa-\nrameter, but statements such asset_prior(\"student_t(3,0,5)\", class = \"sd\", group\n= \"patient\") or evenset_prior(\"student_t(3,0,5)\", class = \"sd\") may also be used\n",
+        "score": 0.785652756690979
+      },
+      {
+        "id": "e03364690a3ac44776efbd6cd817b40d74a4662060bca0d23f7e03602c194053",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 8,
+        "start": 1945,
+        "end": 3076,
+        "text": "e to set a diﬀerent prior on each pa-\nrameter, but statements such asset_prior(\"student_t(3,0,5)\", class = \"sd\", group\n= \"patient\") or evenset_prior(\"student_t(3,0,5)\", class = \"sd\") may also be used\nand are again faster because of vectorization.\nIf there is more than one group-level eﬀect per grouping factor, correlations between group-\nlevel eﬀects are estimated. As mentioned in Section 2, the LKJ-correlation prior with pa-\nrameter ζ >0 (Lewandowski et al. 2009) is used for this purpose. In brms, this prior is\nabbreviated as\"lkj(zeta)\" and correlation matrix parameters are named ascor_<group>,\n(e.g., cor_patient), so thatset_prior(\"lkj(2)\", class = \"cor\", group = \"patient\")\nis a valid statement. To set the same prior on every correlation matrix in the model,\nset_prior(\"lkj(2)\", class = \"cor\") is also allowed, but does not come with any eﬃ-\nciency increases.\nOther model parameters such as the residual standard deviationsigma in normal models\nor the shape in Gamma models have their priors deﬁned in the same way, where each of\nthem is treated as having its own parameter class. A complete overview on possible prior\n",
+        "score": 0.7846533060073853
+      },
+      {
+        "id": "d2bb5d29fd5f65184ac30addcff7ca7f6f4159ffde6e14b70f4efa49f1ff8e7c",
+        "source_id": "35757e85ffb002fcb6c5dc34fec0daa6a84302d552e7555f2551838c4599fffb",
+        "page_index": 14,
+        "start": 2853,
+        "end": 3162,
+        "text": "ons known to us are the packagesordinal (Christensen 2015) andVGAM (Yee 2010). The former\nsupports only cumulative models but with diﬀerent modeling option for the thresholds. The latter supports all\nfour ordinal families also implemented inbrms as well as category-speciﬁc eﬀects but no group-speciﬁc eﬀects.",
+        "score": 0.7835612893104553
+      }
+    ]
+  }
+]

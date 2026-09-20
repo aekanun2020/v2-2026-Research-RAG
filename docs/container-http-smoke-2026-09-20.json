@@ -1,0 +1,29 @@
+{
+  "endpoint": "http://127.0.0.1:8776/mcp",
+  "initialize": true,
+  "protocol_version": "2025-11-25",
+  "tool_count": 19,
+  "tools": [
+    "workspace_status",
+    "start_project",
+    "import_document",
+    "search_literature",
+    "retrieve_evidence",
+    "read_source_page",
+    "explore_topics",
+    "map_research_gaps",
+    "formulate_question",
+    "design_study",
+    "track_execution",
+    "interpret_results",
+    "summarize_dataset",
+    "draft_manuscript",
+    "prepare_submission",
+    "save_artifact",
+    "read_artifact",
+    "export_manuscript",
+    "backup_workspace"
+  ],
+  "workspace_revision": 0,
+  "external_model_calls": false
+}

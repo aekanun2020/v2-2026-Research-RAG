@@ -1,0 +1,486 @@
+{
+  "started_at": "2026-09-20T15:23:07.309099+00:00",
+  "endpoint": "http://127.0.0.1:18876/mcp",
+  "protocol": "real MCP Streamable HTTP, official SDK",
+  "semantic_assessor": "not assessed by this script",
+  "cases": [
+    {
+      "case": {
+        "id": "T02",
+        "query": "ปรับอัตราการเรียนรู้แยกสำหรับแต่ละพารามิเตอร์โดยใช้ค่าเฉลี่ยของความชันและความชันกำลังสองได้อย่างไร",
+        "expected_filename": "arxiv-1412.6980.pdf",
+        "split": "regression",
+        "expected_source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31"
+      },
+      "arguments": {
+        "query": "ปรับอัตราการเรียนรู้แยกสำหรับแต่ละพารามิเตอร์โดยใช้ค่าเฉลี่ยของความชันและความชันกำลังสองได้อย่างไร",
+        "mode": "semantic",
+        "limit": 3,
+        "roles": [
+          "literature"
+        ]
+      },
+      "response": {
+        "query": "ปรับอัตราการเรียนรู้แยกสำหรับแต่ละพารามิเตอร์โดยใช้ค่าเฉลี่ยของความชันและความชันกำลังสองได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity; BGE pairwise reranking and first-page relevance gate",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "reranking": {
+          "enabled": true,
+          "model": {
+            "model_id": "onnx-community/bge-reranker-v2-m3-ONNX",
+            "original_model_id": "BAAI/bge-reranker-v2-m3",
+            "model_revision": "6f5ff65298512715a1e669753bc754d2bc8f367b",
+            "fingerprint": "4348295bfed7916115db7a5112f4b45de5f5d10b9f527e32bcea795c3e3751e5",
+            "recipe": "query-passage-pair:512-only-second-stride64:max-window-logit:sigmoid:int8:first-page-document-score:v1",
+            "provider": "CPUExecutionProvider",
+            "external_inference": false,
+            "assets_present": true
+          },
+          "candidate_limit": 50,
+          "candidates_scored": 50,
+          "min_score": null,
+          "rejected_candidates": 32,
+          "document_gate": {
+            "enabled": true,
+            "min_score": 0.002,
+            "basis": "original extracted first page; max score across token windows",
+            "scores_by_source": {
+              "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31": 0.0047348677857811956,
+              "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632": 0.0002182066834456229,
+              "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e": 0.0014362807890396958,
+              "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d": 0.00048644594107861554,
+              "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a": 0.0017420994791713304,
+              "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b": 0.00038248840366684084,
+              "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01": 0.00038065743410648,
+              "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90": 0.0012558175328202482
+            }
+          },
+          "score_meaning": "Sigmoid of pairwise ranking logit; not calibrated answer confidence"
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "abea57dafe3bba309a137871d73667973f18650688c7f4f7ab216a176c48fbb1",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 0,
+            "start": 2899,
+            "end": 4091,
+            "text": "zation methods are ill-suited, and discussion in this paper will be\nrestricted to ﬁrst-order methods.\nWe propose Adam, a method for efﬁcient stochastic optimization that only requires ﬁrst-order gra-\ndients with little memory requirement. The method computes individual adaptive learning rates for\ndifferent parameters from estimates of ﬁrst and second moments of the gradients; the name Adam\nis derived from adaptive moment estimation. Our method is designed to combine the advantages\nof two recently popular methods: AdaGrad (Duchi et al., 2011), which works well with sparse gra-\ndients, and RMSProp (Tieleman & Hinton, 2012), which works well in on-line and non-stationary\nsettings; important connections to these and other stochastic optimization methods are clariﬁed in\nsection 5. Some of Adam’s advantages are that the magnitudes of parameter updates are invariant to\nrescaling of the gradient, its stepsizes are approximately bounded by the stepsize hyperparameter,\nit does not require a stationary objective, it works with sparse gradients, and it naturally performs a\nform of step size annealing.\n∗Equal contribution. Author ordering determined by coin ﬂip over a Google Hangout.\n1\n",
+            "chunk_set_id": "cs-d85e19b88683441bbff1d1b722ab2b7a",
+            "document_id": "doc-9a5a10be317e4f948dab1218a8354abb",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.3978337912271129,
+            "semantic_score": 0.800179,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -0.4144991934299469,
+            "rerank_score": 0.3978337912271129,
+            "rerank_windows": 1,
+            "retrieval_score": 0.80017942,
+            "first_stage_rank": 37,
+            "document_score": 0.0047348677857811956,
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 0,
+              "start": 2899,
+              "end": 4091,
+              "quote": "zation methods are ill-suited, and discussion in this paper will be\nrestricted to ﬁrst-order methods.\nWe propose Adam, a method for efﬁcient stochastic optimization that only requires ﬁrst-order gra-\ndients with little memory requirement. The method computes individual adaptive learning rates for\ndifferent parameters from estimates of ﬁrst and second moments of the gradients; the name Adam\nis derived from adaptive moment estimation. Our method is designed to combine the advantages\nof two recently popular methods: AdaGrad (Duchi et al., 2011), which works well with sparse gra-\ndients, and RMSProp (Tieleman & Hinton, 2012), which works well in on-line and non-stationary\nsettings; important connections to these and other stochastic optimization methods are clariﬁed in\nsection 5. Some of Adam’s advantages are that the magnitudes of parameter updates are invariant to\nrescaling of the gradient, its stepsizes are approximately bounded by the stepsize hyperparameter,\nit does not require a stationary objective, it works with sparse gradients, and it naturally performs a\nform of step size annealing.\n∗Equal contribution. Author ordering determined by coin ﬂip over a Google Hangout.\n1\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "6f77ccf76be745bbe215d90db9c96b079d1e36055e84b2be653187aa662bc872",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 8,
+            "start": 1938,
+            "end": 2621,
+            "text": "ging\n(Polyak & Juditsky, 1992; Ruppert, 1988) has been shown to improve the convergence of standard\nSGD, where ¯θt = 1\nt\n∑n\nk=1θk. Alternatively, an exponential moving average over the parameters can\nbe used, giving higher weight to more recent parameter values. This can be trivially implemented\nby adding one line to the inner loop of algorithms 1 and 2:¯θt←β2· ¯θt−1 +(1−β2)θt, with ¯θ0 = 0.\nInitalization bias can again be corrected by the estimatorˆθt = ¯θt/(1−βt\n2).\n8 C ONCLUSION\nWe have introduced a simple and computationally efﬁcient algorithm for gradient-based optimiza-\ntion of stochastic objective functions. Our method is aimed towards machine learning problems with\n9",
+            "chunk_set_id": "cs-d85e19b88683441bbff1d1b722ab2b7a",
+            "document_id": "doc-9a5a10be317e4f948dab1218a8354abb",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "9",
+            "score": 0.05788442940256849,
+            "semantic_score": 0.808684,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -2.789679527282715,
+            "rerank_score": 0.05788442940256849,
+            "rerank_windows": 1,
+            "retrieval_score": 0.80868405,
+            "first_stage_rank": 22,
+            "document_score": 0.0047348677857811956,
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 8,
+              "start": 1938,
+              "end": 2621,
+              "quote": "ging\n(Polyak & Juditsky, 1992; Ruppert, 1988) has been shown to improve the convergence of standard\nSGD, where ¯θt = 1\nt\n∑n\nk=1θk. Alternatively, an exponential moving average over the parameters can\nbe used, giving higher weight to more recent parameter values. This can be trivially implemented\nby adding one line to the inner loop of algorithms 1 and 2:¯θt←β2· ¯θt−1 +(1−β2)θt, with ¯θ0 = 0.\nInitalization bias can again be corrected by the estimatorˆθt = ¯θt/(1−βt\n2).\n8 C ONCLUSION\nWe have introduced a simple and computationally efﬁcient algorithm for gradient-based optimiza-\ntion of stochastic objective functions. Our method is aimed towards machine learning problems with\n9",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "33f4035780923f9f5a80a9b8008932faeab80d2643624da83b925a9d6213ebfc",
+            "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "page_index": 12,
+            "start": 996,
+            "end": 1700,
+            "text": "\nj=0\ntγj\n≤\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT∑\nj=0\ntγj\nForγ <1, using the upper bound on the arithmetic-geometric series,∑\nttγt < 1\n(1−γ)2 :\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT∑\nj=0\ntγj≤ 1\n(1−γ)2√1−β2\nT∑\nt=1\n‖gt,i‖2√\nt\nApply Lemma 10.3,\nT∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n≤ 2G∞\n(1−γ)2√1−β2\n‖g1:T,i‖2\nTo simplify the notation, we deﬁne γ ≜ β2\n1√β2\n. Intuitively, our following theorem holds when the\nlearning rateαt is decaying at a rate oft− 1\n2 and ﬁrst moment running average coefﬁcientβ1,t decay\nexponentially withλ, that is typically close to 1, e.g. 1− 10−8.\nTheorem 10.5. Assume that the functionft has bounded gradients,‖∇ft(θ)‖2≤G,‖∇ft(θ)‖∞≤\nG∞ for allθ∈Rd and distance between anyθt generated by Adam is bounded,‖θn−θm‖2≤D,\n13",
+            "chunk_set_id": "cs-d85e19b88683441bbff1d1b722ab2b7a",
+            "document_id": "doc-9a5a10be317e4f948dab1218a8354abb",
+            "source_version": 1,
+            "text_revision_id": "text-c1371025eff8514f914dcb2748aee2439c9a679990a28ecc3617cfe8365908a1",
+            "title": "Adam: A Method for Stochastic Optimization",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1412.6980.pdf",
+            "role": "literature",
+            "page_label": "13",
+            "score": 0.048206286027072595,
+            "semantic_score": 0.820852,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -2.982858896255493,
+            "rerank_score": 0.048206286027072595,
+            "rerank_windows": 1,
+            "retrieval_score": 0.8208518,
+            "first_stage_rank": 5,
+            "document_score": 0.0047348677857811956,
+            "citation": {
+              "source_id": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "page_index": 12,
+              "start": 996,
+              "end": 1700,
+              "quote": "\nj=0\ntγj\n≤\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT∑\nj=0\ntγj\nForγ <1, using the upper bound on the arithmetic-geometric series,∑\nttγt < 1\n(1−γ)2 :\nT∑\nt=1\n‖gt,i‖2√\nt(1−β2)\nT∑\nj=0\ntγj≤ 1\n(1−γ)2√1−β2\nT∑\nt=1\n‖gt,i‖2√\nt\nApply Lemma 10.3,\nT∑\nt=1\nˆm2\nt,i√\ntˆvt,i\n≤ 2G∞\n(1−γ)2√1−β2\n‖g1:T,i‖2\nTo simplify the notation, we deﬁne γ ≜ β2\n1√β2\n. Intuitively, our following theorem holds when the\nlearning rateαt is decaying at a rate oft− 1\n2 and ﬁrst moment running average coefﬁcientβ1,t decay\nexponentially withλ, that is typically close to 1, e.g. 1− 10−8.\nTheorem 10.5. Assume that the functionft has bounded gradients,‖∇ft(θ)‖2≤G,‖∇ft(θ)‖∞≤\nG∞ for allθ∈Rd and distance between anyθt generated by Adam is bounded,‖θn−θm‖2≤D,\n13",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Ranking scores are not calibrated confidence or proof of support. First-page filtering can miss relevant material in atypical or long documents; min_document_score=0 explicitly disables that filter. Inspect original evidence. No completeness or novelty claim."
+      },
+      "latency_seconds": 43.62338368700148,
+      "span_checks": [
+        {
+          "chunk_id": "abea57dafe3bba309a137871d73667973f18650688c7f4f7ab216a176c48fbb1",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "6f77ccf76be745bbe215d90db9c96b079d1e36055e84b2be653187aa662bc872",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "33f4035780923f9f5a80a9b8008932faeab80d2643624da83b925a9d6213ebfc",
+          "exact_span": true
+        }
+      ],
+      "top_source_matches": true
+    },
+    {
+      "case": {
+        "id": "T09",
+        "query": "สรุปข้อความแบบเขียนใหม่จะจัดการคำหายากและโครงสร้างระดับคำกับประโยคได้อย่างไร",
+        "expected_filename": "arxiv-1602.06023.pdf",
+        "split": "regression",
+        "expected_source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d"
+      },
+      "arguments": {
+        "query": "สรุปข้อความแบบเขียนใหม่จะจัดการคำหายากและโครงสร้างระดับคำกับประโยคได้อย่างไร",
+        "mode": "semantic",
+        "limit": 3,
+        "roles": [
+          "literature"
+        ]
+      },
+      "response": {
+        "query": "สรุปข้อความแบบเขียนใหม่จะจัดการคำหายากและโครงสร้างระดับคำกับประโยคได้อย่างไร",
+        "mode": "semantic",
+        "method": "Local multilingual E5 embeddings; exact cosine similarity; BGE pairwise reranking and first-page relevance gate",
+        "embedding_model": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "model_revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "fingerprint": "c4d672d12702bfe700e25060611bb8f699d629397fc011e3dbf35d73cae50c27",
+          "dimensions": 768,
+          "provider": "CPUExecutionProvider",
+          "recipe": "e5-query-passage:masked-mean:l2:512-stride64:mean-overflow-windows:v1",
+          "assets_present": true,
+          "external_inference": false
+        },
+        "reranking": {
+          "enabled": true,
+          "model": {
+            "model_id": "onnx-community/bge-reranker-v2-m3-ONNX",
+            "original_model_id": "BAAI/bge-reranker-v2-m3",
+            "model_revision": "6f5ff65298512715a1e669753bc754d2bc8f367b",
+            "fingerprint": "4348295bfed7916115db7a5112f4b45de5f5d10b9f527e32bcea795c3e3751e5",
+            "recipe": "query-passage-pair:512-only-second-stride64:max-window-logit:sigmoid:int8:first-page-document-score:v1",
+            "provider": "CPUExecutionProvider",
+            "external_inference": false,
+            "assets_present": true
+          },
+          "candidate_limit": 50,
+          "candidates_scored": 50,
+          "min_score": null,
+          "rejected_candidates": 34,
+          "document_gate": {
+            "enabled": true,
+            "min_score": 0.002,
+            "basis": "original extracted first page; max score across token windows",
+            "scores_by_source": {
+              "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d": 0.02200204188574211,
+              "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528": 0.0011129895147143373,
+              "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01": 0.0017239846392072156,
+              "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632": 0.0010902969776084037,
+              "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e": 0.00011846784571300667,
+              "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31": 5.589686232300255e-05,
+              "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b": 2.9251557307641596e-05,
+              "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1": 0.0006113982830034352
+            }
+          },
+          "score_meaning": "Sigmoid of pairwise ranking logit; not calibrated answer confidence"
+        },
+        "corpus_sources": 10,
+        "corpus_chunks": 547,
+        "hits": [
+          {
+            "id": "4e43d605f3a562d4e16318ef31bb828ce849d26f0df59e49c74867803d302c07",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 3,
+            "start": 997,
+            "end": 2193,
+            "text": "architecture therefore models key sen-\ntences as well as keywords within those sentences\njointly. A graphical representation of this model is\ndisplayed in Figure 3.\nHidden \nState Word \nlayer \nENCODER\nDECODERInput \nLayer Output Layer Hidden State Sentence \nlayer \n<eos> Sentence-level attention\nWord-level attention\nFigure 3: Hierarchical encoder with hierarchical attention:\nthe attention weights at the word level, represented by the\ndashed arrows are re-scaled by the corresponding sentence-\nlevel attention weights, represented by the dotted arrows.\nThe dashed boxes at the bottom of the top layer RNN rep-\nresent sentence-level positional embeddings concatenated to\nthe corresponding hidden states.\n3 Related Work\nA vast majority of past work in summarization\nhas been extractive, which consists of identify-\ning key sentences or passages in the source doc-\nument and reproducing them as summary (Neto et\nal., 2002; Erkan and Radev, 2004; Wong et al.,\n2008a; Filippova and Altun, 2013; Colmenares et\nal., 2015; Litvak and Last, 2008; K. Riedhammer\nand Hakkani-Tur, 2010; Ricardo Ribeiro, 2013).\nHumans on the other hand, tend to paraphrase\nthe original story in their own words. As such, hu-\n",
+            "chunk_set_id": "cs-1c8faf5bad9e4c32a5ef7b967b30b6ba",
+            "document_id": "doc-75c2d26ffaf3442db15279a4ae8fc713",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "4",
+            "score": 0.02975049198773859,
+            "semantic_score": 0.795873,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -3.4847075939178467,
+            "rerank_score": 0.02975049198773859,
+            "rerank_windows": 1,
+            "retrieval_score": 0.79587257,
+            "first_stage_rank": 37,
+            "document_score": 0.02200204188574211,
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 3,
+              "start": 997,
+              "end": 2193,
+              "quote": "architecture therefore models key sen-\ntences as well as keywords within those sentences\njointly. A graphical representation of this model is\ndisplayed in Figure 3.\nHidden \nState Word \nlayer \nENCODER\nDECODERInput \nLayer Output Layer Hidden State Sentence \nlayer \n<eos> Sentence-level attention\nWord-level attention\nFigure 3: Hierarchical encoder with hierarchical attention:\nthe attention weights at the word level, represented by the\ndashed arrows are re-scaled by the corresponding sentence-\nlevel attention weights, represented by the dotted arrows.\nThe dashed boxes at the bottom of the top layer RNN rep-\nresent sentence-level positional embeddings concatenated to\nthe corresponding hidden states.\n3 Related Work\nA vast majority of past work in summarization\nhas been extractive, which consists of identify-\ning key sentences or passages in the source doc-\nument and reproducing them as summary (Neto et\nal., 2002; Erkan and Radev, 2004; Wong et al.,\n2008a; Filippova and Altun, 2013; Colmenares et\nal., 2015; Litvak and Last, 2008; K. Riedhammer\nand Hakkani-Tur, 2010; Ricardo Ribeiro, 2013).\nHumans on the other hand, tend to paraphrase\nthe original story in their own words. As such, hu-\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "256317771cb98483d23e8c4d677735a1c08cef095045c469e8e56ba439b45beb",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 10,
+            "start": 0,
+            "end": 1188,
+            "text": "Figure 4: Sample output from switching generator/pointer\nnetworks. An arrow indicates that a pointer to the source po-\nsition was used to generate the corresponding summary word.\nphrase often gets repeated in the summary. We be-\nlieve models that incorporate intra-attention such\nas Cheng et al. (2016) can ﬁx this problem by en-\ncouraging the model to ‘remember’ the words it\nhas already produced in the past.\n6 Conclusion\nIn this work, we apply the attentional encoder-\ndecoder for the task of abstractive summarization\nwith very promising results, outperforming state-\nof-the-art results signiﬁcantly on two different\ndatasets. Each of our proposed novel models ad-\ndresses a speciﬁc problem in abstractive summa-\nrization, yielding further improvement in perfor-\nmance. We also propose a new dataset for multi-\nsentence summarization and establish benchmark\nnumbers on it. As part of our future work, we plan\nto focus our efforts on this data and build more ro-\nbust models for summaries consisting of multiple\nsentences.\nReferences\n[Bahdanau et al.2014] Dzmitry Bahdanau, Kyunghyun\nCho, and Yoshua Bengio. 2014. Neural machine\ntranslation by jointly learning to align and translate.\n",
+            "chunk_set_id": "cs-1c8faf5bad9e4c32a5ef7b967b30b6ba",
+            "document_id": "doc-75c2d26ffaf3442db15279a4ae8fc713",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "11",
+            "score": 0.01892875292047784,
+            "semantic_score": 0.797192,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -3.947962999343872,
+            "rerank_score": 0.01892875292047784,
+            "rerank_windows": 1,
+            "retrieval_score": 0.79719198,
+            "first_stage_rank": 28,
+            "document_score": 0.02200204188574211,
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 10,
+              "start": 0,
+              "end": 1188,
+              "quote": "Figure 4: Sample output from switching generator/pointer\nnetworks. An arrow indicates that a pointer to the source po-\nsition was used to generate the corresponding summary word.\nphrase often gets repeated in the summary. We be-\nlieve models that incorporate intra-attention such\nas Cheng et al. (2016) can ﬁx this problem by en-\ncouraging the model to ‘remember’ the words it\nhas already produced in the past.\n6 Conclusion\nIn this work, we apply the attentional encoder-\ndecoder for the task of abstractive summarization\nwith very promising results, outperforming state-\nof-the-art results signiﬁcantly on two different\ndatasets. Each of our proposed novel models ad-\ndresses a speciﬁc problem in abstractive summa-\nrization, yielding further improvement in perfor-\nmance. We also propose a new dataset for multi-\nsentence summarization and establish benchmark\nnumbers on it. As part of our future work, we plan\nto focus our efforts on this data and build more ro-\nbust models for summaries consisting of multiple\nsentences.\nReferences\n[Bahdanau et al.2014] Dzmitry Bahdanau, Kyunghyun\nCho, and Yoshua Bengio. 2014. Neural machine\ntranslation by jointly learning to align and translate.\n",
+              "relation": "context"
+            }
+          },
+          {
+            "id": "d1ee69ac6a8b8055ae57661b614185fe4bd048e2314c45ea23ff5951464332cc",
+            "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+            "page_index": 0,
+            "start": 2931,
+            "end": 3834,
+            "text": "ss obvious.\nWe make the following main contributions in\nthis work: (i) We apply the off-the-shelf atten-\ntional encoder-decoder RNN that was originally\ndeveloped for machine translation to summariza-\ntion, and show that it already outperforms state-\nof-the-art systems on two different English cor-\npora. (ii) Motivated by concrete problems in sum-\nmarization that are not sufﬁciently addressed by\nthe machine translation based model, we propose\nnovel models and show that they provide addi-\ntional improvement in performance. (iii) We pro-\npose a new dataset for the task of abstractive sum-\nmarization of a document into multiple sentences\nand establish benchmarks.\nThe rest of the paper is organized as follows.\nIn Section 2, we describe each speciﬁc problem\nin abstractive summarization that we aim to solve,\nand present a novel model that addresses it. Sec-\narXiv:1602.06023v5  [cs.CL]  26 Aug 2016",
+            "chunk_set_id": "cs-1c8faf5bad9e4c32a5ef7b967b30b6ba",
+            "document_id": "doc-75c2d26ffaf3442db15279a4ae8fc713",
+            "source_version": 1,
+            "text_revision_id": "text-090c74f5347e89c436b6fdb4f84d15cdc098184f9037c3f78831ccdcf3c83995",
+            "title": "Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond",
+            "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1602.06023.pdf",
+            "role": "literature",
+            "page_label": "1",
+            "score": 0.016999670641171305,
+            "semantic_score": 0.811585,
+            "lexical_score": 0,
+            "matched_terms": [],
+            "rerank_logit": -4.05741548538208,
+            "rerank_score": 0.016999670641171305,
+            "rerank_windows": 1,
+            "retrieval_score": 0.81158519,
+            "first_stage_rank": 1,
+            "document_score": 0.02200204188574211,
+            "citation": {
+              "source_id": "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+              "page_index": 0,
+              "start": 2931,
+              "end": 3834,
+              "quote": "ss obvious.\nWe make the following main contributions in\nthis work: (i) We apply the off-the-shelf atten-\ntional encoder-decoder RNN that was originally\ndeveloped for machine translation to summariza-\ntion, and show that it already outperforms state-\nof-the-art systems on two different English cor-\npora. (ii) Motivated by concrete problems in sum-\nmarization that are not sufﬁciently addressed by\nthe machine translation based model, we propose\nnovel models and show that they provide addi-\ntional improvement in performance. (iii) We pro-\npose a new dataset for the task of abstractive sum-\nmarization of a document into multiple sentences\nand establish benchmarks.\nThe rest of the paper is organized as follows.\nIn Section 2, we describe each speciﬁc problem\nin abstractive summarization that we aim to solve,\nand present a novel model that addresses it. Sec-\narXiv:1602.06023v5  [cs.CL]  26 Aug 2016",
+              "relation": "context"
+            }
+          }
+        ],
+        "status": "evidence_retrieved",
+        "limitation": "Ranking scores are not calibrated confidence or proof of support. First-page filtering can miss relevant material in atypical or long documents; min_document_score=0 explicitly disables that filter. Inspect original evidence. No completeness or novelty claim."
+      },
+      "latency_seconds": 36.053834849997656,
+      "span_checks": [
+        {
+          "chunk_id": "4e43d605f3a562d4e16318ef31bb828ce849d26f0df59e49c74867803d302c07",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "256317771cb98483d23e8c4d677735a1c08cef095045c469e8e56ba439b45beb",
+          "exact_span": true
+        },
+        {
+          "chunk_id": "d1ee69ac6a8b8055ae57661b614185fe4bd048e2314c45ea23ff5951464332cc",
+          "exact_span": true
+        }
+      ],
+      "top_source_matches": true
+    }
+  ],
+  "status": "passed deterministic checks; relevance requires Codex assessment",
+  "server_version": "0.2.4",
+  "tool_schemas": {
+    "retrieve_evidence": {
+      "properties": {
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "roles": {
+          "anyOf": [
+            {
+              "items": {
+                "enum": [
+                  "literature",
+                  "protocol",
+                  "data",
+                  "results",
+                  "project_note",
+                  "journal_guidelines"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Roles"
+        },
+        "source_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Ids"
+        },
+        "limit": {
+          "default": 8,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "mode": {
+          "default": "hybrid",
+          "enum": [
+            "lexical",
+            "semantic",
+            "hybrid"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "rerank": {
+          "default": true,
+          "title": "Rerank",
+          "type": "boolean"
+        },
+        "candidate_limit": {
+          "default": 50,
+          "title": "Candidate Limit",
+          "type": "integer"
+        },
+        "min_rerank_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Rerank Score"
+        },
+        "min_document_score": {
+          "default": 0.002,
+          "title": "Min Document Score",
+          "type": "number"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object",
+      "title": "retrieve_evidenceArguments"
+    }
+  },
+  "revision_before": 24,
+  "revision_after": 24,
+  "workspace_unchanged": true
+}

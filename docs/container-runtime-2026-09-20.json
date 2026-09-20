@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-09-20T03:03:22.262779+00:00",
+  "host": "local MacBook / Docker Desktop desktop-linux",
+  "existing_containers_unchanged": 17,
+  "token_preserved": true,
+  "review_authenticated_get": 200,
+  "review_unauthenticated_get": 403,
+  "human_review_submitted": false,
+  "containers": [
+    {
+      "name": "codex-research-rag-mcp-1",
+      "image": "sha256:72dd41a9cac7601cf499a7f5480127aa1e3311da85b0b057978fe0b984ef384b",
+      "status": "running",
+      "health": "healthy",
+      "ports": {
+        "8776/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8776"
+          }
+        ]
+      },
+      "data_mount": ".data -> /data",
+      "user": "501:20"
+    },
+    {
+      "name": "codex-research-rag-review-1",
+      "image": "sha256:72dd41a9cac7601cf499a7f5480127aa1e3311da85b0b057978fe0b984ef384b",
+      "status": "running",
+      "health": "healthy",
+      "ports": {
+        "8777/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8777"
+          }
+        ]
+      },
+      "data_mount": ".data -> /data",
+      "user": "501:20"
+    }
+  ]
+}
