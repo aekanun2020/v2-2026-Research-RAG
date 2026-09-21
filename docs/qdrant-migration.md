@@ -79,6 +79,19 @@ Not proven by these runs: native Claude Desktop interaction on both operating sy
 
 The canonical repository worktree now lives at `/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-qdrant` on branch `codex/qdrant-research-rag`. Candidate MCP: `http://127.0.0.1:8876/mcp`; human review: port 8877. Its local `.env` selects these separate ports and the permanent `.data` path. The migrated workspace is revision 37, 22 papers, 2106 total chunks, with an empty inbox. The actual reference/validation containers were removed after verification; their isolated test volumes are retained.
 
-Candidate MCP does not generate, read, validate or require an access token. The old read-only legacy bind mount is removed after migration; no SQLite file is present in the candidate data directory. The original 0.2.4 service and its source data remain separate pending the embedding-model decision and final cutover. This is not a claim that the old endpoint's authentication was changed.
+Candidate MCP does not generate, read, validate or require an access token. The old read-only legacy bind mount is removed after migration; no SQLite file is present in the candidate data directory. The original 0.2.4 containers were subsequently removed at the user's explicit request; see the retirement record below. Their bind-mounted source files and the separate new workspace remain intact.
 
 [Final permanent endpoint check](qdrant-final-endpoint-2026-09-21.json) reinitialized the actual token-free service after moving its data and removing the legacy mount. It verified all 41 tools, revision 37, 22 sources, 2106 ready chunks, empty inbox, and a representative hybrid query whose two quotes exactly match original pages.
+
+## Old container removal 2026-09-21
+
+Completed and verified at 2026-09-21 00:40:58 UTC (07:40:58 Asia/Bangkok), following the user's explicit instruction to delete the `codex-research-rag` containers. The target was grounded in the live `desktop-linux` Docker context and exact Compose project label.
+
+Removed after graceful stop:
+
+- `codex-research-rag-mcp-1` — container `025fa59c7f73`, image 0.2.4.
+- `codex-research-rag-review-1` — container `a8ab7aed77ff`, image 0.2.4.
+
+`docker ps -a` filtered by the exact old project label returned no containers afterward. Only those two container IDs were stopped and removed. No images, volumes, networks, source folders or papers were deleted. The four `codex-research-rag-next` container IDs were unchanged and running; MCP/review were healthy.
+
+A real token-free MCP smoke check against `http://127.0.0.1:8876/mcp` successfully performed initialize, tools/list (41 tools), and workspace_status (revision 37). The old 8776/8777 containers are no longer available. The new endpoint and port remain unchanged. This retirement does not resolve the outstanding Thai semantic-quality/model-selection issue.
