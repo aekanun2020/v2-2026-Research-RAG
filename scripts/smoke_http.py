@@ -1,4 +1,4 @@
-"""Connect to the real authenticated endpoint without printing credentials."""
+"""Connect to the real token-free endpoint without printing credentials."""
 import argparse
 import asyncio
 import json
@@ -14,8 +14,7 @@ async def main():
     parser.add_argument('--workspace', required=True)
     parser.add_argument('--url', default='http://127.0.0.1:8776/mcp')
     args = parser.parse_args()
-    token = (Path(args.workspace)/'.http-token').read_text().strip()
-    async with httpx2.AsyncClient(headers={'Authorization': 'Bearer '+token}) as http:
+    async with httpx2.AsyncClient() as http:
         async with streamable_http_client(args.url, http_client=http) as streams:
             async with ClientSession(*streams, read_timeout_seconds=30) as session:
                 initialized = await session.initialize()

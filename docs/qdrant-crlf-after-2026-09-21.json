@@ -1,0 +1,84 @@
+{
+  "before_error": "Existing context file integrity mismatch",
+  "job_id": "d8fdc65736dcb30a5d55eef3821ef77f8de55cca9d456eab55e3ddb670d55056",
+  "calls": [
+    {
+      "created_at": "2026-09-21T00:14:39.310578+00:00",
+      "error": null,
+      "job_id": "d8fdc65736dcb30a5d55eef3821ef77f8de55cca9d456eab55e3ddb670d55056",
+      "operation": "import_context",
+      "progress": null,
+      "result": null,
+      "status": "queued",
+      "updated_at": "2026-09-21T00:16:04.508109+00:00"
+    },
+    {
+      "created_at": "2026-09-21T00:14:39.310578+00:00",
+      "error": null,
+      "job_id": "d8fdc65736dcb30a5d55eef3821ef77f8de55cca9d456eab55e3ddb670d55056",
+      "operation": "import_context",
+      "progress": {
+        "indexed_chunks": 1,
+        "total_chunks": 1
+      },
+      "result": {
+        "result": {
+          "active_chunk_set_id": "cs-127affee546d4500babdd9c793dce5a1",
+          "bibliography": {
+            "authors": [],
+            "doi": null,
+            "title": "Measured 12-client hybrid MCP latencies, 2026-09-21",
+            "year": null
+          },
+          "document_id": "doc-23ec32fe13104dd38d14d840458d1741",
+          "extraction": {
+            "engine": "utf-8-sig",
+            "version": "1"
+          },
+          "file": "sources/50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013/original.csv",
+          "filename": "context-50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013.csv",
+          "imported_at": "2026-09-21T00:16:04.520418+00:00",
+          "origin": "docs/qdrant-concurrent-2026-09-21.json",
+          "page_count": 1,
+          "role": "results",
+          "sha256": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+          "source_id": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+          "source_version": 1,
+          "status": "ready",
+          "text_revision_id": "text-ca4b698056f01aabd25513dcb4ba70320b050b30373fa253ce22f0820bc5f2a8",
+          "text_sha256": "e86b3ed958db109fcb79dfe6b8f1060681b154e73342cd734eddad02a3c6e4cd"
+        },
+        "revision": 22
+      },
+      "status": "completed",
+      "updated_at": "2026-09-21T00:16:05.404947+00:00"
+    }
+  ],
+  "summary": {
+    "source_id": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+    "sha256": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+    "rows": 12,
+    "columns": [
+      {
+        "column": "source_id",
+        "count": 12,
+        "blank": 0,
+        "numeric_count": 0,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      {
+        "column": "latency_seconds",
+        "count": 12,
+        "blank": 0,
+        "numeric_count": 12,
+        "min": 3.3671750830108067,
+        "max": 3.61140737500682,
+        "mean": 3.495314087000831
+      }
+    ],
+    "method": "Descriptive summary of finite numeric cells only; blank means empty or whitespace. Non-numeric and non-finite cells are excluded from numeric summaries. No imputation, inference or causal interpretation."
+  },
+  "result": "Same CRLF input/job resumed through MCP and imported; 12 actual measured CSV rows verified"
+}

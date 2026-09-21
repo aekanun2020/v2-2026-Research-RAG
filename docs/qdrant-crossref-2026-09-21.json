@@ -1,0 +1,122 @@
+{
+  "doi_query_observation": {
+    "coverage": "One page of Crossref bibliographic metadata. Not exhaustive; no full-text reading or novelty assessment.",
+    "id": "8e21cc451c514d85ba72ff79d7685afe",
+    "limit": 1,
+    "provider": "Crossref",
+    "query": "10.18637/jss.v080.i01",
+    "records": [
+      {
+        "authors": [
+          "Mara Sherman"
+        ],
+        "date_parts": [
+          [
+            2019,
+            12,
+            13
+          ]
+        ],
+        "doi": "10.1158/1538-7445.panca19-i01",
+        "full_text_read": false,
+        "license": [],
+        "resource_type": "journal-article",
+        "title": "Abstract I01: Mechanisms and consequences of pancreatic cancer stromal evolution",
+        "url": "https://doi.org/10.1158/1538-7445.panca19-i01",
+        "venue": [
+          "Cancer Research"
+        ]
+      }
+    ],
+    "returned": 1,
+    "searched_at": "2026-09-21T00:22:05.474931+00:00",
+    "total_results": 6254505,
+    "url": "https://api.crossref.org/works?query.bibliographic=10.18637%2Fjss.v080.i01&rows=1",
+    "year_from": null,
+    "year_to": null
+  },
+  "arguments": {
+    "query": "brms An R Package for Bayesian Multilevel Models Using Stan Bürkner",
+    "limit": 3,
+    "expected_revision": 43,
+    "idempotency_key": "crossref-title-live-v03"
+  },
+  "response": {
+    "revision": 44,
+    "result": {
+      "id": "548b98f4526b46868500c5020ff207e3",
+      "provider": "Crossref",
+      "query": "brms An R Package for Bayesian Multilevel Models Using Stan Bürkner",
+      "url": "https://api.crossref.org/works?query.bibliographic=brms+An+R+Package+for+Bayesian+Multilevel+Models+Using+Stan+B%C3%BCrkner&rows=3",
+      "searched_at": "2026-09-21T00:23:04.530455+00:00",
+      "total_results": 6653906,
+      "returned": 3,
+      "limit": 3,
+      "year_from": null,
+      "year_to": null,
+      "records": [
+        {
+          "doi": "10.18637/jss.v080.i01",
+          "title": "<b>brms</b>\n                    : An\n                    <i>R</i>\n                    Package for Bayesian Multilevel Models Using\n                    <i>Stan</i>",
+          "authors": [
+            "Paul-Christian Bürkner"
+          ],
+          "date_parts": [
+            [
+              2017
+            ]
+          ],
+          "venue": [
+            "Journal of Statistical Software"
+          ],
+          "url": "https://doi.org/10.18637/jss.v080.i01",
+          "resource_type": "journal-article",
+          "license": [],
+          "full_text_read": false
+        },
+        {
+          "doi": "10.32614/cran.package.brms",
+          "title": "brms: Bayesian Regression Models using 'Stan'",
+          "authors": [
+            "Paul-Christian Bürkner"
+          ],
+          "date_parts": [
+            [
+              2015,
+              5,
+              8
+            ]
+          ],
+          "venue": [
+            "CRAN: Contributed Packages"
+          ],
+          "url": "https://doi.org/10.32614/cran.package.brms",
+          "resource_type": "dataset",
+          "license": [],
+          "full_text_read": false
+        },
+        {
+          "doi": "10.32614/rj-2018-017",
+          "title": "Advanced Bayesian Multilevel Modeling with the R Package brms",
+          "authors": [
+            "Paul-Christian Bürkner"
+          ],
+          "date_parts": [
+            [
+              2018
+            ]
+          ],
+          "venue": [
+            "The R Journal"
+          ],
+          "url": "https://doi.org/10.32614/rj-2018-017",
+          "resource_type": "journal-article",
+          "license": [],
+          "full_text_read": false
+        }
+      ],
+      "coverage": "One page of Crossref bibliographic metadata. Not exhaustive; no full-text reading or novelty assessment."
+    }
+  },
+  "persisted_via_mcp": true
+}

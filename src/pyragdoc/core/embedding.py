@@ -71,7 +71,7 @@ class OllamaProvider(EmbeddingProvider):
         self.base_url = base_url or os.environ.get("OLLAMA_URL", "http://localhost:11434")
         
         # Initialize client
-        self.client = ollama.Client(host=self.base_url)
+        self.client = ollama.Client(host=self.base_url, timeout=30)
         
         self.logger.info(f"Initialized Ollama provider with URL: {self.base_url}, model: {self.model}")
     
@@ -97,7 +97,8 @@ class OllamaProvider(EmbeddingProvider):
             response = await asyncio.to_thread(
                 self.client.embeddings,
                 model=self.model,
-                prompt=text
+                prompt=text,
+                options={"num_gpu": 0, "num_thread": 2}
             )
             
             embedding = response.get("embedding", [])

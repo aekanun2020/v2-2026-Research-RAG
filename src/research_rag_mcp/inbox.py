@@ -4,7 +4,7 @@ import io
 import json
 from pathlib import Path
 
-from pypdf import PdfReader
+import pymupdf
 
 
 def preview_inbox_document(root, filename, page_index=0, start=0, max_chars=12000):
@@ -31,22 +31,17 @@ def preview_inbox_document(root, filename, page_index=0, start=0, max_chars=1200
 
     metadata, metadata_truncated = {}, []
     if suffix == '.pdf':
-        reader = PdfReader(io.BytesIO(raw))
-        if reader.is_encrypted:
-            raise ValueError('Encrypted PDFs are unsupported')
-        page_count = len(reader.pages)
-        if page_count > 1000:
-            raise ValueError('PDFs over 1000 pages are unsupported')
-        if page_index >= page_count:
-            raise ValueError('page_index is outside this document')
-        text = reader.pages[page_index].extract_text() or ''
-        page_label = reader.page_labels[page_index]
-        if reader.metadata:
-            for key in ('title', 'author', 'subject', 'creator', 'producer'):
-                value = getattr(reader.metadata, key)
-                metadata[key] = str(value)[:4000] if value is not None else None
-                if value is not None and len(str(value)) > 4000:
-                    metadata_truncated.append(key)
+        with pymupdf.open(stream=raw,filetype='pdf') as reader:
+            if reader.is_encrypted: raise ValueError('Encrypted PDFs are unsupported')
+            page_count=len(reader)
+            if page_count>1000: raise ValueError('PDFs over 1000 pages are unsupported')
+            if page_index>=page_count: raise ValueError('page_index is outside this document')
+            text=reader[page_index].get_text() or ''
+            page_label=str(page_index+1)
+            for key in ('title','author','subject','creator','producer'):
+                value=(reader.metadata or {}).get(key)
+                metadata[key]=str(value)[:4000] if value is not None else None
+                if value is not None and len(str(value))>4000: metadata_truncated.append(key)
     else:
         if page_index != 0:
             raise ValueError('Text files have only page_index 0')

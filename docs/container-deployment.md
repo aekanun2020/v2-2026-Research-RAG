@@ -1,3 +1,5 @@
+> Historical 0.2.4 documentation. For the current Qdrant/Ollama migration and changed job contract, see [migration record](qdrant-migration.md) and [current README](../README.md).
+
 # Local container deployment
 
 User requested containers with Streamable HTTP on 2026-09-20. This deployment belongs to the standalone `codex-research-rag-mcp` project on the local MacBook.
@@ -35,7 +37,7 @@ The user-authorized production cleanup then executed through the actual `cleanup
 
 Updated **2026-09-20 20:52 ICT (13:52 UTC)**. Both local Research RAG services are healthy on `codex-research-rag-mcp:0.2.2`. Image manifest-list identity: `sha256:1f28bcc8d72d1fcd4a7ccf246c56fcb8f54a4dbcfab962289977e440817fdbfa`; Linux platform manifest: `sha256:1366451c5b4bb8ddc2f742c9ec2aa83e98b035e982da5aaeee76c486c9d77c11`.
 
-The actual Streamable HTTP endpoint `http://127.0.0.1:8776/mcp` initializes as server version 0.2.2, lists **33 tools**, and successfully previews all three cleanup scopes without changing state. See [runtime calls and plans](cleanup-runtime-2026-09-20.json), [deployment/state comparison](cleanup-deployment-checks-2026-09-20.json), [deployment log](cleanup-deploy-2026-09-20.txt), and [read-only verification client](../scripts/verify_cleanup_http.py).
+The actual Streamable HTTP endpoint `http://127.0.0.1:8776/mcp` initializes as server version 0.2.2, lists **33 tools**, and successfully previews all three cleanup scopes without changing state. See [runtime calls and plans](cleanup-runtime-2026-09-20.json), [deployment/state comparison](cleanup-deployment-checks-2026-09-20.json), [deployment log](cleanup-deploy-2026-09-20.txt), and [read-only verification client](https://github.com/aekanun2020/2026-Research-RAG/blob/14b858f77acddd06ff6e6dd83ceba99e848b6fd6/scripts/verify_cleanup_http.py).
 
 Native MCP status after deployment verifies revision **10**, **10 sources**, **547/547 indexed chunks** and **221 inbox files**. Source metadata is unchanged. No production cleanup had executed at this historical checkpoint. Native `backup_workspace` created `/data/backups/ca9b398d18464783bbac95d69cc9c207` before deployment. All **17 unrelated local containers** retain their IDs, images and states. No Mac Studio resource was accessed.
 

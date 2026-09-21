@@ -1,0 +1,1078 @@
+{
+  "calls": [
+    {
+      "tool": "workspace_status",
+      "arguments": {},
+      "response": {
+        "revision": 22,
+        "project": {
+          "goal": "Check real import, retrieval, original spans and manuscript persistence through MCP",
+          "topic": "Verify the authorized Qdrant research-rag migration",
+          "unknowns": [
+            "Semantic relevance requires Codex assessment; human scientific acceptance remains pending"
+          ]
+        },
+        "sources": {
+          "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013": {
+            "active_chunk_set_id": "cs-127affee546d4500babdd9c793dce5a1",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Measured 12-client hybrid MCP latencies, 2026-09-21",
+              "year": null
+            },
+            "document_id": "doc-23ec32fe13104dd38d14d840458d1741",
+            "extraction": {
+              "engine": "utf-8-sig",
+              "version": "1"
+            },
+            "file": "sources/50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013/original.csv",
+            "filename": "context-50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013.csv",
+            "imported_at": "2026-09-21T00:16:04.520418+00:00",
+            "origin": "docs/qdrant-concurrent-2026-09-21.json",
+            "role": "results",
+            "sha256": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+            "source_id": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-ca4b698056f01aabd25513dcb4ba70320b050b30373fa253ce22f0820bc5f2a8",
+            "text_sha256": "e86b3ed958db109fcb79dfe6b8f1060681b154e73342cd734eddad02a3c6e4cd",
+            "page_count": 1
+          },
+          "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2": {
+            "active_chunk_set_id": "cs-116be0caeeb34a0a8c41e22ce2f37fad",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Upstream customer service policy",
+              "year": null
+            },
+            "document_id": "doc-4d6f1d7d95224ab99053e509e48af3f7",
+            "extraction": {
+              "engine": "utf-8-sig",
+              "version": "1"
+            },
+            "file": "sources/708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2/original.md",
+            "filename": "customerservice-policy.md",
+            "imported_at": "2026-09-21T00:14:38.112041+00:00",
+            "origin": "inbox:batch/customerservice-policy.md",
+            "role": "project_note",
+            "sha256": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+            "source_id": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-3d4db6498165357a3695facd701dbe65b9443b82280b155d7da0d3711a7e5df7",
+            "text_sha256": "61bb0678a4fb93f97de136a1ec44e6910ac76a04b2bddc57f206584b3a48c919",
+            "page_count": 1
+          },
+          "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe": {
+            "active_chunk_set_id": "cs-afc89b71b4664ada86480854424e0954",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Elsevier generative AI policy excerpt",
+              "year": null
+            },
+            "document_id": "doc-745ce116f1824105a5ba8e0a3cb5ce1c",
+            "extraction": {
+              "engine": "utf-8-sig",
+              "version": "1"
+            },
+            "file": "sources/8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe/original.txt",
+            "filename": "elsevier-policy-excerpt.txt",
+            "imported_at": "2026-09-21T00:14:38.356036+00:00",
+            "origin": "inbox:batch/elsevier-policy-excerpt.txt",
+            "role": "project_note",
+            "sha256": "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe",
+            "source_id": "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-08641e85409c7e5e599a3eb9d1779b079b02b7ce3d889853dfd1455b43ea2179",
+            "text_sha256": "4e27c672258f5691b1d278bdbe81459c37c3cd6f962850c201ff9c1f71ea3a2a",
+            "page_count": 1
+          },
+          "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c": {
+            "active_chunk_set_id": "cs-4f3efdaed4444a7d95c03cc40c2c2dbb",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Elsevier AI policy — short attributed excerpt",
+              "year": null
+            },
+            "document_id": "doc-2cb9e6debe854981914616089d469222",
+            "extraction": {
+              "engine": "utf-8-sig",
+              "version": "1"
+            },
+            "file": "sources/9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c/original.md",
+            "filename": "context-9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c.md",
+            "imported_at": "2026-09-21T00:14:38.731007+00:00",
+            "origin": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
+            "role": "journal_guidelines",
+            "sha256": "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c",
+            "source_id": "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-dab21b22fbfc3a07de615b25170917285180e5b7cd919f07438dc6fcbccdd3b5",
+            "text_sha256": "0c5f73f59273659feeb2662eb8c79691fa3910e4ecce8b5d7e8785623919dc6a",
+            "page_count": 1
+          },
+          "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632": {
+            "active_chunk_set_id": "cs-f1af78d30124456dab5f9bb457904628",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Deep contextualized word representations",
+              "year": null
+            },
+            "document_id": "doc-0cfbd371512a4417850b985a8ba626f9",
+            "extraction": {
+              "engine": "pymupdf",
+              "version": "1.28.2"
+            },
+            "file": "sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632/original.pdf",
+            "filename": "elmo.pdf",
+            "imported_at": "2026-09-21T00:14:22.651592+00:00",
+            "origin": "https://arxiv.org/abs/1802.05365",
+            "role": "literature",
+            "sha256": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-81047677cf7c9982acac5be1204fcfdd452ec195a664a85375bb2c7ab7db4476",
+            "text_sha256": "fd9c82921d4dc5517fcd1141fa497e8b98a101d68b0df9012b44bf1fd929462a",
+            "page_count": 15
+          }
+        },
+        "artifacts": {},
+        "searches": [],
+        "pending_cleanup": null,
+        "pending_job": null,
+        "disabled_spans": [],
+        "inbox": [
+          "context-50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013.csv",
+          "context-9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c.md",
+          "elmo.pdf"
+        ],
+        "stages": {
+          "exploration": {
+            "number": 1,
+            "tool": "explore_topics",
+            "sections": [
+              "landscape",
+              "candidate_topics",
+              "reading_plan"
+            ],
+            "instruction": "Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher."
+          },
+          "gaps": {
+            "number": 2,
+            "tool": "map_research_gaps",
+            "sections": [
+              "comparison",
+              "candidate_gaps",
+              "search_limits"
+            ],
+            "instruction": "Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits."
+          },
+          "question": {
+            "number": 3,
+            "tool": "formulate_question",
+            "sections": [
+              "research_question",
+              "objectives",
+              "contribution",
+              "feasibility"
+            ],
+            "instruction": "Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved."
+          },
+          "design": {
+            "number": 4,
+            "tool": "design_study",
+            "sections": [
+              "study_design",
+              "sampling",
+              "measurement",
+              "analysis_plan",
+              "ethics"
+            ],
+            "instruction": "Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence."
+          },
+          "execution": {
+            "number": 5,
+            "tool": "track_execution",
+            "sections": [
+              "activity",
+              "observations",
+              "deviations",
+              "next_actions"
+            ],
+            "instruction": "Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments."
+          },
+          "analysis": {
+            "number": 6,
+            "tool": "interpret_results",
+            "sections": [
+              "results",
+              "comparison",
+              "limitations"
+            ],
+            "instruction": "Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence."
+          },
+          "manuscript": {
+            "number": 7,
+            "tool": "draft_manuscript",
+            "sections": [
+              "title",
+              "abstract",
+              "introduction",
+              "methods",
+              "results",
+              "discussion",
+              "conclusion"
+            ],
+            "instruction": "Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used."
+          },
+          "submission": {
+            "number": 8,
+            "tool": "prepare_submission",
+            "sections": [
+              "venue",
+              "checklist",
+              "cover_letter",
+              "ai_disclosure"
+            ],
+            "instruction": "Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically."
+          },
+          "literature_note": {
+            "number": null,
+            "tool": "save_artifact",
+            "sections": [
+              "research_question",
+              "population",
+              "method",
+              "findings",
+              "limitations"
+            ],
+            "instruction": "Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies."
+          }
+        },
+        "search_index": {
+          "model": {
+            "provider": "ollama",
+            "model": "nomic-embed-text:latest",
+            "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+            "dimensions": 768,
+            "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "device": "cpu",
+            "external_api": false
+          },
+          "total_chunks": 70,
+          "indexed_chunks": 70,
+          "pending_or_invalid_chunks": 0,
+          "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+          "default_mode": "hybrid",
+          "ready": true
+        },
+        "capabilities": {
+          "transport": "streamable-http",
+          "online_discovery": "Crossref metadata",
+          "retrieval": "lexical / multilingual semantic / hybrid (default), local CPU",
+          "generation": "connected MCP client",
+          "external_model_calls": false,
+          "automatic_semantic_grading": false,
+          "automatic_experiments": false,
+          "automatic_submission": false
+        }
+      }
+    },
+    {
+      "tool": "backup_workspace",
+      "arguments": {},
+      "response": {
+        "directory": "/data/backups/43a327cea6584dcea6d89b5838d77cee",
+        "sources": 5,
+        "vectors": 70,
+        "excludes": [
+          "inbox",
+          "exports",
+          "HTTP token"
+        ],
+        "format": "revisioned-json-and-qdrant-vectors-v1"
+      }
+    },
+    {
+      "tool": "preview_workspace_cleanup",
+      "arguments": {
+        "scope": "workspace"
+      },
+      "response": {
+        "scope": "workspace",
+        "revision": 22,
+        "workspace": "/data",
+        "delete_counts": {
+          "embeddings": 70,
+          "chunks": 70,
+          "chunk_metadata": 70,
+          "chunk_sets": 5,
+          "documents": 5,
+          "artifacts": 0,
+          "versions": 0,
+          "searches": 0,
+          "events": 6
+        },
+        "source_ids": [
+          "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+          "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+          "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe",
+          "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c",
+          "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+        ],
+        "artifact_ids": [],
+        "clears_project": true,
+        "backup_required": true,
+        "can_execute": true,
+        "blockers": [],
+        "source_files_retained": 5,
+        "preserves": [
+          "inbox",
+          "source files",
+          "existing exports/backups",
+          "authentication"
+        ],
+        "limitation": "Cleanup does not improve relevance or provide secure erasure",
+        "plan_hash": "c59a0ec182162cab1b62e251945983b8dc21d05847b7a10c0f7948bb32149556"
+      }
+    },
+    {
+      "tool": "cleanup_workspace",
+      "arguments": {
+        "scope": "workspace",
+        "plan_hash": "c59a0ec182162cab1b62e251945983b8dc21d05847b7a10c0f7948bb32149556",
+        "expected_revision": 22,
+        "idempotency_key": "restore-regression-clear"
+      },
+      "response": {
+        "revision": 23,
+        "result": {
+          "operation": "cleanup_workspace",
+          "scope": "workspace",
+          "status": "completed",
+          "deleted": {
+            "artifacts": 0,
+            "chunk_metadata": 70,
+            "chunk_sets": 5,
+            "chunks": 70,
+            "documents": 5,
+            "embeddings": 70,
+            "events": 6,
+            "searches": 0,
+            "versions": 0
+          },
+          "backup": {
+            "directory": "/data/backups/bf3fd275b7bf4e7980804702feadb943",
+            "excludes": [
+              "inbox",
+              "exports",
+              "HTTP token"
+            ],
+            "format": "revisioned-json-and-qdrant-vectors-v1",
+            "sources": 5,
+            "vectors": 70
+          },
+          "vector_index_cleared": true,
+          "journal_cleared": true,
+          "source_files_retained": 5,
+          "preserves": [
+            "inbox",
+            "source files",
+            "existing exports/backups",
+            "authentication"
+          ],
+          "quality_improvement_claimed": false,
+          "next_step": "import_document"
+        }
+      }
+    },
+    {
+      "tool": "restore_workspace",
+      "arguments": {
+        "snapshot": "43a327cea6584dcea6d89b5838d77cee",
+        "expected_revision": 23,
+        "idempotency_key": "restore-regression-restore"
+      },
+      "response": {
+        "created_at": "2026-09-21T00:17:47.366211+00:00",
+        "error": null,
+        "job_id": "91f99cec30612abe39ca4df273f570fc2112bc896190fd1f054b0521e5158316",
+        "operation": "restore_workspace",
+        "progress": null,
+        "result": null,
+        "status": "queued",
+        "updated_at": "2026-09-21T00:17:47.366216+00:00"
+      }
+    },
+    {
+      "tool": "job_status",
+      "arguments": {
+        "job_id": "91f99cec30612abe39ca4df273f570fc2112bc896190fd1f054b0521e5158316"
+      },
+      "response": {
+        "created_at": "2026-09-21T00:17:47.366211+00:00",
+        "error": null,
+        "job_id": "91f99cec30612abe39ca4df273f570fc2112bc896190fd1f054b0521e5158316",
+        "operation": "restore_workspace",
+        "progress": null,
+        "result": {
+          "result": {
+            "identities_preserved": true,
+            "restored_chunks": 70,
+            "restored_revision": 22,
+            "restored_sources": 5,
+            "snapshot": "43a327cea6584dcea6d89b5838d77cee"
+          },
+          "revision": 24
+        },
+        "status": "completed",
+        "updated_at": "2026-09-21T00:17:47.412400+00:00"
+      }
+    },
+    {
+      "tool": "workspace_status",
+      "arguments": {},
+      "response": {
+        "revision": 24,
+        "project": {
+          "goal": "Check real import, retrieval, original spans and manuscript persistence through MCP",
+          "topic": "Verify the authorized Qdrant research-rag migration",
+          "unknowns": [
+            "Semantic relevance requires Codex assessment; human scientific acceptance remains pending"
+          ]
+        },
+        "sources": {
+          "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013": {
+            "active_chunk_set_id": "cs-127affee546d4500babdd9c793dce5a1",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Measured 12-client hybrid MCP latencies, 2026-09-21",
+              "year": null
+            },
+            "document_id": "doc-23ec32fe13104dd38d14d840458d1741",
+            "extraction": {
+              "engine": "utf-8-sig",
+              "version": "1"
+            },
+            "file": "sources/50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013/original.csv",
+            "filename": "context-50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013.csv",
+            "imported_at": "2026-09-21T00:16:04.520418+00:00",
+            "origin": "docs/qdrant-concurrent-2026-09-21.json",
+            "role": "results",
+            "sha256": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+            "source_id": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-ca4b698056f01aabd25513dcb4ba70320b050b30373fa253ce22f0820bc5f2a8",
+            "text_sha256": "e86b3ed958db109fcb79dfe6b8f1060681b154e73342cd734eddad02a3c6e4cd",
+            "page_count": 1
+          },
+          "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2": {
+            "active_chunk_set_id": "cs-116be0caeeb34a0a8c41e22ce2f37fad",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Upstream customer service policy",
+              "year": null
+            },
+            "document_id": "doc-4d6f1d7d95224ab99053e509e48af3f7",
+            "extraction": {
+              "engine": "utf-8-sig",
+              "version": "1"
+            },
+            "file": "sources/708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2/original.md",
+            "filename": "customerservice-policy.md",
+            "imported_at": "2026-09-21T00:14:38.112041+00:00",
+            "origin": "inbox:batch/customerservice-policy.md",
+            "role": "project_note",
+            "sha256": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+            "source_id": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-3d4db6498165357a3695facd701dbe65b9443b82280b155d7da0d3711a7e5df7",
+            "text_sha256": "61bb0678a4fb93f97de136a1ec44e6910ac76a04b2bddc57f206584b3a48c919",
+            "page_count": 1
+          },
+          "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe": {
+            "active_chunk_set_id": "cs-afc89b71b4664ada86480854424e0954",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Elsevier generative AI policy excerpt",
+              "year": null
+            },
+            "document_id": "doc-745ce116f1824105a5ba8e0a3cb5ce1c",
+            "extraction": {
+              "engine": "utf-8-sig",
+              "version": "1"
+            },
+            "file": "sources/8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe/original.txt",
+            "filename": "elsevier-policy-excerpt.txt",
+            "imported_at": "2026-09-21T00:14:38.356036+00:00",
+            "origin": "inbox:batch/elsevier-policy-excerpt.txt",
+            "role": "project_note",
+            "sha256": "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe",
+            "source_id": "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-08641e85409c7e5e599a3eb9d1779b079b02b7ce3d889853dfd1455b43ea2179",
+            "text_sha256": "4e27c672258f5691b1d278bdbe81459c37c3cd6f962850c201ff9c1f71ea3a2a",
+            "page_count": 1
+          },
+          "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c": {
+            "active_chunk_set_id": "cs-4f3efdaed4444a7d95c03cc40c2c2dbb",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Elsevier AI policy — short attributed excerpt",
+              "year": null
+            },
+            "document_id": "doc-2cb9e6debe854981914616089d469222",
+            "extraction": {
+              "engine": "utf-8-sig",
+              "version": "1"
+            },
+            "file": "sources/9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c/original.md",
+            "filename": "context-9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c.md",
+            "imported_at": "2026-09-21T00:14:38.731007+00:00",
+            "origin": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
+            "role": "journal_guidelines",
+            "sha256": "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c",
+            "source_id": "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-dab21b22fbfc3a07de615b25170917285180e5b7cd919f07438dc6fcbccdd3b5",
+            "text_sha256": "0c5f73f59273659feeb2662eb8c79691fa3910e4ecce8b5d7e8785623919dc6a",
+            "page_count": 1
+          },
+          "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632": {
+            "active_chunk_set_id": "cs-f1af78d30124456dab5f9bb457904628",
+            "bibliography": {
+              "authors": [],
+              "doi": null,
+              "title": "Deep contextualized word representations",
+              "year": null
+            },
+            "document_id": "doc-0cfbd371512a4417850b985a8ba626f9",
+            "extraction": {
+              "engine": "pymupdf",
+              "version": "1.28.2"
+            },
+            "file": "sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632/original.pdf",
+            "filename": "elmo.pdf",
+            "imported_at": "2026-09-21T00:14:22.651592+00:00",
+            "origin": "https://arxiv.org/abs/1802.05365",
+            "role": "literature",
+            "sha256": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+            "source_version": 1,
+            "status": "ready",
+            "text_revision_id": "text-81047677cf7c9982acac5be1204fcfdd452ec195a664a85375bb2c7ab7db4476",
+            "text_sha256": "fd9c82921d4dc5517fcd1141fa497e8b98a101d68b0df9012b44bf1fd929462a",
+            "page_count": 15
+          }
+        },
+        "artifacts": {},
+        "searches": [],
+        "pending_cleanup": null,
+        "pending_job": null,
+        "disabled_spans": [],
+        "inbox": [
+          "context-50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013.csv",
+          "context-9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c.md",
+          "elmo.pdf"
+        ],
+        "stages": {
+          "exploration": {
+            "number": 1,
+            "tool": "explore_topics",
+            "sections": [
+              "landscape",
+              "candidate_topics",
+              "reading_plan"
+            ],
+            "instruction": "Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher."
+          },
+          "gaps": {
+            "number": 2,
+            "tool": "map_research_gaps",
+            "sections": [
+              "comparison",
+              "candidate_gaps",
+              "search_limits"
+            ],
+            "instruction": "Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits."
+          },
+          "question": {
+            "number": 3,
+            "tool": "formulate_question",
+            "sections": [
+              "research_question",
+              "objectives",
+              "contribution",
+              "feasibility"
+            ],
+            "instruction": "Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved."
+          },
+          "design": {
+            "number": 4,
+            "tool": "design_study",
+            "sections": [
+              "study_design",
+              "sampling",
+              "measurement",
+              "analysis_plan",
+              "ethics"
+            ],
+            "instruction": "Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence."
+          },
+          "execution": {
+            "number": 5,
+            "tool": "track_execution",
+            "sections": [
+              "activity",
+              "observations",
+              "deviations",
+              "next_actions"
+            ],
+            "instruction": "Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments."
+          },
+          "analysis": {
+            "number": 6,
+            "tool": "interpret_results",
+            "sections": [
+              "results",
+              "comparison",
+              "limitations"
+            ],
+            "instruction": "Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence."
+          },
+          "manuscript": {
+            "number": 7,
+            "tool": "draft_manuscript",
+            "sections": [
+              "title",
+              "abstract",
+              "introduction",
+              "methods",
+              "results",
+              "discussion",
+              "conclusion"
+            ],
+            "instruction": "Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used."
+          },
+          "submission": {
+            "number": 8,
+            "tool": "prepare_submission",
+            "sections": [
+              "venue",
+              "checklist",
+              "cover_letter",
+              "ai_disclosure"
+            ],
+            "instruction": "Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically."
+          },
+          "literature_note": {
+            "number": null,
+            "tool": "save_artifact",
+            "sections": [
+              "research_question",
+              "population",
+              "method",
+              "findings",
+              "limitations"
+            ],
+            "instruction": "Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies."
+          }
+        },
+        "search_index": {
+          "model": {
+            "provider": "ollama",
+            "model": "nomic-embed-text:latest",
+            "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+            "dimensions": 768,
+            "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "device": "cpu",
+            "external_api": false
+          },
+          "total_chunks": 70,
+          "indexed_chunks": 70,
+          "pending_or_invalid_chunks": 0,
+          "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+          "default_mode": "hybrid",
+          "ready": true
+        },
+        "capabilities": {
+          "transport": "streamable-http",
+          "online_discovery": "Crossref metadata",
+          "retrieval": "lexical / multilingual semantic / hybrid (default), local CPU",
+          "generation": "connected MCP client",
+          "external_model_calls": false,
+          "automatic_semantic_grading": false,
+          "automatic_experiments": false,
+          "automatic_submission": false
+        }
+      }
+    },
+    {
+      "tool": "preview_workspace_cleanup",
+      "arguments": {
+        "scope": "all_except_inbox"
+      },
+      "response": {
+        "scope": "all_except_inbox",
+        "revision": 24,
+        "workspace": "/data",
+        "delete_counts": {
+          "embeddings": 70,
+          "chunks": 70,
+          "chunk_metadata": 70,
+          "chunk_sets": 5,
+          "documents": 5,
+          "artifacts": 0,
+          "versions": 0,
+          "searches": 0,
+          "events": 7
+        },
+        "source_ids": [
+          "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+          "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+          "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe",
+          "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c",
+          "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+        ],
+        "artifact_ids": [],
+        "clears_project": true,
+        "backup_required": false,
+        "can_execute": true,
+        "blockers": [],
+        "source_files_retained": 0,
+        "preserves": [
+          "inbox",
+          "authentication",
+          "journal schema and cleanup receipt"
+        ],
+        "limitation": "Cleanup does not improve relevance or provide secure erasure",
+        "filesystem": {
+          "entries": [
+            {
+              "path": "backups",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/manifest.json",
+              "kind": "file",
+              "bytes": 960,
+              "sha256": "d36c8034c45eb3fc3b349b746335d2c4a0b0aa50994b840aaed00084d8b904a0"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/qdrant-points.json",
+              "kind": "file",
+              "bytes": 821460,
+              "sha256": "fc1a37ea08316b04b9544e4f7dec2711d56d2495a54a7495b5e12cd53d4239a4"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013/original.csv",
+              "kind": "file",
+              "bytes": 1040,
+              "sha256": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2/original.md",
+              "kind": "file",
+              "bytes": 11251,
+              "sha256": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe/original.txt",
+              "kind": "file",
+              "bytes": 125,
+              "sha256": "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c/original.md",
+              "kind": "file",
+              "bytes": 224,
+              "sha256": "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632/original.pdf",
+              "kind": "file",
+              "bytes": 425880,
+              "sha256": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+            },
+            {
+              "path": "backups/43a327cea6584dcea6d89b5838d77cee/workspace.json",
+              "kind": "file",
+              "bytes": 206844,
+              "sha256": "9bb5561ee37bae620c320d41c911fdebf2acc250768175fd0c102d6c530d434a"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/manifest.json",
+              "kind": "file",
+              "bytes": 960,
+              "sha256": "d36c8034c45eb3fc3b349b746335d2c4a0b0aa50994b840aaed00084d8b904a0"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/qdrant-points.json",
+              "kind": "file",
+              "bytes": 821460,
+              "sha256": "fc1a37ea08316b04b9544e4f7dec2711d56d2495a54a7495b5e12cd53d4239a4"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013/original.csv",
+              "kind": "file",
+              "bytes": 1040,
+              "sha256": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2/original.md",
+              "kind": "file",
+              "bytes": 11251,
+              "sha256": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe/original.txt",
+              "kind": "file",
+              "bytes": 125,
+              "sha256": "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c/original.md",
+              "kind": "file",
+              "bytes": 224,
+              "sha256": "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+              "kind": "directory"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632/original.pdf",
+              "kind": "file",
+              "bytes": 425880,
+              "sha256": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+            },
+            {
+              "path": "backups/bf3fd275b7bf4e7980804702feadb943/workspace.json",
+              "kind": "file",
+              "bytes": 206844,
+              "sha256": "9bb5561ee37bae620c320d41c911fdebf2acc250768175fd0c102d6c530d434a"
+            },
+            {
+              "path": "exports",
+              "kind": "directory"
+            },
+            {
+              "path": "jobs",
+              "kind": "directory"
+            },
+            {
+              "path": "jobs/8c20d1a3df5d8b220375ad355bccd0ae645043576cf71e49d80ee72c7569925d.json",
+              "kind": "file",
+              "bytes": 1633,
+              "sha256": "c01cdc4961942f90f91987473947ca8ac9022ad23e9166e12fc65560812a4e94"
+            },
+            {
+              "path": "jobs/9085767a645f97f60f29f11bcc2bbd13237725c1bebc86b8daa399d468a11a1d.json",
+              "kind": "file",
+              "bytes": 2001,
+              "sha256": "c77e94d2eb3189e32e5c97c5be07766798be4ff59ae496b34fcd8f510a96ac07"
+            },
+            {
+              "path": "jobs/91f99cec30612abe39ca4df273f570fc2112bc896190fd1f054b0521e5158316.json",
+              "kind": "file",
+              "bytes": 676,
+              "sha256": "bd7137291b628e18e0a746bfcd4b647165413e78f5f088644edb6df1d13d6194"
+            },
+            {
+              "path": "jobs/be8e1923231b3d3de42d93768c14b5a2c62738833612008e5b51f08145067c28.json",
+              "kind": "file",
+              "bytes": 2729,
+              "sha256": "da26f65e1161723e78306a8ef244650f5391f678d3de4001d9cb1ceb00cbb729"
+            },
+            {
+              "path": "jobs/d8fdc65736dcb30a5d55eef3821ef77f8de55cca9d456eab55e3ddb670d55056.json",
+              "kind": "file",
+              "bytes": 2730,
+              "sha256": "e704c6f3d9eb20da5627a50bb56e0cd52ec46105127a99132e8304c0daa96b11"
+            },
+            {
+              "path": "sources",
+              "kind": "directory"
+            },
+            {
+              "path": "sources/50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013",
+              "kind": "directory"
+            },
+            {
+              "path": "sources/50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013/original.csv",
+              "kind": "file",
+              "bytes": 1040,
+              "sha256": "50d91c8378700cd6f754c667808a5402bf662e120f6ac9857ff14b3aebbe0013"
+            },
+            {
+              "path": "sources/708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+              "kind": "directory"
+            },
+            {
+              "path": "sources/708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2/original.md",
+              "kind": "file",
+              "bytes": 11251,
+              "sha256": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2"
+            },
+            {
+              "path": "sources/8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe",
+              "kind": "directory"
+            },
+            {
+              "path": "sources/8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe/original.txt",
+              "kind": "file",
+              "bytes": 125,
+              "sha256": "8f2336a775d5d11e613c9f7857bd9d93f238f8da5d07486c187ee2074187bbbe"
+            },
+            {
+              "path": "sources/9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c",
+              "kind": "directory"
+            },
+            {
+              "path": "sources/9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c/original.md",
+              "kind": "file",
+              "bytes": 224,
+              "sha256": "9cdd026cee95fcfe758b0ea1d92d8a2a71630383d06a9103aef04b55ab415e0c"
+            },
+            {
+              "path": "sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+              "kind": "directory"
+            },
+            {
+              "path": "sources/d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632/original.pdf",
+              "kind": "file",
+              "bytes": 425880,
+              "sha256": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+            }
+          ],
+          "files": 26,
+          "bytes": 3383857,
+          "sha256": "4d2113da63c867cd47e7eaafe4f662aaac4464f8270e6c94c0809d0621e29408"
+        },
+        "inbox": {
+          "files": 5,
+          "bytes": 438520,
+          "sha256": "f8345dc1736effb384ee782b8906c163f15392e1340aa9f4b825d8da19616bc9"
+        },
+        "plan_hash": "cf662ff1608d4731ce8ace400431559fcbb311f1e7fb7af828ed0730f263a460"
+      }
+    },
+    {
+      "tool": "cleanup_workspace",
+      "arguments": {
+        "scope": "all_except_inbox",
+        "plan_hash": "cf662ff1608d4731ce8ace400431559fcbb311f1e7fb7af828ed0730f263a460",
+        "expected_revision": 24,
+        "idempotency_key": "restore-regression-finish"
+      },
+      "response": {
+        "revision": 25,
+        "result": {
+          "operation": "cleanup_workspace",
+          "scope": "all_except_inbox",
+          "status": "completed",
+          "deleted": {
+            "artifacts": 0,
+            "chunk_metadata": 70,
+            "chunk_sets": 5,
+            "chunks": 70,
+            "documents": 5,
+            "embeddings": 70,
+            "events": 7,
+            "searches": 0,
+            "versions": 0
+          },
+          "backup": null,
+          "vector_index_cleared": true,
+          "journal_cleared": true,
+          "source_files_retained": 0,
+          "preserves": [
+            "inbox",
+            "authentication",
+            "journal schema and cleanup receipt"
+          ],
+          "quality_improvement_claimed": false,
+          "next_step": "import_document",
+          "inbox_unchanged": true,
+          "deleted_files": 26,
+          "filesystem_complete": true
+        }
+      }
+    }
+  ],
+  "result": {
+    "before_cleanup": 22,
+    "before_restore": 23,
+    "after_restore": 24,
+    "sources_preserved": true,
+    "index_ready": true
+  }
+}

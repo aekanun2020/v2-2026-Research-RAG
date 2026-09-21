@@ -22,8 +22,7 @@ class SearchOrchestrator:
     - "bm25": Use only BM25 sparse retrieval
     - "hybrid": Use both and combine with RRF (default)
     
-    It also implements graceful degradation: if one retriever fails,
-    it falls back to the other.
+    Both hybrid components must succeed; failures propagate without changing the requested mode.
     
     Attributes:
         bm25_retriever: BM25Retriever instance
@@ -158,11 +157,11 @@ class SearchOrchestrator:
         return results
     
     async def _search_hybrid(self, query: str, limit: int) -> List[SearchResult]:
-        """Execute hybrid search with graceful degradation.
+        """Execute hybrid search with explicit component failure.
         
         This method:
         1. Executes BM25 and semantic searches in parallel
-        2. Handles failures gracefully (falls back to working retriever)
+        2. Propagates either component failure
         3. Combines results using RRF if both succeed
         
         Args:
@@ -177,36 +176,10 @@ class SearchOrchestrator:
         """
         self.logger.debug("Executing hybrid search")
         
-        bm25_results = None
-        semantic_results = None
-        
-        # Execute BM25 search with error handling
-        try:
-            bm25_results = await self.bm25_retriever.search(query, limit * 2)
-            self.logger.debug(f"BM25 search succeeded: {len(bm25_results)} results")
-        except Exception as e:
-            self.logger.error(f"BM25 search failed: {e}", exc_info=True)
-        
-        # Execute semantic search with error handling
-        try:
-            embedding = await self.embedding_service.generate_embedding(query)
-            semantic_results = await self.storage_service.search(embedding, limit * 2)
-            self.logger.debug(f"Semantic search succeeded: {len(semantic_results)} results")
-        except Exception as e:
-            self.logger.error(f"Semantic search failed: {e}", exc_info=True)
-        
-        # Graceful degradation
-        if bm25_results is None and semantic_results is None:
-            error_msg = "All retrievers failed"
-            self.logger.error(error_msg)
-            raise RuntimeError(error_msg)
-        elif bm25_results is None:
-            self.logger.warning("BM25 failed, using semantic-only results")
-            return semantic_results[:limit]
-        elif semantic_results is None:
-            self.logger.warning("Semantic failed, using BM25-only results")
-            return bm25_results[:limit]
-        
+        bm25_results = await self.bm25_retriever.search(query, limit * 2)
+        embedding = await self.embedding_service.generate_embedding(query)
+        semantic_results = await self.storage_service.search(embedding, limit * 2)
+
         # Both succeeded - combine using RRF
         self.logger.debug("Both retrievers succeeded, combining with RRF")
         combined_results = self.rrf_combiner.combine(

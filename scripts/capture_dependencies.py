@@ -41,7 +41,7 @@ for dist in sorted((d for d in distributions if d.metadata.get('Name')), key=lam
 (out / 'dependencies.json').write_text(json.dumps({
     'platform': platform.platform(), 'python': sys.version,
     'captured_at': datetime.now(timezone.utc).isoformat(),
-    'method': 'Installed distribution inspection; no third-party application source is vendored.',
+    'method': 'Installed distribution inspection; selected application-source provenance is recorded separately under third-party/reference-rag.',
     'incomplete_metadata_directories': incomplete,
     'packages': records,
 }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

@@ -23,7 +23,7 @@ The [experiment ledger](quality-experiments-2026-09-20.json) records separate ch
 
 `semantic` uses multilingual-e5-base to select 50 candidates by exact cosine. `hybrid` selects candidates using the existing BM25/E5 reciprocal-rank fusion. Both rerank query–passage pairs with pinned BGE int8 on CPU and expose original first-page relevance scores for inspection. Neither document nor passage scores filter results by default. Original chunks, quotations, page offsets, source IDs and embeddings are unchanged. There is no translation, generated summary, query-specific paper rule or model API call.
 
-The runtime verifies pinned asset SHA-256 values before inference, uses only CPUExecutionProvider and does not silently switch to another implementation. [BGE provenance](../third-party/bge-reranker-model/README.md), [runtime](../src/research_rag_mcp/reranking.py), [MCP contract](tools.md), [Final Docker build](quality-final-build-2026-09-20.txt), [18 final packaged source hashes](quality-final-image-source-hashes-2026-09-20.json).
+The runtime verifies pinned asset SHA-256 values before inference, uses only CPUExecutionProvider and does not silently switch to another implementation. [BGE provenance](../third-party/bge-reranker-model/README.md), [runtime](https://github.com/aekanun2020/2026-Research-RAG/blob/14b858f77acddd06ff6e6dd83ceba99e848b6fd6/src/research_rag_mcp/reranking.py), [MCP contract](tools.md), [Final Docker build](quality-final-build-2026-09-20.txt), [18 final packaged source hashes](quality-final-image-source-hashes-2026-09-20.json).
 
 `min_document_score=0` is the default. Positive values explicitly enable a caller-selected first-page filter; no safe general cutoff was established. `rerank=false` explicitly selects the original first-stage ranking; lexical mode retains BM25 behavior. These are user-selected modes, not automatic fallbacks. Missing/corrupt assets or indexes raise tool errors. Scores are ranking signals, not calibrated confidence.
 
@@ -32,7 +32,7 @@ The runtime verifies pinned asset SHA-256 values before inference, uses only CPU
 - [All exact Thai questions and fixed split](quality-cases-2026-09-20.json): 10 original topical questions + 2 controls; 6 initially unused paraphrases + 2 controls. H01/H02 were subsequently seen while rejecting the gate; only H03–H06 and HN01–HN02 were untouched before the final no-filter policy. This set concerns the same 10-paper corpus, not unseen papers.
 - [Final no-filter container MCP responses, every returned passage and original-span check](quality-final-candidates-2026-09-20.json). This container runs with external networking disabled and uses the installed image, not a source substitute.
 - [Codex's per-passage judgments](quality-codex-assessment-2026-09-20.json). Matching a filename alone is not a relevance pass.
-- [MCP verifier](../scripts/verify_retrieval_mcp.py) and [contract verifier](../scripts/verify_retrieval_contract_mcp.py).
+- [MCP verifier](https://github.com/aekanun2020/2026-Research-RAG/blob/14b858f77acddd06ff6e6dd83ceba99e848b6fd6/scripts/verify_retrieval_mcp.py) and [contract verifier](https://github.com/aekanun2020/2026-Research-RAG/blob/14b858f77acddd06ff6e6dd83ceba99e848b6fd6/scripts/verify_retrieval_contract_mcp.py).
 
 ## Codex assessment of the final retrieval policy
 

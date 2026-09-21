@@ -49,9 +49,8 @@ def main():
             from .workflow import status
             result = status(store)
         else:
-            store.http_token()
             result = {'workspace': str(store.root), 'inbox': str(store.root/'inbox'),
-                      'http_token_file': str(store.root/'.http-token'), 'revision': store.read()['revision']}
+                      'mcp_authentication': 'none', 'revision': store.read()['revision']}
         print(json.dumps(result, ensure_ascii=False, indent=2))
     except (ValueError, OSError) as exc:
         parser.exit(2, str(exc)+'\n')

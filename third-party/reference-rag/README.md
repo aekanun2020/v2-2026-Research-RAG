@@ -5,3 +5,5 @@ User-selected source: [fixed-2026-rag-mcp-server-streamablehttp](https://github.
 The [pre-import manifest](upstream-manifest.json) pins every upstream file and identifies imported Python files. [Original README](UPSTREAM-README.md) preserves its MIT declaration and reference to its earlier repository. This revision has no standalone LICENSE/NOTICE or copyright notice; none has been fabricated. Dependencies retain their own licenses, recorded separately.
 
 The imported `pyragdoc` code supplies Qdrant storage, Ollama embeddings, Thai lexical retrieval and RRF. Local changes and integration are recorded in Git after the separate source-import commit. This is adaptation of the explicitly selected upstream, not an independently originated implementation of these components.
+
+The separate unchanged source import is commit [`832eb77c61240a0bcf0437bd6a62bd8112accd9a`](https://github.com/aekanun2020/2026-Research-RAG/commit/832eb77c61240a0bcf0437bd6a62bd8112accd9a). Integration commits follow it, so upstream import and local adaptations can be reviewed separately.

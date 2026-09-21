@@ -1,3 +1,5 @@
+> Historical 0.2.4 documentation. For the current Qdrant/Ollama migration and changed job contract, see [migration record](qdrant-migration.md) and [current README](../README.md).
+
 # Validation — current checks and historical results
 
 Assessor: Codex. Implementation checks, 2026-09-20. No external LLM judge, external inference, fake server, proxy, or simulated service. Versions 0.2.0 through 0.2.3 use the real local CPU embedding model. Native Claude Desktop and Windows are not assessed by the local protocol tests.

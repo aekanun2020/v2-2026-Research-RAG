@@ -1,0 +1,1789 @@
+{
+  "started_at": "2026-09-21T00:10:00.062062+00:00",
+  "endpoint": "http://127.0.0.1:8876/mcp",
+  "authentication": "none; no Authorization header",
+  "assessor": "Codex must inspect results; this script checks spans only",
+  "suite": "concurrent",
+  "calls": [
+    {
+      "case": {
+        "id": "ef4da825ecc960500b6b4b00a3936d6fc30cb95d028b29e5caa4f1f81e4b517e",
+        "query": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval architecture method evaluation limitations",
+        "source_ids": [
+          "ef4da825ecc960500b6b4b00a3936d6fc30cb95d028b29e5caa4f1f81e4b517e"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval architecture method evaluation limitations",
+        "source_ids": [
+          "ef4da825ecc960500b6b4b00a3936d6fc30cb95d028b29e5caa4f1f81e4b517e"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.3671750830108067,
+      "response": {
+        "query": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 0.9198502500003087,
+          "query_embedding_seconds": 0.7156782919992111,
+          "vector_search_seconds": 0.07420504199399147,
+          "total_seconds": 1.711972251003317
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 55,
+        "hits": [
+          {
+            "chunk_set_id": "cs-05bf046780964c139a03e4afd9336acd",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1178,
+            "id": "bd06ee1feb798dbcfe46db1aa41955e341218000255f840e79214f3c6e09214c",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "ef4da825ecc960500b6b4b00a3936d6fc30cb95d028b29e5caa4f1f81e4b517e",
+            "start": 0,
+            "status": "active",
+            "text": "MemoryGraft: Persistent Compromise of LLM Agents\nvia Poisoned Experience Retrieval\nSaksham Sahai Srivastava\nSchool of Computing\nUniversity of Georgia\nAthens, GA 30602\nsaksham.srivastava@uga.edu\nHaoyu He\nSchool of Computing\nUniversity of Georgia\nAthens, GA 30602\nhaoyu.he@uga.edu\nAbstract\nLarge Language Model (LLM) agents increasingly rely on long-term memory and\nRetrieval-Augmented Generation (RAG) to persist experiences and refine future\nperformance. While this experience learning capability enhances agentic autonomy,\nit introduces a critical, unexplored attack surface, i.e., the trust boundary between\nan agent’s reasoning core and its own past. In this paper, we introduceMemory-\nGraft. It is a novel indirect injection attack that compromises agent behavior not\nthrough immediate jailbreaks, but by implanting malicious successful experiences\ninto the agent’s long-term memory. Unlike traditional prompt injections that are\ntransient, or standard RAG poisoning that targets factual knowledge, MemoryGraft\nexploits the agent’s semantic imitation heuristic which is the tendency to replicate\npatterns from retrieved successful tasks. We demonstrate that an attacker who\n",
+            "updated_at": "2026-09-20T22:52:31.088912+00:00",
+            "score": 0.03278688524590164,
+            "lexical_score": 1.0,
+            "semantic_score": 0.8488727,
+            "matched_terms": [
+              "poisoned",
+              "retrieval",
+              "memorygraft",
+              "of",
+              ":",
+              "experience",
+              "llm",
+              "compromise",
+              "agents",
+              "persistent",
+              "via"
+            ],
+            "document_id": "doc-27031e9a70b34004bb77144c3033ac1b",
+            "source_version": 1,
+            "text_revision_id": "text-d49c1c6b989d5bcccde4a689d32bb285d25c9c100dc78fdf7f70d9ad25b7e99b",
+            "origin": "https://arxiv.org/abs/2512.16962",
+            "role": "literature",
+            "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval",
+            "page_label": "1",
+            "citation": {
+              "source_id": "ef4da825ecc960500b6b4b00a3936d6fc30cb95d028b29e5caa4f1f81e4b517e",
+              "page_index": 0,
+              "start": 0,
+              "end": 1178,
+              "quote": "MemoryGraft: Persistent Compromise of LLM Agents\nvia Poisoned Experience Retrieval\nSaksham Sahai Srivastava\nSchool of Computing\nUniversity of Georgia\nAthens, GA 30602\nsaksham.srivastava@uga.edu\nHaoyu He\nSchool of Computing\nUniversity of Georgia\nAthens, GA 30602\nhaoyu.he@uga.edu\nAbstract\nLarge Language Model (LLM) agents increasingly rely on long-term memory and\nRetrieval-Augmented Generation (RAG) to persist experiences and refine future\nperformance. While this experience learning capability enhances agentic autonomy,\nit introduces a critical, unexplored attack surface, i.e., the trust boundary between\nan agent’s reasoning core and its own past. In this paper, we introduceMemory-\nGraft. It is a novel indirect injection attack that compromises agent behavior not\nthrough immediate jailbreaks, but by implanting malicious successful experiences\ninto the agent’s long-term memory. Unlike traditional prompt injections that are\ntransient, or standard RAG poisoning that targets factual knowledge, MemoryGraft\nexploits the agent’s semantic imitation heuristic which is the tendency to replicate\npatterns from retrieved successful tasks. We demonstrate that an attacker who\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-05bf046780964c139a03e4afd9336acd",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2188,
+            "id": "01f9ec2b62b615ed17179b0cb85a81ec6a1334546216d7dd68569226345eb7ee",
+            "page_index": 9,
+            "reason": "Imported from verified extracted text",
+            "source_id": "ef4da825ecc960500b6b4b00a3936d6fc30cb95d028b29e5caa4f1f81e4b517e",
+            "start": 1000,
+            "status": "active",
+            "text": "t be\nmatched with mechanisms that ensure those experiences are not quietly corrupted.MemoryGraft\nillustrates how easily current designs can be steered off course, and why securing the memory pipeline\nshould be treated as a first-class concern in future LLM agent architectures.\n8 Limitations and Future Work\nWhile our experiments show thatMemoryGraftcan reliably induce persistent behavioral drift, the\nevaluation has several limitations. First, our tests rely on a relatively small set of handcrafted benign\nand poisoned seeds. Larger and more diverse datasets that reflect a wider range of development\nworkflows, data processing tasks, and documentation styles would allow for a more complete\nunderstanding of how broadly the attack generalizes. Establishing benchmark datasets specifically\ndesigned for memory poisoning and retrieval drift would also help standardize evaluation across\nfuture studies. Second, we focus primarily on aggregate retrieval statistics; more extensive metrics\nsuch as retrieval precision and recall, behavioral severity scores, and long-term stability measures\nwould offer a clearer picture of how quickly and strongly an agent becomes compromised. Finally,\n",
+            "updated_at": "2026-09-20T22:52:31.092912+00:00",
+            "score": 0.03200204813108039,
+            "lexical_score": 0.8397666332570699,
+            "semantic_score": 0.79764986,
+            "matched_terms": [
+              "evaluation",
+              "poisoned",
+              "retrieval",
+              "of",
+              "limitations",
+              "persistent",
+              "llm"
+            ],
+            "document_id": "doc-27031e9a70b34004bb77144c3033ac1b",
+            "source_version": 1,
+            "text_revision_id": "text-d49c1c6b989d5bcccde4a689d32bb285d25c9c100dc78fdf7f70d9ad25b7e99b",
+            "origin": "https://arxiv.org/abs/2512.16962",
+            "role": "literature",
+            "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval",
+            "page_label": "10",
+            "citation": {
+              "source_id": "ef4da825ecc960500b6b4b00a3936d6fc30cb95d028b29e5caa4f1f81e4b517e",
+              "page_index": 9,
+              "start": 1000,
+              "end": 2188,
+              "quote": "t be\nmatched with mechanisms that ensure those experiences are not quietly corrupted.MemoryGraft\nillustrates how easily current designs can be steered off course, and why securing the memory pipeline\nshould be treated as a first-class concern in future LLM agent architectures.\n8 Limitations and Future Work\nWhile our experiments show thatMemoryGraftcan reliably induce persistent behavioral drift, the\nevaluation has several limitations. First, our tests rely on a relatively small set of handcrafted benign\nand poisoned seeds. Larger and more diverse datasets that reflect a wider range of development\nworkflows, data processing tasks, and documentation styles would allow for a more complete\nunderstanding of how broadly the attack generalizes. Establishing benchmark datasets specifically\ndesigned for memory poisoning and retrieval drift would also help standardize evaluation across\nfuture studies. Second, we focus primarily on aggregate retrieval statistics; more extensive metrics\nsuch as retrieval precision and recall, behavioral severity scores, and long-term stability measures\nwould offer a clearer picture of how quickly and strongly an agent becomes compromised. Finally,\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "bd06ee1feb798dbcfe46db1aa41955e341218000255f840e79214f3c6e09214c",
+          "exact": true
+        },
+        {
+          "chunk_id": "01f9ec2b62b615ed17179b0cb85a81ec6a1334546216d7dd68569226345eb7ee",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "8de9eb2456a52487f3db5839e2cab6ae044017260d700183c99de9c14dcbf8dc",
+        "query": "Natural-Language Agent Harnesses architecture method evaluation limitations",
+        "source_ids": [
+          "8de9eb2456a52487f3db5839e2cab6ae044017260d700183c99de9c14dcbf8dc"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "Natural-Language Agent Harnesses architecture method evaluation limitations",
+        "source_ids": [
+          "8de9eb2456a52487f3db5839e2cab6ae044017260d700183c99de9c14dcbf8dc"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.3856938749959227,
+      "response": {
+        "query": "Natural-Language Agent Harnesses architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 2.92970045900438,
+          "query_embedding_seconds": 0.29631199999857927,
+          "vector_search_seconds": 0.03199825000046985,
+          "total_seconds": 3.2599452100039343
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 85,
+        "hits": [
+          {
+            "chunk_set_id": "cs-4131c4ce61c74812b16ae6a39441272b",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 4346,
+            "id": "cce35fd617c2711ffbf99cd2d469971eb2410066b7e53ea91108b47521664e6c",
+            "page_index": 8,
+            "reason": "Imported from verified extracted text",
+            "source_id": "8de9eb2456a52487f3db5839e2cab6ae044017260d700183c99de9c14dcbf8dc",
+            "start": 3784,
+            "status": "active",
+            "text": "ask\nrun, extending beyond an individual call, a fixed pipeline, or a formal workflow graph. NLAHs\ndeliberately keep a freer natural-language form to preserve editability and broad expressivity, while\nrelying on IHR and deterministic hooks for execution.\n7 Conclusion\nWe studied whether agent harness policy can be externalized as a compact, executable, and analyzable\nrepresentation. We introduced Natural-Language Agent Harnesses and an Intelligent Harness Runtime\nthat executes these harnesses under shared runtime semantics. Across coding, terminal-use, and\n9",
+            "updated_at": "2026-09-20T22:54:03.172695+00:00",
+            "score": 0.03149801587301587,
+            "lexical_score": 0.4224874310102642,
+            "semantic_score": 0.7165672,
+            "matched_terms": [
+              "natural-language",
+              "agent",
+              "harnesses"
+            ],
+            "document_id": "doc-27e8f4cd52424e7496b7a8ed17f35675",
+            "source_version": 1,
+            "text_revision_id": "text-0a7186fb0f6c475a5360f292eb90889bc9cb0174f26ded58d68df00a8d629794",
+            "origin": "https://arxiv.org/abs/2603.25723",
+            "role": "literature",
+            "title": "Natural-Language Agent Harnesses",
+            "page_label": "9",
+            "citation": {
+              "source_id": "8de9eb2456a52487f3db5839e2cab6ae044017260d700183c99de9c14dcbf8dc",
+              "page_index": 8,
+              "start": 3784,
+              "end": 4346,
+              "quote": "ask\nrun, extending beyond an individual call, a fixed pipeline, or a formal workflow graph. NLAHs\ndeliberately keep a freer natural-language form to preserve editability and broad expressivity, while\nrelying on IHR and deterministic hooks for execution.\n7 Conclusion\nWe studied whether agent harness policy can be externalized as a compact, executable, and analyzable\nrepresentation. We introduced Natural-Language Agent Harnesses and an Intelligent Harness Runtime\nthat executes these harnesses under shared runtime semantics. Across coding, terminal-use, and\n9",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-4131c4ce61c74812b16ae6a39441272b",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 977,
+            "id": "96152b183dae1d9d36330cb5b3d9c94cd696e013c680eae129776927e11b1974",
+            "page_index": 21,
+            "reason": "Imported from verified extracted text",
+            "source_id": "8de9eb2456a52487f3db5839e2cab6ae044017260d700183c99de9c14dcbf8dc",
+            "start": 0,
+            "status": "active",
+            "text": "G Limitations, Risks, and Broader Impact\nLimitations\nThe main limitation is natural-language imprecision. NLAHs are editable natural-language policies,\nso semantically important constraints may be under-specified, interpreted differently across models,\nor weakened by paraphrase. We therefore keep exact mechanisms in code and treat executed behavior\nas something that must be checked through runs, avoiding inference from the text alone.\nBroader impact and risks\nExternalizing harness modules can reduce development cost, improve comparability, and encourage\nreuse of robust workflows. However, portable harness logic and scripts may also lower the barrier to\nspreading risky workflows. Because harnesses mediate tool use, artifact handling, and delegation,\nthey can introduce new attack surfaces for prompt injection, malicious tool grafting, or supply-chain\ncontamination. Deployments should combine provenance tracking, review, permission control, and\nsandbox isolation.\n22",
+            "updated_at": "2026-09-20T22:54:03.173707+00:00",
+            "score": 0.01639344262295082,
+            "lexical_score": 1.0,
+            "semantic_score": null,
+            "matched_terms": [
+              "limitations",
+              "natural-language",
+              "harnesses"
+            ],
+            "document_id": "doc-27e8f4cd52424e7496b7a8ed17f35675",
+            "source_version": 1,
+            "text_revision_id": "text-0a7186fb0f6c475a5360f292eb90889bc9cb0174f26ded58d68df00a8d629794",
+            "origin": "https://arxiv.org/abs/2603.25723",
+            "role": "literature",
+            "title": "Natural-Language Agent Harnesses",
+            "page_label": "22",
+            "citation": {
+              "source_id": "8de9eb2456a52487f3db5839e2cab6ae044017260d700183c99de9c14dcbf8dc",
+              "page_index": 21,
+              "start": 0,
+              "end": 977,
+              "quote": "G Limitations, Risks, and Broader Impact\nLimitations\nThe main limitation is natural-language imprecision. NLAHs are editable natural-language policies,\nso semantically important constraints may be under-specified, interpreted differently across models,\nor weakened by paraphrase. We therefore keep exact mechanisms in code and treat executed behavior\nas something that must be checked through runs, avoiding inference from the text alone.\nBroader impact and risks\nExternalizing harness modules can reduce development cost, improve comparability, and encourage\nreuse of robust workflows. However, portable harness logic and scripts may also lower the barrier to\nspreading risky workflows. Because harnesses mediate tool use, artifact handling, and delegation,\nthey can introduce new attack surfaces for prompt injection, malicious tool grafting, or supply-chain\ncontamination. Deployments should combine provenance tracking, review, permission control, and\nsandbox isolation.\n22",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "cce35fd617c2711ffbf99cd2d469971eb2410066b7e53ea91108b47521664e6c",
+          "exact": true
+        },
+        {
+          "chunk_id": "96152b183dae1d9d36330cb5b3d9c94cd696e013c680eae129776927e11b1974",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380",
+        "query": "Qwen3-VL Technical Report architecture method evaluation limitations",
+        "source_ids": [
+          "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "Qwen3-VL Technical Report architecture method evaluation limitations",
+        "source_ids": [
+          "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.3920486669958336,
+      "response": {
+        "query": "Qwen3-VL Technical Report architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 1.1688072920005652,
+          "query_embedding_seconds": 0.12872829099796945,
+          "vector_search_seconds": 0.013941125995188486,
+          "total_seconds": 1.3140719590010121
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 169,
+        "hits": [
+          {
+            "chunk_set_id": "cs-1ac85421d3624784a3294215a8e10e59",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 4838,
+            "id": "76682362e6c0244e668fb37f0a6a787f77bda807dd31d46ed0ffe8cd5c735f39",
+            "page_index": 19,
+            "reason": "Imported from verified extracted text",
+            "source_id": "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380",
+            "start": 3848,
+            "status": "active",
+            "text": ",\n(5)Agent:BFCL-v3 (Patil et al., 2024), TAU2-Retail, TAU2-Airline, TAU2-Telecom, (6)Multilingual:\nMultiIF (He et al., 2024), MMLU-ProX, INCLUDE (Romanou et al., 2025), PolyMATH (Wang et al., 2025b).\nEvaluation SettingsFor Qwen3-VL instruct models including 235B-A22B, 32B and 30B-A3B, we config-\nure the sampling hyperparameters with temperature = 0.7, top-p = 0.8, top-k = 20, and presence penalty\n= 1.5. As for the small instruct models including 8B, 4B and 2B, we set the temperature = 1.0, top-p = 1.0,\ntop-k = 40, and presence penalty = 2.0. We set the max output length to 32,768 tokens.\nFor Qwen3-VL thinking models with Mixture-of-Experts (MoE) architecture, we set the sampling temper-\nature to 0.6, top-p to 0.95, and top-k to 20. For the dense thinking models, we set temperature = 1.0, top-p\n1For reproducibility of Arena-Hard v2, we report the win rates evaluated by GPT-4.1.\n2For reproducibility of Creative Writing v3, we report the scores evaluated by Claude 3.7 Sonnet.\n20",
+            "updated_at": "2026-09-20T22:51:32.511028+00:00",
+            "score": 0.01639344262295082,
+            "lexical_score": 1.0,
+            "semantic_score": null,
+            "matched_terms": [
+              "3",
+              "report",
+              "architecture",
+              "evaluation",
+              "-vl",
+              "qwen"
+            ],
+            "document_id": "doc-10728237cd5e404893952c31d3dcc80e",
+            "source_version": 1,
+            "text_revision_id": "text-3d415228e2efe1a2ccc8bf5a36ec8de7f8c21e44d9ab45d9327c700090ed22ab",
+            "origin": "https://arxiv.org/abs/2511.21631",
+            "role": "literature",
+            "title": "Qwen3-VL Technical Report",
+            "page_label": "20",
+            "citation": {
+              "source_id": "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380",
+              "page_index": 19,
+              "start": 3848,
+              "end": 4838,
+              "quote": ",\n(5)Agent:BFCL-v3 (Patil et al., 2024), TAU2-Retail, TAU2-Airline, TAU2-Telecom, (6)Multilingual:\nMultiIF (He et al., 2024), MMLU-ProX, INCLUDE (Romanou et al., 2025), PolyMATH (Wang et al., 2025b).\nEvaluation SettingsFor Qwen3-VL instruct models including 235B-A22B, 32B and 30B-A3B, we config-\nure the sampling hyperparameters with temperature = 0.7, top-p = 0.8, top-k = 20, and presence penalty\n= 1.5. As for the small instruct models including 8B, 4B and 2B, we set the temperature = 1.0, top-p = 1.0,\ntop-k = 40, and presence penalty = 2.0. We set the max output length to 32,768 tokens.\nFor Qwen3-VL thinking models with Mixture-of-Experts (MoE) architecture, we set the sampling temper-\nature to 0.6, top-p to 0.95, and top-k to 20. For the dense thinking models, we set temperature = 1.0, top-p\n1For reproducibility of Arena-Hard v2, we report the win rates evaluated by GPT-4.1.\n2For reproducibility of Creative Writing v3, we report the scores evaluated by Claude 3.7 Sonnet.\n20",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-1ac85421d3624784a3294215a8e10e59",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1172,
+            "id": "31f1541fb4171ef22f4ee2160342469de7d756ceaa599e754a27acd11d3bff06",
+            "page_index": 15,
+            "reason": "Imported from verified extracted text",
+            "source_id": "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380",
+            "start": 0,
+            "status": "active",
+            "text": "Table 3:Performance of medium-sized Qwen3-VL models and previous models on visual benchmarks.\nThe highest scores are shown inbold. Results marked with an ∗ are sourced from the technical report. +\ndenotes results with tool use.\nBenchmark\nthinking instruct thinking instruct thinking non-thinking high minimal\nSTEM\nPuzzle\nMMMU 76.0 74.2 78.1 76.0 77.7 76.3 79.0 67.9\nMMMU-Pro 63.0 60.4 68.1 65.3 67.2 65.9 67.3 53.7\nMathVistamini 81.9 80.1 85.9 83.8 79.4 75.3 79.1 59.6\nMathVision 65.7 60.2 70.2 63.4 64.3 60.7 71.9 46.6\nMathVisionWP 58.9 52.3 58.6 54.6 53.6 49.0 56.6 42.8\nWe-Math 70.0 56.9 71.6 63.3 53.9 60.3 70.2 51.4\nMathVersemini 79.6 70.2 82.6 76.8 77.7 75.9 78.8 36.5\nDynaMath 80.1 73.4 82.0 76.7 75.9 69.7 81.4 71.3\nMath-VR 61.7 61.3 62.3 59.8 58.8 54.7 58.2 26.4\nZeroBench 0 0 2 1 1 3 3 2\nVlmsAreBlind 72.5 67.5 85.1 87.0 77.5 75.9 75.8 62.0\nLogicVista 65.8 53.5 70.9 62.2 67.3 60.0 71.4 50.8\nVisuLogic 26.6 23.0 32.4 29.7 31.0 23.3 27.2 27.6\nVisualPuzzles 52.0 46.2 54.7 53.2 41.4 45.0 59.3 48.2\nGeneral VQA\nMMBench-EN 87.0 86.1 89.5 87.6 87.1 86.6 86.6 78.5\nMMBench-CN 85.9 85.3 89.4 87.7 87.3 86.0 84.0 76.3\nRealWorldQA 77.4 73.7 78.4 79.0 76.0 75.7 79.0 73.3\n",
+            "updated_at": "2026-09-20T22:51:32.510903+00:00",
+            "score": 0.01639344262295082,
+            "lexical_score": null,
+            "semantic_score": 0.6229892,
+            "matched_terms": [
+              "3",
+              "report",
+              "technical",
+              "-vl",
+              "qwen"
+            ],
+            "document_id": "doc-10728237cd5e404893952c31d3dcc80e",
+            "source_version": 1,
+            "text_revision_id": "text-3d415228e2efe1a2ccc8bf5a36ec8de7f8c21e44d9ab45d9327c700090ed22ab",
+            "origin": "https://arxiv.org/abs/2511.21631",
+            "role": "literature",
+            "title": "Qwen3-VL Technical Report",
+            "page_label": "16",
+            "citation": {
+              "source_id": "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380",
+              "page_index": 15,
+              "start": 0,
+              "end": 1172,
+              "quote": "Table 3:Performance of medium-sized Qwen3-VL models and previous models on visual benchmarks.\nThe highest scores are shown inbold. Results marked with an ∗ are sourced from the technical report. +\ndenotes results with tool use.\nBenchmark\nthinking instruct thinking instruct thinking non-thinking high minimal\nSTEM\nPuzzle\nMMMU 76.0 74.2 78.1 76.0 77.7 76.3 79.0 67.9\nMMMU-Pro 63.0 60.4 68.1 65.3 67.2 65.9 67.3 53.7\nMathVistamini 81.9 80.1 85.9 83.8 79.4 75.3 79.1 59.6\nMathVision 65.7 60.2 70.2 63.4 64.3 60.7 71.9 46.6\nMathVisionWP 58.9 52.3 58.6 54.6 53.6 49.0 56.6 42.8\nWe-Math 70.0 56.9 71.6 63.3 53.9 60.3 70.2 51.4\nMathVersemini 79.6 70.2 82.6 76.8 77.7 75.9 78.8 36.5\nDynaMath 80.1 73.4 82.0 76.7 75.9 69.7 81.4 71.3\nMath-VR 61.7 61.3 62.3 59.8 58.8 54.7 58.2 26.4\nZeroBench 0 0 2 1 1 3 3 2\nVlmsAreBlind 72.5 67.5 85.1 87.0 77.5 75.9 75.8 62.0\nLogicVista 65.8 53.5 70.9 62.2 67.3 60.0 71.4 50.8\nVisuLogic 26.6 23.0 32.4 29.7 31.0 23.3 27.2 27.6\nVisualPuzzles 52.0 46.2 54.7 53.2 41.4 45.0 59.3 48.2\nGeneral VQA\nMMBench-EN 87.0 86.1 89.5 87.6 87.1 86.6 86.6 78.5\nMMBench-CN 85.9 85.3 89.4 87.7 87.3 86.0 84.0 76.3\nRealWorldQA 77.4 73.7 78.4 79.0 76.0 75.7 79.0 73.3\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "76682362e6c0244e668fb37f0a6a787f77bda807dd31d46ed0ffe8cd5c735f39",
+          "exact": true
+        },
+        {
+          "chunk_id": "31f1541fb4171ef22f4ee2160342469de7d756ceaa599e754a27acd11d3bff06",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "4608d7f5d0694dd09a66144dac921797e161331d92b5eef133615bec392ec928",
+        "query": "Qwen3-Omni Technical Report architecture method evaluation limitations",
+        "source_ids": [
+          "4608d7f5d0694dd09a66144dac921797e161331d92b5eef133615bec392ec928"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "Qwen3-Omni Technical Report architecture method evaluation limitations",
+        "source_ids": [
+          "4608d7f5d0694dd09a66144dac921797e161331d92b5eef133615bec392ec928"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.39298379200045,
+      "response": {
+        "query": "Qwen3-Omni Technical Report architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 1.0458452090024366,
+          "query_embedding_seconds": 0.3779517080038204,
+          "vector_search_seconds": 0.026602042002195958,
+          "total_seconds": 1.4530340009951033
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 102,
+        "hits": [
+          {
+            "chunk_set_id": "cs-5a13685437f3443685c0f2125f6ffabf",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1127,
+            "id": "b2087819dd34ae8422752a67691b7c6ddcc9ef5e9137f39db03208d1115d4eeb",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "4608d7f5d0694dd09a66144dac921797e161331d92b5eef133615bec392ec928",
+            "start": 0,
+            "status": "active",
+            "text": "2025-09-23\nQwen3-Omni Technical Report\nQwen Team\nhttps://github.com/QwenLM/Qwen3-Omni\nhttps://huggingface.co/spaces/Qwen/Qwen3-Omni-Demo\nhttps://modelscope.cn/studios/Qwen/Qwen3-Omni-Demo\nAbstract\nWe present Qwen3-Omni, a single multimodal model that for the first time maintains\nstate-of-the-art performance across text, image, audio, and video without any degra-\ndation relative to single-modal counterparts. Qwen3-Omni matches the performance\nof same-sized single-modal models within the Qwen series and excels particularly on\naudio tasks. Across 36 audio and audio-visual benchmarks, Qwen3-Omni achieves open-\nsource state-of-the-art (SOTA) on 32 benchmarks and overall SOTA on 22, outperforming\nstrong closed-source models such as Gemini-2.5-Pro, Seed-ASR, and GPT-4o-Transcribe.\nQwen3-Omni adopts a Thinker–Talker Mixture-of-Experts (MoE) architecture that uni-\nfies perception and generation across text, images, audio, and video, yielding fluent\ntext and natural real-time speech. It supports text interaction in 119 languages, speech\nunderstanding in 19 languages and speech generation in 10 languages. The system can\n",
+            "updated_at": "2026-09-20T22:49:07.245274+00:00",
+            "score": 0.03278688524590164,
+            "lexical_score": 1.0,
+            "semantic_score": 0.66328514,
+            "matched_terms": [
+              "3",
+              "report",
+              "architecture",
+              "technical",
+              "qwen",
+              "-omni"
+            ],
+            "document_id": "doc-1a0b99be271a45d493d0651c16c539c5",
+            "source_version": 1,
+            "text_revision_id": "text-621a58d4daf249c7db7a5b51d979062e50c62932e890f12edfd1a1a068f881fb",
+            "origin": "https://arxiv.org/abs/2509.17765",
+            "role": "literature",
+            "title": "Qwen3-Omni Technical Report",
+            "page_label": "1",
+            "citation": {
+              "source_id": "4608d7f5d0694dd09a66144dac921797e161331d92b5eef133615bec392ec928",
+              "page_index": 0,
+              "start": 0,
+              "end": 1127,
+              "quote": "2025-09-23\nQwen3-Omni Technical Report\nQwen Team\nhttps://github.com/QwenLM/Qwen3-Omni\nhttps://huggingface.co/spaces/Qwen/Qwen3-Omni-Demo\nhttps://modelscope.cn/studios/Qwen/Qwen3-Omni-Demo\nAbstract\nWe present Qwen3-Omni, a single multimodal model that for the first time maintains\nstate-of-the-art performance across text, image, audio, and video without any degra-\ndation relative to single-modal counterparts. Qwen3-Omni matches the performance\nof same-sized single-modal models within the Qwen series and excels particularly on\naudio tasks. Across 36 audio and audio-visual benchmarks, Qwen3-Omni achieves open-\nsource state-of-the-art (SOTA) on 32 benchmarks and overall SOTA on 22, outperforming\nstrong closed-source models such as Gemini-2.5-Pro, Seed-ASR, and GPT-4o-Transcribe.\nQwen3-Omni adopts a Thinker–Talker Mixture-of-Experts (MoE) architecture that uni-\nfies perception and generation across text, images, audio, and video, yielding fluent\ntext and natural real-time speech. It supports text interaction in 119 languages, speech\nunderstanding in 19 languages and speech generation in 10 languages. The system can\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-5a13685437f3443685c0f2125f6ffabf",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 4001,
+            "id": "c4db8431ee759d7f26dd409452ad60c5dee870270bbbf6f39b2c23db3640b1f0",
+            "page_index": 23,
+            "reason": "Imported from verified extracted text",
+            "source_id": "4608d7f5d0694dd09a66144dac921797e161331d92b5eef133615bec392ec928",
+            "start": 2815,
+            "status": "active",
+            "text": " Ming Yan, Chenliang Li, Shaopeng Lai, Yuran Ren, Zijia Wang, Ji Zhang, Mengyue\nWu, Qin Jin, and Fei Huang. WritingBench: A comprehensive benchmark for generative writing.CoRR,\nabs/2503.05244, 2025b.\nJin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan,\nKai Dang, et al. Qwen2. 5-omni technical report.arXiv preprint arXiv:2503.20215, 2025.\nFanjia Yan, Huanzhi Mao, Charlie Cheng-Jie Ji, Tianjun Zhang, Shishir G. Patil, Ion Stoica, and Joseph E.\nGonzalez. Berkeley function calling leaderboard. https://gorilla.cs.berkeley.edu/blogs/8_berkel\ney_function_calling_leaderboard.html, 2024.\nAn Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li,\nDayiheng Liu, Fei Huang, et al. Qwen2 technical report.arXiv:2407.10671, 2024.\nAn Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao,\nChengen Huang, Chenxu Lv, et al. Qwen3 technical report.arXiv preprint arXiv:2505.09388, 2025a.\nQize Yang, Shimin Yao, Weixuan chen, Shenghao Fu, Detao Bai, Jiaxing Zhao, Boyuan Sun, Bowen Yin,\nXihan Wei, and Jingren Zhou. Humanomniv2: From understanding to omni-modal reasoning with\n",
+            "updated_at": "2026-09-20T22:49:07.248145+00:00",
+            "score": 0.016129032258064516,
+            "lexical_score": 0.8315965235156475,
+            "semantic_score": null,
+            "matched_terms": [
+              "3",
+              "report",
+              "technical",
+              "qwen",
+              "-omni"
+            ],
+            "document_id": "doc-1a0b99be271a45d493d0651c16c539c5",
+            "source_version": 1,
+            "text_revision_id": "text-621a58d4daf249c7db7a5b51d979062e50c62932e890f12edfd1a1a068f881fb",
+            "origin": "https://arxiv.org/abs/2509.17765",
+            "role": "literature",
+            "title": "Qwen3-Omni Technical Report",
+            "page_label": "24",
+            "citation": {
+              "source_id": "4608d7f5d0694dd09a66144dac921797e161331d92b5eef133615bec392ec928",
+              "page_index": 23,
+              "start": 2815,
+              "end": 4001,
+              "quote": " Ming Yan, Chenliang Li, Shaopeng Lai, Yuran Ren, Zijia Wang, Ji Zhang, Mengyue\nWu, Qin Jin, and Fei Huang. WritingBench: A comprehensive benchmark for generative writing.CoRR,\nabs/2503.05244, 2025b.\nJin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan,\nKai Dang, et al. Qwen2. 5-omni technical report.arXiv preprint arXiv:2503.20215, 2025.\nFanjia Yan, Huanzhi Mao, Charlie Cheng-Jie Ji, Tianjun Zhang, Shishir G. Patil, Ion Stoica, and Joseph E.\nGonzalez. Berkeley function calling leaderboard. https://gorilla.cs.berkeley.edu/blogs/8_berkel\ney_function_calling_leaderboard.html, 2024.\nAn Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li,\nDayiheng Liu, Fei Huang, et al. Qwen2 technical report.arXiv:2407.10671, 2024.\nAn Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao,\nChengen Huang, Chenxu Lv, et al. Qwen3 technical report.arXiv preprint arXiv:2505.09388, 2025a.\nQize Yang, Shimin Yao, Weixuan chen, Shenghao Fu, Detao Bai, Jiaxing Zhao, Boyuan Sun, Bowen Yin,\nXihan Wei, and Jingren Zhou. Humanomniv2: From understanding to omni-modal reasoning with\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "b2087819dd34ae8422752a67691b7c6ddcc9ef5e9137f39db03208d1115d4eeb",
+          "exact": true
+        },
+        {
+          "chunk_id": "c4db8431ee759d7f26dd409452ad60c5dee870270bbbf6f39b2c23db3640b1f0",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "8f473a3b57c9454204c934eb00ddac844ab0c9bff26a9e2eec8c2339e448c2d2",
+        "query": "DeepMMSearch-R1: Empowering Multimodal LLMs in Multimodal Web Search architecture method evaluation limitations",
+        "source_ids": [
+          "8f473a3b57c9454204c934eb00ddac844ab0c9bff26a9e2eec8c2339e448c2d2"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "DeepMMSearch-R1: Empowering Multimodal LLMs in Multimodal Web Search architecture method evaluation limitations",
+        "source_ids": [
+          "8f473a3b57c9454204c934eb00ddac844ab0c9bff26a9e2eec8c2339e448c2d2"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.4202557090029586,
+      "response": {
+        "query": "DeepMMSearch-R1: Empowering Multimodal LLMs in Multimodal Web Search architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 3.2176379180018557,
+          "query_embedding_seconds": 0.07143845799873816,
+          "vector_search_seconds": 0.010380708001321182,
+          "total_seconds": 3.3016187510002055
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 95,
+        "hits": [
+          {
+            "chunk_set_id": "cs-38e0fcd26a634500a65954a624a96d58",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1084,
+            "id": "c6eae3acc4936394b6cea2062698a4dc7b6628160756ce2b60fe0464d45772c5",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "8f473a3b57c9454204c934eb00ddac844ab0c9bff26a9e2eec8c2339e448c2d2",
+            "start": 0,
+            "status": "active",
+            "text": "DeepMMSearch-R1: Empowering\nMultimodal LLMs in Multimodal Web Search\nKartik Narayan1, Yang Xu2, Tian Cao2, Kavya Nerella2, Vishal M. Patel1, Navid Shiee2,\nPeter Grasch2, Chao Jia2, Yinfei Yang2, Zhe Gan2\n1Johns Hopkins University, 2Apple\nWork done during an internship at Apple.\nMultimodal Large Language Models (MLLMs) in real-world applications require access to external knowledge sources\nand must remain responsive to the dynamic and ever-changing real-world information in order to address information-\nseeking and knowledge-intensive user queries. Existing approaches, such as retrieval augmented generation (RAG)\nmethods, search agents, and search equipped MLLMs, often suffer from rigid pipelines, excessive search calls, and\npoorly constructed search queries, which result in inefficiencies and suboptimal outcomes. To address these limitations,\nwe presentDeepMMSearch-R1, the first multimodal LLM capable of performing on-demand, multi-turn web searches\nand dynamically crafting queries for both image and text search tools. Specifically, DeepMMSearch-R1 can initiate web\n",
+            "updated_at": "2026-09-20T22:50:22.858641+00:00",
+            "score": 0.03278688524590164,
+            "lexical_score": 1.0,
+            "semantic_score": 0.89377767,
+            "matched_terms": [
+              "empowering",
+              "1",
+              "multimodal",
+              ":",
+              "web",
+              "llms",
+              "limitations",
+              "in",
+              "deepmmsearch-r",
+              "search"
+            ],
+            "document_id": "doc-922c1177f356422fb1eadc326f4b1f76",
+            "source_version": 1,
+            "text_revision_id": "text-fc702797ec3a898234acc441406e871e50ec86e4a18e548bac3f765cde6a39c1",
+            "origin": "https://arxiv.org/abs/2510.12801",
+            "role": "literature",
+            "title": "DeepMMSearch-R1: Empowering Multimodal LLMs in Multimodal Web Search",
+            "page_label": "1",
+            "citation": {
+              "source_id": "8f473a3b57c9454204c934eb00ddac844ab0c9bff26a9e2eec8c2339e448c2d2",
+              "page_index": 0,
+              "start": 0,
+              "end": 1084,
+              "quote": "DeepMMSearch-R1: Empowering\nMultimodal LLMs in Multimodal Web Search\nKartik Narayan1, Yang Xu2, Tian Cao2, Kavya Nerella2, Vishal M. Patel1, Navid Shiee2,\nPeter Grasch2, Chao Jia2, Yinfei Yang2, Zhe Gan2\n1Johns Hopkins University, 2Apple\nWork done during an internship at Apple.\nMultimodal Large Language Models (MLLMs) in real-world applications require access to external knowledge sources\nand must remain responsive to the dynamic and ever-changing real-world information in order to address information-\nseeking and knowledge-intensive user queries. Existing approaches, such as retrieval augmented generation (RAG)\nmethods, search agents, and search equipped MLLMs, often suffer from rigid pipelines, excessive search calls, and\npoorly constructed search queries, which result in inefficiencies and suboptimal outcomes. To address these limitations,\nwe presentDeepMMSearch-R1, the first multimodal LLM capable of performing on-demand, multi-turn web searches\nand dynamically crafting queries for both image and text search tools. Specifically, DeepMMSearch-R1 can initiate web\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-38e0fcd26a634500a65954a624a96d58",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2948,
+            "id": "5a79847374d07da4f8233efd25235f30fe30d52b55a59736acb8893e5d1dddb6",
+            "page_index": 8,
+            "reason": "Imported from verified extracted text",
+            "source_id": "8f473a3b57c9454204c934eb00ddac844ab0c9bff26a9e2eec8c2339e448c2d2",
+            "start": 1826,
+            "status": "active",
+            "text": " stage that constrains the policy updates from straying too far from the supervised\ndistribution, thereby regularizing learning and preventing catastrophic drift. These training strategies enable the\nmodel to acquire web-search abilities while maintaining, and in some cases improving, general VQA performance.\n5 Conclusion\nWe propose DeepMMSearch-R1, a novel multimodal large language model designed to enhance visual question answering\nin knowledge-intensive and information-seeking contexts by integrating on-demand, multi-turn web search capabilities.\nOur approach addresses the limitations of prior retrieval-augmented methods and multimodal agents by enabling\ndynamic, iterative query refinement through self-reflection and self-correction, as well as incorporating a cropped\nimage search tool. We achieve this with a two-stage training pipeline: (1) a supervised finetuning (SFT) stage\nusing the proposed DeepMMSearchVQA, which equips the model with tool-use capabilities, followed by (2) online\nreinforcement learning (RL) via GRPO, which further refines tool-use behavior to make it more efficient and effective.\n",
+            "updated_at": "2026-09-20T22:50:22.861592+00:00",
+            "score": 0.03125,
+            "lexical_score": 0.5203125160260816,
+            "semantic_score": 0.7785124,
+            "matched_terms": [
+              "1",
+              "multimodal",
+              ":",
+              "web",
+              "limitations",
+              "in",
+              "deepmmsearch-r",
+              "search"
+            ],
+            "document_id": "doc-922c1177f356422fb1eadc326f4b1f76",
+            "source_version": 1,
+            "text_revision_id": "text-fc702797ec3a898234acc441406e871e50ec86e4a18e548bac3f765cde6a39c1",
+            "origin": "https://arxiv.org/abs/2510.12801",
+            "role": "literature",
+            "title": "DeepMMSearch-R1: Empowering Multimodal LLMs in Multimodal Web Search",
+            "page_label": "9",
+            "citation": {
+              "source_id": "8f473a3b57c9454204c934eb00ddac844ab0c9bff26a9e2eec8c2339e448c2d2",
+              "page_index": 8,
+              "start": 1826,
+              "end": 2948,
+              "quote": " stage that constrains the policy updates from straying too far from the supervised\ndistribution, thereby regularizing learning and preventing catastrophic drift. These training strategies enable the\nmodel to acquire web-search abilities while maintaining, and in some cases improving, general VQA performance.\n5 Conclusion\nWe propose DeepMMSearch-R1, a novel multimodal large language model designed to enhance visual question answering\nin knowledge-intensive and information-seeking contexts by integrating on-demand, multi-turn web search capabilities.\nOur approach addresses the limitations of prior retrieval-augmented methods and multimodal agents by enabling\ndynamic, iterative query refinement through self-reflection and self-correction, as well as incorporating a cropped\nimage search tool. We achieve this with a two-stage training pipeline: (1) a supervised finetuning (SFT) stage\nusing the proposed DeepMMSearchVQA, which equips the model with tool-use capabilities, followed by (2) online\nreinforcement learning (RL) via GRPO, which further refines tool-use behavior to make it more efficient and effective.\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "c6eae3acc4936394b6cea2062698a4dc7b6628160756ce2b60fe0464d45772c5",
+          "exact": true
+        },
+        {
+          "chunk_id": "5a79847374d07da4f8233efd25235f30fe30d52b55a59736acb8893e5d1dddb6",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "2bec0671778769c159ec389412727d1f3d4889fe1c71564b61edaa24705bd17b",
+        "query": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models architecture method evaluation limitations",
+        "source_ids": [
+          "2bec0671778769c159ec389412727d1f3d4889fe1c71564b61edaa24705bd17b"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models architecture method evaluation limitations",
+        "source_ids": [
+          "2bec0671778769c159ec389412727d1f3d4889fe1c71564b61edaa24705bd17b"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.5406363749934826,
+      "response": {
+        "query": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 2.2399468340008752,
+          "query_embedding_seconds": 0.09919741699559381,
+          "vector_search_seconds": 0.04144345800159499,
+          "total_seconds": 2.3827798339989386
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 73,
+        "hits": [
+          {
+            "chunk_set_id": "cs-166f55d3d3314729a179ad3fe25a68b2",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1114,
+            "id": "2b16b32d893162d3730fb8546268c5281e1ae9b27845c8d8ee57b177b871c767",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "2bec0671778769c159ec389412727d1f3d4889fe1c71564b61edaa24705bd17b",
+            "start": 0,
+            "status": "active",
+            "text": "DeepSeek-V3.2: Pushing the Frontier of Open\nLarge Language Models\nDeepSeek-AI\nresearch@deepseek.com\nAbstract\nWe introduce DeepSeek-V3.2, a model that harmonizes high computational efficiency with supe-\nrior reasoning and agent performance. The key technical breakthroughs of DeepSeek-V3.2 are as\nfollows:(1) DeepSeek Sparse Attention (DSA): We introduce DSA, an efficient attention mecha-\nnism that substantially reduces computational complexity while preserving model performance\nin long-context scenarios.(2) Scalable Reinforcement Learning Framework: By implementing\na robust reinforcement learning protocol and scaling post-training compute, DeepSeek-V3.2\nperforms comparably to GPT-5. Notably, our high-compute variant, DeepSeek-V3.2-Speciale,\nsurpasses GPT-5 and exhibits reasoning proficiency on par with Gemini-3.0-Pro, achieving\ngold-medal performance in both the 2025 International Mathematical Olympiad (IMO) and the\nInternational Olympiad in Informatics (IOI).(3) Large-Scale Agentic Task Synthesis Pipeline:\nTo integrate reasoning into tool-use scenarios, we developed a novel synthesis pipeline that\n",
+            "updated_at": "2026-09-20T22:52:07.986843+00:00",
+            "score": 0.03252247488101534,
+            "lexical_score": 1.0,
+            "semantic_score": 0.7890452,
+            "matched_terms": [
+              "pushing",
+              "open",
+              "frontier",
+              "large",
+              "the",
+              "models",
+              "of",
+              ":",
+              "language",
+              "3.2",
+              "deepseek-v"
+            ],
+            "document_id": "doc-40dddfbd86774c409c3d0fa553ce29a9",
+            "source_version": 1,
+            "text_revision_id": "text-7b97fb43e3bf9f4755322113d98af10246cb30d4472cded3ffbff45c39766add",
+            "origin": "https://arxiv.org/abs/2512.02556",
+            "role": "literature",
+            "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
+            "page_label": "1",
+            "citation": {
+              "source_id": "2bec0671778769c159ec389412727d1f3d4889fe1c71564b61edaa24705bd17b",
+              "page_index": 0,
+              "start": 0,
+              "end": 1114,
+              "quote": "DeepSeek-V3.2: Pushing the Frontier of Open\nLarge Language Models\nDeepSeek-AI\nresearch@deepseek.com\nAbstract\nWe introduce DeepSeek-V3.2, a model that harmonizes high computational efficiency with supe-\nrior reasoning and agent performance. The key technical breakthroughs of DeepSeek-V3.2 are as\nfollows:(1) DeepSeek Sparse Attention (DSA): We introduce DSA, an efficient attention mecha-\nnism that substantially reduces computational complexity while preserving model performance\nin long-context scenarios.(2) Scalable Reinforcement Learning Framework: By implementing\na robust reinforcement learning protocol and scaling post-training compute, DeepSeek-V3.2\nperforms comparably to GPT-5. Notably, our high-compute variant, DeepSeek-V3.2-Speciale,\nsurpasses GPT-5 and exhibits reasoning proficiency on par with Gemini-3.0-Pro, achieving\ngold-medal performance in both the 2025 International Mathematical Olympiad (IMO) and the\nInternational Olympiad in Informatics (IOI).(3) Large-Scale Agentic Task Synthesis Pipeline:\nTo integrate reasoning into tool-use scenarios, we developed a novel synthesis pipeline that\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-166f55d3d3314729a179ad3fe25a68b2",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2484,
+            "id": "1b00401b8b8b8a58baaf710f12f87231ab3bba027374ac51601b09695d1a4e66",
+            "page_index": 16,
+            "reason": "Imported from verified extracted text",
+            "source_id": "2bec0671778769c159ec389412727d1f3d4889fe1c71564b61edaa24705bd17b",
+            "start": 1830,
+            "status": "active",
+            "text": " rea-\nsoning benchmarks. Finally, the integration of our large-scale agentic task synthesis pipeline\nsignificantly enhances tool-use proficiency, unlocking new possibilities for robust and generaliz-\nable AI agents with open LLM. Furthermore, our high-compute variant, DeepSeek-V3.2-Speciale,\nvalidated by gold-medal achievements in the IMO and IOI, sets a milestone for open LLMs.\nDespite these achievements, we acknowledge certain limitations when compared to frontier\nclosed-source models such as Gemini-3.0-Pro. First, due to fewer total training FLOPs, the\nbreadth of world knowledge in DeepSeek-V3.2 still lags behind that of leading proprietary\n17",
+            "updated_at": "2026-09-20T22:52:07.990680+00:00",
+            "score": 0.03200204813108039,
+            "lexical_score": 0.8370750009832921,
+            "semantic_score": 0.77885854,
+            "matched_terms": [
+              "open",
+              "frontier",
+              "the",
+              "of",
+              "deepseek-v",
+              "limitations",
+              "3.2",
+              "models"
+            ],
+            "document_id": "doc-40dddfbd86774c409c3d0fa553ce29a9",
+            "source_version": 1,
+            "text_revision_id": "text-7b97fb43e3bf9f4755322113d98af10246cb30d4472cded3ffbff45c39766add",
+            "origin": "https://arxiv.org/abs/2512.02556",
+            "role": "literature",
+            "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
+            "page_label": "17",
+            "citation": {
+              "source_id": "2bec0671778769c159ec389412727d1f3d4889fe1c71564b61edaa24705bd17b",
+              "page_index": 16,
+              "start": 1830,
+              "end": 2484,
+              "quote": " rea-\nsoning benchmarks. Finally, the integration of our large-scale agentic task synthesis pipeline\nsignificantly enhances tool-use proficiency, unlocking new possibilities for robust and generaliz-\nable AI agents with open LLM. Furthermore, our high-compute variant, DeepSeek-V3.2-Speciale,\nvalidated by gold-medal achievements in the IMO and IOI, sets a milestone for open LLMs.\nDespite these achievements, we acknowledge certain limitations when compared to frontier\nclosed-source models such as Gemini-3.0-Pro. First, due to fewer total training FLOPs, the\nbreadth of world knowledge in DeepSeek-V3.2 still lags behind that of leading proprietary\n17",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "2b16b32d893162d3730fb8546268c5281e1ae9b27845c8d8ee57b177b871c767",
+          "exact": true
+        },
+        {
+          "chunk_id": "1b00401b8b8b8a58baaf710f12f87231ab3bba027374ac51601b09695d1a4e66",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "1df0bd67b590f331d7928c65bbdc0a086ce6c41195428a8f3670683dcd3de533",
+        "query": "LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora architecture method evaluation limitations",
+        "source_ids": [
+          "1df0bd67b590f331d7928c65bbdc0a086ce6c41195428a8f3670683dcd3de533"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora architecture method evaluation limitations",
+        "source_ids": [
+          "1df0bd67b590f331d7928c65bbdc0a086ce6c41195428a8f3670683dcd3de533"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.578889499985962,
+      "response": {
+        "query": "LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 3.289930793005624,
+          "query_embedding_seconds": 0.14925741699698847,
+          "vector_search_seconds": 0.02945341599843232,
+          "total_seconds": 3.470942002000811
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 82,
+        "hits": [
+          {
+            "chunk_set_id": "cs-a52bf284e0094dd1b03f3ad5aa9d22e5",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1148,
+            "id": "9639ce94efb7fa277cfe9a13dfab01b8a167d0b0cefac3c89fd4003d44ab4d41",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "1df0bd67b590f331d7928c65bbdc0a086ce6c41195428a8f3670683dcd3de533",
+            "start": 0,
+            "status": "active",
+            "text": "LINEARRAG: LINEARGRAPHRETRIEVALAUG-\nMENTEDGENERATION ONLARGE-SCALECORPORA\nLuyao Zhuang1∗, Shengyuan Chen1∗, Yilin Xiao1, Huachi Zhou1†, Yujing Zhang1\nHao Chen1,Qinggang Zhang 1†,Xiao Huang 1\n1The Department of Computing, Hong Kong Polytechnic University, Hong Kong SAR\n{luyao.zhuang,yilin.xiao,yu-jing.zhang}@connect.polyu.hk;\nhuachi666.zhou@connect.polyu.hk;sundaychenhao@gmail.com;\n{sheng-yuan.chen,qinggang.zhang,xiao.huang}@polyu.edu.hk\nABSTRACT\nRetrieval-Augmented Generation (RAG) is widely used to mitigate hallucinations\nof Large Language Models (LLMs) by leveraging external knowledge. While\neffective for simple queries, traditional RAG systems struggle with large-scale,\nunstructured corpora where information is fragmented. Recent advances incor-\nporate knowledge graphs to capture relational structures, enabling more com-\nprehensive retrieval for complex, multi-hop reasoning tasks. However, exist-\ning graph-based RAG (GraphRAG) methods rely on unstable and costly rela-\ntion extraction for graph construction, often producing noisy graphs with incor-\nrect or inconsistent relations that degrade retrieval quality. In this paper, we\n",
+            "updated_at": "2026-09-20T22:49:41.484754+00:00",
+            "score": 0.032266458495966696,
+            "lexical_score": 0.7534186196415645,
+            "semantic_score": 0.8602015,
+            "matched_terms": [
+              "on",
+              "retrieval",
+              "generation",
+              "graph",
+              ":",
+              "large-scale",
+              "linearrag",
+              "corpora"
+            ],
+            "document_id": "doc-8467b1bf670e4e8ca0b099f041a892ba",
+            "source_version": 1,
+            "text_revision_id": "text-be17aa95933ef520c93337fffaa97b82580191aac389350f181c32dc98482d34",
+            "origin": "https://arxiv.org/abs/2510.10114",
+            "role": "literature",
+            "title": "LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora",
+            "page_label": "1",
+            "citation": {
+              "source_id": "1df0bd67b590f331d7928c65bbdc0a086ce6c41195428a8f3670683dcd3de533",
+              "page_index": 0,
+              "start": 0,
+              "end": 1148,
+              "quote": "LINEARRAG: LINEARGRAPHRETRIEVALAUG-\nMENTEDGENERATION ONLARGE-SCALECORPORA\nLuyao Zhuang1∗, Shengyuan Chen1∗, Yilin Xiao1, Huachi Zhou1†, Yujing Zhang1\nHao Chen1,Qinggang Zhang 1†,Xiao Huang 1\n1The Department of Computing, Hong Kong Polytechnic University, Hong Kong SAR\n{luyao.zhuang,yilin.xiao,yu-jing.zhang}@connect.polyu.hk;\nhuachi666.zhou@connect.polyu.hk;sundaychenhao@gmail.com;\n{sheng-yuan.chen,qinggang.zhang,xiao.huang}@polyu.edu.hk\nABSTRACT\nRetrieval-Augmented Generation (RAG) is widely used to mitigate hallucinations\nof Large Language Models (LLMs) by leveraging external knowledge. While\neffective for simple queries, traditional RAG systems struggle with large-scale,\nunstructured corpora where information is fragmented. Recent advances incor-\nporate knowledge graphs to capture relational structures, enabling more com-\nprehensive retrieval for complex, multi-hop reasoning tasks. However, exist-\ning graph-based RAG (GraphRAG) methods rely on unstable and costly rela-\ntion extraction for graph construction, often producing noisy graphs with incor-\nrect or inconsistent relations that degrade retrieval quality. In this paper, we\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-a52bf284e0094dd1b03f3ad5aa9d22e5",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 4938,
+            "id": "4e56834a39e754a2059807782e9534bad8bec7c6206dabc2bc3bc7cd0421c7c8",
+            "page_index": 1,
+            "reason": "Imported from verified extracted text",
+            "source_id": "1df0bd67b590f331d7928c65bbdc0a086ce6c41195428a8f3670683dcd3de533",
+            "start": 3913,
+            "status": "active",
+            "text": " sub-\ngraph to aggregate passage importance from a holistic perspective. Together, these modules enable\nLinearRAG to achieve scalable, accurate, and noise-resilient retrieval for complex queries. Our\noverall contributions are summarized as follows:\n• We identify key limitations in existing GraphRAG systems, specifically highlighting how\nreliance on unstable relation extraction introduces noise and structural inconsistencies. This\nmotivates the design of LinearRAG, a novel framework that enables reliable graph con-\nstruction and precise passage retrieval while maintaining linear scalability.\n• LinearRAG constructs a relation-free hierarchical graph, called Tri-Graph, using only\nlightweight entity extraction and semantic linking, which avoids the instability of tradi-\ntional relation modeling and reduces indexing time by over77%.\n• On top of the constructed graph, we design a two-stage retrieval mechanism that combines\nlocal semantic bridging for precise entity activation with global importance aggregation for\n2",
+            "updated_at": "2026-09-20T22:49:41.486753+00:00",
+            "score": 0.01639344262295082,
+            "lexical_score": 1.0,
+            "semantic_score": null,
+            "matched_terms": [
+              "linear",
+              "on",
+              "retrieval",
+              "graph",
+              ":",
+              "limitations",
+              "linearrag"
+            ],
+            "document_id": "doc-8467b1bf670e4e8ca0b099f041a892ba",
+            "source_version": 1,
+            "text_revision_id": "text-be17aa95933ef520c93337fffaa97b82580191aac389350f181c32dc98482d34",
+            "origin": "https://arxiv.org/abs/2510.10114",
+            "role": "literature",
+            "title": "LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora",
+            "page_label": "2",
+            "citation": {
+              "source_id": "1df0bd67b590f331d7928c65bbdc0a086ce6c41195428a8f3670683dcd3de533",
+              "page_index": 1,
+              "start": 3913,
+              "end": 4938,
+              "quote": " sub-\ngraph to aggregate passage importance from a holistic perspective. Together, these modules enable\nLinearRAG to achieve scalable, accurate, and noise-resilient retrieval for complex queries. Our\noverall contributions are summarized as follows:\n• We identify key limitations in existing GraphRAG systems, specifically highlighting how\nreliance on unstable relation extraction introduces noise and structural inconsistencies. This\nmotivates the design of LinearRAG, a novel framework that enables reliable graph con-\nstruction and precise passage retrieval while maintaining linear scalability.\n• LinearRAG constructs a relation-free hierarchical graph, called Tri-Graph, using only\nlightweight entity extraction and semantic linking, which avoids the instability of tradi-\ntional relation modeling and reduces indexing time by over77%.\n• On top of the constructed graph, we design a two-stage retrieval mechanism that combines\nlocal semantic bridging for precise entity activation with global importance aggregation for\n2",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "9639ce94efb7fa277cfe9a13dfab01b8a167d0b0cefac3c89fd4003d44ab4d41",
+          "exact": true
+        },
+        {
+          "chunk_id": "4e56834a39e754a2059807782e9534bad8bec7c6206dabc2bc3bc7cd0421c7c8",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "e20742ff36e08dc361de6973f7f72ad38e107edf8fd92d2a777a8428fc9b8f0e",
+        "query": "GLM-5: from Vibe Coding to Agentic Engineering architecture method evaluation limitations",
+        "source_ids": [
+          "e20742ff36e08dc361de6973f7f72ad38e107edf8fd92d2a777a8428fc9b8f0e"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "GLM-5: from Vibe Coding to Agentic Engineering architecture method evaluation limitations",
+        "source_ids": [
+          "e20742ff36e08dc361de6973f7f72ad38e107edf8fd92d2a777a8428fc9b8f0e"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.5046986670058686,
+      "response": {
+        "query": "GLM-5: from Vibe Coding to Agentic Engineering architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 3.216723376994196,
+          "query_embedding_seconds": 0.12703433400020003,
+          "vector_search_seconds": 0.015589957998599857,
+          "total_seconds": 3.361877209994418
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 154,
+        "hits": [
+          {
+            "chunk_set_id": "cs-248495f1f1aa4289a24ed4bdcba75442",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1198,
+            "id": "ecb781964d431b5178e6041aa36803c8afecd588ee19497c25d914a38de76b71",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "e20742ff36e08dc361de6973f7f72ad38e107edf8fd92d2a777a8428fc9b8f0e",
+            "start": 0,
+            "status": "active",
+            "text": "GLM-5: from Vibe Coding to Agentic Engineering\nGLM-5 Team\nZhipu AI & Tsinghua University\n(For the complete list of authors, please refer to the Contribution section)\nAbstract\nWe present GLM-5, a next-generation foundation model designed to transition\nthe paradigm of vibe coding to agentic engineering. Building upon the agen-\ntic, reasoning, and coding (ARC) capabilities of its predecessor, GLM-5 adopts\nDSA to significantly reduce training and inference costs while maintaining long-\ncontext fidelity. To advance model alignment and autonomy, we implement a\nnew asynchronous reinforcement learning infrastructure that drastically improves\npost-training efficiency by decoupling generation from training. Furthermore, we\npropose novel asynchronous agent RL algorithms that further improve RL quality,\nenabling the model to learn from complex, long-horizon interactions more effec-\ntively. Through these innovations, GLM-5 achieves state-of-the-art performance\non major open benchmarks. Most critically, GLM-5 demonstrates unprecedented\ncapability in real-world coding tasks, surpassing previous baselines in handling\nend-to-end software engineering challenges. Code, models, and more information\n",
+            "updated_at": "2026-09-20T22:53:30.019801+00:00",
+            "score": 0.03278688524590164,
+            "lexical_score": 1.0,
+            "semantic_score": 0.8126886,
+            "matched_terms": [
+              "agentic",
+              "engineering",
+              "to",
+              "coding",
+              "glm-",
+              "5",
+              ":",
+              "from",
+              "vibe"
+            ],
+            "document_id": "doc-cb78579b3c6841dc9c553189165de8ea",
+            "source_version": 1,
+            "text_revision_id": "text-bd2a55587be778117d874c27fa8ee19ed2bdacd3dfc2a9d40597b7d6e50e7414",
+            "origin": "https://arxiv.org/abs/2602.15763",
+            "role": "literature",
+            "title": "GLM-5: from Vibe Coding to Agentic Engineering",
+            "page_label": "1",
+            "citation": {
+              "source_id": "e20742ff36e08dc361de6973f7f72ad38e107edf8fd92d2a777a8428fc9b8f0e",
+              "page_index": 0,
+              "start": 0,
+              "end": 1198,
+              "quote": "GLM-5: from Vibe Coding to Agentic Engineering\nGLM-5 Team\nZhipu AI & Tsinghua University\n(For the complete list of authors, please refer to the Contribution section)\nAbstract\nWe present GLM-5, a next-generation foundation model designed to transition\nthe paradigm of vibe coding to agentic engineering. Building upon the agen-\ntic, reasoning, and coding (ARC) capabilities of its predecessor, GLM-5 adopts\nDSA to significantly reduce training and inference costs while maintaining long-\ncontext fidelity. To advance model alignment and autonomy, we implement a\nnew asynchronous reinforcement learning infrastructure that drastically improves\npost-training efficiency by decoupling generation from training. Furthermore, we\npropose novel asynchronous agent RL algorithms that further improve RL quality,\nenabling the model to learn from complex, long-horizon interactions more effec-\ntively. Through these innovations, GLM-5 achieves state-of-the-art performance\non major open benchmarks. Most critically, GLM-5 demonstrates unprecedented\ncapability in real-world coding tasks, surpassing previous baselines in handling\nend-to-end software engineering challenges. Code, models, and more information\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-248495f1f1aa4289a24ed4bdcba75442",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2077,
+            "id": "f977ae86bc05873264817dc838c5d41a0ede60ab3e1c97b8371df48e6ee50ff9",
+            "page_index": 14,
+            "reason": "Imported from verified extracted text",
+            "source_id": "e20742ff36e08dc361de6973f7f72ad38e107edf8fd92d2a777a8428fc9b8f0e",
+            "start": 954,
+            "status": "active",
+            "text": "nd uninterrupted, enabling long-horizon samples to progress continuously and significantly\nimproving tail behavior in multi-turn agentic RL.\n3.6.3 Rollout Robustness: Heartbeat-Driven Fault Tolerance\nAt scale, transient failures (e.g., individual server crashes, network issues, or performance degradation)\nare inevitable. GLM-5 leverages slime’s heartbeat-driven fault-tolerance to ensure training continuity\nunder such events: rollout servers periodically emit heartbeats monitored by the orchestration layer,\nand unhealthy servers are proactively terminated and deregistered from the inference router. As\na result, retries are automatically routed away from failed or degraded servers to healthy ones,\npreventing single-server incidents from interrupting rollouts and preserving uninterrupted end-to-end\nRL training.\n4 Agentic Engineering\nWe describe the transition fromvibe coding(human prompting) toagentic engineering. In vibe\ncoding, a human prompts an AI model to write code. In agentic engineering, AI agents write the\ncode themselves. They plan, implement, and iterate. To support these long-horizon tasks, GLM-5\n",
+            "updated_at": "2026-09-20T22:53:30.023621+00:00",
+            "score": 0.016129032258064516,
+            "lexical_score": 0.9205166890066445,
+            "semantic_score": null,
+            "matched_terms": [
+              "agentic",
+              "engineering",
+              "to",
+              "coding",
+              "glm-",
+              "5",
+              ":",
+              "from",
+              "vibe"
+            ],
+            "document_id": "doc-cb78579b3c6841dc9c553189165de8ea",
+            "source_version": 1,
+            "text_revision_id": "text-bd2a55587be778117d874c27fa8ee19ed2bdacd3dfc2a9d40597b7d6e50e7414",
+            "origin": "https://arxiv.org/abs/2602.15763",
+            "role": "literature",
+            "title": "GLM-5: from Vibe Coding to Agentic Engineering",
+            "page_label": "15",
+            "citation": {
+              "source_id": "e20742ff36e08dc361de6973f7f72ad38e107edf8fd92d2a777a8428fc9b8f0e",
+              "page_index": 14,
+              "start": 954,
+              "end": 2077,
+              "quote": "nd uninterrupted, enabling long-horizon samples to progress continuously and significantly\nimproving tail behavior in multi-turn agentic RL.\n3.6.3 Rollout Robustness: Heartbeat-Driven Fault Tolerance\nAt scale, transient failures (e.g., individual server crashes, network issues, or performance degradation)\nare inevitable. GLM-5 leverages slime’s heartbeat-driven fault-tolerance to ensure training continuity\nunder such events: rollout servers periodically emit heartbeats monitored by the orchestration layer,\nand unhealthy servers are proactively terminated and deregistered from the inference router. As\na result, retries are automatically routed away from failed or degraded servers to healthy ones,\npreventing single-server incidents from interrupting rollouts and preserving uninterrupted end-to-end\nRL training.\n4 Agentic Engineering\nWe describe the transition fromvibe coding(human prompting) toagentic engineering. In vibe\ncoding, a human prompts an AI model to write code. In agentic engineering, AI agents write the\ncode themselves. They plan, implement, and iterate. To support these long-horizon tasks, GLM-5\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "ecb781964d431b5178e6041aa36803c8afecd588ee19497c25d914a38de76b71",
+          "exact": true
+        },
+        {
+          "chunk_id": "f977ae86bc05873264817dc838c5d41a0ede60ab3e1c97b8371df48e6ee50ff9",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "7d9b90f53a9f4801a090f1a4acb843340cde81e4f865f97d53fff2a6a570eb73",
+        "query": "Meta-Harness: End-to-End Optimization of Model Harnesses architecture method evaluation limitations",
+        "source_ids": [
+          "7d9b90f53a9f4801a090f1a4acb843340cde81e4f865f97d53fff2a6a570eb73"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "Meta-Harness: End-to-End Optimization of Model Harnesses architecture method evaluation limitations",
+        "source_ids": [
+          "7d9b90f53a9f4801a090f1a4acb843340cde81e4f865f97d53fff2a6a570eb73"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.5822277090046555,
+      "response": {
+        "query": "Meta-Harness: End-to-End Optimization of Model Harnesses architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 3.060349375999067,
+          "query_embedding_seconds": 0.32961804200022016,
+          "vector_search_seconds": 0.04105983300541993,
+          "total_seconds": 3.4333732520026388
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 92,
+        "hits": [
+          {
+            "chunk_set_id": "cs-c62f630896bd44d391821d51b63e8942",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1198,
+            "id": "744f9c621dc1ea659e68ba2c2bcd49b65c5bda9c5a39bb469486771710eb2ebe",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "7d9b90f53a9f4801a090f1a4acb843340cde81e4f865f97d53fff2a6a570eb73",
+            "start": 0,
+            "status": "active",
+            "text": "Meta-Harness: End-to-End Optimization of Model Harnesses\nYoonho Lee\nStanford\nRoshen Nair\nStanford\nQizheng Zhang\nStanford\nKangwook Lee\nKRAFTON\nOmar Khattab\nMIT\nChelsea Finn\nStanford\nProject page w/ interactive demo:https://yoonholee.com/meta-harness/\nOptimized harness:https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact\n0 10 20 30 40\nHarness Evaluations\n30\n35\n40\n45\n50\n55\nBest Performance (%)\nZero-shot\nFew-shot\nACE\nOpenEvolve\nTTT-Discover\nMeta-Harness\nHarness Optimizer Search Progress\n20\n25\n30\n35\n40\nPass Rate (%)\nMeta-Harness\n(ours)\n37.6 Goose\n35.5 T erminus-KIRA\n33.7\nMini-SWE-\nAgent\n29.8 T erminus-2\n28.3\nClaude\nCode\n27.5\nT erminalBench-2 Harness Performance\nHuman-written\nModel-optimized (ours)\nFigure 1:(Left)On text classification, Meta-Harness outperforms the best prior hand-\ndesigned harnesses (ACE) and existing text optimizers (TTT-Discover, OpenEvolve), match-\ning the next-best method’s final accuracy after just 4 evaluations.(Right)On TerminalBench-\n2, Meta-Harness outperforms all reportedClaude Haiku 4.5harnesses.\nAbstract\nThe performance of large language model (LLM) systems depends not\nonly on model weights, but also on theirharness: the code that determines\n",
+            "updated_at": "2026-09-20T22:54:39.274904+00:00",
+            "score": 0.03278688524590164,
+            "lexical_score": 1.0,
+            "semantic_score": 0.84871274,
+            "matched_terms": [
+              "meta-harness",
+              "end-to-end",
+              "optimization",
+              "model",
+              "method",
+              "of",
+              ":",
+              "harnesses"
+            ],
+            "document_id": "doc-b195c16194c740be87106eb03e0071e7",
+            "source_version": 1,
+            "text_revision_id": "text-461cdfbe420bb570884d332b6cf40a367f543d40642be8996e034815729db3dd",
+            "origin": "https://arxiv.org/abs/2603.28052",
+            "role": "literature",
+            "title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+            "page_label": "1",
+            "citation": {
+              "source_id": "7d9b90f53a9f4801a090f1a4acb843340cde81e4f865f97d53fff2a6a570eb73",
+              "page_index": 0,
+              "start": 0,
+              "end": 1198,
+              "quote": "Meta-Harness: End-to-End Optimization of Model Harnesses\nYoonho Lee\nStanford\nRoshen Nair\nStanford\nQizheng Zhang\nStanford\nKangwook Lee\nKRAFTON\nOmar Khattab\nMIT\nChelsea Finn\nStanford\nProject page w/ interactive demo:https://yoonholee.com/meta-harness/\nOptimized harness:https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact\n0 10 20 30 40\nHarness Evaluations\n30\n35\n40\n45\n50\n55\nBest Performance (%)\nZero-shot\nFew-shot\nACE\nOpenEvolve\nTTT-Discover\nMeta-Harness\nHarness Optimizer Search Progress\n20\n25\n30\n35\n40\nPass Rate (%)\nMeta-Harness\n(ours)\n37.6 Goose\n35.5 T erminus-KIRA\n33.7\nMini-SWE-\nAgent\n29.8 T erminus-2\n28.3\nClaude\nCode\n27.5\nT erminalBench-2 Harness Performance\nHuman-written\nModel-optimized (ours)\nFigure 1:(Left)On text classification, Meta-Harness outperforms the best prior hand-\ndesigned harnesses (ACE) and existing text optimizers (TTT-Discover, OpenEvolve), match-\ning the next-best method’s final accuracy after just 4 evaluations.(Right)On TerminalBench-\n2, Meta-Harness outperforms all reportedClaude Haiku 4.5harnesses.\nAbstract\nThe performance of large language model (LLM) systems depends not\nonly on model weights, but also on theirharness: the code that determines\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-c62f630896bd44d391821d51b63e8942",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 3908,
+            "id": "a92cb0944047655e05848ae750ca88fc9199ab00038a37cf14dceda6619a1bae",
+            "page_index": 1,
+            "reason": "Imported from verified extracted text",
+            "source_id": "7d9b90f53a9f4801a090f1a4acb843340cde81e4f865f97d53fff2a6a570eb73",
+            "start": 2898,
+            "status": "active",
+            "text": "ing harnesses\nvia end-to-end search (Figure 2). Its proposer is a coding agent, i.e., a language-model-based\nsystem that can invoke developer tools and modify code. The choice of coding agent (rather\nthan raw LLM) matters because the amount of experience quickly exceeds context limits, so\nthe proposer must decidewhatto inspect and validate edits through direct interaction with\nthe codebase. Its key design choice is to exposefull historythrough afilesystem, enabling\nselective diagnosis of raw prior code and execution traces rather than optimization from\ncompressed per-candidate summaries. For every previous candidate harness, the filesystem\nstores the source code, evaluation scores, and execution traces, which the proposer retrieves\nvia standard operations such as grep and cat rather than ingesting them as a single prompt.\nIn practice, the proposer reads a median of82 files per iterationin our most demanding\nsetting, referencing over 20 prior candidates per step (Appendix A). In the settings we\n2",
+            "updated_at": "2026-09-20T22:54:39.276161+00:00",
+            "score": 0.016129032258064516,
+            "lexical_score": 0.6689997423854132,
+            "semantic_score": null,
+            "matched_terms": [
+              "evaluation",
+              "end-to-end",
+              "optimization",
+              "of",
+              "harnesses"
+            ],
+            "document_id": "doc-b195c16194c740be87106eb03e0071e7",
+            "source_version": 1,
+            "text_revision_id": "text-461cdfbe420bb570884d332b6cf40a367f543d40642be8996e034815729db3dd",
+            "origin": "https://arxiv.org/abs/2603.28052",
+            "role": "literature",
+            "title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+            "page_label": "2",
+            "citation": {
+              "source_id": "7d9b90f53a9f4801a090f1a4acb843340cde81e4f865f97d53fff2a6a570eb73",
+              "page_index": 1,
+              "start": 2898,
+              "end": 3908,
+              "quote": "ing harnesses\nvia end-to-end search (Figure 2). Its proposer is a coding agent, i.e., a language-model-based\nsystem that can invoke developer tools and modify code. The choice of coding agent (rather\nthan raw LLM) matters because the amount of experience quickly exceeds context limits, so\nthe proposer must decidewhatto inspect and validate edits through direct interaction with\nthe codebase. Its key design choice is to exposefull historythrough afilesystem, enabling\nselective diagnosis of raw prior code and execution traces rather than optimization from\ncompressed per-candidate summaries. For every previous candidate harness, the filesystem\nstores the source code, evaluation scores, and execution traces, which the proposer retrieves\nvia standard operations such as grep and cat rather than ingesting them as a single prompt.\nIn practice, the proposer reads a median of82 files per iterationin our most demanding\nsetting, referencing over 20 prior candidates per step (Appendix A). In the settings we\n2",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "744f9c621dc1ea659e68ba2c2bcd49b65c5bda9c5a39bb469486771710eb2ebe",
+          "exact": true
+        },
+        {
+          "chunk_id": "a92cb0944047655e05848ae750ca88fc9199ab00038a37cf14dceda6619a1bae",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "55b2d72f772ac00de2e470b3ee08443c648d971c7f57c52d6202895665e5978d",
+        "query": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence architecture method evaluation limitations",
+        "source_ids": [
+          "55b2d72f772ac00de2e470b3ee08443c648d971c7f57c52d6202895665e5978d"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence architecture method evaluation limitations",
+        "source_ids": [
+          "55b2d72f772ac00de2e470b3ee08443c648d971c7f57c52d6202895665e5978d"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.583674624998821,
+      "response": {
+        "query": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 3.1976887099954183,
+          "query_embedding_seconds": 0.23688133399991784,
+          "vector_search_seconds": 0.026640749994840007,
+          "total_seconds": 3.4637410010036547
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 196,
+        "hits": [
+          {
+            "chunk_set_id": "cs-c65392f96867412ba2b0b95916fd4122",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1121,
+            "id": "a8e4dfe3bd098e5692659d3f2e10168ddfe168174cef706149432fb383c65bd2",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "55b2d72f772ac00de2e470b3ee08443c648d971c7f57c52d6202895665e5978d",
+            "start": 0,
+            "status": "active",
+            "text": "DeepSeek-V4:\nTowards Highly Efficient Million-Token Context Intelligence\nDeepSeek-AI\nresearch@deepseek.com\nAbstract\nWe present a preview version of DeepSeek-V4 series, including two strong Mixture-of-\nExperts (MoE) language models — DeepSeek-V4-Pro with 1.6T parameters (49B activated) and\nDeepSeek-V4-Flash with 284B parameters (13B activated) — both supporting a context length of\none million tokens. DeepSeek-V4 series incorporate several key upgrades in architecture and op-\ntimization: (1) a hybrid attention architecture that combines Compressed Sparse Attention (CSA)\nand Heavily Compressed Attention (HCA) to improve long-context efficiency; (2) Manifold-\nConstrained Hyper-Connections (mHC) that enhance conventional residual connections; (3)\nand the Muon optimizer for faster convergence and greater training stability. We pre-train\nboth models on more than 32T diverse and high-quality tokens, followed by a comprehensive\npost-training pipeline that unlocks and further enhances their capabilities. DeepSeek-V4-Pro-\nMax, the maximum reasoning effort mode of DeepSeek-V4-Pro, redefines the state-of-the-art for\n",
+            "updated_at": "2026-09-20T22:58:28.660387+00:00",
+            "score": 0.03278688524590164,
+            "lexical_score": 1.0,
+            "semantic_score": 0.8573789,
+            "matched_terms": [
+              "4",
+              "highly",
+              "architecture",
+              "context",
+              "efficient",
+              "million-token",
+              ":",
+              "deepseek-v",
+              "intelligence",
+              "towards"
+            ],
+            "document_id": "doc-0f2b8afad7624b249737332c62f125c4",
+            "source_version": 1,
+            "text_revision_id": "text-ea97238a07a845e4db1f2200faa7058d41a80b213136955abcfef78dbf97df6b",
+            "origin": "https://arxiv.org/abs/2606.19348",
+            "role": "literature",
+            "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+            "page_label": "1",
+            "citation": {
+              "source_id": "55b2d72f772ac00de2e470b3ee08443c648d971c7f57c52d6202895665e5978d",
+              "page_index": 0,
+              "start": 0,
+              "end": 1121,
+              "quote": "DeepSeek-V4:\nTowards Highly Efficient Million-Token Context Intelligence\nDeepSeek-AI\nresearch@deepseek.com\nAbstract\nWe present a preview version of DeepSeek-V4 series, including two strong Mixture-of-\nExperts (MoE) language models — DeepSeek-V4-Pro with 1.6T parameters (49B activated) and\nDeepSeek-V4-Flash with 284B parameters (13B activated) — both supporting a context length of\none million tokens. DeepSeek-V4 series incorporate several key upgrades in architecture and op-\ntimization: (1) a hybrid attention architecture that combines Compressed Sparse Attention (CSA)\nand Heavily Compressed Attention (HCA) to improve long-context efficiency; (2) Manifold-\nConstrained Hyper-Connections (mHC) that enhance conventional residual connections; (3)\nand the Muon optimizer for faster convergence and greater training stability. We pre-train\nboth models on more than 32T diverse and high-quality tokens, followed by a comprehensive\npost-training pipeline that unlocks and further enhances their capabilities. DeepSeek-V4-Pro-\nMax, the maximum reasoning effort mode of DeepSeek-V4-Pro, redefines the state-of-the-art for\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-c65392f96867412ba2b0b95916fd4122",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2109,
+            "id": "9a19cfc6496f114b55dfb4c1f2fec24035ab811332d7963f292a8169d01747a6",
+            "page_index": 43,
+            "reason": "Imported from verified extracted text",
+            "source_id": "55b2d72f772ac00de2e470b3ee08443c648d971c7f57c52d6202895665e5978d",
+            "start": 955,
+            "status": "active",
+            "text": "experience of\nusing DeepSeek-V4-Pro for agentic coding in their daily work — whether DeepSeek-V4-Pro is\nready to serve as their default and primary coding model compared to other frontier models, 52%\nsaid yes, 39% leaned toward yes, and fewer than 9% said no. Respondents find DeepSeek-V4-Pro\nto deliver satisfactory results across most tasks, but note trivial mistakes, misinterpretation of\nvague prompts, and occasional over-thinking.\n6. Conclusion, Limitations, and Future Directions\nIn this work, we present a preview version of DeepSeek-V4 series, aiming at next-generation\nlarge language models that break the efficiency barrier of ultra-long-context processing. By com-\nbining a hybrid attention architecture that integrates CSA and HCA, DeepSeek-V4 series achieve\na dramatic leap in long-sequence efficiency. The architectural innovations, together with exten-\nsive infrastructure optimization, enable efficient native support for million-token contexts and\nestablish a necessary foundation for future test-time scaling, long-horizon tasks, and emerging\nparadigms such as online learning. Evaluation results demonstrate that DeepSeek-V4-Pro-Max,\n",
+            "updated_at": "2026-09-20T22:58:28.666959+00:00",
+            "score": 0.03200204813108039,
+            "lexical_score": 0.6410770465101779,
+            "semantic_score": 0.7855506,
+            "matched_terms": [
+              "4",
+              "architecture",
+              "evaluation",
+              "efficient",
+              "million-token",
+              "deepseek-v",
+              "limitations"
+            ],
+            "document_id": "doc-0f2b8afad7624b249737332c62f125c4",
+            "source_version": 1,
+            "text_revision_id": "text-ea97238a07a845e4db1f2200faa7058d41a80b213136955abcfef78dbf97df6b",
+            "origin": "https://arxiv.org/abs/2606.19348",
+            "role": "literature",
+            "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+            "page_label": "44",
+            "citation": {
+              "source_id": "55b2d72f772ac00de2e470b3ee08443c648d971c7f57c52d6202895665e5978d",
+              "page_index": 43,
+              "start": 955,
+              "end": 2109,
+              "quote": "experience of\nusing DeepSeek-V4-Pro for agentic coding in their daily work — whether DeepSeek-V4-Pro is\nready to serve as their default and primary coding model compared to other frontier models, 52%\nsaid yes, 39% leaned toward yes, and fewer than 9% said no. Respondents find DeepSeek-V4-Pro\nto deliver satisfactory results across most tasks, but note trivial mistakes, misinterpretation of\nvague prompts, and occasional over-thinking.\n6. Conclusion, Limitations, and Future Directions\nIn this work, we present a preview version of DeepSeek-V4 series, aiming at next-generation\nlarge language models that break the efficiency barrier of ultra-long-context processing. By com-\nbining a hybrid attention architecture that integrates CSA and HCA, DeepSeek-V4 series achieve\na dramatic leap in long-sequence efficiency. The architectural innovations, together with exten-\nsive infrastructure optimization, enable efficient native support for million-token contexts and\nestablish a necessary foundation for future test-time scaling, long-horizon tasks, and emerging\nparadigms such as online learning. Evaluation results demonstrate that DeepSeek-V4-Pro-Max,\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "a8e4dfe3bd098e5692659d3f2e10168ddfe168174cef706149432fb383c65bd2",
+          "exact": true
+        },
+        {
+          "chunk_id": "9a19cfc6496f114b55dfb4c1f2fec24035ab811332d7963f292a8169d01747a6",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "299f2633b4c13db7bed52434b4db7c48ea621993581014d30e7bcd036d3464df",
+        "query": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses architecture method evaluation limitations",
+        "source_ids": [
+          "299f2633b4c13db7bed52434b4db7c48ea621993581014d30e7bcd036d3464df"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses architecture method evaluation limitations",
+        "source_ids": [
+          "299f2633b4c13db7bed52434b4db7c48ea621993581014d30e7bcd036d3464df"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.584077667008387,
+      "response": {
+        "query": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 3.1311208339975565,
+          "query_embedding_seconds": 0.20680870799697004,
+          "vector_search_seconds": 0.015938167001877446,
+          "total_seconds": 3.356663792998006
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 143,
+        "hits": [
+          {
+            "chunk_set_id": "cs-390b5698e97749db850e8db29fa85d22",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1180,
+            "id": "ba53ad6d7914a97bc10022db89fe99319d587870b2a4d0f91075686e9cb49c88",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "299f2633b4c13db7bed52434b4db7c48ea621993581014d30e7bcd036d3464df",
+            "start": 0,
+            "status": "active",
+            "text": "Agentic Harness Engineering: Observability-Driven\nAutomatic Evolution of Coding-Agent Harnesses\nJiahang Lin1∗‡, Shichun Liu1∗‡, Chengjun Pan2∗‡, Lizhi Lin3, Shihan Dou1,\nZhiheng Xi1,Xuanjing Huang 1,Hang Yan 3,Zhenhua Han 3†,Tao Gui 1†,Yu-Gang Jiang 1\n1Fudan University 2Peking University 3Shanghai Qiji Zhifeng Co., Ltd\n/githubchina-qijizhifeng/agentic-harness-engineering\nAbstract\nHarnesses are now central to agent performance, mediating how models interact\nwith tools and execution environments. Yet harness engineering remains a manual\ncraft, because automating it faces a heterogeneous action space across editable\ncomponents, voluminous trajectories that bury actionable signal, and edits whose\neffect is hard to attribute. We introduceAgenticHarnessEngineering (AHE), a\nclosed loop that addresses these challenges through three matched observability\npillars: ❶ component observabilitygives every editable harness component a file-\nlevel representation so the action space is explicit and revertible; ❷ experience\nobservabilitydistills millions of raw trajectory tokens into a layered, drill-down\nevidence corpus that an evolving agent can actually consume; and ❸ decision\n",
+            "updated_at": "2026-09-20T22:57:01.120535+00:00",
+            "score": 0.03278688524590164,
+            "lexical_score": 1.0,
+            "semantic_score": 0.89538884,
+            "matched_terms": [
+              "agentic",
+              "engineering",
+              "evolution",
+              "harness",
+              "automatic",
+              "observability-driven",
+              "of",
+              ":",
+              "coding-agent",
+              "harnesses"
+            ],
+            "document_id": "doc-2ab23676bb3d49a39189c467babd0d93",
+            "source_version": 1,
+            "text_revision_id": "text-f02db17d80fde52b78dcc7cbc7e810e8bfcd6e21daeb71764e322f553d29d867",
+            "origin": "https://arxiv.org/abs/2604.25850",
+            "role": "literature",
+            "title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+            "page_label": "1",
+            "citation": {
+              "source_id": "299f2633b4c13db7bed52434b4db7c48ea621993581014d30e7bcd036d3464df",
+              "page_index": 0,
+              "start": 0,
+              "end": 1180,
+              "quote": "Agentic Harness Engineering: Observability-Driven\nAutomatic Evolution of Coding-Agent Harnesses\nJiahang Lin1∗‡, Shichun Liu1∗‡, Chengjun Pan2∗‡, Lizhi Lin3, Shihan Dou1,\nZhiheng Xi1,Xuanjing Huang 1,Hang Yan 3,Zhenhua Han 3†,Tao Gui 1†,Yu-Gang Jiang 1\n1Fudan University 2Peking University 3Shanghai Qiji Zhifeng Co., Ltd\n/githubchina-qijizhifeng/agentic-harness-engineering\nAbstract\nHarnesses are now central to agent performance, mediating how models interact\nwith tools and execution environments. Yet harness engineering remains a manual\ncraft, because automating it faces a heterogeneous action space across editable\ncomponents, voluminous trajectories that bury actionable signal, and edits whose\neffect is hard to attribute. We introduceAgenticHarnessEngineering (AHE), a\nclosed loop that addresses these challenges through three matched observability\npillars: ❶ component observabilitygives every editable harness component a file-\nlevel representation so the action space is explicit and revertible; ❷ experience\nobservabilitydistills millions of raw trajectory tokens into a layered, drill-down\nevidence corpus that an evolving agent can actually consume; and ❸ decision\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-390b5698e97749db850e8db29fa85d22",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1157,
+            "id": "7ac6dd1506e44bf6a925c510a9cb5b0e309e31f3b34549cfdd2bf8ca830ab111",
+            "page_index": 5,
+            "reason": "Imported from verified extracted text",
+            "source_id": "299f2633b4c13db7bed52434b4db7c48ea621993581014d30e7bcd036d3464df",
+            "start": 0,
+            "status": "active",
+            "text": "4 Experiments\nWe organize our empirical study around three questions: where AHE sits on the map of existing\napproaches to harness design, whether what it produces is portable beyond its optimization target,\nand what inside the loop drives the gain.\nResearch Questions\n1. RQ1(§4.2): Why agentic harness engineering, rather than human-engineered\nharnesses or other automated methods?\n2.RQ2(§4.3): Does agentic harness engineering overfit to its optimization target?\n3. RQ3(§4.4): What inside AHE drives its gains, and how reliable is the loop’s\nself-attribution?\n4.1 Setup\nEvaluation.We drive evolution on the full 89 tasks of Terminal-Bench 2 [ 21], split as 4 easy, 55\nmedium, and 30 hard, with per-task timeout extended to 1 hour. For cross-benchmark transfer we\nevaluate the AHE harness on SWE-bench-verified [ 14], 500 tasks across seven repositories. We\nreport two metrics per configuration:pass@1, the mean binary success rate over k rollouts per task;\nandtokens/trial, the mean per-trial total of prompt plus completion tokens across all LLM calls, in\nthousands. Infrastructure-aborted or timed-out trials count as failures under pass@1 (matching the\n",
+            "updated_at": "2026-09-20T22:57:01.124064+00:00",
+            "score": 0.016129032258064516,
+            "lexical_score": 0.6342520864003679,
+            "semantic_score": null,
+            "matched_terms": [
+              "agentic",
+              "engineering",
+              "evolution",
+              "evaluation",
+              "harness",
+              "of",
+              ":",
+              "harnesses"
+            ],
+            "document_id": "doc-2ab23676bb3d49a39189c467babd0d93",
+            "source_version": 1,
+            "text_revision_id": "text-f02db17d80fde52b78dcc7cbc7e810e8bfcd6e21daeb71764e322f553d29d867",
+            "origin": "https://arxiv.org/abs/2604.25850",
+            "role": "literature",
+            "title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+            "page_label": "6",
+            "citation": {
+              "source_id": "299f2633b4c13db7bed52434b4db7c48ea621993581014d30e7bcd036d3464df",
+              "page_index": 5,
+              "start": 0,
+              "end": 1157,
+              "quote": "4 Experiments\nWe organize our empirical study around three questions: where AHE sits on the map of existing\napproaches to harness design, whether what it produces is portable beyond its optimization target,\nand what inside the loop drives the gain.\nResearch Questions\n1. RQ1(§4.2): Why agentic harness engineering, rather than human-engineered\nharnesses or other automated methods?\n2.RQ2(§4.3): Does agentic harness engineering overfit to its optimization target?\n3. RQ3(§4.4): What inside AHE drives its gains, and how reliable is the loop’s\nself-attribution?\n4.1 Setup\nEvaluation.We drive evolution on the full 89 tasks of Terminal-Bench 2 [ 21], split as 4 easy, 55\nmedium, and 30 hard, with per-task timeout extended to 1 hour. For cross-benchmark transfer we\nevaluate the AHE harness on SWE-bench-verified [ 14], 500 tasks across seven repositories. We\nreport two metrics per configuration:pass@1, the mean binary success rate over k rollouts per task;\nandtokens/trial, the mean per-trial total of prompt plus completion tokens across all LLM calls, in\nthousands. Infrastructure-aborted or timed-out trials count as failures under pass@1 (matching the\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "ba53ad6d7914a97bc10022db89fe99319d587870b2a4d0f91075686e9cb49c88",
+          "exact": true
+        },
+        {
+          "chunk_id": "7ac6dd1506e44bf6a925c510a9cb5b0e309e31f3b34549cfdd2bf8ca830ab111",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    },
+    {
+      "case": {
+        "id": "5f06a75d0819795b077bf41fb61a79db9174aa3e024d5a70b7fde4ccff2088a5",
+        "query": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering architecture method evaluation limitations",
+        "source_ids": [
+          "5f06a75d0819795b077bf41fb61a79db9174aa3e024d5a70b7fde4ccff2088a5"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "arguments": {
+        "query": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering architecture method evaluation limitations",
+        "source_ids": [
+          "5f06a75d0819795b077bf41fb61a79db9174aa3e024d5a70b7fde4ccff2088a5"
+        ],
+        "mode": "hybrid",
+        "limit": 2
+      },
+      "seconds": 3.61140737500682,
+      "response": {
+        "query": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering architecture method evaluation limitations",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 3.2575101680049556,
+          "query_embedding_seconds": 0.15800841699820012,
+          "vector_search_seconds": 0.012793500005500391,
+          "total_seconds": 3.4313032099962584
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 242,
+        "hits": [
+          {
+            "chunk_set_id": "cs-692c1eaebca943baa2e78998a7d741a2",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1176,
+            "id": "0fe1fb914148e37291be2926b32a6436aca68bc451d1559e33a8869a9a53f531",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "source_id": "5f06a75d0819795b077bf41fb61a79db9174aa3e024d5a70b7fde4ccff2088a5",
+            "start": 0,
+            "status": "active",
+            "text": "Externalization in LLM Agents: A Unified Review of\nMemory, Skills, Protocols and Harness Engineering\nChenyu Zhou1,Huacan Chai 1,∗,Wenteng Chen 1,∗,Zihan Guo 2,3,∗,Rong Shan 1,∗,Y uanyi\nSong1,∗,Tianyi Xu 1,∗,Yingxuan Yang 1,∗,Aofan Y u 1,∗,Weiming Zhang 1,∗,Congming\nZheng1,∗,Jiachen Zhu 1,∗,Zeyu Zheng 4,Zhuosheng Zhang 1,Xingyu Lou 5,Changwang\nZhang5,Zhihui Fu 5,Jun Wang 5,†,Weiwen Liu 1,†,Jianghao Lin 1,†,Weinan Zhang 1,3,†\n1Shanghai Jiao Tong University, 2Sun Yat-Sen University, 3Shanghai Innovation Institute, 4Carnegie\nMellon University, 5OPPO\n∗Equal contribution,†Corresponding authors\nAbstract\nLarge language model (LLM) agents are increasingly built less by changing model weights than by\nreorganizing the runtime around them. Capabilities that earlier systems expected the model to\nrecover internally are now externalized into memory stores, reusable skills, interaction protocols,\nand the surrounding harness that makes these modules reliable in practice. This paper reviews\nthat shift through the lens of externalization. Drawing on the idea of cognitive artifacts, we\nargue that agent infrastructure matters not merely because it adds auxiliary components, but\n",
+            "updated_at": "2026-09-20T22:56:03.150417+00:00",
+            "score": 0.03278688524590164,
+            "lexical_score": 1.0,
+            "semantic_score": 0.868828,
+            "matched_terms": [
+              "engineering",
+              "unified",
+              "skills",
+              "and",
+              "harness",
+              "protocols",
+              "review",
+              "externalization",
+              "of",
+              ":",
+              ",",
+              "memory",
+              "agents",
+              "in",
+              "a",
+              "llm"
+            ],
+            "document_id": "doc-001d540adf0b4d679702fd23f37384d6",
+            "source_version": 1,
+            "text_revision_id": "text-b5e57dca2c0019c7e710429492e345f40595c36fdb282936809306719e460fe2",
+            "origin": "https://arxiv.org/abs/2604.08224",
+            "role": "literature",
+            "title": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+            "page_label": "1",
+            "citation": {
+              "source_id": "5f06a75d0819795b077bf41fb61a79db9174aa3e024d5a70b7fde4ccff2088a5",
+              "page_index": 0,
+              "start": 0,
+              "end": 1176,
+              "quote": "Externalization in LLM Agents: A Unified Review of\nMemory, Skills, Protocols and Harness Engineering\nChenyu Zhou1,Huacan Chai 1,∗,Wenteng Chen 1,∗,Zihan Guo 2,3,∗,Rong Shan 1,∗,Y uanyi\nSong1,∗,Tianyi Xu 1,∗,Yingxuan Yang 1,∗,Aofan Y u 1,∗,Weiming Zhang 1,∗,Congming\nZheng1,∗,Jiachen Zhu 1,∗,Zeyu Zheng 4,Zhuosheng Zhang 1,Xingyu Lou 5,Changwang\nZhang5,Zhihui Fu 5,Jun Wang 5,†,Weiwen Liu 1,†,Jianghao Lin 1,†,Weinan Zhang 1,3,†\n1Shanghai Jiao Tong University, 2Sun Yat-Sen University, 3Shanghai Innovation Institute, 4Carnegie\nMellon University, 5OPPO\n∗Equal contribution,†Corresponding authors\nAbstract\nLarge language model (LLM) agents are increasingly built less by changing model weights than by\nreorganizing the runtime around them. Capabilities that earlier systems expected the model to\nrecover internally are now externalized into memory stores, reusable skills, interaction protocols,\nand the surrounding harness that makes these modules reliable in practice. This paper reviews\nthat shift through the lens of externalization. Drawing on the idea of cognitive artifacts, we\nargue that agent infrastructure matters not merely because it adds auxiliary components, but\n",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-692c1eaebca943baa2e78998a7d741a2",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2097,
+            "id": "8b697d991e09951941fc7469b3d8f57c031288dd562b086a449e17c86dbeebd0",
+            "page_index": 43,
+            "reason": "Imported from verified extracted text",
+            "source_id": "5f06a75d0819795b077bf41fb61a79db9174aa3e024d5a70b7fde4ccff2088a5",
+            "start": 929,
+            "status": "active",
+            "text": "cognitive overhead and security risks accumulate; the scope is widening from private scaf-\nfolding to shared infrastructure; and the evaluation challenge is growing more pressing as externalization’s\ncontribution remains invisible to model-centric benchmarks. The common thread is that externalization is\nnot a one-time architectural decision but an ongoing design process whose boundaries, mechanisms, costs,\nand quality criteria co-evolve with the models and ecosystems they serve.\n9 Conclusion\nThis paper has argued that externalization is the transition logic connecting many of the most important\ndevelopments in LLM agents. Reliable agency increasingly depends on relocating selected cognitive burdens\nout of the model and into explicit infrastructure: memory externalizes state across time, skills externalize\nprocedural expertise, protocols externalize interaction structure, and the harness coordinates these layers\ninto a working runtime.\nFrom this perspective, the move from weights to context to harness is not just a sequence of engineering tricks.\nIt marks a shift in where agent capability is organized. Some burdens remain well handled parametrically,\n",
+            "updated_at": "2026-09-20T22:56:03.160603+00:00",
+            "score": 0.03225806451612903,
+            "lexical_score": 0.9085954282430636,
+            "semantic_score": 0.8454014,
+            "matched_terms": [
+              "engineering",
+              "evaluation",
+              "skills",
+              "and",
+              "harness",
+              "protocols",
+              "externalization",
+              "of",
+              ":",
+              ",",
+              "memory",
+              "agents",
+              "in",
+              "a",
+              "llm"
+            ],
+            "document_id": "doc-001d540adf0b4d679702fd23f37384d6",
+            "source_version": 1,
+            "text_revision_id": "text-b5e57dca2c0019c7e710429492e345f40595c36fdb282936809306719e460fe2",
+            "origin": "https://arxiv.org/abs/2604.08224",
+            "role": "literature",
+            "title": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+            "page_label": "44",
+            "citation": {
+              "source_id": "5f06a75d0819795b077bf41fb61a79db9174aa3e024d5a70b7fde4ccff2088a5",
+              "page_index": 43,
+              "start": 929,
+              "end": 2097,
+              "quote": "cognitive overhead and security risks accumulate; the scope is widening from private scaf-\nfolding to shared infrastructure; and the evaluation challenge is growing more pressing as externalization’s\ncontribution remains invisible to model-centric benchmarks. The common thread is that externalization is\nnot a one-time architectural decision but an ongoing design process whose boundaries, mechanisms, costs,\nand quality criteria co-evolve with the models and ecosystems they serve.\n9 Conclusion\nThis paper has argued that externalization is the transition logic connecting many of the most important\ndevelopments in LLM agents. Reliable agency increasingly depends on relocating selected cognitive burdens\nout of the model and into explicit infrastructure: memory externalizes state across time, skills externalize\nprocedural expertise, protocols externalize interaction structure, and the harness coordinates these layers\ninto a working runtime.\nFrom this perspective, the move from weights to context to harness is not just a sequence of engineering tricks.\nIt marks a shift in where agent capability is organized. Some burdens remain well handled parametrically,\n",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 37,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+      },
+      "span_checks": [
+        {
+          "chunk_id": "0fe1fb914148e37291be2926b32a6436aca68bc451d1559e33a8869a9a53f531",
+          "exact": true
+        },
+        {
+          "chunk_id": "8b697d991e09951941fc7469b3d8f57c031288dd562b086a449e17c86dbeebd0",
+          "exact": true
+        }
+      ],
+      "status": "passed protocol/filter/span checks; relevance not graded"
+    }
+  ],
+  "status": "complete",
+  "revision_before": 37,
+  "tool_names": [
+    "workspace_status",
+    "preview_inbox_document",
+    "start_project",
+    "import_document",
+    "search_literature",
+    "retrieve_evidence",
+    "read_source_page",
+    "list_documents",
+    "list_chunks",
+    "read_chunk",
+    "get_chunk_context",
+    "inspect_document_chunks",
+    "rechunk_document",
+    "activate_chunk_set",
+    "set_chunk_status",
+    "find_evidence_usage",
+    "search_index_status",
+    "rebuild_search_index",
+    "explore_topics",
+    "map_research_gaps",
+    "formulate_question",
+    "design_study",
+    "track_execution",
+    "interpret_results",
+    "summarize_dataset",
+    "draft_manuscript",
+    "prepare_submission",
+    "save_artifact",
+    "read_artifact",
+    "export_manuscript",
+    "backup_workspace",
+    "preview_workspace_cleanup",
+    "cleanup_workspace",
+    "job_status",
+    "resume_job",
+    "migrate_legacy_workspace",
+    "search_documentation",
+    "list_sources",
+    "add_context",
+    "add_directory",
+    "restore_workspace"
+  ],
+  "revision_after": 37,
+  "workspace_unchanged": true,
+  "successful": 12,
+  "total": 12
+}

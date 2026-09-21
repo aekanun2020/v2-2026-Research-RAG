@@ -1,0 +1,378 @@
+{
+  "assessor": "Codex",
+  "assessment_type": "new manual semantic assessment of top-1 passages, grounded in recorded MCP outputs",
+  "external_llm_judge": false,
+  "evidence": "qdrant-thai-quality-2026-09-21.json",
+  "rows": [
+    {
+      "case_id": "T01",
+      "mode": "semantic",
+      "query": "ถ่ายทอดความรู้จากโมเดลหลายตัวไปยังโมเดลขนาดเล็กตัวเดียวได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T02",
+      "mode": "semantic",
+      "query": "ปรับอัตราการเรียนรู้แยกสำหรับแต่ละพารามิเตอร์โดยใช้ค่าเฉลี่ยของความชันและความชันกำลังสองได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T03",
+      "mode": "semantic",
+      "query": "แปลงคำถามภาษาคนให้เป็นคำสั่งค้นข้อมูลในตารางโดยใช้ผลการรันคำสั่งเป็นรางวัลได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T04",
+      "mode": "semantic",
+      "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T05",
+      "mode": "semantic",
+      "query": "ใช้ระยะห่างระหว่างคำแทนการระบุตำแหน่งแบบตายตัวในกลไกความสนใจได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T06",
+      "mode": "semantic",
+      "query": "เพิ่มความจุของโครงข่ายโดยเลือกใช้ผู้เชี่ยวชาญเพียงบางตัวสำหรับข้อมูลแต่ละตัวอย่างได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T07",
+      "mode": "semantic",
+      "query": "สร้างลายมือเขียนจากข้อความโดยให้โครงข่ายเรียนรู้การทำนายจุดถัดไปได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "partially_relevant",
+      "reason": "The passage describes sliding text windows and aligning text to pen traces, but does not explain the requested recurrent next-point generation method.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T08",
+      "mode": "semantic",
+      "query": "เหตุใดคุณภาพการแปลด้วยตัวเข้ารหัสและตัวถอดรหัสจึงลดลงเมื่อประโยคยาวหรือมีคำที่ไม่รู้จัก",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T09",
+      "mode": "semantic",
+      "query": "สรุปข้อความแบบเขียนใหม่จะจัดการคำหายากและโครงสร้างระดับคำกับประโยคได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T10",
+      "mode": "semantic",
+      "query": "จำแนกวิดีโอให้เร็วขึ้นโดยแยกการเรียนรู้ข้อมูลเชิงพื้นที่กับเชิงเวลาได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "N01",
+      "mode": "semantic",
+      "query": "อะไรเป็นสาเหตุให้แผ่นเปลือกโลกเคลื่อนที่และเกิดภูเขาไฟ",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "N02",
+      "mode": "semantic",
+      "query": "คำนวณวงโคจรของดาวหางรอบดวงอาทิตย์ได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H01",
+      "mode": "semantic",
+      "query": "จะบีบอัดความรู้ของระบบทำนายหลายตัวให้ใช้โมเดลเล็กเพียงตัวเดียวตอนใช้งานได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H02",
+      "mode": "semantic",
+      "query": "การใช้โมเมนต์อันดับหนึ่งและอันดับสองของเกรเดียนต์ช่วยปรับขนาดก้าวในการเรียนรู้ได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H03",
+      "mode": "semantic",
+      "query": "ถ้าคำหนึ่งมีหลายความหมาย จะสร้างตัวแทนของคำนั้นให้สะท้อนคำที่อยู่รอบข้างได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H04",
+      "mode": "semantic",
+      "query": "การเลือกเปิดใช้ผู้เชี่ยวชาญแค่บางส่วนช่วยขยายจำนวนพารามิเตอร์โดยไม่เพิ่มงานคำนวณตามสัดส่วนได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H05",
+      "mode": "semantic",
+      "query": "โมเดลสร้างลายมือสามารถใช้ข้อความที่ต้องการเขียนเป็นเงื่อนไขของการทำนายตำแหน่งปากกาได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "partially_relevant",
+      "reason": "The passage describes sliding text windows and aligning text to pen traces, but does not explain the requested recurrent next-point generation method.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H06",
+      "mode": "semantic",
+      "query": "ระบบสรุปบทความจะดึงคำที่ไม่เคยพบตอนฝึกจากต้นฉบับมาใส่ในบทสรุปได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "HN01",
+      "mode": "semantic",
+      "query": "เหตุใดน้ำทะเลจึงขึ้นลงตามตำแหน่งของดวงจันทร์",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "HN02",
+      "mode": "semantic",
+      "query": "หินอัคนีและหินตะกอนเกิดจากกระบวนการที่แตกต่างกันอย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T01",
+      "mode": "hybrid",
+      "query": "ถ่ายทอดความรู้จากโมเดลหลายตัวไปยังโมเดลขนาดเล็กตัวเดียวได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T02",
+      "mode": "hybrid",
+      "query": "ปรับอัตราการเรียนรู้แยกสำหรับแต่ละพารามิเตอร์โดยใช้ค่าเฉลี่ยของความชันและความชันกำลังสองได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T03",
+      "mode": "hybrid",
+      "query": "แปลงคำถามภาษาคนให้เป็นคำสั่งค้นข้อมูลในตารางโดยใช้ผลการรันคำสั่งเป็นรางวัลได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T04",
+      "mode": "hybrid",
+      "query": "ทำให้เวกเตอร์ของคำเดียวกันเปลี่ยนไปตามบริบทของประโยคได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T05",
+      "mode": "hybrid",
+      "query": "ใช้ระยะห่างระหว่างคำแทนการระบุตำแหน่งแบบตายตัวในกลไกความสนใจได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T06",
+      "mode": "hybrid",
+      "query": "เพิ่มความจุของโครงข่ายโดยเลือกใช้ผู้เชี่ยวชาญเพียงบางตัวสำหรับข้อมูลแต่ละตัวอย่างได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T07",
+      "mode": "hybrid",
+      "query": "สร้างลายมือเขียนจากข้อความโดยให้โครงข่ายเรียนรู้การทำนายจุดถัดไปได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "partially_relevant",
+      "reason": "The passage describes sliding text windows and aligning text to pen traces, but does not explain the requested recurrent next-point generation method.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T08",
+      "mode": "hybrid",
+      "query": "เหตุใดคุณภาพการแปลด้วยตัวเข้ารหัสและตัวถอดรหัสจึงลดลงเมื่อประโยคยาวหรือมีคำที่ไม่รู้จัก",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T09",
+      "mode": "hybrid",
+      "query": "สรุปข้อความแบบเขียนใหม่จะจัดการคำหายากและโครงสร้างระดับคำกับประโยคได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "T10",
+      "mode": "hybrid",
+      "query": "จำแนกวิดีโอให้เร็วขึ้นโดยแยกการเรียนรู้ข้อมูลเชิงพื้นที่กับเชิงเวลาได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "N01",
+      "mode": "hybrid",
+      "query": "อะไรเป็นสาเหตุให้แผ่นเปลือกโลกเคลื่อนที่และเกิดภูเขาไฟ",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "N02",
+      "mode": "hybrid",
+      "query": "คำนวณวงโคจรของดาวหางรอบดวงอาทิตย์ได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H01",
+      "mode": "hybrid",
+      "query": "จะบีบอัดความรู้ของระบบทำนายหลายตัวให้ใช้โมเดลเล็กเพียงตัวเดียวตอนใช้งานได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H02",
+      "mode": "hybrid",
+      "query": "การใช้โมเมนต์อันดับหนึ่งและอันดับสองของเกรเดียนต์ช่วยปรับขนาดก้าวในการเรียนรู้ได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H03",
+      "mode": "hybrid",
+      "query": "ถ้าคำหนึ่งมีหลายความหมาย จะสร้างตัวแทนของคำนั้นให้สะท้อนคำที่อยู่รอบข้างได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H04",
+      "mode": "hybrid",
+      "query": "การเลือกเปิดใช้ผู้เชี่ยวชาญแค่บางส่วนช่วยขยายจำนวนพารามิเตอร์โดยไม่เพิ่มงานคำนวณตามสัดส่วนได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H05",
+      "mode": "hybrid",
+      "query": "โมเดลสร้างลายมือสามารถใช้ข้อความที่ต้องการเขียนเป็นเงื่อนไขของการทำนายตำแหน่งปากกาได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "partially_relevant",
+      "reason": "The passage describes sliding text windows and aligning text to pen traces, but does not explain the requested recurrent next-point generation method.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "H06",
+      "mode": "hybrid",
+      "query": "ระบบสรุปบทความจะดึงคำที่ไม่เคยพบตอนฝึกจากต้นฉบับมาใส่ในบทสรุปได้อย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "HN01",
+      "mode": "hybrid",
+      "query": "เหตุใดน้ำทะเลจึงขึ้นลงตามตำแหน่งของดวงจันทร์",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    },
+    {
+      "case_id": "HN02",
+      "mode": "hybrid",
+      "query": "หินอัคนีและหินตะกอนเกิดจากกระบวนการที่แตกต่างกันอย่างไร",
+      "chunk_id": "a15054f6d3f76b9892d2b8f202de370087e7fee3d9752eedb10f964504635306",
+      "top1_judgment": "unrelated",
+      "reason": "The passage describes handwriting text-window offsets; it does not address this question.",
+      "source_span_exact": true
+    }
+  ],
+  "summary_per_mode": {
+    "questions": 20,
+    "fully_addresses_question": 0,
+    "partially_relevant": 2,
+    "unrelated": 18,
+    "expected_top1_paper_for_in_scope_questions": 2,
+    "in_scope_questions": 16,
+    "out_of_corpus_controls_returning_candidates": 4
+  },
+  "conclusion": "Thai-to-English semantic retrieval fails this corpus test with the selected original nomic-embed-text model; exact spans and fast responses do not establish semantic quality."
+}

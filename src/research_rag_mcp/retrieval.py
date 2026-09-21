@@ -1,4 +1,4 @@
-"""CPU lexical retrieval: BM25 plus Unicode Thai character n-grams.
+"""Page-preserving chunk splitting and overlap deduplication.
 
 No embeddings, translation, model calls or fabricated semantic confidence scores.
 Offsets always address the unnormalized extracted original text.
@@ -12,13 +12,8 @@ from functools import lru_cache
 
 @lru_cache(maxsize=8192)
 def tokens(text):
-    value = unicodedata.normalize('NFKC', text).casefold()
-    terms = re.findall(r'[^\W_]+', re.sub(r'[\u0e00-\u0e7f]+', ' ', value), re.UNICODE)
-    for run in re.findall(r'[\u0e00-\u0e7f]+', value):
-        terms.extend('th:' + run[i:i+n] for n in (2, 3) for i in range(max(0, len(run)-n+1)))
-        if len(run) == 1:
-            terms.append('th:' + run)
-    return tuple(terms)
+    from pyragdoc.utils.thai_tokenizer import ThaiTokenizer
+    return tuple(ThaiTokenizer().tokenize(text))
 
 
 def chunks(text, size=1200, overlap=200):

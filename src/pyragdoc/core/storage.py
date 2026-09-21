@@ -129,7 +129,7 @@ class QdrantService(StorageService):
         self.vector_size = vector_size
         
         # Initialize client
-        self.client = QdrantClient(url=url)
+        self.client = QdrantClient(url=url, timeout=20)
         
         self.logger.info(f"Initialized Qdrant service with URL: {url}, "
                          f"collection: {collection_name}, vector size: {vector_size}")
@@ -177,7 +177,7 @@ class QdrantService(StorageService):
                                        f"{current_vector_size}, but {self.vector_size} is required")
                     
                     # Recreate collection with correct vector size
-                    await self.recreate_collection()
+                    raise StorageError("Existing collection dimensions differ; refusing destructive recreation")
         except Exception as e:
             error_msg = f"Failed to initialize Qdrant collection: {str(e)}"
             self.logger.error(error_msg, exc_info=True)
@@ -362,13 +362,12 @@ class QdrantService(StorageService):
             import asyncio
             
             # Convert filters to Qdrant filter
-            qdrant_filter = None
-            if filters:
-                # TODO: Implement filter conversion
-                pass
+            if filters is not None and not isinstance(filters, qdrant_models.Filter):
+                raise StorageError("filters must be a validated Qdrant Filter")
+            qdrant_filter = filters
             
             # Set score threshold
-            score_threshold = min_score or 0.0
+            score_threshold = min_score
             
             # Search
             self.logger.debug(f"Searching Qdrant collection '{self.collection_name}' with limit={limit}, score_threshold={score_threshold}")

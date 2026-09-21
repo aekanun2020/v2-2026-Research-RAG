@@ -1,6 +1,6 @@
 """Official MCP SDK Streamable HTTP server, with no protocol replacement."""
+import asyncio
 import csv
-import secrets
 from functools import wraps
 from typing import Any, Literal
 
@@ -14,14 +14,15 @@ from .inbox import preview_inbox_document as preview_inbox
 from .literature import search_literature as crossref_search
 from .models import INSTRUCTIONS, Bibliography, Block, Role, Stage
 from .store import Store
+from .jobs import Jobs
 from .workflow import status, stage_context, submission_check, export_manuscript as export_files
 
 
 def input_errors(fn):
     @wraps(fn)
-    def checked(*args, **kwargs):
+    async def checked(*args, **kwargs):
         try:
-            return fn(*args, **kwargs)
+            return await asyncio.to_thread(fn, *args, **kwargs)
         except (ValueError, OSError, csv.Error, PdfReadError) as exc:
             raise ToolError(str(exc)) from exc
     return checked
@@ -29,12 +30,13 @@ def input_errors(fn):
 
 def build_server(root):
     store = Store(root)
+    jobs = Jobs(store)
     server = MCPServer('Research RAG — eight stages', version=__version__, instructions=INSTRUCTIONS)
 
     @server.tool()
     @input_errors
     def workspace_status() -> dict[str, Any]:
-        """Resume the project, source inventory, artifacts, review status and public search history. No secret review or HTTP tokens are exposed."""
+        """Resume the project, source inventory, artifacts, review status and public search history. No MCP access token is required."""
         return status(store)
 
     @server.tool()
@@ -54,8 +56,8 @@ def build_server(root):
     @input_errors
     def import_document(filename: str, origin: str, role: Role, bibliography: Bibliography,
                         expected_revision: int, idempotency_key: str, document_id: str | None = None) -> dict[str, Any]:
-        """Import a real authorized file from inbox: PDF, UTF-8 TXT/MD/CSV/JSON. Preserve SHA-256 and page/character locators. PDFs need extractable text; no OCR. Bibliographic fields must come from the source, with unknown optional fields omitted. Roles separate prior literature, own data/results/protocol/notes, and original journal guidelines. Never import generated findings as observed results. Creates a document ID, immutable source version, chunks and local CPU embeddings. Supply an existing document_id only to explicitly link a revised file; omit for a new document."""
-        return store.import_document(filename, origin, role, bibliography.model_dump(), expected_revision, idempotency_key, document_id)
+        """Import a real authorized file from inbox: PDF, UTF-8 TXT/MD/CSV/JSON. Preserve SHA-256 and page/character locators. PDFs need extractable text; no OCR. Bibliographic fields must come from the source, with unknown optional fields omitted. Roles separate prior literature, own data/results/protocol/notes, and original journal guidelines. Never import generated findings as observed results. Returns a durable job_id promptly; poll job_status until completed before using the document. A failed job is not an imported document. Creates document/source/chunk identities and local Ollama CPU embeddings stored in Qdrant. Supply an existing document_id only to explicitly link a revised file; omit for a new document."""
+        return jobs.submit('import_document',dict(filename=filename,origin=origin,role=role,bibliography=bibliography.model_dump(),expected_revision=expected_revision,key=idempotency_key,document_id=document_id))
 
     @server.tool()
     @input_errors
@@ -67,12 +69,9 @@ def build_server(root):
     @server.tool()
     @input_errors
     def retrieve_evidence(query: str, roles: list[Role] | None = None, source_ids: list[str] | None = None,
-                          limit: int = 8, mode: Literal["lexical", "semantic", "hybrid"] = "hybrid",
-                          rerank: bool = True, candidate_limit: int = 50,
-                          min_rerank_score: float | None = None,
-                          min_document_score: float = 0) -> dict[str, Any]:
-        """Search local evidence with lexical BM25, multilingual CPU embeddings, or hybrid rank fusion (default). Semantic/hybrid reranks up to candidate_limit (30..200, default 50) using local BGE on CPU. Returns exact citations, stable identities, separate first-stage/chunk/first-page scores and model fingerprint. No score filter is enabled by default: min_document_score=0 and min_rerank_score=null. Positive thresholds are explicit caller-selected filters, not calibrated confidence; first-page filtering produced false negatives in testing. Unrelated queries may return candidates: read original evidence before claiming support. rerank=false selects original first-stage ranking and skips both filters; lexical skips reranking. Searches latest versions and active chunks; source_ids may select historical sources. Missing/corrupt models or indexes raise errors, never automatic fallback. No external inference."""
-        return store.search(query, roles, source_ids, limit, mode, rerank, candidate_limit, min_rerank_score, min_document_score)
+                          limit: int = 8, mode: Literal["lexical", "semantic", "hybrid"] = "hybrid") -> dict[str, Any]:
+        """Search with PyThaiNLP BM25, Ollama/Qdrant semantic retrieval or their RRF fusion. The selected architecture has no BGE reranker. Returns exact source/page spans and unchanged research identities. Filters select active chunks and latest source versions unless source_ids explicitly selects historical versions. Component failure is an error; never silently downgrade hybrid. Scores are not confidence; inspect the original quote before claiming support."""
+        return store.search(query, roles, source_ids, limit, mode)
 
     @server.tool()
     @input_errors
@@ -117,7 +116,7 @@ def build_server(root):
     def rechunk_document(source_id: str, expected_revision: int, idempotency_key: str,
                          size: int = 1200, overlap: int = 200) -> dict[str, Any]:
         """Create an indexed candidate chunk set from preserved extracted pages. Character size 200..5000, overlap below half of size. Existing sets and citations remain; inspect candidate before activate_chunk_set."""
-        return store.rechunk_document(source_id, size, overlap, expected_revision, idempotency_key)
+        return jobs.submit('rechunk_document',dict(source_id=source_id,size=size,overlap=overlap,expected_revision=expected_revision,key=idempotency_key))
 
     @server.tool()
     @input_errors
@@ -141,7 +140,7 @@ def build_server(root):
     @server.tool()
     @input_errors
     def search_index_status() -> dict[str, Any]:
-        """Inspect embedding model identity, local assets, index integrity/counts and pending chunks. No source text is sent externally."""
+        """Inspect embedding model identity, pinned Ollama identity, Qdrant integrity/counts and pending chunks. No source text is sent externally."""
         return store.search_index_status()
 
     @server.tool()
@@ -149,7 +148,7 @@ def build_server(root):
     def rebuild_search_index(expected_revision: int, idempotency_key: str,
                              source_ids: list[str] | None = None) -> dict[str, Any]:
         """Explicitly index verified chunks using the pinned local CPU model after migration, corruption or model change. Includes preserved chunk sets; does not re-extract or change source/chunk identities."""
-        return store.rebuild_search_index(source_ids, expected_revision, idempotency_key)
+        return jobs.submit('rebuild_search_index',dict(source_ids=source_ids,expected_revision=expected_revision,key=idempotency_key))
 
     @server.tool()
     @input_errors
@@ -229,44 +228,81 @@ def build_server(root):
     @server.tool()
     @input_errors
     def backup_workspace() -> dict[str, Any]:
-        """Create a consistent SQLite/source snapshot and hash manifest. Tokens, inbox and exports are excluded. Restore is a local CLI operation into a new directory."""
+        """Create a consistent revisioned JSON/source/Qdrant-vector snapshot and hash manifest. Tokens, inbox and exports are excluded. Restore through restore_workspace into an empty workspace with its own Qdrant collection."""
         return store.backup()
 
     @server.tool()
     @input_errors
     def preview_workspace_cleanup(scope: Literal['search_index', 'documents', 'workspace', 'all_except_inbox']) -> dict[str, Any]:
-        """Read-only cleanup plan with exact counts, blockers, revision and plan_hash. search_index clears embeddings only; documents clears all imported source/chunk/index records but is blocked if any artifacts/history exist; workspace also clears project, artifacts, versions, searches and prior events. Those three scopes retain files. all_except_inbox additionally previews permanent deletion of every workspace data file outside inbox, including sources, exports, backups and import-runs; no backup is made. Inbox and runtime database/authentication files remain. Does not improve retrieval quality or authorize execution. Use only the researcher's explicit cleanup scope."""
+        """Read-only cleanup plan with exact counts, blockers, revision and plan_hash. search_index clears embeddings only; documents clears all imported source/chunk/index records but is blocked if any artifacts/history exist; workspace also clears project, artifacts, versions, searches and prior events. Those three scopes retain files. all_except_inbox additionally previews permanent deletion of every workspace data file outside inbox, including sources, exports, backups and import-runs; no backup is made. Inbox and runtime journal files remain. Does not improve retrieval quality or authorize execution. Use only the researcher's explicit cleanup scope."""
         return store.preview_workspace_cleanup(scope)
 
     @server.tool()
     @input_errors
     def cleanup_workspace(scope: Literal['search_index', 'documents', 'workspace', 'all_except_inbox'], plan_hash: str,
                           expected_revision: int, idempotency_key: str) -> dict[str, Any]:
-        """Execute explicitly authorized cleanup using the matching preview plan_hash/revision. search_index/documents/workspace create a hash-manifest SQLite/source backup before clearing database records in one transaction. all_except_inbox permanently clears all research records and files outside inbox WITHOUT a new backup; only inbox plus runtime database/authentication files remain. Check result.status: incomplete means database is already cleared but filesystem cleanup needs the exact original arguments to resume; new writes are blocked. completed verifies inbox hashes are unchanged. For the first three scopes original source files, inbox, exports, credentials and existing backups remain. No scope claims forensic secure erasure. Prior mutation keys are retired; exact cleanup retries return the same receipt. search_index requires rebuild_search_index afterward; documents/workspace require reimport. Cleanup alone does not fix semantic relevance. Never infer permission to clear manuscripts or project history from a request to rebuild embeddings."""
+        """Execute explicitly authorized cleanup using the matching preview plan_hash/revision. search_index/documents/workspace create a hash-manifest JSON/source/vector backup before clearing journal records in one transaction. all_except_inbox permanently clears all research records and files outside inbox WITHOUT a new backup; only inbox plus runtime journal files remain. Check result.status: incomplete reports which steps finished; resume with the exact original arguments; new writes are blocked. completed verifies inbox hashes are unchanged. For the first three scopes original source files, inbox, exports, credentials and existing backups remain. No scope claims forensic secure erasure. Prior mutation keys are retired; exact cleanup retries return the same receipt. search_index requires rebuild_search_index afterward; documents/workspace require reimport. Cleanup alone does not fix semantic relevance. Never infer permission to clear manuscripts or project history from a request to rebuild embeddings."""
         return store.cleanup_workspace(scope, plan_hash, expected_revision, idempotency_key)
+
+    @server.tool()
+    @input_errors
+    def job_status(job_id: str) -> dict[str, Any]:
+        """Read durable import/rechunk/rebuild/migration status and progress. queued/running is not success; completed contains the original mutation result. failed includes a real error. interrupted requires explicit resume_job; polling never starts more work."""
+        return jobs.status(job_id)
+
+    @server.tool()
+    @input_errors
+    def resume_job(job_id: str) -> dict[str, Any]:
+        """Explicitly resume interrupted/failed durable work with its preserved arguments and idempotency key. Completed work returns its receipt; changed workspace revisions are rejected."""
+        return jobs.resume(job_id)
+
+    @server.tool()
+    @input_errors
+    def migrate_legacy_workspace(expected_revision: int, idempotency_key: str) -> dict[str, Any]:
+        """One-time import from the operator-configured read-only legacy workspace into this empty new workspace. Preserve source/document/chunk/artifact IDs, page spans, originals, versions and receipts. Re-embed into Qdrant using pinned local Ollama. Never copies inbox or changes legacy files. Returns job_id; poll job_status."""
+        return jobs.submit('migrate_legacy_workspace',dict(expected_revision=expected_revision,key=idempotency_key))
+
+    @server.tool()
+    @input_errors
+    def search_documentation(query: str, limit: int = 5,
+                             search_mode: Literal['semantic','bm25','hybrid'] = 'hybrid',
+                             source_ids: list[str] | None = None) -> dict[str, Any]:
+        """Selected upstream search entry point with exact research citations. bm25 uses Thai word segmentation; hybrid fuses BM25 and Qdrant semantic results using RRF. No BGE or silent component fallback."""
+        return store.search(query,source_ids=source_ids,limit=limit,mode='lexical' if search_mode=='bm25' else search_mode)
+
+    @server.tool()
+    @input_errors
+    def list_sources(offset: int = 0, limit: int = 50) -> dict[str, Any]:
+        """List sources with permanent document/source IDs and available revisions."""
+        return store.list_documents(offset,limit)
+
+    @server.tool()
+    @input_errors
+    def add_context(content: str, title: str, expected_revision: int, idempotency_key: str,
+                    source: str = 'agent_context', role: Role = 'project_note',
+                    format: Literal['md','txt','csv','json'] = 'md') -> dict[str, Any]:
+        """Import supplied text via a durable job. Default role is project_note, not observed findings. Requires the actual supplied title/source; preserves original text and citations. Poll job_status."""
+        return jobs.submit('import_context',dict(content=content,title=title,origin=source,role=role,format=format,expected_revision=expected_revision,key=idempotency_key))
+
+    @server.tool()
+    @input_errors
+    def add_directory(path: str, bibliography_by_filename: dict[str, Bibliography], expected_revision: int,
+                      idempotency_key: str, role: Role = 'literature') -> dict[str, Any]:
+        """Import supported files from a relative directory INSIDE inbox as one durable batch job. Supply bibliography for every file after previewing originals; missing metadata is an error, never invented from filenames. Completed files remain committed if a later file fails; resume_job retries exact keys without duplicates. Poll job_status."""
+        return jobs.submit('import_directory',dict(path=path,bibliography_by_filename={k:v.model_dump() for k,v in bibliography_by_filename.items()},
+                    role=role,expected_revision=expected_revision,key=idempotency_key))
+
+    @server.tool()
+    @input_errors
+    def restore_workspace(snapshot: str, expected_revision: int, idempotency_key: str) -> dict[str, Any]:
+        """Restore a JSON/Qdrant backup directory under backups into this EMPTY workspace and EMPTY dedicated Qdrant collection. Verify every manifest hash first; preserve identities, revisions and original vectors. Returns a durable job_id; poll job_status. Does not restore inbox or tokens."""
+        return jobs.submit('restore_workspace',dict(snapshot=snapshot,expected_revision=expected_revision,key=idempotency_key))
 
     @server.prompt()
     def research_workflow() -> str:
         return INSTRUCTIONS
 
     return server
-
-
-class BearerAuth:
-    """Access control around the SDK ASGI app; no translation of MCP traffic."""
-    def __init__(self, app, token):
-        self.app, self.token = app, token
-
-    async def __call__(self, scope, receive, send):
-        if scope['type'] == 'http':
-            headers = dict(scope['headers'])
-            supplied = headers.get(b'authorization', b'').decode('latin-1')
-            if not secrets.compare_digest(supplied, 'Bearer '+self.token):
-                await send({'type': 'http.response.start', 'status': 401,
-                            'headers': [(b'content-type', b'text/plain'), (b'www-authenticate', b'Bearer')]})
-                await send({'type': 'http.response.body', 'body': b'Bearer authentication required'})
-                return
-        await self.app(scope, receive, send)
 
 
 def http_app(root, port):
@@ -278,4 +314,4 @@ def http_app(root, port):
     )
     app = server.streamable_http_app(stateless_http=True, json_response=False,
                                     host='127.0.0.1', transport_security=security)
-    return BearerAuth(app, Store(root).http_token())
+    return app

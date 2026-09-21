@@ -1,0 +1,2 @@
+FROM codex-research-rag-reference:5e5373a
+COPY --chown=mcpuser:mcpuser src/pyragdoc/utils/thai_tokenizer.py /app/pyragdoc/utils/thai_tokenizer.py

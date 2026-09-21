@@ -1,16 +1,14 @@
-# Container provenance
+# Container provenance — 0.3.0
 
-Inspected official registry manifests on 2026-09-20 before building. No upstream Dockerfile or application source was copied. The project's [Dockerfile](../../Dockerfile) uses these unmodified images, pinned by multi-platform index digest:
+The actual Linux arm64 runtime was built and exercised through MCP. No native Windows or amd64 run is claimed. Services use CPU only; Qdrant/Ollama expose no host ports.
 
-| Component | Resolved version | Index digest | Original upstream |
-|---|---|---|---|
-| Python runtime with Debian Bookworm | Python 3.12.14, `python:3.12-slim-bookworm` | `sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e` | [Official image source commit 688a0b8](https://github.com/docker-library/python/tree/688a0b86bb44289df16a363e9f41d90514c1a5f9/3.12/slim-bookworm) |
-| uv build tool | `ghcr.io/astral-sh/uv:0.12.17` | `sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc` | [Astral uv 0.12.17](https://github.com/astral-sh/uv/tree/0.12.17) |
+| Component | Version / immutable image | Upstream |
+|---|---|---|
+| Python | 3.11.16, `python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9` | [Official Python image](https://hub.docker.com/_/python) |
+| Qdrant | 1.18.3, `qdrant/qdrant@sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286` | [Qdrant tag](https://github.com/qdrant/qdrant/tree/v1.18.3) |
+| Ollama | 0.32.9, `ollama/ollama@sha256:1685741456770df6e3cceb2a945a5f75e020f658d1701509668d6f4688f1dd3f` | [Ollama tag](https://github.com/ollama/ollama/tree/v0.32.9) |
+| uv build package | 0.7.8, builder only | [uv tag](https://github.com/astral-sh/uv/tree/0.7.8) |
 
-The actual build used Linux arm64. Python's arm64 manifest is `sha256:eb5be8e5b4d0a159c237946bbdd06356dda5d19c30fc4f7843e8046d3a590333`; uv's is `sha256:93041623aae9443bddacaee1a13aa0dc96bde323e4159ba57d0e9a47a947e0f0`. No amd64/Windows run is claimed.
+[Exact tagged notices and hashes](v0.3.0/notices.json): [Qdrant Apache-2.0](v0.3.0/qdrant-LICENSE), [Ollama MIT](v0.3.0/ollama-LICENSE), [uv MIT](v0.3.0/uv-LICENSE-MIT), [uv Apache-2.0](v0.3.0/uv-LICENSE-APACHE). Official runtime images retain their original component notices. Python's standard-library license remains in the image; base-image components are not all MIT.
 
-Original notices were fetched before the build and preserved byte-for-byte: [Python image MIT](python-image-LICENSE), [uv MIT](uv-LICENSE-MIT), [uv Apache-2.0](uv-LICENSE-APACHE), with upstream URLs and SHA-256 in [notice inventory](notices.json). The runtime base retains Python's `/usr/local/lib/python3.12/LICENSE.txt` and Debian component copyright files under `/usr/share/doc/`. This is not a claim that every base-image component uses MIT. uv is only present in the build stage.
-
-Python dependencies are installed from the pinned [lockfile](../../uv.lock) into a new Linux virtual environment. Their installed license notices remain in its distribution metadata; the project also includes the [captured notices](../licenses/) and [current Linux inventory](../dependencies.json) and [macOS development inventory](../dependencies-macos-0.2.0.json). The local `.venv`, `.env`, workspace, credentials and test evidence are excluded from the build context by [`.dockerignore`](../../.dockerignore). No credentials are embedded in image layers.
-
-References: [Docker port publishing](https://docs.docker.com/engine/network/port-publishing/), [official uv image guidance](https://docs.astral.sh/uv/guides/integration/docker/). The 0.2.0 image additionally includes the pinned original CPU embedding model; see [model provenance](../embedding-model/README.md). The implementation adds local embedding retrieval and document/chunk management. Git staging is not an import commit; no commit or push has been performed in this task.
+[Linux installed dependency inventory](../dependencies.json), [macOS development inventory](../dependencies-macos-0.3.0.json), [Ollama model and license](../ollama-model/README.md), [historical 0.2.4 container provenance](HISTORICAL-0.2.4.md). [Dockerfile](../../Dockerfile) and [Compose](../../compose.yaml) are the canonical build/deployment definitions. No credentials or research corpus is included in image layers.

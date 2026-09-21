@@ -111,9 +111,9 @@ Only execute cleanup_workspace for the explicitly authorized scope with its matc
 plan_hash and revision. search_index/documents/workspace archive data and retain files.
 all_except_inbox permanently deletes all research records and workspace data files
 outside inbox, including source copies, exports, backups and import logs, without
-creating a backup. Inbox bytes and server/database runtime files remain. Check
-result.status: incomplete means database records were cleared but a filesystem
-failure requires the exact original arguments to resume; new writes are blocked.
+creating a backup. Inbox bytes and runtime journal files remain. Check
+result.status: incomplete reports completed steps; any remaining failure
+requires the exact original arguments to resume; new writes are blocked.
 completed verifies all inbox hashes. Cleanup does not improve semantic relevance.
 Index-only cleanup requires rebuild_search_index. Old non-cleanup mutation keys are
 retired after cleanup; use new keys for new work. Never infer permission to clear

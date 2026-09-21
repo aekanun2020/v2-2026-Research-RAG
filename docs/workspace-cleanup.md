@@ -40,7 +40,7 @@ The original real HTTP call rejected this scope because the public schema allowe
 
 [Related cases](purge-related-2026-09-20.txt) verify changed-file plans and symbolic links are rejected before deletion, and a real directory-permission failure reports incomplete cleanup, blocks new writes, and resumes successfully. These tests use the real MCP server, SQLite, bundled PDF and CPU embeddings, without mocked services or filesystems.
 
-- [Implementation](../src/research_rag_mcp/purge.py) and [real HTTP tests](../tests/test_purge.py)
+- [Implementation](../src/research_rag_mcp/purge.py) and [real HTTP tests](https://github.com/aekanun2020/2026-Research-RAG/blob/14b858f77acddd06ff6e6dd83ceba99e848b6fd6/tests/test_purge.py)
 - [Full source suite](purge-suite-2026-09-20.txt), [installed-container tests](purge-container-tests-2026-09-20.txt), and [build log](purge-build-2026-09-20.txt)
 - [Actual schema migration](purge-migration-2026-09-20.json) and [installed source hashes](purge-image-source-hashes-2026-09-20.json)
 
@@ -52,7 +52,7 @@ An invocation against the pre-existing non-editable installation still loaded 0.
 
 Related checks cover document cleanup/reimport, stale/invalid plans, artifact-history blockers, workspace cleanup/restore, and a real filesystem failure preventing backup creation. The first related run found missing project initialization in the test setup: [related output](cleanup-related-2026-09-20.txt). Adding the required real `start_project` call made that case pass: [focused rerun](cleanup-workspace-after-2026-09-20.txt).
 
-- [Real HTTP tests](../tests/test_cleanup.py) and [implementation](../src/research_rag_mcp/cleanup.py)
+- [Real HTTP tests](https://github.com/aekanun2020/2026-Research-RAG/blob/14b858f77acddd06ff6e6dd83ceba99e848b6fd6/tests/test_cleanup.py) and [implementation](../src/research_rag_mcp/cleanup.py)
 - [Full source suite](cleanup-suite-2026-09-20.txt)
 - [Installed-container cleanup tests](cleanup-container-tests-2026-09-20.txt)
 - [Image build log](cleanup-build-2026-09-20.txt)

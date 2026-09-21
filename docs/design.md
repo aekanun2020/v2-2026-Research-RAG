@@ -1,3 +1,5 @@
+> Historical 0.2.4 documentation. For the current Qdrant/Ollama migration and changed job contract, see [migration record](qdrant-migration.md) and [current README](../README.md).
+
 # Implementation scope and evidence
 
 User authorization: create an independent RAG MCP server with Streamable HTTP and tools spanning the eight stages discussed in the conversation; keep it separate from the existing system; use a subdirectory prefixed `codex-`. Confirmed path: `2026-TTS-AI/codex-research-rag-mcp`.

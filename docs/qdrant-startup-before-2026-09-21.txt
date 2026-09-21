@@ -1,0 +1,36 @@
+mcp-1  | Traceback (most recent call last):
+mcp-1  |   File "/app/.venv/bin/research-rag", line 4, in <module>
+mcp-1  |     from research_rag_mcp.cli import main
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/research_rag_mcp/cli.py", line 5, in <module>
+mcp-1  |     from .store import Store
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/research_rag_mcp/store.py", line 21, in <module>
+mcp-1  |     from .backend import RetrievalIndex
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/research_rag_mcp/backend.py", line 18, in <module>
+mcp-1  |     from pyragdoc.core.bm25 import BM25Retriever
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pyragdoc/core/bm25.py", line 13, in <module>
+mcp-1  |     from ..utils.thai_tokenizer import ThaiTokenizer
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pyragdoc/utils/thai_tokenizer.py", line 9, in <module>
+mcp-1  |     from pythainlp.tokenize import word_tokenize
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pythainlp/__init__.py", line 73, in <module>
+mcp-1  |     from pythainlp.soundex import soundex
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pythainlp/soundex/__init__.py", line 23, in <module>
+mcp-1  |     from pythainlp.soundex.lk82 import lk82
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pythainlp/soundex/lk82.py", line 22, in <module>
+mcp-1  |     from pythainlp.util import remove_tonemark
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pythainlp/util/__init__.py", line 81, in <module>
+mcp-1  |     from pythainlp.util import spell_words  # noqa: I001 - keep block order to avoid circular imports
+mcp-1  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pythainlp/util/spell_words.py", line 19, in <module>
+mcp-1  |     from pythainlp.tokenize import Tokenizer, subword_tokenize
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pythainlp/tokenize/__init__.py", line 23, in <module>
+mcp-1  |     from pythainlp.corpus import thai_syllables, thai_words
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pythainlp/corpus/__init__.py", line 60, in <module>
+mcp-1  |     _CORPUS_DB_PATH: str = get_full_data_path(_CORPUS_DB_FILENAME)
+mcp-1  |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pythainlp/tools/path.py", line 204, in get_full_data_path
+mcp-1  |     return safe_path_join(get_pythainlp_data_path(), path)
+mcp-1  |                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+mcp-1  |   File "/app/.venv/lib/python3.11/site-packages/pythainlp/tools/path.py", line 258, in get_pythainlp_data_path
+mcp-1  |     os.makedirs(path, exist_ok=True)
+mcp-1  |   File "<frozen os>", line 225, in makedirs
+mcp-1  | OSError: [Errno 30] Read-only file system: '/pythainlp-data'

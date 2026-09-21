@@ -62,6 +62,6 @@ def search_literature(store, query, limit, year_from, year_to, expected_revision
                       searched_at=now(), total_results=message.get('total-results'),
                       returned=len(records), limit=limit, year_from=year_from, year_to=year_to, records=records,
                       coverage='One page of Crossref bibliographic metadata. Not exhaustive; no full-text reading or novelty assessment.')
-        db.execute('INSERT INTO searches VALUES(?,?)', (record['id'], dump(record)))
+        db['searches'].append(record)
         return record
     return store.mutate('search_literature', params, expected_revision, key, action)

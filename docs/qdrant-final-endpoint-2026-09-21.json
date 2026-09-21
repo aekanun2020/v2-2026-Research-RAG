@@ -1,0 +1,147 @@
+{
+  "endpoint": "http://127.0.0.1:8876/mcp",
+  "authentication": "none; no Authorization header and no token file",
+  "tool_count": 41,
+  "workspace_revision": 37,
+  "sources": 22,
+  "index": {
+    "model": {
+      "provider": "ollama",
+      "model": "nomic-embed-text:latest",
+      "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+      "dimensions": 768,
+      "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+      "device": "cpu",
+      "external_api": false
+    },
+    "total_chunks": 2106,
+    "indexed_chunks": 2106,
+    "pending_or_invalid_chunks": 0,
+    "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+    "default_mode": "hybrid",
+    "ready": true
+  },
+  "inbox": [],
+  "arguments": {
+    "query": "contextualized word representations from bidirectional language models",
+    "source_ids": [
+      "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+    ],
+    "mode": "hybrid",
+    "limit": 2
+  },
+  "seconds": 0.4121299580001505,
+  "response": {
+    "query": "contextualized word representations from bidirectional language models",
+    "mode": "hybrid",
+    "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+    "timings": {
+      "lexical_seconds": 0.35375454099994386,
+      "query_embedding_seconds": 0.03128808299516095,
+      "vector_search_seconds": 0.0065570830047363415,
+      "total_seconds": 0.3938200419943314
+    },
+    "embedding_model": {
+      "provider": "ollama",
+      "model": "nomic-embed-text:latest",
+      "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+      "dimensions": 768,
+      "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+      "device": "cpu",
+      "external_api": false
+    },
+    "reranking": {
+      "enabled": false,
+      "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+    },
+    "corpus_sources": 1,
+    "corpus_chunks": 62,
+    "hits": [
+      {
+        "chunk_set_id": "cs-1a8afa66fa2e4b1787f21414fd903f34",
+        "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+        "end": 2167,
+        "id": "4096f09d1f85bb799b2c5b302840599406101a98da8ec64437c76601e00c8b57",
+        "page_index": 0,
+        "reason": "Imported from verified extracted text",
+        "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "start": 993,
+        "status": "active",
+        "text": "nt analysis. We\nalso present an analysis showing that exposing\nthe deep internals of the pre-trained network is\ncrucial, allowing downstream models to mix\ndifferent types of semi-supervision signals.\n1 Introduction\nPre-trained word representations (Mikolov et al.,\n2013; Pennington et al., 2014) are a key compo-\nnent in many neural language understanding mod-\nels. However, learning high quality representa-\ntions can be challenging. They should ideally\nmodel both (1) complex characteristics of word\nuse (e.g., syntax and semantics), and (2) how these\nuses vary across linguistic contexts (i.e., to model\npolysemy). In this paper, we introduce a new type\nof deep contextualized word representation that\ndirectly addresses both challenges, can be easily\nintegrated into existing models, and signiﬁcantly\nimproves the state of the art in every considered\ncase across a range of challenging language un-\nderstanding problems.\nOur representations differ from traditional word\ntype embeddings in that each token is assigned a\nrepresentation that is a function of the entire input\nsentence. We use vectors derived from a bidirec-\ntional LSTM that is trained with a coupled lan-\n",
+        "updated_at": "2026-09-20T14:43:06.591411+00:00",
+        "score": 0.03252247488101534,
+        "lexical_score": 1.0,
+        "semantic_score": 0.7136953,
+        "matched_terms": [
+          "representations",
+          "language",
+          "models",
+          "word",
+          "from",
+          "contextualized"
+        ],
+        "document_id": "doc-e631981baf164207a7f5e7317c3c99d9",
+        "source_version": 1,
+        "text_revision_id": "text-48b851c426d9622d6e01e651e797e8ea1a4ad9017d9c50c2b55044cd1215611e",
+        "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1802.05365.pdf",
+        "role": "literature",
+        "title": "Deep contextualized word representations",
+        "page_label": "1",
+        "citation": {
+          "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+          "page_index": 0,
+          "start": 993,
+          "end": 2167,
+          "quote": "nt analysis. We\nalso present an analysis showing that exposing\nthe deep internals of the pre-trained network is\ncrucial, allowing downstream models to mix\ndifferent types of semi-supervision signals.\n1 Introduction\nPre-trained word representations (Mikolov et al.,\n2013; Pennington et al., 2014) are a key compo-\nnent in many neural language understanding mod-\nels. However, learning high quality representa-\ntions can be challenging. They should ideally\nmodel both (1) complex characteristics of word\nuse (e.g., syntax and semantics), and (2) how these\nuses vary across linguistic contexts (i.e., to model\npolysemy). In this paper, we introduce a new type\nof deep contextualized word representation that\ndirectly addresses both challenges, can be easily\nintegrated into existing models, and signiﬁcantly\nimproves the state of the art in every considered\ncase across a range of challenging language un-\nderstanding problems.\nOur representations differ from traditional word\ntype embeddings in that each token is assigned a\nrepresentation that is a function of the entire input\nsentence. We use vectors derived from a bidirec-\ntional LSTM that is trained with a coupled lan-\n",
+          "relation": "context"
+        }
+      },
+      {
+        "chunk_set_id": "cs-1a8afa66fa2e4b1787f21414fd903f34",
+        "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+        "end": 1193,
+        "id": "be108cfe8b5c6c3f33f1132c924bf2e87b5b22b74b9c9765798c0269d8297d28",
+        "page_index": 0,
+        "reason": "Imported from verified extracted text",
+        "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "start": 0,
+        "status": "active",
+        "text": "Deep contextualized word representations\nMatthew E. Peters†, Mark Neumann†, Mohit Iyyer†, Matt Gardner†,\n{matthewp,markn,mohiti,mattg}@allenai.org\nChristopher Clark∗, Kenton Lee∗, Luke Zettlemoyer†∗\n{csquared,kentonl,lsz}@cs.washington.edu\n†Allen Institute for Artiﬁcial Intelligence\n∗Paul G. Allen School of Computer Science & Engineering, University of Washington\nAbstract\nWe introduce a new type of deep contextual-\nized word representation that models both (1)\ncomplex characteristics of word use (e.g., syn-\ntax and semantics), and (2) how these uses\nvary across linguistic contexts (i.e., to model\npolysemy). Our word vectors are learned func-\ntions of the internal states of a deep bidirec-\ntional language model (biLM), which is pre-\ntrained on a large text corpus. We show that\nthese representations can be easily added to\nexisting models and signiﬁcantly improve the\nstate of the art across six challenging NLP\nproblems, including question answering, tex-\ntual entailment and sentiment analysis. We\nalso present an analysis showing that exposing\nthe deep internals of the pre-trained network is\ncrucial, allowing downstream models to mix\ndifferent types of semi-supervision signals.\n",
+        "updated_at": "2026-09-20T14:43:06.591149+00:00",
+        "score": 0.03252247488101534,
+        "lexical_score": 0.7784505123315324,
+        "semantic_score": 0.77818906,
+        "matched_terms": [
+          "representations",
+          "language",
+          "models",
+          "word",
+          "contextualized"
+        ],
+        "document_id": "doc-e631981baf164207a7f5e7317c3c99d9",
+        "source_version": 1,
+        "text_revision_id": "text-48b851c426d9622d6e01e651e797e8ea1a4ad9017d9c50c2b55044cd1215611e",
+        "origin": "/Users/grizzlymacbookpro/Desktop/test/2026-TTS-AI Master/labs/papers/cited/arxiv-1802.05365.pdf",
+        "role": "literature",
+        "title": "Deep contextualized word representations",
+        "page_label": "1",
+        "citation": {
+          "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+          "page_index": 0,
+          "start": 0,
+          "end": 1193,
+          "quote": "Deep contextualized word representations\nMatthew E. Peters†, Mark Neumann†, Mohit Iyyer†, Matt Gardner†,\n{matthewp,markn,mohiti,mattg}@allenai.org\nChristopher Clark∗, Kenton Lee∗, Luke Zettlemoyer†∗\n{csquared,kentonl,lsz}@cs.washington.edu\n†Allen Institute for Artiﬁcial Intelligence\n∗Paul G. Allen School of Computer Science & Engineering, University of Washington\nAbstract\nWe introduce a new type of deep contextual-\nized word representation that models both (1)\ncomplex characteristics of word use (e.g., syn-\ntax and semantics), and (2) how these uses\nvary across linguistic contexts (i.e., to model\npolysemy). Our word vectors are learned func-\ntions of the internal states of a deep bidirec-\ntional language model (biLM), which is pre-\ntrained on a large text corpus. We show that\nthese representations can be easily added to\nexisting models and signiﬁcantly improve the\nstate of the art across six challenging NLP\nproblems, including question answering, tex-\ntual entailment and sentiment analysis. We\nalso present an analysis showing that exposing\nthe deep internals of the pre-trained network is\ncrucial, allowing downstream models to mix\ndifferent types of semi-supervision signals.\n",
+          "relation": "context"
+        }
+      }
+    ],
+    "revision": 37,
+    "status": "evidence_retrieved",
+    "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+  },
+  "exact_spans": [
+    true,
+    true
+  ],
+  "legacy_mount": false
+}

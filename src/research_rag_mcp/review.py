@@ -1,4 +1,4 @@
-"""Separate loopback review surface. The bearer credential cannot approve work."""
+"""Separate loopback review surface. MCP clients cannot approve work."""
 import html
 import secrets
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer

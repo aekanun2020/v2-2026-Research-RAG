@@ -1,96 +1,112 @@
-"""Explicit cleanup, including an inbox-preserving permanent data purge."""
+"""Preview-bound, resumable cleanup of the journal and real Qdrant index."""
 import hashlib
 import json
 import secrets
+from .purge import inventory, DATA_DIRECTORIES
 
-from .purge import PermanentPurge, inventory
-
-
-SCOPES = ('search_index', 'documents', 'workspace', 'all_except_inbox')
-TABLES = ('embeddings', 'chunk_metadata', 'chunk_sets', 'chunks', 'documents',
-          'versions', 'artifacts', 'searches', 'events')
-PRESERVED = ['inbox files', 'imported original files in sources/', 'exports',
-             'existing backups', 'authentication tokens', 'embedding model files']
+SCOPES=('search_index','documents','workspace','all_except_inbox')
 
 
-class WorkspaceCleanup(PermanentPurge):
-    def _cleanup_plan(self, db, state, scope):
-        if scope not in SCOPES:
-            raise ValueError('scope must be search_index, documents, workspace or all_except_inbox')
-        tables = TABLES[:1] if scope == 'search_index' else TABLES[:5] if scope == 'documents' else TABLES
-        counts = {table: db.execute(f'SELECT count(*) FROM {table}').fetchone()[0]
-                  if table in tables else 0 for table in TABLES}
-        artifact_count = db.execute('SELECT count(*) FROM artifacts').fetchone()[0]
-        version_count = db.execute('SELECT count(*) FROM versions').fetchone()[0]
-        blockers = []
-        if scope == 'documents' and (artifact_count or version_count):
-            blockers.append('Document-only cleanup is blocked while artifacts or historical versions exist. '
-                            'Keep the evidence, or explicitly choose workspace cleanup to archive and clear them together.')
-        receipts = [json.loads(row['response']) for row in db.execute('SELECT response FROM requests WHERE response IS NOT NULL')]
-        retired = sum(r.get('result', {}).get('operation') != 'cleanup_workspace' for r in receipts)
-        plan = {'scope': scope, 'revision': state['revision'], 'workspace': str(self.root),
-                'delete_counts': counts, 'clears_project': scope in ('workspace', 'all_except_inbox'),
-                'retires_mutation_receipts': retired,
-                'source_ids': sorted(state['sources']),
-                'artifact_ids': sorted(state['artifacts']),
-                'source_files_retained': len(state['sources']), 'preserves': PRESERVED,
-                'backup_required': True, 'can_execute': not blockers, 'blockers': blockers,
-                'limitation': 'Clears database records only. Original files are retained; this is not secure erasure. '
-                              'Index cleanup requires rebuild_search_index before semantic/hybrid retrieval. '
-                              'Cleanup by itself does not improve semantic relevance.'}
-        if scope == 'all_except_inbox':
-            files, inbox = inventory(self.root)
-            plan.update(backup_required=False, source_files_retained=0,
-                preserves=['all inbox files', 'server authentication token', 'database schema and cleanup receipt'],
-                filesystem=files, inbox=inbox, retires_mutation_receipts=0,
-                limitation='Permanently deletes all workspace research records and data files outside inbox, '
-                           'including source copies, exports, backups and import-runs. No new backup. '
-                           'Server code/configuration and external model assets are outside this data workspace. '
-                           'Not forensic secure erasure. A partial filesystem failure remains resumable and blocks new writes.')
-            plan['delete_counts']['requests'] = db.execute('SELECT count(*) FROM requests').fetchone()[0]
-        encoded = json.dumps(plan, ensure_ascii=False, sort_keys=True, allow_nan=False).encode()
-        return {**plan, 'plan_hash': hashlib.sha256(encoded).hexdigest()}
+def encoded(value):
+    return json.dumps(value,ensure_ascii=False,sort_keys=True,allow_nan=False)
 
-    def preview_workspace_cleanup(self, scope):
-        with self.connect() as db:
-            db.execute('BEGIN')
-            self.require_no_pending_cleanup(db)
-            return self._cleanup_plan(db, self.state(db), scope)
 
-    def cleanup_workspace(self, scope, plan_hash, expected_revision, key):
-        if scope not in SCOPES or not isinstance(plan_hash, str) or len(plan_hash) != 64:
-            raise ValueError('Supply a supported scope and the plan_hash from preview_workspace_cleanup')
-        if scope == 'all_except_inbox':
-            return self.purge_workspace(plan_hash, expected_revision, key)
+class WorkspaceCleanup:
+    def _cleanup_plan(self,raw,scope):
+        if scope not in SCOPES: raise ValueError('Unknown cleanup scope')
+        if raw['pending_job']: raise ValueError('Wait for the ingestion job before cleanup')
+        blockers=[]
+        if scope=='documents' and (raw['artifacts'] or raw['versions']):
+            blockers.append('Document cleanup is blocked by artifact/history citations')
+        counts={'embeddings':len(raw['chunks']),'chunks':len(raw['chunks']) if scope!='search_index' else 0,
+                'chunk_metadata':len(raw['chunks']) if scope!='search_index' else 0,
+                'chunk_sets':len(raw['chunk_sets']) if scope!='search_index' else 0,
+                'documents':len(raw['sources']) if scope!='search_index' else 0}
+        for name in ('artifacts','versions','searches','events'):
+            counts[name]=len(raw[name]) if scope in ('workspace','all_except_inbox') else 0
+        plan={'scope':scope,'revision':raw['revision'],'workspace':str(self.root),'delete_counts':counts,
+              'source_ids':sorted(raw['sources']),'artifact_ids':sorted(raw['artifacts']),
+              'clears_project':scope in ('workspace','all_except_inbox'),'backup_required':scope!='all_except_inbox',
+              'can_execute':not blockers,'blockers':blockers,'source_files_retained':len(raw['sources']),
+              'preserves':['inbox','source files','existing exports/backups'],
+              'limitation':'Cleanup does not improve relevance or provide secure erasure'}
+        if scope=='all_except_inbox':
+            files,inbox=inventory(self.root)
+            plan.update(filesystem=files,inbox=inbox,source_files_retained=0,
+                        preserves=['inbox','journal schema and cleanup receipt'])
+        plan['plan_hash']=hashlib.sha256(encoded(plan).encode()).hexdigest()
+        return plan
 
-        def action(db, state):
-            plan = self._cleanup_plan(db, state, scope)
-            if not secrets.compare_digest(plan_hash, plan['plan_hash']):
-                raise ValueError('Cleanup plan changed; call preview_workspace_cleanup again')
-            if plan['blockers']:
-                raise ValueError('; '.join(plan['blockers']))
-            # mutate holds BEGIN IMMEDIATE, so the separate read connection used by
-            # backup sees this exact committed revision. No live record changes until
-            # the SQLite/source snapshot and its hash manifest have been completed.
-            backup = self.backup()
-            tables = TABLES[:1] if scope == 'search_index' else TABLES[:5] if scope == 'documents' else TABLES
-            for table in tables:
-                db.execute(f'DELETE FROM {table}')
-            if scope == 'workspace':
-                db.execute('UPDATE meta SET project=NULL WHERE id=1')
-            # Retain keys as tombstones: retries of old imports/rebuilds must not
-            # falsely report success against data which cleanup has just removed.
-            # Keep cleanup receipts themselves so exact cleanup retries stay inert.
-            for row in db.execute('SELECT key,response FROM requests WHERE response IS NOT NULL').fetchall():
-                receipt = json.loads(row['response'])
-                if receipt.get('result', {}).get('operation') != 'cleanup_workspace':
-                    db.execute('UPDATE requests SET response=NULL WHERE key=?', (row['key'],))
-            return {'operation': 'cleanup_workspace', 'scope': scope, 'deleted': plan['delete_counts'],
-                    'cleared_project': plan['clears_project'], 'backup': backup,
-                    'source_files_retained': plan['source_files_retained'], 'preserves': PRESERVED,
-                    'retired_mutation_receipts': plan['retires_mutation_receipts'],
-                    'next_step': 'rebuild_search_index' if scope == 'search_index' else 'import_document',
-                    'quality_improvement_claimed': False}
+    def preview_workspace_cleanup(self,scope):
+        with self.journal.lock():
+            raw=self.raw_state();self.require_no_pending_cleanup(raw)
+            return self._cleanup_plan(raw,scope)
 
-        return self.mutate('cleanup_workspace', {'scope': scope, 'plan_hash': plan_hash},
-                           expected_revision, key, action)
+    def cleanup_workspace(self,scope,plan_hash,expected_revision,key):
+        if scope not in SCOPES or not isinstance(key,str) or not key.strip() or len(key)>200:
+            raise ValueError('Supply supported scope and idempotency_key')
+        fingerprint=hashlib.sha256(encoded(['cleanup_workspace',{'scope':scope,'plan_hash':plan_hash},'mcp-client']).encode()).hexdigest()
+        with self.journal.lock():
+            raw=self.raw_state();previous=raw['requests'].get(key)
+            if previous:
+                if previous['fingerprint']!=fingerprint or previous['response'] is None: raise ValueError('Idempotency key conflict/retired')
+                return previous['response']
+            pending=raw['pending_cleanup']
+            if pending:
+                if (pending['idempotency_key'],pending['plan_hash'],pending['expected_revision'],pending['scope'])!=(key,plan_hash,expected_revision,scope):
+                    raise ValueError('Resume cleanup with its exact original arguments')
+            else:
+                if raw['revision']!=expected_revision: raise ValueError('Stale revision')
+                plan=self._cleanup_plan(raw,scope)
+                if not secrets.compare_digest(plan_hash,plan['plan_hash']): raise ValueError('Cleanup plan changed; preview again')
+                if plan['blockers']: raise ValueError('; '.join(plan['blockers']))
+                backup=self._backup_state(raw) if plan['backup_required'] else None
+                raw['pending_cleanup']={'scope':scope,'plan_hash':plan_hash,'expected_revision':expected_revision,
+                    'idempotency_key':key,'fingerprint':fingerprint,'plan':plan,'backup':backup}
+                self.journal.commit(raw)
+        return self._finish_cleanup(key)
+
+    def _finish_cleanup(self,key):
+        with self.journal.lock():
+            raw=self.raw_state();job=raw['pending_cleanup']
+            if not job or job['idempotency_key']!=key: raise ValueError('Unknown pending cleanup')
+            plan=job['plan'];scope=job['scope'];vector_cleared=False
+            try:
+                self.index.clear();vector_cleared=True
+                if scope=='all_except_inbox':
+                    current,inbox=inventory(self.root)
+                    if inbox!=plan['inbox']: raise ValueError('Inbox changed since preview')
+                    expected={e['path']:e for e in plan['filesystem']['entries']}
+                    for entry in current['entries']:
+                        if expected.get(entry['path'])!=entry: raise ValueError('Unplanned or changed file: '+entry['path'])
+                    for entry in sorted(current['entries'],key=lambda e:(e['path'].count('/'),e['path']),reverse=True):
+                        path=self.root/entry['path']
+                        if path.is_symlink() or any(p.is_symlink() for p in path.parents if p.is_relative_to(self.root)):
+                            raise ValueError('Refuse symlink during cleanup')
+                        if entry['kind']=='file': path.unlink()
+                        elif entry['path'] not in DATA_DIRECTORIES: path.rmdir()
+                    remaining,inbox=inventory(self.root)
+                    if inbox!=plan['inbox'] or any(e['path'] not in DATA_DIRECTORIES for e in remaining['entries']):
+                        raise ValueError('Filesystem cleanup incomplete')
+            except Exception as exc:
+                return {'revision':raw['revision'],'result':{'operation':'cleanup_workspace','scope':scope,'status':'incomplete',
+                    'reason':str(exc),'vector_index_cleared':vector_cleared,'journal_cleared':False,'backup':job['backup'],
+                    'resume_with':{k:job[k] for k in ('scope','plan_hash','expected_revision','idempotency_key')}}}
+            raw['index_generation']=None
+            if scope!='search_index':
+                for field in ('chunks','chunk_sets','sources'): raw[field]={}
+            if scope in ('workspace','all_except_inbox'):
+                raw.update(project=None,artifacts={},versions={},searches=[],events=[])
+            for receipt in raw['requests'].values():
+                if (receipt.get('response') or {}).get('result',{}).get('operation')!='cleanup_workspace': receipt['response']=None
+            if scope=='all_except_inbox': raw['requests']={}
+            raw['pending_cleanup']=None;raw['revision']+=1
+            result={'operation':'cleanup_workspace','scope':scope,'status':'completed','deleted':plan['delete_counts'],
+                'backup':job['backup'],'vector_index_cleared':True,'journal_cleared':scope!='search_index',
+                'source_files_retained':plan['source_files_retained'],'preserves':plan['preserves'],
+                'quality_improvement_claimed':False,'next_step':'rebuild_search_index' if scope=='search_index' else 'import_document'}
+            if scope=='all_except_inbox': result.update(inbox_unchanged=True,deleted_files=plan['filesystem']['files'],filesystem_complete=True)
+            response={'revision':raw['revision'],'result':result}
+            raw['requests'][key]={'fingerprint':job['fingerprint'],'response':response}
+            self.journal.commit(raw)
+            return response

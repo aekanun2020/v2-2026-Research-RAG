@@ -13,7 +13,7 @@ def status(store):
             'inbox': sorted(p.name for p in (store.root/'inbox').iterdir() if p.is_file()),
             'stages': STAGES, 'search_index': store.search_index_status(),
             'capabilities': {'transport': 'streamable-http', 'online_discovery': 'Crossref metadata',
-                             'retrieval': 'lexical / multilingual semantic / hybrid (default), local CPU', 'generation': 'connected MCP client',
+                             'retrieval': 'Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked', 'generation': 'connected MCP client',
                              'external_model_calls': False, 'automatic_semantic_grading': False,
                              'automatic_experiments': False, 'automatic_submission': False}}
 
@@ -121,12 +121,9 @@ def submission_check(store, manuscript_id, guideline_source_id, submission_id=No
 
 
 def export_manuscript(store, manuscript_id, mode, expected_revision, submission_id=None, guideline_source_id=None):
-    with store.connect() as db:
-        db.execute('BEGIN')
-        store.require_no_pending_cleanup(db)
+    with store.snapshot() as state:
         if mode not in ('draft', 'reviewed'):
             raise ValueError('mode must be draft or reviewed')
-        state = store.state(db)
         if state['revision'] != expected_revision:
             raise ValueError('Stale export revision')
         artifact = state['artifacts'].get(manuscript_id)
