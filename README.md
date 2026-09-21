@@ -94,6 +94,7 @@ Chunking ใช้ LlamaIndex SentenceSplitter ขนาดเริ่มต้
 
 ## บันทึก Q&A และผลย้อนหลัง
 
+- [Q&A: ความได้ใจความของ 10 chunks ที่สุ่มจริง — 21 กันยายน 2026](Q&A/2026-09-21-123834-random-ten-chunks-readability.md)
 - [Tools กับ Claim–Evidence–Gap–Research Question — 20 กันยายน 2026](Q&A/2026-09-20-230651-tools-claim-evidence-gap-research-question.md)
 - [แยก repository เดิมและที่มาของ snapshot](docs/repository-export.md) · [manifest](docs/repository-export-manifest.json)
 - [คุณภาพ semantic ภาษาไทยรุ่น 0.2.4](docs/retrieval-quality-2026-09-20.md) · [คำถามจริง](docs/quality-cases-2026-09-20.json)
