@@ -16,8 +16,11 @@
 
 MCP server จัดเตรียมหลักฐาน โมเดลใน client เป็นผู้สังเคราะห์ ไม่มีการเรียก OpenRouter หรือโมเดลภายนอกเพื่อเขียน/ตัดสินคำตอบ นักวิจัยตรวจต้นฉบับและตัดสินใจผ่านหน้าตรวจแยก การแก้ manuscript สร้าง revision ใหม่และต้องตรวจรับใหม่
 
+ล่าสุดนำเข้า cited ครบ **221/221 PDF** ผ่าน MCP ณ revision 282: รวม **233 เอกสาร / 16,809 chunks** และดัชนีครบทุก chunk ดู [บัญชีไฟล์ ผลตรวจ และข้อผิดพลาดที่พบระหว่างนำเข้า](docs/cited-import-2026-09-21.md) การทดสอบค้นคืนท้ายงานตรวจตำแหน่งข้อความ ไม่ได้ประเมินคุณภาพ semantic ใหม่
+
 ## เอกสารและซอร์ส
 
+- [ผลนำเข้า cited 221 PDF ผ่าน MCP และบัญชีเอกสาร](docs/cited-import-2026-09-21.md) · [หลักฐานตรวจจำนวนและดัชนี](docs/cited-import-2026-09-21.json)
 - [Academic chunking 0.4.0](docs/academic-chunking.md) · [LlamaIndex/tokenizer provenance](third-party/chunking/README.md) · [Compose ชุดแยก](compose.chunking.yaml) · [chunking implementation](src/research_rag_mcp/chunking.py)
 - [Codex ประเมินความได้ใจความของ 10 chunks ที่สุ่มจริง](docs/chunk-readability-codex-2026-09-21.md) · [ตัวอย่างเต็ม ตำแหน่งอ้างอิง และ seed](docs/chunk-readability-sample-2026-09-21.json)
 
