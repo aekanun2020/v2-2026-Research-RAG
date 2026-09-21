@@ -1,0 +1,176 @@
+{
+  "endpoint": "http://127.0.0.1:8876/mcp",
+  "before": {
+    "revision": 37,
+    "sources": 22,
+    "project": null,
+    "artifacts": 0,
+    "inbox": [],
+    "index": {
+      "model": {
+        "provider": "ollama",
+        "model": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "dimensions": 768,
+        "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+        "device": "cpu",
+        "external_api": false
+      },
+      "total_chunks": 2106,
+      "indexed_chunks": 2106,
+      "pending_or_invalid_chunks": 0,
+      "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+      "default_mode": "hybrid",
+      "ready": true
+    }
+  },
+  "plan": {
+    "scope": "documents",
+    "revision": 37,
+    "workspace": "/data",
+    "delete_counts": {
+      "embeddings": 2106,
+      "chunks": 2106,
+      "chunk_metadata": 2106,
+      "chunk_sets": 23,
+      "documents": 22,
+      "artifacts": 0,
+      "versions": 0,
+      "searches": 0,
+      "events": 0
+    },
+    "source_ids": [
+      "0a947ddd0fa96198d776f6a9f5e59f37b0965e9658eea41e4b574c25f2842528",
+      "1df0bd67b590f331d7928c65bbdc0a086ce6c41195428a8f3670683dcd3de533",
+      "2567713d198a376b65b92f0c60b9f58c8c5f66755530b92203533a17c4ec4b8e",
+      "289beed8bf8127ee55d98131f00749301981df2c35329e142446525c9771bc90",
+      "299f2633b4c13db7bed52434b4db7c48ea621993581014d30e7bcd036d3464df",
+      "2b3d38ecc40bdb12ca3faa87f85907fe402439153481d6ae408bd02eae55b2c1",
+      "2bec0671778769c159ec389412727d1f3d4889fe1c71564b61edaa24705bd17b",
+      "4608d7f5d0694dd09a66144dac921797e161331d92b5eef133615bec392ec928",
+      "55b2d72f772ac00de2e470b3ee08443c648d971c7f57c52d6202895665e5978d",
+      "5f06a75d0819795b077bf41fb61a79db9174aa3e024d5a70b7fde4ccff2088a5",
+      "74e6689115c539db499f9d6153edecb364059926fd45402454f8210442444c5a",
+      "7d9b90f53a9f4801a090f1a4acb843340cde81e4f865f97d53fff2a6a570eb73",
+      "8086e2e5e139fd576631ce0ec4560c5ee66225bec260d631a3e8fe7f1f13d50b",
+      "8de9eb2456a52487f3db5839e2cab6ae044017260d700183c99de9c14dcbf8dc",
+      "8f473a3b57c9454204c934eb00ddac844ab0c9bff26a9e2eec8c2339e448c2d2",
+      "9c9d8c490c5b87fcea266a7b16d238335372b00ba0a0dacde0e3016f52c0ff01",
+      "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+      "da82d4aa7b37683b9e756b50c29db0f37de73e8add2429f4ddbebfb11921088d",
+      "e20742ff36e08dc361de6973f7f72ad38e107edf8fd92d2a777a8428fc9b8f0e",
+      "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+      "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380",
+      "ef4da825ecc960500b6b4b00a3936d6fc30cb95d028b29e5caa4f1f81e4b517e"
+    ],
+    "artifact_ids": [],
+    "clears_project": false,
+    "backup_required": true,
+    "can_execute": true,
+    "blockers": [],
+    "source_files_retained": 22,
+    "preserves": [
+      "inbox",
+      "source files",
+      "existing exports/backups"
+    ],
+    "limitation": "Cleanup does not improve relevance or provide secure erasure",
+    "plan_hash": "ba8134a7c8e31363bb326600f9c7097a93f5ce96f63cdbe10dd1e8aac113c3c5"
+  },
+  "executed_at": "2026-09-21T00:49:25.045390+00:00",
+  "arguments": {
+    "scope": "documents",
+    "plan_hash": "ba8134a7c8e31363bb326600f9c7097a93f5ce96f63cdbe10dd1e8aac113c3c5",
+    "expected_revision": 37,
+    "idempotency_key": "user-clear-rag-documents-20260921-rev37"
+  },
+  "result": {
+    "revision": 38,
+    "result": {
+      "operation": "cleanup_workspace",
+      "scope": "documents",
+      "status": "completed",
+      "deleted": {
+        "artifacts": 0,
+        "chunk_metadata": 2106,
+        "chunk_sets": 23,
+        "chunks": 2106,
+        "documents": 22,
+        "embeddings": 2106,
+        "events": 0,
+        "searches": 0,
+        "versions": 0
+      },
+      "backup": {
+        "directory": "/data/backups/981ec06c3111492196333f232a084360",
+        "excludes": [
+          "inbox",
+          "exports"
+        ],
+        "format": "revisioned-json-and-qdrant-vectors-v1",
+        "sources": 22,
+        "vectors": 2106
+      },
+      "vector_index_cleared": true,
+      "journal_cleared": true,
+      "source_files_retained": 22,
+      "preserves": [
+        "inbox",
+        "source files",
+        "existing exports/backups"
+      ],
+      "quality_improvement_claimed": false,
+      "next_step": "import_document"
+    }
+  },
+  "after": {
+    "revision": 38,
+    "documents": 0,
+    "source_records": 0,
+    "inbox": [],
+    "index": {
+      "model": {
+        "provider": "ollama",
+        "model": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "dimensions": 768,
+        "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+        "device": "cpu",
+        "external_api": false
+      },
+      "total_chunks": 0,
+      "indexed_chunks": 0,
+      "pending_or_invalid_chunks": 0,
+      "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+      "default_mode": "hybrid",
+      "ready": true
+    },
+    "retrieval": {
+      "query": "contextualized word representations",
+      "mode": "hybrid",
+      "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+      "timings": {
+        "total_seconds": 0
+      },
+      "embedding_model": {
+        "provider": "ollama",
+        "model": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "dimensions": 768,
+        "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+        "device": "cpu",
+        "external_api": false
+      },
+      "reranking": {
+        "enabled": false,
+        "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+      },
+      "corpus_sources": 0,
+      "corpus_chunks": 0,
+      "hits": [],
+      "revision": 38,
+      "status": "insufficient_retrieved_evidence",
+      "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence."
+    }
+  }
+}

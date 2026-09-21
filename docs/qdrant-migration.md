@@ -16,7 +16,7 @@ User reported 12 concurrent agents: 9 obtained no evidence; 3 obtained partial r
 
 A prior single-query MCP diagnostic recorded 0.2611 seconds with rerank=false, then was interrupted by user instruction before the rerank comparison completed. This is not an isolated SQLite measurement.
 
-Live MCP 0.2.4 currently reports revision 36 and 22 imported papers. No manuscript/project is present in this research-rag workspace. The separate tts-research workspace is outside scope.
+Before migration, live MCP 0.2.4 reported revision 36 and 22 imported papers. No manuscript/project was present in this research-rag workspace. The separate tts-research workspace is outside scope.
 
 ## Inbox deletion
 
@@ -54,7 +54,7 @@ Restore revision regression: run 1 cleared the workspace at revision 15 and rest
 
 ## Thai semantic quality: failed with the selected original model
 
-[All 40 actual MCP responses](qdrant-thai-quality-2026-09-21.json) test the original 20 Thai questions in semantic and hybrid mode on the same original ten-paper subset. The new corpus contains 22 papers, but this comparison explicitly filters to the original ten IDs. All returned spans match their original pages. All 20 questions return the same top chunk in both modes.
+[All 40 actual MCP responses](qdrant-thai-quality-2026-09-21.json) test the original 20 Thai questions in semantic and hybrid mode on the same original ten-paper subset. At the time of testing, the new corpus contained 22 papers, but this comparison explicitly filtered to the original ten IDs. All returned spans match their original pages. All 20 questions return the same top chunk in both modes.
 
 [Codex's new manual top-1 assessment](qdrant-thai-codex-assessment-2026-09-21.json): per mode, 0 fully address the question, 2 are partly relevant handwriting context, and 18 are unrelated. The expected paper ranks first for 2/16 in-scope questions; this is not answer correctness. All four out-of-corpus controls return candidates. No automatic confidence threshold or LLM judge is used.
 
@@ -77,7 +77,7 @@ Not proven by these runs: native Claude Desktop interaction on both operating sy
 
 ## Persistent candidate deployment
 
-The canonical repository worktree now lives at `/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-qdrant` on branch `codex/qdrant-research-rag`. Candidate MCP: `http://127.0.0.1:8876/mcp`; human review: port 8877. Its local `.env` selects these separate ports and the permanent `.data` path. The migrated workspace is revision 37, 22 papers, 2106 total chunks, with an empty inbox. The actual reference/validation containers were removed after verification; their isolated test volumes are retained.
+The canonical repository worktree now lives at `/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-qdrant` on branch `codex/qdrant-research-rag`. Candidate MCP: `http://127.0.0.1:8876/mcp`; human review: port 8877. Its local `.env` selects these separate ports and the permanent `.data` path. Immediately after migration, the workspace was revision 37 with 22 papers, 2106 total chunks and an empty inbox. The subsequent user-requested cleanup below emptied the active corpus at revision 38. The actual reference/validation containers were removed after verification; their isolated test volumes are retained.
 
 Candidate MCP does not generate, read, validate or require an access token. The old read-only legacy bind mount is removed after migration; no SQLite file is present in the candidate data directory. The original 0.2.4 containers were subsequently removed at the user's explicit request; see the retirement record below. Their bind-mounted source files and the separate new workspace remain intact.
 
@@ -95,3 +95,11 @@ Removed after graceful stop:
 `docker ps -a` filtered by the exact old project label returned no containers afterward. Only those two container IDs were stopped and removed. No images, volumes, networks, source folders or papers were deleted. The four `codex-research-rag-next` container IDs were unchanged and running; MCP/review were healthy.
 
 A real token-free MCP smoke check against `http://127.0.0.1:8876/mcp` successfully performed initialize, tools/list (41 tools), and workspace_status (revision 37). The old 8776/8777 containers are no longer available. The new endpoint and port remain unchanged. This retirement does not resolve the outstanding Thai semantic-quality/model-selection issue.
+
+## User-requested RAG cleanup 2026-09-21
+
+At 2026-09-21 00:49:25 UTC (07:49:25 Asia/Bangkok), following the user's instruction “ล้าง rag ก่อน”, executed the actual MCP `preview_workspace_cleanup` and `cleanup_workspace` tools at `http://127.0.0.1:8876/mcp`, with `scope: documents`, expected revision 37 and the preview's plan hash. [Exact before state, arguments, result and verification](qdrant-cleared-2026-09-21.json).
+
+The operation completed at revision 38, removing 22 document records, 2106 chunks and their metadata, 23 chunk sets and 2106 embeddings. Subsequent MCP `workspace_status`, `list_documents` and `search_index_status` confirmed zero documents, source records, chunks and indexed vectors. A real hybrid `retrieve_evidence` call for `contextualized word representations` returned no hits and reported an empty corpus. The inbox remained empty.
+
+The tool retained all 22 source PDFs and created its required backup at `/data/backups/981ec06c3111492196333f232a084360`, corresponding to `.data/backups/981ec06c3111492196333f232a084360` in the permanent worktree. The backup contains the pre-cleanup journal, 22 source files and 2106 actual vectors. Documents-scope cleanup preserves search/event history and existing exports/backups. No direct filesystem or database deletion was used for this operation. No reimport, model change or semantic-quality improvement is claimed. The earlier test reports remain historical evidence.
