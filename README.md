@@ -4,7 +4,7 @@
 
 รุ่นใหม่ **ไม่ใช้ SQLite เก็บข้อมูลหรือค้นหา** เวกเตอร์อยู่ใน Qdrant ส่วนเอกสาร รหัส chunks ประวัติ manuscript และผลตรวจอยู่ใน JSON journal ที่ล็อกข้าม process และบันทึกแต่ละ revision แบบ atomic ขั้นย้ายครั้งเดียวอ่าน SQLite เดิมแบบ read-only ผ่าน MCP เพื่อรักษารหัสและหลักฐาน ไม่มี SQLite เป็น backend สำรอง
 
-**ผลทดสอบ 0.4.0:** chunking ผ่านกรณีเดิมและกรณีข้างเคียง โดย workflow ผ่าน 61 checks ผ่าน MCP จริง ชุดใหม่ว่างหลังล้างข้อมูลทดสอบ ส่วนผล hybrid พร้อมกัน 12 คำขอและ semantic ไทย→อังกฤษเป็นผลย้อนหลังของ 0.3.0: คำขอสำเร็จครบ แต่คุณภาพ semantic ของโมเดล nomic-embed-text เดิม **ไม่ผ่าน** งาน chunking นี้ยังไม่ได้เปลี่ยนโมเดล
+**ผลทดสอบ 0.4.0:** chunking ผ่านกรณีเดิมและกรณีข้างเคียง โดย workflow ผ่าน 61 checks ผ่าน MCP จริง ชุดใหม่ว่าง ณ จบการล้างข้อมูลทดสอบ (เป็นสถานะย้อนหลัง) ต่อมาที่ revision 51 มี 12 papers / 907 chunks; [Codex สุ่มอ่าน 10 chunks](docs/chunk-readability-codex-2026-09-21.md) พบข้อจำกัดเรื่องบริบทข้ามหน้า ตาราง และบรรณานุกรม จึงไม่ถือว่า workflow checks รับรองความได้ใจความของทุก chunk ส่วนผล hybrid พร้อมกัน 12 คำขอและ semantic ไทย→อังกฤษเป็นผลย้อนหลังของ 0.3.0: คำขอสำเร็จครบ แต่คุณภาพ semantic ของโมเดล nomic-embed-text เดิม **ไม่ผ่าน** งาน chunking นี้ยังไม่ได้เปลี่ยนโมเดล
 
 ระบบค้นนี้ไม่มี BGE reranker ตามฐานที่เลือก ผลคุณภาพรุ่น 0.2.4 จึงเป็นหลักฐานย้อนหลัง ไม่ใช่คะแนนของรุ่นใหม่ ดู [สถานะการย้าย ผลก่อนแก้ และการตรวจรับ](docs/qdrant-migration.md) ขณะเอกสารนี้ระบุว่า “กำลังพัฒนา” ยังไม่ถือว่าผ่านการตรวจคุณภาพ semantic ภาษาไทย
 
@@ -19,6 +19,7 @@ MCP server จัดเตรียมหลักฐาน โมเดลใ�
 ## เอกสารและซอร์ส
 
 - [Academic chunking 0.4.0](docs/academic-chunking.md) · [LlamaIndex/tokenizer provenance](third-party/chunking/README.md) · [Compose ชุดแยก](compose.chunking.yaml) · [chunking implementation](src/research_rag_mcp/chunking.py)
+- [Codex ประเมินความได้ใจความของ 10 chunks ที่สุ่มจริง](docs/chunk-readability-codex-2026-09-21.md) · [ตัวอย่างเต็ม ตำแหน่งอ้างอิง และ seed](docs/chunk-readability-sample-2026-09-21.json)
 
 - [การย้าย Qdrant และผลทดสอบจริง](docs/qdrant-migration.md) · [endpoint ไม่มี token ที่ตรวจแล้ว](docs/qdrant-final-endpoint-2026-09-21.json) · [MCP migration verifier](scripts/verify_qdrant_migration_mcp.py) · [ทดสอบค้นพร้อมกัน](scripts/verify_qdrant_retrieval_mcp.py) · [ทดสอบ workflow](scripts/verify_qdrant_workflow_mcp.py)
 - [สัญญา tools และ workflow ทั้ง 8 ช่วง](docs/tools.md)
