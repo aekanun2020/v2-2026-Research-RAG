@@ -1,0 +1,27 @@
+{
+  "repository": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5",
+  "revision": "e9b6763023c676ca8431644204f50c2b100d9aab",
+  "license_declaration": "apache-2.0",
+  "files": [
+    {
+      "url": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5/resolve/e9b6763023c676ca8431644204f50c2b100d9aab/tokenizer.json",
+      "file": "tokenizer.json",
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+    },
+    {
+      "url": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5/resolve/e9b6763023c676ca8431644204f50c2b100d9aab/tokenizer_config.json",
+      "file": "tokenizer_config.json",
+      "sha256": "d7e0000bcc80134debd2222220427e6bf5fa20a669f40a0d0d1409cc18e0a9bc"
+    },
+    {
+      "url": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5/resolve/e9b6763023c676ca8431644204f50c2b100d9aab/special_tokens_map.json",
+      "file": "special_tokens_map.json",
+      "sha256": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a"
+    },
+    {
+      "url": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5/resolve/e9b6763023c676ca8431644204f50c2b100d9aab/README.md",
+      "file": "README.md",
+      "sha256": "4430178908fbd574fdb6457e302d23e643d733ed036b5777180b0806946767b2"
+    }
+  ]
+}

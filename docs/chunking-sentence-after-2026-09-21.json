@@ -1,0 +1,57 @@
+{
+  "phase": "sentence",
+  "endpoint": "http://127.0.0.1:8976/mcp",
+  "method": "llamaindex-sentence-v1",
+  "chunk_size_tokens": 512,
+  "chunk_overlap_tokens": 64,
+  "documents": [
+    {
+      "filename": "elmo.pdf",
+      "chunk_count": 37,
+      "findings": {
+        "inside_word_starts": [],
+        "cross_headings": []
+      },
+      "exact_spans_checked": 37,
+      "max_tokens": 512,
+      "old_chunk_preserved": true,
+      "candidate_inactive_before_activation": true,
+      "uncovered_nonblank_spans": 0
+    },
+    {
+      "filename": "customerservice-policy.md",
+      "chunk_count": 1,
+      "findings": {
+        "inside_word_starts": [],
+        "cross_headings": [
+          "0769890650cea5b0332503e5405ea3a279b1071d5ab23382e3ba5b3ccd808bc4"
+        ]
+      },
+      "exact_spans_checked": 1,
+      "max_tokens": 185,
+      "old_chunk_preserved": true,
+      "candidate_inactive_before_activation": true,
+      "uncovered_nonblank_spans": 0
+    },
+    {
+      "filename": "research-rag-readme.md",
+      "chunk_count": 5,
+      "findings": {
+        "inside_word_starts": [],
+        "cross_headings": [
+          "480df29d841ece98dc042c762dfaba413373d0a72bfabfa7cb05cd89b8b5a3de",
+          "47995ee856151688a22bca77e3686d3418ddbc7ec4a03c7d04308c5e841096b2",
+          "199dd660ca1a0045e37bde9d62471da9b2b7c0a2db56e4226ecbd383b08598e1",
+          "9a4a8609e233ce60389db459fc8ca70b1094a8b853866a44576656983de032c5",
+          "dacff3bcbf0bad75ba1a391d3e829710eb054e5bf6dd8b48c4d5bc93a4f639ce"
+        ]
+      },
+      "exact_spans_checked": 5,
+      "max_tokens": 512,
+      "old_chunk_preserved": true,
+      "candidate_inactive_before_activation": true,
+      "uncovered_nonblank_spans": 0
+    }
+  ],
+  "assessment": "Codex inspected original English word-splitting failure and new chunk boundaries. English within-word starts are absent; Markdown cross-section issue remains for next isolated change. No semantic relevance assessment."
+}

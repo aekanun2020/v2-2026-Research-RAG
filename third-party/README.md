@@ -1,5 +1,7 @@
 # Dependencies and provenance
 
+For the 0.4.0 academic chunking branch, see [LlamaIndex, tokenization assets and original notices](chunking/README.md). The 0.3.0 inventories below remain historical.
+
 For the Docker deployment, see [pinned base images, build tool and original notices](container/README.md).
 
 The eight-stage research workflow was authored for this project. The Qdrant migration now adapts application code from the [explicitly selected RAG upstream](reference-rag/README.md), with hashes and license declaration captured before integration. The sibling `tts_research` package is not a dependency.

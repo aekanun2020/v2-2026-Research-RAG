@@ -1,6 +1,6 @@
 # Tool contract and eight-stage workflow
 
-MCP requires no access token or Authorization header. Version 0.3.0 adds durable jobs and the selected upstream entry points to the research tools. All tools are listed by the real MCP `tools/list` endpoint with typed input schemas and JSON object output schemas. `research_workflow` is also exposed as an MCP prompt. Initialize first, then read `workspace_status`. Every persisted write takes the current `expected_revision` and an `idempotency_key`; exact retries return the prior response, while changed inputs cannot reuse a key.
+MCP requires no access token or Authorization header. Version 0.4.0 changes chunking; version 0.3.0 added durable jobs and the selected upstream entry points to the research tools. All tools are listed by the real MCP `tools/list` endpoint with typed input schemas and JSON object output schemas. `research_workflow` is also exposed as an MCP prompt. Initialize first, then read `workspace_status`. Every persisted write takes the current `expected_revision` and an `idempotency_key`; exact retries return the prior response, while changed inputs cannot reuse a key.
 
 ## Shared evidence tools
 
@@ -27,10 +27,10 @@ Additional tools: `job_status`, `resume_job`, `migrate_legacy_workspace`, `resto
 |---|---|
 | `list_documents` | `offset=0`, `limit=50` (max 100). Logical IDs, source versions, original locators, chunk sets. |
 | `list_chunks` | `source_id`, optional `chunk_set_id`, `status`, `offset`, `limit`. IDs/spans/status; active set by default. |
-| `read_chunk` | `chunk_id`. Full preserved text, identity, original locator, verified citation and embedding metadata. |
+| `read_chunk` | `chunk_id`. Full preserved text, identity, original locator, verified citation, chunking configuration, token count, section span and embedding metadata. |
 | `get_chunk_context` | `chunk_id`, `before=1`, `after=1` (0–5). Neighbor chunks within the same set plus original page. |
 | `inspect_document_chunks` | `source_id`. Hash/span integrity, blank pages, uncovered text, status counts, exact duplicates. No semantic grading. |
-| `rechunk_document` | `source_id`, revision/key, `size=1200` (200–5000 Unicode characters), `overlap=200` (less than half size). Creates an indexed candidate set; retains existing sets. |
+| `rechunk_document` | `source_id`, revision/key, `chunk_size_tokens=512` (64–2048, includes 2 special tokens), `chunk_overlap_tokens=64` (below half the content token budget). LlamaIndex SentenceSplitter; MarkdownNodeParser sections first for MD. Creates an indexed candidate set; retains existing sets. |
 | `activate_chunk_set` | `chunk_set_id`, revision/key. Changes the source's retrieval set, without changing original page citations. |
 | `set_chunk_status` | `chunk_id`, `status=active/excluded/needs_review`, `reason`, revision/key. Preserves text; withheld chunks are excluded from retrieval. Current manuscripts citing withheld chunks in the active set receive a review issue. |
 | `find_evidence_usage` | `chunk_id`. Overlapping source/page citations in current and historical artifact/manuscript versions. |

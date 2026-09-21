@@ -1,0 +1,64 @@
+name: codex-rag-chunking
+x-app: &app
+  image: codex-research-rag-chunking:0.4.0
+  user: "${CHUNKING_UID:-1000}:${CHUNKING_GID:-1000}"
+  restart: unless-stopped
+  init: true
+  read_only: true
+  tmpfs: [/tmp]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  environment:
+    PYTHAINLP_DATA: /tmp/pythainlp-data
+    QDRANT_URL: http://qdrant:6333
+    QDRANT_COLLECTION: "academic_chunks"
+    OLLAMA_URL: http://ollama:11434
+    EMBEDDING_MODEL: nomic-embed-text:latest
+    EMBEDDING_MODEL_DIGEST: 0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f
+    EMBEDDING_DIMENSIONS: '768'
+  volumes:
+    - type: bind
+      source: "${CHUNKING_DATA_DIR:-./.chunking-data}"
+      target: /data
+  logging:
+    driver: json-file
+    options: {max-size: 5m, max-file: '2'}
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.18.3@sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286
+    restart: unless-stopped
+    volumes: [qdrant-data:/qdrant/storage]
+  ollama:
+    image: ollama/ollama@sha256:1685741456770df6e3cceb2a945a5f75e020f658d1701509668d6f4688f1dd3f
+    restart: unless-stopped
+    environment:
+      OLLAMA_HOST: 0.0.0.0
+      OLLAMA_NUM_PARALLEL: '2'
+      OLLAMA_MAX_LOADED_MODELS: '1'
+      CUDA_VISIBLE_DEVICES: '-1'
+      HIP_VISIBLE_DEVICES: '-1'
+    volumes: [ollama-data:/root/.ollama]
+  mcp:
+    <<: *app
+    build: {context: ., target: runtime}
+    command: [serve, --host, 0.0.0.0, --port, "8976"]
+    ports: ["127.0.0.1:8976:8976"]
+    depends_on: [qdrant, ollama]
+    healthcheck:
+      test: [CMD, python, /app/scripts/smoke_http.py, --workspace, /data, --url, "http://127.0.0.1:8976/mcp"]
+      interval: 60s
+      timeout: 15s
+      start_period: 20s
+      retries: 3
+  review:
+    <<: *app
+    command: [review, --host, 0.0.0.0, --port, "8977"]
+    ports: ["127.0.0.1:8977:8977"]
+    healthcheck:
+      test: [CMD, python, -c, "import socket; socket.create_connection(('127.0.0.1', 8977), timeout=5).close()"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+volumes:
+  qdrant-data:
+  ollama-data:

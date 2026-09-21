@@ -1,0 +1,217 @@
+{
+  "docker_context": "desktop-linux",
+  "old_containers_unchanged_ids": true,
+  "shared_containers": [],
+  "shared_networks": [],
+  "shared_persistent_mounts": [],
+  "old": [
+    {
+      "name": "codex-research-rag-next-mcp-1",
+      "id": "2e7511e17e95067d284409155dd572c3347056ed57a812f44a54fd6208b35440",
+      "image_id": "sha256:ba5e1db15842ac0e424dcb8a20187d9a1c5ad5538e3a0ff69b20e036e2d45201",
+      "started_at": "2026-09-21T00:24:48.090238877Z",
+      "status": "running",
+      "health": "healthy",
+      "networks": [
+        "codex-research-rag-next_default"
+      ],
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-qdrant/.data",
+          "Destination": "/data",
+          "RW": true
+        }
+      ],
+      "ports": {
+        "8876/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8876"
+          }
+        ]
+      }
+    },
+    {
+      "name": "codex-research-rag-next-review-1",
+      "id": "099186b28967d845dae80da0f046f2cc7ae969bb9e266cf1cf66b67f5df6e2d6",
+      "image_id": "sha256:ba5e1db15842ac0e424dcb8a20187d9a1c5ad5538e3a0ff69b20e036e2d45201",
+      "started_at": "2026-09-21T00:24:48.02331671Z",
+      "status": "running",
+      "health": "healthy",
+      "networks": [
+        "codex-research-rag-next_default"
+      ],
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-qdrant/.data",
+          "Destination": "/data",
+          "RW": true
+        }
+      ],
+      "ports": {
+        "8877/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8877"
+          }
+        ]
+      }
+    },
+    {
+      "name": "codex-research-rag-next-qdrant-1",
+      "id": "dba9ce0a3de5470302721552509beb2dc501c1f352ecaefb1723335d4724c401",
+      "image_id": "sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286",
+      "started_at": "2026-09-20T23:57:40.545031554Z",
+      "status": "running",
+      "health": null,
+      "networks": [
+        "codex-research-rag-next_default"
+      ],
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "codex-research-rag-next_qdrant-data",
+          "Source": "/var/lib/docker/volumes/codex-research-rag-next_qdrant-data/_data",
+          "Destination": "/qdrant/storage",
+          "RW": true
+        }
+      ],
+      "ports": {
+        "6333/tcp": null,
+        "6334/tcp": null
+      }
+    },
+    {
+      "name": "codex-research-rag-next-ollama-1",
+      "id": "711722750a2e2bd2addec4db7d39c872348a65604a9fdcd2a5690c5d94b67ffa",
+      "image_id": "sha256:1685741456770df6e3cceb2a945a5f75e020f658d1701509668d6f4688f1dd3f",
+      "started_at": "2026-09-20T23:57:40.486533471Z",
+      "status": "running",
+      "health": null,
+      "networks": [
+        "codex-research-rag-next_default"
+      ],
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "codex-research-rag-next_ollama-data",
+          "Source": "/var/lib/docker/volumes/codex-research-rag-next_ollama-data/_data",
+          "Destination": "/root/.ollama",
+          "RW": true
+        }
+      ],
+      "ports": {
+        "11434/tcp": null
+      }
+    }
+  ],
+  "new": [
+    {
+      "name": "codex-rag-chunking-mcp-1",
+      "id": "15404a790fac0ac0e30fd47ca9b4f6f46c06d297c6a8ca71e2676a05c4bd6d52",
+      "image_id": "sha256:0f93d0e80bc510be96c93fbc5d0aac832a45dcfb62476e42f9af3eac6a7e2fbf",
+      "started_at": "2026-09-21T02:45:31.377407257Z",
+      "status": "running",
+      "health": "healthy",
+      "networks": [
+        "codex-rag-chunking_default"
+      ],
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-qdrant/.chunking-data",
+          "Destination": "/data",
+          "RW": true
+        }
+      ],
+      "ports": {
+        "8976/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8976"
+          }
+        ]
+      }
+    },
+    {
+      "name": "codex-rag-chunking-review-1",
+      "id": "04c5a9136c9a49e259af85168588cada7af1d7b73cbeefed784e4f092443c82f",
+      "image_id": "sha256:0f93d0e80bc510be96c93fbc5d0aac832a45dcfb62476e42f9af3eac6a7e2fbf",
+      "started_at": "2026-09-21T02:45:31.319081299Z",
+      "status": "running",
+      "health": "healthy",
+      "networks": [
+        "codex-rag-chunking_default"
+      ],
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/Users/grizzlymacbookpro/Documents/ChatGPT/2026-TTS-AI/codex-research-rag-qdrant/.chunking-data",
+          "Destination": "/data",
+          "RW": true
+        }
+      ],
+      "ports": {
+        "8977/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8977"
+          }
+        ]
+      }
+    },
+    {
+      "name": "codex-rag-chunking-qdrant-1",
+      "id": "d87e43f4dc9bcf7e63539c4cdca81f285d99932d432d75187f7f6d1d15211f8c",
+      "image_id": "sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286",
+      "started_at": "2026-09-21T02:30:53.337446504Z",
+      "status": "running",
+      "health": null,
+      "networks": [
+        "codex-rag-chunking_default"
+      ],
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "codex-rag-chunking_qdrant-data",
+          "Source": "/var/lib/docker/volumes/codex-rag-chunking_qdrant-data/_data",
+          "Destination": "/qdrant/storage",
+          "RW": true
+        }
+      ],
+      "ports": {
+        "6333/tcp": null,
+        "6334/tcp": null
+      }
+    },
+    {
+      "name": "codex-rag-chunking-ollama-1",
+      "id": "b95d4da6197b7a7e41dd6ab62ceef70c83072dab775449493678468344f87a8e",
+      "image_id": "sha256:1685741456770df6e3cceb2a945a5f75e020f658d1701509668d6f4688f1dd3f",
+      "started_at": "2026-09-21T02:30:53.276219962Z",
+      "status": "running",
+      "health": null,
+      "networks": [
+        "codex-rag-chunking_default"
+      ],
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "codex-rag-chunking_ollama-data",
+          "Source": "/var/lib/docker/volumes/codex-rag-chunking_ollama-data/_data",
+          "Destination": "/root/.ollama",
+          "RW": true
+        }
+      ],
+      "ports": {
+        "11434/tcp": null
+      }
+    }
+  ]
+}

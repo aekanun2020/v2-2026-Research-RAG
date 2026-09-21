@@ -1,0 +1,47 @@
+{
+  "version": "0.14.24",
+  "archive": {
+    "comment_text": null,
+    "core-metadata": {
+      "sha256": "1b0c159a2acce0c68d26433ab94d47f49be18c89e48695b88d9223c1eed0939f"
+    },
+    "digests": {
+      "blake2b_256": "bef88a2aec65cba9459b24cce9bc188392014f70c2af0dc43c4cc668c685912e",
+      "md5": "f6bc5596be21374e545d8966db53fa66",
+      "sha256": "a12f39b8a777cc526bf400d929016cd244372af61c5e98f6f4186f51a0b9288c"
+    },
+    "downloads": -1,
+    "filename": "llama_index_core-0.14.24-py3-none-any.whl",
+    "has_sig": false,
+    "md5_digest": "f6bc5596be21374e545d8966db53fa66",
+    "packagetype": "bdist_wheel",
+    "python_version": "py3",
+    "requires_python": "<4.0,>=3.10",
+    "size": 11927515,
+    "upload_time": "2026-08-19T18:47:18",
+    "upload_time_iso_8601": "2026-08-19T18:47:18.772248Z",
+    "url": "https://files.pythonhosted.org/packages/be/f8/8a2aec65cba9459b24cce9bc188392014f70c2af0dc43c4cc668c685912e/llama_index_core-0.14.24-py3-none-any.whl",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "project_urls": {
+    "Documentation": "https://docs.llamaindex.ai/en/stable/",
+    "Homepage": "https://llamaindex.ai",
+    "Repository": "https://github.com/run-llama/llama_index"
+  },
+  "files": [
+    {
+      "path": "llama_index/core/node_parser/text/sentence.py",
+      "sha256": "615770bdab3bff710d83a1a5be8a2b053f7ca3791725251e0e8c5b0b920db240"
+    },
+    {
+      "path": "llama_index/core/node_parser/file/markdown.py",
+      "sha256": "d410f23be06d4c131276f4bbe84e21aceb5563f01f1761e2d1d4ea2265475581"
+    },
+    {
+      "path": "llama_index/core/node_parser/text/utils.py",
+      "sha256": "4f6d3887b90d7f5b182e0089ee28677aee32db189f786f2f99e18987da68171c"
+    }
+  ],
+  "integration": "Unmodified PyPI dependency; application code calls public SentenceSplitter and MarkdownNodeParser APIs."
+}

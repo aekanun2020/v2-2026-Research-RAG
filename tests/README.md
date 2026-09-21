@@ -1,7 +1,8 @@
 # Current integration verification
 
-All version 0.3.0 behavioral tests call the actual Streamable HTTP MCP service, Qdrant and CPU Ollama. No mock, direct Store test harness, external model judge, or human-review impersonation is used.
+All version 0.4.0 behavioral tests call the actual Streamable HTTP MCP service, Qdrant and CPU Ollama. No mock, direct Store test harness, external model judge, or human-review impersonation is used.
 
+- [Academic chunking baseline capture](../scripts/capture_chunking_baseline_mcp.py) · [original-case rerun](../scripts/verify_academic_chunking_mcp.py) · [chunking evidence](../docs/academic-chunking.md)
 - [Read-only concurrent and Thai retrieval checks](../scripts/verify_qdrant_retrieval_mcp.py)
 - [Full workflow/import/chunks/manuscript/cleanup/restore checks](../scripts/verify_qdrant_workflow_mcp.py) — dedicated disposable workspace and Qdrant collection only. This script performs destructive cleanup of its test workspace. Never point it at production.
 - [Read-only MCP smoke check](../scripts/smoke_http.py)

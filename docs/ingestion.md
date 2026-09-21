@@ -1,3 +1,5 @@
+> For the isolated 0.4.0 academic chunking branch, use [the current deployment and chunking record](academic-chunking.md).
+
 > Historical 0.2.4 documentation. For the current Qdrant/Ollama migration and changed job contract, see [migration record](qdrant-migration.md) and [current README](../README.md).
 
 # นำเข้าเอกสารจนถึงใช้เขียน manuscript

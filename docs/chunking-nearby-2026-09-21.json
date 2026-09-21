@@ -1,0 +1,88 @@
+{
+  "endpoint": "http://127.0.0.1:8976/mcp",
+  "checks": [
+    {
+      "filename": "elmo.pdf",
+      "arguments": {
+        "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "chunk_size_tokens": 384,
+        "chunk_overlap_tokens": 0,
+        "expected_revision": 15,
+        "idempotency_key": "chunking-nearby:0"
+      },
+      "ack_seconds": 0.01622504199622199,
+      "job_status": "completed",
+      "error": null,
+      "passed": true,
+      "exact_spans_checked": 48,
+      "all_token_counts_verified": true,
+      "maximum_token_count": 383,
+      "candidate_remained_inactive": true
+    },
+    {
+      "filename": "research-rag-readme.md",
+      "arguments": {
+        "source_id": "751445db6cddedf3018a6bb038d9b92222b58dce4e944f700099f8fce0346bcd",
+        "chunk_size_tokens": 64,
+        "chunk_overlap_tokens": 8,
+        "expected_revision": 16,
+        "idempotency_key": "chunking-nearby:1"
+      },
+      "ack_seconds": 0.015565541994874366,
+      "job_status": "completed",
+      "error": null,
+      "passed": true,
+      "exact_spans_checked": 46,
+      "all_token_counts_verified": true,
+      "maximum_token_count": 64,
+      "candidate_remained_inactive": true
+    },
+    {
+      "filename": "customerservice-policy.md",
+      "arguments": {
+        "source_id": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+        "chunk_size_tokens": 128,
+        "chunk_overlap_tokens": 16,
+        "expected_revision": 17,
+        "idempotency_key": "chunking-nearby:2"
+      },
+      "ack_seconds": 0.016684000001987442,
+      "job_status": "completed",
+      "error": null,
+      "passed": true,
+      "exact_spans_checked": 11,
+      "all_token_counts_verified": true,
+      "maximum_token_count": 36,
+      "candidate_remained_inactive": true
+    },
+    {
+      "filename": "elmo.pdf",
+      "arguments": {
+        "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "chunk_size_tokens": 63,
+        "chunk_overlap_tokens": 0,
+        "expected_revision": 18,
+        "idempotency_key": "chunking-nearby:3"
+      },
+      "ack_seconds": 0.016206458007218316,
+      "job_status": "failed",
+      "error": "chunk_size_tokens must be an integer from 64 to 2048",
+      "passed": true
+    },
+    {
+      "filename": "elmo.pdf",
+      "arguments": {
+        "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+        "chunk_size_tokens": 512,
+        "chunk_overlap_tokens": 256,
+        "expected_revision": 18,
+        "idempotency_key": "chunking-nearby:4"
+      },
+      "ack_seconds": 0.02405158399778884,
+      "job_status": "failed",
+      "error": "chunk_overlap_tokens must be below half the content token budget",
+      "passed": true
+    }
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,77 @@
+{
+  "endpoint": "http://127.0.0.1:8976/mcp",
+  "scope": "Only three documents imported by this task in the isolated candidate stack",
+  "plan": {
+    "scope": "workspace",
+    "revision": 18,
+    "workspace": "/data",
+    "delete_counts": {
+      "embeddings": 280,
+      "chunks": 280,
+      "chunk_metadata": 280,
+      "chunk_sets": 12,
+      "documents": 3,
+      "artifacts": 0,
+      "versions": 0,
+      "searches": 0,
+      "events": 18
+    },
+    "source_ids": [
+      "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+      "751445db6cddedf3018a6bb038d9b92222b58dce4e944f700099f8fce0346bcd",
+      "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632"
+    ],
+    "artifact_ids": [],
+    "clears_project": true,
+    "backup_required": true,
+    "can_execute": true,
+    "blockers": [],
+    "source_files_retained": 3,
+    "preserves": [
+      "inbox",
+      "source files",
+      "existing exports/backups"
+    ],
+    "limitation": "Cleanup does not improve relevance or provide secure erasure",
+    "plan_hash": "a37fbfa09df3e082c898b2ddce22b02e03e705915c6da344f10c783245374797"
+  },
+  "result": {
+    "revision": 19,
+    "result": {
+      "operation": "cleanup_workspace",
+      "scope": "workspace",
+      "status": "completed",
+      "deleted": {
+        "artifacts": 0,
+        "chunk_metadata": 280,
+        "chunk_sets": 12,
+        "chunks": 280,
+        "documents": 3,
+        "embeddings": 280,
+        "events": 18,
+        "searches": 0,
+        "versions": 0
+      },
+      "backup": {
+        "directory": "/data/backups/01e1fd34f4a54a11929877450cd8d113",
+        "excludes": [
+          "inbox",
+          "exports"
+        ],
+        "format": "revisioned-json-and-qdrant-vectors-v1",
+        "sources": 3,
+        "vectors": 280
+      },
+      "vector_index_cleared": true,
+      "journal_cleared": true,
+      "source_files_retained": 3,
+      "preserves": [
+        "inbox",
+        "source files",
+        "existing exports/backups"
+      ],
+      "quality_improvement_claimed": false,
+      "next_step": "import_document"
+    }
+  }
+}

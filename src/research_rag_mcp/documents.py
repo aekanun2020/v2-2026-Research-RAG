@@ -3,7 +3,7 @@ import hashlib
 import json
 import uuid
 from datetime import datetime, timezone
-from .retrieval import chunks
+from .chunking import DEFAULT_SIZE, DEFAULT_OVERLAP, configuration, page_chunks
 
 
 def dump(value):
@@ -19,18 +19,20 @@ def digest(value):
 
 
 class DocumentManagement:
-    def _create_chunk_set(self,raw,source,size=1200,overlap=200,active=False):
-        if type(size)!=int or not 200<=size<=5000 or type(overlap)!=int or not 0<=overlap<size//2:
-            raise ValueError('chunk size must be 200..5000; overlap must be below half the size')
+    def _create_chunk_set(self,raw,source,size=DEFAULT_SIZE,overlap=DEFAULT_OVERLAP,active=False):
+        markdown=source['filename'].lower().endswith('.md')
+        settings=configuration(size,overlap,markdown)
         set_id='cs-'+uuid.uuid4().hex
         config=dict(chunk_set_id=set_id,source_id=source['source_id'],text_revision_id=source['text_revision_id'],
-                    method='page-character-newline-v1',size=size,overlap=overlap,created_at=stamp(),active=active)
+                    **settings,created_at=stamp(),active=active)
         rows=[]
         for page in source['pages']:
-            for start,end,text in chunks(page['text'],size,overlap):
+            for chunk in page_chunks(page['text'],size,overlap,markdown):
+                start,end,text=chunk['start'],chunk['end'],chunk['text']
                 cid=digest([set_id,source['source_id'],source['text_revision_id'],page['page_index'],start,end])
                 rows.append(dict(id=cid,source_id=source['source_id'],page_index=page['page_index'],start=start,end=end,text=text,
-                                 chunk_set_id=set_id,status='active',reason='Imported from verified extracted text',updated_at=stamp()))
+                                 token_count=chunk['token_count'],section=chunk['section'],chunk_set_id=set_id,status='active',
+                                 reason='Imported from verified extracted text',updated_at=stamp()))
         self.index.index_rows(rows,{source['source_id']:source},getattr(self,'_job_progress',None))
         raw['chunk_sets'][set_id]=config
         for r in rows: r['embedding_fingerprint']=self.index.fingerprint
@@ -76,6 +78,7 @@ class DocumentManagement:
         citation={k:row[k] for k in ('source_id','page_index','start','end')}|{'quote':row['text'],'relation':'context'}
         self.citation(citation,self.state(raw))
         return {**row,'set_active':raw['chunk_sets'][row['chunk_set_id']]['active'],
+                'chunking':raw['chunk_sets'][row['chunk_set_id']],
                 **{k:source[k] for k in ('document_id','source_version','text_revision_id','origin','file')},
                 'citation':citation,'embedding':self.index.model_status() if raw['index_generation'] else None,
                 'text_sha256':hashlib.sha256(row['text'].encode()).hexdigest()}

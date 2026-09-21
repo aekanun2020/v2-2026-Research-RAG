@@ -25,3 +25,7 @@ dist/
 inbox/
 backups/
 exports/
+
+# Isolated academic chunking runtime
+.chunking-data/
+.chunking-validation-data/

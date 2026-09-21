@@ -1,0 +1,21 @@
+{
+  "gguf_version": 3,
+  "gguf_tokenizer_metadata": {
+    "nomic-bert.context_length": 2048,
+    "tokenizer.ggml.token_type_count": 2,
+    "tokenizer.ggml.bos_token_id": 101,
+    "tokenizer.ggml.eos_token_id": 102,
+    "tokenizer.ggml.model": "bert",
+    "tokenizer.ggml.unknown_token_id": 100,
+    "tokenizer.ggml.seperator_token_id": 102,
+    "tokenizer.ggml.padding_token_id": 0,
+    "tokenizer.ggml.cls_token_id": 101,
+    "tokenizer.ggml.mask_token_id": 103
+  },
+  "hf_vocab_size": 30522,
+  "gguf_vocab_size": 30522,
+  "raw_token_strings_equal": false,
+  "all_token_ids_match_after_gguf_wordpiece_rendering": true,
+  "tokenizer_asset_sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "scope": "Read-only model asset inspection in isolated new Ollama; no embedding invocation or token-by-token runtime equivalence test."
+}

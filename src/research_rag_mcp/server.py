@@ -56,7 +56,7 @@ def build_server(root):
     @input_errors
     def import_document(filename: str, origin: str, role: Role, bibliography: Bibliography,
                         expected_revision: int, idempotency_key: str, document_id: str | None = None) -> dict[str, Any]:
-        """Import a real authorized file from inbox: PDF, UTF-8 TXT/MD/CSV/JSON. Preserve SHA-256 and page/character locators. PDFs need extractable text; no OCR. Bibliographic fields must come from the source, with unknown optional fields omitted. Roles separate prior literature, own data/results/protocol/notes, and original journal guidelines. Never import generated findings as observed results. Returns a durable job_id promptly; poll job_status until completed before using the document. A failed job is not an imported document. Creates document/source/chunk identities and local Ollama CPU embeddings stored in Qdrant. Supply an existing document_id only to explicitly link a revised file; omit for a new document."""
+        """Import a real authorized file from inbox: PDF, UTF-8 TXT/MD/CSV/JSON. Preserve SHA-256 and page/character locators. PDFs need extractable text; no OCR. Bibliographic fields must come from the source, with unknown optional fields omitted. Roles separate prior literature, own data/results/protocol/notes, and original journal guidelines. Never import generated findings as observed results. Returns a durable job_id promptly; poll job_status until completed before using the document. A failed job is not an imported document. Creates document/source/chunk identities with LlamaIndex SentenceSplitter (512 tokens including special tokens, up to 64 content-token overlap); Markdown uses MarkdownNodeParser sections first. PDF chunks remain page-local. Local Ollama CPU embeddings are stored in Qdrant. Supply an existing document_id only to explicitly link a revised file; omit for a new document."""
         return jobs.submit('import_document',dict(filename=filename,origin=origin,role=role,bibliography=bibliography.model_dump(),expected_revision=expected_revision,key=idempotency_key,document_id=document_id))
 
     @server.tool()
@@ -114,9 +114,9 @@ def build_server(root):
     @server.tool()
     @input_errors
     def rechunk_document(source_id: str, expected_revision: int, idempotency_key: str,
-                         size: int = 1200, overlap: int = 200) -> dict[str, Any]:
-        """Create an indexed candidate chunk set from preserved extracted pages. Character size 200..5000, overlap below half of size. Existing sets and citations remain; inspect candidate before activate_chunk_set."""
-        return jobs.submit('rechunk_document',dict(source_id=source_id,size=size,overlap=overlap,expected_revision=expected_revision,key=idempotency_key))
+                         chunk_size_tokens: int = 512, chunk_overlap_tokens: int = 64) -> dict[str, Any]:
+        """Create a LlamaIndex sentence-based candidate from unchanged pages; Markdown headings define section boundaries first. Size 64..2048 tokens includes two model special tokens; overlap must be below half the content budget. Original sets/citations remain. Poll job_status, inspect, then activate_chunk_set. PDF page boundaries remain hard; no OCR/layout correction or semantic-quality judgment."""
+        return jobs.submit('rechunk_document',dict(source_id=source_id,size=chunk_size_tokens,overlap=chunk_overlap_tokens,expected_revision=expected_revision,key=idempotency_key))
 
     @server.tool()
     @input_errors

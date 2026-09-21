@@ -1,0 +1,81 @@
+{
+  "endpoint": "http://127.0.0.1:8976/mcp",
+  "method": "page-character-newline-v1",
+  "size": 1200,
+  "overlap": 200,
+  "unit": "characters",
+  "documents": [
+    {
+      "filename": "elmo.pdf",
+      "source_id": "d3859b3adb02783a2b6cad951e5554b485cad1df53b737e08c93e8925e014632",
+      "chunk_set_id": "cs-aaabf2f7444848a1bc364f602750a28c",
+      "chunks": 62,
+      "representative_boundaries": [
+        {
+          "chunk_id": "20f7a36ed96e87edddc3d348eff85ba944d7dbf018e3c829511e09e8f287778b",
+          "page_index": 0,
+          "start": 995,
+          "before": "lems, including question answering, tex-\ntual entailment and sentiment",
+          "after": " analysis.\nWe\nalso present an analysis showing that exposing\nthe deep "
+        },
+        {
+          "chunk_id": "06bc59830390e19f260cf3b85a251ab754028738f07ac255eda02957e6898d65",
+          "page_index": 0,
+          "start": 1967,
+          "before": "erstanding problems.\nOur representations differ from traditional word\n",
+          "after": "type embeddings in that each token is assigned a\nrepresentation that i"
+        },
+        {
+          "chunk_id": "1a1d2b9b6c26ce1b3668a6e1cc6f68c11a387532df6d7cc175dcc49b04fc0823",
+          "page_index": 0,
+          "start": 2958,
+          "before": "re context-dependent aspects\nof word meaning (e.g., they can be used w",
+          "after": "ith-\nout modiﬁcation to perform well on supervised\nword sense disambig"
+        }
+      ]
+    },
+    {
+      "filename": "customerservice-policy.md",
+      "source_id": "708fc37abc1f14e77d705a7c5a8af9984a69c8c8d4f8c6a308c87e29131633b2",
+      "chunk_set_id": "cs-d307510b8d5141c2a2dfb9e3c7e9bd61",
+      "chunks": 5,
+      "representative_boundaries": [
+        {
+          "chunk_id": "3bfe369a0acff940dca5373f0fc9c28ee54826984859851bf94f56fbc1c57a04",
+          "start": 0,
+          "end": 1147,
+          "headings_in_chunk": [
+            "# นโยบายการบริการลูกค้าเพื่อความเป็นเลิศ",
+            "## 1. หลักการทั่วไป",
+            "## 2. การตอบสนองต่อคำร้องขอและข้อสงสัย",
+            "## 3. กระบวนการคืนสินค้า"
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "research-rag-readme.md",
+      "source_id": "751445db6cddedf3018a6bb038d9b92222b58dce4e944f700099f8fce0346bcd",
+      "chunk_set_id": "cs-3324d3b9596d49e88bd5be56168ded55",
+      "chunks": 9,
+      "representative_boundaries": [
+        {
+          "chunk_id": "cb0f9c910a0b05d80fda370a5463d679a7c7f1cd5235962e6cbe569f7840a9b4",
+          "start": 944,
+          "end": 1927,
+          "headings_in_chunk": [
+            "## เอกสารและซอร์ส"
+          ]
+        }
+      ]
+    }
+  ],
+  "assessor": "Codex inspected actual MCP-returned chunks and original-page text",
+  "observed_failures": [
+    "ELMo page 0 chunks begin inside sentences, including start 2958 splitting the word with at w|ith-.",
+    "Real Markdown documents have chunks spanning multiple section headings."
+  ],
+  "root_cause": "Character-window start = end - overlap ignores sentence boundaries; the same splitter treats Markdown headings as plain text.",
+  "full_local_mcp_response_sha256": "39c6ad10ef82daa62c897aa1c7518ec4a1077c0c6702b623e62a7a7561589dfa",
+  "scope": "Text chunking only; no claim about PDF extraction or semantic relevance."
+}

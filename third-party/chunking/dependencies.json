@@ -1,0 +1,67 @@
+{
+  "llama-index-core": {
+    "version": "0.14.24",
+    "license": "MIT",
+    "notices": [
+      {
+        "path": "third-party/chunking/licenses/llama-index-core/llama_index_core-0.14.24.dist-info/licenses/LICENSE",
+        "sha256": "24f40b5190fdacabc24ddbb5f76364d15e4f030925220ea300d8a2dd4993c8cb"
+      }
+    ],
+    "assets": [
+      {
+        "path": "llama_index/core/_static/nltk_cache/tokenizers/punkt_tab/english/abbrev_types.txt",
+        "sha256": "92a3e070f43d9b4c5534758ca40ad7343b04e7e29bfe0c2eb658a39445a4f779"
+      },
+      {
+        "path": "llama_index/core/_static/nltk_cache/tokenizers/punkt_tab/english/collocations.tab",
+        "sha256": "8e2da1225e4dd2cc9dba261ee231ccb134859e21b46006e7f472c5ee269af0cf"
+      },
+      {
+        "path": "llama_index/core/_static/nltk_cache/tokenizers/punkt_tab/english/ortho_context.tab",
+        "sha256": "4bbcca25ed3d3f06c02402abf8419b9f033b8adc06e7b482eca4e45f81a5dc4c"
+      },
+      {
+        "path": "llama_index/core/_static/nltk_cache/tokenizers/punkt_tab/english/sent_starters.txt",
+        "sha256": "f3f8535483e1dba487241b764945168123bca3209a9645e59acd1225dc76edac"
+      }
+    ]
+  },
+  "tokenizers": {
+    "version": "0.23.2",
+    "license": null,
+    "notices": [],
+    "assets": []
+  },
+  "python-crfsuite": {
+    "version": "0.9.12",
+    "license": "MIT License",
+    "notices": [
+      {
+        "path": "third-party/chunking/licenses/python-crfsuite/python_crfsuite-0.9.12.dist-info/licenses/LICENSE.txt",
+        "sha256": "0d41a19b0853b18eda2f801d15f041c30352cd0382a6a792c63494e68b5fadf9"
+      }
+    ],
+    "assets": []
+  },
+  "pythainlp": {
+    "version": "5.3.7",
+    "license": "Apache-2.0",
+    "notices": [
+      {
+        "path": "third-party/chunking/licenses/pythainlp/pythainlp-5.3.7.dist-info/licenses/LICENSE",
+        "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+      },
+      {
+        "path": "third-party/chunking/licenses/pythainlp/pythainlp/corpus/corpus_license.md",
+        "sha256": "443978471ca3e75b7e39e233c9b7b86e871416fafeb7948fdc99b229adcc40ec"
+      }
+    ],
+    "assets": [
+      {
+        "path": "pythainlp/corpus/sentenceseg_crfcut.model",
+        "sha256": "b03bd7e4539956151ac0ef82ae564fede28773b2fca5110ec3f9d8c2e092385d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "phase": "sections",
+  "endpoint": "http://127.0.0.1:8976/mcp",
+  "chunk_size_tokens": 512,
+  "chunk_overlap_tokens": 64,
+  "documents": [
+    {
+      "filename": "elmo.pdf",
+      "chunk_count": 37,
+      "method": "llamaindex-sentence-v1",
+      "findings": {
+        "inside_word_starts": [],
+        "cross_headings": []
+      },
+      "exact_spans_checked": 37,
+      "max_tokens": 512,
+      "old_chunk_preserved": true,
+      "candidate_inactive_before_activation": true,
+      "uncovered_nonblank_spans": 0
+    },
+    {
+      "filename": "customerservice-policy.md",
+      "chunk_count": 11,
+      "method": "llamaindex-markdown-sentence-v1",
+      "findings": {
+        "inside_word_starts": [],
+        "cross_headings": []
+      },
+      "exact_spans_checked": 11,
+      "max_tokens": 36,
+      "old_chunk_preserved": true,
+      "candidate_inactive_before_activation": true,
+      "uncovered_nonblank_spans": 0
+    },
+    {
+      "filename": "research-rag-readme.md",
+      "chunk_count": 8,
+      "method": "llamaindex-markdown-sentence-v1",
+      "findings": {
+        "inside_word_starts": [],
+        "cross_headings": []
+      },
+      "exact_spans_checked": 8,
+      "max_tokens": 479,
+      "old_chunk_preserved": true,
+      "candidate_inactive_before_activation": true,
+      "uncovered_nonblank_spans": 0
+    }
+  ],
+  "scope": "MCP span/coverage/token/section/history checks; not semantic relevance or PDF reading-order evaluation."
+}

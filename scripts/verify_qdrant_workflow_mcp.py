@@ -125,7 +125,7 @@ async def main():
         check('chunk exact original span',context['source_page']['text'][chunk['start']:chunk['end']]==chunk['text'])
         await call('inspect_document_chunks',{'source_id':pdf})
         old_set=chunks['chunk_set_id']
-        candidate=await job('rechunk_document',{'source_id':pdf,'size':1800,'overlap':200},'validation-rechunk')
+        candidate=await job('rechunk_document',{'source_id':pdf,'chunk_size_tokens':384,'chunk_overlap_tokens':48},'validation-rechunk')
         new_set=candidate['result']['result']['chunk_set_id']
         check('candidate does not activate itself',(await call('list_chunks',{'source_id':pdf}))['chunk_set_id']==old_set)
         await mutate('activate_chunk_set',{'chunk_set_id':new_set},'validation-activate')
