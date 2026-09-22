@@ -1,0 +1,86 @@
+{
+  "checked_at": "2026-09-22T09:38:00.642840+00:00",
+  "host": "Aekanun’s MacBook Pro",
+  "process_pid": 57211,
+  "name": "research-rag",
+  "public_url": "https://michiko-psychodiagnostic-melvina.ngrok-free.dev/mcp",
+  "upstream": "http://127.0.0.1:9076/mcp",
+  "auth": "none; explicitly authorized after scope confirmation",
+  "ngrok_inspection": false,
+  "process_running": true,
+  "containers": [
+    {
+      "name": "codex-rag-agents-review-1",
+      "id": "94df34919f1ec3bad0575bed047788e15988bd07ffeb02f2c394522cecfa4555",
+      "image": "sha256:e94e56519cbf4e15d88fa185e1a074190d1629f79531c6c4e7d0c337b87328de",
+      "status": "running",
+      "started": "2026-09-22T09:07:41.487069461Z",
+      "health": "healthy",
+      "unchanged_from_before_tunnel": true
+    },
+    {
+      "name": "codex-rag-agents-mcp-1",
+      "id": "1e9997f24bc3839688cd6588afef96b9c89ef57ac0b47d3cbe1982b434629c76",
+      "image": "sha256:5e7c8e60873f27f424c4aa1b1b199127199e5ebdeb9b7a6d095c7deb20fc97ef",
+      "status": "running",
+      "started": "2026-09-22T09:36:08.843074877Z",
+      "health": "healthy",
+      "unchanged_from_before_tunnel": false
+    },
+    {
+      "name": "codex-rag-agents-qdrant-1",
+      "id": "4ec1ddf0ec1ae9b2a244384feaa2c0d9cd7fd870044a5030dcb8b30295b8e5bf",
+      "image": "sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286",
+      "status": "running",
+      "started": "2026-09-22T08:51:02.817463722Z",
+      "health": null,
+      "unchanged_from_before_tunnel": true
+    },
+    {
+      "name": "codex-rag-agents-ollama-1",
+      "id": "f2bdaf9c5f25ba4a0d4a55dd3fdb5d16f5ebb8a72c6cbe3973e74dcbcd9b302a",
+      "image": "sha256:1685741456770df6e3cceb2a945a5f75e020f658d1701509668d6f4688f1dd3f",
+      "status": "running",
+      "started": "2026-09-22T08:51:02.745397888Z",
+      "health": null,
+      "unchanged_from_before_tunnel": true
+    },
+    {
+      "name": "codex-rag-chunking-review-1",
+      "id": "04c5a9136c9a49e259af85168588cada7af1d7b73cbeefed784e4f092443c82f",
+      "image": "sha256:0f93d0e80bc510be96c93fbc5d0aac832a45dcfb62476e42f9af3eac6a7e2fbf",
+      "status": "exited",
+      "started": "2026-09-21T13:38:09.698601299Z",
+      "health": "unhealthy",
+      "unchanged_from_before_tunnel": true
+    },
+    {
+      "name": "codex-rag-chunking-mcp-1",
+      "id": "15404a790fac0ac0e30fd47ca9b4f6f46c06d297c6a8ca71e2676a05c4bd6d52",
+      "image": "sha256:0f93d0e80bc510be96c93fbc5d0aac832a45dcfb62476e42f9af3eac6a7e2fbf",
+      "status": "exited",
+      "started": "2026-09-21T02:45:31.377407257Z",
+      "health": "unhealthy",
+      "unchanged_from_before_tunnel": true
+    },
+    {
+      "name": "codex-rag-chunking-qdrant-1",
+      "id": "d87e43f4dc9bcf7e63539c4cdca81f285d99932d432d75187f7f6d1d15211f8c",
+      "image": "sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286",
+      "status": "exited",
+      "started": "2026-09-21T02:30:53.337446504Z",
+      "health": null,
+      "unchanged_from_before_tunnel": true
+    },
+    {
+      "name": "codex-rag-chunking-ollama-1",
+      "id": "b95d4da6197b7a7e41dd6ab62ceef70c83072dab775449493678468344f87a8e",
+      "image": "sha256:1685741456770df6e3cceb2a945a5f75e020f658d1701509668d6f4688f1dd3f",
+      "status": "exited",
+      "started": "2026-09-21T02:30:53.276219962Z",
+      "health": null,
+      "unchanged_from_before_tunnel": true
+    }
+  ],
+  "human_review_and_old_service_not_exposed": true
+}

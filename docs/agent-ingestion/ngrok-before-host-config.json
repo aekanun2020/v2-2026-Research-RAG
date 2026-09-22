@@ -1,0 +1,12 @@
+{
+  "url": "https://michiko-psychodiagnostic-melvina.ngrok-free.dev/mcp",
+  "authentication": "none",
+  "upstream": "http://127.0.0.1:9076/mcp",
+  "status": "failed",
+  "errors": [
+    {
+      "type": "MCPError",
+      "error": "Server returned an error response"
+    }
+  ]
+}

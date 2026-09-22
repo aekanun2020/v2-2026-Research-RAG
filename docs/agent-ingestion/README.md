@@ -11,7 +11,7 @@ Version 0.5.0, branch `codex/claude-workspace-ingestion`. Implemented and tested
 
 ## Container and inbox locations
 
-New local MCP endpoint: `http://127.0.0.1:9076/mcp`, no token. Human review is separately published on loopback port 9077. There is no new public tunnel in this change; a cloud-hosted Claude connector cannot reach this Mac's loopback directly. Client connections to the old 8976 endpoint still see version 0.4.0 and its 41 tools; reconnect to the new deployment to obtain 45 tools.
+New local MCP endpoint: `http://127.0.0.1:9076/mcp`, no token. Human review is separately published on loopback port 9077. After the user's explicit public-access approval, the `research-rag` ngrok endpoint was opened at **https://michiko-psychodiagnostic-melvina.ngrok-free.dev/mcp**; see [live endpoint configuration and verification](ngrok.md). A cloud-hosted Claude connector needs this public URL, not the Mac's loopback address. Client connections to the old 8976 endpoint still see version 0.4.0 and its 41 tools; reconnect to the new deployment to obtain 45 tools.
 
 | Area | Container path | Host path relative to this repository |
 |---|---|---|

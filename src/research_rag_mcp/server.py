@@ -3,7 +3,9 @@ import asyncio
 import csv
 from functools import wraps
 import inspect
+import os
 from typing import Any, Literal
+from urllib.parse import urlsplit
 
 from mcp.server import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
@@ -381,10 +383,23 @@ def build_server(root):
 
 def http_app(root, port):
     server = build_server(root)
+    allowed_hosts = [f'127.0.0.1:{port}', f'localhost:{port}']
+    allowed_origins = [f'http://127.0.0.1:{port}', f'http://localhost:{port}']
+    public_origin = os.environ.get('RAG_PUBLIC_ORIGIN', '')
+    if public_origin:
+        parsed = urlsplit(public_origin)
+        if (parsed.scheme != 'https' or not parsed.hostname or parsed.port not in (None, 443)
+                or parsed.username is not None or parsed.password is not None
+                or parsed.path not in ('', '/') or parsed.query or parsed.fragment
+                or '*' in public_origin or any(c.isspace() for c in public_origin)):
+            raise ValueError('RAG_PUBLIC_ORIGIN must be one exact HTTPS origin on port 443, without credentials, wildcards or a path')
+        host = parsed.hostname.encode('idna').decode('ascii')
+        allowed_hosts.extend([host, host+':443'])
+        allowed_origins.extend(['https://'+host, 'https://'+host+':443'])
     security = TransportSecuritySettings(
         enable_dns_rebinding_protection=True,
-        allowed_hosts=[f'127.0.0.1:{port}', f'localhost:{port}'],
-        allowed_origins=[f'http://127.0.0.1:{port}', f'http://localhost:{port}'],
+        allowed_hosts=allowed_hosts,
+        allowed_origins=allowed_origins,
     )
     app = server.streamable_http_app(stateless_http=True, json_response=False,
                                     host='127.0.0.1', transport_security=security)

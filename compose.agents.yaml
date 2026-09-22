@@ -9,7 +9,7 @@ x-app: &app
   tmpfs: [/tmp]
   cap_drop: [ALL]
   security_opt: [no-new-privileges:true]
-  environment:
+  environment: &app-env
     RAG_WORKSPACES_ROOT: /data/workspaces
     PYTHAINLP_DATA: /tmp/pythainlp-data
     QDRANT_URL: http://qdrant:6333
@@ -43,6 +43,9 @@ services:
   mcp:
     <<: *app
     build: {context: ., target: runtime}
+    environment:
+      <<: *app-env
+      RAG_PUBLIC_ORIGIN: "${RAG_PUBLIC_ORIGIN:-}"
     command: [serve, --host, 0.0.0.0, --port, "9076"]
     ports: ["127.0.0.1:9076:9076"]
     depends_on: [qdrant, ollama]

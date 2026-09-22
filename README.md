@@ -4,6 +4,8 @@
 
 **ชุดใหม่ 0.5.0:** `codex-rag-agents` เปิด MCP ที่ `http://127.0.0.1:9076/mcp` ไม่มี access token และหน้าตรวจที่ port 9077 ใช้ container, network, volumes และ `.agent-data` ของตัวเองทั้งหมด ไม่เปลี่ยนบริการ 8976 หรือข้อมูลเดิม ต้องชี้ client มาที่ endpoint รุ่นใหม่จึงจะเห็น tools ใหม่ ดู [ขั้นตอนใช้กับ Claude, ตำแหน่ง inbox และหลักฐานทดสอบ](docs/agent-ingestion/README.md) การทดสอบ MCP ไม่ใช่การยืนยันว่าได้ทดสอบผ่านแอป Claude จริงทั้ง Windows/macOS แล้ว
 
+**Public MCP ที่ผู้ใช้อนุมัติ:** [research-rag ผ่าน ngrok](https://michiko-psychodiagnostic-melvina.ngrok-free.dev/mcp) → พอร์ต 9076 บน MacBook โดยไม่มี token ตรวจ initialize/tools/list/workspace_status แล้วครบ 45 tools ดู [ค่าตั้งค่า ผลทดสอบ และข้อกำหนดการรัน](docs/agent-ingestion/ngrok.md)
+
 รุ่นใหม่ **ไม่ใช้ SQLite เก็บข้อมูลหรือค้นหา** เวกเตอร์อยู่ใน Qdrant ส่วนเอกสาร รหัส chunks ประวัติ manuscript และผลตรวจอยู่ใน JSON journal ที่ล็อกข้าม process และบันทึกแต่ละ revision แบบ atomic ขั้นย้ายครั้งเดียวอ่าน SQLite เดิมแบบ read-only ผ่าน MCP เพื่อรักษารหัสและหลักฐาน ไม่มี SQLite เป็น backend สำรอง
 
 **ผลทดสอบ 0.4.0:** chunking ผ่านกรณีเดิมและกรณีข้างเคียง โดย workflow ผ่าน 61 checks ผ่าน MCP จริง ชุดใหม่ว่าง ณ จบการล้างข้อมูลทดสอบ (เป็นสถานะย้อนหลัง) ต่อมาที่ revision 51 มี 12 papers / 907 chunks; [Codex สุ่มอ่าน 10 chunks](docs/chunk-readability-codex-2026-09-21.md) พบข้อจำกัดเรื่องบริบทข้ามหน้า ตาราง และบรรณานุกรม จึงไม่ถือว่า workflow checks รับรองความได้ใจความของทุก chunk ส่วนผล hybrid พร้อมกัน 12 คำขอและ semantic ไทย→อังกฤษเป็นผลย้อนหลังของ 0.3.0: คำขอสำเร็จครบ แต่คุณภาพ semantic ของโมเดล nomic-embed-text เดิม **ไม่ผ่าน** งาน chunking นี้ยังไม่ได้เปลี่ยนโมเดล
@@ -23,6 +25,7 @@ MCP server จัดเตรียมหลักฐาน โมเดลใ�
 ## เอกสารและซอร์ส
 
 - [การแก้ Claude agent: ดาวน์โหลด PDF และแยก workspace](docs/agent-ingestion/README.md) · [Compose 0.5.0](compose.agents.yaml) · [ค่าเริ่มต้นชุดใหม่](agents.env.example)
+- [Public ngrok endpoint ชื่อ research-rag](docs/agent-ingestion/ngrok.md) · [ทดสอบ public MCP](scripts/verify_public_mcp.py)
 - [การเลือก workspace](src/research_rag_mcp/workspaces.py) · [ดาวน์โหลด PDF](src/research_rag_mcp/downloads.py) · [MCP prompt](src/research_rag_mcp/models.py) · [ทดสอบ ingestion จริง](scripts/verify_agent_ingestion_mcp.py) · [ทดสอบ manuscript และกู้คืน workspace](scripts/verify_agent_workspace_followup_mcp.py)
 - [ชุดอ่าน AI กับการทำงาน: 23 งาน / 25 PDF เก็บแยก ยังไม่นำเข้า RAG](papers/ai-work-common-2026-09-22/README.md) · [บัญชีแหล่งที่มาและ reference links](papers/ai-work-common-2026-09-22/catalog.json)
 - [ผลนำเข้า cited 221 PDF ผ่าน MCP และบัญชีเอกสาร](docs/cited-import-2026-09-21.md) · [หลักฐานตรวจจำนวนและดัชนี](docs/cited-import-2026-09-21.json)
