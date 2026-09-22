@@ -1,0 +1,1186 @@
+{
+  "schema_version": 1,
+  "collection": "ai-work-common-2026-09-22",
+  "recorded_at": "2026-09-22T13:25:40.920464+07:00",
+  "purpose_th": "ชุด paper ที่เชื่อมกับประสบการณ์การทำงาน การคิด การเรียนรู้ และการใช้ AI สำหรับผู้ร่วมงานหลายสาขา",
+  "scope": {
+    "seed_works": 4,
+    "selected_first_level_reference_works": 20,
+    "downloaded_first_level_reference_works": 19,
+    "recursive_depth": 1,
+    "all_bibliography_entries_downloaded": false,
+    "selection_by": "Codex, based on actual seed bibliography pages and topic relevance; not a systematic-review search"
+  },
+  "storage": {
+    "relative_to_repository": "papers/ai-work-common-2026-09-22",
+    "separate_from_inbox": true,
+    "rag_imported_in_this_operation": false,
+    "rag_mutations_in_this_operation": 0,
+    "pdfs_committed_to_git": false
+  },
+  "counts": {
+    "unique_downloaded_works": 23,
+    "pdf_files": 25,
+    "seed_pdf_files": 6,
+    "reference_pdf_files": 19,
+    "unavailable_selected_references": 1,
+    "total_bytes": 32089900,
+    "total_pdf_pages": 845,
+    "duplicate_sha256_files": 0
+  },
+  "version_policy": "Different versions of S01 and S03 share one work_id each and are not counted as separate studies. Published works, author manuscripts, working papers and reports are distinguished per file.",
+  "citation_provenance": "cited_by.pdf_pages are one-based PDF pages in the original seed file S01–S04, not printed journal page numbers or alternative seed versions. reference_number is present only for the numbered S04 bibliography. Codex checked each selected reference entry in the downloaded seed.",
+  "verification_limitations": [
+    "Not a full critical appraisal or proof that every participant can understand every paper.",
+    "All PDF pages were parsed; first pages were visually inspected. This does not certify every printed figure, equation or table.",
+    "Selection includes some older non-generative AI studies as background.",
+    "R01 contains an appended citing-article list, excluded from this first-level reference search.",
+    "R09 is hosted by a legal news organization; its title and authors and SSRN identifier were checked against author/university records.",
+    "Original source PDFs are retained byte-for-byte. Rights notices and source/version information remain attached."
+  ],
+  "files": [
+    {
+      "id": "S01",
+      "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+      "year": 2023,
+      "authors": [
+        "Shakked Noy",
+        "Whitney Zhang"
+      ],
+      "url": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+      "file": "seeds/noy-zhang-2023-productivity-working-paper.pdf",
+      "version": "Working paper, March 10, 2023; not the final Science article",
+      "status": "downloaded",
+      "final_url": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+      "bytes": 532994,
+      "sha256": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+      "pages": 15,
+      "downloaded_at": "2026-09-22T13:11:41.159680+07:00",
+      "work_id": "S01",
+      "role": "seed",
+      "theme_th": "ผลของ AI ต่อเวลาและคุณภาพงานเขียน",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 32537,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "S02",
+      "title": "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality",
+      "year": 2026,
+      "url": "https://www.hbs.edu/ris/Publication%20Files/dell-acqua-et-al-2026-navigating-the-jagged-technological-frontier_5c589c8c-fbb5-458f-b285-c944746cd717.pdf",
+      "file": "seeds/dellacqua-et-al-2026-jagged-frontier.pdf",
+      "doi": "10.1287/orsc.2025.21838",
+      "version": "Organization Science, published 2026",
+      "status": "downloaded",
+      "final_url": "https://www.hbs.edu/ris/Publication%20Files/dell-acqua-et-al-2026-navigating-the-jagged-technological-frontier_5c589c8c-fbb5-458f-b285-c944746cd717.pdf",
+      "bytes": 3170127,
+      "sha256": "433c4d57cb9a4e60869594b1b8e701d71b57d092abb053ce88be42ae1aed00ce",
+      "pages": 22,
+      "downloaded_at": "2026-09-22T13:11:41.566188+07:00",
+      "work_id": "S02",
+      "role": "seed",
+      "theme_th": "งานแบบไหนที่ AI ช่วยได้หรือทำให้ผิดพลาด",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 114493,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "S03",
+      "title": "Generative AI at Work",
+      "year": 2023,
+      "authors": [
+        "Erik Brynjolfsson",
+        "Danielle Li",
+        "Lindsey R. Raymond"
+      ],
+      "url": "https://www.nber.org/system/files/working_papers/w31161/revisions/w31161.rev1.pdf",
+      "file": "seeds/brynjolfsson-li-raymond-2023-generative-ai-at-work.pdf",
+      "doi": "10.3386/w31161",
+      "version": "NBER working paper 31161, revised October 2023",
+      "status": "downloaded",
+      "final_url": "https://www.nber.org/system/files/working_papers/w31161/revisions/w31161.rev1.pdf",
+      "bytes": 1007022,
+      "sha256": "58316f34812f59dbe7b787fae3fc42dfac76d61507901842265fb76be08c65fa",
+      "pages": 67,
+      "downloaded_at": "2026-09-22T13:11:46.373867+07:00",
+      "work_id": "S03",
+      "role": "seed",
+      "theme_th": "AI กับประสิทธิภาพงานบริการลูกค้า",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 126207,
+        "pages_under_40_text_characters": [
+          57
+        ],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "S04",
+      "title": "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers",
+      "year": 2025,
+      "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf",
+      "file": "seeds/lee-et-al-2025-ai-critical-thinking.pdf",
+      "doi": "10.1145/3706598.3713778",
+      "version": "Author-hosted CHI 2025 paper",
+      "status": "downloaded",
+      "final_url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf",
+      "bytes": 1018898,
+      "sha256": "4f241a87e3b5383ff1d08311bb55d932237937e038d8c9c2e9e5bd792355709a",
+      "pages": 23,
+      "downloaded_at": "2026-09-22T13:11:41.146169+07:00",
+      "work_id": "S04",
+      "role": "seed",
+      "theme_th": "ความเชื่อมั่นใน AI และการคิดอย่างมีวิจารณญาณ",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 143227,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "S01v2",
+      "work_id": "S01",
+      "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+      "url": "https://shakkednoy.com/Noy%20Zhang%20NBER%20SI.pdf",
+      "file": "seeds/noy-zhang-2023-productivity-author-manuscript.pdf",
+      "doi": "10.1126/science.adh2586",
+      "version": "Author-hosted manuscript linked from the authors Science 2023 publication; 453 participants; version date not stated",
+      "status": "downloaded",
+      "final_url": "https://shakkednoy.com/Noy%20Zhang%20NBER%20SI.pdf",
+      "sha256": "b1626b7cfcc82374cc55df5a6e51c336577677559b871b491d603db6657d4a7e",
+      "bytes": 478675,
+      "pages": 19,
+      "downloaded_at": "2026-09-22T13:13:08.936890+07:00",
+      "role": "seed",
+      "theme_th": "ผลของ AI ต่อเวลาและคุณภาพงานเขียน",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 40045,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "S03v2",
+      "work_id": "S03",
+      "title": "Generative AI at Work",
+      "url": "https://danielle.li/assets/docs/GenerativeAIatWork.pdf?ci=8466",
+      "file": "seeds/brynjolfsson-li-raymond-2025-generative-ai-at-work-qje.pdf",
+      "doi": "10.1093/qje/qjae044",
+      "version": "Published QJE 2025 article hosted by coauthor",
+      "status": "downloaded",
+      "final_url": "https://danielle.li/assets/docs/GenerativeAIatWork.pdf?ci=8466",
+      "sha256": "b59b45b650ad75640735e4a44bc58dae8aa1133f7886c820fb4e815f08a4df9f",
+      "bytes": 2053024,
+      "pages": 54,
+      "downloaded_at": "2026-09-22T13:13:09.494081+07:00",
+      "role": "seed",
+      "theme_th": "AI กับประสิทธิภาพงานบริการลูกค้า",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 134342,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R01",
+      "title": "Why Are There Still So Many Jobs? The History and Future of Workplace Automation",
+      "file": "references/autor-2015-workplace-automation.pdf",
+      "url": "https://economics.mit.edu/sites/default/files/inline-files/Why%20Are%20there%20Still%20So%20Many%20Jobs_0.pdf",
+      "doi": "10.1257/jep.29.3.3",
+      "version": "Published JEP 2015 article, MIT Economics copy; PDF pages 1–28 are the article, pages 29–79 are an appended citing-article list. Original file retained unchanged.",
+      "theme_th": "พื้นฐาน: ระบบอัตโนมัติและการเปลี่ยนงาน",
+      "cited_by": [
+        {
+          "seed_id": "S01",
+          "pdf_pages": [
+            14
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://economics.mit.edu/sites/default/files/inline-files/Why%20Are%20there%20Still%20So%20Many%20Jobs_0.pdf",
+      "bytes": 1272984,
+      "sha256": "206c1b81a43f57d4842a200fafb6ef682011ca543703fb442113ee6533f24b34",
+      "pages": 79,
+      "downloaded_at": "2026-09-22T13:20:34.824829+07:00",
+      "attempts": [
+        {
+          "url": "https://dspace.mit.edu/bitstreams/6c35e75c-5465-422a-80fc-db8367290318/download",
+          "final_url": "https://dspace.mit.edu/bitstreams/6c35e75c-5465-422a-80fc-db8367290318/download",
+          "http_status": 405,
+          "at": "2026-09-22T13:19:44.224147+07:00",
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "url": "https://economics.mit.edu/sites/default/files/inline-files/Why%20Are%20there%20Still%20So%20Many%20Jobs_0.pdf",
+          "final_url": "https://economics.mit.edu/sites/default/files/inline-files/Why%20Are%20there%20Still%20So%20Many%20Jobs_0.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:20:34.824829+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R01",
+      "role": "reference",
+      "note_th": "บทความหลักหน้า PDF 1–28; หน้า 29–79 เป็นรายการงานที่อ้างถึงบทความนี้",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 267126,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R02",
+      "title": "AI, Skill, and Productivity: The Case of Taxi Drivers",
+      "file": "references/kanazawa-et-al-2022-ai-taxi-drivers.pdf",
+      "url": "https://docs.iza.org/dp15677.pdf",
+      "doi": null,
+      "version": "IZA Discussion Paper 15677, October 2022; S01 cites the 2022 NBER working-paper series version of the same titled work, not this IZA series copy.",
+      "theme_th": "ผลของ AI ต่อผู้มีทักษะต่างกัน",
+      "cited_by": [
+        {
+          "seed_id": "S01",
+          "pdf_pages": [
+            14
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://docs.iza.org/dp15677.pdf",
+      "bytes": 870324,
+      "sha256": "bcf383686498edb67fc5c69cf490501d657c1ba20b7df05a2b3f938288c2f2b1",
+      "pages": 46,
+      "downloaded_at": "2026-09-22T13:19:06.277954+07:00",
+      "attempts": [
+        {
+          "url": "https://docs.iza.org/dp15677.pdf",
+          "final_url": "https://docs.iza.org/dp15677.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:06.277954+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R02",
+      "role": "reference",
+      "note_th": "ได้ฉบับ IZA ปี 2022; บรรณานุกรมต้นทางระบุชุด NBER",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 79307,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R03",
+      "title": "Automation, workers’ skills and job satisfaction",
+      "file": "references/schwabe-castellacci-2020-automation-job-satisfaction.pdf",
+      "url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0242929&type=printable",
+      "doi": "10.1371/journal.pone.0242929",
+      "version": "Published PLOS ONE article, 2020",
+      "theme_th": "ทักษะและความพึงพอใจในการทำงาน",
+      "cited_by": [
+        {
+          "seed_id": "S01",
+          "pdf_pages": [
+            14
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0242929&type=printable",
+      "bytes": 1297633,
+      "sha256": "2f0147a2c11c87297a59045bcd26fde515f8c1dbd23806ed8bf6fef5a4b99a27",
+      "pages": 26,
+      "downloaded_at": "2026-09-22T13:19:06.278042+07:00",
+      "attempts": [
+        {
+          "url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0242929&type=printable",
+          "final_url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0242929&type=printable",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:06.278042+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R03",
+      "role": "reference",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 89861,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R04",
+      "title": "Human Decisions and Machine Predictions",
+      "file": "references/kleinberg-et-al-human-decisions-machine-predictions.pdf",
+      "url": "https://cs.stanford.edu/~jure/pubs/bail-qje17.pdf",
+      "doi": "10.1093/qje/qjx032",
+      "version": "Author-hosted QJE advance/article copy dated August 11, 2017, downloaded from OUP in September 2017 according to its footer; S01 cites the final 2018 journal volume.",
+      "theme_th": "การใช้คำทำนายประกอบการตัดสินใจ",
+      "cited_by": [
+        {
+          "seed_id": "S01",
+          "pdf_pages": [
+            14
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://cs.stanford.edu/~jure/pubs/bail-qje17.pdf",
+      "bytes": 1584795,
+      "sha256": "29328df7b3d704676f8cda75969b55aaa73f3cf644f9357d997a09220d53a60f",
+      "pages": 53,
+      "downloaded_at": "2026-09-22T13:19:06.278118+07:00",
+      "attempts": [
+        {
+          "url": "https://cs.stanford.edu/~jure/pubs/bail-qje17.pdf",
+          "final_url": "https://cs.stanford.edu/~jure/pubs/bail-qje17.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:06.278118+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R04",
+      "role": "reference",
+      "note_th": "ไฟล์ลงวันที่ 11 สิงหาคม 2017; งานต้นทางอ้างฉบับวารสารปี 2018",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 147796,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R05",
+      "title": "Artificial Intelligence: The Ambiguous Labor Market Impact of Automating Prediction",
+      "file": "references/agrawal-gans-goldfarb-2019-automating-prediction.pdf",
+      "url": "https://www.nber.org/system/files/working_papers/w25619/w25619.pdf",
+      "doi": "10.3386/w25619",
+      "version": "NBER Working Paper 25619, February 2019; S01 cites the JEP journal version.",
+      "theme_th": "ผลต่อแรงงานและบทบาทของมนุษย์",
+      "cited_by": [
+        {
+          "seed_id": "S01",
+          "pdf_pages": [
+            14
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://www.nber.org/system/files/working_papers/w25619/w25619.pdf",
+      "bytes": 280519,
+      "sha256": "dbd015967a47f77a41ff8028f5cc8208c3bb0e8cb44d6b1cc9be04f7df9c2450",
+      "pages": 27,
+      "downloaded_at": "2026-09-22T13:19:06.278191+07:00",
+      "attempts": [
+        {
+          "url": "https://www.nber.org/system/files/working_papers/w25619/w25619.pdf",
+          "final_url": "https://www.nber.org/system/files/working_papers/w25619/w25619.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:06.278191+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R05",
+      "role": "reference",
+      "note_th": "ได้ working paper ของ NBER; ต้นทางอ้างฉบับ JEP",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 62285,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R06",
+      "title": "To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making",
+      "file": "references/bucinca-et-al-2021-trust-or-think.pdf",
+      "url": "https://kgajos.seas.harvard.edu/papers/bucinca21trust.pdf",
+      "doi": "10.1145/3449287",
+      "version": "Author-hosted PACM HCI article, 2021",
+      "theme_th": "วิธีลดการเชื่อคำตอบ AI มากเกินไป",
+      "cited_by": [
+        {
+          "seed_id": "S02",
+          "pdf_pages": [
+            20,
+            21
+          ],
+          "reference_number": null
+        },
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            16
+          ],
+          "reference_number": 17
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://kgajos.seas.harvard.edu/papers/bucinca21trust.pdf",
+      "bytes": 1809718,
+      "sha256": "79024bae4bcacff95b361885cf6b00eab8443ed88e87dc72ed255240f1f97d16",
+      "pages": 21,
+      "downloaded_at": "2026-09-22T13:19:07.637762+07:00",
+      "attempts": [
+        {
+          "url": "https://kgajos.seas.harvard.edu/papers/bucinca21trust.pdf",
+          "final_url": "https://kgajos.seas.harvard.edu/papers/bucinca21trust.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:07.637762+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R06",
+      "role": "reference",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 80339,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R07",
+      "title": "When combinations of humans and AI are useful: A systematic review and meta-analysis",
+      "file": "references/vaccaro-et-al-2024-human-ai-combinations.pdf",
+      "url": "https://www.nature.com/articles/s41562-024-02024-1.pdf",
+      "doi": "10.1038/s41562-024-02024-1",
+      "version": "Published Nature Human Behaviour 2024 article; PDF pages 12–14 contain an image-based reporting summary, not missing article pages.",
+      "theme_th": "ภาพรวมหลักฐานการร่วมงานคนกับ AI",
+      "cited_by": [
+        {
+          "seed_id": "S02",
+          "pdf_pages": [
+            22
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://www.nature.com/articles/s41562-024-02024-1.pdf",
+      "bytes": 3103035,
+      "sha256": "69ff4683a8513b2247a5375eaa81d8d18b3b8f51a9ba546c4daeb77a13205f74",
+      "pages": 14,
+      "downloaded_at": "2026-09-22T13:19:08.507335+07:00",
+      "attempts": [
+        {
+          "url": "https://www.nature.com/articles/s41562-024-02024-1.pdf",
+          "final_url": "https://www.nature.com/articles/s41562-024-02024-1.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:08.507335+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R07",
+      "role": "reference",
+      "note_th": "หน้า 12–14 เป็น reporting summary ที่มีชั้นข้อความน้อย",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 67854,
+        "pages_under_40_text_characters": [
+          12,
+          13,
+          14
+        ],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R09",
+      "title": "AI Assistance in Legal Analysis: An Empirical Study",
+      "file": "references/choi-schwarcz-ai-legal-analysis.pdf",
+      "url": "https://www.courthousenews.com/wp-content/uploads/2023/09/ai-legal-assistance-study.pdf",
+      "doi": "10.2139/ssrn.4539836",
+      "version": "2023 working paper hosted by Courthouse News, with SSRN 4539836 footer. The 2025 published journal version was not downloaded: publisher, university repository and SSRN returned HTTP 403. S02 bibliography lists 2024; University of Minnesota metadata lists the published article as 2025.",
+      "theme_th": "ผลของ AI ในงานวิเคราะห์วิชาชีพ",
+      "cited_by": [
+        {
+          "seed_id": "S02",
+          "pdf_pages": [
+            21
+          ],
+          "reference_number": null
+        },
+        {
+          "seed_id": "S03",
+          "pdf_pages": [
+            32
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://www.courthousenews.com/wp-content/uploads/2023/09/ai-legal-assistance-study.pdf",
+      "bytes": 1239752,
+      "sha256": "54da9352f3012720f4c8f2b01c540779c54520dcdbb0208f46e90aedcca8c111",
+      "pages": 46,
+      "downloaded_at": "2026-09-22T13:22:03.456600+07:00",
+      "attempts": [
+        {
+          "url": "https://jle.aals.org/context/home/article/2514/viewcontent/5._20Choi_20_26_20Schwarcz.pdf",
+          "final_url": "https://jle.aals.org/cgi/viewcontent.cgi?params=/context/home/article/2514/&path_info=5._20Choi_20_26_20Schwarcz.pdf",
+          "http_status": 403,
+          "at": "2026-09-22T13:19:09.402498+07:00",
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "url": "https://scholarship.law.umn.edu/cgi/viewcontent.cgi?article=2166&context=faculty_articles",
+          "final_url": "https://scholarship.law.umn.edu/cgi/viewcontent.cgi?article=2166&context=faculty_articles",
+          "http_status": 403,
+          "at": "2026-09-22T13:21:04.701255+07:00",
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "url": "https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID4539836_code499486.pdf?abstractid=4539836&mirid=1&type=2",
+          "final_url": "https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID4539836_code499486.pdf?abstractid=4539836&mirid=1&type=2",
+          "http_status": 403,
+          "at": "2026-09-22T13:21:33.002260+07:00",
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "url": "https://www.courthousenews.com/wp-content/uploads/2023/09/ai-legal-assistance-study.pdf",
+          "final_url": "https://www.courthousenews.com/wp-content/uploads/2023/09/ai-legal-assistance-study.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:22:03.456600+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R09",
+      "role": "reference",
+      "note_th": "ได้ working paper ปี 2023 จาก Courthouse News; ฉบับวารสารปี 2025 ดาวน์โหลดไม่ได้",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 105169,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R10",
+      "title": "The Uneven Impact of Generative AI on Entrepreneurial Performance",
+      "file": "references/otis-et-al-uneven-impact-entrepreneurial-performance.pdf",
+      "url": "https://www.aeaweb.org/conference/2025/program/paper/Sa6tT4H3",
+      "doi": "10.2139/ssrn.4671369",
+      "version": "Working paper from the AEA 2025 conference program, PDF creation metadata 2024-07-01; no revision date shown on cover. Main paper/tables PDF pages 1–36; online appendix pages 37–136. Not the 2026 journal publication.",
+      "theme_th": "AI ช่วยผู้ประกอบการแต่ละกลุ่มต่างกันอย่างไร",
+      "cited_by": [
+        {
+          "seed_id": "S02",
+          "pdf_pages": [
+            21
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://www.aeaweb.org/conference/2025/program/paper/Sa6tT4H3",
+      "bytes": 1578619,
+      "sha256": "d42ce919beb89bad105d5adeb523e2ef54c16f4ce6ec9be62a9b9e7969c912fc",
+      "pages": 136,
+      "downloaded_at": "2026-09-22T13:22:52.664073+07:00",
+      "attempts": [
+        {
+          "url": "https://www.hbs.edu/ris/Publication%20Files/24-042_9ebd2f26-e292-404c-b858-3e883f0e11c0.pdf",
+          "final_url": "https://www.hbs.edu/ris/download.aspx?name=24-042.pdf",
+          "http_status": 403,
+          "at": "2026-09-22T13:19:09.745975+07:00",
+          "content_type": "text/html"
+        },
+        {
+          "url": "https://escholarship.org/content/qt40s41244/qt40s41244.pdf?t=sgrjiv",
+          "final_url": "https://escholarship.org/content/qt40s41244/qt40s41244.pdf?t=sgrjiv",
+          "http_status": 202,
+          "at": "2026-09-22T13:21:33.002391+07:00",
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "url": "https://www.aeaweb.org/conference/2025/program/paper/Sa6tT4H3",
+          "final_url": "https://www.aeaweb.org/conference/2025/program/paper/Sa6tT4H3",
+          "http_status": 200,
+          "at": "2026-09-22T13:22:52.664073+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R10",
+      "role": "reference",
+      "note_th": "working paper จาก AEA 2025; รวม online appendix หน้า 37–136",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 278280,
+        "pages_under_40_text_characters": [
+          33
+        ],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R11",
+      "title": "Generative AI enhances individual creativity but reduces the collective diversity of novel content",
+      "file": "references/doshi-hauser-2024-ai-creativity-diversity.pdf",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10195027/1/Generative%20AI%20enhances%20individual%20creativity%20but%20reduces%20the%20collective%20diversity%20of%20novel%20content.pdf",
+      "doi": "10.1126/sciadv.adn5290",
+      "version": "Published Science Advances article, 2024; UCL repository",
+      "theme_th": "ความคิดสร้างสรรค์รายบุคคลกับความหลากหลายของผลงาน",
+      "cited_by": [
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            16
+          ],
+          "reference_number": 28
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://discovery.ucl.ac.uk/id/eprint/10195027/1/Generative%20AI%20enhances%20individual%20creativity%20but%20reduces%20the%20collective%20diversity%20of%20novel%20content.pdf",
+      "bytes": 1121881,
+      "sha256": "590cbb34ea052a7b4d12a304320c7cf1bb183f38bf1c5b463ffdc676ef631b85",
+      "pages": 9,
+      "downloaded_at": "2026-09-22T13:19:10.196657+07:00",
+      "attempts": [
+        {
+          "url": "https://discovery.ucl.ac.uk/id/eprint/10195027/1/Generative%20AI%20enhances%20individual%20creativity%20but%20reduces%20the%20collective%20diversity%20of%20novel%20content.pdf",
+          "final_url": "https://discovery.ucl.ac.uk/id/eprint/10195027/1/Generative%20AI%20enhances%20individual%20creativity%20but%20reduces%20the%20collective%20diversity%20of%20novel%20content.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:10.196657+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R11",
+      "role": "reference",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 55503,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R12",
+      "title": "Is it harmful or helpful? Examining the causes and consequences of generative AI usage among university students",
+      "file": "references/abbas-et-al-2024-harmful-or-helpful.pdf",
+      "url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-024-00444-7",
+      "doi": "10.1186/s41239-024-00444-7",
+      "version": "Published journal article, 2024",
+      "theme_th": "การใช้ AI ของนักศึกษาและผลที่สัมพันธ์กัน",
+      "cited_by": [
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            16
+          ],
+          "reference_number": 1
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://link.springer.com/content/pdf/10.1186/s41239-024-00444-7.pdf",
+      "bytes": 1331966,
+      "sha256": "72c92d2e88de80ee38019e2deb1b18c3e22aa3668bc081c4dd321f0c1c74e467",
+      "pages": 22,
+      "downloaded_at": "2026-09-22T13:19:10.507069+07:00",
+      "attempts": [
+        {
+          "url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-024-00444-7",
+          "final_url": "https://link.springer.com/content/pdf/10.1186/s41239-024-00444-7.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:10.507069+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R12",
+      "role": "reference",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 72795,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R13",
+      "title": "Overreliance on AI: Literature Review",
+      "file": "references/passi-vorvoreanu-2022-overreliance-ai.pdf",
+      "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2022/06/Aether-Overreliance-on-AI-Review-Final-6.21.22.pdf",
+      "doi": null,
+      "version": "Microsoft Technical Report MSR-TR-2022-12, June 2022",
+      "theme_th": "ทบทวนสาเหตุและการลดการพึ่งพา AI เกินควร",
+      "cited_by": [
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            18
+          ],
+          "reference_number": 102
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2022/06/Aether-Overreliance-on-AI-Review-Final-6.21.22.pdf",
+      "bytes": 480066,
+      "sha256": "c5f2757a6354a85b52888a14d4f6a09f2d3fef3573acf029f5a934d86904f7f9",
+      "pages": 24,
+      "downloaded_at": "2026-09-22T13:19:10.508817+07:00",
+      "attempts": [
+        {
+          "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2022/06/Aether-Overreliance-on-AI-Review-Final-6.21.22.pdf",
+          "final_url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2022/06/Aether-Overreliance-on-AI-Review-Final-6.21.22.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:10.508817+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R13",
+      "role": "reference",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 57948,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R14",
+      "title": "Ironies of Generative AI: Understanding and mitigating productivity loss in human-AI interactions",
+      "file": "references/simkute-et-al-2024-ironies-generative-ai.pdf",
+      "url": "https://arxiv.org/pdf/2402.11364",
+      "doi": "10.48550/arXiv.2402.11364",
+      "version": "arXiv 2402.11364v1, February 17, 2024, preprint. S04 cites the journal version with title ending in Human-AI Interaction. The downloaded preprint title ends in human-AI interactions. Placeholder publication dates/DOI in the template are not used as metadata.",
+      "theme_th": "เหตุใด AI อาจทำให้เสียเวลาหรือเพิ่มภาระงาน",
+      "cited_by": [
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            19
+          ],
+          "reference_number": 122
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://arxiv.org/pdf/2402.11364",
+      "bytes": 805202,
+      "sha256": "a3477a1cb3a5ff86d59d745b5b0a9d73d3dcc13e1f2c7a67a320125679f131a6",
+      "pages": 23,
+      "downloaded_at": "2026-09-22T13:19:12.096304+07:00",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2402.11364",
+          "final_url": "https://arxiv.org/pdf/2402.11364",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:12.096304+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R14",
+      "role": "reference",
+      "note_th": "ได้ preprint v1; ไม่ใช้ DOI/วันที่ placeholder ในแม่แบบเป็นข้อมูลตีพิมพ์",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 107720,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R15",
+      "title": "The Metacognitive Demands and Opportunities of Generative AI",
+      "file": "references/tankelevitch-et-al-2024-metacognitive-demands.pdf",
+      "url": "https://arxiv.org/pdf/2312.10893",
+      "doi": "10.1145/3613904.3642902",
+      "version": "arXiv 2312.10893v3, March 12, 2024; CHI 2024 manuscript.",
+      "theme_th": "การวางแผน กำกับ และตรวจการคิดเมื่อใช้ AI",
+      "cited_by": [
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            19
+          ],
+          "reference_number": 130
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://arxiv.org/pdf/2312.10893",
+      "bytes": 1443548,
+      "sha256": "89142aaed1c2bbd9e552e006dc3970f95d54a758cc3a5db035d27af40d9d4aee",
+      "pages": 24,
+      "downloaded_at": "2026-09-22T13:19:12.526985+07:00",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2312.10893",
+          "final_url": "https://arxiv.org/pdf/2312.10893",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:12.526985+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R15",
+      "role": "reference",
+      "note_th": "ฉบับผู้เขียน CHI 2024 บน arXiv v3",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 169983,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R16",
+      "title": "Co-audit: tools to help humans double-check AI-generated content",
+      "file": "references/gordon-et-al-2023-co-audit.pdf",
+      "url": "https://arxiv.org/pdf/2310.01297",
+      "doi": "10.48550/arXiv.2310.01297",
+      "version": "arXiv v1, 2 October 2023",
+      "theme_th": "เครื่องมือช่วยมนุษย์ตรวจคำตอบ AI",
+      "cited_by": [
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            17
+          ],
+          "reference_number": 46
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://arxiv.org/pdf/2310.01297",
+      "bytes": 698610,
+      "sha256": "78f6b6bd64dda674596a0ba5888fd094aa9719e02cee314ce74c7faa5588b307",
+      "pages": 20,
+      "downloaded_at": "2026-09-22T13:19:14.012515+07:00",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2310.01297",
+          "final_url": "https://arxiv.org/pdf/2310.01297",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:14.012515+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R16",
+      "role": "reference",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 65165,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R17",
+      "title": "How Knowledge Workers Use and Want to Use LLMs in an Enterprise Context",
+      "file": "references/brachman-et-al-2024-knowledge-workers-llms.pdf",
+      "url": "https://michin01.github.io/3613905.3650841.pdf",
+      "doi": "10.1145/3613905.3650841",
+      "version": "Author-hosted CHI EA 2024 article",
+      "theme_th": "พนักงานใช้งานและต้องการใช้ LLM ทำอะไร",
+      "cited_by": [
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            16
+          ],
+          "reference_number": 13
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://www.michellebrachman.com/3613905.3650841.pdf",
+      "bytes": 645097,
+      "sha256": "52e8851112c80abf02b6bece726c7d87f4cff3ce62633f2bb947f677ee97218f",
+      "pages": 8,
+      "downloaded_at": "2026-09-22T13:19:14.313860+07:00",
+      "attempts": [
+        {
+          "url": "https://michin01.github.io/3613905.3650841.pdf",
+          "final_url": "https://www.michellebrachman.com/3613905.3650841.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:14.313860+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R17",
+      "role": "reference",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 45869,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R18",
+      "title": "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+      "file": "references/peng-et-al-2023-copilot-productivity.pdf",
+      "url": "https://arxiv.org/pdf/2302.06590",
+      "doi": "10.48550/arXiv.2302.06590",
+      "version": "arXiv 2302.06590v1, February 13, 2023. PDF page 15 is a figure page with little extractable text.",
+      "theme_th": "เปรียบเทียบผลต่อเวลาทำงานในอีกวิชาชีพ",
+      "cited_by": [
+        {
+          "seed_id": "S02",
+          "pdf_pages": [
+            21
+          ],
+          "reference_number": null
+        },
+        {
+          "seed_id": "S03",
+          "pdf_pages": [
+            34
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://arxiv.org/pdf/2302.06590",
+      "bytes": 1988587,
+      "sha256": "60d9bbb58e67a3ba5c5df28926227994086baa9767c0b0f4bc61b11035c15a9c",
+      "pages": 19,
+      "downloaded_at": "2026-09-22T13:19:15.781572+07:00",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2302.06590",
+          "final_url": "https://arxiv.org/pdf/2302.06590",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:15.781572+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R18",
+      "role": "reference",
+      "note_th": "หน้า 15 เป็นกราฟ ไม่ใช่หน้าหาย",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 20522,
+        "pages_under_40_text_characters": [
+          15
+        ],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R19",
+      "title": "Student perspectives on the use of generative artificial intelligence technologies in higher education",
+      "file": "references/johnston-et-al-2024-student-perspectives.pdf",
+      "url": "https://edintegrity.biomedcentral.com/counter/pdf/10.1007/s40979-024-00149-4.pdf",
+      "doi": "10.1007/s40979-024-00149-4",
+      "version": "Published journal article, 2024",
+      "theme_th": "มุมมองนักศึกษาและแนวปฏิบัติในมหาวิทยาลัย",
+      "cited_by": [
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            17
+          ],
+          "reference_number": 59
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://link.springer.com/content/pdf/10.1007/s40979-024-00149-4.pdf",
+      "bytes": 1383758,
+      "sha256": "8df1221e5b170155310913ca2d6f12517af966ef2417dc26504ba604f39589fa",
+      "pages": 21,
+      "downloaded_at": "2026-09-22T13:19:15.819671+07:00",
+      "attempts": [
+        {
+          "url": "https://edintegrity.biomedcentral.com/counter/pdf/10.1007/s40979-024-00149-4.pdf",
+          "final_url": "https://link.springer.com/content/pdf/10.1007/s40979-024-00149-4.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:15.819671+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R19",
+      "role": "reference",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 66828,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    },
+    {
+      "id": "R20",
+      "title": "Systematic review of research on artificial intelligence applications in higher education – where are the educators?",
+      "file": "references/zawacki-richter-et-al-2019-ai-higher-education-review.pdf",
+      "url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-019-0171-0.pdf",
+      "doi": "10.1186/s41239-019-0171-0",
+      "version": "Published journal article, 2019; before widespread generative AI",
+      "theme_th": "ภาพรวม AI ในอุดมศึกษาก่อนยุค ChatGPT",
+      "cited_by": [
+        {
+          "seed_id": "S04",
+          "pdf_pages": [
+            19
+          ],
+          "reference_number": 144
+        }
+      ],
+      "status": "downloaded",
+      "final_url": "https://link.springer.com/content/pdf/10.1186/s41239-019-0171-0.pdf",
+      "bytes": 893066,
+      "sha256": "741e8a2c1dc305e548571d6852496e294c166b01862869d2707fa4bf42369e26",
+      "pages": 27,
+      "downloaded_at": "2026-09-22T13:19:15.933448+07:00",
+      "attempts": [
+        {
+          "url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-019-0171-0.pdf",
+          "final_url": "https://link.springer.com/content/pdf/10.1186/s41239-019-0171-0.pdf",
+          "http_status": 200,
+          "at": "2026-09-22T13:19:15.933448+07:00",
+          "content_type": "application/pdf"
+        }
+      ],
+      "work_id": "R20",
+      "role": "reference",
+      "validation": {
+        "pdf_header_valid": true,
+        "opens_without_password": true,
+        "all_pages_text_extraction_attempted": true,
+        "total_extracted_characters": 107258,
+        "pages_under_40_text_characters": [],
+        "first_page_visually_inspected_by": "Codex",
+        "title_and_version_checked_by": "Codex"
+      }
+    }
+  ],
+  "unavailable_references": [
+    {
+      "id": "R08",
+      "title": "The Crowdless Future? Generative AI and Creative Problem Solving",
+      "file": "references/boussioux-et-al-2024-crowdless-future.pdf",
+      "url": "https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID4776334_code698198.pdf?abstractid=4533642&mirid=1",
+      "doi": "10.1287/orsc.2023.18430",
+      "version": "No PDF downloaded; target is the published 2024 Organization Science article",
+      "theme_th": "ความคิดสร้างสรรค์และการแก้ปัญหา",
+      "cited_by": [
+        {
+          "seed_id": "S02",
+          "pdf_pages": [
+            20
+          ],
+          "reference_number": null
+        }
+      ],
+      "status": "unavailable_in_this_run",
+      "error": "403 Client Error: Forbidden for url: https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID4776334_code698198.pdf?abstractid=4533642&mirid=1",
+      "attempts": [
+        {
+          "url": "https://dash.harvard.edu/bitstreams/6a419df9-1cb4-4c03-9fd9-6eb30ba6dfb9/download",
+          "final_url": "https://dash.harvard.edu/bitstreams/6a419df9-1cb4-4c03-9fd9-6eb30ba6dfb9/download",
+          "http_status": 405,
+          "at": "2026-09-22T13:19:09.259754+07:00",
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "url": "https://pubsonline.informs.org/doi/pdf/10.1287/orsc.2023.18430",
+          "final_url": "https://pubsonline.informs.org/doi/pdf/10.1287/orsc.2023.18430",
+          "http_status": 403,
+          "at": "2026-09-22T13:21:33.002083+07:00",
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "url": "https://www.hbs.edu/ris/Publication%20Files/24-005_6dd4dbf5-3ea0-47f8-ade9-d51ff8250ebd.pdf",
+          "final_url": "https://www.hbs.edu/ris/download.aspx?name=24-005.pdf",
+          "http_status": 403,
+          "at": "2026-09-22T13:22:03.456438+07:00",
+          "content_type": "text/html"
+        },
+        {
+          "url": "https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID4776334_code698198.pdf?abstractid=4533642&mirid=1",
+          "final_url": "https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID4776334_code698198.pdf?abstractid=4533642&mirid=1",
+          "http_status": 403,
+          "at": "2026-09-22T13:22:52.663950+07:00",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "work_id": "R08",
+      "role": "reference",
+      "landing_url": "https://doi.org/10.1287/orsc.2023.18430"
+    }
+  ]
+}

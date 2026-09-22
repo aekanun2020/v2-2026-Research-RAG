@@ -20,6 +20,7 @@ MCP server จัดเตรียมหลักฐาน โมเดลใ�
 
 ## เอกสารและซอร์ส
 
+- [ชุดอ่าน AI กับการทำงาน: 23 งาน / 25 PDF เก็บแยก ยังไม่นำเข้า RAG](papers/ai-work-common-2026-09-22/README.md) · [บัญชีแหล่งที่มาและ reference links](papers/ai-work-common-2026-09-22/catalog.json)
 - [ผลนำเข้า cited 221 PDF ผ่าน MCP และบัญชีเอกสาร](docs/cited-import-2026-09-21.md) · [หลักฐานตรวจจำนวนและดัชนี](docs/cited-import-2026-09-21.json)
 - [Academic chunking 0.4.0](docs/academic-chunking.md) · [LlamaIndex/tokenizer provenance](third-party/chunking/README.md) · [Compose ชุดแยก](compose.chunking.yaml) · [chunking implementation](src/research_rag_mcp/chunking.py)
 - [Codex ประเมินความได้ใจความของ 10 chunks ที่สุ่มจริง](docs/chunk-readability-codex-2026-09-21.md) · [ตัวอย่างเต็ม ตำแหน่งอ้างอิง และ seed](docs/chunk-readability-sample-2026-09-21.json)
