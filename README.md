@@ -105,6 +105,7 @@ Chunking ใช้ LlamaIndex SentenceSplitter ขนาดเริ่มต้
 
 ## บันทึก Q&A และผลย้อนหลัง
 
+- [Q&A: ตำแหน่งคำแนะนำเฉพาะ stage ใน MCP server — 22 กันยายน 2026](Q&A/2026-09-22-190339-mcp-stage-instruction-locations.md)
 - [Q&A: MCP ส่ง prompt และคำแนะนำให้ client เมื่อใด — 22 กันยายน 2026](Q&A/2026-09-22-182242-mcp-prompt-delivery.md)
 - [Q&A: ความได้ใจความของ 10 chunks ที่สุ่มจริง — 21 กันยายน 2026](Q&A/2026-09-21-123834-random-ten-chunks-readability.md)
 - [Tools กับ Claim–Evidence–Gap–Research Question — 20 กันยายน 2026](Q&A/2026-09-20-230651-tools-claim-evidence-gap-research-question.md)
