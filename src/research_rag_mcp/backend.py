@@ -30,7 +30,7 @@ def point_id(chunk_id):
 
 
 class RetrievalIndex:
-    def __init__(self):
+    def __init__(self, *, collection=None):
         self.model=os.environ.get('EMBEDDING_MODEL','nomic-embed-text:latest')
         self.digest=os.environ.get('EMBEDDING_MODEL_DIGEST','')
         if not self.digest:
@@ -40,7 +40,7 @@ class RetrievalIndex:
         self.provider=OllamaProvider(self.model,os.environ.get('OLLAMA_URL','http://127.0.0.1:11434'))
         self.embedding=EmbeddingService(self.provider)
         self.storage=QdrantService(os.environ.get('QDRANT_URL','http://127.0.0.1:6333'),
-                                   os.environ.get('QDRANT_COLLECTION','research_chunks'),self.dimensions)
+                                   collection or os.environ.get('QDRANT_COLLECTION','research_chunks'),self.dimensions)
         self.tokenizer=ThaiTokenizer()
         self.rrf=RRFCombiner(k=60)
         self._cache=OrderedDict(); self._cache_lock=threading.Lock()

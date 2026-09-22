@@ -1,6 +1,8 @@
 # Current integration verification
 
-All version 0.4.0 behavioral tests call the actual Streamable HTTP MCP service, Qdrant and CPU Ollama. No mock, direct Store test harness, external model judge, or human-review impersonation is used.
+Version 0.5.0 and 0.4.0 behavioral tests call the actual Streamable HTTP MCP service, Qdrant and CPU Ollama. No mock, direct Store test harness, external model judge, or human-review impersonation is used.
+
+- [0.5.0 workspace/download/prompt regression](../scripts/verify_agent_ingestion_mcp.py) · [recorded failures and results](../docs/agent-ingestion/README.md). Each run creates explicitly named validation workspaces; public PDFs are downloaded and imported only through MCP. No original user collection is imported by these tests.
 
 - [Academic chunking baseline capture](../scripts/capture_chunking_baseline_mcp.py) · [original-case rerun](../scripts/verify_academic_chunking_mcp.py) · [chunking evidence](../docs/academic-chunking.md)
 - [Read-only concurrent and Thai retrieval checks](../scripts/verify_qdrant_retrieval_mcp.py)

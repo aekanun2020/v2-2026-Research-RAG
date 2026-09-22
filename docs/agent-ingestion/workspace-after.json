@@ -1,0 +1,1426 @@
+{
+  "endpoint": "http://127.0.0.1:9076/mcp",
+  "phase": "workspace",
+  "calls": [
+    {
+      "tool": "workspace_status",
+      "arguments": {
+        "workspace_id": "default"
+      },
+      "seconds": 0.03836591701838188,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"revision\": 0,\n  \"project\": null,\n  \"sources\": {},\n  \"artifacts\": {},\n  \"searches\": [],\n  \"pending_cleanup\": null,\n  \"pending_job\": null,\n  \"disabled_spans\": [],\n  \"inbox\": [],\n  \"stages\": {\n    \"exploration\": {\n      \"number\": 1,\n      \"tool\": \"explore_topics\",\n      \"sections\": [\n        \"landscape\",\n        \"candidate_topics\",\n        \"reading_plan\"\n      ],\n      \"instruction\": \"Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher.\"\n    },\n    \"gaps\": {\n      \"number\": 2,\n      \"tool\": \"map_research_gaps\",\n      \"sections\": [\n        \"comparison\",\n        \"candidate_gaps\",\n        \"search_limits\"\n      ],\n      \"instruction\": \"Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits.\"\n    },\n    \"question\": {\n      \"number\": 3,\n      \"tool\": \"formulate_question\",\n      \"sections\": [\n        \"research_question\",\n        \"objectives\",\n        \"contribution\",\n        \"feasibility\"\n      ],\n      \"instruction\": \"Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved.\"\n    },\n    \"design\": {\n      \"number\": 4,\n      \"tool\": \"design_study\",\n      \"sections\": [\n        \"study_design\",\n        \"sampling\",\n        \"measurement\",\n        \"analysis_plan\",\n        \"ethics\"\n      ],\n      \"instruction\": \"Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence.\"\n    },\n    \"execution\": {\n      \"number\": 5,\n      \"tool\": \"track_execution\",\n      \"sections\": [\n        \"activity\",\n        \"observations\",\n        \"deviations\",\n        \"next_actions\"\n      ],\n      \"instruction\": \"Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments.\"\n    },\n    \"analysis\": {\n      \"number\": 6,\n      \"tool\": \"interpret_results\",\n      \"sections\": [\n        \"results\",\n        \"comparison\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence.\"\n    },\n    \"manuscript\": {\n      \"number\": 7,\n      \"tool\": \"draft_manuscript\",\n      \"sections\": [\n        \"title\",\n        \"abstract\",\n        \"introduction\",\n        \"methods\",\n        \"results\",\n        \"discussion\",\n        \"conclusion\"\n      ],\n      \"instruction\": \"Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used.\"\n    },\n    \"submission\": {\n      \"number\": 8,\n      \"tool\": \"prepare_submission\",\n      \"sections\": [\n        \"venue\",\n        \"checklist\",\n        \"cover_letter\",\n        \"ai_disclosure\"\n      ],\n      \"instruction\": \"Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically.\"\n    },\n    \"literature_note\": {\n      \"number\": null,\n      \"tool\": \"save_artifact\",\n      \"sections\": [\n        \"research_question\",\n        \"population\",\n        \"method\",\n        \"findings\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies.\"\n    }\n  },\n  \"search_index\": {\n    \"model\": {\n      \"provider\": \"ollama\",\n      \"model\": \"nomic-embed-text:latest\",\n      \"digest\": \"0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f\",\n      \"dimensions\": 768,\n      \"fingerprint\": \"d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b\",\n      \"device\": \"cpu\",\n      \"external_api\": false\n    },\n    \"total_chunks\": 0,\n    \"indexed_chunks\": 0,\n    \"pending_or_invalid_chunks\": 0,\n    \"storage\": \"Qdrant cosine vector index; journal contains evidence spans, no SQLite\",\n    \"default_mode\": \"hybrid\",\n    \"ready\": true\n  },\n  \"capabilities\": {\n    \"transport\": \"streamable-http\",\n    \"online_discovery\": \"Crossref metadata\",\n    \"retrieval\": \"Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked\",\n    \"generation\": \"connected MCP client\",\n    \"external_model_calls\": false,\n    \"automatic_semantic_grading\": false,\n    \"automatic_experiments\": false,\n    \"automatic_submission\": false\n  },\n  \"workspace_id\": \"default\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "revision": 0,
+          "project": null,
+          "sources": {},
+          "artifacts": {},
+          "searches": [],
+          "pending_cleanup": null,
+          "pending_job": null,
+          "disabled_spans": [],
+          "inbox": [],
+          "stages": {
+            "exploration": {
+              "number": 1,
+              "tool": "explore_topics",
+              "sections": [
+                "landscape",
+                "candidate_topics",
+                "reading_plan"
+              ],
+              "instruction": "Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher."
+            },
+            "gaps": {
+              "number": 2,
+              "tool": "map_research_gaps",
+              "sections": [
+                "comparison",
+                "candidate_gaps",
+                "search_limits"
+              ],
+              "instruction": "Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits."
+            },
+            "question": {
+              "number": 3,
+              "tool": "formulate_question",
+              "sections": [
+                "research_question",
+                "objectives",
+                "contribution",
+                "feasibility"
+              ],
+              "instruction": "Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved."
+            },
+            "design": {
+              "number": 4,
+              "tool": "design_study",
+              "sections": [
+                "study_design",
+                "sampling",
+                "measurement",
+                "analysis_plan",
+                "ethics"
+              ],
+              "instruction": "Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence."
+            },
+            "execution": {
+              "number": 5,
+              "tool": "track_execution",
+              "sections": [
+                "activity",
+                "observations",
+                "deviations",
+                "next_actions"
+              ],
+              "instruction": "Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments."
+            },
+            "analysis": {
+              "number": 6,
+              "tool": "interpret_results",
+              "sections": [
+                "results",
+                "comparison",
+                "limitations"
+              ],
+              "instruction": "Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence."
+            },
+            "manuscript": {
+              "number": 7,
+              "tool": "draft_manuscript",
+              "sections": [
+                "title",
+                "abstract",
+                "introduction",
+                "methods",
+                "results",
+                "discussion",
+                "conclusion"
+              ],
+              "instruction": "Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used."
+            },
+            "submission": {
+              "number": 8,
+              "tool": "prepare_submission",
+              "sections": [
+                "venue",
+                "checklist",
+                "cover_letter",
+                "ai_disclosure"
+              ],
+              "instruction": "Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically."
+            },
+            "literature_note": {
+              "number": null,
+              "tool": "save_artifact",
+              "sections": [
+                "research_question",
+                "population",
+                "method",
+                "findings",
+                "limitations"
+              ],
+              "instruction": "Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies."
+            }
+          },
+          "search_index": {
+            "model": {
+              "provider": "ollama",
+              "model": "nomic-embed-text:latest",
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimensions": 768,
+              "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+              "device": "cpu",
+              "external_api": false
+            },
+            "total_chunks": 0,
+            "indexed_chunks": 0,
+            "pending_or_invalid_chunks": 0,
+            "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+            "default_mode": "hybrid",
+            "ready": true
+          },
+          "capabilities": {
+            "transport": "streamable-http",
+            "online_discovery": "Crossref metadata",
+            "retrieval": "Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked",
+            "generation": "connected MCP client",
+            "external_model_calls": false,
+            "automatic_semantic_grading": false,
+            "automatic_experiments": false,
+            "automatic_submission": false
+          },
+          "workspace_id": "default"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "list_workspaces",
+      "arguments": {},
+      "seconds": 0.010359792009694502,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"registry_revision\": 0,\n  \"workspaces\": [\n    {\n      \"workspace_id\": \"default\",\n      \"name\": \"Default workspace\",\n      \"root\": \"/data/default\",\n      \"qdrant_collection\": \"agent_chunks\"\n    }\n  ],\n  \"default_workspace_id\": \"default\",\n  \"selection\": \"Pass workspace_id on every call; no global switch\",\n  \"access_control\": \"None: workspace IDs separate data, not user permissions\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "registry_revision": 0,
+          "workspaces": [
+            {
+              "workspace_id": "default",
+              "name": "Default workspace",
+              "root": "/data/default",
+              "qdrant_collection": "agent_chunks"
+            }
+          ],
+          "default_workspace_id": "default",
+          "selection": "Pass workspace_id on every call; no global switch",
+          "access_control": "None: workspace IDs separate data, not user permissions"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "create_workspace",
+      "arguments": {
+        "name": "MCP regression A: original PDFs",
+        "expected_registry_revision": 0,
+        "idempotency_key": "workspace-after-A"
+      },
+      "seconds": 0.03563245901023038,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"created_at\": \"2026-09-22T08:58:09.960407+00:00\",\n  \"name\": \"MCP regression A: original PDFs\",\n  \"workspace_id\": \"ws-2c2183457b334cf7b8b667d40ee34db5\",\n  \"root\": \"/data/workspaces/ws-2c2183457b334cf7b8b667d40ee34db5\",\n  \"qdrant_collection\": \"agent_chunks_ws-2c2183457b334cf7b8b667d40ee34db5\",\n  \"registry_revision\": 1,\n  \"next_step\": \"workspace_status(workspace_id), then start_project with researcher-supplied scope\",\n  \"existing_workspaces_modified\": false\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "created_at": "2026-09-22T08:58:09.960407+00:00",
+          "name": "MCP regression A: original PDFs",
+          "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5",
+          "root": "/data/workspaces/ws-2c2183457b334cf7b8b667d40ee34db5",
+          "qdrant_collection": "agent_chunks_ws-2c2183457b334cf7b8b667d40ee34db5",
+          "registry_revision": 1,
+          "next_step": "workspace_status(workspace_id), then start_project with researcher-supplied scope",
+          "existing_workspaces_modified": false
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "list_workspaces",
+      "arguments": {},
+      "seconds": 0.010740666999481618,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"registry_revision\": 1,\n  \"workspaces\": [\n    {\n      \"workspace_id\": \"default\",\n      \"name\": \"Default workspace\",\n      \"root\": \"/data/default\",\n      \"qdrant_collection\": \"agent_chunks\"\n    },\n    {\n      \"created_at\": \"2026-09-22T08:58:09.960407+00:00\",\n      \"name\": \"MCP regression A: original PDFs\",\n      \"workspace_id\": \"ws-2c2183457b334cf7b8b667d40ee34db5\",\n      \"root\": \"/data/workspaces/ws-2c2183457b334cf7b8b667d40ee34db5\",\n      \"qdrant_collection\": \"agent_chunks_ws-2c2183457b334cf7b8b667d40ee34db5\"\n    }\n  ],\n  \"default_workspace_id\": \"default\",\n  \"selection\": \"Pass workspace_id on every call; no global switch\",\n  \"access_control\": \"None: workspace IDs separate data, not user permissions\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "registry_revision": 1,
+          "workspaces": [
+            {
+              "workspace_id": "default",
+              "name": "Default workspace",
+              "root": "/data/default",
+              "qdrant_collection": "agent_chunks"
+            },
+            {
+              "created_at": "2026-09-22T08:58:09.960407+00:00",
+              "name": "MCP regression A: original PDFs",
+              "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5",
+              "root": "/data/workspaces/ws-2c2183457b334cf7b8b667d40ee34db5",
+              "qdrant_collection": "agent_chunks_ws-2c2183457b334cf7b8b667d40ee34db5"
+            }
+          ],
+          "default_workspace_id": "default",
+          "selection": "Pass workspace_id on every call; no global switch",
+          "access_control": "None: workspace IDs separate data, not user permissions"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "create_workspace",
+      "arguments": {
+        "name": "MCP regression B: independent work",
+        "expected_registry_revision": 1,
+        "idempotency_key": "workspace-after-B"
+      },
+      "seconds": 0.02679050000733696,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"created_at\": \"2026-09-22T08:58:10.014150+00:00\",\n  \"name\": \"MCP regression B: independent work\",\n  \"workspace_id\": \"ws-4edef5264ddf44bbad13cc66ffad54f2\",\n  \"root\": \"/data/workspaces/ws-4edef5264ddf44bbad13cc66ffad54f2\",\n  \"qdrant_collection\": \"agent_chunks_ws-4edef5264ddf44bbad13cc66ffad54f2\",\n  \"registry_revision\": 2,\n  \"next_step\": \"workspace_status(workspace_id), then start_project with researcher-supplied scope\",\n  \"existing_workspaces_modified\": false\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "created_at": "2026-09-22T08:58:10.014150+00:00",
+          "name": "MCP regression B: independent work",
+          "workspace_id": "ws-4edef5264ddf44bbad13cc66ffad54f2",
+          "root": "/data/workspaces/ws-4edef5264ddf44bbad13cc66ffad54f2",
+          "qdrant_collection": "agent_chunks_ws-4edef5264ddf44bbad13cc66ffad54f2",
+          "registry_revision": 2,
+          "next_step": "workspace_status(workspace_id), then start_project with researcher-supplied scope",
+          "existing_workspaces_modified": false
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "create_workspace",
+      "arguments": {
+        "name": "MCP regression A: original PDFs",
+        "expected_registry_revision": 0,
+        "idempotency_key": "workspace-after-A"
+      },
+      "seconds": 0.010376208985690027,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"created_at\": \"2026-09-22T08:58:09.960407+00:00\",\n  \"name\": \"MCP regression A: original PDFs\",\n  \"workspace_id\": \"ws-2c2183457b334cf7b8b667d40ee34db5\",\n  \"root\": \"/data/workspaces/ws-2c2183457b334cf7b8b667d40ee34db5\",\n  \"qdrant_collection\": \"agent_chunks_ws-2c2183457b334cf7b8b667d40ee34db5\",\n  \"registry_revision\": 2,\n  \"next_step\": \"workspace_status(workspace_id), then start_project with researcher-supplied scope\",\n  \"existing_workspaces_modified\": false\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "created_at": "2026-09-22T08:58:09.960407+00:00",
+          "name": "MCP regression A: original PDFs",
+          "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5",
+          "root": "/data/workspaces/ws-2c2183457b334cf7b8b667d40ee34db5",
+          "qdrant_collection": "agent_chunks_ws-2c2183457b334cf7b8b667d40ee34db5",
+          "registry_revision": 2,
+          "next_step": "workspace_status(workspace_id), then start_project with researcher-supplied scope",
+          "existing_workspaces_modified": false
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "create_workspace",
+      "arguments": {
+        "name": "changed name",
+        "expected_registry_revision": 0,
+        "idempotency_key": "workspace-after-A"
+      },
+      "seconds": 0.004470250016311184,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool create_workspace: Idempotency key already used with different workspace name",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": null,
+        "is_error": true,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "workspace_status",
+      "arguments": {
+        "workspace_id": "../default"
+      },
+      "seconds": 0.0039666660013608634,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool workspace_status: Unknown workspace_id; use list_workspaces or create_workspace",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": null,
+        "is_error": true,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "workspace_status",
+      "arguments": {
+        "workspace_id": "ws-00000000000000000000000000000000"
+      },
+      "seconds": 0.0043449160002637655,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool workspace_status: Unknown workspace_id; use list_workspaces or create_workspace",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": null,
+        "is_error": true,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "workspace_status",
+      "arguments": {
+        "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5"
+      },
+      "seconds": 0.17357437501777895,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"revision\": 0,\n  \"project\": null,\n  \"sources\": {},\n  \"artifacts\": {},\n  \"searches\": [],\n  \"pending_cleanup\": null,\n  \"pending_job\": null,\n  \"disabled_spans\": [],\n  \"inbox\": [],\n  \"stages\": {\n    \"exploration\": {\n      \"number\": 1,\n      \"tool\": \"explore_topics\",\n      \"sections\": [\n        \"landscape\",\n        \"candidate_topics\",\n        \"reading_plan\"\n      ],\n      \"instruction\": \"Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher.\"\n    },\n    \"gaps\": {\n      \"number\": 2,\n      \"tool\": \"map_research_gaps\",\n      \"sections\": [\n        \"comparison\",\n        \"candidate_gaps\",\n        \"search_limits\"\n      ],\n      \"instruction\": \"Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits.\"\n    },\n    \"question\": {\n      \"number\": 3,\n      \"tool\": \"formulate_question\",\n      \"sections\": [\n        \"research_question\",\n        \"objectives\",\n        \"contribution\",\n        \"feasibility\"\n      ],\n      \"instruction\": \"Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved.\"\n    },\n    \"design\": {\n      \"number\": 4,\n      \"tool\": \"design_study\",\n      \"sections\": [\n        \"study_design\",\n        \"sampling\",\n        \"measurement\",\n        \"analysis_plan\",\n        \"ethics\"\n      ],\n      \"instruction\": \"Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence.\"\n    },\n    \"execution\": {\n      \"number\": 5,\n      \"tool\": \"track_execution\",\n      \"sections\": [\n        \"activity\",\n        \"observations\",\n        \"deviations\",\n        \"next_actions\"\n      ],\n      \"instruction\": \"Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments.\"\n    },\n    \"analysis\": {\n      \"number\": 6,\n      \"tool\": \"interpret_results\",\n      \"sections\": [\n        \"results\",\n        \"comparison\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence.\"\n    },\n    \"manuscript\": {\n      \"number\": 7,\n      \"tool\": \"draft_manuscript\",\n      \"sections\": [\n        \"title\",\n        \"abstract\",\n        \"introduction\",\n        \"methods\",\n        \"results\",\n        \"discussion\",\n        \"conclusion\"\n      ],\n      \"instruction\": \"Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used.\"\n    },\n    \"submission\": {\n      \"number\": 8,\n      \"tool\": \"prepare_submission\",\n      \"sections\": [\n        \"venue\",\n        \"checklist\",\n        \"cover_letter\",\n        \"ai_disclosure\"\n      ],\n      \"instruction\": \"Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically.\"\n    },\n    \"literature_note\": {\n      \"number\": null,\n      \"tool\": \"save_artifact\",\n      \"sections\": [\n        \"research_question\",\n        \"population\",\n        \"method\",\n        \"findings\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies.\"\n    }\n  },\n  \"search_index\": {\n    \"model\": {\n      \"provider\": \"ollama\",\n      \"model\": \"nomic-embed-text:latest\",\n      \"digest\": \"0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f\",\n      \"dimensions\": 768,\n      \"fingerprint\": \"d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b\",\n      \"device\": \"cpu\",\n      \"external_api\": false\n    },\n    \"total_chunks\": 0,\n    \"indexed_chunks\": 0,\n    \"pending_or_invalid_chunks\": 0,\n    \"storage\": \"Qdrant cosine vector index; journal contains evidence spans, no SQLite\",\n    \"default_mode\": \"hybrid\",\n    \"ready\": true\n  },\n  \"capabilities\": {\n    \"transport\": \"streamable-http\",\n    \"online_discovery\": \"Crossref metadata\",\n    \"retrieval\": \"Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked\",\n    \"generation\": \"connected MCP client\",\n    \"external_model_calls\": false,\n    \"automatic_semantic_grading\": false,\n    \"automatic_experiments\": false,\n    \"automatic_submission\": false\n  },\n  \"workspace_id\": \"ws-2c2183457b334cf7b8b667d40ee34db5\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "revision": 0,
+          "project": null,
+          "sources": {},
+          "artifacts": {},
+          "searches": [],
+          "pending_cleanup": null,
+          "pending_job": null,
+          "disabled_spans": [],
+          "inbox": [],
+          "stages": {
+            "exploration": {
+              "number": 1,
+              "tool": "explore_topics",
+              "sections": [
+                "landscape",
+                "candidate_topics",
+                "reading_plan"
+              ],
+              "instruction": "Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher."
+            },
+            "gaps": {
+              "number": 2,
+              "tool": "map_research_gaps",
+              "sections": [
+                "comparison",
+                "candidate_gaps",
+                "search_limits"
+              ],
+              "instruction": "Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits."
+            },
+            "question": {
+              "number": 3,
+              "tool": "formulate_question",
+              "sections": [
+                "research_question",
+                "objectives",
+                "contribution",
+                "feasibility"
+              ],
+              "instruction": "Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved."
+            },
+            "design": {
+              "number": 4,
+              "tool": "design_study",
+              "sections": [
+                "study_design",
+                "sampling",
+                "measurement",
+                "analysis_plan",
+                "ethics"
+              ],
+              "instruction": "Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence."
+            },
+            "execution": {
+              "number": 5,
+              "tool": "track_execution",
+              "sections": [
+                "activity",
+                "observations",
+                "deviations",
+                "next_actions"
+              ],
+              "instruction": "Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments."
+            },
+            "analysis": {
+              "number": 6,
+              "tool": "interpret_results",
+              "sections": [
+                "results",
+                "comparison",
+                "limitations"
+              ],
+              "instruction": "Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence."
+            },
+            "manuscript": {
+              "number": 7,
+              "tool": "draft_manuscript",
+              "sections": [
+                "title",
+                "abstract",
+                "introduction",
+                "methods",
+                "results",
+                "discussion",
+                "conclusion"
+              ],
+              "instruction": "Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used."
+            },
+            "submission": {
+              "number": 8,
+              "tool": "prepare_submission",
+              "sections": [
+                "venue",
+                "checklist",
+                "cover_letter",
+                "ai_disclosure"
+              ],
+              "instruction": "Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically."
+            },
+            "literature_note": {
+              "number": null,
+              "tool": "save_artifact",
+              "sections": [
+                "research_question",
+                "population",
+                "method",
+                "findings",
+                "limitations"
+              ],
+              "instruction": "Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies."
+            }
+          },
+          "search_index": {
+            "model": {
+              "provider": "ollama",
+              "model": "nomic-embed-text:latest",
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimensions": 768,
+              "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+              "device": "cpu",
+              "external_api": false
+            },
+            "total_chunks": 0,
+            "indexed_chunks": 0,
+            "pending_or_invalid_chunks": 0,
+            "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+            "default_mode": "hybrid",
+            "ready": true
+          },
+          "capabilities": {
+            "transport": "streamable-http",
+            "online_discovery": "Crossref metadata",
+            "retrieval": "Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked",
+            "generation": "connected MCP client",
+            "external_model_calls": false,
+            "automatic_semantic_grading": false,
+            "automatic_experiments": false,
+            "automatic_submission": false
+          },
+          "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "workspace_status",
+      "arguments": {
+        "workspace_id": "ws-4edef5264ddf44bbad13cc66ffad54f2"
+      },
+      "seconds": 0.31305683401296847,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"revision\": 0,\n  \"project\": null,\n  \"sources\": {},\n  \"artifacts\": {},\n  \"searches\": [],\n  \"pending_cleanup\": null,\n  \"pending_job\": null,\n  \"disabled_spans\": [],\n  \"inbox\": [],\n  \"stages\": {\n    \"exploration\": {\n      \"number\": 1,\n      \"tool\": \"explore_topics\",\n      \"sections\": [\n        \"landscape\",\n        \"candidate_topics\",\n        \"reading_plan\"\n      ],\n      \"instruction\": \"Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher.\"\n    },\n    \"gaps\": {\n      \"number\": 2,\n      \"tool\": \"map_research_gaps\",\n      \"sections\": [\n        \"comparison\",\n        \"candidate_gaps\",\n        \"search_limits\"\n      ],\n      \"instruction\": \"Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits.\"\n    },\n    \"question\": {\n      \"number\": 3,\n      \"tool\": \"formulate_question\",\n      \"sections\": [\n        \"research_question\",\n        \"objectives\",\n        \"contribution\",\n        \"feasibility\"\n      ],\n      \"instruction\": \"Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved.\"\n    },\n    \"design\": {\n      \"number\": 4,\n      \"tool\": \"design_study\",\n      \"sections\": [\n        \"study_design\",\n        \"sampling\",\n        \"measurement\",\n        \"analysis_plan\",\n        \"ethics\"\n      ],\n      \"instruction\": \"Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence.\"\n    },\n    \"execution\": {\n      \"number\": 5,\n      \"tool\": \"track_execution\",\n      \"sections\": [\n        \"activity\",\n        \"observations\",\n        \"deviations\",\n        \"next_actions\"\n      ],\n      \"instruction\": \"Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments.\"\n    },\n    \"analysis\": {\n      \"number\": 6,\n      \"tool\": \"interpret_results\",\n      \"sections\": [\n        \"results\",\n        \"comparison\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence.\"\n    },\n    \"manuscript\": {\n      \"number\": 7,\n      \"tool\": \"draft_manuscript\",\n      \"sections\": [\n        \"title\",\n        \"abstract\",\n        \"introduction\",\n        \"methods\",\n        \"results\",\n        \"discussion\",\n        \"conclusion\"\n      ],\n      \"instruction\": \"Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used.\"\n    },\n    \"submission\": {\n      \"number\": 8,\n      \"tool\": \"prepare_submission\",\n      \"sections\": [\n        \"venue\",\n        \"checklist\",\n        \"cover_letter\",\n        \"ai_disclosure\"\n      ],\n      \"instruction\": \"Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically.\"\n    },\n    \"literature_note\": {\n      \"number\": null,\n      \"tool\": \"save_artifact\",\n      \"sections\": [\n        \"research_question\",\n        \"population\",\n        \"method\",\n        \"findings\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies.\"\n    }\n  },\n  \"search_index\": {\n    \"model\": {\n      \"provider\": \"ollama\",\n      \"model\": \"nomic-embed-text:latest\",\n      \"digest\": \"0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f\",\n      \"dimensions\": 768,\n      \"fingerprint\": \"d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b\",\n      \"device\": \"cpu\",\n      \"external_api\": false\n    },\n    \"total_chunks\": 0,\n    \"indexed_chunks\": 0,\n    \"pending_or_invalid_chunks\": 0,\n    \"storage\": \"Qdrant cosine vector index; journal contains evidence spans, no SQLite\",\n    \"default_mode\": \"hybrid\",\n    \"ready\": true\n  },\n  \"capabilities\": {\n    \"transport\": \"streamable-http\",\n    \"online_discovery\": \"Crossref metadata\",\n    \"retrieval\": \"Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked\",\n    \"generation\": \"connected MCP client\",\n    \"external_model_calls\": false,\n    \"automatic_semantic_grading\": false,\n    \"automatic_experiments\": false,\n    \"automatic_submission\": false\n  },\n  \"workspace_id\": \"ws-4edef5264ddf44bbad13cc66ffad54f2\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "revision": 0,
+          "project": null,
+          "sources": {},
+          "artifacts": {},
+          "searches": [],
+          "pending_cleanup": null,
+          "pending_job": null,
+          "disabled_spans": [],
+          "inbox": [],
+          "stages": {
+            "exploration": {
+              "number": 1,
+              "tool": "explore_topics",
+              "sections": [
+                "landscape",
+                "candidate_topics",
+                "reading_plan"
+              ],
+              "instruction": "Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher."
+            },
+            "gaps": {
+              "number": 2,
+              "tool": "map_research_gaps",
+              "sections": [
+                "comparison",
+                "candidate_gaps",
+                "search_limits"
+              ],
+              "instruction": "Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits."
+            },
+            "question": {
+              "number": 3,
+              "tool": "formulate_question",
+              "sections": [
+                "research_question",
+                "objectives",
+                "contribution",
+                "feasibility"
+              ],
+              "instruction": "Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved."
+            },
+            "design": {
+              "number": 4,
+              "tool": "design_study",
+              "sections": [
+                "study_design",
+                "sampling",
+                "measurement",
+                "analysis_plan",
+                "ethics"
+              ],
+              "instruction": "Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence."
+            },
+            "execution": {
+              "number": 5,
+              "tool": "track_execution",
+              "sections": [
+                "activity",
+                "observations",
+                "deviations",
+                "next_actions"
+              ],
+              "instruction": "Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments."
+            },
+            "analysis": {
+              "number": 6,
+              "tool": "interpret_results",
+              "sections": [
+                "results",
+                "comparison",
+                "limitations"
+              ],
+              "instruction": "Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence."
+            },
+            "manuscript": {
+              "number": 7,
+              "tool": "draft_manuscript",
+              "sections": [
+                "title",
+                "abstract",
+                "introduction",
+                "methods",
+                "results",
+                "discussion",
+                "conclusion"
+              ],
+              "instruction": "Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used."
+            },
+            "submission": {
+              "number": 8,
+              "tool": "prepare_submission",
+              "sections": [
+                "venue",
+                "checklist",
+                "cover_letter",
+                "ai_disclosure"
+              ],
+              "instruction": "Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically."
+            },
+            "literature_note": {
+              "number": null,
+              "tool": "save_artifact",
+              "sections": [
+                "research_question",
+                "population",
+                "method",
+                "findings",
+                "limitations"
+              ],
+              "instruction": "Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies."
+            }
+          },
+          "search_index": {
+            "model": {
+              "provider": "ollama",
+              "model": "nomic-embed-text:latest",
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimensions": 768,
+              "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+              "device": "cpu",
+              "external_api": false
+            },
+            "total_chunks": 0,
+            "indexed_chunks": 0,
+            "pending_or_invalid_chunks": 0,
+            "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+            "default_mode": "hybrid",
+            "ready": true
+          },
+          "capabilities": {
+            "transport": "streamable-http",
+            "online_discovery": "Crossref metadata",
+            "retrieval": "Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked",
+            "generation": "connected MCP client",
+            "external_model_calls": false,
+            "automatic_semantic_grading": false,
+            "automatic_experiments": false,
+            "automatic_submission": false
+          },
+          "workspace_id": "ws-4edef5264ddf44bbad13cc66ffad54f2"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "start_project",
+      "arguments": {
+        "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5",
+        "topic": "Independent project A",
+        "goal": "Verify workspace separation through real MCP",
+        "unknowns": [],
+        "expected_revision": 0,
+        "idempotency_key": "same-key-across-workspaces"
+      },
+      "seconds": 0.13694683299399912,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"revision\": 1,\n  \"result\": {\n    \"topic\": \"Independent project A\",\n    \"goal\": \"Verify workspace separation through real MCP\",\n    \"unknowns\": []\n  },\n  \"workspace_id\": \"ws-2c2183457b334cf7b8b667d40ee34db5\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "revision": 1,
+          "result": {
+            "topic": "Independent project A",
+            "goal": "Verify workspace separation through real MCP",
+            "unknowns": []
+          },
+          "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "start_project",
+      "arguments": {
+        "workspace_id": "ws-4edef5264ddf44bbad13cc66ffad54f2",
+        "topic": "Independent project B",
+        "goal": "Verify workspace separation through real MCP",
+        "unknowns": [],
+        "expected_revision": 0,
+        "idempotency_key": "same-key-across-workspaces"
+      },
+      "seconds": 0.01042229199083522,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"revision\": 1,\n  \"result\": {\n    \"topic\": \"Independent project B\",\n    \"goal\": \"Verify workspace separation through real MCP\",\n    \"unknowns\": []\n  },\n  \"workspace_id\": \"ws-4edef5264ddf44bbad13cc66ffad54f2\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "revision": 1,
+          "result": {
+            "topic": "Independent project B",
+            "goal": "Verify workspace separation through real MCP",
+            "unknowns": []
+          },
+          "workspace_id": "ws-4edef5264ddf44bbad13cc66ffad54f2"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "workspace_status",
+      "arguments": {
+        "workspace_id": "ws-4edef5264ddf44bbad13cc66ffad54f2"
+      },
+      "seconds": 0.015100999997230247,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"revision\": 1,\n  \"project\": {\n    \"goal\": \"Verify workspace separation through real MCP\",\n    \"topic\": \"Independent project B\",\n    \"unknowns\": []\n  },\n  \"sources\": {},\n  \"artifacts\": {},\n  \"searches\": [],\n  \"pending_cleanup\": null,\n  \"pending_job\": null,\n  \"disabled_spans\": [],\n  \"inbox\": [],\n  \"stages\": {\n    \"exploration\": {\n      \"number\": 1,\n      \"tool\": \"explore_topics\",\n      \"sections\": [\n        \"landscape\",\n        \"candidate_topics\",\n        \"reading_plan\"\n      ],\n      \"instruction\": \"Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher.\"\n    },\n    \"gaps\": {\n      \"number\": 2,\n      \"tool\": \"map_research_gaps\",\n      \"sections\": [\n        \"comparison\",\n        \"candidate_gaps\",\n        \"search_limits\"\n      ],\n      \"instruction\": \"Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits.\"\n    },\n    \"question\": {\n      \"number\": 3,\n      \"tool\": \"formulate_question\",\n      \"sections\": [\n        \"research_question\",\n        \"objectives\",\n        \"contribution\",\n        \"feasibility\"\n      ],\n      \"instruction\": \"Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved.\"\n    },\n    \"design\": {\n      \"number\": 4,\n      \"tool\": \"design_study\",\n      \"sections\": [\n        \"study_design\",\n        \"sampling\",\n        \"measurement\",\n        \"analysis_plan\",\n        \"ethics\"\n      ],\n      \"instruction\": \"Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence.\"\n    },\n    \"execution\": {\n      \"number\": 5,\n      \"tool\": \"track_execution\",\n      \"sections\": [\n        \"activity\",\n        \"observations\",\n        \"deviations\",\n        \"next_actions\"\n      ],\n      \"instruction\": \"Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments.\"\n    },\n    \"analysis\": {\n      \"number\": 6,\n      \"tool\": \"interpret_results\",\n      \"sections\": [\n        \"results\",\n        \"comparison\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence.\"\n    },\n    \"manuscript\": {\n      \"number\": 7,\n      \"tool\": \"draft_manuscript\",\n      \"sections\": [\n        \"title\",\n        \"abstract\",\n        \"introduction\",\n        \"methods\",\n        \"results\",\n        \"discussion\",\n        \"conclusion\"\n      ],\n      \"instruction\": \"Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used.\"\n    },\n    \"submission\": {\n      \"number\": 8,\n      \"tool\": \"prepare_submission\",\n      \"sections\": [\n        \"venue\",\n        \"checklist\",\n        \"cover_letter\",\n        \"ai_disclosure\"\n      ],\n      \"instruction\": \"Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically.\"\n    },\n    \"literature_note\": {\n      \"number\": null,\n      \"tool\": \"save_artifact\",\n      \"sections\": [\n        \"research_question\",\n        \"population\",\n        \"method\",\n        \"findings\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies.\"\n    }\n  },\n  \"search_index\": {\n    \"model\": {\n      \"provider\": \"ollama\",\n      \"model\": \"nomic-embed-text:latest\",\n      \"digest\": \"0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f\",\n      \"dimensions\": 768,\n      \"fingerprint\": \"d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b\",\n      \"device\": \"cpu\",\n      \"external_api\": false\n    },\n    \"total_chunks\": 0,\n    \"indexed_chunks\": 0,\n    \"pending_or_invalid_chunks\": 0,\n    \"storage\": \"Qdrant cosine vector index; journal contains evidence spans, no SQLite\",\n    \"default_mode\": \"hybrid\",\n    \"ready\": true\n  },\n  \"capabilities\": {\n    \"transport\": \"streamable-http\",\n    \"online_discovery\": \"Crossref metadata\",\n    \"retrieval\": \"Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked\",\n    \"generation\": \"connected MCP client\",\n    \"external_model_calls\": false,\n    \"automatic_semantic_grading\": false,\n    \"automatic_experiments\": false,\n    \"automatic_submission\": false\n  },\n  \"workspace_id\": \"ws-4edef5264ddf44bbad13cc66ffad54f2\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "revision": 1,
+          "project": {
+            "goal": "Verify workspace separation through real MCP",
+            "topic": "Independent project B",
+            "unknowns": []
+          },
+          "sources": {},
+          "artifacts": {},
+          "searches": [],
+          "pending_cleanup": null,
+          "pending_job": null,
+          "disabled_spans": [],
+          "inbox": [],
+          "stages": {
+            "exploration": {
+              "number": 1,
+              "tool": "explore_topics",
+              "sections": [
+                "landscape",
+                "candidate_topics",
+                "reading_plan"
+              ],
+              "instruction": "Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher."
+            },
+            "gaps": {
+              "number": 2,
+              "tool": "map_research_gaps",
+              "sections": [
+                "comparison",
+                "candidate_gaps",
+                "search_limits"
+              ],
+              "instruction": "Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits."
+            },
+            "question": {
+              "number": 3,
+              "tool": "formulate_question",
+              "sections": [
+                "research_question",
+                "objectives",
+                "contribution",
+                "feasibility"
+              ],
+              "instruction": "Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved."
+            },
+            "design": {
+              "number": 4,
+              "tool": "design_study",
+              "sections": [
+                "study_design",
+                "sampling",
+                "measurement",
+                "analysis_plan",
+                "ethics"
+              ],
+              "instruction": "Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence."
+            },
+            "execution": {
+              "number": 5,
+              "tool": "track_execution",
+              "sections": [
+                "activity",
+                "observations",
+                "deviations",
+                "next_actions"
+              ],
+              "instruction": "Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments."
+            },
+            "analysis": {
+              "number": 6,
+              "tool": "interpret_results",
+              "sections": [
+                "results",
+                "comparison",
+                "limitations"
+              ],
+              "instruction": "Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence."
+            },
+            "manuscript": {
+              "number": 7,
+              "tool": "draft_manuscript",
+              "sections": [
+                "title",
+                "abstract",
+                "introduction",
+                "methods",
+                "results",
+                "discussion",
+                "conclusion"
+              ],
+              "instruction": "Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used."
+            },
+            "submission": {
+              "number": 8,
+              "tool": "prepare_submission",
+              "sections": [
+                "venue",
+                "checklist",
+                "cover_letter",
+                "ai_disclosure"
+              ],
+              "instruction": "Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically."
+            },
+            "literature_note": {
+              "number": null,
+              "tool": "save_artifact",
+              "sections": [
+                "research_question",
+                "population",
+                "method",
+                "findings",
+                "limitations"
+              ],
+              "instruction": "Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies."
+            }
+          },
+          "search_index": {
+            "model": {
+              "provider": "ollama",
+              "model": "nomic-embed-text:latest",
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimensions": 768,
+              "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+              "device": "cpu",
+              "external_api": false
+            },
+            "total_chunks": 0,
+            "indexed_chunks": 0,
+            "pending_or_invalid_chunks": 0,
+            "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+            "default_mode": "hybrid",
+            "ready": true
+          },
+          "capabilities": {
+            "transport": "streamable-http",
+            "online_discovery": "Crossref metadata",
+            "retrieval": "Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked",
+            "generation": "connected MCP client",
+            "external_model_calls": false,
+            "automatic_semantic_grading": false,
+            "automatic_experiments": false,
+            "automatic_submission": false
+          },
+          "workspace_id": "ws-4edef5264ddf44bbad13cc66ffad54f2"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "workspace_status",
+      "arguments": {
+        "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5"
+      },
+      "seconds": 0.016481541999382898,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"revision\": 1,\n  \"project\": {\n    \"goal\": \"Verify workspace separation through real MCP\",\n    \"topic\": \"Independent project A\",\n    \"unknowns\": []\n  },\n  \"sources\": {},\n  \"artifacts\": {},\n  \"searches\": [],\n  \"pending_cleanup\": null,\n  \"pending_job\": null,\n  \"disabled_spans\": [],\n  \"inbox\": [],\n  \"stages\": {\n    \"exploration\": {\n      \"number\": 1,\n      \"tool\": \"explore_topics\",\n      \"sections\": [\n        \"landscape\",\n        \"candidate_topics\",\n        \"reading_plan\"\n      ],\n      \"instruction\": \"Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher.\"\n    },\n    \"gaps\": {\n      \"number\": 2,\n      \"tool\": \"map_research_gaps\",\n      \"sections\": [\n        \"comparison\",\n        \"candidate_gaps\",\n        \"search_limits\"\n      ],\n      \"instruction\": \"Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits.\"\n    },\n    \"question\": {\n      \"number\": 3,\n      \"tool\": \"formulate_question\",\n      \"sections\": [\n        \"research_question\",\n        \"objectives\",\n        \"contribution\",\n        \"feasibility\"\n      ],\n      \"instruction\": \"Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved.\"\n    },\n    \"design\": {\n      \"number\": 4,\n      \"tool\": \"design_study\",\n      \"sections\": [\n        \"study_design\",\n        \"sampling\",\n        \"measurement\",\n        \"analysis_plan\",\n        \"ethics\"\n      ],\n      \"instruction\": \"Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence.\"\n    },\n    \"execution\": {\n      \"number\": 5,\n      \"tool\": \"track_execution\",\n      \"sections\": [\n        \"activity\",\n        \"observations\",\n        \"deviations\",\n        \"next_actions\"\n      ],\n      \"instruction\": \"Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments.\"\n    },\n    \"analysis\": {\n      \"number\": 6,\n      \"tool\": \"interpret_results\",\n      \"sections\": [\n        \"results\",\n        \"comparison\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence.\"\n    },\n    \"manuscript\": {\n      \"number\": 7,\n      \"tool\": \"draft_manuscript\",\n      \"sections\": [\n        \"title\",\n        \"abstract\",\n        \"introduction\",\n        \"methods\",\n        \"results\",\n        \"discussion\",\n        \"conclusion\"\n      ],\n      \"instruction\": \"Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used.\"\n    },\n    \"submission\": {\n      \"number\": 8,\n      \"tool\": \"prepare_submission\",\n      \"sections\": [\n        \"venue\",\n        \"checklist\",\n        \"cover_letter\",\n        \"ai_disclosure\"\n      ],\n      \"instruction\": \"Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically.\"\n    },\n    \"literature_note\": {\n      \"number\": null,\n      \"tool\": \"save_artifact\",\n      \"sections\": [\n        \"research_question\",\n        \"population\",\n        \"method\",\n        \"findings\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies.\"\n    }\n  },\n  \"search_index\": {\n    \"model\": {\n      \"provider\": \"ollama\",\n      \"model\": \"nomic-embed-text:latest\",\n      \"digest\": \"0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f\",\n      \"dimensions\": 768,\n      \"fingerprint\": \"d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b\",\n      \"device\": \"cpu\",\n      \"external_api\": false\n    },\n    \"total_chunks\": 0,\n    \"indexed_chunks\": 0,\n    \"pending_or_invalid_chunks\": 0,\n    \"storage\": \"Qdrant cosine vector index; journal contains evidence spans, no SQLite\",\n    \"default_mode\": \"hybrid\",\n    \"ready\": true\n  },\n  \"capabilities\": {\n    \"transport\": \"streamable-http\",\n    \"online_discovery\": \"Crossref metadata\",\n    \"retrieval\": \"Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked\",\n    \"generation\": \"connected MCP client\",\n    \"external_model_calls\": false,\n    \"automatic_semantic_grading\": false,\n    \"automatic_experiments\": false,\n    \"automatic_submission\": false\n  },\n  \"workspace_id\": \"ws-2c2183457b334cf7b8b667d40ee34db5\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "revision": 1,
+          "project": {
+            "goal": "Verify workspace separation through real MCP",
+            "topic": "Independent project A",
+            "unknowns": []
+          },
+          "sources": {},
+          "artifacts": {},
+          "searches": [],
+          "pending_cleanup": null,
+          "pending_job": null,
+          "disabled_spans": [],
+          "inbox": [],
+          "stages": {
+            "exploration": {
+              "number": 1,
+              "tool": "explore_topics",
+              "sections": [
+                "landscape",
+                "candidate_topics",
+                "reading_plan"
+              ],
+              "instruction": "Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher."
+            },
+            "gaps": {
+              "number": 2,
+              "tool": "map_research_gaps",
+              "sections": [
+                "comparison",
+                "candidate_gaps",
+                "search_limits"
+              ],
+              "instruction": "Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits."
+            },
+            "question": {
+              "number": 3,
+              "tool": "formulate_question",
+              "sections": [
+                "research_question",
+                "objectives",
+                "contribution",
+                "feasibility"
+              ],
+              "instruction": "Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved."
+            },
+            "design": {
+              "number": 4,
+              "tool": "design_study",
+              "sections": [
+                "study_design",
+                "sampling",
+                "measurement",
+                "analysis_plan",
+                "ethics"
+              ],
+              "instruction": "Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence."
+            },
+            "execution": {
+              "number": 5,
+              "tool": "track_execution",
+              "sections": [
+                "activity",
+                "observations",
+                "deviations",
+                "next_actions"
+              ],
+              "instruction": "Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments."
+            },
+            "analysis": {
+              "number": 6,
+              "tool": "interpret_results",
+              "sections": [
+                "results",
+                "comparison",
+                "limitations"
+              ],
+              "instruction": "Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence."
+            },
+            "manuscript": {
+              "number": 7,
+              "tool": "draft_manuscript",
+              "sections": [
+                "title",
+                "abstract",
+                "introduction",
+                "methods",
+                "results",
+                "discussion",
+                "conclusion"
+              ],
+              "instruction": "Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used."
+            },
+            "submission": {
+              "number": 8,
+              "tool": "prepare_submission",
+              "sections": [
+                "venue",
+                "checklist",
+                "cover_letter",
+                "ai_disclosure"
+              ],
+              "instruction": "Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically."
+            },
+            "literature_note": {
+              "number": null,
+              "tool": "save_artifact",
+              "sections": [
+                "research_question",
+                "population",
+                "method",
+                "findings",
+                "limitations"
+              ],
+              "instruction": "Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies."
+            }
+          },
+          "search_index": {
+            "model": {
+              "provider": "ollama",
+              "model": "nomic-embed-text:latest",
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimensions": 768,
+              "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+              "device": "cpu",
+              "external_api": false
+            },
+            "total_chunks": 0,
+            "indexed_chunks": 0,
+            "pending_or_invalid_chunks": 0,
+            "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+            "default_mode": "hybrid",
+            "ready": true
+          },
+          "capabilities": {
+            "transport": "streamable-http",
+            "online_discovery": "Crossref metadata",
+            "retrieval": "Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked",
+            "generation": "connected MCP client",
+            "external_model_calls": false,
+            "automatic_semantic_grading": false,
+            "automatic_experiments": false,
+            "automatic_submission": false
+          },
+          "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "start_project",
+      "arguments": {
+        "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5",
+        "topic": "Overwrite",
+        "goal": "Should reject",
+        "unknowns": [],
+        "expected_revision": 1,
+        "idempotency_key": "overwrite"
+      },
+      "seconds": 0.004567958996631205,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool start_project: Project already exists; use create_workspace for a separate project, or refine this project in a versioned question artifact",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": null,
+        "is_error": true,
+        "result_type": "complete"
+      }
+    },
+    {
+      "tool": "workspace_status",
+      "arguments": {
+        "workspace_id": "default"
+      },
+      "seconds": 0.00904766598250717,
+      "response": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"revision\": 0,\n  \"project\": null,\n  \"sources\": {},\n  \"artifacts\": {},\n  \"searches\": [],\n  \"pending_cleanup\": null,\n  \"pending_job\": null,\n  \"disabled_spans\": [],\n  \"inbox\": [],\n  \"stages\": {\n    \"exploration\": {\n      \"number\": 1,\n      \"tool\": \"explore_topics\",\n      \"sections\": [\n        \"landscape\",\n        \"candidate_topics\",\n        \"reading_plan\"\n      ],\n      \"instruction\": \"Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher.\"\n    },\n    \"gaps\": {\n      \"number\": 2,\n      \"tool\": \"map_research_gaps\",\n      \"sections\": [\n        \"comparison\",\n        \"candidate_gaps\",\n        \"search_limits\"\n      ],\n      \"instruction\": \"Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits.\"\n    },\n    \"question\": {\n      \"number\": 3,\n      \"tool\": \"formulate_question\",\n      \"sections\": [\n        \"research_question\",\n        \"objectives\",\n        \"contribution\",\n        \"feasibility\"\n      ],\n      \"instruction\": \"Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved.\"\n    },\n    \"design\": {\n      \"number\": 4,\n      \"tool\": \"design_study\",\n      \"sections\": [\n        \"study_design\",\n        \"sampling\",\n        \"measurement\",\n        \"analysis_plan\",\n        \"ethics\"\n      ],\n      \"instruction\": \"Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence.\"\n    },\n    \"execution\": {\n      \"number\": 5,\n      \"tool\": \"track_execution\",\n      \"sections\": [\n        \"activity\",\n        \"observations\",\n        \"deviations\",\n        \"next_actions\"\n      ],\n      \"instruction\": \"Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments.\"\n    },\n    \"analysis\": {\n      \"number\": 6,\n      \"tool\": \"interpret_results\",\n      \"sections\": [\n        \"results\",\n        \"comparison\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence.\"\n    },\n    \"manuscript\": {\n      \"number\": 7,\n      \"tool\": \"draft_manuscript\",\n      \"sections\": [\n        \"title\",\n        \"abstract\",\n        \"introduction\",\n        \"methods\",\n        \"results\",\n        \"discussion\",\n        \"conclusion\"\n      ],\n      \"instruction\": \"Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used.\"\n    },\n    \"submission\": {\n      \"number\": 8,\n      \"tool\": \"prepare_submission\",\n      \"sections\": [\n        \"venue\",\n        \"checklist\",\n        \"cover_letter\",\n        \"ai_disclosure\"\n      ],\n      \"instruction\": \"Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically.\"\n    },\n    \"literature_note\": {\n      \"number\": null,\n      \"tool\": \"save_artifact\",\n      \"sections\": [\n        \"research_question\",\n        \"population\",\n        \"method\",\n        \"findings\",\n        \"limitations\"\n      ],\n      \"instruction\": \"Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies.\"\n    }\n  },\n  \"search_index\": {\n    \"model\": {\n      \"provider\": \"ollama\",\n      \"model\": \"nomic-embed-text:latest\",\n      \"digest\": \"0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f\",\n      \"dimensions\": 768,\n      \"fingerprint\": \"d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b\",\n      \"device\": \"cpu\",\n      \"external_api\": false\n    },\n    \"total_chunks\": 0,\n    \"indexed_chunks\": 0,\n    \"pending_or_invalid_chunks\": 0,\n    \"storage\": \"Qdrant cosine vector index; journal contains evidence spans, no SQLite\",\n    \"default_mode\": \"hybrid\",\n    \"ready\": true\n  },\n  \"capabilities\": {\n    \"transport\": \"streamable-http\",\n    \"online_discovery\": \"Crossref metadata\",\n    \"retrieval\": \"Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked\",\n    \"generation\": \"connected MCP client\",\n    \"external_model_calls\": false,\n    \"automatic_semantic_grading\": false,\n    \"automatic_experiments\": false,\n    \"automatic_submission\": false\n  },\n  \"workspace_id\": \"default\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": {
+          "revision": 0,
+          "project": null,
+          "sources": {},
+          "artifacts": {},
+          "searches": [],
+          "pending_cleanup": null,
+          "pending_job": null,
+          "disabled_spans": [],
+          "inbox": [],
+          "stages": {
+            "exploration": {
+              "number": 1,
+              "tool": "explore_topics",
+              "sections": [
+                "landscape",
+                "candidate_topics",
+                "reading_plan"
+              ],
+              "instruction": "Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher."
+            },
+            "gaps": {
+              "number": 2,
+              "tool": "map_research_gaps",
+              "sections": [
+                "comparison",
+                "candidate_gaps",
+                "search_limits"
+              ],
+              "instruction": "Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits."
+            },
+            "question": {
+              "number": 3,
+              "tool": "formulate_question",
+              "sections": [
+                "research_question",
+                "objectives",
+                "contribution",
+                "feasibility"
+              ],
+              "instruction": "Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved."
+            },
+            "design": {
+              "number": 4,
+              "tool": "design_study",
+              "sections": [
+                "study_design",
+                "sampling",
+                "measurement",
+                "analysis_plan",
+                "ethics"
+              ],
+              "instruction": "Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence."
+            },
+            "execution": {
+              "number": 5,
+              "tool": "track_execution",
+              "sections": [
+                "activity",
+                "observations",
+                "deviations",
+                "next_actions"
+              ],
+              "instruction": "Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments."
+            },
+            "analysis": {
+              "number": 6,
+              "tool": "interpret_results",
+              "sections": [
+                "results",
+                "comparison",
+                "limitations"
+              ],
+              "instruction": "Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence."
+            },
+            "manuscript": {
+              "number": 7,
+              "tool": "draft_manuscript",
+              "sections": [
+                "title",
+                "abstract",
+                "introduction",
+                "methods",
+                "results",
+                "discussion",
+                "conclusion"
+              ],
+              "instruction": "Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used."
+            },
+            "submission": {
+              "number": 8,
+              "tool": "prepare_submission",
+              "sections": [
+                "venue",
+                "checklist",
+                "cover_letter",
+                "ai_disclosure"
+              ],
+              "instruction": "Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically."
+            },
+            "literature_note": {
+              "number": null,
+              "tool": "save_artifact",
+              "sections": [
+                "research_question",
+                "population",
+                "method",
+                "findings",
+                "limitations"
+              ],
+              "instruction": "Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies."
+            }
+          },
+          "search_index": {
+            "model": {
+              "provider": "ollama",
+              "model": "nomic-embed-text:latest",
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimensions": 768,
+              "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+              "device": "cpu",
+              "external_api": false
+            },
+            "total_chunks": 0,
+            "indexed_chunks": 0,
+            "pending_or_invalid_chunks": 0,
+            "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+            "default_mode": "hybrid",
+            "ready": true
+          },
+          "capabilities": {
+            "transport": "streamable-http",
+            "online_discovery": "Crossref metadata",
+            "retrieval": "Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked",
+            "generation": "connected MCP client",
+            "external_model_calls": false,
+            "automatic_semantic_grading": false,
+            "automatic_experiments": false,
+            "automatic_submission": false
+          },
+          "workspace_id": "default"
+        },
+        "is_error": false,
+        "result_type": "complete"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "create_workspace is available",
+      "passed": true
+    },
+    {
+      "name": "all existing scoped tools expose workspace_id",
+      "passed": true
+    },
+    {
+      "name": "create exact retry retains workspace identity",
+      "passed": true
+    },
+    {
+      "name": "separate storage and vector collections",
+      "passed": true
+    },
+    {
+      "name": "expected rejection: create_workspace",
+      "passed": true
+    },
+    {
+      "name": "expected rejection: workspace_status",
+      "passed": true
+    },
+    {
+      "name": "expected rejection: workspace_status",
+      "passed": true
+    },
+    {
+      "name": "parallel calls route to their explicit workspace",
+      "passed": true
+    },
+    {
+      "name": "projects remain independent",
+      "passed": true
+    },
+    {
+      "name": "expected rejection: start_project",
+      "passed": true
+    },
+    {
+      "name": "default project, sources and revision untouched",
+      "passed": true
+    }
+  ],
+  "status": "passed",
+  "tools": [
+    "workspace_status",
+    "preview_inbox_document",
+    "start_project",
+    "import_document",
+    "search_literature",
+    "retrieve_evidence",
+    "read_source_page",
+    "list_documents",
+    "list_chunks",
+    "read_chunk",
+    "get_chunk_context",
+    "inspect_document_chunks",
+    "rechunk_document",
+    "activate_chunk_set",
+    "set_chunk_status",
+    "find_evidence_usage",
+    "search_index_status",
+    "rebuild_search_index",
+    "explore_topics",
+    "map_research_gaps",
+    "formulate_question",
+    "design_study",
+    "track_execution",
+    "interpret_results",
+    "summarize_dataset",
+    "draft_manuscript",
+    "prepare_submission",
+    "save_artifact",
+    "read_artifact",
+    "export_manuscript",
+    "backup_workspace",
+    "preview_workspace_cleanup",
+    "cleanup_workspace",
+    "job_status",
+    "resume_job",
+    "migrate_legacy_workspace",
+    "search_documentation",
+    "list_sources",
+    "add_context",
+    "add_directory",
+    "restore_workspace",
+    "list_workspaces",
+    "create_workspace"
+  ],
+  "workspaces": {
+    "A": {
+      "created_at": "2026-09-22T08:58:09.960407+00:00",
+      "name": "MCP regression A: original PDFs",
+      "workspace_id": "ws-2c2183457b334cf7b8b667d40ee34db5",
+      "root": "/data/workspaces/ws-2c2183457b334cf7b8b667d40ee34db5",
+      "qdrant_collection": "agent_chunks_ws-2c2183457b334cf7b8b667d40ee34db5",
+      "registry_revision": 1,
+      "next_step": "workspace_status(workspace_id), then start_project with researcher-supplied scope",
+      "existing_workspaces_modified": false
+    },
+    "B": {
+      "created_at": "2026-09-22T08:58:10.014150+00:00",
+      "name": "MCP regression B: independent work",
+      "workspace_id": "ws-4edef5264ddf44bbad13cc66ffad54f2",
+      "root": "/data/workspaces/ws-4edef5264ddf44bbad13cc66ffad54f2",
+      "qdrant_collection": "agent_chunks_ws-4edef5264ddf44bbad13cc66ffad54f2",
+      "registry_revision": 2,
+      "next_step": "workspace_status(workspace_id), then start_project with researcher-supplied scope",
+      "existing_workspaces_modified": false
+    }
+  }
+}

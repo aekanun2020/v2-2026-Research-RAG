@@ -1,0 +1,343 @@
+{
+  "checked_at": "2026-09-22T08:46:33.367984+00:00",
+  "endpoint": "http://127.0.0.1:8976/mcp",
+  "server_info": {
+    "name": "Research RAG — eight stages",
+    "title": null,
+    "version": "0.4.0",
+    "description": null,
+    "website_url": null,
+    "icons": null
+  },
+  "tools": [
+    "workspace_status",
+    "preview_inbox_document",
+    "start_project",
+    "import_document",
+    "search_literature",
+    "retrieve_evidence",
+    "read_source_page",
+    "list_documents",
+    "list_chunks",
+    "read_chunk",
+    "get_chunk_context",
+    "inspect_document_chunks",
+    "rechunk_document",
+    "activate_chunk_set",
+    "set_chunk_status",
+    "find_evidence_usage",
+    "search_index_status",
+    "rebuild_search_index",
+    "explore_topics",
+    "map_research_gaps",
+    "formulate_question",
+    "design_study",
+    "track_execution",
+    "interpret_results",
+    "summarize_dataset",
+    "draft_manuscript",
+    "prepare_submission",
+    "save_artifact",
+    "read_artifact",
+    "export_manuscript",
+    "backup_workspace",
+    "preview_workspace_cleanup",
+    "cleanup_workspace",
+    "job_status",
+    "resume_job",
+    "migrate_legacy_workspace",
+    "search_documentation",
+    "list_sources",
+    "add_context",
+    "add_directory",
+    "restore_workspace"
+  ],
+  "tool_schemas": {
+    "start_project": {
+      "properties": {
+        "topic": {
+          "title": "Topic",
+          "type": "string"
+        },
+        "goal": {
+          "title": "Goal",
+          "type": "string"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "expected_revision": {
+          "title": "Expected Revision",
+          "type": "integer"
+        },
+        "idempotency_key": {
+          "title": "Idempotency Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "topic",
+        "goal",
+        "unknowns",
+        "expected_revision",
+        "idempotency_key"
+      ],
+      "type": "object",
+      "title": "start_projectArguments"
+    },
+    "import_document": {
+      "properties": {
+        "filename": {
+          "title": "Filename",
+          "type": "string"
+        },
+        "origin": {
+          "title": "Origin",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "literature",
+            "protocol",
+            "data",
+            "results",
+            "project_note",
+            "journal_guidelines"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "bibliography": {
+          "$ref": "#/$defs/Bibliography"
+        },
+        "expected_revision": {
+          "title": "Expected Revision",
+          "type": "integer"
+        },
+        "idempotency_key": {
+          "title": "Idempotency Key",
+          "type": "string"
+        },
+        "document_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Id"
+        }
+      },
+      "required": [
+        "filename",
+        "origin",
+        "role",
+        "bibliography",
+        "expected_revision",
+        "idempotency_key"
+      ],
+      "type": "object",
+      "$defs": {
+        "Bibliography": {
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "maxLength": 1000,
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            },
+            "authors": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 100,
+              "title": "Authors",
+              "type": "array"
+            },
+            "year": {
+              "anyOf": [
+                {
+                  "maximum": 9999,
+                  "minimum": 1000,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Year"
+            },
+            "doi": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Doi"
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "title": "Bibliography",
+          "type": "object"
+        }
+      },
+      "title": "import_documentArguments"
+    },
+    "retrieve_evidence": {
+      "properties": {
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "roles": {
+          "anyOf": [
+            {
+              "items": {
+                "enum": [
+                  "literature",
+                  "protocol",
+                  "data",
+                  "results",
+                  "project_note",
+                  "journal_guidelines"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Roles"
+        },
+        "source_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Ids"
+        },
+        "limit": {
+          "default": 8,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "mode": {
+          "default": "hybrid",
+          "enum": [
+            "lexical",
+            "semantic",
+            "hybrid"
+          ],
+          "title": "Mode",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object",
+      "title": "retrieve_evidenceArguments"
+    },
+    "add_context": {
+      "properties": {
+        "content": {
+          "title": "Content",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "expected_revision": {
+          "title": "Expected Revision",
+          "type": "integer"
+        },
+        "idempotency_key": {
+          "title": "Idempotency Key",
+          "type": "string"
+        },
+        "source": {
+          "default": "agent_context",
+          "title": "Source",
+          "type": "string"
+        },
+        "role": {
+          "default": "project_note",
+          "enum": [
+            "literature",
+            "protocol",
+            "data",
+            "results",
+            "project_note",
+            "journal_guidelines"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "format": {
+          "default": "md",
+          "enum": [
+            "md",
+            "txt",
+            "csv",
+            "json"
+          ],
+          "title": "Format",
+          "type": "string"
+        }
+      },
+      "required": [
+        "content",
+        "title",
+        "expected_revision",
+        "idempotency_key"
+      ],
+      "type": "object",
+      "title": "add_contextArguments"
+    }
+  },
+  "revision": 290,
+  "project": {
+    "goal": "ร่าง manuscript แบบ proposal จากวรรณกรรม 12 เล่ม ผลการทดลองยังไม่มี",
+    "topic": "Under one harness and model, does summary or discard context compression change task success differently for web-search tasks than for coding and computer-use tasks, compared with file-backed durable state?",
+    "unknowns": [
+      "Choice of search, coding and computer-use benchmarks",
+      "Whether The Complexity Trap (arXiv 2508.21433), AdaCoM (arXiv 2605.30785) and Context-Folding (arXiv 2510.11967) already answer this; only abstracts were read",
+      "How to define exact-detail dependence as a measurable task property"
+    ]
+  },
+  "source_count": 234,
+  "matching_notes": [
+    {
+      "source_id": "28d2bc43a655952dfce86d9aabdfd92da5f2b535f47086c792295a7527828090",
+      "title": "External lit summary: agentic self-evaluation calibration (not yet imported as source PDFs)",
+      "role": "project_note"
+    }
+  ]
+}

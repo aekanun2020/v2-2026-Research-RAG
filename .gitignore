@@ -29,3 +29,6 @@ exports/
 # Isolated academic chunking runtime
 .chunking-data/
 .chunking-validation-data/
+
+# Isolated Claude-agent MCP runtime
+.agent-data/

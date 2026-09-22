@@ -41,7 +41,8 @@ def main():
             return
         if args.command == 'review':
             from .review import serve_review
-            serve_review(store, args.port, host=args.host)
+            from .workspaces import Workspaces
+            serve_review(store, args.port, host=args.host, workspaces=Workspaces(args.workspace))
             return
         if args.command == 'backup':
             result = store.backup()

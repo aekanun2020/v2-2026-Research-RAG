@@ -9,7 +9,7 @@ def esc(value):
     return html.escape(str(value), quote=True)
 
 
-def render(store, token):
+def render(store, token, workspace_id='default', workspaces=None):
     state = store.read()
     project = state['project'] or {'topic': 'ยังไม่มีหัวข้อ', 'goal': ''}
     body = ['''<!doctype html><html lang="th"><meta charset="utf-8">
@@ -25,6 +25,11 @@ def render(store, token):
     <p>หน้านี้บันทึกการตัดสินใจของนักวิจัย การพบข้อความตรงกับต้นฉบับยังไม่ใช่การรับรองข้อสรุป</p>''',
             f'<h2>{esc(project["topic"])}</h2><p>{esc(project["goal"])}</p>',
             f'<p>ข้อมูลรุ่น {state["revision"]} · แหล่งข้อมูล {len(state["sources"])} · งานที่บันทึก {len(state["artifacts"])}</p>']
+    if workspaces:
+        body.append('<nav><p>เลือกพื้นที่งาน: '+ ' · '.join(
+            '<a href="/?'+esc(urlencode({'token':token,'workspace_id':w['workspace_id']}))+'">'+esc(w['name'])+'</a>'
+            for w in workspaces.list()['workspaces'])+'</p></nav>')
+    body.append('<p>Workspace: '+esc(workspace_id)+'</p>')
     for aid, artifact in state['artifacts'].items():
         view = store.artifact_view(artifact, state)
         body.append(f'<article id="{esc(aid)}"><h2>{esc(artifact["title"])}</h2><p>{esc(artifact["stage"])} · ฉบับ {artifact["version"]} · {esc(view["effective_status"])}</p>')
@@ -38,7 +43,7 @@ def render(store, token):
                 try:
                     page = store.page(citation['source_id'], citation['page_index'], state)
                     store.citation(citation, state)
-                    url = '/source?' + urlencode({'token': token, 'id': citation['source_id']})
+                    url = '/source?' + urlencode({'token': token, 'id': citation['source_id'], 'workspace_id': workspace_id})
                     body.append(f'<details><summary>หลักฐาน: {esc(page["title"])} · หน้าไฟล์ {page["page_index"]+1} · {esc(citation["relation"])}</summary><blockquote>{esc(citation["quote"])}</blockquote><a href="{esc(url)}" target="_blank" rel="noreferrer">เปิดไฟล์ต้นฉบับ</a><pre>{esc(page["text"])}</pre></details>')
                 except (ValueError, OSError) as exc:
                     body.append(f'<p class="issue">{esc(exc)}</p>')
@@ -50,6 +55,7 @@ def render(store, token):
             body.append(f'<p>ผลตรวจ: {esc(review["reviewer"])} · {esc(review["verdict"])} · {esc(review["rationale"])}</p>')
         body.append(f'''<form action="/review" method="post">
         <input type="hidden" name="token" value="{esc(token)}">
+        <input type="hidden" name="workspace_id" value="{esc(workspace_id)}">
         <input type="hidden" name="revision" value="{state['revision']}">
         <input type="hidden" name="artifact_id" value="{esc(aid)}">
         <label>ชื่อผู้ตรวจ <input required name="reviewer" maxlength="300"></label>
@@ -60,7 +66,7 @@ def render(store, token):
     return ''.join(body)
 
 
-def serve_review(store, port=0, host='127.0.0.1'):
+def serve_review(store, port=0, host='127.0.0.1', workspaces=None):
     token = secrets.token_urlsafe(32)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *args):
@@ -85,16 +91,18 @@ def serve_review(store, port=0, host='127.0.0.1'):
             if not self.valid_host() or not secrets.compare_digest(query.get('token', [''])[0], token):
                 return self.reply(403, 'Forbidden')
             try:
+                workspace_id = query.get('workspace_id', ['default'])[0]
+                active = workspaces.context(workspace_id)[0] if workspaces else store
                 if urlparse(self.path).path == '/source':
-                    source = store.read()['sources'].get(query.get('id', [''])[0])
+                    source = active.read()['sources'].get(query.get('id', [''])[0])
                     if not source:
                         return self.reply(404, 'Unknown source')
-                    original = store.verify_source(source)
+                    original = active.verify_source(source)
                     media = 'application/pdf' if original.suffix == '.pdf' else 'text/plain; charset=utf-8'
                     return self.reply(200, original.read_bytes(), media)
                 if urlparse(self.path).path != '/':
                     return self.reply(404, 'Not found')
-                return self.reply(200, render(store, token))
+                return self.reply(200, render(active, token, workspace_id, workspaces))
             except (ValueError, OSError) as exc:
                 return self.reply(409, esc(exc))
 
@@ -111,12 +119,14 @@ def serve_review(store, port=0, host='127.0.0.1'):
                 fields = parse_qs(self.rfile.read(length).decode('utf-8'), keep_blank_values=True)
                 if not secrets.compare_digest(fields.get('token', [''])[0], token):
                     return self.reply(403, 'Forbidden')
-                store.review(fields['artifact_id'][0], fields['verdict'][0], fields['reviewer'][0], fields['rationale'][0],
+                workspace_id = fields.get('workspace_id', ['default'])[0]
+                active = workspaces.context(workspace_id)[0] if workspaces else store
+                active.review(fields['artifact_id'][0], fields['verdict'][0], fields['reviewer'][0], fields['rationale'][0],
                              int(fields['revision'][0]), secrets.token_hex(16))
             except (ValueError, OSError, KeyError) as exc:
                 return self.reply(409, esc(exc))
             self.send_response(303)
-            self.send_header('Location', '/?'+urlencode({'token': token}))
+            self.send_header('Location', '/?'+urlencode({'token': token, 'workspace_id': workspace_id}))
             self.end_headers()
     server = ThreadingHTTPServer((host, port), Handler)
     print(f'http://127.0.0.1:{server.server_port}/?'+urlencode({'token': token}), flush=True)

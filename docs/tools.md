@@ -1,12 +1,21 @@
 # Tool contract and eight-stage workflow
 
-MCP requires no access token or Authorization header. Version 0.4.0 changes chunking; version 0.3.0 added durable jobs and the selected upstream entry points to the research tools. All tools are listed by the real MCP `tools/list` endpoint with typed input schemas and JSON object output schemas. `research_workflow` is also exposed as an MCP prompt. Initialize first, then read `workspace_status`. Every persisted write takes the current `expected_revision` and an `idempotency_key`; exact retries return the prior response, while changed inputs cannot reuse a key.
+MCP requires no access token or Authorization header. Version 0.5.0 exposes 45 tools, adding independent workspaces, server-side PDF downloading and ingestion status. Version 0.4.0 changes chunking; version 0.3.0 added durable jobs and the selected upstream entry points. All tools are listed by the real MCP `tools/list` endpoint with typed input schemas and JSON object output schemas. `research_workflow` is also exposed as an MCP prompt. Initialize, list/select workspaces, then read `workspace_status` in that workspace. Every persisted write takes the current `expected_revision` and an `idempotency_key`; workspace creation uses `expected_registry_revision` instead. Exact retries return the prior result, while changed inputs cannot reuse a key.
+
+All tools except `list_workspaces` and `create_workspace` take `workspace_id="default"`. Always pass the intended ID. Omitting it always targets default, never a session's last workspace. Separate journals, files, Qdrant collections and jobs prevent cross-project routing; IDs are not access control. See [deployment, inbox locations, limits and real checks](agent-ingestion/README.md).
+
+| New tool | Contract |
+|---|---|
+| `list_workspaces` | No arguments; registered IDs/names/paths/collections and registry revision. Does not switch workspaces. |
+| `create_workspace` | Researcher-authorized name, `expected_registry_revision`, `idempotency_key`; returns a new ID without copying, importing or clearing old work. |
+| `download_document` | Exactly one public HTTPS `url` or `arxiv_id`, workspace revision/key and ID. Durable job stages validated PDF bytes in the server inbox only. Up to 50 MiB/1000 pages, bounded redirects, public IPs and verified TLS. No credentials, paywall bypass or client-file upload. Poll completion, preview and explicitly import separately. |
+| `document_ingestion_status` | Inbox `filename` and workspace ID; verifies SHA-256, reports inbox-only/imported state, source role/format/identity, active chunks, workspace-wide index integrity and retained download receipt. Does not certify full extraction or scientific validity. |
 
 ## Shared evidence tools
 
 | Tool | Inputs and behavior |
 |---|---|
-| `workspace_status` | No inputs. Project, sources, saved artifacts, effective review status, search history and required section keys. |
+| `workspace_status` | Optional workspace ID. Project, sources, saved artifacts, effective review status, search history and required section keys. |
 | `start_project` | Researcher's `topic`, `goal`, `unknowns`; only initializes an empty workspace. |
 | `preview_inbox_document` | Read-only `filename` inside inbox, `page_index=0`, `start=0`, `max_chars=12000` (1–20000). Returns original page text, raw PDF metadata, SHA-256, size and page count. Continue a long page with `next_start`. Verify the title before import; unknown metadata stays unknown. No database or index changes. |
 | `import_document` | `filename` inside inbox, actual `origin`, `role`, supplied `bibliography` with title and optional authors/year/DOI. PDF or UTF-8 TXT/MD/CSV/JSON. Optional `document_id` links a new source version explicitly. Returns job_id; completed job contains document/source/text/chunk-set IDs after local Ollama/Qdrant indexing. |
@@ -19,7 +28,7 @@ Version 0.3.0 uses pinned local Ollama nomic-embed-text, Qdrant cosine search, P
 
 Long-running imports, re-chunking and index rebuilds return a durable `job_id`. Poll `job_status` until completed; the original mutation response is in `result`. Interrupted work can be explicitly resumed with `resume_job`; failed work exposes its actual error. Exact submission retries reuse the same job; changed arguments with an old key are rejected. Client timeout does not create another import.
 
-Additional tools: `job_status`, `resume_job`, `migrate_legacy_workspace`, `restore_workspace`, `search_documentation`, `list_sources`, `add_directory`, `add_context`. Directory import requires bibliography for every file instead of inventing titles. Context text defaults to project_note, not observed findings. Migration reads the configured legacy source only and does not copy inbox.
+Additional tools: `job_status`, `resume_job`, `migrate_legacy_workspace`, `restore_workspace`, `search_documentation`, `list_sources`, `add_directory`, `add_context`. Directory import requires bibliography for every file instead of inventing titles. Context text defaults to project_note, not observed findings. Never silently substitute context text for an original PDF import. Source summaries, pages and retrieval hits include `source_format` and `evidence_kind`; imported downloads retain URL/hash provenance. Migration reads the configured legacy source only and does not copy inbox.
 
 ## Document, chunk and index tools
 

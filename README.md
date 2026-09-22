@@ -1,6 +1,8 @@
 # 2026-Research-RAG — งานวิจัย 8 ช่วงผ่าน MCP
 
-กำลังพัฒนารุ่น **0.4.0 บน branch `codex/academic-paper-chunking`** ตามฐาน [fixed-2026-rag-mcp-server-streamablehttp](https://github.com/aekanun2020/fixed-2026-rag-mcp-server-streamablehttp/tree/5e5373a7a0919201b44f5aa78edad069a09974db) ที่ผู้ใช้เลือก: **Qdrant + Ollama + PyThaiNLP/BM25 + RRF** รันบน CPU ใน Docker และเชื่อมผ่าน Streamable HTTP
+รุ่น **0.5.0 บน branch `codex/claude-workspace-ingestion`** เพิ่ม workspace แยกตามรหัสและดาวน์โหลด PDF ฝั่ง server ตามฐาน [fixed-2026-rag-mcp-server-streamablehttp](https://github.com/aekanun2020/fixed-2026-rag-mcp-server-streamablehttp/tree/5e5373a7a0919201b44f5aa78edad069a09974db) ที่ผู้ใช้เลือก: **Qdrant + Ollama + PyThaiNLP/BM25 + RRF** รันบน CPU ใน Docker และเชื่อมผ่าน Streamable HTTP
+
+**ชุดใหม่ 0.5.0:** `codex-rag-agents` เปิด MCP ที่ `http://127.0.0.1:9076/mcp` ไม่มี access token และหน้าตรวจที่ port 9077 ใช้ container, network, volumes และ `.agent-data` ของตัวเองทั้งหมด ไม่เปลี่ยนบริการ 8976 หรือข้อมูลเดิม ต้องชี้ client มาที่ endpoint รุ่นใหม่จึงจะเห็น tools ใหม่ ดู [ขั้นตอนใช้กับ Claude, ตำแหน่ง inbox และหลักฐานทดสอบ](docs/agent-ingestion/README.md) การทดสอบ MCP ไม่ใช่การยืนยันว่าได้ทดสอบผ่านแอป Claude จริงทั้ง Windows/macOS แล้ว
 
 รุ่นใหม่ **ไม่ใช้ SQLite เก็บข้อมูลหรือค้นหา** เวกเตอร์อยู่ใน Qdrant ส่วนเอกสาร รหัส chunks ประวัติ manuscript และผลตรวจอยู่ใน JSON journal ที่ล็อกข้าม process และบันทึกแต่ละ revision แบบ atomic ขั้นย้ายครั้งเดียวอ่าน SQLite เดิมแบบ read-only ผ่าน MCP เพื่อรักษารหัสและหลักฐาน ไม่มี SQLite เป็น backend สำรอง
 
@@ -20,6 +22,8 @@ MCP server จัดเตรียมหลักฐาน โมเดลใ�
 
 ## เอกสารและซอร์ส
 
+- [การแก้ Claude agent: ดาวน์โหลด PDF และแยก workspace](docs/agent-ingestion/README.md) · [Compose 0.5.0](compose.agents.yaml) · [ค่าเริ่มต้นชุดใหม่](agents.env.example)
+- [การเลือก workspace](src/research_rag_mcp/workspaces.py) · [ดาวน์โหลด PDF](src/research_rag_mcp/downloads.py) · [MCP prompt](src/research_rag_mcp/models.py) · [ทดสอบ ingestion จริง](scripts/verify_agent_ingestion_mcp.py) · [ทดสอบ manuscript และกู้คืน workspace](scripts/verify_agent_workspace_followup_mcp.py)
 - [ชุดอ่าน AI กับการทำงาน: 23 งาน / 25 PDF เก็บแยก ยังไม่นำเข้า RAG](papers/ai-work-common-2026-09-22/README.md) · [บัญชีแหล่งที่มาและ reference links](papers/ai-work-common-2026-09-22/catalog.json)
 - [ผลนำเข้า cited 221 PDF ผ่าน MCP และบัญชีเอกสาร](docs/cited-import-2026-09-21.md) · [หลักฐานตรวจจำนวนและดัชนี](docs/cited-import-2026-09-21.json)
 - [Academic chunking 0.4.0](docs/academic-chunking.md) · [LlamaIndex/tokenizer provenance](third-party/chunking/README.md) · [Compose ชุดแยก](compose.chunking.yaml) · [chunking implementation](src/research_rag_mcp/chunking.py)
@@ -43,29 +47,29 @@ MCP server จัดเตรียมหลักฐาน โมเดลใ�
 ```sh
 git clone https://github.com/aekanun2020/2026-Research-RAG.git
 cd 2026-Research-RAG
-git switch codex/academic-paper-chunking
-mkdir -p .chunking-data
-cp .env.example .env.chunking
+git switch codex/claude-workspace-ingestion
+mkdir -p .agent-data
+cp agents.env.example .env.agents
 ```
 
-หากมี `.env.chunking` อยู่แล้วห้ามคัดลอกทับ บน macOS/Linux ตั้ง `CHUNKING_UID`/`CHUNKING_GID` ตาม `id -u`/`id -g` และกำหนด `CHUNKING_DATA_DIR` เป็นพื้นที่ข้อมูลใหม่ ค่า `RAG_*` เดิมไม่ใช้กับ branch นี้ จากนั้น:
+หากมี `.env.agents` อยู่แล้วห้ามคัดลอกทับ บน macOS/Linux ตั้ง `AGENTS_UID`/`AGENTS_GID` ตาม `id -u`/`id -g` และกำหนด `AGENTS_DATA_DIR` เป็นพื้นที่ข้อมูลใหม่ ห้ามชี้ไปที่ข้อมูลของบริการเดิม จากนั้นใช้ `-f compose.agents.yaml` ทุกครั้ง:
 
 ```sh
-docker compose --env-file .env.chunking up -d qdrant ollama
-docker compose --env-file .env.chunking exec ollama ollama pull nomic-embed-text
-docker compose --env-file .env.chunking up -d --build --wait mcp review
+docker compose -f compose.agents.yaml --env-file .env.agents up -d qdrant ollama
+docker compose -f compose.agents.yaml --env-file .env.agents exec ollama ollama pull nomic-embed-text
+docker compose -f compose.agents.yaml --env-file .env.agents up -d --build --wait mcp review
 ```
 
 Model digest ถูก pin ใน Compose หาก tag ใน registry เปลี่ยน ระบบปฏิเสธการใช้โมเดลที่ต่างจากรุ่นที่ตรวจ ไม่เปลี่ยน embedding หรือสร้าง collection ทับอัตโนมัติ
 
-Compose ของ branch นี้ใช้ project `codex-rag-chunking` และ image แอป `codex-research-rag-chunking:0.4.0` เท่านั้น Qdrant/Ollama อยู่ใน network ของชุดนี้ ไม่เปิดพอร์ตฐานข้อมูลสู่ภายนอก MCP เปิด `http://127.0.0.1:8976/mcp` หน้าตรวจที่ `127.0.0.1:8977` ไม่มี container/network/volume หรือข้อมูลร่วมกับรุ่นเดิม
+Compose 0.5.0 ใช้ project `codex-rag-agents` และ image `codex-research-rag-agents:0.5.0` Qdrant/Ollama อยู่ใน network ของชุดนี้ ไม่เปิดพอร์ตฐานข้อมูลสู่ภายนอก MCP เปิด `http://127.0.0.1:9076/mcp` หน้าตรวจที่ `127.0.0.1:9077` ไม่มี container/network/volume หรือข้อมูลร่วมกับรุ่นเดิม ไฟล์ Compose รุ่นก่อนคงไว้เป็น deployment เดิม อย่าสั่งโดยละ `-f`
 
-MCP ไม่มี access token และไม่ต้องส่ง Authorization header ตามคำสั่งผู้ใช้วันที่ 21 กันยายน 2026 หน้าตรวจของนักวิจัยแยกจาก MCP และใช้สิทธิ์ตรวจรับเฉพาะหน้า อ่าน URL จาก `docker compose --env-file .env.chunking logs --tail 5 review` นักวิจัยเป็นผู้เปิดและตรวจเอง
+MCP ไม่มี access token และไม่ต้องส่ง Authorization header ตามคำสั่งผู้ใช้วันที่ 21 กันยายน 2026 หน้าตรวจของนักวิจัยแยกจาก MCP และใช้สิทธิ์ตรวจรับเฉพาะหน้า อ่าน URL จาก `docker compose -f compose.agents.yaml --env-file .env.agents logs --tail 5 review` นักวิจัยเป็นผู้เปิดและตรวจเอง Workspace ID เป็นการจัดพื้นที่ข้อมูล ไม่ใช่สิทธิ์แยกผู้ใช้
 
 ## นำเข้าและค้น
 
-1. วางไฟล์ที่มีสิทธิ์ใช้ใน inbox ของการติดตั้งนั้น
-2. เรียก `workspace_status` และ `preview_inbox_document` เพื่อตรวจต้นฉบับ/ชื่อเรื่อง
+1. เรียก `list_workspaces` เลือกพื้นที่ที่ผู้ใช้ระบุ หรือ `create_workspace` สำหรับโครงการใหม่ ส่ง `workspace_id` ทุกคำขอ; ไม่มีการสลับพื้นที่กลางร่วมกัน
+2. เรียก `workspace_status` แล้ว `download_document` ด้วย public HTTPS URL หรือ arXiv ID; poll `job_status` จนเสร็จ หรือวางไฟล์จริงใน inbox ของ workspace นั้น จากนั้น `preview_inbox_document` เพื่อตรวจต้นฉบับ/ชื่อเรื่อง หากสั่งดาวน์โหลดอย่างเดียวให้หยุดก่อนนำเข้า
 3. เรียก `import_document` พร้อม metadata จริง, revision และ idempotency key จะได้ `job_id` ทันที
 4. เรียก `job_status` จนเป็น `completed` จึงถือว่านำเข้าสำเร็จ `failed` เป็นความผิดพลาดจริง; `interrupted` ต้อง `resume_job` ด้วย ID เดิม
 5. ค้นด้วย `retrieve_evidence` (`hybrid`, `semantic`, `lexical`) หรือ `search_documentation` (`hybrid`, `semantic`, `bm25`) ค่าเริ่มต้น hybrid ใช้ BM25+semantic+RRF ไม่มี BGE และไม่ลดเหลือหนึ่ง retriever เมื่ออีกตัวล้ม

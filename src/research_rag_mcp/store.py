@@ -20,6 +20,7 @@ from .persistence import Journal
 from .backend import RetrievalIndex
 from .documents import DocumentManagement
 from .cleanup import WorkspaceCleanup
+from .downloads import DownloadManagement
 
 
 def dump(value):
@@ -39,14 +40,14 @@ def require_text(value, name, maximum=30000):
         raise ValueError(f'{name} requires nonempty text of at most {maximum} characters')
 
 
-class Store(DocumentManagement, WorkspaceCleanup):
-    def __init__(self, root):
+class Store(DocumentManagement, WorkspaceCleanup, DownloadManagement):
+    def __init__(self, root, *, collection=None):
         self.root = Path(root).expanduser().resolve()
         self.root.mkdir(parents=True, exist_ok=True)
         for name in ('inbox', 'sources', 'exports', 'backups'):
             (self.root / name).mkdir(exist_ok=True)
         self.journal = Journal(self.root)
-        self.index = RetrievalIndex()
+        self.index = RetrievalIndex(collection=collection)
         self._job_owner = threading.local()
 
     def raw_state(self):
@@ -108,7 +109,7 @@ class Store(DocumentManagement, WorkspaceCleanup):
         project = dict(topic=topic, goal=goal, unknowns=unknowns)
         def action(db, state):
             if state['project']:
-                raise ValueError('Project already exists; preserve it and refine questions in a versioned question artifact')
+                raise ValueError('Project already exists; use create_workspace for a separate project, or refine this project in a versioned question artifact')
             db['project'] = project
             return project
         return self.mutate('start_project', project, expected_revision, key, action)
@@ -173,6 +174,12 @@ class Store(DocumentManagement, WorkspaceCleanup):
                           text_revision_id='text-'+sha(dump([sid, source['text_sha256']]).encode()),
                           extraction={'engine':'pymupdf' if suffix=='.pdf' else 'utf-8-sig',
                                       'version':version('PyMuPDF') if suffix=='.pdf' else '1'})
+            receipt = next((r['response']['result'] for r in reversed(list(db['requests'].values()))
+                if r.get('response') and isinstance(r['response'].get('result'), dict)
+                and r['response']['result'].get('status') == 'downloaded_to_inbox'
+                and r['response']['result'].get('sha256') == sid), None)
+            if receipt:
+                source['download_provenance'] = receipt
             chunk_set = self._create_chunk_set(db, source, active=True)
             source['active_chunk_set_id'] = chunk_set['chunk_set_id']
             db['sources'][sid] = source
@@ -210,7 +217,15 @@ class Store(DocumentManagement, WorkspaceCleanup):
 
     @staticmethod
     def source_summary(source):
-        return {k: v for k, v in source.items() if k != 'pages'} | {'page_count': len(source['pages'])}
+        return {k: v for k, v in source.items() if k != 'pages'} | {
+            'page_count': len(source['pages']), **Store.evidence_kind(source)}
+
+    @staticmethod
+    def evidence_kind(source):
+        source_format = Path(source['file']).suffix.lower().lstrip('.')
+        return {'source_format': source_format,
+                'evidence_kind': 'project_note' if source['role'] == 'project_note'
+                    else 'pdf_source' if source_format == 'pdf' else 'text_source'}
 
     def verify_source(self, source):
         path = (self.root / source['file']).resolve()
@@ -231,7 +246,7 @@ class Store(DocumentManagement, WorkspaceCleanup):
         if type(page_index) != int or not 0 <= page_index < len(source['pages']):
             raise ValueError('page_index must identify an existing zero-based page')
         page = source['pages'][page_index]
-        return {**page, **{k:source[k] for k in ('document_id','source_version','text_revision_id')}, 'source_id': source_id, 'origin': source['origin'], 'role': source['role'],
+        return {**page, **self.evidence_kind(source), **{k:source[k] for k in ('document_id','source_version','text_revision_id')}, 'source_id': source_id, 'origin': source['origin'], 'role': source['role'],
                 'title': source['bibliography']['title'], 'offset_unit': 'Python Unicode characters; start inclusive, end exclusive'}
 
     def citation(self, citation, state):
@@ -273,7 +288,7 @@ class Store(DocumentManagement, WorkspaceCleanup):
             page=source['pages'][row['page_index']]
             if page['text'][row['start']:row['end']]!=row['text']:
                 raise ValueError('Chunk integrity mismatch')
-            hit={**row,**{k:source[k] for k in ('document_id','source_version','text_revision_id','origin','role')},
+            hit={**row,**self.evidence_kind(source),**{k:source[k] for k in ('document_id','source_version','text_revision_id','origin','role')},
                  'title':source['bibliography']['title'],'page_label':page['page_label']}
             hit['citation']={k:hit[k] for k in ('source_id','page_index','start','end')}
             hit['citation'].update(quote=hit['text'],relation='context')

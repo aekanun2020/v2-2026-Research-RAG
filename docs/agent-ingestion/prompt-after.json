@@ -1,0 +1,8 @@
+{
+  "endpoint": "http://127.0.0.1:9076/mcp",
+  "phase": "prompt",
+  "calls": [],
+  "checks": [],
+  "status": "failed",
+  "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+}
