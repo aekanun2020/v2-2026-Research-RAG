@@ -1,0 +1,8 @@
+ERROR: (gcloud.compute.addresses.create) Could not fetch resource:
+ - Required 'compute.addresses.create' permission for 'projects/bigdatainpractice1/regions/asia-southeast1/addresses/research-rag-g01-ip'
+ - Required 'compute.addresses.create' permission for 'projects/bigdatainpractice1/regions/asia-southeast1/addresses/research-rag-g02-ip'
+ - Required 'compute.addresses.create' permission for 'projects/bigdatainpractice1/regions/asia-southeast1/addresses/research-rag-g03-ip'
+ - Required 'compute.addresses.create' permission for 'projects/bigdatainpractice1/regions/asia-southeast1/addresses/research-rag-g04-ip'
+ - Required 'compute.addresses.create' permission for 'projects/bigdatainpractice1/regions/asia-southeast1/addresses/research-rag-g05-ip'
+ - Required 'compute.addresses.create' permission for 'projects/bigdatainpractice1/regions/asia-southeast1/addresses/research-rag-g06-ip'
+

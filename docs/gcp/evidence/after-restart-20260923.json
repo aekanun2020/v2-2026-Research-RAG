@@ -1,0 +1,676 @@
+{
+  "status": "passed",
+  "source_report": "five-workspaces-20260923.json",
+  "checks": [
+    {
+      "workspace_id": "ws-15b2fcabb3574620ba4d236ddff68f99",
+      "sha256": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+      "passed": true,
+      "source_count": 1,
+      "hits": {
+        "query": "ChatGPT effects on writing productivity and quality",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 1.081221295000205,
+          "query_embedding_seconds": 0.5694259440001588,
+          "vector_search_seconds": 0.006897340000023178,
+          "total_seconds": 1.6660049080001045
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 21,
+        "hits": [
+          {
+            "chunk_set_id": "cs-b55c9322d91d4cb7a92ab204975d2760",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1912,
+            "id": "6845f858c3af291a52e01e3fb0088eb0a1548613e3dc9fbb5679250f0b156260",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 1913,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+            "token_count": 421,
+            "updated_at": "2026-09-23T15:44:56.682527+00:00",
+            "score": 0.031746031746031744,
+            "lexical_score": 0.9779787689542874,
+            "semantic_score": 0.76083434,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "writing",
+              "productivity",
+              "effects",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-fc97c55266944507a81c6343e5a5463d",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "1",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 0,
+              "start": 0,
+              "end": 1912,
+              "quote": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-b55c9322d91d4cb7a92ab204975d2760",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2412,
+            "id": "23ac7712f3e46e8c1f25893bdbc70fc382be325638653e7ee09cc73a0070d3bd",
+            "page_index": 5,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 2830,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+            "token_count": 502,
+            "updated_at": "2026-09-23T15:44:56.759871+00:00",
+            "score": 0.01639344262295082,
+            "lexical_score": 1.0,
+            "semantic_score": null,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "productivity",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-fc97c55266944507a81c6343e5a5463d",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "6",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 5,
+              "start": 0,
+              "end": 2412,
+              "quote": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 2,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence.",
+        "workspace_id": "ws-15b2fcabb3574620ba4d236ddff68f99"
+      }
+    },
+    {
+      "workspace_id": "ws-14600e3f3ca6436885dda80c1b769104",
+      "sha256": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+      "passed": true,
+      "source_count": 1,
+      "hits": {
+        "query": "ChatGPT effects on writing productivity and quality",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 0.04003397800011044,
+          "query_embedding_seconds": 0.055399647999820445,
+          "vector_search_seconds": 0.005348540000113644,
+          "total_seconds": 0.10927507499991407
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 21,
+        "hits": [
+          {
+            "chunk_set_id": "cs-de41b6e582e2435881fb4b6cb352254b",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1912,
+            "id": "e6abeca985ee295163b31e1e5e1f47a13eb722d2c7f1a2e707cd18dbe0a27fd6",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 1913,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+            "token_count": 421,
+            "updated_at": "2026-09-23T15:44:56.725421+00:00",
+            "score": 0.031746031746031744,
+            "lexical_score": 0.9779787689542871,
+            "semantic_score": 0.76083434,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "writing",
+              "productivity",
+              "effects",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-3a19f90fee89457eaf0ffb340a42d81b",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "1",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 0,
+              "start": 0,
+              "end": 1912,
+              "quote": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-de41b6e582e2435881fb4b6cb352254b",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2412,
+            "id": "bb4d945b1ec721a69351cf7ad832b57169608c82b432d682f2564738061819d9",
+            "page_index": 5,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 2830,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+            "token_count": 502,
+            "updated_at": "2026-09-23T15:44:56.840807+00:00",
+            "score": 0.01639344262295082,
+            "lexical_score": 1.0,
+            "semantic_score": null,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "productivity",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-3a19f90fee89457eaf0ffb340a42d81b",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "6",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 5,
+              "start": 0,
+              "end": 2412,
+              "quote": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 2,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence.",
+        "workspace_id": "ws-14600e3f3ca6436885dda80c1b769104"
+      }
+    },
+    {
+      "workspace_id": "ws-fa494235c3c04adaa8daf6338b572838",
+      "sha256": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+      "passed": true,
+      "source_count": 1,
+      "hits": {
+        "query": "ChatGPT effects on writing productivity and quality",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 0.03875319799999488,
+          "query_embedding_seconds": 0.05578277800009346,
+          "vector_search_seconds": 0.005137399999966874,
+          "total_seconds": 0.10814423500005432
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 21,
+        "hits": [
+          {
+            "chunk_set_id": "cs-dda9a941e5f64330bb6ccbc7c9ad3448",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1912,
+            "id": "4fef1baf0f833849c82548e6363c96294116640c081a3d3522dd5453c0109fe3",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 1913,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+            "token_count": 421,
+            "updated_at": "2026-09-23T15:44:56.702952+00:00",
+            "score": 0.031746031746031744,
+            "lexical_score": 0.9779787689542874,
+            "semantic_score": 0.76083434,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "writing",
+              "productivity",
+              "effects",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-0149a94f93b34876ac4db224f70fb638",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "1",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 0,
+              "start": 0,
+              "end": 1912,
+              "quote": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-dda9a941e5f64330bb6ccbc7c9ad3448",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2412,
+            "id": "80af4675f7923572a5eebbea9299ed888aa2bf572ecb30fec4a7bcfa198f7b3a",
+            "page_index": 5,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 2830,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+            "token_count": 502,
+            "updated_at": "2026-09-23T15:44:56.830895+00:00",
+            "score": 0.01639344262295082,
+            "lexical_score": 1.0,
+            "semantic_score": null,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "productivity",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-0149a94f93b34876ac4db224f70fb638",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "6",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 5,
+              "start": 0,
+              "end": 2412,
+              "quote": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 2,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence.",
+        "workspace_id": "ws-fa494235c3c04adaa8daf6338b572838"
+      }
+    },
+    {
+      "workspace_id": "ws-ad872abdd50e48328a09e9de68faf548",
+      "sha256": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+      "passed": true,
+      "source_count": 1,
+      "hits": {
+        "query": "ChatGPT effects on writing productivity and quality",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 0.03853838800000631,
+          "query_embedding_seconds": 0.05449103799992372,
+          "vector_search_seconds": 0.0050355399998807115,
+          "total_seconds": 0.10660853599983966
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 21,
+        "hits": [
+          {
+            "chunk_set_id": "cs-9bfe7b44de0d48099b89623162143ba6",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1912,
+            "id": "96b31a7761d70fbb3b27af7552e19f4fa2e992c8e877162fb867d23fe0f825d3",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 1913,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+            "token_count": 421,
+            "updated_at": "2026-09-23T15:44:56.712180+00:00",
+            "score": 0.031746031746031744,
+            "lexical_score": 0.9779787689542874,
+            "semantic_score": 0.76083434,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "writing",
+              "productivity",
+              "effects",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-1d08df7537c0445d9ce173d6a04ad049",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "1",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 0,
+              "start": 0,
+              "end": 1912,
+              "quote": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-9bfe7b44de0d48099b89623162143ba6",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2412,
+            "id": "2cf400efa7a5b9c69fce0abf500499603010c3bef42de4c4133a6a37da3e9813",
+            "page_index": 5,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 2830,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+            "token_count": 502,
+            "updated_at": "2026-09-23T15:44:56.835623+00:00",
+            "score": 0.01639344262295082,
+            "lexical_score": 1.0,
+            "semantic_score": null,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "productivity",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-1d08df7537c0445d9ce173d6a04ad049",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "6",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 5,
+              "start": 0,
+              "end": 2412,
+              "quote": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 2,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence.",
+        "workspace_id": "ws-ad872abdd50e48328a09e9de68faf548"
+      }
+    },
+    {
+      "workspace_id": "ws-8cde3064c40c419a842ca16273d796b9",
+      "sha256": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+      "passed": true,
+      "source_count": 1,
+      "hits": {
+        "query": "ChatGPT effects on writing productivity and quality",
+        "mode": "hybrid",
+        "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+        "timings": {
+          "lexical_seconds": 0.03887033799992423,
+          "query_embedding_seconds": 0.05437989700021717,
+          "vector_search_seconds": 0.004975040000090303,
+          "total_seconds": 0.10685475400009636
+        },
+        "embedding_model": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+          "dimensions": 768,
+          "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "device": "cpu",
+          "external_api": false
+        },
+        "reranking": {
+          "enabled": false,
+          "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+        },
+        "corpus_sources": 1,
+        "corpus_chunks": 21,
+        "hits": [
+          {
+            "chunk_set_id": "cs-a7c964c28ce942469fae43c55ec5d7b9",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 1912,
+            "id": "cb297d544afea43215ba6de6e5c3d866851d1159f2fe71b5d14d108800e25e2f",
+            "page_index": 0,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 1913,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+            "token_count": 421,
+            "updated_at": "2026-09-23T15:44:56.692589+00:00",
+            "score": 0.031746031746031744,
+            "lexical_score": 0.9779787689542871,
+            "semantic_score": 0.76083434,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "writing",
+              "productivity",
+              "effects",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-313412b5725941fc9bcfb3dbe9fa2148",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "1",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 0,
+              "start": 0,
+              "end": 1912,
+              "quote": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology\u2014the\nassistive chatbot ChatGPT\u2014in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon J\u00e4ger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+              "relation": "context"
+            }
+          },
+          {
+            "chunk_set_id": "cs-a7c964c28ce942469fae43c55ec5d7b9",
+            "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+            "end": 2412,
+            "id": "c4336b14894ca8165af2cf1bc011d45be1ea1e23b113df05b69c2bd6a71a8ef8",
+            "page_index": 5,
+            "reason": "Imported from verified extracted text",
+            "section": {
+              "end": 2830,
+              "header_path": null,
+              "heading": null,
+              "start": 0
+            },
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "start": 0,
+            "status": "active",
+            "text": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+            "token_count": 502,
+            "updated_at": "2026-09-23T15:44:56.820586+00:00",
+            "score": 0.01639344262295082,
+            "lexical_score": 1.0,
+            "semantic_score": null,
+            "matched_terms": [
+              "and",
+              "quality",
+              "on",
+              "productivity",
+              "chatgpt"
+            ],
+            "source_format": "pdf",
+            "evidence_kind": "pdf_source",
+            "document_id": "doc-313412b5725941fc9bcfb3dbe9fa2148",
+            "source_version": 1,
+            "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+            "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+            "role": "literature",
+            "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+            "page_label": "6",
+            "citation": {
+              "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+              "page_index": 5,
+              "start": 0,
+              "end": 2412,
+              "quote": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT\u2019s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant\u2019s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers\u2019 productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers\u2019 skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT\u2019s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants\u2019 essays receive higher grades than ChatGPT\u2019s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+              "relation": "context"
+            }
+          }
+        ],
+        "revision": 2,
+        "status": "evidence_retrieved",
+        "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence.",
+        "workspace_id": "ws-8cde3064c40c419a842ca16273d796b9"
+      }
+    }
+  ]
+}

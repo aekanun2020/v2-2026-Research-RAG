@@ -1,0 +1,11 @@
+2026-09-23T15:48:54+00:00
+codex-rag-agents-review-1 Up About a minute (healthy) 127.0.0.1:9077->9077/tcp
+codex-rag-agents-mcp-1 Up About a minute (healthy) 127.0.0.1:9076->9076/tcp
+codex-rag-agents-qdrant-1 Up About a minute 6333-6334/tcp
+codex-rag-agents-ollama-1 Up About a minute 11434/tcp
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        29G  2.7G   26G  10% /
+/dev/sdb         98G  8.0G   90G   9% /srv/research-rag
+DeviceRequests=null
+NAME                       ID              SIZE      PROCESSOR    CONTEXT    UNTIL              
+nomic-embed-text:latest    0a109f422b47    376 MB    100% CPU     2048       4 minutes from now    

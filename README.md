@@ -30,6 +30,9 @@ MCP server จัดเตรียมหลักฐาน โมเดลใ�
 
 ## เอกสารและซอร์ส
 
+- [บันทึกการเปลี่ยนแปลง Google Cloud และการติดตั้งสำหรับ 6 กลุ่ม](cloud-activities/README.md)
+- [การติดตั้ง GCP และวิธีแยก workspace สำหรับผู้เรียน](docs/gcp/README.md)
+
 - [การแก้ Claude agent: ดาวน์โหลด PDF และแยก workspace](docs/agent-ingestion/README.md) · [Compose 0.5.0](compose.agents.yaml) · [ค่าเริ่มต้นชุดใหม่](agents.env.example)
 - [Public ngrok endpoint ชื่อ research-rag](docs/agent-ingestion/ngrok.md) · [ทดสอบ public MCP](scripts/verify_public_mcp.py)
 - [การเลือก workspace](src/research_rag_mcp/workspaces.py) · [ดาวน์โหลด PDF](src/research_rag_mcp/downloads.py) · [MCP prompt](src/research_rag_mcp/models.py) · [ทดสอบ ingestion จริง](scripts/verify_agent_ingestion_mcp.py) · [ทดสอบ manuscript และกู้คืน workspace](scripts/verify_agent_workspace_followup_mcp.py)
@@ -54,8 +57,8 @@ MCP server จัดเตรียมหลักฐาน โมเดลใ�
 ต้องมี Docker Engine/Compose และพื้นที่สำหรับโมเดล/ข้อมูล ค่าเริ่มต้นเปิดเฉพาะ loopback ไม่มี GPU ไม่มี public tunnel และไม่ใช้บัญชี API ที่มีค่าใช้จ่าย
 
 ```sh
-git clone https://github.com/aekanun2020/2026-Research-RAG.git
-cd 2026-Research-RAG
+git clone https://github.com/aekanun2020/v2-2026-Research-RAG.git
+cd v2-2026-Research-RAG
 git switch codex/claude-workspace-ingestion
 mkdir -p .agent-data
 cp agents.env.example .env.agents

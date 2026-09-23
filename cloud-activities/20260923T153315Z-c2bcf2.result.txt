@@ -1,0 +1,38 @@
+uid=1985717692(thaimcpagent_gmail_com) gid=1985717692(thaimcpagent_gmail_com) groups=1985717692(thaimcpagent_gmail_com)
+NAME      SIZE FSTYPE   MOUNTPOINTS
+loop0    66.8M squashfs /snap/core24/2124
+loop1   348.2M squashfs /snap/google-cloud-cli/499
+loop2    50.3M squashfs /snap/snapd/27738
+sda        30G          
+├─sda1     29G ext4     /
+├─sda14     4M          
+├─sda15   106M vfat     /boot/efi
+└─sda16   913M ext4     /boot
+sdb       100G          
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        29G  1.9G   27G   7% /
+tmpfs            16G     0   16G   0% /dev/shm
+tmpfs           6.3G  984K  6.3G   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+efivarfs        256K   32K  220K  13% /sys/firmware/efi/efivars
+/dev/sda16      881M   52M  768M   7% /boot
+/dev/sda15      105M  6.2M   99M   6% /boot/efi
+tmpfs           3.2G  8.0K  3.2G   1% /run/user/1985717692
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                                
+LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=346,fd=15))             
+LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=346,fd=17))             
+LISTEN 0      4096         0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=1333,fd=3),("systemd",pid=1,fd=54))
+LISTEN 0      4096            [::]:22           [::]:*    users:(("sshd",pid=1333,fd=4),("systemd",pid=1,fd=55))

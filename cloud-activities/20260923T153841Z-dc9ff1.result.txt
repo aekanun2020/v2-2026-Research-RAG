@@ -1,0 +1,261 @@
+time="2026-09-23T15:38:43Z" level=warning msg="Docker Compose is configured to build using Bake, but buildx isn't installed"
+#0 building with "default" instance using docker driver
+
+#1 [mcp internal] load build definition from Dockerfile
+#1 transferring dockerfile: 717B done
+#1 DONE 0.0s
+
+#2 [mcp internal] load metadata for docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#2 DONE 2.2s
+
+#3 [mcp internal] load .dockerignore
+#3 transferring context: 171B done
+#3 DONE 0.0s
+
+#4 [mcp builder 1/6] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#4 resolve docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9 0.0s done
+#4 DONE 0.1s
+
+#5 [mcp internal] load build context
+#5 transferring context: 10.48MB 0.1s done
+#5 DONE 0.2s
+
+#4 [mcp builder 1/6] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#4 sha256:0526d5e29bf341cb1941d46a6d4ab64fcde4fca3dc3adccfb4dbf5728b88b61e 0B / 249B 0.2s
+#4 sha256:0526d5e29bf341cb1941d46a6d4ab64fcde4fca3dc3adccfb4dbf5728b88b61e 249B / 249B 0.2s done
+#4 sha256:58abdd9670ca8c69d03432ce188995dee67f0979357caf83866fe1ef2ec37138 0B / 14.45MB 0.3s
+#4 sha256:41e7217c2e506d048f89ca0c5cfef848c05ef990900627c19f99938c4aae57f8 0B / 1.29MB 0.2s
+#4 sha256:6b37362b3da78869050b894b799ad4df04f1f3b52774087db0d81151570244c8 0B / 29.83MB 0.2s
+#4 sha256:58abdd9670ca8c69d03432ce188995dee67f0979357caf83866fe1ef2ec37138 14.45MB / 14.45MB 0.5s done
+#4 sha256:41e7217c2e506d048f89ca0c5cfef848c05ef990900627c19f99938c4aae57f8 1.29MB / 1.29MB 0.7s done
+#4 sha256:6b37362b3da78869050b894b799ad4df04f1f3b52774087db0d81151570244c8 29.83MB / 29.83MB 0.9s done
+#4 extracting sha256:6b37362b3da78869050b894b799ad4df04f1f3b52774087db0d81151570244c8
+#4 extracting sha256:6b37362b3da78869050b894b799ad4df04f1f3b52774087db0d81151570244c8 0.7s done
+#4 DONE 1.7s
+
+#4 [mcp builder 1/6] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#4 extracting sha256:41e7217c2e506d048f89ca0c5cfef848c05ef990900627c19f99938c4aae57f8 0.1s done
+#4 extracting sha256:58abdd9670ca8c69d03432ce188995dee67f0979357caf83866fe1ef2ec37138
+#4 extracting sha256:58abdd9670ca8c69d03432ce188995dee67f0979357caf83866fe1ef2ec37138 0.5s done
+#4 extracting sha256:0526d5e29bf341cb1941d46a6d4ab64fcde4fca3dc3adccfb4dbf5728b88b61e
+#4 extracting sha256:0526d5e29bf341cb1941d46a6d4ab64fcde4fca3dc3adccfb4dbf5728b88b61e 0.0s done
+#4 DONE 2.3s
+
+#6 [mcp runtime 2/5] WORKDIR /app
+#6 DONE 1.4s
+
+#7 [mcp builder 2/6] RUN pip install --no-cache-dir uv==0.7.8
+#7 2.953 Collecting uv==0.7.8
+#7 2.974   Downloading uv-0.7.8-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+#7 2.982 Downloading uv-0.7.8-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.5 MB)
+#7 3.115    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.5/17.5 MB 172.3 MB/s eta 0:00:00
+#7 3.196 Installing collected packages: uv
+#7 3.408 Successfully installed uv-0.7.8
+#7 3.408 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#7 3.718 
+#7 3.718 [notice] A new release of pip is available: 24.0 -> 26.2.1
+#7 3.718 [notice] To update, run: pip install --upgrade pip
+#7 DONE 4.2s
+
+#8 [mcp builder 3/6] WORKDIR /app
+#8 DONE 0.0s
+
+#9 [mcp builder 4/6] COPY pyproject.toml uv.lock ./
+#9 DONE 0.0s
+
+#10 [mcp builder 5/6] COPY src ./src
+#10 DONE 0.0s
+
+#11 [mcp builder 6/6] RUN uv sync --locked --no-dev --no-editable
+#11 0.213 Using CPython 3.11.16 interpreter at: /usr/local/bin/python3
+#11 0.213 Creating virtual environment at: .venv
+#11 0.230 Resolved 104 packages in 1ms
+#11 0.243    Building codex-research-rag-mcp @ file:///app
+#11 0.261 Downloading tokenizers (3.2MiB)
+#11 0.271 Downloading llama-index-core (11.4MiB)
+#11 0.271 Downloading openai (2.0MiB)
+#11 0.271 Downloading python-crfsuite (1.2MiB)
+#11 0.272 Downloading tiktoken (1.2MiB)
+#11 0.272 Downloading aiohttp (1.7MiB)
+#11 0.273 Downloading pillow (6.6MiB)
+#11 0.273 Downloading grpcio (6.9MiB)
+#11 0.273 Downloading pymupdf (24.6MiB)
+#11 0.274 Downloading sqlalchemy (3.3MiB)
+#11 0.275 Downloading cryptography (4.5MiB)
+#11 0.275 Downloading hf-xet (4.3MiB)
+#11 0.275 Downloading networkx (2.0MiB)
+#11 0.276 Downloading pydantic-core (2.0MiB)
+#11 0.276 Downloading nltk (1.7MiB)
+#11 0.276 Downloading pythainlp (18.9MiB)
+#11 0.280 Downloading numpy (16.1MiB)
+#11 0.827  Downloading tiktoken
+#11 0.829  Downloading python-crfsuite
+#11 0.909  Downloading aiohttp
+#11 0.947  Downloading pydantic-core
+#11 1.167  Downloading tokenizers
+#11 1.202       Built codex-research-rag-mcp @ file:///app
+#11 1.229  Downloading hf-xet
+#11 1.372  Downloading sqlalchemy
+#11 1.395  Downloading cryptography
+#11 1.435  Downloading pillow
+#11 1.486  Downloading grpcio
+#11 1.716  Downloading nltk
+#11 1.771  Downloading networkx
+#11 1.785  Downloading pymupdf
+#11 1.795  Downloading pythainlp
+#11 1.857  Downloading llama-index-core
+#11 2.004  Downloading numpy
+#11 2.099  Downloading openai
+#11 2.099 Prepared 101 packages in 1.86s
+#11 2.189 Installed 101 packages in 89ms
+#11 2.189  + aiohappyeyeballs==2.7.1
+#11 2.189  + aiohttp==3.14.3
+#11 2.189  + aiosignal==1.4.0
+#11 2.189  + aiosqlite==0.22.1
+#11 2.189  + annotated-types==0.8.0
+#11 2.190  + anyio==4.15.1
+#11 2.190  + attrs==26.1.0
+#11 2.190  + banks==2.5.1
+#11 2.190  + certifi==2026.7.22
+#11 2.190  + cffi==2.1.1
+#11 2.190  + charset-normalizer==3.5.1
+#11 2.190  + click==8.5.0
+#11 2.190  + cloudpickle==3.1.2
+#11 2.190  + codex-research-rag-mcp==0.5.0 (from file:///app)
+#11 2.190  + colorama==0.4.6
+#11 2.190  + cryptography==50.0.1
+#11 2.190  + dataclasses-json==0.6.7
+#11 2.190  + defusedxml==0.7.1
+#11 2.190  + deprecated==1.3.1
+#11 2.190  + dirtyjson==1.0.8
+#11 2.190  + filelock==4.0.1
+#11 2.190  + filetype==1.2.0
+#11 2.190  + frozenlist==1.8.0
+#11 2.190  + fsspec==2026.9.0
+#11 2.190  + greenlet==3.5.6
+#11 2.190  + griffe==2.3.0
+#11 2.190  + griffecli==2.3.0
+#11 2.190  + griffelib==2.3.0
+#11 2.190  + grpcio==1.84.0
+#11 2.190  + h11==0.16.0
+#11 2.190  + h2==4.4.1
+#11 2.190  + hf-xet==1.6.0
+#11 2.190  + hpack==4.2.0
+#11 2.190  + httpcore==1.0.9
+#11 2.191  + httpcore2==2.12.0
+#11 2.191  + httpx==0.28.1
+#11 2.191  + httpx2==2.12.0
+#11 2.191  + huggingface-hub==1.32.0
+#11 2.191  + hyperframe==6.1.0
+#11 2.191  + idna==3.19
+#11 2.191  + jinja2==3.1.6
+#11 2.191  + jiter==0.17.0
+#11 2.191  + joblib==1.6.0
+#11 2.191  + jsonschema==4.26.0
+#11 2.191  + jsonschema-specifications==2025.9.1
+#11 2.191  + llama-index-core==0.14.24
+#11 2.191  + llama-index-instrumentation==0.6.0
+#11 2.191  + llama-index-workflows==2.24.1
+#11 2.191  + markupsafe==3.0.3
+#11 2.191  + marshmallow==3.26.2
+#11 2.191  + mcp==2.2.0
+#11 2.191  + mcp-types==2.2.0
+#11 2.191  + multidict==6.9.0
+#11 2.191  + mypy-extensions==1.1.0
+#11 2.191  + nest-asyncio==1.6.0
+#11 2.191  + networkx==3.6.1
+#11 2.191  + nltk==3.10.3
+#11 2.191  + numpy==2.3.5
+#11 2.191  + ollama==0.6.2
+#11 2.191  + openai==3.16.2
+#11 2.191  + opentelemetry-api==1.44.0
+#11 2.191  + packaging==26.3
+#11 2.191  + pillow==12.3.0
+#11 2.191  + platformdirs==4.11.11
+#11 2.191  + portalocker==3.2.0
+#11 2.191  + propcache==0.5.4
+#11 2.192  + protobuf==7.36.2
+#11 2.192  + pycparser==3.0
+#11 2.192  + pydantic==2.13.5
+#11 2.192  + pydantic-core==2.46.5
+#11 2.192  + pyjwt==2.14.0
+#11 2.192  + pymupdf==1.28.2
+#11 2.192  + pypdf==6.18.1
+#11 2.192  + pythainlp==5.3.7
+#11 2.192  + python-crfsuite==0.9.12
+#11 2.192  + python-multipart==0.0.32
+#11 2.192  + pyyaml==6.0.3
+#11 2.192  + qdrant-client==1.18.0
+#11 2.192  + rank-bm25==0.2.2
+#11 2.192  + referencing==0.37.0
+#11 2.192  + regex==2026.9.10
+#11 2.192  + requests==2.34.2
+#11 2.192  + rpds-py==2026.6.3
+#11 2.192  + setuptools==84.0.0
+#11 2.192  + sniffio==1.3.1
+#11 2.192  + sqlalchemy==2.0.54
+#11 2.192  + sse-starlette==3.4.11
+#11 2.192  + starlette==1.6.0
+#11 2.192  + tenacity==9.1.4
+#11 2.192  + tiktoken==0.14.0
+#11 2.192  + tinytag==2.3.2
+#11 2.192  + tokenizers==0.23.2
+#11 2.192  + tqdm==4.70.1
+#11 2.192  + truststore==0.10.4
+#11 2.192  + typing-extensions==4.16.0
+#11 2.192  + typing-inspect==0.9.0
+#11 2.192  + typing-inspection==0.4.4
+#11 2.192  + urllib3==2.8.0
+#11 2.192  + uvicorn==0.52.4
+#11 2.193  + wrapt==2.4.1
+#11 2.193  + yarl==1.25.1
+#11 DONE 6.1s
+
+#12 [mcp runtime 3/5] COPY --from=builder /app/.venv /app/.venv
+#12 DONE 4.8s
+
+#13 [mcp runtime 4/5] COPY scripts/smoke_http.py /app/scripts/smoke_http.py
+#13 DONE 0.1s
+
+#14 [mcp runtime 5/5] COPY third-party /app/third-party
+#14 DONE 0.1s
+
+#15 [mcp] exporting to image
+#15 exporting layers
+#15 exporting layers 17.7s done
+#15 exporting manifest sha256:12574acf5af17902aa9f264ce88383b7e26cb506ec7f3be4912dceadc93b005a 0.0s done
+#15 exporting config sha256:e76622cc19689a5676db2f67537eb81e22168c13fdcb3ff87780a867db8d11be 0.0s done
+#15 exporting attestation manifest sha256:e66b4db076ff1f488ce58ad13d4281328c1e76d2bc8d5adba61bad912cbb3195 0.0s done
+#15 exporting manifest list sha256:5558a8d415727da94625f930a8bf68ec20f77d6769e158246328420764691d2b 0.0s done
+#15 naming to docker.io/library/codex-research-rag-agents:0.5.0 done
+#15 unpacking to docker.io/library/codex-research-rag-agents:0.5.0
+#15 unpacking to docker.io/library/codex-research-rag-agents:0.5.0 2.8s done
+#15 DONE 20.6s
+
+#16 [mcp] resolving provenance for metadata file
+#16 DONE 0.0s
+ mcp  Built
+ Container codex-rag-agents-qdrant-1  Running
+ Container codex-rag-agents-ollama-1  Running
+ Container codex-rag-agents-review-1  Creating
+ Container codex-rag-agents-mcp-1  Creating
+ Container codex-rag-agents-mcp-1  Created
+ Container codex-rag-agents-review-1  Created
+ Container codex-rag-agents-mcp-1  Starting
+ Container codex-rag-agents-review-1  Starting
+ Container codex-rag-agents-mcp-1  Started
+ Container codex-rag-agents-review-1  Started
+ Container codex-rag-agents-qdrant-1  Waiting
+ Container codex-rag-agents-ollama-1  Waiting
+ Container codex-rag-agents-mcp-1  Waiting
+ Container codex-rag-agents-review-1  Waiting
+ Container codex-rag-agents-ollama-1  Healthy
+ Container codex-rag-agents-qdrant-1  Healthy
+ Container codex-rag-agents-mcp-1  Healthy
+ Container codex-rag-agents-review-1  Healthy
+{"Command":"\"research-rag --work…\"","CreatedAt":"2026-09-23 15:39:24 +0000 UTC","ExitCode":0,"Health":"healthy","ID":"a256a1919e76","Image":"codex-research-rag-agents:0.5.0","Labels":"com.docker.compose.oneoff=False,com.docker.compose.project.working_dir=/srv/research-rag/deploy/source-dc36545165f38481a07e15285d9293faa891697a,com.docker.compose.config-hash=cd37d61a518ba60f316addfe3a45b310c13d8febc8ef1ee997cc56d176ce3fde,com.docker.compose.container-number=1,com.docker.compose.depends_on=qdrant:service_started:false,ollama:service_started:false,com.docker.compose.project=codex-rag-agents,com.docker.compose.project.config_files=/srv/research-rag/deploy/source-dc36545165f38481a07e15285d9293faa891697a/compose.agents.yaml,com.docker.compose.project.environment_file=/srv/research-rag/deploy/runtime.env,com.docker.compose.service=mcp,com.docker.compose.version=2.40.3,com.docker.compose.image=sha256:5558a8d415727da94625f930a8bf68ec20f77d6769e158246328420764691d2b","LocalVolumes":"0","Mounts":"/srv/research-…","Name":"codex-rag-agents-mcp-1","Names":"codex-rag-agents-mcp-1","Networks":"codex-rag-agents_default","Ports":"127.0.0.1:9076-\u003e9076/tcp","Project":"codex-rag-agents","Publishers":[{"URL":"127.0.0.1","TargetPort":9076,"PublishedPort":9076,"Protocol":"tcp"}],"RunningFor":"About a minute ago","Service":"mcp","Size":"0B","State":"running","Status":"Up About a minute (healthy)"}
+{"Command":"\"/bin/ollama serve\"","CreatedAt":"2026-09-23 15:37:33 +0000 UTC","ExitCode":0,"Health":"","ID":"2bee330785d8","Image":"ollama/ollama@sha256:1685741456770df6e3cceb2a945a5f75e020f658d1701509668d6f4688f1dd3f","Labels":"com.docker.compose.config-hash=7034ccb602781799075d571c30cb59d6a80e93dd8b36403232bf69cbfa10aff8,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.project=codex-rag-agents,com.docker.compose.project.config_files=/srv/research-rag/deploy/source-dc36545165f38481a07e15285d9293faa891697a/compose.agents.yaml,com.docker.compose.project.environment_file=/srv/research-rag/deploy/runtime.env,com.docker.compose.project.working_dir=/srv/research-rag/deploy/source-dc36545165f38481a07e15285d9293faa891697a,com.docker.compose.version=2.40.3,com.docker.compose.image=sha256:1685741456770df6e3cceb2a945a5f75e020f658d1701509668d6f4688f1dd3f,com.docker.compose.oneoff=False,com.docker.compose.service=ollama,org.opencontainers.image.version=24.04","LocalVolumes":"1","Mounts":"codex-rag-agen…","Name":"codex-rag-agents-ollama-1","Names":"codex-rag-agents-ollama-1","Networks":"codex-rag-agents_default","Ports":"11434/tcp","Project":"codex-rag-agents","Publishers":[{"URL":"","TargetPort":11434,"PublishedPort":0,"Protocol":"tcp"}],"RunningFor":"2 minutes ago","Service":"ollama","Size":"0B","State":"running","Status":"Up 2 minutes"}
+{"Command":"\"./entrypoint.sh\"","CreatedAt":"2026-09-23 15:37:33 +0000 UTC","ExitCode":0,"Health":"","ID":"bb804df6d2c1","Image":"qdrant/qdrant:v1.18.3@sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286","Labels":"com.docker.compose.config-hash=7c57ce4cc041d25a28e8d2a98dbc895cba7d70c6a680bbbbd2b7d9f25ce806d2,com.docker.compose.project=codex-rag-agents,org.opencontainers.image.documentation=https://qdrant.com/docs,org.opencontainers.image.vendor=Qdrant,com.docker.compose.depends_on=,com.docker.compose.project.environment_file=/srv/research-rag/deploy/runtime.env,com.docker.compose.service=qdrant,com.docker.compose.version=2.40.3,org.opencontainers.image.description=Official Qdrant image,com.docker.compose.container-number=1,com.docker.compose.image=sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/srv/research-rag/deploy/source-dc36545165f38481a07e15285d9293faa891697a/compose.agents.yaml,org.opencontainers.image.url=https://qdrant.com/,com.docker.compose.project.working_dir=/srv/research-rag/deploy/source-dc36545165f38481a07e15285d9293faa891697a,org.opencontainers.image.source=https://github.com/qdrant/qdrant,org.opencontainers.image.title=Qdrant,org.opencontainers.image.version=v1.18.3","LocalVolumes":"1","Mounts":"codex-rag-agen…","Name":"codex-rag-agents-qdrant-1","Names":"codex-rag-agents-qdrant-1","Networks":"codex-rag-agents_default","Ports":"6333-6334/tcp","Project":"codex-rag-agents","Publishers":[{"URL":"","TargetPort":6333,"PublishedPort":0,"Protocol":"tcp"},{"URL":"","TargetPort":6334,"PublishedPort":0,"Protocol":"tcp"}],"RunningFor":"2 minutes ago","Service":"qdrant","Size":"0B","State":"running","Status":"Up 2 minutes"}
+{"Command":"\"research-rag --work…\"","CreatedAt":"2026-09-23 15:39:24 +0000 UTC","ExitCode":0,"Health":"healthy","ID":"20248cc17266","Image":"codex-research-rag-agents:0.5.0","Labels":"com.docker.compose.oneoff=False,com.docker.compose.project.working_dir=/srv/research-rag/deploy/source-dc36545165f38481a07e15285d9293faa891697a,com.docker.compose.config-hash=abd76a39a930ef92be378a0bc11bd4e74959c7adb1ca9fe2b6645069daee2372,com.docker.compose.depends_on=,com.docker.compose.image=sha256:5558a8d415727da94625f930a8bf68ec20f77d6769e158246328420764691d2b,com.docker.compose.project=codex-rag-agents,com.docker.compose.project.config_files=/srv/research-rag/deploy/source-dc36545165f38481a07e15285d9293faa891697a/compose.agents.yaml,com.docker.compose.project.environment_file=/srv/research-rag/deploy/runtime.env,com.docker.compose.service=review,com.docker.compose.version=2.40.3,com.docker.compose.container-number=1","LocalVolumes":"0","Mounts":"/srv/research-…","Name":"codex-rag-agents-review-1","Names":"codex-rag-agents-review-1","Networks":"codex-rag-agents_default","Ports":"127.0.0.1:9077-\u003e9077/tcp","Project":"codex-rag-agents","Publishers":[{"URL":"127.0.0.1","TargetPort":9077,"PublishedPort":9077,"Protocol":"tcp"}],"RunningFor":"About a minute ago","Service":"review","Size":"0B","State":"running","Status":"Up About a minute (healthy)"}
+NAME                       ID              SIZE      MODIFIED      
+nomic-embed-text:latest    0a109f422b47    274 MB    2 minutes ago    
