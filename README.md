@@ -1,5 +1,11 @@
 # 2026-Research-RAG — งานวิจัย 8 ช่วงผ่าน MCP
 
+## ใบอนุญาตและข้อจำกัดการใช้งาน
+
+โค้ดและเอกสารต้นฉบับของโปรเจกต์นี้เผยแพร่ภายใต้ **GNU AGPL version 3 only (`AGPL-3.0-only`)** ดู [LICENSE ฉบับเต็ม](LICENSE) และ [ขอบเขตใบอนุญาต/ประกาศของส่วนประกอบภายนอก](third-party/README.md#application-license) โค้ดที่นำเข้า dependencies โมเดล และเนื้อหาของบุคคลที่สามยังคงอยู่ภายใต้สิทธิ์และเงื่อนไขของต้นทาง ไม่ได้ถูกเปลี่ยนใบอนุญาตด้วยประกาศนี้
+
+ระบบเป็นเครื่องมือช่วยวิจัย ไม่รับรองความถูกต้องของผลค้นคืนหรือข้อความที่ AI สังเคราะห์ นักวิจัยต้องตรวจต้นฉบับก่อนใช้หรือเผยแพร่ อ่าน [ข้อจำกัดและความรับผิดชอบในการใช้งาน](DISCLAIMER.md) ใบอนุญาตซอฟต์แวร์ไม่ให้สิทธิ์เพิ่มเติมในบทความ PDF หรือข้อมูลวิจัยที่นำเข้า
+
 รุ่น **0.5.0 บน branch `codex/claude-workspace-ingestion`** เพิ่ม workspace แยกตามรหัสและดาวน์โหลด PDF ฝั่ง server ตามฐาน [fixed-2026-rag-mcp-server-streamablehttp](https://github.com/aekanun2020/fixed-2026-rag-mcp-server-streamablehttp/tree/5e5373a7a0919201b44f5aa78edad069a09974db) ที่ผู้ใช้เลือก: **Qdrant + Ollama + PyThaiNLP/BM25 + RRF** รันบน CPU ใน Docker และเชื่อมผ่าน Streamable HTTP
 
 **ชุดใหม่ 0.5.0:** `codex-rag-agents` เปิด MCP ที่ `http://127.0.0.1:9076/mcp` ไม่มี access token และหน้าตรวจที่ port 9077 ใช้ container, network, volumes และ `.agent-data` ของตัวเองทั้งหมด ไม่เปลี่ยนบริการ 8976 หรือข้อมูลเดิม ต้องชี้ client มาที่ endpoint รุ่นใหม่จึงจะเห็น tools ใหม่ ดู [ขั้นตอนใช้กับ Claude, ตำแหน่ง inbox และหลักฐานทดสอบ](docs/agent-ingestion/README.md) การทดสอบ MCP ไม่ใช่การยืนยันว่าได้ทดสอบผ่านแอป Claude จริงทั้ง Windows/macOS แล้ว
