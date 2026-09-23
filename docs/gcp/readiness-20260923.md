@@ -37,3 +37,7 @@ Assessor: Codex inspected the current reports and runtime evidence. Scripts perf
 Docker 29 used containerd's separate root on the boot disk despite Docker data-root being on the data disk. This was reproduced, then the actual containerd root was moved with services stopped. Image IDs matched before/after, boot disk usage fell, and real MCP tests plus restart checks passed. [Before/after cause and evidence](../../cloud-activities/containerd-storage-before-20260923.md).
 
 [All cloud activities](../../cloud-activities/README.md) include the earlier denied IP-creation attempt, remote writes, package installation, deployment, partial stdin-consumption issue and correction, data-store relocation, test-data creation and restart. The manual VM/OS Login changes are explicitly attributed to the user.
+
+## Subsequent HTTPS acceptance
+
+The private-only status and pending authorization above describe the earlier test stage. The user subsequently authorized public HTTPS and added ingress tags. [Current HTTPS acceptance and external evidence](https-20260923.md) supersede those pending public-access items. No Claude UI integration has been claimed.

@@ -39,3 +39,9 @@ Timestamped activity files record intended changes before execution and command 
 
 - [HTTPS authorization and current status](https-20260923.md)
 - [Prepare Caddy and MCP public origin](20260923T155429Z-7bf937.md)
+
+- [Start prepared Caddy HTTPS on student1 after user enabled http-server and https-server tags](20260923T155638Z-3e429e.md)
+
+- [Verify public HTTPS from external Mac with native MCP initialize 45 tools real retrieval and citation spans](20260923T155744Z-382036.md)
+
+- [Cross-check public and local MCP catalogs and state, allowed Origin and Host/Origin rejection with repository verifier](20260923T155804Z-390bf1.md)

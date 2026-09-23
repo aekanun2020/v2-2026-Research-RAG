@@ -1,0 +1,6 @@
+ Container research-rag-edge-caddy-1  Creating
+ Container research-rag-edge-caddy-1  Created
+ Container research-rag-edge-caddy-1  Starting
+ Container research-rag-edge-caddy-1  Started
+NAME                        IMAGE                                                                           COMMAND                  SERVICE   CREATED                  STATUS                  PORTS
+research-rag-edge-caddy-1   caddy@sha256:6aeddd44c3078b0f9a35206472a11420648a79c184603ef95957d0a20044cb2b   "caddy run --config …"   caddy     Less than a second ago   Up Less than a second   

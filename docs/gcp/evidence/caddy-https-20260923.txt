@@ -1,0 +1,35 @@
+caddy-1  | {"level":"info","ts":1790178999.765051,"logger":"http","msg":"enabling automatic TLS certificate management","domains":["34-142-222-110.sslip.io"]}
+caddy-1  | {"level":"info","ts":1790178999.7653086,"msg":"autosaved config (load with --resume flag)","file":"/config/caddy/autosave.json"}
+caddy-1  | {"level":"info","ts":1790178999.7653263,"msg":"serving initial configuration"}
+caddy-1  | {"level":"info","ts":1790178999.7684453,"logger":"tls","msg":"cleaning storage unit","storage":"FileStorage:/data/caddy"}
+caddy-1  | {"level":"info","ts":1790178999.7685196,"logger":"tls.obtain","msg":"acquiring lock","identifier":"34-142-222-110.sslip.io"}
+caddy-1  | {"level":"info","ts":1790178999.770804,"logger":"tls","msg":"finished cleaning storage units"}
+caddy-1  | {"level":"info","ts":1790178999.7711601,"logger":"tls.obtain","msg":"lock acquired","identifier":"34-142-222-110.sslip.io"}
+caddy-1  | {"level":"info","ts":1790178999.7712584,"logger":"tls.obtain","msg":"obtaining certificate","identifier":"34-142-222-110.sslip.io"}
+caddy-1  | {"level":"info","ts":1790178999.7718787,"logger":"http","msg":"creating new account because no account for configured email is known to us","email":"","ca":"https://acme-v02.api.letsencrypt.org/directory","error":"open /data/caddy/acme/acme-v02.api.letsencrypt.org-directory/users/default/default.json: no such file or directory"}
+caddy-1  | {"level":"info","ts":1790178999.7719214,"logger":"http","msg":"ACME account has empty status; registering account with ACME server","contact":[],"location":""}
+caddy-1  | {"level":"info","ts":1790178999.7737134,"logger":"http","msg":"creating new account because no account for configured email is known to us","email":"","ca":"https://acme-v02.api.letsencrypt.org/directory","error":"open /data/caddy/acme/acme-v02.api.letsencrypt.org-directory/users/default/default.json: no such file or directory"}
+caddy-1  | {"level":"info","ts":1790179000.9906695,"logger":"http","msg":"new ACME account registered","contact":[],"status":"valid"}
+caddy-1  | {"level":"info","ts":1790179000.99581,"logger":"http","msg":"waiting on internal rate limiter","identifiers":["34-142-222-110.sslip.io"],"ca":"https://acme-v02.api.letsencrypt.org/directory","account":""}
+caddy-1  | {"level":"info","ts":1790179000.9958405,"logger":"http","msg":"done waiting on internal rate limiter","identifiers":["34-142-222-110.sslip.io"],"ca":"https://acme-v02.api.letsencrypt.org/directory","account":""}
+caddy-1  | {"level":"info","ts":1790179000.9958773,"logger":"http","msg":"using ACME account","account_id":"https://acme-v02.api.letsencrypt.org/acme/acct/3782296456","account_contact":[]}
+caddy-1  | {"level":"info","ts":1790179001.627929,"logger":"http.acme_client","msg":"trying to solve challenge","identifier":"34-142-222-110.sslip.io","challenge_type":"tls-alpn-01","ca":"https://acme-v02.api.letsencrypt.org/directory"}
+caddy-1  | {"level":"info","ts":1790179002.147168,"logger":"tls","msg":"served key authentication certificate","server_name":"34-142-222-110.sslip.io","challenge":"tls-alpn-01","remote":"23.178.112.212:43137","distributed":false}
+caddy-1  | {"level":"info","ts":1790179004.8645391,"logger":"tls","msg":"served key authentication certificate","server_name":"34-142-222-110.sslip.io","challenge":"tls-alpn-01","remote":"13.214.122.229:54186","distributed":false}
+caddy-1  | {"level":"info","ts":1790179005.0535486,"logger":"tls","msg":"served key authentication certificate","server_name":"34-142-222-110.sslip.io","challenge":"tls-alpn-01","remote":"54.212.246.190:22322","distributed":false}
+caddy-1  | {"level":"info","ts":1790179005.147298,"logger":"tls","msg":"served key authentication certificate","server_name":"34-142-222-110.sslip.io","challenge":"tls-alpn-01","remote":"16.192.151.235:43426","distributed":false}
+caddy-1  | {"level":"info","ts":1790179005.2117095,"logger":"tls","msg":"served key authentication certificate","server_name":"34-142-222-110.sslip.io","challenge":"tls-alpn-01","remote":"18.188.247.83:46642","distributed":false}
+caddy-1  | {"level":"info","ts":1790179006.3087683,"logger":"http.acme_client","msg":"authorization finalized","identifier":"34-142-222-110.sslip.io","authz_status":"valid"}
+caddy-1  | {"level":"info","ts":1790179006.3088124,"logger":"http.acme_client","msg":"validations succeeded; finalizing order","order":"https://acme-v02.api.letsencrypt.org/acme/order/3782296456/560914458336"}
+caddy-1  | {"level":"info","ts":1790179008.6106186,"logger":"http.acme_client","msg":"got renewal info","names":["34-142-222-110.sslip.io"],"window_start":1795282940,"window_end":1795438390,"selected_time":1795336424,"recheck_after":1790200554.6106062,"explanation_url":""}
+caddy-1  | {"level":"info","ts":1790179009.0867903,"logger":"http.acme_client","msg":"got renewal info","names":["34-142-222-110.sslip.io"],"window_start":1795282940,"window_end":1795438390,"selected_time":1795301656,"recheck_after":1790201766.0867813,"explanation_url":""}
+caddy-1  | {"level":"info","ts":1790179009.5469954,"logger":"http.acme_client","msg":"got renewal info","names":["34-142-222-110.sslip.io"],"window_start":1795282940,"window_end":1795438390,"selected_time":1795346297,"recheck_after":1790201386.5469346,"explanation_url":""}
+caddy-1  | {"level":"info","ts":1790179009.5470793,"logger":"http.acme_client","msg":"successfully downloaded available certificate chains","count":3,"first_url":"https://acme-v02.api.letsencrypt.org/acme/cert/06b8eb312d1c18235dbbf712e081d1020c4a"}
+caddy-1  | {"level":"info","ts":1790179009.5550284,"logger":"tls.obtain","msg":"certificate obtained successfully","identifier":"34-142-222-110.sslip.io","issuer":"acme-v02.api.letsencrypt.org-directory"}
+caddy-1  | {"level":"info","ts":1790179009.555114,"logger":"tls.obtain","msg":"releasing lock","identifier":"34-142-222-110.sslip.io"}
+caddy-1  | {"level":"warn","ts":1790179042.9304833,"logger":"http.handlers.reverse_proxy","msg":"aborting with incomplete response","upstream":"127.0.0.1:9076","duration":0.00252193,"request":{"remote_ip":"49.230.107.106","remote_port":"60910","client_ip":"49.230.107.106","proto":"HTTP/2.0","method":"GET","host":"34-142-222-110.sslip.io","uri":"/mcp","headers":{"X-Forwarded-Proto":["https"],"X-Forwarded-Host":["34-142-222-110.sslip.io"],"Via":["2.0 Caddy"],"User-Agent":["curl/8.7.1"],"Accept":["*/*"],"X-Forwarded-For":["49.230.107.106"]},"tls":{"resumed":false,"version":772,"cipher_suite":4867,"proto":"h2","server_name":"34-142-222-110.sslip.io","ech":false}},"error":"reading: context canceled"}
+research-rag-edge-caddy-1 Up About a minute 
+codex-rag-agents-mcp-1 Up 3 minutes (healthy) 127.0.0.1:9076->9076/tcp
+codex-rag-agents-review-1 Up 11 minutes (healthy) 127.0.0.1:9077->9077/tcp
+codex-rag-agents-qdrant-1 Up 11 minutes 6333-6334/tcp
+codex-rag-agents-ollama-1 Up 11 minutes 11434/tcp

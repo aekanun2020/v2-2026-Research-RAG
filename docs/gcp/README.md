@@ -1,6 +1,6 @@
 # Research-RAG: GCP classroom deployment
 
-Status: first private MCP deployment verified. [Acceptance results and limitations](readiness-20260923.md). No public classroom endpoint has been accepted yet.
+Status: first private MCP deployment verified. [Acceptance results and limitations](readiness-20260923.md). [First public HTTPS endpoint verified](https-20260923.md).
 
 ## Actual first machine
 
@@ -10,7 +10,7 @@ Application source is pinned to `dc36545165f38481a07e15285d9293faa891697a` on th
 
 Data disk mounts at `/srv/research-rag`; application data is `/srv/research-rag/app-data`, Docker root is `/srv/research-rag/docker`, containerd image storage is `/srv/research-rag/containerd`, and pinned source is below `/srv/research-rag/deploy/`. Docker named volumes therefore also reside on the data disk. This disk is retained if the VM is deleted, but retention is not a backup.
 
-MCP binds to `127.0.0.1:9076/mcp`; review binds to `127.0.0.1:9077`. Qdrant and Ollama have no published host ports. Do not publish the review page without addressing its own access requirements. No firewall rules were modified. Public no-auth HTTPS was authorized by the user on 23 September 2026. Caddy is prepared but not started, pending the user's network-tag change; see [HTTPS status](https-20260923.md).
+MCP binds to `127.0.0.1:9076/mcp`; review binds to `127.0.0.1:9077`. Qdrant and Ollama have no published host ports. Do not publish the review page without addressing its own access requirements. No firewall rules were modified. Public no-auth HTTPS was authorized by the user on 23 September 2026. Caddy is running and public HTTPS/MCP verification passed; see [HTTPS endpoint and evidence](https-20260923.md).
 
 ## Learner workflow
 
