@@ -36,3 +36,6 @@ Timestamped activity files record intended changes before execution and command 
 - [Verify all five real PDF workspaces and exact citation spans through MCP after service restart](20260923T154814Z-2f1daf.md)
 
 - [Private deployment acceptance and evidence](../docs/gcp/readiness-20260923.md)
+
+- [HTTPS authorization and current status](https-20260923.md)
+- [Prepare Caddy and MCP public origin](20260923T155429Z-7bf937.md)

@@ -1,0 +1,38 @@
+2-alpine: Pulling from library/caddy
+e4e203c1a0f8: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4fd423e26735: Pulling fs layer
+d0c1d894c237: Pulling fs layer
+19256a879b16: Pulling fs layer
+4f4fb700ef54: Already exists
+4f4fb700ef54: Pull complete
+e4e203c1a0f8: Download complete
+4fd423e26735: Download complete
+19256a879b16: Download complete
+d0c1d894c237: Download complete
+8e73c630a985: Download complete
+c56b08f16f1e: Download complete
+d0c1d894c237: Pull complete
+e4e203c1a0f8: Pull complete
+4fd423e26735: Pull complete
+19256a879b16: Pull complete
+Digest: sha256:6aeddd44c3078b0f9a35206472a11420648a79c184603ef95957d0a20044cb2b
+Status: Downloaded newer image for caddy:2-alpine
+docker.io/library/caddy:2-alpine
+{"level":"info","ts":1790178876.6103916,"msg":"using config from file","file":"/etc/caddy/Caddyfile"}
+Valid configuration
+{"level":"info","ts":1790178876.6118536,"msg":"adapted config to JSON","adapter":"caddyfile"}
+{"level":"warn","ts":1790178876.61187,"msg":"Caddyfile input is not formatted; run 'caddy fmt --overwrite' to fix inconsistencies","adapter":"caddyfile","file":"/etc/caddy/Caddyfile","line":2}
+{"level":"info","ts":1790178876.6124434,"logger":"http.auto_https","msg":"server is listening only on the HTTPS port but has no TLS connection policies; adding one to enable TLS","server_name":"srv0","https_port":443}
+{"level":"info","ts":1790178876.612466,"logger":"http.auto_https","msg":"enabling automatic HTTP->HTTPS redirects","server_name":"srv0"}
+{"level":"info","ts":1790178876.6127434,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0xcd54a5dc600"}
+{"level":"info","ts":1790178876.6129413,"logger":"http","msg":"servers shutting down with eternal grace period"}
+{"level":"info","ts":1790178876.6130388,"logger":"tls.cache.maintenance","msg":"stopped background certificate maintenance","cache":"0xcd54a5dc600"}
+ Container codex-rag-agents-mcp-1  Recreate
+ Container codex-rag-agents-mcp-1  Recreated
+ Container codex-rag-agents-mcp-1  Starting
+ Container codex-rag-agents-mcp-1  Started
+ Container codex-rag-agents-mcp-1  Waiting
+ Container codex-rag-agents-mcp-1  Healthy
+Prepared Caddy image: caddy@sha256:6aeddd44c3078b0f9a35206472a11420648a79c184603ef95957d0a20044cb2b
+HTTPS prepared; Caddy not started yet. Await verified ingress tags.

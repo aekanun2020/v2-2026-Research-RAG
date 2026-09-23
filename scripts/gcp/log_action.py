@@ -28,6 +28,7 @@ header = f'''# GCP activity: {purpose}
 - Region / zone: `asia-southeast1` / `asia-southeast1-a` (`student1-research-rag`).
 - Authorization: user instructed “สร้างเลยครับ 6 เครื่อง ตาม spec” on 2026-09-23; approved six e2-standard-8 VMs, 30 GiB boot + 100 GiB data each, static IPs and self-hosted CPU containers.
 - Deployment scope and before state: [plan](deployment-20260923.md).
+- HTTPS authorization: user explicitly instructed “เปิด https เลย” after disclosure of no-login access and data mutation tools; see [HTTPS record](https-20260923.md).
 - Firewall/IAM/billing-account upgrades: not authorized by this operation; do not modify.
 - Intended action: {purpose}
 - Command (JSON argv; no secrets):

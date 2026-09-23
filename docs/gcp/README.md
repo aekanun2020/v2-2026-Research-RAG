@@ -10,13 +10,13 @@ Application source is pinned to `dc36545165f38481a07e15285d9293faa891697a` on th
 
 Data disk mounts at `/srv/research-rag`; application data is `/srv/research-rag/app-data`, Docker root is `/srv/research-rag/docker`, containerd image storage is `/srv/research-rag/containerd`, and pinned source is below `/srv/research-rag/deploy/`. Docker named volumes therefore also reside on the data disk. This disk is retained if the VM is deleted, but retention is not a backup.
 
-MCP binds to `127.0.0.1:9076/mcp`; review binds to `127.0.0.1:9077`. Qdrant and Ollama have no published host ports. Do not publish the review page without addressing its own access requirements. No firewall rules were modified. Public exposure/authentication for this repository awaits the user's explicit decision.
+MCP binds to `127.0.0.1:9076/mcp`; review binds to `127.0.0.1:9077`. Qdrant and Ollama have no published host ports. Do not publish the review page without addressing its own access requirements. No firewall rules were modified. Public no-auth HTTPS was authorized by the user on 23 September 2026. Caddy is prepared but not started, pending the user's network-tag change; see [HTTPS status](https-20260923.md).
 
 ## Learner workflow
 
 One VM is intended per group of five. Every learner uses their own Claude account and creates their own workspace via `create_workspace`. Suggested display names are `g01-u01` through `g01-u05` for group 1. A display name is **not** the workspace ID: use the `ws-...` ID returned by the tool on every subsequent scoped call. Call `list_workspaces` again if the registry revision is stale while several learners create workspaces together.
 
-Never share the default workspace for independent student work. Individual workspace IDs separate application data but do not enforce access control. Other users of the same endpoint can invoke tools against another workspace if they know its ID. Public no-auth service must use public/non-sensitive lab material and requires authorization for this deployment.
+Never share the default workspace for independent student work. Individual workspace IDs separate application data but do not enforce access control. Other users of the same endpoint can invoke tools against another workspace if they know its ID. Public no-auth classroom access was authorized for this deployment after disclosure of these limitations; use public/non-sensitive lab material.
 
 Five workspaces can submit separate jobs; CPU, RAM and the embedding service are still shared within that VM. One workspace allows one active ingestion job. Claude runs in each learner's own account; this server performs local CPU embeddings and retrieval, not paid external LLM synthesis.
 
