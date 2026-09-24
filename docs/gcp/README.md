@@ -46,3 +46,7 @@ User-created clone `student2-research-rag` in `asia-southeast1-b` now serves [it
 ## Third machine
 
 User-created clone `student3-research-rag` in `asia-southeast1-c` serves [its own HTTPS MCP](https://35-240-233-160.sslip.io/mcp). All five services and native TLS/MCP retrieval were verified on 24 September; public/local cross-check passed eight checks. No service account is attached. IP remains ephemeral. See [student3 changes, evidence and limits](../../cloud-activities/student3-20260924.md).
+
+## Fourth machine
+
+User-created clone `student4-research-rag` in `asia-southeast1-a` serves [its own HTTPS MCP](https://34-124-211-244.sslip.io/mcp). All five services and native TLS/MCP retrieval verified on 24 September; public/local cross-check passed eight checks. No service account attached; IP remains ephemeral. See [student4 changes, evidence and limits](../../cloud-activities/student4-20260924.md).

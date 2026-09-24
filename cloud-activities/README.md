@@ -59,3 +59,9 @@ Timestamped activity files record intended changes before execution and command 
 - [Student3 initial guest inspection](20260924T005542Z-ba7e77.md)
 - [Student3 HTTPS hostname correction](20260924T005610Z-5ac809.md)
 - [Student3 public/local MCP verification](20260924T005647Z-b547d3.md)
+
+- [Student4 clone deployment and HTTPS](student4-20260924.md)
+
+- [Student4 initial guest inspection](20260924T011544Z-67df79.md)
+- [Student4 HTTPS correction](20260924T011606Z-94b580.md)
+- [Student4 public/local MCP check](20260924T011643Z-87b1d2.md)

@@ -1,0 +1,41 @@
+{
+  "name": "student4-research-rag",
+  "id": "678890300790917082",
+  "status": "RUNNING",
+  "creationTimestamp": "2026-09-23T18:13:25.549-07:00",
+  "sourceMachineImage": "https://www.googleapis.com/compute/v1/projects/bigdatainpractice1/global/machineImages/student1-research-rag",
+  "machineType": "https://www.googleapis.com/compute/v1/projects/bigdatainpractice1/zones/asia-southeast1-a/machineTypes/e2-standard-8",
+  "zone": "https://www.googleapis.com/compute/v1/projects/bigdatainpractice1/zones/asia-southeast1-a",
+  "serviceAccounts": null,
+  "guestAccelerators": null,
+  "tags": {
+    "fingerprint": "6smc4R4d39I=",
+    "items": [
+      "http-server",
+      "https-server"
+    ]
+  },
+  "disks": [
+    {
+      "source": "https://www.googleapis.com/compute/v1/projects/bigdatainpractice1/zones/asia-southeast1-a/disks/student4-research-rag",
+      "deviceName": "student1-research-rag",
+      "diskSizeGb": "30",
+      "autoDelete": true,
+      "boot": true
+    },
+    {
+      "source": "https://www.googleapis.com/compute/v1/projects/bigdatainpractice1/zones/asia-southeast1-a/disks/student4-research-rag-1",
+      "deviceName": "data-disk",
+      "diskSizeGb": "100",
+      "autoDelete": false,
+      "boot": false
+    }
+  ],
+  "oslogin": [
+    {
+      "key": "enable-oslogin",
+      "value": "TRUE"
+    }
+  ],
+  "verified_ssh_ed25519_fingerprint": "SHA256:MADNtlxa06UYHLYLOVC2anf0V8ZYz+xQXRUVsFR5RVw"
+}
