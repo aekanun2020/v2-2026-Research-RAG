@@ -47,3 +47,5 @@ Timestamped activity files record intended changes before execution and command 
 - [Cross-check public and local MCP catalogs and state, allowed Origin and Host/Origin rejection with repository verifier](20260923T155804Z-390bf1.md)
 
 - [Read-only verification after VM boot on 24 September 2026](20260924-readonly-after-boot.md)
+
+- [Student2 clone deployment and HTTPS](student2-20260924.md)

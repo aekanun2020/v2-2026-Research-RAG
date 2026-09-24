@@ -124,3 +124,5 @@ Chunking ใช้ LlamaIndex SentenceSplitter ขนาดเริ่มต้
 - [สถานะก่อนย้ายรุ่น 0.2.4](docs/quality-state-preservation-2026-09-20.json) · [ข้อจำกัดการตรวจเดิม](docs/validation.md)
 - [การล้างข้อมูลรุ่นเดิม](docs/workspace-cleanup.md) · [semantic/chunk รุ่นเดิม](docs/semantic-and-chunks.md)
 - [จุดพักเดิม](docs/paused-2026-09-20.md)
+
+- [การติดตั้งเครื่อง student2 จาก machine image และ HTTPS](cloud-activities/student2-20260924.md)
