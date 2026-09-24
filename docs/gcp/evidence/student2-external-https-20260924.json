@@ -1,0 +1,456 @@
+{
+  "checked_at": "2026-09-24T00:36:50.814257+00:00",
+  "url": "https://34-142-163-231.sslip.io/mcp",
+  "client_location": "user Mac outside GCP VM",
+  "authentication": "none",
+  "tls_verification": "system trust with hostname verification enabled",
+  "status": "passed",
+  "certificate": {
+    "subject": [
+      [
+        [
+          "commonName",
+          "34-142-163-231.sslip.io"
+        ]
+      ]
+    ],
+    "issuer": [
+      [
+        [
+          "countryName",
+          "US"
+        ]
+      ],
+      [
+        [
+          "organizationName",
+          "Let's Encrypt"
+        ]
+      ],
+      [
+        [
+          "commonName",
+          "YE1"
+        ]
+      ]
+    ],
+    "version": 3,
+    "serialNumber": "05E1FD46B704D47FF8B7A0D34EE51F0E811C",
+    "notBefore": "Sep 23 23:38:09 2026 GMT",
+    "notAfter": "Dec 22 23:38:08 2026 GMT",
+    "subjectAltName": [
+      [
+        "DNS",
+        "34-142-163-231.sslip.io"
+      ]
+    ],
+    "caIssuers": [
+      "http://ye1.i.lencr.org/"
+    ],
+    "crlDistributionPoints": [
+      "http://ye1.c.lencr.org/29.crl"
+    ]
+  },
+  "tls_version": "TLSv1.3",
+  "tools": [
+    "workspace_status",
+    "preview_inbox_document",
+    "download_document",
+    "document_ingestion_status",
+    "start_project",
+    "import_document",
+    "search_literature",
+    "retrieve_evidence",
+    "read_source_page",
+    "list_documents",
+    "list_chunks",
+    "read_chunk",
+    "get_chunk_context",
+    "inspect_document_chunks",
+    "rechunk_document",
+    "activate_chunk_set",
+    "set_chunk_status",
+    "find_evidence_usage",
+    "search_index_status",
+    "rebuild_search_index",
+    "explore_topics",
+    "map_research_gaps",
+    "formulate_question",
+    "design_study",
+    "track_execution",
+    "interpret_results",
+    "summarize_dataset",
+    "draft_manuscript",
+    "prepare_submission",
+    "save_artifact",
+    "read_artifact",
+    "export_manuscript",
+    "backup_workspace",
+    "preview_workspace_cleanup",
+    "cleanup_workspace",
+    "job_status",
+    "resume_job",
+    "migrate_legacy_workspace",
+    "search_documentation",
+    "list_sources",
+    "add_context",
+    "add_directory",
+    "restore_workspace",
+    "list_workspaces",
+    "create_workspace"
+  ],
+  "default_workspace": {
+    "revision": 0,
+    "project": null,
+    "sources": {},
+    "artifacts": {},
+    "searches": [],
+    "pending_cleanup": null,
+    "pending_job": null,
+    "disabled_spans": [],
+    "inbox": [],
+    "stages": {
+      "exploration": {
+        "number": 1,
+        "tool": "explore_topics",
+        "sections": [
+          "landscape",
+          "candidate_topics",
+          "reading_plan"
+        ],
+        "instruction": "Map the retrieved literature, propose topics, and identify what to read next. Topics are proposals; do not choose for the researcher."
+      },
+      "gaps": {
+        "number": 2,
+        "tool": "map_research_gaps",
+        "sections": [
+          "comparison",
+          "candidate_gaps",
+          "search_limits"
+        ],
+        "instruction": "Compare populations, methods, findings and limitations, including contradictory evidence. A missing hit is not proof that a study does not exist. State coverage limits."
+      },
+      "question": {
+        "number": 3,
+        "tool": "formulate_question",
+        "sections": [
+          "research_question",
+          "objectives",
+          "contribution",
+          "feasibility"
+        ],
+        "instruction": "Connect the proposed question to evidence and the researcher-supplied goal. Mark unknown resources, scope and data access as unresolved."
+      },
+      "design": {
+        "number": 4,
+        "tool": "design_study",
+        "sections": [
+          "study_design",
+          "sampling",
+          "measurement",
+          "analysis_plan",
+          "ethics"
+        ],
+        "instruction": "Compare methods and propose a protocol with assumptions, sampling, measurement, analysis and applicable ethics requirements. Never claim approval or data access without evidence."
+      },
+      "execution": {
+        "number": 5,
+        "tool": "track_execution",
+        "sections": [
+          "activity",
+          "observations",
+          "deviations",
+          "next_actions"
+        ],
+        "instruction": "Reconcile actual project records with the protocol. Record what actually happened and explicit deviations. Plans are not completed experiments."
+      },
+      "analysis": {
+        "number": 6,
+        "tool": "interpret_results",
+        "sections": [
+          "results",
+          "comparison",
+          "limitations"
+        ],
+        "instruction": "Use real imported analysis outputs for results, compare with literature separately, and include contrary evidence. Descriptive CSV summaries are not inferential tests or causal evidence."
+      },
+      "manuscript": {
+        "number": 7,
+        "tool": "draft_manuscript",
+        "sections": [
+          "title",
+          "abstract",
+          "introduction",
+          "methods",
+          "results",
+          "discussion",
+          "conclusion"
+        ],
+        "instruction": "Draft only from supplied evidence, real outputs and researcher reasoning. Cite factual blocks, preserve uncertainty and unresolved sections, and include dependencies on the artifacts used."
+      },
+      "submission": {
+        "number": 8,
+        "tool": "prepare_submission",
+        "sections": [
+          "venue",
+          "checklist",
+          "cover_letter",
+          "ai_disclosure"
+        ],
+        "instruction": "Compare the manuscript with the actual imported journal guidelines. Report unmet or unknown requirements and policy date. The researcher verifies authorship, statements and the final submission. Never submit automatically."
+      },
+      "literature_note": {
+        "number": null,
+        "tool": "save_artifact",
+        "sections": [
+          "research_question",
+          "population",
+          "method",
+          "findings",
+          "limitations"
+        ],
+        "instruction": "Extract one study/report into separate dimensions with exact citations. Mark unreported fields unresolved. Distinct reports do not establish independent studies."
+      }
+    },
+    "search_index": {
+      "model": {
+        "provider": "ollama",
+        "model": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "dimensions": 768,
+        "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+        "device": "cpu",
+        "external_api": false
+      },
+      "total_chunks": 0,
+      "indexed_chunks": 0,
+      "pending_or_invalid_chunks": 0,
+      "storage": "Qdrant cosine vector index; journal contains evidence spans, no SQLite",
+      "default_mode": "hybrid",
+      "ready": true
+    },
+    "capabilities": {
+      "transport": "streamable-http",
+      "online_discovery": "Crossref metadata",
+      "retrieval": "Thai lexical / Ollama semantic / hybrid (default), local CPU; cross-language quality must be checked",
+      "generation": "connected MCP client",
+      "external_model_calls": false,
+      "automatic_semantic_grading": false,
+      "automatic_experiments": false,
+      "automatic_submission": false
+    },
+    "workspace_id": "default"
+  },
+  "workspaces": {
+    "registry_revision": 7,
+    "workspaces": [
+      {
+        "workspace_id": "default",
+        "name": "Default workspace",
+        "root": "/data/default",
+        "qdrant_collection": "agent_chunks"
+      },
+      {
+        "created_at": "2026-09-23T15:44:52.505438+00:00",
+        "name": "READINESS TEST five-workspaces-20260923 person 4",
+        "workspace_id": "ws-14600e3f3ca6436885dda80c1b769104",
+        "root": "/data/workspaces/ws-14600e3f3ca6436885dda80c1b769104",
+        "qdrant_collection": "agent_chunks_ws-14600e3f3ca6436885dda80c1b769104"
+      },
+      {
+        "created_at": "2026-09-23T15:44:52.366977+00:00",
+        "name": "READINESS TEST five-workspaces-20260923 person 1",
+        "workspace_id": "ws-15b2fcabb3574620ba4d236ddff68f99",
+        "root": "/data/workspaces/ws-15b2fcabb3574620ba4d236ddff68f99",
+        "qdrant_collection": "agent_chunks_ws-15b2fcabb3574620ba4d236ddff68f99"
+      },
+      {
+        "created_at": "2026-09-23T15:43:48.450307+00:00",
+        "name": "MCP regression B: independent work",
+        "workspace_id": "ws-73ab65e22f404f69bffd171464c8062a",
+        "root": "/data/workspaces/ws-73ab65e22f404f69bffd171464c8062a",
+        "qdrant_collection": "agent_chunks_ws-73ab65e22f404f69bffd171464c8062a"
+      },
+      {
+        "created_at": "2026-09-23T15:44:52.412888+00:00",
+        "name": "READINESS TEST five-workspaces-20260923 person 2",
+        "workspace_id": "ws-8cde3064c40c419a842ca16273d796b9",
+        "root": "/data/workspaces/ws-8cde3064c40c419a842ca16273d796b9",
+        "qdrant_collection": "agent_chunks_ws-8cde3064c40c419a842ca16273d796b9"
+      },
+      {
+        "created_at": "2026-09-23T15:44:52.557921+00:00",
+        "name": "READINESS TEST five-workspaces-20260923 person 5",
+        "workspace_id": "ws-ad872abdd50e48328a09e9de68faf548",
+        "root": "/data/workspaces/ws-ad872abdd50e48328a09e9de68faf548",
+        "qdrant_collection": "agent_chunks_ws-ad872abdd50e48328a09e9de68faf548"
+      },
+      {
+        "created_at": "2026-09-23T15:43:48.342864+00:00",
+        "name": "MCP regression A: original PDFs",
+        "workspace_id": "ws-adae5d12491b445bbc6a6a740a06fd73",
+        "root": "/data/workspaces/ws-adae5d12491b445bbc6a6a740a06fd73",
+        "qdrant_collection": "agent_chunks_ws-adae5d12491b445bbc6a6a740a06fd73"
+      },
+      {
+        "created_at": "2026-09-23T15:44:52.457304+00:00",
+        "name": "READINESS TEST five-workspaces-20260923 person 3",
+        "workspace_id": "ws-fa494235c3c04adaa8daf6338b572838",
+        "root": "/data/workspaces/ws-fa494235c3c04adaa8daf6338b572838",
+        "qdrant_collection": "agent_chunks_ws-fa494235c3c04adaa8daf6338b572838"
+      }
+    ],
+    "default_workspace_id": "default",
+    "selection": "Pass workspace_id on every call; no global switch",
+    "access_control": "None: workspace IDs separate data, not user permissions"
+  },
+  "retrieval": {
+    "arguments": {
+      "workspace_id": "ws-15b2fcabb3574620ba4d236ddff68f99",
+      "query": "ChatGPT effects on writing productivity and quality",
+      "source_ids": [
+        "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736"
+      ],
+      "mode": "hybrid",
+      "limit": 2
+    },
+    "result": {
+      "query": "ChatGPT effects on writing productivity and quality",
+      "mode": "hybrid",
+      "method": "PyThaiNLP BM25 + Ollama/Qdrant cosine; RRF k=60",
+      "timings": {
+        "lexical_seconds": 1.2898104140000015,
+        "query_embedding_seconds": 8.249214238999997,
+        "vector_search_seconds": 0.29733620100000735,
+        "total_seconds": 9.845164924999992
+      },
+      "embedding_model": {
+        "provider": "ollama",
+        "model": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "dimensions": 768,
+        "fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+        "device": "cpu",
+        "external_api": false
+      },
+      "reranking": {
+        "enabled": false,
+        "reason": "Selected upstream architecture uses BM25 + semantic RRF; no BGE"
+      },
+      "corpus_sources": 1,
+      "corpus_chunks": 21,
+      "hits": [
+        {
+          "chunk_set_id": "cs-b55c9322d91d4cb7a92ab204975d2760",
+          "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "end": 1912,
+          "id": "6845f858c3af291a52e01e3fb0088eb0a1548613e3dc9fbb5679250f0b156260",
+          "page_index": 0,
+          "reason": "Imported from verified extracted text",
+          "section": {
+            "end": 1913,
+            "header_path": null,
+            "heading": null,
+            "start": 0
+          },
+          "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+          "start": 0,
+          "status": "active",
+          "text": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology—the\nassistive chatbot ChatGPT—in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon Jäger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+          "token_count": 421,
+          "updated_at": "2026-09-23T15:44:56.682527+00:00",
+          "score": 0.031746031746031744,
+          "lexical_score": 0.9779787689542874,
+          "semantic_score": 0.76083434,
+          "matched_terms": [
+            "effects",
+            "productivity",
+            "on",
+            "writing",
+            "chatgpt",
+            "and",
+            "quality"
+          ],
+          "source_format": "pdf",
+          "evidence_kind": "pdf_source",
+          "document_id": "doc-fc97c55266944507a81c6343e5a5463d",
+          "source_version": 1,
+          "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+          "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+          "role": "literature",
+          "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+          "page_label": "1",
+          "citation": {
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "page_index": 0,
+            "start": 0,
+            "end": 1912,
+            "quote": "Experimental Evidence on the Productivity Effects of\nGenerative Artificial Intelligence\nShakked Noy\nMIT\nWhitney Zhang\nMIT\nMarch 10, 2023\nWorking Paper (not peer reviewed)\nAbstract\nWe examine the productivity effects of a generative artificial intelligence technology—the\nassistive chatbot ChatGPT—in the context of mid-level professional writing tasks. In a\npreregistered online experiment, we assign occupation-specific, incentivized writing tasks\nto 444 college-educated professionals, and randomly expose half of them to ChatGPT.\nOur results show that ChatGPT substantially raises average productivity: time taken\ndecreases by 0.8 SDs and output quality rises by 0.4 SDs. Inequality between workers\ndecreases, as ChatGPT compresses the productivity distribution by benefiting low-ability\nworkers more. ChatGPT mostly substitutes for worker effort rather than complementing\nworker skills, and restructures tasks towards idea-generation and editing and away from\nrough-drafting. Exposure to ChatGPT increases job satisfaction and self-efficacy and\nheightens both concern and excitement about automation technologies.\nWe gratefully acknowledge financial support from an Emergent Ventures grant, the George and Obie Shultz\nFund, and the National Science Foundation Graduate Research Fellowship under Grant No. 1745302. The\nresearch described in this article was approved by the MIT Committee on the Use of Humans as Experimental\nSubjects, and was preregistered at the AEA RCT Registry (AEARCTR-0010882). We thank Daron Acemoglu,\nNikhil Agarwal, David Autor, Lucas Barros, Talia Benheim, Amy Finkelstein, John Horton, Simon Jäger, Ailidh\nLeslie, Jackson Mejia, Ilan Noy, Liora Noy, Emily Partridge, Charlie Rafkin, Aakaash Rao, Nina Roussille, Chris\nRoth, Frank Schilbach, Benjamin Schoefer, Lexi Schubert, Advik Shreekumar, Shine Wu, and participants at the\nMIT Labor Lunch for helpful comments and conversations.",
+            "relation": "context"
+          }
+        },
+        {
+          "chunk_set_id": "cs-b55c9322d91d4cb7a92ab204975d2760",
+          "embedding_fingerprint": "d629b60773697cc1e832fd9a216ce957c464339284dff4e49eee11ae7b8aa01b",
+          "end": 2412,
+          "id": "23ac7712f3e46e8c1f25893bdbc70fc382be325638653e7ee09cc73a0070d3bd",
+          "page_index": 5,
+          "reason": "Imported from verified extracted text",
+          "section": {
+            "end": 2830,
+            "header_path": null,
+            "heading": null,
+            "start": 0
+          },
+          "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+          "start": 0,
+          "status": "active",
+          "text": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT’s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant’s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers’ productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers’ skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT’s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants’ essays receive higher grades than ChatGPT’s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+          "token_count": 502,
+          "updated_at": "2026-09-23T15:44:56.759871+00:00",
+          "score": 0.01639344262295082,
+          "lexical_score": 1.0,
+          "semantic_score": null,
+          "matched_terms": [
+            "productivity",
+            "on",
+            "and",
+            "chatgpt",
+            "quality"
+          ],
+          "source_format": "pdf",
+          "evidence_kind": "pdf_source",
+          "document_id": "doc-fc97c55266944507a81c6343e5a5463d",
+          "source_version": 1,
+          "text_revision_id": "text-771d8812fa2d3f17f1131ae86cbc7d382dd7bff70f637b20cac2a588c1de331f",
+          "origin": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+          "role": "literature",
+          "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+          "page_label": "6",
+          "citation": {
+            "source_id": "3a85c26cf0560425d0d1d60c0cd574c0c38c17ac0dee1f1d2010123f3a1a9736",
+            "page_index": 5,
+            "start": 0,
+            "end": 2412,
+            "quote": "outcomes (see Online Appendix Figure A.7).\nIn another arm involving 30% of the treatment group, after completing the second task,\nrespondents are shown their first-task output and given the opportunity to edit or replace it\nusing ChatGPT if they wish. 23% choose to replace their response with ChatGPT’s output and\n25% use ChatGPT to edit their original response, suggesting that participants view ChatGPT\nas a way to improve output quality in addition to a convenient way to save time.\n2.3\nProductivity Inequality\nThe control group exhibits persistent productivity inequality: participants who score well on\nthe first task also tend to score well on the second task. As Figure 2 Panel (a) shows, there is a\ncorrelation of 0.49 between a control participant’s average grade on the first task and their\naverage grade on the second task.\nIn the treatment group, initial inequalities are half-erased by the treatment: the correlation\nbetween first-task and second-task grades is only 0.25 (p-value on difference in slopes = 0.004).\nThis reduction in inequality is driven by the fact that participants who scored lower on the first\nround benefit more from ChatGPT access, as the figure shows: the gap between the treatment\nand control lines is much larger at the left-hand end of the x-axis.\n2.4\nHuman-Machine Complementarity\nChatGPT could increase workers’ productivity in two ways. On the one hand, it could\nsubstitute for worker effort by quickly producing output of satisfactory quality that workers\ndirectly submit, letting them reduce the time they spend on the task. On the other hand, it\ncould complement workers’ skills: humans and ChatGPT working together could produce\nmore than the sum of their parts, for example if ChatGPT aids with the brainstorming process,\nor quickly produces a rough draft and humans then edit and improve on the draft. In our\nexperiment, evidence for the complementarity story could come in two forms: (a) we could\nobserve treatment-group participants choosing to expend significant time editing ChatGPT’s\noutput or repeatedly prompting ChatGPT in anticipation of earning higher grades, and (b) we\ncould observe that treatment participants’ essays receive higher grades than ChatGPT’s raw\noutput, suggesting that human input adds value.\nWe observe neither of these pieces of evidence, suggesting that ChatGPT is increasing\nproductivity primarily by substituting for worker effort.",
+            "relation": "context"
+          }
+        }
+      ],
+      "revision": 2,
+      "status": "evidence_retrieved",
+      "limitation": "Retrieved candidates are not verified scientific support. Inspect source pages; scores are not confidence.",
+      "workspace_id": "ws-15b2fcabb3574620ba4d236ddff68f99"
+    },
+    "span_checks": [
+      {
+        "chunk_id": "6845f858c3af291a52e01e3fb0088eb0a1548613e3dc9fbb5679250f0b156260",
+        "exact": true
+      },
+      {
+        "chunk_id": "23ac7712f3e46e8c1f25893bdbc70fc382be325638653e7ee09cc73a0070d3bd",
+        "exact": true
+      }
+    ]
+  }
+}

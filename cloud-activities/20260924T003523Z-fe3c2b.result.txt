@@ -1,0 +1,52 @@
+student2-research-rag
+ 00:35:29 up 0 min,  1 user,  load average: 0.62, 0.13, 0.04
+NAMES                       STATUS                                     PORTS
+research-rag-edge-caddy-1   Up Less than a second                      
+codex-rag-agents-mcp-1      Up Less than a second (health: starting)   127.0.0.1:9076->9076/tcp
+codex-rag-agents-review-1   Up Less than a second (health: starting)   127.0.0.1:9077->9077/tcp
+codex-rag-agents-qdrant-1   Up Less than a second                      6333-6334/tcp
+codex-rag-agents-ollama-1   Up Less than a second                      11434/tcp
+TARGET            SOURCE   FSTYPE OPTIONS
+/srv/research-rag /dev/sdb ext4   rw,relatime
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        29G  2.7G   26G  10% /
+/dev/sdb         98G  8.1G   90G   9% /srv/research-rag
+{
+    admin off
+}
+
+34-142-222-110.sslip.io {
+    @mcp path /mcp /mcp/*
+    handle @mcp {
+        reverse_proxy 127.0.0.1:9076 {
+            flush_interval -1
+        }
+    }
+    handle {
+        respond "Not Found" 404
+    }
+}
+RAG_PUBLIC_ORIGIN=https://34-142-222-110.sslip.io
+runtime.env
+runtime.env.before-https
+source-dc36545165f38481a07e15285d9293faa891697a
+name: research-rag-edge
+services:
+  caddy:
+    image: caddy@sha256:6aeddd44c3078b0f9a35206472a11420648a79c184603ef95957d0a20044cb2b
+    network_mode: host
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    cap_add: [NET_BIND_SERVICE]
+    security_opt: [no-new-privileges:true]
+    tmpfs: [/tmp]
+    volumes:
+      - /srv/research-rag/edge/Caddyfile:/etc/caddy/Caddyfile:ro
+      - /srv/research-rag/edge/data:/data
+      - /srv/research-rag/edge/config:/config
+    logging:
+      driver: json-file
+      options: {max-size: 5m, max-file: '2'}
+enabled
+enabled

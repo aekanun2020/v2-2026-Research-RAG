@@ -49,3 +49,7 @@ Timestamped activity files record intended changes before execution and command 
 - [Read-only verification after VM boot on 24 September 2026](20260924-readonly-after-boot.md)
 
 - [Student2 clone deployment and HTTPS](student2-20260924.md)
+
+- [Student2 successful SSH retry](20260924T003523Z-fe3c2b.md)
+- [Student2 hostname correction](20260924T003608Z-8fc4c4.md)
+- [Student2 public/local MCP verification](20260924T003657Z-a9c095.md)

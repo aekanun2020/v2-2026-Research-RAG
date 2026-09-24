@@ -38,3 +38,7 @@ Five workspaces can submit separate jobs; CPU, RAM and the embedding service are
 VMs continue to incur compute costs until stopped. No automatic stop is configured. Stopping does not stop disk/IP charges; deleting a VM does not remove this retained data disk. Cleanup requires explicit user direction and preservation of required learner work.
 
 - [24 September verification after VM boot](../../cloud-activities/20260924-readonly-after-boot.md)
+
+## Second machine
+
+User-created clone `student2-research-rag` in `asia-southeast1-b` now serves [its own HTTPS MCP](https://34-142-163-231.sslip.io/mcp). Native TLS/MCP retrieval and 8 public/local checks passed on 24 September. The user removed its service account and restarted it; Codex corrected the cloned hostname/origin. Its IP remains ephemeral. See [student2 deployment, limitations and evidence](../../cloud-activities/student2-20260924.md). Earlier one-machine statements describe the initial deployment stage; readiness of any other machines is not established here.

@@ -1,0 +1,37 @@
+{"level":"info","ts":1790210170.0547743,"msg":"using config from file","file":"/etc/caddy/Caddyfile"}
+{"level":"info","ts":1790210170.056356,"msg":"adapted config to JSON","adapter":"caddyfile"}
+{"level":"warn","ts":1790210170.0563717,"msg":"Caddyfile input is not formatted; run 'caddy fmt --overwrite' to fix inconsistencies","adapter":"caddyfile","file":"/etc/caddy/Caddyfile","line":2}
+{"level":"info","ts":1790210170.0567627,"logger":"http.auto_https","msg":"server is listening only on the HTTPS port but has no TLS connection policies; adding one to enable TLS","server_name":"srv0","https_port":443}
+{"level":"info","ts":1790210170.0567813,"logger":"http.auto_https","msg":"enabling automatic HTTP->HTTPS redirects","server_name":"srv0"}
+{"level":"info","ts":1790210170.0570087,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0x2bd3d8c19980"}
+{"level":"info","ts":1790210170.0570471,"logger":"http","msg":"servers shutting down with eternal grace period"}
+Valid configuration
+{"level":"info","ts":1790210170.087362,"logger":"tls.cache.maintenance","msg":"stopped background certificate maintenance","cache":"0x2bd3d8c19980"}
+ Container codex-rag-agents-qdrant-1  Running
+ Container codex-rag-agents-review-1  Running
+ Container codex-rag-agents-ollama-1  Running
+ Container codex-rag-agents-mcp-1  Recreate
+ Container codex-rag-agents-mcp-1  Recreated
+ Container codex-rag-agents-mcp-1  Starting
+ Container codex-rag-agents-mcp-1  Started
+ Container codex-rag-agents-ollama-1  Waiting
+ Container codex-rag-agents-mcp-1  Waiting
+ Container codex-rag-agents-review-1  Waiting
+ Container codex-rag-agents-qdrant-1  Waiting
+ Container codex-rag-agents-qdrant-1  Healthy
+ Container codex-rag-agents-ollama-1  Healthy
+ Container codex-rag-agents-mcp-1  Healthy
+ Container codex-rag-agents-review-1  Healthy
+ Container research-rag-edge-caddy-1  Recreate
+ Container research-rag-edge-caddy-1  Recreated
+ Container research-rag-edge-caddy-1  Starting
+ Container research-rag-edge-caddy-1  Started
+ Container research-rag-edge-caddy-1  Waiting
+ Container research-rag-edge-caddy-1  Healthy
+NAMES                       STATUS                        PORTS
+research-rag-edge-caddy-1   Up Less than a second         
+codex-rag-agents-mcp-1      Up 23 seconds (healthy)       127.0.0.1:9076->9076/tcp
+codex-rag-agents-review-1   Up About a minute (healthy)   127.0.0.1:9077->9077/tcp
+codex-rag-agents-qdrant-1   Up About a minute             6333-6334/tcp
+codex-rag-agents-ollama-1   Up About a minute             11434/tcp
+Student2 hostname correction applied; external TLS/MCP verification required.
