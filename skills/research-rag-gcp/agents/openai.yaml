@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research-RAG on GCP"
+  short_description: "Provision and operate CPU-only Research-RAG VMs"
+  default_prompt: "Use $research-rag-gcp to prepare the requested GCP VM, configure Research-RAG HTTPS, verify MCP, and record cloud changes."

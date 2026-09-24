@@ -50,3 +50,7 @@ User-created clone `student3-research-rag` in `asia-southeast1-c` serves [its ow
 ## Fourth machine
 
 User-created clone `student4-research-rag` in `asia-southeast1-a` serves [its own HTTPS MCP](https://34-124-211-244.sslip.io/mcp). All five services and native TLS/MCP retrieval verified on 24 September; public/local cross-check passed eight checks. No service account attached; IP remains ephemeral. See [student4 changes, evidence and limits](../../cloud-activities/student4-20260924.md).
+
+## Reusable Codex skill
+
+[research-rag-gcp](../../skills/research-rag-gcp/SKILL.md) covers new-VM planning/provisioning, user-created clones, HTTPS, startup, native MCP checks and traffic inspection. Includes a read-only inventory helper. [Validation and limitations](skill-validation-20260924.md). This is a guided workflow, not an unattended installer; no VM is created by installing the skill.

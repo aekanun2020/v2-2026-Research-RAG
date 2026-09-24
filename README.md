@@ -30,6 +30,8 @@ MCP server จัดเตรียมหลักฐาน โมเดลใ�
 
 ## เอกสารและซอร์ส
 
+- [Skill: สร้างและดูแล Research-RAG VM บน GCP](skills/research-rag-gcp/SKILL.md) · [ผลตรวจ Skill และขอบเขตที่ทดสอบ](docs/gcp/skill-validation-20260924.md)
+
 - [บันทึกการเปลี่ยนแปลง Google Cloud และการติดตั้งสำหรับ 6 กลุ่ม](cloud-activities/README.md)
 - [การติดตั้ง GCP และวิธีแยก workspace สำหรับผู้เรียน](docs/gcp/README.md) · [HTTPS เครื่องแรกที่ผ่านการทดสอบแล้ว](docs/gcp/https-20260923.md)
 - [ผลตรวจหลังเปิด VM วันที่ 24 กันยายน: HTTPS MCP และข้อมูลเดิมใช้งานได้](cloud-activities/20260924-readonly-after-boot.md)
