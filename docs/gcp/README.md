@@ -4,7 +4,7 @@ Status: first private MCP deployment verified. [Acceptance results and limitatio
 
 ## Actual first machine
 
-The user manually created `student1-research-rag` in project `bigdatainpractice1`, zone `asia-southeast1-a`: e2-standard-8 (8 vCPU, 32 GiB RAM), 30 GiB boot disk and 100 GiB data disk. Both disks are **pd-standard**, differing from the earlier pd-balanced proposal. The external IP was ephemeral at inspection. There is no GPU or attached service account. Codex did not create this VM or enable OS Login; the user performed both actions.
+The user manually created `student1-research-rag` in project `bigdatainpractice1`, zone `asia-southeast1-a`: e2-standard-8 (8 vCPU, 32 GiB RAM), 30 GiB boot disk and 100 GiB data disk. Both disks are **pd-standard**, differing from the earlier pd-balanced proposal. The external IP was ephemeral at the initial inspection; on 24 September it was verified as reserved static (`34.142.222.110`, resource `student1-research-rag`). There is no GPU or attached service account. Codex did not create this VM or enable OS Login; the user performed both actions.
 
 Application source is pinned to `dc36545165f38481a07e15285d9293faa891697a` on the sole branch `codex/claude-workspace-ingestion` of [v2-2026-Research-RAG](https://github.com/aekanun2020/v2-2026-Research-RAG). Source archive SHA-256: `b6851caada264b8105e89ba2c208125dbcec48b88d13634feb5f71e820271ef8`.
 
@@ -36,3 +36,5 @@ Five workspaces can submit separate jobs; CPU, RAM and the embedding service are
 - [Mutation logger](../../scripts/gcp/log_action.py)
 
 VMs continue to incur compute costs until stopped. No automatic stop is configured. Stopping does not stop disk/IP charges; deleting a VM does not remove this retained data disk. Cleanup requires explicit user direction and preservation of required learner work.
+
+- [24 September verification after VM boot](../../cloud-activities/20260924-readonly-after-boot.md)

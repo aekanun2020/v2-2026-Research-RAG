@@ -45,3 +45,5 @@ Timestamped activity files record intended changes before execution and command 
 - [Verify public HTTPS from external Mac with native MCP initialize 45 tools real retrieval and citation spans](20260923T155744Z-382036.md)
 
 - [Cross-check public and local MCP catalogs and state, allowed Origin and Host/Origin rejection with repository verifier](20260923T155804Z-390bf1.md)
+
+- [Read-only verification after VM boot on 24 September 2026](20260924-readonly-after-boot.md)

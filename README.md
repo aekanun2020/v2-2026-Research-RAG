@@ -32,6 +32,7 @@ MCP server จัดเตรียมหลักฐาน โมเดลใ�
 
 - [บันทึกการเปลี่ยนแปลง Google Cloud และการติดตั้งสำหรับ 6 กลุ่ม](cloud-activities/README.md)
 - [การติดตั้ง GCP และวิธีแยก workspace สำหรับผู้เรียน](docs/gcp/README.md) · [HTTPS เครื่องแรกที่ผ่านการทดสอบแล้ว](docs/gcp/https-20260923.md)
+- [ผลตรวจหลังเปิด VM วันที่ 24 กันยายน: HTTPS MCP และข้อมูลเดิมใช้งานได้](cloud-activities/20260924-readonly-after-boot.md)
 
 - [การแก้ Claude agent: ดาวน์โหลด PDF และแยก workspace](docs/agent-ingestion/README.md) · [Compose 0.5.0](compose.agents.yaml) · [ค่าเริ่มต้นชุดใหม่](agents.env.example)
 - [Public ngrok endpoint ชื่อ research-rag](docs/agent-ingestion/ngrok.md) · [ทดสอบ public MCP](scripts/verify_public_mcp.py)
