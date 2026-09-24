@@ -42,3 +42,7 @@ VMs continue to incur compute costs until stopped. No automatic stop is configur
 ## Second machine
 
 User-created clone `student2-research-rag` in `asia-southeast1-b` now serves [its own HTTPS MCP](https://34-142-163-231.sslip.io/mcp). Native TLS/MCP retrieval and 8 public/local checks passed on 24 September. The user removed its service account and restarted it; Codex corrected the cloned hostname/origin. Its IP remains ephemeral. See [student2 deployment, limitations and evidence](../../cloud-activities/student2-20260924.md). Earlier one-machine statements describe the initial deployment stage; readiness of any other machines is not established here.
+
+## Third machine
+
+User-created clone `student3-research-rag` in `asia-southeast1-c` serves [its own HTTPS MCP](https://35-240-233-160.sslip.io/mcp). All five services and native TLS/MCP retrieval were verified on 24 September; public/local cross-check passed eight checks. No service account is attached. IP remains ephemeral. See [student3 changes, evidence and limits](../../cloud-activities/student3-20260924.md).

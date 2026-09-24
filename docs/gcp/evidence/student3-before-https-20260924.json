@@ -1,0 +1,6 @@
+{
+  "checked_at": "2026-09-24T00:55:53.275832+00:00",
+  "host": "35-240-233-160.sslip.io",
+  "phase": "before hostname correction",
+  "error": "[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1082)"
+}

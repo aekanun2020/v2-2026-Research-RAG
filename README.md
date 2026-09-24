@@ -126,3 +126,5 @@ Chunking ใช้ LlamaIndex SentenceSplitter ขนาดเริ่มต้
 - [จุดพักเดิม](docs/paused-2026-09-20.md)
 
 - [เครื่อง student2: HTTPS MCP ผ่านการตรวจแล้ว พร้อมหลักฐานและข้อจำกัด](cloud-activities/student2-20260924.md)
+
+- [เครื่อง student3: HTTPS MCP ผ่านการตรวจแล้ว พร้อมหลักฐานและข้อจำกัด](cloud-activities/student3-20260924.md)
